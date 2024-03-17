@@ -1,0 +1,26 @@
+sudo: required
+dist: trusty
+addons:
+  apt:
+    packages:
+    - zip
+before_install:
+- chmod +x build-docs.sh build-latex.sh install-deps.sh zip-docs.sh
+- ./install-deps.sh
+script:
+- ./build-docs.sh a
+after_success:
+- ./zip-docs.sh -r
+# deploy:
+#   provider: releases
+#   api_key:
+#     secure: KEY
+#   file: documentation.zip
+#   skip_cleanup: true
+#   overwrite: true
+#   on:
+#     repo: REPO
+#     tags: true
+#     branch: master
+# notifications:
+#   slack: ID

@@ -1,0 +1,11 @@
+version: "3.8"
+name: argo-docs
+
+services:
+  latexpdfbuilder:
+    build: ./docker
+    command: tail -F anything
+    volumes:
+      - ./commands:/data/commands
+      - ./LaTex:/data/LaTex
+      - ./build-output:/data/build-output

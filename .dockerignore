@@ -1,0 +1,10 @@
+.DS_Store
+.gitignore
+
+# unnecessary files
+README.md
+LICENSE
+
+# unnecessary folders
+diagrams
+docker
