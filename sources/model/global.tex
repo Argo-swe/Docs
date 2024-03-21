@@ -33,39 +33,12 @@
 \newcommand{\ResponsabileInCarica}{\sebastiano}
 
 % La versione dei documenti deve essere definita qui in global, perchè serve anche agli altri documenti
-\newcommand{\VersioneG}{}
-\newcommand{\VersionePQ}{}
-\newcommand{\VersioneNP}{}
-\newcommand{\VersionePP}{}
-\newcommand{\VersioneAR}{}
-\newcommand{\VersioneSF}{}
-\newcommand{\VersioneST}{}
-\newcommand{\VersioneMA}{}
-\newcommand{\VersioneMS}{}
-\newcommand{\VersioneMUD}{}
-\newcommand{\VersioneMUF}{}
-\newcommand{\VersioneDP}{}
+
 % Il verbale non ha versionamento.
 % Lasciare vuoto, non mettere trattini o puntini
 % Non sono permessi numeri nel nome di un comando :(
 \newcommand{\VersioneVprimo}{}
 \newcommand{\VersioneVsecondo}{}
-
-%ATTENZIONE: vengono rimossi dai comandi sottostanti i numeri di versione dei documenti non ancora esistenti
-% Quando serve riferirsi a ``Nome del Documento + ultima versione x.y.z'' usiamo queste costanti:
-\newcommand{\Glossario}{\emph{Glossario v\VersioneG{}}}
-\newcommand{\PianoDiQualifica}{\emph{Piano di Qualifica v\VersionePQ{}}}
-\newcommand{\NormeDiProgetto}{\emph{Norme di Progetto v\VersioneNP{}}}
-\newcommand{\PianoDiProgetto}{\emph{Piano di Progetto v\VersionePP{}}}
-\newcommand{\StudioDiFattibilita}{\emph{Studio di Fattibilità v\VersioneSF{}}}
-\newcommand{\AnalisiDeiRequisiti}{\emph{Analisi dei Requisiti v\VersioneAR{}}}
-\newcommand{\SpecificaTecnica}{\emph{Specifica Tecnica v\VersioneST{}}}
-\newcommand{\ManualeAdmin}{\emph{Manuale Admin}}
-\newcommand{\ManualeSviluppatore}{\emph{Manuale Sviluppatore} v\VersioneMS}
-\newcommand{\ManualeUtenteDemo}{\emph{Demo User Manual v\VersioneMUD}}
-\newcommand{\ManualeUtenteFramework}{\emph{Framework User Manual v\VersioneMUF}}
-\newcommand{\DefinizioneDiProdotto}{\emph{Definizione di Prodotto v\VersioneDP}}
-\newcommand{\LetteraPresentazione}{\emph{Lettera di Presentazione}}
 
 % Per riferirsi alle revisioni usare i comandi seguenti:
 \newcommand{\RTB}{Requirements and Technology Baseline}
@@ -97,6 +70,7 @@
 \newcommand{\Progettista}{\textit{Progettista}}
 \newcommand{\Programmatore}{\textit{Programmatore}}
 \newcommand{\Verificatore}{\textit{Verificatore}}
+\newcommand{\Redattore}{\textit{Redattore}}
 
 \newcommand{\Responsabili}{\textit{Responsabili di Progetto}}
 \newcommand{\Amministratori}{\textit{Amministratori}}
@@ -110,11 +84,6 @@
 \newcommand{\ScopoDelProdotto}{}
 
 \newcommand{\ScopoDelProdottoEng}{}
-
-\newcommand{\GlossarioIntroduzione}{
-Insieme al progetto il gruppo fornisce un glossario nel quale sono raccolti i termini tecnici, gli acronimi e le parole che necessitano di chiarimenti utilizzate nella documentazione.\\
-I vocaboli presenti nel documento \Glossario{} sono marcati alla loro prima occorrenza con una \textit{\small{G}} al pedice.
-}
 
 \newcommand{\ToBeContinued}{\textit{Continua nella prossima pagina}}
 
@@ -158,13 +127,12 @@ I vocaboli presenti nel documento \Glossario{} sono marcati alla loro prima occo
 % Genera automaticamente la pagina di copertina
 \newcommand{\makeFrontPage}{
   % Declare new goemetry for the title page only.
-  \newgeometry{top=1cm}
-
+  \newgeometry{top=2cm}
   \begin{titlepage}
   \begin{center}
-
+  \vspace*{2cm}
   \begin{center}
-  \includegraphics[width=8cm]{../../../logo/Square/argo_square.png}
+  \includegraphics[width=8cm]{argo_square.png}
   \end{center}
 
 %  \vspace{1cm}
@@ -173,7 +141,7 @@ I vocaboli presenti nel documento \Glossario{} sono marcati alla loro prima occo
   \textbf{\DocTitle{}}
   \end{Huge}
 
-  \textbf{\emph{Gruppo \GroupName{} \, \texttwelveudash{} \, Progetto \ProjectName{}}}
+  \textbf{\emph{Gruppo \GroupName{}}}
 
   \vspace{10pt}
 
@@ -189,26 +157,18 @@ I vocaboli presenti nel documento \Glossario{} sono marcati alla loro prima occo
 		\else
 			\textbf{Versione} & \DocVersion{} \\
 		\fi
-    \textbf{Redazione} & \multiLineCell[t]{\DocRedazione{}} \\
-    \textbf{Verifica} & \multiLineCell[t]{\DocVerifica{}} \\
     \textbf{Approvazione} & \multiLineCell[t]{\DocApprovazione{}} \\
     \textbf{Uso} & \DocUso{} \\
     \textbf{Distribuzione} & \multiLineCell[t]{\DocDistribuzione{}} \\
   \end{tabular}
   \egroup
 
-  \vspace{10pt}
-
-  \textbf{Descrizione} \\
-  \DocDescription{}
-
-%  \vspace{0.2cm}
-
-
+  \vspace*{\fill}
+  
+  \begin{figure}[H]
+	\includegraphics[height=3.5cm, center]{\ModelAssets{logo_unipd.png}}
+  \end{figure}
   \end{center}
-  % \begin{figure}[H]
-	% \includegraphics[height=3cm, right]{../../model/PROJECT_LOGO}
-  % \end{figure}
   \end{titlepage}
 
   % Ends the declared geometry for the titlepage

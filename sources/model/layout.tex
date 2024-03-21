@@ -1,4 +1,3 @@
-%\documentclass[a4paper, oneside, openany]{book}
 \documentclass{article}
 
 %**************************************************************
@@ -7,13 +6,10 @@
 
 % permette di modificare i margini
 %\usepackage[top=3.1cm, bottom=3.1cm, left=2.2cm, right=2.2cm]{geometry}
-\usepackage[a4paper]{../../model/geometry}
-
-% specifica con quale codifica bisogna leggere i file
-\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
 
 % necessario per risolvere il problema del carattere invisibile per l'a capo
-\DeclareUnicodeCharacter{00A0}{ }
+% \DeclareUnicodeCharacter{00A0}{ }
 
 % per scrivere in italiano e in inglese;
 % l'ultima lingua (l'italiano) risulta predefinita
@@ -55,9 +51,6 @@
     urlcolor=Maroon  % color of external links
 }
 
-% permette al comando \url{...} di andare a capo a metà di un link
-\usepackage{breakurl}
-
 % immagini
 \usepackage{graphicx}
 
@@ -82,7 +75,7 @@
 
 % permette di fare longtable larghe tutta la pagina (parametro x)
 % su Ubuntu non si può installare il pacchetto, deve essere in model/
-\usepackage{../../model/tabu}
+\usepackage{tabu}
 
 % imposta lo spazio tra le righe di una tabella
 \setlength{\tabulinesep}{6pt}
@@ -108,10 +101,10 @@
 
 % permette di includere i diagrammi Gantt
 % su Ubuntu non si può installare il pacchetto, deve essere in model/
-\usepackage{../../model/pgfgantt}
+\usepackage{pgfgantt}
 
 % permette di includere i grafici a torta
-\usepackage{../../model/pgf-pie}
+\usepackage{pgf-pie}
 
 % necessario per pgf-pie
 \usepackage{tikz}
@@ -125,24 +118,36 @@
 % permetti di calcolare le larghezze facendo calcoli
 \usepackage{calc}
 
+
+%%
+%% Definizione di path globali
+%%
+% Path assoluta a questa directory, va passato come argomento il resto della path
+\newcommand{\ModelPath}[1]{/data/sources/model/#1}
+
+% Path per accedere a modelassets
+\newcommand{\ModelAssets}[1]{\ModelPath{modelassets}/#1}
+
+% Path globali per la ricerca di immagini
+\graphicspath{
+	{/data/logo/PNG}
+	{/data/logo/Square}
+}
+
+
+
 \fancypagestyle{plain}{
 	% cancella tutti i campi di intestazione e piè di pagina
 	\fancyhf{}
 	\lhead{
-		\includegraphics[width=1.5cm, keepaspectratio=true]{../../../logo/PNG/argo_icona.png}
+		\includegraphics[width=1.5cm, keepaspectratio=true]{argo_icona.png}
 		\parbox[b]{5cm}{
 			\emph{\GroupName{}} \vspace{0pt} \\
 			\emph{Progetto \ProjectName{}} \vspace{0pt}
 		}
 	}
 	\chead{}
-	%\rhead{
-	%	\slshape \leftmark
-	%}
-	% Stampa la sezione in alto a destra sull'header
-	% \rhead{
-	% 	\includegraphics[height=1.25cm, width=1.25cm, keepaspectratio=true]{../../model/PROJECT_LOGO}
-	% }
+
 
 	\lfoot{
 		\DocTitle{} \\
@@ -153,7 +158,7 @@
 			v \DocVersion{}
 		\fi
 	}
-	\rfoot{Pagina \thepage{} di \pageref{LastPage}}
+	\rfoot{\thepage{} di \pageref{LastPage}}
 
 	% Visualizza una linea orizzontale in cima e in fondo alla pagina
 	\renewcommand{\headrulewidth}{0.3pt}
@@ -196,18 +201,6 @@
   stringstyle=\color{red},    % string literal style
   tabsize=4,                  % sets default tabsize
   firstnumber=1      % visualizza i numeri dalla prima linea
-}
-
-\lstdefinelanguage{JavaScript}{
-keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
-ndkeywords={class, export, boolean, throw, implements, import, this},
-ndkeywordstyle=\color{darkgray}\bfseries,
-identifierstyle=\color{black},
-sensitive=false,
-comment=[l]{//},
-morecomment=[s]{/*}{*/},
-morestring=[b]',
-morestring=[b]"
 }
 
 % Permetti di utilizzare il grassetto per i caratteri Typewriter (per es. il font di \code{...} e \file{...})
@@ -254,7 +247,6 @@ morestring=[b]"
 \makeatletter
 \def\toclevel@subsubparagraph{6}
 \makeatother
-
 % Use \ul{arg} to undlerline text
 \usepackage{soul}
 
@@ -264,3 +256,15 @@ morestring=[b]"
 
 % Set vertical space in tables
 \def\arraystretch{1.5}
+
+% Modifica font
+\usepackage{fontspec}
+
+\setmainfont{Poppins}[
+    Path=\ModelAssets{poppins/} ,
+    Extension = .otf ,
+    UprightFont=*-Regular ,
+    BoldFont=*-Bold ,
+    ItalicFont=*-Italic ,
+    BoldItalicFont=*-BoldItalic
+]
