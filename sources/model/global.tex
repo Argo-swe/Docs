@@ -1,0 +1,172 @@
+%%%%%%%%%%%%%%
+%  COSTANTI  %
+%%%%%%%%%%%%%%
+
+% In questa prima parte vanno definite le 'costanti' utilizzate da due o più documenti.
+% Serve a dare la giusta formattazione alle parole presenti nel glossario
+% il nome del comando \glossary è già usato da LaTeX
+% permette di distingure la prima occorrenza della parola nel documento
+\usepackage{xparse}
+\ExplSyntaxOn
+\seq_new:N \l_hernan_seq
+\NewDocumentCommand{\glossario}{m}{
+    \seq_if_in:NnTF{\l_hernan_seq}{#1}{
+        #1
+    }{
+        \seq_put_left:Nn{\l_hernan_seq}{#1}
+        \textit{#1\ped{\ped{G}}}
+    }
+}
+\ExplSyntaxOff
+
+% Meglio non mettere gli \emph dentro le costanti, in certi casi creano problemi
+\newcommand{\GroupName}{Argo}
+\newcommand{\GroupEmail}{argo.unipd@gmail.com}
+\newcommand{\ProjectName}{}
+\newcommand{\ProjectVersion}{}
+
+\newcommand{\DemoName}{DEMO_NAME}
+
+\newcommand{\Proponente}{}
+\newcommand{\Committente}{Prof. Tullio Vardanega \\ Prof. Riccardo Cardin}
+\newcommand{\CommittenteInline}{Prof. Tullio Vardanega, Prof. Riccardo Cardin}
+\newcommand{\ResponsabileInCarica}{\sebastiano}
+
+% La versione dei documenti deve essere definita qui in global, perchè serve anche agli altri documenti
+
+% Il verbale non ha versionamento.
+% Lasciare vuoto, non mettere trattini o puntini
+% Non sono permessi numeri nel nome di un comando :(
+\newcommand{\VersioneVprimo}{}
+\newcommand{\VersioneVsecondo}{}
+
+% Per riferirsi alle revisioni usare i comandi seguenti:
+\newcommand{\RTB}{Requirements and Technology Baseline}
+\newcommand{\PB}{Product Baseline}
+\newcommand{\CA}{Customer Acceptance}
+
+% Comandi utili per riferirsi alle varie fasi
+\newcommand{\AR}{Analisi dei Requisiti}
+\newcommand{\AD}{Analisi di Dettaglio}
+\newcommand{\PA}{Progettazione Architetturale}
+\newcommand{\PD}{Progettazione di Dettaglio}
+\newcommand{\Cod}{Codifica}
+\newcommand{\VV}{Verifica e Validazione}
+
+% Comandi utili per riferirsi ai componenti del gruppo (Diari delle modifiche)
+\newcommand{\tommaso}{Tommaso Stocco}
+\newcommand{\sebastiano}{Sebastiano Lewental}
+\newcommand{\marco}{Marco Cristo}
+\newcommand{\riccardo}{Riccardo Cavalli}
+\newcommand{\raul}{Raul Pianon}
+\newcommand{\martina}{Martina Dall'Amico}
+\newcommand{\mattia}{Mattia Zecchinato}
+
+
+% Comandi utili per riferirsi ai ruoli di progetto
+\newcommand{\Responsabile}{\textit{Responsabile di Progetto}}
+\newcommand{\Amministratore}{\textit{Amministratore}}
+\newcommand{\Analista}{\textit{Analista}}
+\newcommand{\Progettista}{\textit{Progettista}}
+\newcommand{\Programmatore}{\textit{Programmatore}}
+\newcommand{\Verificatore}{\textit{Verificatore}}
+\newcommand{\Redattore}{\textit{Redattore}}
+
+\newcommand{\Amministratrice}{\textit{Amministratrice}}
+\newcommand{\Programmatrice}{\textit{Programmatrice}}
+\newcommand{\Redattrice}{\textit{Redattrice}}
+
+
+\newcommand{\ScopoDelProdotto}{}
+
+\newcommand{\ScopoDelProdottoEng}{}
+
+\newcommand{\ToBeContinued}{\textit{Continua nella prossima pagina}}
+
+% Altri comandi utili
+\newcommand{\email}{email}
+\newcommand*{\sezione}[1]{\hyperref[{#1}]{sezione §\ref*{#1}}}
+\newcommand*{\appendice}[1]{\hyperref[{#1}]{Appendice \autoref*{#1}}}
+
+% Bisognerebbe aggiungere anche altri brand utilizzati spesso nei vari documenti
+\newcommand{\Macos}{macOs}
+
+%%%%%%%%%%%%%%
+%  FUNZIONI  %
+%%%%%%%%%%%%%%
+
+% In questa seconda parte vanno definite le 'funzioni' utilizzate da due o più documenti.
+
+% Comando per usare comodamente le virgolette
+\newcommand{\virgolette}[1]{``#1''}
+
+\newcommand\flextt{%
+	\fontdimen2\font=0.2em% interword space
+	\fontdimen3\font=0.1em% interword stretch
+	\fontdimen4\font=0.1em% interword shrink
+	\fontdimen7\font=0.2em% extra space
+	\hyphenchar\font=`\-
+}
+
+% Serve a dare la giusta formattazione al codice inline
+\newcommand{\code}[1]{\ttfamily\flextt{#1}\normalfont}
+
+% Serve a dare la giusta formattazione a tutte le path presenti nei documenti
+\newcommand{\file}[1]{\flextt{#1}}
+
+% Permette di andare a capo all'interno di una cella in una tabella
+\newcommand{\multiLineCell}[2][c]{\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+
+% Per l'allineamento delle immagini
+\usepackage[export]{adjustbox}
+
+% Genera automaticamente la pagina di copertina
+\newcommand{\makeFrontPage}{
+  % Declare new goemetry for the title page only.
+  \newgeometry{top=2cm}
+  \begin{titlepage}
+  \begin{center}
+  \vspace*{2cm}
+  \begin{center}
+  \includegraphics[width=8cm]{argo_square.png}
+  \end{center}
+
+%  \vspace{1cm}
+
+  \begin{Huge}
+  \textbf{\DocTitle{}}
+  \end{Huge}
+
+  \textbf{\emph{Gruppo \GroupName{}}}
+
+  \vspace{10pt}
+
+  \bgroup
+  \def\arraystretch{1.3}
+  \begin{tabular}{ r|l }
+    \multicolumn{2}{c}{\textbf{Informazioni sul documento}} \\
+    \hline
+		% differenzia a seconda che \DocVersion{} stampi testo o no
+		\setbox0=\hbox{\DocVersion{}\unskip}\ifdim\wd0=0pt
+			% nulla (non ho trovato come togliere l'a capo)
+			\\
+		\else
+			\textbf{Versione} & \DocVersion{} \\
+		\fi
+    \textbf{Approvazione} & \multiLineCell[t]{\DocApprovazione{}} \\
+    \textbf{Uso} & \DocUso{} \\
+    \textbf{Distribuzione} & \multiLineCell[t]{\DocDistribuzione{}} \\
+  \end{tabular}
+  \egroup
+
+  \vspace*{\fill}
+  
+  \begin{figure}[H]
+	\includegraphics[height=3.5cm, center]{\ModelAssets{logo_unipd.png}}
+  \end{figure}
+  \end{center}
+  \end{titlepage}
+
+  % Ends the declared geometry for the titlepage
+  \restoregeometry
+}
