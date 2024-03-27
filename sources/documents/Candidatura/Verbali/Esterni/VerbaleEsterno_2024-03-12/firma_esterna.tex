@@ -1,0 +1,28 @@
+\begin{samepage}
+
+    \vspace*{\fill}
+    Luogo e Data: \\
+    Padova (PD) 2024-03-12 \\
+
+    \vspace{10px}
+
+    \begin{tikzpicture}[overlay]
+        \node [anchor = south west] at (0cm,-0.14cm) {Firma:};
+    %   \node [anchor = south east] at (\textwidth-1cm,-0.6cm) {\includegraphics[width=5.5cm]{path/to/signature.png}}; % Dimensioni e coordinate da variare in base a ciascuna firma
+        \node [anchor = north east] at (\textwidth,-0.1cm) {Responsabile: \ResponsabileInCarica};
+        \draw [anchor = south west] (1.5cm,0cm) -- (\columnwidth,0cm);
+    \end{tikzpicture}
+    
+    \vspace{20px}
+    Per approvazione: \\
+    \vspace{10px} \\
+    \begin{tikzpicture}[overlay]
+        \node [anchor = south west] at (0cm,-0.14cm) {Firma:};
+    %   \node [anchor = south east] at (\textwidth-1cm,-0.6cm) {\includegraphics[width=5.5cm]{path/to/signature.png}}; % Dimensioni e coordinate da variare in base a ciascuna firma
+        \node [anchor = north east] at (\textwidth,-0.1cm) {Referente SyncLab S.r.l.};
+        \draw [anchor = south west] (1.5cm,0cm) -- (\columnwidth,0cm);
+    \end{tikzpicture}
+    \\
+    \vspace{10px}
+
+\end{samepage}
