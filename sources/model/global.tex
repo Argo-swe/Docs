@@ -3,6 +3,7 @@
 %%%%%%%%%%%%%%
 
 % In questa prima parte vanno definite le 'costanti' utilizzate da due o più documenti.
+
 % Serve a dare la giusta formattazione alle parole presenti nel glossario
 % il nome del comando \glossary è già usato da LaTeX
 % permette di distingure la prima occorrenza della parola nel documento
@@ -22,23 +23,33 @@
 % Meglio non mettere gli \emph dentro le costanti, in certi casi creano problemi
 \newcommand{\GroupName}{Argo}
 \newcommand{\GroupEmail}{argo.unipd@gmail.com}
-\newcommand{\ProjectName}{}
+\newcommand{\ProjectName}{ChatSQL}
 \newcommand{\ProjectVersion}{}
 
 \newcommand{\DemoName}{DEMO_NAME}
 
-\newcommand{\Proponente}{}
+\newcommand{\Proponente}{Zucchetti S.p.A.}
 \newcommand{\Committente}{Prof. Tullio Vardanega \\ Prof. Riccardo Cardin}
 \newcommand{\CommittenteInline}{Prof. Tullio Vardanega, Prof. Riccardo Cardin}
 \newcommand{\ResponsabileInCarica}{\sebastiano}
 
 % La versione dei documenti deve essere definita qui in global, perchè serve anche agli altri documenti
+\newcommand{\VersionePP}{0.0.1}  % Piano di Progetto
+\newcommand{\VersioneNP}{0.0.1}  % Norme di Progetto
+\newcommand{\VersioneAR}{0.0.1}  % Analisi dei Requisiti
+\newcommand{\VersioneG}{0.0.1}   % Glossario
 
 % Il verbale non ha versionamento.
 % Lasciare vuoto, non mettere trattini o puntini
 % Non sono permessi numeri nel nome di un comando :(
 \newcommand{\VersioneVprimo}{}
 \newcommand{\VersioneVsecondo}{}
+
+% Per riferirsi ad alti documenti globalmente, se la versione nella parte soprastante è vuota il numero non compare
+\newcommand{\PianoDiProgetto}{\emph{Piano di Progetto v\VersionePP{}}}
+\newcommand{\NormeDiProgetto}{\emph{Norme di Progetto v\VersioneNP{}}}
+\newcommand{\AnalisideiRequisiti}{\emph{Analisi dei Requisiti v\VersioneAR{}}}
+\newcommand{\Glossario}{\emph{Glossario v\VersioneG{}}}
 
 % Per riferirsi alle revisioni usare i comandi seguenti:
 \newcommand{\RTB}{Requirements and Technology Baseline}
@@ -80,6 +91,11 @@
 \newcommand{\ScopoDelProdotto}{}
 
 \newcommand{\ScopoDelProdottoEng}{}
+
+\newcommand{\GlossarioIntroduzione}{
+  Insieme al progetto il gruppo fornisce un glossario nel quale sono raccolti i termini tecnici, gli acronimi e le parole che richiedono chiarimenti utilizzate nella documentazione.\\
+  I vocaboli presenti nel \Glossario{} sono marcati alla loro prima occorrenza nel documento con una \textit{\small{G}} al pedice. \\
+}
 
 \newcommand{\ToBeContinued}{\textit{Continua nella prossima pagina}}
 
@@ -137,7 +153,7 @@
   \textbf{\DocTitle{}}
   \end{Huge}
 
-  \textbf{\emph{Gruppo \GroupName{}}}
+  \textbf{\emph{Gruppo \GroupName{} \, \texttwelveudash{} \, Progetto \ProjectName{}}}
 
   \vspace{10pt}
 
