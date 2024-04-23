@@ -20,5 +20,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 	texlive-latex-recommended \
 	texlive-luatex \
 	texlive-pictures \
+	texlive-fonts-extra\
 	zip \
 	&& rm -rf /var/lib/apt/lists/*
