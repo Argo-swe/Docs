@@ -16,3 +16,4 @@ sudo apt-get -qq install -y --no-install-recommends \
 	texlive-latex-recommended \
 	texlive-luatex \
 	texlive-pictures\
+	texlive-fonts-extra\
