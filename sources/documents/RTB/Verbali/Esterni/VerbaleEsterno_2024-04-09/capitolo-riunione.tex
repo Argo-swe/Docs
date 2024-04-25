@@ -48,7 +48,7 @@ La struttura del dizionario dati sarà a discrezione dei fornitori e conterrà l
 
 \textbf{Domanda:} Quindi ci si aspetta un pre-prompt?
 
-\textbf{Risposta:} Quando il dizionario dati è di dimensioni ridotte, come tre tabelle, può essere contenuto interamente all’interno del prompt. Però, se il dizionario è di maggiore dimensione, come mille tabelle, si presentano dei problemi tra cui il costo elevato dell’elaborazione di un prompt con numerosi token. Teoricamente è possibile avere prompt grandi ma è meglio mantenerli piccoli, capendo quali siano le sezioni pertinenti alla richiesta dell’utente o meno. Diventa così necessario capire il metodo con cui minimizzare il dizionario dati durante la creazione del prompt.
+\textbf{Risposta:} Quando il dizionario dati è di dimensioni ridotte (ad esempio uno con tre tabelle), può essere contenuto interamente all’interno del prompt. Tuttavia, se il dizionario è di maggiore dimensione (come in un caso con mille tabelle), si presentano dei problemi tra cui il costo elevato dell’elaborazione di un prompt con numerosi token. Teoricamente è possibile avere prompt grandi ma è meglio mantenerli piccoli, capendo quali siano le sezioni pertinenti alla richiesta dell’utente o meno. Diventa così necessario capire il metodo con cui minimizzare il dizionario dati durante la creazione del prompt.
 [la proponente esegue una dimostrazione, facendo elaborare ad un LLM un prompt e aggiungendo progressivamente dettagli superflui, è evidente che il modello, all’aggiunta di dati superflui inizi ad allucinare]
 
 \subsubsection{Funzionalità di debug}
