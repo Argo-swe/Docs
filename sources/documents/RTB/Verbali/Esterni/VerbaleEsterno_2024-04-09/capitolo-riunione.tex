@@ -11,23 +11,23 @@ Il gruppo ha affidato il compito di moderare l’incontro al responsabile in car
 
 \textbf{Domanda:} È stata ideata una bozza riguardante i casi d'uso per avere un riscontro dalla Proponente per capire se rispetta la visione dell’applicazione proposta nel capitolato.
 Nel documento sono stati pensati i tre attori principali: un Utente Generico, un Utente Non Autenticato e un Tecnico.
-L'utente generico può visualizzare il prompt finale a seguito dell'inserimento della richiesta in linguaggio naturale e alla selezione del dizionario dati. La visualizzazione della lista dei dizionari dati è sempre possibile per l'utente generico. Quest'ultimo, autenticandosi, acquisisce permessi aggiuntivi e diventa un Tecnico.
-La motivazione di questa scelta deriva dalla seguente considerazione: un utente generico, una volta autenticato, diviene un tecnico, il quale non ha più opportunità di fare il login, ma solo il logout. Se un tecnico ereditasse le funzionalità direttamente da un utente generico, dotato dell'opportunità di autenticarsi, questa sarebbe disponibile anche al tecnico. Da qui la necessità di distinzione tra utente generico e utente non autenticato.
+L'Utente Generico può visualizzare il prompt finale a seguito dell'inserimento della richiesta in linguaggio naturale e alla selezione del dizionario dati. La visualizzazione della lista dei dizionari dati è sempre possibile per l'Utente Generico. Quest'ultimo, autenticandosi, acquisisce permessi aggiuntivi e diventa un Tecnico.
+La motivazione di questa scelta deriva dalla seguente considerazione: un Utente Generico, una volta autenticato, diviene un Tecnico, il quale non ha più opportunità di fare il login, ma solo il logout. Se un Tecnico ereditasse le funzionalità direttamente da un Utente Generico, dotato dell'opportunità di autenticarsi, questa sarebbe disponibile anche al Tecnico. Da qui la necessità di distinzione tra Utente Generico e Utente Non Autenticato.
 
 \textbf{Risposta:} La Proponente suggerisce di rimanere attinenti ai metodi appresi nel corso di Ingegneria del Software. Mantenendo come priorità la logica e la funzionalità.
 
-\subsubsection{Gestione login per utente tecnico}
+\subsubsection{Gestione login per utente Tecnico}
 
 \textbf{Domanda:} La Proponente suggerisce un metodo diverso da quello proposto per separare la funzione login dalle funzioni proprie del Tecnico?
 
 \textbf{Risposta:} Nello schema proposto dai Fornitori, è ragionevole che l'Utente Generico non sia interessato al login, tuttavia la soluzione ottimale sarebbe poterlo fare per ogni attore. Quindi, accedendo al sito, si dovrebbe potersi autenticare a priori.
 Ciò che è stato ideato dai fornitori nei casi d’uso ammette l’interazione da parte dell’Utente Generico con l’applicazione senza autenticazione. La Proponente suggerisce di adottare la funzione di login anche per questo attore, ma tenendo come riferimento prioritario le nozioni fornite dal corso. 
 
-\subsubsection{Necessità login per utente generico}
+\subsubsection{Necessità login per Utente Generico}
 
-\textbf{Domanda:} C'è la preferenza di avere un login anche per l'utente generico?
+\textbf{Domanda:} C'è la preferenza di avere un login anche per l'Utente Generico?
 
-\textbf{Risposta:} La Proponente non ha preferenze specifiche, sottolinea però che se l’Utente consuma risorse costose, come delle chiamate API a pagamento, è interessata a limitare l’accesso tramite un login, perciò se i fornitori decideranno di implementare il requisito opzionale delle chiamate API, allora la Proponente richiede l’adozione dell’autenticazione anche per l’Utente generico. Rispetto all’attore Tecnico, il quale tratta dati che verranno resi in qualche modo persistenti e richiedono spazio di archiviazione, la funzione di login è necessaria.
+\textbf{Risposta:} La Proponente non ha preferenze specifiche, sottolinea però che se l’Utente consuma risorse costose, come delle chiamate API a pagamento, è interessata a limitare l’accesso tramite un login, perciò se i fornitori decideranno di implementare il requisito opzionale delle chiamate API, allora la Proponente richiede l’adozione dell’autenticazione anche per l’Utente Generico. Rispetto all’attore Tecnico, il quale tratta dati che verranno resi in qualche modo persistenti e richiedono spazio di archiviazione, la funzione di login è necessaria.
 
 \subsubsection{Numero di attori}
 
@@ -36,11 +36,11 @@ Ciò che è stato ideato dai fornitori nei casi d’uso ammette l’interazione 
 \textbf{Risposta:} Sì.
 
 
-\subsubsection{Ulteriori funzionalità per utente tecnico}
+\subsubsection{Ulteriori funzionalità per utente Tecnico}
 
-\textbf{Domanda:} Il tecnico necessita di ulteriori funzionalità?
+\textbf{Domanda:} Il Tecnico necessita di ulteriori funzionalità?
 
-\textbf{Risposta:} Gli altri gruppi hanno identificato che il tecnico può svolgere anche le attività proprie dell’utente generico, ma, quando fa delle richieste, potrebbe aver bisogno di una struttura che lo aiuti a debuggare il sistema.
+\textbf{Risposta:} Gli altri gruppi hanno identificato che il Tecnico può svolgere anche le attività proprie dell’Utente Generico, ma, quando fa delle richieste, potrebbe aver bisogno di una struttura che lo aiuti a debuggare il sistema.
 La struttura del dizionario dati sarà a discrezione dei fornitori e conterrà la lista delle tabelle, dati, relazioni etc. Inoltre sarà presente sia una descrizione tecnica che una in linguaggio naturale: esse entreranno in relazione tra loro quando utilizzate dal LLM. In seguito alla compilazione del dizionario dati, il Tecnico potrebbe voler testare alcune richieste per avere un riscontro sul legame tra queste descrizioni e la richiesta, una modalità di debug sarebbe utile al Tecnico per capire come il dizionario dati inserito, sia o meno di aiuto alla creazione del prompt.
 
 
@@ -71,9 +71,9 @@ La struttura del dizionario dati sarà a discrezione dei fornitori e conterrà l
 \textbf{Risposta:} Un’opzione sarebbe fare la extend del caso normale, che avviene quando il Tecnico è interessato a vedere queste informazioni aggiuntive.
 
 
-\subsubsection{Modalità di visualizzazione per utente tecnico}
+\subsubsection{Modalità di visualizzazione per utente Tecnico}
 
-\textbf{Domanda:} Il tecnico possiede solo la visualizzazione di debugging o anche quella normale?
+\textbf{Domanda:} Il Tecnico possiede solo la visualizzazione di debugging o anche quella normale?
 
 
 \textbf{Risposta:} Entrambe, perché sono due cose diverse. Se il dizionario è molto piccolo, la situazione è semplice. Quando invece un dizionario è grande, il prompt può diventare fuorviante se vengono introdotte tabelle che non servono o non ci sono tabelle che servono. Vediamo una controprova.
