@@ -1,28 +1,28 @@
 \section{Riunione}
-\subsection{Ordine del Giorno}
+\subsection{Ordine del giorno}
 \begin{itemize}
 	\item Assegnazione dei ruoli di progetto;
 	\item Distribuzione delle ore;
-	\item Pianificazione del primo sprint (attività, elaborazione documenti, riunioni interne ed esterne);
-	\item Preventivo del primo sprint;
-	\item Raffinamento del way of working;
+	\item Pianificazione del primo \glossario{sprint} (attività, elaborazione documenti, frequenza riunioni interne ed esterne);
+	\item Preventivo del primo \glossario{sprint};
+	\item Raffinamento del \glossario{\WoW};
 	\item Discussione sull'impiego di uno strumento per la rendicontazione delle ore;
 	\item Definizione precisa delle responsabilità di ciascun ruolo;
 	\item Analisi della struttura del changelog;
-	\item Programmazione di un incontro con la Proponente;
-	\item Discussione sulla possibilità di adottare una metodologia agile.
+	\item Programmazione di un incontro con la \glossario{Proponente};
+	\item Discussione sulla possibilità di adottare una metodologia \glossario{Agile}.
 \end{itemize}
 
 \subsection{Discussione e decisioni}
 
 \subsubsection{Assegnazione ruoli}
-Il team ha confermato la scelta, presa già durante la stesura del preventivo, di suddividere il flusso di lavoro in sprint della durata di due settimane. La prima iterazione si svolgerà dal 3 aprile al 19 aprile 2024. Fino al 19 aprile, il responsabile del gruppo è \riccardo. Per il primo sprint sono stati individuati i seguenti ruoli:
+Il team ha confermato la scelta, presa già durante la stesura del preventivo in fase di candidatura, di suddividere il flusso di lavoro in \glossario{sprint} della durata di due settimane. La prima iterazione si svolgerà dal 3 aprile al 19 aprile 2024. Fino al 19 aprile, il responsabile del gruppo è \riccardo. Per il primo \glossario{sprint} sono stati individuati i seguenti ruoli:
 \begin{itemize}
-	\item 1 amministratore, incaricato di gestire l'infrastruttura a supporto del way of working e di redigere le norme di progetto e il glossario;
-	\item 1 responsabile, incaricato di coordinare le attività, redigere il piano di progetto e gestire la comunicazione tra cliente e fornitore o tra fornitore e committente;
-	\item 3 analisti, incaricati di redigere il documento di analisi dei requisiti e formulare le domande da porre alla Proponente;
-	\item 1 verificatore, incaricato di controllare i documenti al momento del caricamento sul repository;
-	\item 1 progettista, incaricato di definire una prima versione del dizionario dati e individuare gli strumenti di sviluppo, lavorando a stretto contatto con il team di analisti.
+	\item 1 amministratore, incaricato di gestire l'infrastruttura a supporto del \glossario{\WoW} e redigere le \NdP\ e il \Gls;
+	\item 1 responsabile, incaricato di coordinare le attività, redigere il \PdP\ e gestire la comunicazione tra cliente e fornitore o tra fornitore e \glossario{committente};
+	\item 3 analisti, incaricati di redigere il documento di \AdR\ e formulare le domande da porre alla \glossario{Proponente};
+	\item 1 verificatore, incaricato di controllare i documenti al momento del caricamento sul \glossario{repository};
+	\item 1 progettista, incaricato di definire una prima versione del \glossario{dizionario dati} e individuare gli strumenti di sviluppo, lavorando a stretto contatto con il team di analisti.
 \end{itemize}
 
 \vspace{0.5\baselineskip}
@@ -36,19 +36,19 @@ Di seguito è riportata la distribuzione dei ruoli:
 \end{itemize}
 
 \vspace{0.5\baselineskip}
-Sulla base delle considerazioni di cui sopra, il team ha fissato la stesura dei seguenti documenti, a cui si aggiungerà, nelle fasi successive, il piano di qualifica:
+Sulla base delle considerazioni di cui sopra, il team ha fissato la stesura dei seguenti documenti, a cui si aggiungerà, nelle fasi successive, il \PdQ:
 \begin{itemize}
-	\item Norme di progetto;
-	\item Analisi dei requisiti;
-	\item Glossario;
-	\item Piano di progetto.
+	\item \NdP;
+	\item \AdR;
+	\item \Gls;
+	\item \PdP.
 \end{itemize}
 
-\subsubsection{Versionamento dei documenti} \label{versionamento}
-Poiché ogni tentativo di integrazione nel ramo base del repository su GitHub, per essere approvato, richiede una revisione da parte del verificatore, il team ha discusso la possibilità di ridefinire il registro delle modifiche. Invece di mutare la versione ad ogni piccola revisione, si è deciso di cambiare la struttura del changelog, inserendo la redazione e la verifica nella stessa riga. Ciò significa che qualsiasi versione, anche la 0.0.1, deve necessariamente essere accompagnata da una fase di verifica. La formula scelta dal team è X.Y.Z, con:
+\subsubsection{\glossario{Versionamento} dei documenti} \label{sec:versionamento}
+Poiché ogni tentativo di integrazione nel \glossario{ramo base} del \glossario{repository} su \glossario{GitHub}, per essere approvato, richiede una revisione da parte del verificatore, il team ha discusso la possibilità di ridefinire il registro delle modifiche. Invece di mutare la versione ad ogni piccola revisione, si è deciso di cambiare la struttura del changelog, inserendo la redazione e la \glossario{verifica} nella stessa riga. Ciò significa che qualsiasi versione, anche la 0.0.1, deve necessariamente essere accompagnata da una fase di \glossario{verifica}. La formula scelta dal team è X.Y.Z, con:
 \begin{itemize}
-	\item X che avanza ad ogni approvazione del responsabile (release) detta "major";
-	\item Y che avanza ad ogni verifica generale di un documento detta "minor";
+	\item X che avanza ad ogni approvazione del responsabile (\glossario{release}) detta "major";
+	\item Y che avanza ad ogni \glossario{verifica} generale di un documento detta "minor";
 	\item Z che avanza ad ogni modifica (verificata) del documento.
 \end{itemize}
 
@@ -56,23 +56,23 @@ Poiché ogni tentativo di integrazione nel ramo base del repository su GitHub, p
 Il registro modifiche contiene le seguenti colonne: \\
 \vspace{\baselineskip}
 \hspace{1cm} | Versione | Data | Redazione | Verifica | Descrizione | \\
-Inoltre, il gruppo ha discusso l'utilizzo del registro delle modifiche come finestra dei task svolti dall'incontro precedente a quello attuale. Tuttavia, questa decisione richiede una fase di studio prima di essere normata.
+Inoltre, il gruppo ha discusso l'utilizzo del registro delle modifiche come finestra dei task svolti dall'incontro precedente a quello attuale. Tuttavia, questa decisione richiede una fase di studio prima di essere \glossario{normata}.
 
-\subsubsection{Way of working}
+\subsubsection{Way of Working}
 Il gruppo ha valutato la proposta del responsabile di utilizzare uno strumento software per rendicontare le ore. Dopo un'attenta analisi e una ricerca sul web, sono state evidenziate due possibili alternative:
 \begin{itemize}
-	\item Google Sheets: soluzione semplice, intuitiva e facilmente integrabile con Google Docs;
-	\item Jira: soluzione professionale e ricca di feature (tra cui la creazione dei diagrammi di Gantt), ma impegnativa per la sua curva di apprendimento ripida e le limitazioni dal punto di vista economico.
+	\item \glossario{Google Sheets}: soluzione semplice, intuitiva e facilmente integrabile con \glossario{Google Docs};
+	\item \glossario{Jira}: soluzione professionale e ricca di feature (tra cui la creazione del \glossario{diagramma di Gantt}), ma impegnativa per la sua curva di apprendimento ripida e le limitazioni dal punto di vista economico.
 \end{itemize}
 La decisione finale è stata quella di utilizzare i fogli di Google come strumento per la rendicontazione delle ore, risparmiando tempo per studiare altre tecnologie. 
 
 \subsubsection{Pianificazione primo sprint}
-Dopo aver assegnato i ruoli di progetto e aver affinato il way of working, il team ha distribuito equamente le ore, tenendo in considerazione i costi orari e il budget stimato. Dato che il primo sprint è focalizzato sull'individuazione e lo studio delle tecnologie, si è deciso di mantenere una media di circa 8 ore produttive per ruolo. La pianificazione dello sprint sarà opportunamente documentata nel piano di progetto. Per quanto riguarda l'approccio al lavoro, il responsabile ha proposto di adottare una metodologia agile. Il team ha quindi valutato i pro e contro dello Scrum (un framework agile già affrontato durante il percorso accademico) rispetto all'approccio adottato nella fase di candidatura.
+Dopo aver assegnato i ruoli di progetto e aver affinato il \glossario{\WoW}, il team ha distribuito equamente le ore, tenendo in considerazione i costi orari e il budget stimato. Dato che il primo \glossario{sprint} è focalizzato sull'individuazione delle tecnologie e la stesura dei documenti, si è deciso di mantenere una media di circa 8 ore produttive per ruolo. La pianificazione dello \glossario{sprint} sarà opportunamente documentata nel \PdP. Per quanto riguarda l'approccio al lavoro, il responsabile ha proposto di seguire una metodologia \glossario{Agile}. Il team ha quindi valutato i pro e contro dello \glossario{Scrum} (un \glossario{framework} già sperimentato durante il percorso accademico) rispetto all'approccio adottato in fase di candidatura.
 \begin{itemize}
-	\item Scrum: consente un'organizzazione del lavoro trasparente e un miglioramento continuo grazie a una pianificazione dettagliata degli sprint, riunioni giornaliere e retrospettive. Tuttavia, questo approccio necessita di un'attenta gestione del tempo, delle risorse e del budget e richiede che tutti i membri del gruppo siano allineati. Ciononostante, fissare degli incontri giornalieri (della durata massima di 15 minuti) può ridurre notevolmente il rischio di rallentamenti e aiuta il responsabile a monitorare e coordinare l'avanzamento dei lavori;
-	\item Approccio corrente: riduce il numero di riunioni settimanali e offre maggior libertà dal punto di vista logistico. Una volta pianificate le attività, il gruppo si impegna a organizzare una riunione a settimana, a cui è necessario partecipino tutti i membri del gruppo. Tuttavia, le riunioni saranno senz'altro più lunghe e il rischio è che sorgano problemi inattesi.
+	\item \glossario{Scrum}: consente un'organizzazione del lavoro trasparente e un miglioramento continuo grazie a \glossario{Scrum Meeting} e \glossario{retrospettive}. Tuttavia, questo approccio richiede che tutti i membri del gruppo siano allineati. Ciononostante, fissare degli incontri giornalieri (della durata massima di 15 minuti) può ridurre notevolmente il rischio di rallentamenti e aiuta il responsabile a monitorare e coordinare l'avanzamento dei lavori;
+	\item Approccio corrente: riduce il numero di riunioni settimanali e offre maggior indipendenza. Una volta pianificate le attività, il gruppo si impegna a organizzare una riunione a settimana, a cui è necessario partecipino tutti i membri del gruppo. Tuttavia, le riunioni saranno senz'altro più lunghe e il rischio è che sorgano problemi inattesi.
 \end{itemize}
 
 \vspace{0.5\baselineskip}
-In conclusione, il team ha deciso di adottare una metodologia agile, fissando come obiettivo lo studio del framework Scrum. Tutte le decisioni prese durante il meeting (inclusa la scelta di verbalizzare solamente le riunioni a cui partecipano almeno 5 membri del gruppo) saranno registrate nel documento Norme di Progetto.
+In conclusione, il team ha deciso di adottare una metodologia \glossario{Agile}, fissando come obiettivo lo studio del \glossario{framework} \glossario{Scrum}. Tutte le decisioni prese durante il meeting (inclusa la scelta di verbalizzare solamente le riunioni a cui partecipano almeno 5 membri del gruppo) saranno registrate nel documento \NdP.
 \clearpage
