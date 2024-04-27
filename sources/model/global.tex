@@ -12,10 +12,10 @@
 \seq_new:N \l_hernan_seq
 \NewDocumentCommand{\glossario}{m}{
     \seq_if_in:NnTF{\l_hernan_seq}{#1}{
-        #1
+      \textit{#1\ped{\ped{G}}}
     }{
-        \seq_put_left:Nn{\l_hernan_seq}{#1}
-        \textit{#1\ped{\ped{G}}}
+      \seq_put_left:Nn{\l_hernan_seq}{#1}
+      \textit{#1\ped{\ped{G}}}
     }
 }
 \ExplSyntaxOff
@@ -71,6 +71,9 @@
 \newcommand{\NdP}{\emph{Norme di Progetto}}
 \newcommand{\AdR}{\emph{Analisi dei Requisiti}}
 \newcommand{\Gls}{\emph{Glossario}}
+
+%Comando shortcut per riferirsi al Way of Working
+\newcommand{\WoW}{Way of Working}
 
 % Comandi utili per riferirsi ai componenti del gruppo (Diari delle modifiche)
 \newcommand{\tommaso}{Tommaso Stocco}
@@ -175,7 +178,7 @@
 			% nulla (non ho trovato come togliere l'a capo)
 			\\
 		\else
-			\textbf{Versione} & \DocVersion{} \\
+			\textbf{Versione} & \faIcon{tag} \DocVersion{} \\
 		\fi
     \textbf{Approvazione} & \multiLineCell[t]{\DocApprovazione{}} \\
     \textbf{Uso} & \DocUso{} \\

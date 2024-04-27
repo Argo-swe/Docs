@@ -155,7 +155,7 @@
 		\setbox0=\hbox{\DocVersion{}\unskip}\ifdim\wd0=0pt
 			% nulla
 		\else
-			v \DocVersion{}
+			\faIcon{tag} v \DocVersion{}
 		\fi
 	}
 	\rfoot{\thepage{} di \pageref{LastPage}}
@@ -225,7 +225,7 @@
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
 
-% Per aggiungere un nuovo lovello di profondita (subsubparagraph)
+% Per aggiungere un nuovo livello di profondita (subsubparagraph)
 
 \makeatletter
 \newcounter{subsubparagraph}[subparagraph]
