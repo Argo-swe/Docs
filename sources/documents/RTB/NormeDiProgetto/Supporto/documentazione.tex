@@ -1,0 +1,152 @@
+\subsection{Documentazione}
+
+\subsubsection{Descrizione}
+Il processo di documentazione registra l'informazione generata da altri processi o attività. Il processo contiene l'insieme di attività che pianificano, producono, modificano, rilasciano e mantengono i documenti legati al progetto.\\
+Il processo consiste nelle seguenti attività:
+\begin{itemize}
+  \item Implementazione del processo;
+  \item Progettazione e sviluppo;
+  \item Rilascio.
+\end{itemize}
+
+\paragraph{Implementazione del processo}\label{implementazioneprocessodocumentazione}
+Questa attività definisce quali documenti saranno generati durante il progetto, definendo per ciascuno:
+\begin{itemize}
+  \item Titolo;
+  \item Scopo;
+  \item Descrizione;
+  \item Responsabilità per contribuzione, redazione, verifica e approvazione;
+  \item Pianificazione per versioni provvisorie e finali.
+\end{itemize}
+
+\paragraph{Progettazione e sviluppo}
+Questa attività consiste nel progettare e redarre ciascun documento nel rispetto degli standard definiti per formato e contenuto, successivamente controllati dal \glossario{Verificatore}.
+
+\paragraph{Rilascio}
+Questa attività comincia con l'approvazione finale del documento da parte del \glossario{Responsabile} in carica, e della Proponente nel caso di verbali ad uso esterno. Prosegue con la pubblicazione del documento nel \glossario{repository} apposito della documentazione.
+
+\subsubsection{Lista documenti}
+I documenti da produrre e mantenere durante il corso del progetto sono:
+\begin{itemize}
+  \item \emph{Piano di Progetto};
+  \item \emph{Norme di Progetto};
+  \item \emph{Piano di Qualifica};
+  \item \emph{Analisi dei Requisiti};
+  \item \emph{Manuale Utente};
+  \item \emph{Glossario};
+  \item \emph{Verbali Interni};
+  \item \emph{Verbali Esterni}.
+\end{itemize}
+
+\subsubsection{Ciclo di vita}
+Il ciclo di vita di un documento è composto dai seguenti eventi:
+\begin{enumerate}
+  \item Vengono definite le caratteristiche di base del documento o di una sua parte come da sezione \ref{implementazioneprocessodocumentazione};
+  \item Il Redattore stila una bozza iniziale. Se è necessario l'input di più persone in maniera sincrona, tale bozza viene prodotto in un ambiente condiviso;
+  \item Prodotta una bozza di tutto il contenuto necessario, il Redattore produce una versione del documento con la forma e i metodi stabiliti in queste norme;
+  \item Viene sottoposto a verifica il risultato della redazione. Se il Verificatore propone delle modifiche, vengono attuate ritornando alla fase precedente;
+  \item In seguito a un esito positivo della verifica, se il risultato è un documento completo e che richiede rilascio, viene sottoposto ad un'approvazione finale del responsabile, bloccante in modo analogo alla verifica.
+\end{enumerate}
+
+\subsubsection{Ambiente di lavoro}
+\paragraph{\glossario{LaTeX}}
+Per lo sviluppo della documentazione del gruppo viene utilizzato un \glossario{template} \glossario{LaTeX} personalizzato. All'interno del template è definito lo stile della pagina iniziale, delle intestazioni e della formattazione generale.
+Parte del template permette l'uso di comandi personalizzati per favorire la consistenza di termini specifici spesso utilizzati (es.: nomi di documenti, nomi dei membri), inoltre è gestita sempre attraverso il template l'interazione con i termini per il Glossario.\\
+L'utilizzo del template garantisce:
+\begin{itemize}
+  \item Il disaccoppiamento di forma e contenuto della documentazione;
+  \item L'uniformità dello stile della documentazione;
+  \item La responsabilità del Redattore è il solo contenuto;
+  \item La possibilità di creare documenti in maniera modulare, conciliata in modo uniforme.
+\end{itemize}
+
+\paragraph{\glossario{Docker}}
+La compilazione di file LaTeX può differire in base al compilatore utlizzato, il sistema operativo o altre caratteristiche del sistema locale. Per garantirne l'uniformità, la compilazione dei documenti viene effettuata all'interno di un container Docker costruito a partire da un'immagine comune.
+
+\paragraph{Google Docs}
+Per scrivere un documento è spesso necessario lavorare in maniera sincrona, Google Docs permette la condivisione e il lavoro contemporaneo di più persone. I limiti del software tuttavia non permettono di generare un documento finale adeguato, per cui le produzioni tramite questo mezzo sono da considerarsi bozza da cui eseguire la coversione.
+
+\subsubsection{Struttura documenti}
+Ciascun documento è fornito di questi elementi:
+\begin{itemize}
+  \item Prima pagina:
+  \begin{itemize}
+    \item Logo del gruppo;
+    \item Titolo;
+    \item Nome del gruppo;
+    \item Nome del progetto;
+    \item Versione attuale;
+    \item Approvatore;
+    \item Uso del documento (Interno/Esterno);
+    \item Destinatari del documento;
+    \item Logo dell'Università di Padova.
+  \end{itemize}
+  \item Registro delle modifiche:
+  \begin{itemize}
+    \item Versione del documento in seguito alla modifica;
+    \item Data della modifica;
+    \item Redattore della modifica (coincide con il Verificatore nel caso di riga associata alla verifica generale, col responsabile del caso di riga associata al rilascio);
+    \item Verificatore della modifica (coincide con il Responsabile nel caso di riga associata al rilascio);
+    \item Descrizione della modifica.
+  \end{itemize}
+  \item Indice dei contenuti;
+\end{itemize}
+
+\paragraph{Verbali}
+I verbali oltre agli elementi forniti sopra possiedono una ulteriore definizione della struttura:
+\begin{enumerate}
+  \item Informazioni:
+  \begin{itemize}
+    \item Orario di inizio incontro;
+    \item Orario di fine incontro;
+    \item Mezzo di pianificazione dell'incontro;
+    \item Tipo di incontro (di persona/da remoto).
+    \item Descrizione dell'incontro;
+    \item Partecipanti all'incontro e durata partecipazione.
+  \end{itemize}
+  \item Riunione:
+  \begin{itemize}
+    \item Ordine del giorno dell'incontro;
+    \item Discussione e decisioni prese durante l'incontro, contiene il corpo principale del verbale.
+  \end{itemize}
+  \item Tabella di task ToDo/In progress:
+  \begin{itemize}
+    \item Codice della \glossario{issue} \glossario{GitHub} relativa all'incarico;
+    \item Incarico;
+    \item Incaricato/a;
+    \item Scandenza.
+  \end{itemize}
+\end{enumerate}
+
+\subsubsection{Stile}
+Di seguito sono elencate la convenzioni stilistiche adottate dalla documentazione del gruppo.
+
+\paragraph{Utilizzo del femminile}
+Quando è necessario fare riferimento tramite ruolo di progetto ad un membro del gruppo con il genere femminile, si utilizzano i seguenti termini:
+\begin{itemize}
+  \item \textbf{Responsabile} è invariato;
+  \item \textbf{Amministratrice} al posto di Amministratore;
+  \item \textbf{Analista} è invariato;
+  \item \textbf{Progettista} è invariato;
+  \item \textbf{Programmatrice} al posto di Programmatore;
+  \item \textbf{Redattrice} al posto di Redattore;
+  \item \textbf{Verificatrice} al posto di Verificatore.
+\end{itemize}
+
+\paragraph{Formattazione testo}
+\begin{itemize}
+  \item \textbf{Termini nel Glossario:} Indicati in \textit{corsivo} e con una \textit{\small{G}} a fine parola. In base a ciascun documento tale formattazione può comparire alla sola prima occorrenza (quando il documento ha lo scopo di essere letto dall'inizio alla fine), o in maniera più frequente (quando il documento può essere letto in maniera più frammentata);
+  \item \textbf{Nomi di documento:} Indicati in \textit{corsivo} con le iniziali di parola maiuscole eccetto preposizioni (es.: \textit{Piano di Progetto}, non \textit{Piano Di Progetto});
+  \item \textbf{Nomi di ruolo:} Indicati con la iniziale maiuscola e in \textit{corsivo};
+  \item \textbf{Data:} Indicata in formato YYYY-MM-DD nelle tabelle riassuntive e nei nomi dei file, in formato esteso (esempio: 20 aprile 2024) quando si trova all'interno di testo discorsivo.
+\end{itemize}
+
+\subsubsection{Strumenti}
+Gli strumenti impiegati nel processo di documentazione sono:
+\begin{itemize}
+  \item \textbf{Git:} \glossario{Version Control System} utilizzato dal gruppo;
+  \item \textbf{GitHub:} Piattaforma ospite del repository del gruppo;
+  \item \textbf{LaTeX:} \glossario{markup language} per la scrittura di documenti;
+  \item \textbf{Docker:} Software per \glossario{containerizzazione} utilizzato dal gruppo per uniformare la generazione di documenti;
+  \item \textbf{Google Docs:} Strumento per la creazione di documenti condivisi, utilizzato per la collaborazione nella redazione di un documento.
+\end{itemize}

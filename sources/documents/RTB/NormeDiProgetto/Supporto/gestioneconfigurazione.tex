@@ -1,0 +1,37 @@
+\subsection{Gestione della configurazione}
+
+\subsubsection{Descrizione}
+Il processo di gestione della configurazione si occupa di definire e gestire le componenti software utlizzate durante l'intero corso del progetto per mantenere la tracciabilità e gestire il versionamento e i rilasci di software e documentazione prodotta.
+
+\subsubsection{Versionamento}
+Il gruppo mantiene un versionamento per la documentazione nel formato:
+\[ X.Y.Z \]
+\begin{itemize}
+  \item[X] Avanza alla approvazione del Responsabile, corrisponde percui ad ogni rilascio;
+  \item[Y] Avanza ad ogni verifica completa del documento;
+  \item[Z] Avanza ad ogni modifica verificata di un documento.
+\end{itemize}
+
+\subsubsection{Repository}
+Il gruppo utilizza due repository, disponibili in \glossario{Github}:
+\begin{itemize}
+  \item Repository della documentazione: \href{https://github.com/argo-swe/docs}{https://github.com/argo-swe/docs}
+  \item Repository del codice sorgente: \href{https://github.com/argo-swe/chatsql}{https://github.com/argo-swe/chatsql}
+\end{itemize}
+Il gruppo utilizza inoltre, per hosting del sito \href{https://argo-swe.github.io}{argo-swe.github.io}, un repository, da non considerare all'interno del workflow in quanto aggiornata e mantenuta solo come "vetrina" del gruppo.
+\begin{itemize}
+  \item Repository del sito github.io: \href{https://github.com/argo-swe/argo-swe.github.io}{https://github.com/argo-swe/argo-swe.github.io}
+\end{itemize}
+
+\paragraph{Repository \emph{Docs}}
+Il repository contiene il codice sorgente in LaTeX di tutta la documentazione ufficiale generata durante il progetto, oltre all'ambiente utile alla generazione dei file PDF corrispondenti.\\
+Il repository include un file \emph{README.md} che illustra brevemente lo scopo del repository e i componenti del gruppo, un file \emph{.gitignore} per escludere il tracciamento di file ausiliari o artefatti di compilazione.\\
+La directory \emph{Logo} contiene le versioni ufficiali del logo del gruppo, in formato SVG o PNG.\\
+La directory \emph{sources} contiene il codice sorgente per la documentazione, separato in due directory: \emph{model} contiene i file di utilizzo globale all'interno della documentazione, \emph{documents} contiene, in maniera ordinata per fasi di progetto, la documentazione ufficiale.\\
+La directory \emph{tools} contiene gli strumenti \glossario{Docker} per utilizzare un ambiente unico nella compilazione e uno script per compilare autoamticamente uno o più documenti.\\
+\bigskip
+Il repository contiene un ramo base, in cui vengono inserite le versioni verificate dei documenti caricate nel repository attraverso \glossario{feature branch} su cui viene eseguita la verifica prima di eseguire \glossario{merge}.
+
+
+\paragraph{Repository \emph{ChatSQL}}
+TODO
