@@ -9,39 +9,39 @@
 \subsection{Attività svolte}
 \par All'inizio del meeting viene chiesto ai del gruppo di esporre le attività svolte durante la prima settimana di \glossario{sprint}.
 \subsubsection{\Programmatore}
-\par Vengono spiegate le tecnologie studiate e i test svolti su un \glossario{Dizionario Dati} di prova per comprendere il funzionamento dei modelli. Vengono inoltre esposti i dubbi e le difficoltà riscontrati, con un confronto tra gli altri membri per organizzare incontri e sistemare i problemi sorti. La seguente sezione è la più corposa poiché quella più discussa durante l'incontro.
+\par Vengono spiegate le tecnologie studiate e i test svolti su un \glossario{dizionario dati} di prova per comprendere il funzionamento dei modelli. Vengono inoltre esposti i dubbi e le difficoltà riscontrati, con un confronto tra gli altri membri per organizzare incontri e sistemare i problemi sorti.
 \begin{itemize}
-	\item Sono state riscontrate delle difficoltà iniziali nel lavorare ad un motore di database con esempi di database [SCLight], altrimenti non c'era modo di testare con [txtai].
-	\item L'idea iniziale è stata quella di prendere un database in formato \glossario{JSON} che potesse essere analizzato assieme alla \glossario{query} dell'utente e restituire il \glossario{prompt} con le parole prese dal \glossario{Dizionario Dati} e un punteggio in base all'accuratezza.
-	\item È stato tuttavia riscontrato un problema in [txtai] che coinvolgeva il formato \glossario{JSON}: infatti questo si presentava inadatto al modello che prediligeva quesiti posti in linguaggio naturale.
-	\item Così facendo [txtai] può trasformare la richiesta in un vettore che viene inserita in un indice di vettori.
+	\item Sono state riscontrate delle difficoltà iniziali nel lavorare ad un motore di \glossario{database} con esempi di database \glossario{SQLite}, altrimenti non c'era modo di testare con [txtai].
+	\item L'idea iniziale è stata quella di prendere uno schema di \glossario{database} in formato \glossario{JSON} che potesse essere analizzato assieme alla \glossario{query} dell'utente e restituire il \glossario{prompt} con le parole prese dal \glossario{dizionario dati} e un punteggio in base all'accuratezza.
+	\item È stato tuttavia riscontrato un problema in \glossario{txtai} che coinvolgeva il formato \glossario{JSON}: infatti questo si presentava inadatto al modello che prediligeva quesiti posti in linguaggio naturale.
+	\item Così facendo \glossario{txtai} può trasformare la richiesta in un vettore che viene inserita in un indice di vettori.
 	\item Viene dato un suggerimento sulla distribuzione dei ruoli per il prossimo \glossario{sprint}, raccomandando più programmatori e mantenere fisso quello attuale, in modo da facilitare l'apprendimento delle tecnologie al membro nuovo nel ruolo e avere maggiore personale al lavoro sul risolvimento del problema.
-	\item Viene anche esposta la necessità di trovare un formato migliore per la \glossario{LLM} che verrà poi scelta, in modo che il linguaggio risulti meno tecnico per la \glossario{LLM} o trovare un modello che supporti la lettura del \glossario{Dizionario Dati} nel formato richiesto.
-	\item Infine viene teorizzato un sistema per sviluppare un \glossario{parser} che consenta di convertire il dizionario dati dal formato \glossario{JSON} ad un formato in linguaggio naturale. Questa viene inserita nelle attività da fare
+	\item Viene anche esposta la necessità di trovare un formato migliore per la \glossario{LLM} che verrà poi scelta, in modo che il linguaggio risulti meno tecnico per la \glossario{LLM} o trovare un modello che supporti la lettura del \glossario{dizionario dati} nel formato richiesto.
+	\item Infine viene teorizzato un sistema per sviluppare un \glossario{parser} che consenta di convertire il \glossario{dizionario dati} dal formato \glossario{JSON} ad un formato in linguaggio naturale. Questa viene inserita nelle attività da fare
 \end{itemize}
 
 \subsubsection{\Amministratore}
-\par Vengono spiegate le attività svolte come la stesura della struttura del \Glossario, [mancano parti che ha fatto Tommaso]. Viene inoltre puntualizzata la necessità di un incontro con il Professor. Tullio Vardanega per un chiarimento sullo stabilimento di un criterio col quale inserire i termini nel \Glossario. Del \Glossario si discute anche il tipo di uso (se esterno o interno) e il numero di occorrenze di termini che nei documenti vanno indicati come presenti nel documento. Questi dubbi verranno esposti al Diario di Bordo del 2024-04-26.
+\par Vengono spiegate le attività svolte come la stesura della struttura del \Gls, [mancano parti che ha fatto Tommaso]. Viene inoltre puntualizzata la necessità di un incontro con il Professor. Tullio Vardanega per un chiarimento sullo stabilimento di un criterio col quale inserire i termini nel \Gls. Relativamente al \Gls\, si è discusso anche se il documento fosse a uso interno o esterno, e il numero di occorrenze di termini che nei documenti vanno indicati come riferimento al \Gls. Questi dubbi verranno esposti al diario di bordo del 26 aprile 2024.
 
 \subsubsection{\Progettista}
-\par Viene esposta la strutturazione del \glossario{Dizionario Dati} in formato \glossario{JSON} che è stato poi utilizzato come test dal \Progettista in fase di apprendimento delle tecnologie. È stata inoltre studiata la possibile composizione del \glossario{prompt} finale che sarà disponibile all'utente.
+\par Viene esposta la strutturazione del \glossario{dizionario dati} in formato \glossario{JSON} che è stato poi utilizzato come test dal progettista in fase di apprendimento delle tecnologie. È stata inoltre studiata la possibile composizione del \glossario{prompt} finale che sarà disponibile all'utente.
 
 \subsubsection{\Analista}
-\par La discussione si è centrata sulla continuazione del documento \AnalisiDeiRequisiti e sulla prossima trascrizione del documento in formato \glossario{LateX}.
+\par La discussione si è centrata sulla continuazione del documento \AdR\ e sulla prossima trascrizione del documento in formato \glossario{LateX}.
 
 \subsection{Esposizione \glossario{Jira}}
-\par Vengono esposte al gruppo le funzionalità di \glossario{Jira}: in particolare la strutturazione del diagramma di Gannt per avere una vista grafica sullo sprint e sulle attività a questo legate. Vengono inoltre spiegati i ticket e l'interazione tra questi e le pull request di Github, le quali si potranno aprire collegando un ticket e chiudere con la conseguente chiusura di questi.
+\par Vengono esposte al gruppo le funzionalità di \glossario{Jira}: in particolare la strutturazione del \glossario{diagramma di Gantt} per avere una vista grafica sullo stato di pianificazione dello sprint e sulle attività a questo legate. Vengono inoltre spiegati i ticket e l'interazione tra questi e le pull request di Github, le quali si potranno aprire collegando un ticket e chiudere con la conseguente chiusura di questi.
 
-\subsection{Discussione dei punti da trattare nel prossimo Diario di Bordo}
-\par Vengono discussi i punti salienti da trattare nel prossimo Diario di Bordo del 2024-04-26:
+\subsection{Discussione dei punti da trattare nel prossimo diario di bordo}
+\par Vengono discussi i punti salienti da trattare nel prossimo diario di bordo del 26 aprile 2024:
 \subsubsection{Done}
 \begin{itemize}
 	\item Passaggio Passaggio a \glossario{Jira Software} come \glossario{Issue Tracking System}
-	\item Studio preliminare delle tecnologie \ \rightarrow\ Studio di [Txtai], modelli e interazione tra questi e il \glossario{Dizionario Dati} in forma \glossario{JSON}.
-	\item Stesura del \glossario{Dizionario Dati}
-	\item Avanzamento scrittura dei documenti (\PianoDiProgetto, \NormeDiProgetto, \AnalisiDeiRequisiti, \Glossario)
+	\item Studio preliminare delle tecnologie \ \rightarrow\ Studio di [Txtai], modelli e interazione tra questi e il \glossario{dizionario dati} in formato \glossario{JSON}.
+	\item Stesura del \glossario{dizionario dati}
+	\item Avanzamento scrittura dei documenti (\PdP, \NdP, \AdR, \Gls)
 	\item Consuntivo primo \glossario{sprint}
-	\item Modifica del template \glossario{LaTeX} \ \rightarrow\ Modifiche estetiche e funzionali, come il cambiamento della tabella delle attività da svolgere con l'inserimento delle colonne per \glossario{ticket} e date di scadenza di questi
+	\item Modifica del template \glossario{LaTeX} \ \rightarrow\ Modifiche estetiche e funzionali, come il cambiamento della tabella delle attività da svolgere con l'inserimento delle colonne per \glossario{ticket} e date di scadenza associate.
 \end{itemize}
 \subsubsection{Difficoltà}
 \begin{itemize}
@@ -50,17 +50,17 @@
 \end{itemize}	
 \subsubsection{ToDo}
 \begin{itemize}
-	\item Preventivo “a finire”
-	\item Stesura del \PianoDiQualifica
-	\item Approfondire la funzionalità di debug nel documento di \AnalisiDeiRequisiti \ \rightarrow\ Sulla base delle richieste della Proponente per lo strumento di supporto al Tecnico
+	\item Aggiornamento migliorativo della pianificazione futura nel \PdP;
+	\item Stesura del \PdQ;
+	\item Approfondire la funzionalità di debug nel documento di \AdR \ \rightarrow\ Sulla base delle richieste della Proponente per lo strumento di supporto al Tecnico
 	\item Individuazione delle tecnologie per sviluppare la web app
-	\item Inserimento nel \Glossario dei termini individuati durante la stesura dei documenti di progetto \ \rightarrow\ Il \Glossario è dotato di una struttura completa, ma deve essere popolato con i termini individuati finora nei documenti.	
+	\item Inserimento nel \Gls\ dei termini individuati durante la stesura dei documenti di progetto \ \rightarrow\ Il \Gls\ è dotato di una struttura completa, ma deve essere popolato con i termini individuati finora nei documenti.	
 \end{itemize}
 \subsubsection{Dubbi}
 \begin{itemize}
-	\item \Glossario come documento interno o esterno \ \rightarrow\ Ossia se i termini da inserire sono a discrezione del gruppo o se devono essere aggiunti anche termini sconosciuti all'esterno [rivedere]
+	\item \Gls\ come documento interno o esterno \ \rightarrow\ Ossia se i termini da inserire sono a discrezione del gruppo o se devono essere aggiunti anche termini sconosciuti all'esterno [rivedere]
 	\item Criterio di scelta dei termini da inserire nel \Glossario \ \rightarrow\ Ossia se inserire anche termini scontati per i membri del gruppo, ma che possono non esserlo per utenti inesperti
-	\item Numero di occorrenze di un termine del \Glossario da formattare \ \rightarrow\ Ossia se nei documenti ogni termine indicato nel \Glossario deve essere segnalato o se bastano le prime istanze di questo.
+	\item Numero di occorrenze di un termine del \Gls\ da formattare \ \rightarrow\ Ossia se nei documenti ogni termine indicato nel \Gls\ deve essere segnalato o se bastano le prime istanze di questo.
 	\item Modalità di ridistribuzione di eventuali risorse (in eccesso o in difetto) durante la stesura del consuntivo \ \rightarrow\ Ossia vista la staticità del preventivo, come far fronte ad eventuali cambiamenti in vista dei consuntivi di periodo.
 \end{itemize}
 \par Le seguenti sezioni sono state poi inserite all'interno del documento per la presentazione al Diario di Bordo del 2024-04-26.
