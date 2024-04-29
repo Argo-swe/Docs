@@ -1,0 +1,132 @@
+\section{Riunione}
+\subsubsection{Ritrovo iniziale}
+Il gruppo si è riunito circa mezz’ora prima dell’appuntamento con l’azienda per discutere la chiarezza delle domande e organizzare una scaletta. Sono stati formulati inoltre dei quesiti aggiuntivi per garantire un’interazione più fluida con la Proponente.
+
+Il gruppo ha affidato il compito di moderare l’incontro al responsabile in carica, delegando la discussione sui casi d’uso agli analisti. Come concordato per via telematica, il referente di Zucchetti si è unito al meeting alle ore 10:30.
+
+\subsection{Argomenti e temi dell'incontro}
+
+
+\subsubsection{Bozza dei casi d'uso}
+
+\textbf{Domanda:} È stata ideata una bozza riguardante i casi d'uso per avere un riscontro dalla Proponente per capire se rispetta la visione dell’applicazione proposta nel capitolato.
+Nel documento sono stati pensati i tre attori principali: un Utente Generico, un Utente Non Autenticato e un Tecnico.
+L'Utente Generico può visualizzare il prompt finale a seguito dell'inserimento della richiesta in linguaggio naturale e alla selezione del dizionario dati. La visualizzazione della lista dei dizionari dati è sempre possibile per l'Utente Generico. Quest'ultimo, autenticandosi, acquisisce permessi aggiuntivi e diventa un Tecnico.
+La motivazione di questa scelta deriva dalla seguente considerazione: un Utente Generico, una volta autenticato, diviene un Tecnico, il quale non ha più opportunità di fare il login, ma solo il logout. Se un Tecnico ereditasse le funzionalità direttamente da un Utente Generico, dotato dell'opportunità di autenticarsi, questa sarebbe disponibile anche al Tecnico. Da qui la necessità di distinzione tra Utente Generico e Utente Non Autenticato.
+
+\textbf{Risposta:} La Proponente suggerisce di rimanere attinenti ai metodi appresi nel corso di Ingegneria del Software. Mantenendo come priorità la logica e la funzionalità.
+
+\subsubsection{Gestione login per utente Tecnico}
+
+\textbf{Domanda:} La Proponente suggerisce un metodo diverso da quello proposto per separare la funzione login dalle funzioni proprie del Tecnico?
+
+\textbf{Risposta:} Nello schema proposto dai Fornitori, è ragionevole che l'Utente Generico non sia interessato al login, tuttavia la soluzione ottimale sarebbe poterlo fare per ogni attore. Quindi, accedendo al sito, si dovrebbe potersi autenticare a priori.
+Ciò che è stato ideato dai fornitori nei casi d’uso ammette l’interazione da parte dell’Utente Generico con l’applicazione senza autenticazione. La Proponente suggerisce di adottare la funzione di login anche per questo attore, ma tenendo come riferimento prioritario le nozioni fornite dal corso. 
+
+\subsubsection{Necessità login per Utente Generico}
+
+\textbf{Domanda:} C'è la preferenza di avere un login anche per l'Utente Generico?
+
+\textbf{Risposta:} La Proponente non ha preferenze specifiche, sottolinea però che se l’Utente consuma risorse costose, come delle chiamate API a pagamento, è interessata a limitare l’accesso tramite un login, perciò se i fornitori decideranno di implementare il requisito opzionale delle chiamate API, allora la Proponente richiede l’adozione dell’autenticazione anche per l’Utente Generico. Rispetto all’attore Tecnico, il quale tratta dati che verranno resi in qualche modo persistenti e richiedono spazio di archiviazione, la funzione di login è necessaria.
+
+\subsubsection{Numero di attori}
+
+\textbf{Domanda:} La necessità della Proponente è quindi solo di avere due attori?
+
+\textbf{Risposta:} Sì, due attori sono adeguati.
+
+
+\subsubsection{Ulteriori funzionalità per utente Tecnico}
+
+\textbf{Domanda:} Il Tecnico necessita di ulteriori funzionalità?
+
+\textbf{Risposta:} Gli altri gruppi hanno identificato che il Tecnico può svolgere anche le attività proprie dell’Utente Generico, ma, quando fa delle richieste, potrebbe aver bisogno di una struttura che lo aiuti a debuggare il sistema.
+La struttura del dizionario dati sarà a discrezione dei fornitori e conterrà la lista delle tabelle, dati, relazioni etc. Inoltre sarà presente sia una descrizione tecnica che una in linguaggio naturale: esse entreranno in relazione tra loro quando utilizzate dal LLM. In seguito alla compilazione del dizionario dati, il Tecnico potrebbe voler testare alcune richieste per avere un riscontro sul legame tra queste descrizioni e la richiesta, una modalità di debug sarebbe utile al Tecnico per capire come il dizionario dati inserito, sia o meno di aiuto alla creazione del prompt.
+
+
+\subsubsection{Pre-prompt}
+
+\textbf{Domanda:} Quindi ci si aspetta un pre-prompt?
+
+\textbf{Risposta:} Quando il dizionario dati è di dimensioni ridotte (ad esempio uno con tre tabelle), può essere contenuto interamente all’interno del prompt. Tuttavia, se il dizionario è di maggiore dimensione (come in un caso con mille tabelle), si presentano dei problemi tra cui il costo elevato dell’elaborazione di un prompt con numerosi token. Teoricamente è possibile avere prompt grandi ma è meglio mantenerli piccoli, capendo quali siano le sezioni pertinenti alla richiesta dell’utente o meno. Diventa così necessario capire il metodo con cui minimizzare il dizionario dati durante la creazione del prompt.
+ A dimostrazione di ciò, facendo elaborare ad un LLM un prompt e aggiungendo progressivamente dettagli superflui, è evidente che il modello, all’aggiunta di dati superflui inizi ad allucinare.
+
+\subsubsection{Funzionalità di debug}
+
+\textbf{Domanda:} Il debug è uno stato intermedio rispetto a quanto visto?
+
+\textbf{Risposta:} Sì, il debug è utile a capire come è stato generato il prompt e perché sono presenti determinate porzioni del dizionario dati.
+
+
+\subsubsection{Stima correttezza prompt}
+
+\textbf{Domanda:} Come si può stimare la correttezza del prompt?
+
+\textbf{Risposta:} Si parte dalla richiesta generica dell'utente nella parte finale. Quello che ci interessa è la parte che gli si attacca prima, ovvero la descrizione del dizionario dati attinente alla richiesta. È necessario essere in grado di capire come si è arrivati alla formulazione di quella parte che viene prefissata alla richiesta.
+
+\subsubsection{Visualizzazione debug}
+
+\textbf{Domanda:} Per la visualizzazione del debug, si può sovrascrivere la funzionalità di visualizzazione del prompt ottenuto quando l’attore che lo richiede è un Tecnico. È l’approccio adatto?
+
+\textbf{Risposta:} Un’opzione sarebbe fare la extend del caso normale, che avviene quando il Tecnico è interessato a vedere queste informazioni aggiuntive.
+
+
+\subsubsection{Modalità di visualizzazione per utente Tecnico}
+
+\textbf{Domanda:} Il Tecnico possiede solo la visualizzazione di debugging o anche quella normale?
+
+\textbf{Risposta:} Entrambe, perché sono due cose diverse. Se il dizionario è molto piccolo, la situazione è semplice. Quando invece un dizionario è grande, il prompt può diventare fuorviante se vengono introdotte tabelle che non servono o non ci sono tabelle che servono. Facendo una controprova ed eseguendo delle richieste in cui i dati forniti sono inferiori o maggori degli stretti necessari, si osserva che quando i dati sono in eccesso, il modello si confonde, quando invece mancano, li inventa. Il problema è trovare i pezzi minimi per comporre il dizionario dati.
+
+\subsubsection{Utilizzo di txtai in locale}
+
+\textbf{Domanda:} Durante il primo incontro, la Proponente ha consigliato txtai. È collegato alla fase di ricerca semantica?
+
+\textbf{Risposta:} Sì. Quello che è interessante è che la ricerca semantica in txtai opera tramite la sentence similarity, e si possono usare modelli molto piccoli ad uso di macchine meno potenti.
+Utilizzando un modello preso su txtai, che viene fatto girare su un computer della Proponente equipaggiato con una GPU RTX 3060, si può osservare che tracciando la temperatura, nonostante venga eseguito in locale, non ci sono problemi nel funzionamento o di surriscaldamento.
+
+
+\subsubsection{Modello LLM locale di Huggingface}
+
+\textbf{Domanda:} Da dove è stato preso il modello che utilizzato?
+
+\textbf{Risposta:} Da huggingface. Si tratta della versione quantizzata di openchat: GGUF.
+
+\subsubsection{Implementazione lingue alternative}
+
+\textbf{Domanda:} Per adottare lingue diverse da quella del dizionario dati, basterebbero alcuni sinonimi dei termini del database nella lingua alternativa, messi nel dizionario?
+
+\textbf{Risposta:} A tal proposito si osserva che eseguendo una richiesta in inglese e fornendo una descrizione delle tabelle in italiano, l'LLM termina con successo.
+Il modello è in grado di dedurre da sé cosa è richiesto, però è da capire come trattare il dizionario dati avendo una richiesta in lingua diversa.
+
+\subsubsection{Gestione richieste in lingue alternative}
+
+\textbf{Domanda:} Avendo un dizionario dati che va filtrato in base alla richiesta. Quando arriva una richiesta in russo, è necessario gestire il filtro del modello con la lingua russa?
+
+\textbf{Risposta:} Si possono mettere dizionari in lingua, altrimenti, facendo la richiesta con txtai, non c'è bisogno. Alternativamente potreste prendere un modello di traduzione, che sono piccolissimi. Andando su models in Huggingface, esistono i modelli di traduzione Helsinki per tradurre il dizionario dati.
+Dal piccolo modello Mistral, partendo da una richiesta in italiano si ottiene una in inglese fornendo la richiesta SQL corretta.
+
+\subsubsection{Valutazione criticità lingue alternative}
+
+\textbf{Domanda:} A questo punto diventa poco estendibile, perché diventa necessario ragionarci prima per valutare le lingue disponibili, giusto?
+
+\textbf{Risposta:} Sì. Oppure è possibile tradurre direttamente la richiesta. Comunque, non è un requisito.
+
+\subsubsection{Metodologia Agile}
+
+\textbf{Domanda:} I Fornitori valutano l’adozione di una metodologia agile per gestire l'andamento del progetto. È quindi prevista una riunione alla fine di ogni sprint (circa 2 settimane), sia interna che con il cliente. Secondo la Proponente può andare bene un incontro ogni due settimane?
+
+\textbf{Risposta:} Sì. La Proponente si aspetta una richiesta per programmare ogni incontro. 
+Inoltre la Proponente consiglia al gruppo di non impiegare una metodologia troppo stringente, specialmente per quanto riguarda l'organizzazione delle riunioni
+\subsubsection{Feedback}
+
+\textbf{Domanda:} La Proponente suggerisce altri consigli riguardo questo sprint?
+
+\textbf{Risposta:} La parte riguardante i casi d’uso è stata approfondita in modo abbondante; sarà utile concentrarsi sul capire come avviene la dinamica di generazione del prompt più a fondo.
+Va analizzata bene l'interazione tra il dizionario dati, la richiesta dell'utente e generazione del prompt.
+
+\subsubsection{Presenda del ragionamento sulla creazione del prompt nei casi d'uso}
+
+\textbf{Domanda:} Questa parte non va esposta nell'analisi dei requisiti ma va ragionata all'interno del gruppo?
+
+\textbf{Risposta:} Sì. Bisogna capire che c'è un elemento all'interno di un caso d'uso che è molto importante.
+Questo problema non emerge dai casi d'uso.
