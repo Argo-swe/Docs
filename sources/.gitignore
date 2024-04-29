@@ -1,5 +1,5 @@
 #Latex
-*.pdf
+build-output/*
 *.aux
 *.toc
 *.log
