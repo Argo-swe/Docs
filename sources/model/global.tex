@@ -12,7 +12,8 @@
 \seq_new:N \l_hernan_seq
 \NewDocumentCommand{\glossario}{m}{
     \seq_if_in:NnTF{\l_hernan_seq}{#1}{
-      \textit{#1\ped{\ped{G}}}
+      #1
+      %\textit{#1\ped{\ped{G}}}
     }{
       \seq_put_left:Nn{\l_hernan_seq}{#1}
       \textit{#1\ped{\ped{G}}}
@@ -105,6 +106,11 @@
 
 \newcommand{\GlossarioIntroduzione}{
   Allo scopo di evitare incomprensioni relative al linguaggio utilizzato nella documentazione di progetto, viene fornito un \Gls, nel quale ciascun termine è corredato da una spiegazione che mira a disambiguare il suo significato. I termini tecnici, gli acronimi e i vocaboli ritenuti ambigui vengono formattati in corsivo all'interno dei rispettivi documenti e marcati con una lettera \ped{G} in pedice. Tutte le ricorrenze di un termine definito nel \Gls\ subiscono la formattazione sopracitata.
+}
+
+%Comando per i verbali esterni (solamente quando ci sono tanti termini tecnici o ambigui)
+\newcommand{\GlossarioIntroduzioneVE}{
+  Allo scopo di evitare incomprensioni relative al linguaggio utilizzato nella documentazione di progetto, viene fornito un \Gls, nel quale ciascun termine è corredato da una spiegazione che mira a disambiguare il suo significato. I termini tecnici, gli acronimi e i vocaboli ritenuti ambigui vengono formattati in corsivo all'interno dei rispettivi documenti e marcati con una lettera \ped{G} in pedice. In questo documento viene formattata solamente la prima ricorrenza di un termine definito nel \Gls.
 }
 
 \newcommand{\ToBeContinued}{\textit{Continua nella prossima pagina}}
