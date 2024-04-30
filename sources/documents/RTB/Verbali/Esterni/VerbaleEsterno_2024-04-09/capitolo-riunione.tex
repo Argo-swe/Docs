@@ -1,5 +1,5 @@
 \section{Riunione}
-\subsubsection{Ritrovo iniziale}
+\subsection{Ritrovo iniziale}
 Il gruppo si è riunito circa mezz’ora prima dell’appuntamento con l’azienda per discutere la chiarezza delle domande e organizzare una scaletta. Sono stati formulati inoltre dei quesiti aggiuntivi per garantire un’interazione più fluida con la \glossario{Proponente}.
 
 Il gruppo ha affidato il compito di moderare l’incontro al responsabile in carica, delegando la discussione sui \glossario{casi d’uso} agli analisti. Come concordato per via telematica, il referente di Zucchetti si è unito al meeting alle ore 10:30.
@@ -20,7 +20,7 @@ La motivazione di questa scelta deriva dalla seguente considerazione: un Utente 
 
 \textbf{Domanda:} La \glossario{Proponente} suggerisce un metodo diverso da quello proposto per separare la funzione di login dalle funzioni proprie del Tecnico?
 
-\textbf{Risposta:} Nello schema proposto dai fornitori, è ragionevole che l'Utente Generico non sia interessato al login, tuttavia la soluzione ottimale sarebbe poterlo fare per ogni \glossario{attore}. Quindi, accedendo alla \glossario{web app}, si dovrebbe potersi autenticare a priori.
+\textbf{Risposta:} Nello schema proposto dai fornitori, è ragionevole che l'Utente Generico non sia interessato al login, tuttavia la soluzione ottimale sarebbe poterlo fare per ogni \glossario{attore}. Quindi, accedendo alla \glossario{web app}, ci si dovrebbe poter autenticare a priori.
 Ciò che è stato ideato dai fornitori nei \glossario{casi d'uso} ammette l'interazione da parte dell'Utente Generico con l'applicazione senza autenticazione. La \glossario{Proponente} sarebbe favorevole ad estendere la funzione di login anche per questo \glossario{attore}, tenendo come riferimento prioritario le nozioni fornite dal corso. 
 
 \subsubsection{Login per l'Utente Generico}
@@ -75,7 +75,7 @@ La struttura del \glossario{dizionario dati} sarà a discrezione dei fornitori e
 
 \textbf{Domanda:} Il Tecnico possiede solo la visualizzazione con \glossario{debugging} o anche quella normale?
 
-\textbf{Risposta:} Entrambe, perché sono due circostanze differenti. Se il \glossario{dizionario} è molto piccolo, la soluzione è semplice. Quando invece il \glossario{dizionario} è grande, il \glossario{prompt} può diventare fuorviante per il \glossario{modello} se contiene (o non contiene) determinate tabelle. Facendo una controprova ed eseguendo delle richieste in cui i dati forniti sono inferiori o maggiori degli stretti necessari, si osserva che quando i dati sono in eccesso, il \glossario{modello} si confonde, quando invece mancano, genera dati casuali. La funzionalità di \glossario{debug} può aiutare il Tecnico a capire come riformulare il \glossario{dizionario dati} affinché l'applicazione restituisca il \glossario{prompt} desiderato.
+\textbf{Risposta:} Entrambe, perché sono due circostanze differenti. Se il \glossario{dizionario} è molto piccolo, la soluzione è semplice. Quando invece il \glossario{dizionario} è grande, il \glossario{prompt} può diventare fuorviante per il \glossario{modello} se contiene (o non contiene) determinate tabelle. Facendo una controprova ed eseguendo delle richieste in cui i dati forniti sono differenti dagli stretti necessari, si osserva che quando i dati sono in eccesso, il \glossario{modello} si confonde, quando invece mancano, genera dati casuali. La funzionalità di \glossario{debug} può aiutare il Tecnico a capire come riformulare il \glossario{dizionario dati} affinché l'applicazione restituisca il \glossario{prompt} desiderato.
 
 \subsubsection{Utilizzo di txtai in locale}
 
