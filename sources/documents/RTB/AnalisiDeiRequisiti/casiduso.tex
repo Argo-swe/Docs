@@ -8,12 +8,12 @@ TODO
 \subsection{Attori}
 Il prodotto prevede tre attori:
 \begin{itemize}
-  \item Utente non autenticato: è un utente generico che si presenta nella pagina di login dell'applicativo;
+  \item Utente Non Autenticato: è un utente generico che si presenta nella pagina di login dell'applicativo;
   \item Utente autenticato: un utente che ha completato con successo l'autenticazione ed ha accesso alle funzionalità richieste per la generazione di un prompt utilizzando i dizionari dati precaricati;
   \item Tecnico: un utente che ha completato con successo l'autenticazione ed è registrato come tecnico, ha accesso a tutte le funzionalità dell'utente autenticato e in aggiunta può gestire i dizionari dati ed accedere a funzioanlità di testing e debug.
 \end{itemize}
 
-TODO immagine
+%TODO immagine
 \subsubsection{Dettagli aggiuntivi}
 TODO
 %Qua non lo fa quasi nessuno ma si può espandere se qualche punto dell'elenco merita di essere espanso (probabilmente no)
@@ -25,45 +25,246 @@ TODO
 \subsection{Elenco dei \glossario{casi d'uso}}
 
 \subsubsection{UC1 - Autenticazione}\label{UC1}
-%TODO immagine\paragraph*{Descrizione}
-L’Utente desidera inserire una richiesta in qualsiasi linguaggio naturale al fine di ottenere, in seguito, il prompt che selezioni la parte del dizionario dati più inerente alla richiesta.
+\paragraph*{Descrizione} L’Autenticazione corrisponde al processo di login, tramite il quale l’Utente Non Autenticato può accedere all’applicativo in quanto Utente o Tecnico.
 
-\paragraph*{Attori principali} Utente
+\paragraph*{Attori principali} Utente Non Autenticato
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L'applicazione è stata avviata con successo;
-  \item L’autenticazione ad Utente è andata a buon fine;
-  \item L’Utente ha in precedenza selezionato un \glossario{dizionario dati};
-  \item Se non è stata selezionata una diversa lingua per l’inserimento quella di default è l’italiano, se è stata selezionata è quella su cui si baserà la traduzione.
+  \item L’Utente Non Autenticato si collega all’applicativo;
+  \item L’Utente Non Autenticato ha avviato la procedura di login all’applicativo.  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item L’Utente ha scritto nell’apposito campo di testo una interrogazione in linguaggio naturale.
+  \item La procedura di autenticazione si è conclusa con successo;
+  \item L’Utente Non Autenticato diviene Utente o Tecnico a seconda del proprio ruolo e visualizza le funzioni generali;
+  \item Il Tecnico visualizza le funzionalità aggiuntive specifiche del ruolo.  
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{itemize}
+  \item L’Utente Non Autenticato accede all’applicativo;
+  \item L’Utente Non Autenticato seleziona la funzione di login;
+  \item L’Utente Non Autenticato inserisce le proprie credenziali di accesso;
+  \item In caso di corretto inserimento e verifica delle credenziali, l’Utente Non Autenticato accede all’applicativo come Utente o Tecnico.
+  
+\end{itemize}
+
+\paragraph*{Estensione}
+\begin{itemize}
+  \item Visualizzazione del messaggio d’errore per fallita autenticazione (\hyperref[UC2]{UC2}).
+\end{itemize}
+
+\paragraph*{Sottocasi d'uso}
+\begin{itemize}
+  \item Inserimento e-mail (\hyperref[UC1point1]{UC1.1});
+  \item Inserimento password (\hyperref[UC1point2]{UC1.2}).
+\end{itemize}
+
+
+\subsubsection{UC1.1 - Inserimento e-mail}\label{UC1point1}
+%TODO immagine
+\paragraph*{Descrizione}
+La procedura di inserimento e-mail corrisponde all’inserimento della propria e-mail nella sezione apposita di login.
+
+\paragraph*{Attori principali} Utente Non Autenticato
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato non ha eseguito il login;
+  \item L’Utente Non Autenticato ha avviato la procedura di autenticazione.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato ha correttamente inserito la propria e-mail nel campo apposito.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente scrive una interrogazione nell’ apposito box su cui poi il sistema potrà produrre un prompt in seguito.
+  \item L’Utente Non Autenticato avvia la procedura di autenticazione;
+  \item L’Utente Non Autenticato inserisce la propria e-mail nel campo apposito.  
 \end{enumerate}
 
 
-\subsubsection{UC4 - Selezione dizionario dati}\label{UC4}
-TODO immagine\paragraph*{Descrizione}
-L’Utente desidera selezionare il \glossario{dizionario dati} sul quale basare in seguito l’interrogazione in linguaggio naturale.
+\subsubsection{UC1.2 - Inserimento password}\label{UC1point2}
+%TODO immagine
+\paragraph*{Descrizione}
+La procedura di inserimento password corrisponde all’inserimento della propria password nella sezione apposita di login.
+
+\paragraph*{Attori principali} Utente Non Autenticato
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato non ha eseguito il login;
+  \item L’Utente Non Autenticato ha avviato la procedura di autenticazione;
+  \item L’Utente Non Autenticato ha inserito la propria e-mail nel campo apposito.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato ha correttamente inserito la propria password nel campo apposito.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente Non Autenticato avvia la procedura di autenticazione;
+  \item L’Utente Non Autenticato inserisce la propria e-mail nel campo apposito;
+  \item L’Utente Non Autenticato inserisce la propria password nel campo apposito.  
+\end{enumerate}
+
+
+\subsubsection{UC2 - Visualizzazione messaggio d'errore per fallita autenticazione}\label{UC2}
+%TODO immagine
+\paragraph*{Descrizione}
+Al rilevamento da parte del sistema di irregolarità durante il processo di validazione delle credenziali al momento del login, degli appositi messaggi di errore informeranno l’Utente Non Autenticato della natura del problema riscontrato.
+
+\paragraph*{Attori principali} Utente Non Autenticato
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato ha inserito le proprie credenziali nell’area di login;
+  \item Il sistema ha riscontrato un problema nel processo di autenticazione.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene mostrato un messaggio di errore per notificare l’Utente Non Autenticato dell’incorretto o parziale inserimento dei dati nell’area di login.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente Non Autenticato tenta di autenticarsi all’applicativo inserendo le proprie credenziali nell’area di login;
+  \item Il sistema rileva lo scorretto o parziale inserimento delle credenziali;
+  \item Viene segnalato all’Utente Non Autenticato il messaggio d’errore relativo alla problematica riscontrata.  
+\end{enumerate}
+
+\paragraph*{Sottocasi d'uso}
+\begin{itemize}
+  \item Errore credenziali incomplete (\hyperref[UC2point1]{UC2.1});
+  \item Errore credenziali errate (\hyperref[UC2point2]{UC2.2});
+  \item Errore utente non registrato (\hyperref[UC2point3]{UC2.3}).
+\end{itemize}
+
+
+\subsubsection{UC2.1 - Errore credenziali incomplete}\label{UC2point1}
+%TODO immagine
+\paragraph*{Descrizione}
+L’errore relativo all’ incompletezza delle credenziali viene mostrato a seguito del rilevamento parziale delle credenziali inserite da parte dell’Utente Non Autenticato.
+
+\paragraph*{Attori principali} Utente Non Autenticato
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato non ha eseguito il login;
+  \item L’Utente Non Autenticato ha inserito solo la propria e-mail o la propria password come credenziali nel tentativo di autenticarsi.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene mostrato un messaggio di errore per notificare l’utente del parziale inserimento dei dati nell’area di login.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente Non Autenticato ha inserito solo una delle due credenziali richieste durante il login;
+  \item Il sistema mostra un messaggio di errore relativo al mancato inserimento dei dati di accesso all’applicativo.   
+\end{enumerate}
+
+
+\subsubsection{UC2.2 - Errore credenziali errate}\label{UC2point2}
+%TODO immagine
+\paragraph*{Descrizione}
+L’errore relativo alle credenziali errate viene mostrato in seguito all’inserimento di una e-mail dal formato incorretto o della non corrispondenza tra e-mail e password per un utente registrato.
+
+\paragraph*{Attori principali} Utente Non Autenticato
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato non ha eseguito il login;
+  \item L’Utente Non Autenticato ha tentato l’autenticazione con credenziali errate.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene mostrato un messaggio di errore per notificare l’utente dell’errato inserimento dei dati nell’area di login.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente Non Autenticato ha tentato la procedura di login con credenziali errate;
+  \item Il sistema mostra un messaggio di errore relativo all’errato inserimento dei dati di accesso all’applicativo.    
+\end{enumerate}
+
+
+\subsubsection{UC2.3 - Errore utente non registrato}\label{UC2point3}
+%TODO immagine
+\paragraph*{Descrizione}
+L’errore relativo all’assenza di un account utente nel sistema viene mostrato nel caso in cui, al corretto inserimento dell’e-mail nell’apposita sezione da parte dell’Utente Non Autenticato, questa risulta assente tra le credenziali degli utenti registrati.
+
+\paragraph*{Attori principali} Utente Non Autenticato
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato non ha eseguito il login;
+  \item L’Utente Non Autenticato ha tentato l’autenticazione con una mail non presente nel sistema.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene mostrato un messaggio di errore per notificare l’utente dell’assenza del profilo utente a cui si vuole accedere nel sistema
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente Non Autenticato ha tentato la procedura di login inserendo una mail non associata ad alcun account utente;
+  \item Il sistema mostra un messaggio di errore relativo all’assenza della mail inserita all’interno del sistema.     
+\end{enumerate}
+
+
+\subsubsection{UC3 - Inserimento richiesta in linguaggio naturale}\label{UC3}
+%TODO immagine
+\paragraph*{Descrizione}
+L’Utente desidera inserire una richiesta in qualsiasi linguaggio naturale al fine di ottenere, in seguito, il prompt che selezioni la parte del \glossario{dizionario dati} più inerente alla richiesta. 
+
 \paragraph*{Attori principali} Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L'applicazione è stata avviata con successo;
   \item L’autenticazione ad Utente è andata a buon fine;
-  \item Nella applicazione web è stato caricato precedentemente almeno un dizionario dati.
+  \item L’Utente ha in precedenza selezionato un \glossario{dizionario dati}; 
+  \item L'Utente seleziona la lingua di inserimento, se non selezionata viene utilizzato l'italiano di default.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Un dizionario dati è stato selezionato in modo corretto ed univoco;
+  \item L’Utente ha scritto nell’apposito campo di testo un'interrogazione in linguaggio naturale.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente scrive un'interrogazione nell’apposito box su cui poi il sistema potrà produrre un prompt in seguito.
+\end{enumerate}
+
+
+\subsubsection{UC4 - Selezione \glossario{dizionario dati}}\label{UC4}
+%TODO immagine
+\paragraph*{Descrizione}
+L’Utente desidera selezionare il \glossario{\glossario{dizionario dati}} sul quale basare in seguito l’interrogazione in linguaggio naturale.
+\paragraph*{Attori principali} Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'applicazione è stata avviata con successo;
+  \item L’autenticazione ad Utente è andata a buon fine;
+  \item Nella applicazione web è stato caricato precedentemente almeno un \glossario{dizionario dati}.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Un \glossario{dizionario dati} è stato selezionato in modo corretto ed univoco;
   \item L’Utente ora può inserire una frase in linguaggio naturale.
 \end{itemize}
 
@@ -75,8 +276,9 @@ L’Utente desidera selezionare il \glossario{dizionario dati} sul quale basare 
 
 
 \subsubsection{UC5 - Generazione prompt}\label{UC5}
-TODO immagine\paragraph*{Descrizione}
-L’Utente desidera ottenere un prompt al fine di utilizzarlo poi con LLM esterni per generare \glossario{query} sql fornendo parti ristrette di dizionario dati.
+%TODO immagine
+\paragraph*{Descrizione}
+L’Utente desidera ottenere un prompt al fine di utilizzarlo poi con LLM esterni per generare \glossario{query} sql fornendo parti ristrette di \glossario{dizionario dati}.
 
 \paragraph*{Attori principali} Utente
 
@@ -84,19 +286,19 @@ L’Utente desidera ottenere un prompt al fine di utilizzarlo poi con LLM estern
 \begin{itemize}
   \item L'applicazione è stata avviata con successo;
   \item L’autenticazione ad Utente è andata a buon fine;
-  \item È presente almeno un dizionario dati nel sistema.
+  \item È presente almeno un \glossario{dizionario dati} nel sistema.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il sistema genera un prompt in base alla richiesta ricevuta e al dizionario dati scelto. Attraverso dei metadati restituisce un prompt con il quale stabilisce quali parti di database sono maggiormente necessarie ed efficienti per scrivere la richiesta ricevuta in SQL;
+  \item Il sistema genera un prompt in base alla richiesta ricevuta e al \glossario{dizionario dati} scelto. Attraverso dei metadati restituisce un prompt con il quale stabilisce quali parti di database sono maggiormente necessarie ed efficienti per scrivere la richiesta ricevuta in SQL;
   \item L’Utente riceve il prompt generato.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
   \item L’Utente desidera ottenere il prompt che permette di generare la query SQL;
-  \item L’Utente seleziona un dizionario dati sul quale baserà l’interrogazione;
+  \item L’Utente seleziona un \glossario{dizionario dati} sul quale baserà l’interrogazione;
   \item L’Utente sceglie la lingua su cui farà l’interrogazione.La lingua è in italiano di default se non viene cambiata;
   \item L’Utente inserisce una interrogazione in linguaggio naturale nel box testuale apposito;
   \item Inizia il processo di generazione del prompt e di raccolta di metadati.
@@ -110,7 +312,7 @@ L’Utente desidera ottenere un prompt al fine di utilizzarlo poi con LLM estern
 \paragraph*{Inclusione}
 \begin{itemize}
   \item Inserimento richiesta in linguaggio naturale (\hyperref[UC3]{UC3});
-  \item Selezione dizionario dati (\hyperref[UC4]{UC4}).
+  \item Selezione \glossario{dizionario dati} (\hyperref[UC4]{UC4}).
 \end{itemize}
 
 \paragraph*{Estensione}
@@ -123,7 +325,7 @@ L’Utente desidera ottenere un prompt al fine di utilizzarlo poi con LLM estern
 \subsubsection{UC6 - Messaggio d'errore nella generazione del prompt}\label{UC6}
 
 \paragraph*{Descrizione}
-L’Utente ha cercato di generare un prompt con una frase non totalmente inerente al dizionario dati scelto.
+L’Utente ha cercato di generare un prompt con una frase non totalmente inerente al \glossario{dizionario dati} scelto.
 
 \paragraph*{Attori principali} Utente
 
@@ -137,13 +339,13 @@ L’Utente ha cercato di generare un prompt con una frase non totalmente inerent
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item L’applicazione ha riscontrato problemi nella generazione del prompt a causa di una non adeguata aderenza tra la frase inserita e il dizionario dati scelto;
+  \item L’applicazione ha riscontrato problemi nella generazione del prompt a causa di una non adeguata aderenza tra la frase inserita e il \glossario{dizionario dati} scelto;
   \item Viene visualizzato un messaggio di errore per orientare l’Utente alla comprensione del funzionamento del sistema.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Dopo che l’Utente ha inserito una frase in linguaggio naturale e richiesto la generazione del prompt il sistema attua il meccanismo per identificare la parte di dizionario dati adeguata da restituire;
+  \item Dopo che l’Utente ha inserito una frase in linguaggio naturale e richiesto la generazione del prompt il sistema attua il meccanismo per identificare la parte di \glossario{dizionario dati} adeguata da restituire;
   \item Il sistema non è in grado di trovare le correlazioni adeguate e quindi non riesce a restituire un prompt coerente;
   \item Viene visualizzato un messaggio di errore.  
 \end{enumerate}
@@ -170,7 +372,7 @@ L’Utente desidera inserire una richiesta in linguaggio naturale in una lingua 
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente seleziona una lingua da una lista predefinita di lingue.La scelta è tra:
+  \item L’Utente seleziona una lingua da una lista predefinita di lingue. La scelta è tra:
     \begin{itemize}
       \item Italiano;
       \item Inglese;
@@ -187,7 +389,7 @@ TODO
 \subsubsection{UC8 - Selezione e copia del prompt generato}\label{UC8}
 
 \paragraph*{Descrizione}
-L’Utente vuole selezionare il prompt che è stato generato dal sistema per poter usarlo all’interno della richiesta ad un LLM esterno al fine di generare una query.
+L’Utente vuole selezionare il prompt che è stato generato dal sistema per poterlo usare all’interno della richiesta ad un LLM esterno al fine di generare una query.
 
 \paragraph*{Attori principali} Utente
 
@@ -210,8 +412,9 @@ L’Utente vuole selezionare il prompt che è stato generato dal sistema per pot
 \end{enumerate}
 
 
-\subsubsection{UC9 - Visualizzazione lista dizionario dati}\label{UC9}
-TODO immagine\paragraph*{Descrizione}
+\subsubsection{UC9 - Visualizzazione lista \glossario{dizionario dati}}\label{UC9}
+%TODO immagine
+\paragraph*{Descrizione}
 L’Utente visualizza la lista dei dizionari dati che sono stati caricati nel sistema.
 
 \paragraph*{Attori principali} Utente
@@ -219,7 +422,7 @@ L’Utente visualizza la lista dei dizionari dati che sono stati caricati nel si
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L’Utente è stato autenticato con successo;
-  \item È presente almeno un dizionario dati nel sistema.  
+  \item È presente almeno un \glossario{dizionario dati} nel sistema.  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -240,75 +443,77 @@ L’Utente visualizza la lista dei dizionari dati che sono stati caricati nel si
 
 \paragraph*{Sottocasi d'uso}
 \begin{itemize}
-  \item Visualizzazione singolo dizionario dati (\hyperref[UC9point1]{UC9.1}).
+  \item Visualizzazione singolo \glossario{dizionario dati} (\hyperref[UC9point1]{UC9.1}).
 \end{itemize}
 
-\subsubsection{UC9.1 - Visualizzazione singolo dizionario dati}\label{UC9point1}
-TODO immagine\paragraph*{Descrizione}
-L’Utente visualizza il dizionario dati identificato dalle sue informazioni principali, nome e descrizione.
+\subsubsection{UC9.1 - Visualizzazione singolo \glossario{dizionario dati}}\label{UC9point1}
+%TODO immagine
+\paragraph*{Descrizione}
+L’Utente visualizza il \glossario{dizionario dati} identificato dalle sue informazioni principali, nome e descrizione.
 \paragraph*{Attori principali} Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L’Utente è stato autenticato con successo;
-  \item Esiste almeno un dizionario dati caricato.  
+  \item Esiste almeno un \glossario{dizionario dati} caricato.  
 \end{itemize}
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene mostrato a schermo nome e descrizione del dizionario dati.
+  \item Viene mostrato a schermo nome e descrizione del \glossario{dizionario dati}.
 \end{itemize}
 \paragraph*{Scenario principale}
 \begin{enumerate}
   \item L’Utente naviga alla lista dei dizionari dati;
-  \item L’Utente visualizza il singolo dizionario dati.
+  \item L’Utente visualizza il singolo \glossario{dizionario dati}.
 \end{enumerate}
 \paragraph*{Sottocasi d'uso}
 \begin{itemize}
-  \item Visualizzazione nome dizionario dati (\hyperref[UC9point1point1]{UC9.1.1});
-  \item Visualizzazione descrizione dizionario dati (\hyperref[UC9point1point2]{UC9.1.2}).
+  \item Visualizzazione nome \glossario{dizionario dati} (\hyperref[UC9point1point1]{UC9.1.1});
+  \item Visualizzazione descrizione \glossario{dizionario dati} (\hyperref[UC9point1point2]{UC9.1.2}).
 \end{itemize}
 
-\subsubsection{UC9.1.1 - Visualizzazione nome dizionario dati}\label{UC9point1point1}
-TODO immagine 9.1.1 da creare
+\subsubsection{UC9.1.1 - Visualizzazione nome \glossario{dizionario dati}}\label{UC9point1point1}
+%TODO immagine 9.1.1 da creare
 \paragraph*{Descrizione}
-L’Utente visualizza il nome del dizionario dati.
+L’Utente visualizza il nome del \glossario{dizionario dati}.
 
 \paragraph*{Attori principali} Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L’Utente è stato autenticato con successo;
-  \item Esiste almeno un dizionario dati caricato.
+  \item Esiste almeno un \glossario{dizionario dati} caricato.
 \end{itemize}
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene mostrato a schermo il nome del dizionario dati.
+  \item Viene mostrato a schermo il nome del \glossario{dizionario dati}.
 \end{itemize}
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente naviga alla visualizzazione di un dizionario dati;
+  \item L’Utente naviga alla visualizzazione di un \glossario{dizionario dati};
   \item Viene visualizzato il nome del dizionario.  
 \end{enumerate}
 
 
-\subsubsection{UC9.1.2 - Visualizzazione descrizione dizionario dati}\label{UC9point1point2}
-TODO immagine\paragraph*{Descrizione}
-L’Utente visualizza la descrizione del dizionario dati.
+\subsubsection{UC9.1.2 - Visualizzazione descrizione \glossario{dizionario dati}}\label{UC9point1point2}
+%TODO immagine
+\paragraph*{Descrizione}
+L’Utente visualizza la descrizione del \glossario{dizionario dati}.
 \paragraph*{Attori principali} Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L’Utente è stato autenticato con successo;
-  \item Esiste almeno un dizionario dati caricato.
+  \item Esiste almeno un \glossario{dizionario dati} caricato.
 \end{itemize}
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene mostrata a schermo la descrizione del dizionario dati.
+  \item Viene mostrata a schermo la descrizione del \glossario{dizionario dati}.
 \end{itemize}
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente naviga alla visualizzazione di un dizionario dati;
+  \item L’Utente naviga alla visualizzazione di un \glossario{dizionario dati};
   \item Viene visualizzato il nome del dizionario.
 \end{enumerate}
 
-\subsubsection{UC10 - Messaggio errore fallimento caricamento dizionario dati}\label{UC10}
+\subsubsection{UC10 - Messaggio errore fallimento caricamento \glossario{dizionario dati}}\label{UC10}
 
 \paragraph*{Descrizione} L’Utente visualizza il messaggio di errore che informa del fallimento del caricamento dei dizionari dati.
 
@@ -317,7 +522,7 @@ L’Utente visualizza la descrizione del dizionario dati.
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L’Utente è stato autenticato con successo;
-  \item Esiste almeno un dizionario dati caricato.  
+  \item Esiste almeno un \glossario{dizionario dati} caricato.  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -334,7 +539,8 @@ L’Utente visualizza la descrizione del dizionario dati.
 
 
 \subsubsection{UC11 - Visualizzazione frase SQL}\label{UC11}
-%TODO immagine\paragraph*{Descrizione} Un Utente può disconnettersi dalla piattaforma tramite la procedura di logout.
+%TODO immagine
+\paragraph*{Descrizione} Un Utente può disconnettersi dalla piattaforma tramite la procedura di logout.
 
 \paragraph*{Attori principali} Utente
 
@@ -355,28 +561,29 @@ L’Utente visualizza la descrizione del dizionario dati.
 \end{enumerate}
 
 
-\subsubsection{UC13 - Caricamento dizionario dati}\label{UC13}
-TODO immagine\paragraph*{Descrizione} Il caricamento del dizionario dati corrisponde alla procedura di importazione di un dizionario dati aggiuntivo all’interno del sistema.
+\subsubsection{UC13 - Caricamento \glossario{dizionario dati}}\label{UC13}
+%TODO immagine
+\paragraph*{Descrizione} Il caricamento del \glossario{dizionario dati} corrisponde alla procedura di importazione di un \glossario{dizionario dati} aggiuntivo all’interno del sistema.
 
 \paragraph*{Attori principali} Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico ha selezionato l’opzione di caricamento di un nuovo dizionario dati.  
+  \item Il Tecnico ha selezionato l’opzione di caricamento di un nuovo \glossario{dizionario dati}.  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il Tecnico ha inserito un nuovo dizionario dati nel sistema.
+  \item Il Tecnico ha inserito un nuovo \glossario{dizionario dati} nel sistema.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico ha selezionato il pulsante per avviare la procedura di inserimento di un nuovo dizionario dati;
+  \item Il Tecnico ha selezionato il pulsante per avviare la procedura di inserimento di un nuovo \glossario{dizionario dati};
   \item Il sistema permette al Tecnico di inserire un nuovo file dal formato appropriato;
-  \item Il Tecnico inserisce il file relativo al nuovo dizionario dati;
-  \item Il dizionario dati viene aggiunto alla lista di quelli presenti nell’applicativo.  
+  \item Il Tecnico inserisce il file relativo al nuovo \glossario{dizionario dati};
+  \item Il \glossario{dizionario dati} viene aggiunto alla lista di quelli presenti nell’applicativo.  
 \end{enumerate}
 
 \paragraph*{Sottocasi d'uso}
@@ -386,22 +593,22 @@ TODO immagine\paragraph*{Descrizione} Il caricamento del dizionario dati corrisp
 
 
 \subsubsection{UC13.1 - Visualizzazione errore per mancato caricamento del dizionario}\label{UC13point1}
-\paragraph*{Descrizione} Il sistema mostra un messaggio d’errore relativo al mancato caricamento del nuovo dizionario dati che si desidera inserire nel momento in cui vengono rilevate anomalie relative al suo inserimento.
+\paragraph*{Descrizione} Il sistema mostra un messaggio d’errore relativo al mancato caricamento del nuovo \glossario{dizionario dati} che si desidera inserire nel momento in cui vengono rilevate anomalie relative al suo inserimento.
 \paragraph*{Attori principali} Tecnico
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico ha selezionato l’opzione di caricamento di un nuovo dizionario dati;
-  \item Il Tecnico ha inserito il file relativo al nuovo dizionario dati che desidera inserire.
+  \item Il Tecnico ha selezionato l’opzione di caricamento di un nuovo \glossario{dizionario dati};
+  \item Il Tecnico ha inserito il file relativo al nuovo \glossario{dizionario dati} che desidera inserire.
   
 \end{itemize}
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il sistema mostra un messaggio d’errore per il mancato inserimento del nuovo dizionario dati.
+  \item Il sistema mostra un messaggio d’errore per il mancato inserimento del nuovo \glossario{dizionario dati}.
 \end{itemize}
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico ha avviato la procedura di caricamento di un nuovo dizionario dati;
+  \item Il Tecnico ha avviato la procedura di caricamento di un nuovo \glossario{dizionario dati};
   \item Il sistema permette al Tecnico di inserire un nuovo file;
   \item Il sistema registra un errore nel caricamento del file;
   \item Il sistema segnala il mancato caricamento al Tecnico tramite un messaggio di errore.  
@@ -409,8 +616,8 @@ TODO immagine\paragraph*{Descrizione} Il caricamento del dizionario dati corrisp
 
 
 \subsubsection{UC14 - Visualizzazione dati dizionario}\label{UC14}
-TODO immagine
-\paragraph*{Descrizione} Viene mostrato il dizionario dati caricato dal Tecnico, comprendendo tutti i suoi dati in maniera esaustiva, con nome, descrizione, struttura del database, sinonimi, parte di test.
+%TODO immagine
+\paragraph*{Descrizione} Viene mostrato il \glossario{dizionario dati} caricato dal Tecnico, comprendendo tutti i suoi dati in maniera esaustiva, con nome, descrizione, struttura del database, sinonimi, parte di test.
 
 \paragraph*{Attori principali} Tecnico
 
@@ -421,7 +628,7 @@ TODO immagine
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Vengono visualizzati i dati del dizionario dati scelto.
+  \item Vengono visualizzati i dati del \glossario{dizionario dati} scelto.
 \end{itemize}
 
 \paragraph*{Scenario principale}
@@ -431,12 +638,10 @@ TODO immagine
   \item Il Tecnico visualizza i dati del dizionario.
 \end{enumerate}
 
-\paragraph*{Estensione}
-
 \paragraph*{Sottocasi d'uso}
 \begin{itemize}
-  \item Visualizzazione nome dizionario dati (\hyperref[UC9point1point1]{UC9.1.1});
-  \item Visualizzazione descrizione dizionario dati (\hyperref[UC9point1point2]{UC9.1.2});
+  \item Visualizzazione nome \glossario{dizionario dati} (\hyperref[UC9point1point1]{UC9.1.1});
+  \item Visualizzazione descrizione \glossario{dizionario dati} (\hyperref[UC9point1point2]{UC9.1.2});
   \item Visualizzazione tabelle del dizionario (\hyperref[UC14point1]{UC14.1});
   \item Visualizzazione descrizione e sinonimi delle tabelle (\hyperref[UC14point2]{UC14.2});
   \item Visualizzazione sinonimi delle colonne (\hyperref[UC14point3]{UC14.3});
@@ -447,9 +652,9 @@ TODO immagine
 TODO
 
 
-\subsubsection{UC16 - Modifica dizionario dati}\label{UC16}
-TODO immagine
-\paragraph*{Descrizione} Il Tecnico vuole modificare un dizionario dato già presente nel sistema.
+\subsubsection{UC16 - Modifica \glossario{dizionario dati}}\label{UC16}
+%TODO immagine
+\paragraph*{Descrizione} Il Tecnico vuole modificare un \glossario{dizionario dati} già presente nel sistema.
 
 \paragraph*{Attori principali} Tecnico
 
@@ -457,72 +662,72 @@ TODO immagine
 \begin{itemize}
   \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
   \item Il Tecnico naviga alla lista dei dizionari dati caricati;
-  \item Il Tecnico seleziona un dizionario dati di cui vuole modificare qualcosa.  
+  \item Il Tecnico seleziona un \glossario{dizionario dati} di cui vuole modificare qualcosa.  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il Tecnico ha modificato una o più cose tra: titolo , descrizione o contenuto del dizionario dati.
+  \item Il Tecnico ha modificato una o più cose tra: titolo , descrizione o contenuto del \glossario{dizionario dati}.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico sceglie un dizionario dati che vuole modificare e lo seleziona;
-  \item Il Tecnico sceglie quali campi modificare tra : titolo, descrizione o file che contiene il dizionario dati;
-  \item Il Tecnico seleziona quello che vuole modificare e inserisce una nuova stringa per titolo e descrizione oppure carica un nuovo file per il dizionario dati;
+  \item Il Tecnico sceglie un \glossario{dizionario dati} che vuole modificare e lo seleziona;
+  \item Il Tecnico sceglie quali campi modificare tra : titolo, descrizione o file che contiene il \glossario{dizionario dati};
+  \item Il Tecnico seleziona quello che vuole modificare e inserisce una nuova stringa per titolo e descrizione oppure carica un nuovo file per il \glossario{dizionario dati};
   \item Il Tecnico salva le modifiche.  
 \end{enumerate}
 
 \paragraph*{Sottocasi d'uso}
 \begin{itemize}
-  \item Modifica titolo dizionario dati (\hyperref[UC16point1]{UC16.1});
-  \item Modifica descrizione dizionario dati (\hyperref[UC16point2]{UC16.2});
+  \item Modifica titolo \glossario{dizionario dati} (\hyperref[UC16point1]{UC16.1});
+  \item Modifica descrizione \glossario{dizionario dati} (\hyperref[UC16point2]{UC16.2});
   \item TODO
 \end{itemize}
 
 
-\subsubsection{UC16.1 - Modifica titolo dizionario dati}\label{UC16point1}
-\paragraph*{Descrizione} Il Tecnico vuole modificare il titolo di un dizionario dati.
+\subsubsection{UC16.1 - Modifica titolo \glossario{dizionario dati}}\label{UC16point1}
+\paragraph*{Descrizione} Il Tecnico vuole modificare il titolo di un \glossario{dizionario dati}.
 \paragraph*{Attori principali} Tecnico
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico ha selezionato un dizionario dati esistente di cui vuole modificare il titolo.  
+  \item Il Tecnico ha selezionato un \glossario{dizionario dati} esistente di cui vuole modificare il titolo.  
 \end{itemize}
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il dizionario dati ha come titolo il nuovo valore inserito dal Tecnico.
+  \item Il \glossario{dizionario dati} ha come titolo il nuovo valore inserito dal Tecnico.
 \end{itemize}
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico ha selezionato il dizionario dati di cui vuole cambiare il titolo e inserisce il nuovo valore nell’apposito box;
+  \item Il Tecnico ha selezionato il \glossario{dizionario dati} di cui vuole cambiare il titolo e inserisce il nuovo valore nell’apposito box;
   \item Il Tecnico salva la modifica.  
 \end{enumerate}
 
 
-\subsubsection{UC16.2 - Modifica descrizione dizionario dati}\label{UC16point2}
-\paragraph*{Descrizione} Il Tecnico vuole modificare la descrizione di un dizionario dati.
+\subsubsection{UC16.2 - Modifica descrizione \glossario{dizionario dati}}\label{UC16point2}
+\paragraph*{Descrizione} Il Tecnico vuole modificare la descrizione di un \glossario{dizionario dati}.
 \paragraph*{Attori principali} Tecnico
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico ha selezionato un dizionario dati esistente di cui vuole modificare il la descrizione.  
+  \item Il Tecnico ha selezionato un \glossario{dizionario dati} esistente di cui vuole modificare il la descrizione.  
 \end{itemize}
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il dizionario dati ha come descrizione il nuovo valore inserito dal Tecnico.
+  \item Il \glossario{dizionario dati} ha come descrizione il nuovo valore inserito dal Tecnico.
 \end{itemize}
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico ha selezionato il dizionario dati di cui vuole cambiare la descrizione e inserisce il nuovo valore nell’apposito box;
+  \item Il Tecnico ha selezionato il \glossario{dizionario dati} di cui vuole cambiare la descrizione e inserisce il nuovo valore nell’apposito box;
   \item Il Tecnico salva la modifica.
 \end{enumerate}
 
 TODO Descrizioni vuote ammissibili o no?
 
 
-\subsubsection{UC17 - Elimina dizionario dati}\label{UC17}
-TODO immagine
+\subsubsection{UC17 - Elimina \glossario{dizionario dati}}\label{UC17}
+%TODO immagine
 \paragraph*{Descrizione} Il Tecnico desidera eliminare uno dei dizionari dati inseriti in precedenza dalla lista.
 
 \paragraph*{Attori principali} Tecnico
@@ -542,27 +747,27 @@ TODO immagine
 \begin{enumerate}
   \item Il Tecnico ha selezionato il dizionario da eliminare;
   \item Il Tecnico conferma la scelta di eliminazione;
-  \item Il dizionario dati selezionato viene rimosso dalla lista dei dizionari dati;  
+  \item Il \glossario{dizionario dati} selezionato viene rimosso dalla lista dei dizionari dati;  
 \end{enumerate}
 
 \paragraph*{Sottocasi d'uso}
 \begin{itemize}
-  \item Visualizzazione errore per mancata eliminazione del dizionario dati (\hyperref[UC17point1]{UC17.1}).
+  \item Visualizzazione errore per mancata eliminazione del \glossario{dizionario dati} (\hyperref[UC17point1]{UC17.1}).
 \end{itemize}
 
 
-\subsubsection{UC17.1 - Visualizzazione errore per mancata eliminazione del dizionario dati}\label{UC17point1}
-\paragraph*{Descrizione} Il sistema mostra un messaggio d’errore relativo alla mancata eliminazione del dizionario dati selezionato dal Tecnico.
+\subsubsection{UC17.1 - Visualizzazione errore per mancata eliminazione del \glossario{dizionario dati}}\label{UC17point1}
+\paragraph*{Descrizione} Il sistema mostra un messaggio d’errore relativo alla mancata eliminazione del \glossario{dizionario dati} selezionato dal Tecnico.
 
 \paragraph*{Attori principali} Tecnico
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il sistema ha riscontrato un problema nell'eliminazione di un dizionario dati selezionato dal Tecnico.
+  \item Il sistema ha riscontrato un problema nell'eliminazione di un \glossario{dizionario dati} selezionato dal Tecnico.
 \end{itemize}
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il sistema mostra un messaggio d’errore per la mancata eliminazione del nuovo dizionario dati.
+  \item Il sistema mostra un messaggio d’errore per la mancata eliminazione del nuovo \glossario{dizionario dati}.
 \end{itemize}
 \paragraph*{Scenario principale}
 \begin{enumerate}
@@ -573,16 +778,16 @@ TODO immagine
 
 
 \subsubsection{UC18 - Debug della generazione del prompt}\label{UC18}
-TODO immagine
+%TODO immagine
 TODO Approfondire, espandere, dettagliare
-\paragraph*{Descrizione} Il Tecnico vuole poter testare il dizionario dati e interroga il sistema per comprendere la corretta formattazione del dizionario dati, riceverà in risposta uno schema motivato della selezione dei campi del dizionario per permettere eventuali modifiche volte ad ottimizzare le interrogazioni.
+\paragraph*{Descrizione} Il Tecnico vuole poter testare il \glossario{dizionario dati} e interroga il sistema per comprendere la corretta formattazione del \glossario{dizionario dati}, riceverà in risposta uno schema motivato della selezione dei campi del dizionario per permettere eventuali modifiche volte ad ottimizzare le interrogazioni.
 
 \paragraph*{Attori principali} Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item È presente almeno un dizionario dati nel sistema;
+  \item È presente almeno un \glossario{dizionario dati} nel sistema;
   \item Il Tecnico seleziona l’interfaccia di debug.
 \end{itemize}
 
@@ -594,7 +799,7 @@ TODO Approfondire, espandere, dettagliare
 \paragraph*{Scenario principale}
 \begin{enumerate}
   \item Il Tecnico desidera testare la correttezza di un dizionario; 
-  \item Il Tecnico seleziona un dizionario dati sul quale baserà l’interrogazione;
+  \item Il Tecnico seleziona un \glossario{dizionario dati} sul quale baserà l’interrogazione;
   \item Il Tecnico sceglie la lingua su cui farà l’interrogazione. La lingua è in italiano di default se non viene cambiata;
   \item Il Tecnico inserisce un’interrogazione in linguaggio naturale nel box testuale apposito;
   \item Il sistema fornisce lo schema di debug relativo al sotto-modello selezionato per l’utilizzo nel prompt.  
@@ -603,7 +808,7 @@ TODO Approfondire, espandere, dettagliare
 \paragraph*{Inclusione}
 \begin{itemize}
   \item Inserimento richiesta in linguaggio naturale (\hyperref[UC3]{UC3});
-  \item Selezione dizionario dati (\hyperref[UC4]{UC4}).
+  \item Selezione \glossario{dizionario dati} (\hyperref[UC4]{UC4}).
 \end{itemize}
 
 \paragraph*{Estensione}
