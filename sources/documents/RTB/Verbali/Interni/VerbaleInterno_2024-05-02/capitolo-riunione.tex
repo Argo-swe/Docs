@@ -9,33 +9,17 @@
 \subsection{Discussione e decisioni}
 \par All'inizio dell'incontro, viene chiesto di esporre al gruppo le attività svolte durante la settimana in vista della fine dello \glossario{sprint}.
 \subsubsection{Analista}
-\par L'Analista ha evidenziato difficoltà nella conversione del documento di \AdR\ e ha stimato a giorni la conclusione della conversione. Tra le altre attività, sono state svolte:
-\begin{itemize}
-	\item Approfonfimento dei casi d'uso del login per comprenderne la fattibilità, evidenziando la possibilità di avere un utente premium in caso di interazioni con l'\glossario{API};
-	\item Trovare mezzi e idee per l'approfondimento dei casi d'uso dello strumento di debug fornito al tecnico;
-\end{itemize}
+\par L'Analista ha evidenziato difficoltà nella conversione del documento di \AdR\ e ha stimato a giorni la conclusione della conversione. Sono stati anche approfonditi i casi d'uso relativi al login per comprenderne la fattibilità, evidenziando la possibilità di avere un utente premium in caso di interazioni con l'\glossario{API}. È stata poi espressa la necessità di trovare mezzi e idee per l'approfondimento dei casi d'uso dello strumento di debug fornito al tecnico.
 \par Sono state inoltre evidenziate delle difficoltà sull'ordinamento del documento di \AdR\ date dallo strumento \glossario{LateX}. Infine ha esposto la necessità di un incontro con il Professor. Riccardo Cardin per una funzione di login utente che sarebbe disponibile anche per il tecnico già loggato. Il problema sarebbe arginabile definendo delle precondizioni per il login. 
 \subsubsection{Amministratore}
-\par Vengono discussi i nuovi comandi per la citazione dei documenti in \glossario{LateX}, inseriti nel documento di \NdP. Vengono inoltre elencate le attività e i dubbi quali:
-\begin{itemize}
-	\item Avanzamento dei lavori sul \PdP\ e inizio dei lavori sul \PdQ;
-	\item Elaborazione di tabelle e grafici da inserire per preventivi e consuntivi del \PdP;
-	\item Inizio dei lavori sui file di configurazione per la compilazione dei file pdf in au1tomatico.
-\end{itemize}
+\par Vengono discussi i nuovi comandi per la citazione dei documenti in \glossario{LateX}, inseriti nel documento di \NdP. Sono anche avanzati i lavori sul \PdP\ e iniziati i lavori sul \PdQ. Sono anche stati sviluppati tabelle e grafici da inserire per preventivi e consuntivi del \PdP\ e sono iniziati i lavori sui file di configurazione per la compilazione dei file pdf in au1tomatico.
 \subsubsection{Responsabile} 
-\par Il Responsabile indica le attività svolte in collaborazione con l'Amministratore quali:
-\begin{itemize}
-	\item Conversione di pianificazione e preventivo del primo \glossario{sprint} e l'elaborazione di tabelle e grafici per preventivo e consuntivo degli \glossario{sprint}; 
-	\item Stesura del verbale del meeting precedente 
-	\item Definizione attività e grafico \glossario{Gannt}\ su \glossario{Jira}.
-\end{itemize} 
+\par Il Responsabile si è occupato della pianificazione del preventivo del primo \glossario{sprint}\ e l'elaborazione di tabelle e grafici per preventivo e consuntivo degli \glossario{sprint}. Sono inoltre stati definiti attività e grafico \glossario{Gannt}\ su \glossario{Jira}\ e steso il verbale del meeting precedente.
+\subsubsection{Programmatore}
+\par Il Programmatore discute dello studio e dei progressi ottenuti con \glossario{txtai}, spiegando al gruppo la trasformazione che la tecnologia opera al fine di trasformare il linguaggio naturale in un vettore e in un indice di vettori. L'idea per il funzionamento è quella di formattare dizionario dati, \glossario{query}\ e le informazioni delle tabelle in documenti che simulino il \glossario{database}. La \glossario{query} verrebbe pre-processata e generare dei \glossario{token} da questa, per renderla più accessibile ai meccanismi di \glossario{txtai}. La frase verrebbe quindi processata e passata all'indicizzatore che eseguirebbe lo stesso procedimento con il dizionario dati. Rispetto ai lavori precedenti sono stati aggiunti due nuovi moduli per la pre-processazione.
+\par Vengono infine discussi i prossimi lavori che riguardano la creazione di un secondo indice che faccia da indice intermedio tra la \glossario{query}\ e l'indice reale per estrarre l'informazione. Questo sarebbe utile perché arricchirebbe i risultati parziali con informazioni quali la descrizione della tabella e i vincoli comuni. Oltre a ciò c'è la volontà di testare l'inserimento del numero di colonne per confrontare e capire se il risultato finale sia ottimale.
 \subsubsection{Progettista}
-\par Il Progettista espone i lavori fatti in collaborazione con il Programmatore.
-\begin{itemize}
-	\item Strutturazione di un dizionario dati in formato \glossario{JSON}\ che potesse essere più efficiente nell'interazione con \glossario{ChatGPT};
-	\item Espone la presenza di due tipi di formato in linguaggio naturale che più sembrano essere ottimali per gli \glossario{LLM};
-	\item Propone di utilizzare il linguaggio \glossario{Python}\ per il \glossario{backend}\ vista la quantità già scritta di codice per la parte funzionale del progetto;
-\end{itemize}
+\par Il Progettista ha lavorato coordinandosi con il programmatore per la strutturazione di un dizionario dati in formato \glossario{JSON}\ che potesse essere più efficiente nell'interazione con \glossario{ChatGPT}. È stata esposta poi la presenza di due tipi di formato in linguaggio naturale che più sembrano essere ottimali per gli \glossario{LLM}. Infine viene proposto di utilizzare il linguaggio \glossario{Python}\ per il \glossario{backend}\ vista la quantità già scritta di codice per la parte funzionale del progetto. 
 
 \subsubsection{Ridistribuzione dei ruoli}
 \par Per il terzo sprint vengono distribuite nuovamente le ore ai vari membri del gruppo. Da questo sprint, le ore non si concentreranno solo su un ruolo, ma spazieranno su più ruoli per fornire sostegno a membri che necessitano di maggiori risorse e per evitare di assegnare solo un ruolo con poche ore rimanenti. In particolare:
