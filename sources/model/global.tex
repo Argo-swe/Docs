@@ -12,8 +12,7 @@
 \seq_new:N \l_hernan_seq
 \NewDocumentCommand{\glossario}{m}{
     \seq_if_in:NnTF{\l_hernan_seq}{#1}{
-      #1
-      %\textit{#1\ped{\ped{G}}}
+      \textit{#1\ped{\ped{G}}}
     }{
       \seq_put_left:Nn{\l_hernan_seq}{#1}
       \textit{#1\ped{\ped{G}}}
