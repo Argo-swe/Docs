@@ -1,0 +1,109 @@
+\subsubsection{UC2 - Visualizzazione messaggio d'errore per fallita autenticazione}\label{UC2}
+\paragraph*{Descrizione}
+Al rilevamento da parte del sistema di irregolarità durante il processo di validazione delle credenziali al momento del login, degli appositi messaggi di errore informeranno l’Utente Non Autenticato della natura del problema riscontrato.
+
+\paragraph*{Attori principali}
+Utente Non Autenticato
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato ha inserito le proprie credenziali nell’area di login;
+  \item Il sistema ha riscontrato un problema nel processo di autenticazione.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene mostrato un messaggio di errore per notificare l’Utente Non Autenticato dell’incorretto o parziale inserimento dei dati nell’area di login.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente Non Autenticato tenta di autenticarsi all’applicativo inserendo le proprie credenziali nell’area di login;
+  \item Il sistema rileva lo scorretto o parziale inserimento delle credenziali;
+  \item Viene segnalato all’Utente Non Autenticato il messaggio d’errore relativo alla problematica riscontrata.  
+\end{enumerate}
+
+\paragraph*{Sottocasi d'uso}
+\begin{itemize}
+  \item Errore credenziali incomplete (\hyperref[UC2point1]{UC2.1});
+  \item Errore credenziali errate (\hyperref[UC2point2]{UC2.2});
+  \item Errore utente non registrato (\hyperref[UC2point3]{UC2.3}).
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC2.1 - Errore credenziali incomplete}\label{UC2point1}
+\paragraph*{Descrizione}
+L’errore relativo all’incompletezza delle credenziali viene mostrato a seguito del rilevamento parziale delle credenziali inserite da parte dell’Utente Non Autenticato.
+
+\paragraph*{Attori principali}
+Utente Non Autenticato
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato non ha eseguito il login;
+  \item L’Utente Non Autenticato ha inserito solo la propria e-mail o la propria password come credenziali nel tentativo di autenticarsi.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene mostrato un messaggio di errore per notificare l’utente del parziale inserimento dei dati nell’area di login.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente Non Autenticato ha inserito solo una delle due credenziali richieste durante il login;
+  \item Il sistema mostra un messaggio di errore relativo al mancato inserimento dei dati di accesso all’applicativo.   
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC2.2 - Errore credenziali errate}\label{UC2point2}
+\paragraph*{Descrizione}
+L’errore relativo alle credenziali errate viene mostrato in seguito all’inserimento di una e-mail dal formato incorretto o della non corrispondenza tra e-mail e password per un utente registrato.
+
+\paragraph*{Attori principali}
+Utente Non Autenticato
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato non ha eseguito il login;
+  \item L’Utente Non Autenticato ha tentato l’autenticazione con credenziali errate.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene mostrato un messaggio di errore per notificare l’utente dell’errato inserimento dei dati nell’area di login.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente Non Autenticato ha tentato la procedura di login con credenziali errate;
+  \item Il sistema mostra un messaggio di errore relativo all’errato inserimento dei dati di accesso all’applicativo.    
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC2.3 - Errore utente non registrato}\label{UC2point3}
+\paragraph*{Descrizione}
+L’errore relativo all’assenza di un account utente nel sistema viene mostrato nel caso in cui, al corretto inserimento dell’e-mail nell’apposita sezione da parte dell’Utente Non Autenticato, questa risulta assente tra le credenziali degli utenti registrati.
+
+\paragraph*{Attori principali}
+Utente Non Autenticato
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato non ha eseguito il login;
+  \item L’Utente Non Autenticato ha tentato l’autenticazione con una mail non presente nel sistema.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene mostrato un messaggio di errore per notificare l’utente dell’assenza del profilo utente a cui si vuole accedere nel sistema
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente Non Autenticato ha tentato la procedura di login inserendo una mail non associata ad alcun account utente;
+  \item Il sistema mostra un messaggio di errore relativo all’assenza della mail inserita all’interno del sistema.     
+\end{enumerate}

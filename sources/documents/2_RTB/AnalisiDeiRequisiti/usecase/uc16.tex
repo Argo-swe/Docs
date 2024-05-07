@@ -1,0 +1,87 @@
+\subsubsection{UC16 - Modifica \glossario{dizionario dati}}\label{UC16}
+\paragraph*{Descrizione}
+Il Tecnico vuole modificare un \glossario{dizionario dati} già presente nel sistema.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item Il Tecnico naviga alla lista dei dizionari dati caricati;
+  \item Il Tecnico seleziona un \glossario{dizionario dati} di cui vuole modificare qualcosa.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il Tecnico ha modificato una o più cose tra: titolo , descrizione o contenuto del \glossario{dizionario dati}.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico sceglie un \glossario{dizionario dati} che vuole modificare e lo seleziona;
+  \item Il Tecnico sceglie quali campi modificare tra : titolo, descrizione o file che contiene il \glossario{dizionario dati};
+  \item Il Tecnico seleziona quello che vuole modificare e inserisce una nuova stringa per titolo e descrizione oppure carica un nuovo file per il \glossario{dizionario dati};
+  \item Il Tecnico salva le modifiche.  
+\end{enumerate}
+
+\paragraph*{Sottocasi d'uso}
+\begin{itemize}
+  \item Modifica titolo \glossario{dizionario dati} (\hyperref[UC16point1]{UC16.1});
+  \item Modifica descrizione \glossario{dizionario dati} (\hyperref[UC16point2]{UC16.2});
+  \item TODO
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC16.1 - Modifica titolo \glossario{dizionario dati}}\label{UC16point1}
+\paragraph*{Descrizione}
+Il Tecnico vuole modificare il titolo di un \glossario{dizionario dati}.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha selezionato un \glossario{dizionario dati} esistente di cui vuole modificare il titolo.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il \glossario{dizionario dati} ha come titolo il nuovo valore inserito dal Tecnico.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico ha selezionato il \glossario{dizionario dati} di cui vuole cambiare il titolo e inserisce il nuovo valore nell’apposito box;
+  \item Il Tecnico salva la modifica.  
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC16.2 - Modifica descrizione \glossario{dizionario dati}}\label{UC16point2}
+\paragraph*{Descrizione}
+Il Tecnico vuole modificare la descrizione di un \glossario{dizionario dati}.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha selezionato un \glossario{dizionario dati} esistente di cui vuole modificare il la descrizione.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il \glossario{dizionario dati} ha come descrizione il nuovo valore inserito dal Tecnico.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico ha selezionato il \glossario{dizionario dati} di cui vuole cambiare la descrizione e inserisce il nuovo valore nell’apposito box;
+  \item Il Tecnico salva la modifica.
+\end{enumerate}
+
+TODO Descrizioni vuote ammissibili o no?
