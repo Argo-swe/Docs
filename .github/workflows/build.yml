@@ -56,12 +56,31 @@ jobs:
         cd ${{ github.workspace }}/tools
         docker exec argo-docs-latexpdfbuilder-1 bash -c 'cd /data && chmod +x *.sh && ./compilescript.sh -d 2_RTB'
 
+    # Pulizia dell'output prima della generazione dell'artefatto
+    - name: Clean Output
+      continue-on-error: true
+      # I verbali esterni, poiché firmati dalla Proponente, non vanno ripubblicati
+      run: |
+        mkdir build-output-clean
+        if [ -d "build-output/2_RTB" ]; then
+          cp -r build-output/2_RTB build-output-clean
+          if [ -d "build-output-clean/2_RTB/Verbali/Esterni" ]; then
+            rm -rf build-output-clean/2_RTB/Verbali/Esterni
+          fi
+        fi
+        if [ -d "build-output/2_PB" ]; then
+          cp -r build-output/2_PB build-output-clean
+          if [ -d "build-output-clean/2_PB/Verbali/Esterni" ]; then
+            rm -rf build-output-clean/2_PB/Verbali/Esterni
+          fi
+        fi    
+
     # Pubblicazione dell'artefatto generato durante il processo di build
     - name: Publish Artifact
       uses: actions/upload-artifact@v4
       with:
         name: Docs
-        path: build-output
+        path: build-output-clean
 
     # Clonazione del repository di destinazione in una directory temporanea
     - name: Checkout Destination Repository
@@ -81,23 +100,6 @@ jobs:
         name: Docs
         path: ./temp-checkout
 
-    # Pulizia dell'output prima dell'aggiornamento del repository di destinazione
-    - name: Clean Output
-      continue-on-error: true
-      # I verbali esterni, poiché firmati dalla Proponente, non vanno caricati nel repository di destinazione
-      run: |
-        cd ./temp-checkout
-        if [ -d "2_RTB" ]; then
-          if [ -d "2_RTB/Verbali/Esterni" ]; then
-            rm -rf 2_RTB/Verbali/Esterni
-          fi
-        fi
-        if [ -d "2_PB" ]; then
-          if [ -d "2_PB/Verbali/Esterni" ]; then
-            rm -rf 2_PB/Verbali/Esterni
-          fi
-        fi
-
     # Caricamento dei PDF nel repository di destinazione
     - name: Upload Documents
       continue-on-error: true
@@ -105,8 +107,8 @@ jobs:
         cd ./temp-checkout
         git config --global user.name 'github-actions'
         git config --global user.email 'argo.unipd@gmail.com'
-        git status 
-        git add 2_RTB
+        git status
+        git add .
         git commit -m "[BOT] Caricamento PDF"
         git log --max-count=3
         git push -u origin main
