@@ -75,7 +75,7 @@ compile_latex() {
     cd "$dir"
     # Compile LaTeX file to PDF
     # Uncomment the end to suppress all the compiler output
-    lualatex --halt-on-error "$filename.tex" #>/dev/null
+    latexmk -lualatex --halt-on-error "$filename.tex" #>/dev/null
 
     # Move generated PDF file in output_dir
     cd "$current_dir"
