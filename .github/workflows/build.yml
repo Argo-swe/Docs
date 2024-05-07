@@ -1,0 +1,121 @@
+name: Publish and Deploy
+run-name: Publish and Deploy (PDFs) on PR Merge
+
+# Definizione dei permessi
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Trigger: pull request sul ramo base
+on:
+  pull_request:
+    branches: 
+      - main
+    types: [closed]
+
+# Unità di lavoro all'interno del workflow
+jobs:
+  docker:
+  
+    # Controllo se la pull request è stata unita al ramo base
+    if: github.event.pull_request.merged == true
+    
+    # Esecuzione in ambiente Ubuntu con le ultime versioni di pacchetti e librerie
+    runs-on: ubuntu-latest
+    
+    # Azioni atomiche eseguite in sequenza all'interno del job
+    steps:
+    
+    # Clonazione del repository sorgente all'interno dell'ambiente di esecuzione del job
+    - name: Checkout Source Repository
+      uses: actions/checkout@v4
+      with:
+          # Recupero tutta la cronologia (branch e tag)
+          fetch-depth: 0
+
+    # Salvataggio e ripristino della cache
+    - name: Cache Docker
+      uses: actions/cache@v4
+      id: cache-docker
+      with:
+        path: ${{ github.workspace }}/tools/docker
+        key: ${{ runner.os }}-docker-${{ hashFiles('**/tools/docker-compose.yml') }}-${{ hashFiles('**/tools/docker/Dockerfile') }}
+        restore-keys: |
+          ${{ runner.os }}-docker
+
+    # Creazione e avvio del contenitore Docker
+    - name: Start Docker Container
+      run: |
+       cd ${{ github.workspace }}/tools
+       docker compose up -d
+
+    # Compilazione dei documenti tramite shell interattiva all'interno del contenitore Docker
+    - name: Compile Documents
+      run: |
+        cd ${{ github.workspace }}/tools
+        docker exec argo-docs-latexpdfbuilder-1 bash -c 'cd /data && chmod +x *.sh && ./compilescript.sh -d 2_RTB'
+
+    # Pulizia dell'output prima della generazione dell'artefatto
+    - name: Clean Output
+      continue-on-error: true
+      # I verbali esterni, poiché firmati dalla Proponente, non vanno ripubblicati
+      run: |
+        mkdir build-output-clean
+        if [ -d "build-output/2_RTB" ]; then
+          cp -r build-output/2_RTB build-output-clean
+          if [ -d "build-output-clean/2_RTB/Verbali/Esterni" ]; then
+            rm -rf build-output-clean/2_RTB/Verbali/Esterni
+          fi
+        fi
+        if [ -d "build-output/2_PB" ]; then
+          cp -r build-output/2_PB build-output-clean
+          if [ -d "build-output-clean/2_PB/Verbali/Esterni" ]; then
+            rm -rf build-output-clean/2_PB/Verbali/Esterni
+          fi
+        fi    
+
+    # Pubblicazione dell'artefatto generato durante il processo di build
+    - name: Publish Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Docs
+        path: build-output-clean
+
+    # Clonazione del repository di destinazione in una directory temporanea
+    - name: Checkout Destination Repository
+      uses: actions/checkout@v4
+      with:
+        # Token di accesso per autorizzare l'utilizzo delle risorse
+        token: ${{ secrets.UPLOAD_TOKEN }}
+        repository: Argo-swe/argo-swe.github.io
+        # Recupero tutta la cronologia (branch e tag)
+        fetch-depth: 0
+        path: ./temp-checkout
+
+    # Caricamento dei file estratti dall'archivio nella directory temporanea
+    - name: Download Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: Docs
+        path: ./temp-checkout
+
+    # Caricamento dei PDF nel repository di destinazione
+    - name: Upload Documents
+      continue-on-error: true
+      run: |
+        cd ./temp-checkout
+        git config --global user.name 'github-actions'
+        git config --global user.email 'argo.unipd@gmail.com'
+        git status
+        git add .
+        git commit -m "[BOT] Caricamento PDF"
+        git log --max-count=3
+        git push -u origin main
+
+    # Arresto dell'esecuzione del contenitore Docker
+    - name: Stop Docker Container
+      continue-on-error: true
+      run: |
+        cd ${{ github.workspace }}/tools
+        docker compose stop
