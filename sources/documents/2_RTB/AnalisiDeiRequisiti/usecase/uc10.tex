@@ -1,0 +1,33 @@
+\subsubsection{UC10 - Visualizzazione lista \glossario{dizionario dati}}\label{UC10}
+\paragraph*{Descrizione}
+L’Utente visualizza la lista dei dizionari dati che sono stati caricati nel sistema.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L’Utente è stato autenticato con successo;
+  \item È presente almeno un \glossario{dizionario dati} nel sistema.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item L’Utente visualizza la lista completa dei dizionari dati presenti nel sistema.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente seleziona l’opzione di visualizzazione dei dizionari dati caricati;
+  \item Viene esposta la lista dei dizionari dati.  
+\end{enumerate}
+
+\paragraph*{Inclusione}
+\begin{itemize}
+  \item Visualizzazione singolo \glossario{dizionario dati} (\hyperref[UC9]{UC9}).
+\end{itemize}
+
+\paragraph*{Estensione}
+\begin{itemize}
+  \item Messaggio errore fallimento caricamento dizionario dati (\hyperref[UC11]{UC11}).
+\end{itemize}

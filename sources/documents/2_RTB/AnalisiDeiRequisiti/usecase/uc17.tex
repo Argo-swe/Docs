@@ -1,0 +1,56 @@
+\subsubsection{UC17 - Elimina \glossario{dizionario dati}}\label{UC17}
+\paragraph*{Descrizione}
+Il Tecnico desidera eliminare uno dei dizionari dati inseriti in precedenza dalla lista.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item Il Tecnico naviga alla lista dei dizionari dati caricati.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il dizionario selezionato è stato eliminato.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico ha selezionato il dizionario da eliminare;
+  \item Il Tecnico conferma la scelta di eliminazione;
+  \item Il \glossario{dizionario dati} selezionato viene rimosso dalla lista dei dizionari dati;  
+\end{enumerate}
+
+\paragraph*{Sottocasi d'uso}
+\begin{itemize}
+  \item Visualizzazione errore per mancata eliminazione del \glossario{dizionario dati} (\hyperref[UC17point1]{UC17.1}).
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC17.1 - Visualizzazione errore per mancata eliminazione del \glossario{dizionario dati}}\label{UC17point1}
+\paragraph*{Descrizione}
+Il sistema mostra un messaggio d’errore relativo alla mancata eliminazione del \glossario{dizionario dati} selezionato dal Tecnico.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item Il sistema ha riscontrato un problema nell'eliminazione di un \glossario{dizionario dati} selezionato dal Tecnico.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il sistema mostra un messaggio d’errore per la mancata eliminazione del nuovo \glossario{dizionario dati}.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico ha selezionato il dizionario da eliminare;
+  \item Il Tecnico conferma la scelta di eliminazione;
+  \item Il sistema segnala la mancata eliminazione al Tecnico tramite un messaggio di errore.
+\end{enumerate}
