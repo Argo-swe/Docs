@@ -1,0 +1,92 @@
+\subsubsection{UC1 - Autenticazione}\label{UC1}
+\paragraph*{Descrizione}
+L’Autenticazione corrisponde al processo di login, tramite il quale l’Utente Non Autenticato può accedere all’applicativo in quanto Utente o Tecnico.
+
+\paragraph*{Attori principali}
+Utente Non Autenticato
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato si collega all’applicativo;
+  \item L’Utente Non Autenticato ha avviato la procedura di login all’applicativo.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item La procedura di autenticazione si è conclusa con successo;
+  \item L’Utente Non Autenticato diviene Utente o Tecnico a seconda del proprio ruolo e visualizza le funzioni generali;
+  \item Il Tecnico visualizza le funzionalità aggiuntive specifiche del ruolo.  
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{itemize}
+  \item L’Utente Non Autenticato accede all’applicativo;
+  \item L’Utente Non Autenticato seleziona la funzione di login;
+  \item L’Utente Non Autenticato inserisce le proprie credenziali di accesso;
+  \item In caso di corretto inserimento e verifica delle credenziali, l’Utente Non Autenticato accede all’applicativo come Utente o Tecnico.
+\end{itemize}
+
+\paragraph*{Estensione}
+\begin{itemize}
+  \item Visualizzazione del messaggio d’errore per fallita autenticazione (\hyperref[UC2]{UC2}).
+\end{itemize}
+
+\paragraph*{Sottocasi d'uso}
+\begin{itemize}
+  \item Inserimento e-mail (\hyperref[UC1point1]{UC1.1});
+  \item Inserimento password (\hyperref[UC1point2]{UC1.2}).
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC1.1 - Inserimento e-mail}\label{UC1point1}
+\paragraph*{Descrizione}
+La procedura di inserimento e-mail corrisponde all’inserimento della propria e-mail nella sezione apposita di login.
+
+\paragraph*{Attori principali}
+Utente Non Autenticato
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato non ha eseguito il login;
+  \item L’Utente Non Autenticato ha avviato la procedura di autenticazione.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato ha correttamente inserito la propria e-mail nel campo apposito.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente Non Autenticato avvia la procedura di autenticazione;
+  \item L’Utente Non Autenticato inserisce la propria e-mail nel campo apposito.  
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC1.2 - Inserimento password}\label{UC1point2}
+\paragraph*{Descrizione}
+La procedura di inserimento password corrisponde all’inserimento della propria password nella sezione apposita di login.
+
+\paragraph*{Attori principali}
+Utente Non Autenticato
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato non ha eseguito il login;
+  \item L’Utente Non Autenticato ha avviato la procedura di autenticazione;
+  \item L’Utente Non Autenticato ha inserito la propria e-mail nel campo apposito.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item L’Utente Non Autenticato ha correttamente inserito la propria password nel campo apposito.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente Non Autenticato avvia la procedura di autenticazione;
+  \item L’Utente Non Autenticato inserisce la propria e-mail nel campo apposito;
+  \item L’Utente Non Autenticato inserisce la propria password nel campo apposito.  
+\end{enumerate}

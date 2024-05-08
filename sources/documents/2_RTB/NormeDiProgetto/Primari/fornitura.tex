@@ -75,3 +75,23 @@ Gli strumenti impiegati nel processo di fornitura sono:
   \item \textbf{Zoom:} Strumento per videochiamate utilizzato nei rapporti con la Proponente;
   \item \textbf{Google Sheets:} Strumento per la creazione di \glossario{spreadsheet} condivisi, utilizzato per la pianificazione di \glossario{sprint} e \glossario{rendicontazione ore}.
 \end{itemize}
+
+\subsubsubsection{Dashboard Google Sheets}
+Lo \glossario{spreadsheet} condiviso, realizzato tramite \glossario{Google Sheets} e accessibile su \glossario{Google Drive}, ha lo scopo di automazizare la generazione di preventivi e consuntivi (orari ed economici). Il foglio di calcolo principale è suddiviso in più fogli interni:
+\begin{itemize}
+  \item Un foglio contenente le variabili globali da utilizzare nei fogli successivi, incluso il preventivo definito in fase di candidatura;
+  \item Un foglio nascosto per ciascun periodo, che include le risposte al questionario di valutazione dello sprint;
+  \item Un foglio per ogni sprint con le seguenti informazioni:
+  \begin{itemize}
+    \item Numero dello \glossario{sprint};
+    \item Date di inizio e termine dello \glossario{sprint};
+    \item Tabella di assegnazione delle ore produttive per ciascun membro del team, accumulate in totali per persona e per ruolo;
+    \item Distribuzione delle ore per ruolo, sotto forma di donut chart;
+    \item Distribuzione delle ore per la coppia risorsa-ruolo, sotto forma di grafico a barre sovrapposte (così da poter assumere più ruoli per sprint);
+    \item Preventivo economico dello \glossario{sprint};
+    \item Tabella riassuntiva con ore e budget spesi e restanti;
+    \item Pie chart con la stima delle ore spese sul totale;
+    \item Pie chart con la stima del budget sul totale;
+    \item Ore rimanenti per la coppia risorsa-ruolo.
+  \end{itemize}
+\end{itemize}

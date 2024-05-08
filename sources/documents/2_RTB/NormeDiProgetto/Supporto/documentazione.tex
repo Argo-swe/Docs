@@ -92,30 +92,34 @@ Ciascun documento è fornito di questi elementi:
   \item Indice dei contenuti;
 \end{itemize}
 
-\paragraph{Verbali}
-I verbali oltre agli elementi forniti sopra possiedono una ulteriore definizione della struttura:
+\subsubsubsection{Verbali}
+\par Ad eccezione dei capitoli dichiarati in precedenza, i verbali presentano una struttura differente rispetto a quella degli altri documenti di progetto. Il contenuto dei verbali, sia interni che esterni, è infatti suddiviso nelle seguenti sezioni:
 \begin{enumerate}
-  \item Informazioni:
+  \item \textbf{Informazioni}:
   \begin{itemize}
-    \item Orario di inizio incontro;
-    \item Orario di fine incontro;
-    \item Mezzo di pianificazione dell'incontro;
-    \item Tipo di incontro (di persona/da remoto).
+    \item Orario di inizio dell'incontro;
+    \item Orario di fine dell'incontro;
+    \item Mezzo di pianificazione dell'incontro (Mail, Telegram, riunioni precedenti, ecc.);
+    \item Tipo di incontro (in presenza/da remoto);
     \item Descrizione dell'incontro;
-    \item Partecipanti all'incontro e durata partecipazione.
+    \item \textbf{Partecipanti}: sezione che include l'elenco dei partecipanti interni e, in caso di riunione con la \glossario{Proponente}, anche esterni. Per ciascun membro del team, si riporta la durata (in ore e minuti) della partecipazione;
+    \item \textbf{Glossario}: paragrafo finalizzato a stabilire la modalità di formattazione dei termini definiti nel \Gls\ e il numero di occorrenze identificate. 
   \end{itemize}
-  \item Riunione:
+  \item \textbf{Riunione}: i meeting vengono organizzati con lo scopo di rendicontare il lavoro svolto da ciascun membro del gruppo, chiarire eventuali dubbi, mitigare i rischi, intraprendere azioni correttive e pianificare le attività future. Il capitolo relativo alla riunione è suddiviso in due sezioni:
   \begin{itemize}
-    \item Ordine del giorno dell'incontro;
-    \item Discussione e decisioni prese durante l'incontro, contiene il corpo principale del verbale.
+    \item \textbf{Ordine del giorno}: scaletta degli argomenti generali affrontati durante la riunione;
+    \item \textbf{Discussione e decisioni}: sezione contenente l'elenco cronologico degli argomenti trattati nel corso del meeting. La discussione di ciascuna tematica non è mai fine a sé stessa, ma mira a prendere decisioni consapevoli e a definire un piano d'azione (vedere tabella Todo / In Progress). Durante le riunioni, si valuta anche il progresso delle attività assegnate negli incontri precedenti. Il team può quindi decidere di considerare un task completato, di prolungare la sua data di scadenza o, se necessario, di suddividere l'attività in sotto-task. Nei verbali esterni, alcune sezioni sono organizzate secondo lo schema "domanda-risposta", per formalizzare l'interazione tra il team e la \glossario{Proponente}.  
   \end{itemize}
-  \item Tabella di task ToDo/In progress:
+  \item \textbf{Tabella di task Todo / In Progress}:
+  Durante le riunioni, interne ed esterne, il team pianifica le attività a breve e medio-lungo termine. Al fine di ottimizzare la fase di creazione dei \glossario{ticket} su \glossario{Jira Software}, viene redatta una tabella con le azioni da intraprendere o, in alternativa, i task da portare a termine. Ogni voce è affiancata dal codice univoco del \glossario{ticket} correlato (se presente) nell'\glossario{ITS} di \glossario{Jira}. L'ID del \glossario{ticket} è composto dalla stringa ARGO- seguita da un numero univoco autoincrementante. I campi della tabella sono i seguenti:
   \begin{itemize}
-    \item Codice della \glossario{issue} \glossario{GitHub} relativa all'incarico;
-    \item Incarico;
-    \item Incaricato/a;
-    \item Scandenza.
+    \item ID del \glossario{ticket} \glossario{Jira} associato all'incarico;
+    \item Descrizione dell'attività;
+    \item Nome del componente o dei componenti a cui è assegnato il task;
+    \item Data di scadenza, in formato AAAA-MM-GG per mantenere la coerenza con il \glossario{repository} documentale e il registro delle modifiche.
   \end{itemize}
+  \item \textbf{Prossima riunione}: sezione contenente la data ed, eventualmente, l'orario della prossima riunione (se pianificata), con annessa breve descrizione dell'ordine del giorno. Nel caso in cui un meeting sia stato organizzato durante l'incontro precedente (e non tramite chat Telegram), il verbale interno deve includere un link al verbale appropriato come mezzo di pianificazione;
+  \item \textbf{Firma del documento}: spazio per la firma del responsabile. In caso di verbale esterno, l'approvazione finale è a carico della \glossario{Proponente}, che produce in output un documento, in formato PDF, firmato e timbrato.
 \end{enumerate}
 
 \subsubsection{Stile}
@@ -136,8 +140,9 @@ Quando è necessario fare riferimento tramite ruolo di progetto ad un membro del
 \paragraph{Formattazione testo}
 \begin{itemize}
   \item \textbf{Termini nel Glossario:} Indicati in \textit{corsivo} e con una \textit{\small{G}} a fine parola. In base a ciascun documento tale formattazione può comparire alla sola prima occorrenza (quando il documento ha lo scopo di essere letto dall'inizio alla fine), o in maniera più frequente (quando il documento può essere letto in maniera più frammentata);
-  \item \textbf{Nomi di documento:} Indicati in \textit{corsivo} con le iniziali di parola maiuscole eccetto preposizioni (es.: \textit{Piano di Progetto}, non \textit{Piano Di Progetto});
-  \item \textbf{Nomi di ruolo:} Indicati con la iniziale maiuscola e in \textit{corsivo};
+  \item \textbf{Nomi di documento:} Indicati in \textit{corsivo} con le iniziali di parola maiuscole eccetto preposizioni (es.: \textit{Piano di Progetto}, non \textit{Piano Di Progetto}). Questo per mantenere la coerenza con le \glossario{abbreviazioni} (es: AdR, PdP, PdQ, NdP);
+  \item \textbf{Way of Working:} Indicato con le iniziali di parola maiuscole eccetto preposizioni, per mantenere la coerenza con l'\glossario{abbreviazione} WoW usata anche come comando in \glossario{LaTeX};
+  \item \textbf{Nomi di ruolo:} Indicati con la iniziale maiuscola;
   \item \textbf{Data:} Indicata in formato YYYY-MM-DD nelle tabelle riassuntive e nei nomi dei file, in formato esteso (esempio: 20 aprile 2024) quando si trova all'interno di testo discorsivo.
 \end{itemize}
 
