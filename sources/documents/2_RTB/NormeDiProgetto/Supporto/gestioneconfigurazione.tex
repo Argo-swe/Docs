@@ -31,7 +31,7 @@
   \item \textbf{Assegnatario}: il componente del gruppo a cui è stata assegnato il compito di risolvere il \glossario{ticket};
   \item \textbf{Epic}: esprime obiettivi generali o grandi porzioni di lavoro che devono essere frammentati. Ogni \glossario{ticket} può essere associato a un epic;
   \item \textbf{\glossario{Sprint}}: ciascun \glossario{ticket} può essere correlato a uno \glossario{sprint}, a sua volta scomposto in più epic;
-  \item \textbf{Ticket collegati}: \glossario{Jira} offre una funzionalità, sia nei campi di contesto che nella timeline di pianificazione, per collegare i \glossario{ticket} tra loro. Di seguito sono riportate le associazioni predefinite:
+  \item \textbf{Ticket collegati}: \glossario{Jira} offre una funzionalità, sia nei campi di contesto che nella timeline di pianificazione, per collegare i \glossario{ticket} tra di loro. Di seguito sono riportate le associazioni predefinite:
     \begin{itemize}
       \item blocca/è bloccato da (queste sono le due dipendenze più comuni tra i task);
       \item clona/è clonato da;
@@ -66,6 +66,15 @@
   \item \textbf{Modelli}: set di regole predefinite da importare nel progetto;
   \item \textbf{Utilizzo}: numero di automazioni attivate mensilmente.
 \end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Il team ha deciso di introdurre una regola personalizzata per effettuare automaticamente la transizione dello stato dei \glossario{ticket}. Quando viene aperta una \glossario{pull request} finalizzata alla chiusura di un \glossario{ticket}, il titolo della richiesta deve essere corredato dal codice identificativo del \glossario{ticket} (ARGO-ID). In alternativa, è possibile menzionare il \glossario{ticket} nel nome del \glossario{branch} o nei \glossario{commit} associati alla \glossario{pull request}. Inoltre, l’assegnatario può lasciare un commento nella forma [ARGO-ID], affinché un bot, denominato jira[bot], possa convertire il commento in un link al \glossario{ticket} \glossario{Jira}. Una volta effettuato il \glossario{merge} della \glossario{pull request} su \glossario{GitHub}, il \glossario{ticket} collegato passerà in automatico allo stato "Completato".
+\par Utilizzando i modelli predefiniti, il gruppo ha aggiunto altre due regole, rispettivamente per:
+\begin{itemize}
+  \item Chiudere automaticamente un \glossario{ticket} quando tutti i \glossario{ticket} subordinati (task, story, bug, sottotask) sono completati;
+  \item Chiudere automaticamente un \glossario{ticket} quando tutti i sottotask sono completati.
+\end{itemize}
+
 
 \subsubsection{Versionamento}
 Il gruppo mantiene un versionamento per la documentazione nel formato:
