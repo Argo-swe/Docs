@@ -53,6 +53,29 @@
   \item \textbf{Rilasci}: elenco delle versioni rilasciate a cui il \glossario{ticket} è associato.
 \end{itemize}
 
+\subsubsection{Automazione chiusura ticket}
+\par Su \glossario{Jira}, nelle impostazioni del progetto, è presente una sezione denominata “Automazione”, a sua volta suddivisa in quattro sottosezioni:
+\begin{itemize}
+  \item \textbf{Regole}: elenco delle regole definite dall'amministratore; ciascuna regola richiede un trigger di innesco, ossia un evento che avvia l'esecuzione della procedura definita nel corpo della regola. Una volta stabilito il trigger di attivazione, l’amministratore può scegliere una delle seguenti opzioni:
+  \begin{itemize}  
+    \item THEN: aggiungi un'azione (es: transizione di un \glossario{ticket} da uno stato all'altro);
+    \item IF: aggiungi una condizione (es: verifica se lo stato del \glossario{ticket} è diverso da “Completato”);
+    \item FOR EACH: applica le azioni e le condizioni ad ogni task (es: esamina tutti i \glossario{ticket} collegati al \glossario{ticket} che ha attivato la regola ed esegue per ciascuno di essi una determinata azione);
+  \end{itemize}
+  \item \textbf{Audit log}: cronologia delle automazioni avviate, con dettagli sullo stato di esecuzione della regola, la data di attivazione e gli elementi associati;
+  \item \textbf{Modelli}: set di regole predefinite da importare nel progetto;
+  \item \textbf{Utilizzo}: numero di automazioni attivate mensilmente.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Il team ha deciso di introdurre una regola personalizzata per effettuare automaticamente la transizione dello stato dei \glossario{ticket}. Quando viene aperta una \glossario{pull request} finalizzata alla chiusura di un \glossario{ticket}, il titolo della richiesta deve essere corredato dal codice identificativo del \glossario{ticket} (ARGO-ID). In alternativa, è possibile menzionare il \glossario{ticket} nel nome del \glossario{branch} o nei \glossario{commit} associati alla \glossario{pull request}. Inoltre, l’assegnatario può lasciare un commento nella forma [ARGO-ID], affinché un bot, denominato jira[bot], possa convertire il commento in un link al \glossario{ticket} \glossario{Jira}. Una volta effettuato il \glossario{merge} della \glossario{pull request} su \glossario{GitHub}, il \glossario{ticket} collegato passerà in automatico allo stato "Completato".
+\par Utilizzando i modelli predefiniti, il gruppo ha aggiunto altre due regole, rispettivamente per:
+\begin{itemize}
+  \item Chiudere automaticamente un \glossario{ticket} quando tutti i \glossario{ticket} subordinati (task, story, bug, sottotask) sono completati;
+  \item Chiudere automaticamente un \glossario{ticket} quando tutti i sottotask sono completati.
+\end{itemize}
+
+
 \subsubsection{Versionamento}
 Il gruppo mantiene un versionamento per la documentazione nel formato:
 \[ X.Y.Z \]
