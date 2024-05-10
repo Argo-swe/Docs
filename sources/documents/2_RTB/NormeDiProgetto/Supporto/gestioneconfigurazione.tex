@@ -1,7 +1,57 @@
 \subsection{Gestione della configurazione}
 
+\subsubsection{Scopo}
+\par La seguente sezione viene redatta con lo scopo di formalizzare e automatizzare le procedure applicate dal team, durante tutto il ciclo di vita del software, nell'ambito del processo di "configuration management".
+
 \subsubsection{Descrizione}
-Il processo di gestione della configurazione si occupa di definire e gestire le componenti software utlizzate durante l'intero corso del progetto per mantenere la tracciabilità e gestire il versionamento e i rilasci di software e documentazione prodotta.
+\par Il processo di gestione della configurazione si occupa di definire e gestire le componenti software utilizzate durante l'intero corso del progetto per mantenere la tracciabilità e gestire il versionamento e i rilasci di prodotti software e documenti. Si tratta di un processo di applicazione di procedure amministrative e tecniche finalizzate a:
+\begin{itemize}
+  \item Identificare le componenti software del sistema e stabilire un punto di riferimento da cui misurare i progressi nel tempo;
+  \item Controllare le modifiche e i rilasci degli item;
+  \item Mantenere la tracciabilità delle modifiche;
+  \item Garantire la completezza, coerenza e correttezza degli item.
+\end{itemize}
+
+\subsubsection{Issue tracking system (ITS)}
+\par Al fine di registrare, gestire e monitorare le attività e sottoattività lungo l'intero ciclo di vita del software, il team impiega l'\glossario{Issue Tracking System} sviluppato da Atlassian: \glossario{Jira}.
+
+\subsubsubsection{Ticket}
+\par I \glossario{ticket} possono essere di quattro tipi:
+\begin{itemize}
+  \item \textbf{Task}: un'attività o un compito specifico da portare a termine entro la fine di uno \glossario{sprint} e assegnato a un unico membro del team;
+  \item \textbf{Sottotask}: un \glossario{ticket} subordinato che consente di orientarsi verso una scomposizione più granulare del lavoro. Un'attività, ritenuta troppo onerosa per una singola risorsa, può quindi essere suddivisa in più sottotask, associabili a diversi componenti del gruppo;
+  \item \textbf{\glossario{Bug}}: un \glossario{ticket} marcato come \glossario{bug} segnala la presenza di un'anomalia da risolvere tempestivamente, relativamente al prodotto software, alla documentazione o all'infrastruttura di gestione del progetto;
+  \item \textbf{\glossario{Story}}: detta anche "User Story", rappresenta una funzionalità del sistema, un requisito espresso dal punto di vista dell'utente.
+\end{itemize}
+\par Il layout di un \glossario{ticket} è formato dai seguenti campi:
+\begin{itemize}
+  \item \textbf{Riepilogo}: un titolo che riassume brevemente l'incarico associato al \glossario{ticket};
+  \item \textbf{ID}: un codice univoco autoincrementante generato automaticamente dal sistema secondo la formula ARGO-ID;
+  \item \textbf{Descrizione}: una descrizione esaustiva dei risultati attesi al completamento del \glossario{ticket};
+  \item \textbf{Assegnatario}: il componente del gruppo a cui è stata assegnato il compito di risolvere il \glossario{ticket};
+  \item \textbf{Epic}: esprime obiettivi generali o grandi porzioni di lavoro che devono essere frammentati. Ogni \glossario{ticket} può essere associato a un epic;
+  \item \textbf{\glossario{Sprint}}: ciascun \glossario{ticket} può essere correlato a uno \glossario{sprint}, a sua volta scomposto in più epic;
+  \item \textbf{Ticket collegati}: \glossario{Jira} offre una funzionalità, sia nei campi di contesto che nella timeline di pianificazione, per collegare i \glossario{ticket} tra loro. Di seguito sono riportate le associazioni predefinite:
+    \begin{itemize}
+      \item blocca/è bloccato da (queste sono le due dipendenze più comuni tra i task);
+      \item clona/è clonato da;
+      \item duplica/è duplicato da;
+      \item item correlato a.
+    \end{itemize} 
+  \item \textbf{Sviluppo}: un campo di integrazione tra \glossario{Jira} e \glossario{GitHub} che permette di monitorare lo stato di avanzamento dello sviluppo, con annessi link ai \glossario{branch}, \glossario{commit}, \glossario{pull request}, \glossario{build} e \glossario{distribuzioni} associati al \glossario{ticket};
+  \item \textbf{Stato}: durante il suo ciclo di vita, un \glossario{ticket} attraversa tre stati: "To Do", "Doing" e "Done".
+  \item \textbf{Versioni di correzione}: le versioni rappresentano punti temporali e traguardi intermedi nello svolgimento del progetto. Ciascun \glossario{ticket} può essere associato a una determinata versione. L'associazione \glossario{ticket}/versione può essere realizzata direttamente dal \glossario{backlog} del progetto. Le versioni possono trovarsi in uno dei seguenti tre stati:
+    \begin{itemize}
+      \item Non rilasciate;
+      \item Rilasciate;
+      \item Archiviate.
+    \end{itemize}
+  \item \textbf{Commenti}: elenco di commenti da affiancare ai messaggi di \glossario{commit} per contestualizzare le modifiche e ottimizzare il lavoro di \glossario{verifica};
+  \item \textbf{Aggiungi allegato}: oltre ai commenti, è possibile allegare file di vario formato che non necessitano del controllo di versione;
+  \item \textbf{Aggiungi un ticket figlio}: ogni \glossario{ticket} può avere uno o più \glossario{ticket} subordinati;
+  \item \textbf{Azioni}: \glossario{Jira} offre la possibilità di creare, gestire e monitorare automazioni, come ad esempio la chiusura di un \glossario{ticket} una volta effettuato il \glossario{merge} di una \glossario{pull request};
+  \item \textbf{Rilasci}: elenco delle versioni rilasciate a cui il \glossario{ticket} è associato.
+\end{itemize}
 
 \subsubsection{Versionamento}
 Il gruppo mantiene un versionamento per la documentazione nel formato:
