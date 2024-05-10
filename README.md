@@ -6,7 +6,7 @@
 <p align="center">
   <code>Repository relativo alla documentazione di progetto (inclusi i verbali, interni ed esterni).</code>
 </p>
-<h2 align="center">Componenti del gruppo</h2>
+<h2 align="center">Componenti del gruppo Argo</h2>
 <table align="center">
   <tr>
     <th>Cognome e Nome</th>
