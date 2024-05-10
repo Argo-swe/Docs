@@ -41,14 +41,33 @@ jobs:
       with:
         path: ${{ github.workspace }}/tools/docker
         key: ${{ runner.os }}-docker-${{ hashFiles('**/tools/docker-compose.yml') }}-${{ hashFiles('**/tools/docker/Dockerfile') }}
-        restore-keys: |
-          ${{ runner.os }}-docker
 
-    # Creazione e avvio del contenitore Docker
-    - name: Start Docker Container
+    # Autenticazione nel registro dei contenitori di GitHub
+    - name: Login to GHCR
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        # Token di accesso per autorizzare l'opzione write: packages
+        password: ${{ secrets.GHCR_TOKEN }}
+
+    # Avvio del contenitore Docker e caricamento dell'immagine su GHCR
+    - name: Start Docker Container and Push Image
+      if: steps.cache-docker.outputs.cache-hit != 'true'
       run: |
-       cd ${{ github.workspace }}/tools
-       docker compose up -d
+        cd ${{ github.workspace }}/tools 
+        docker compose up -d
+        docker tag argo-docs-latexpdfbuilder:latest ghcr.io/argo-swe/argo-docs-latexpdfbuilder:latest
+        docker push ghcr.io/argo-swe/argo-docs-latexpdfbuilder:latest
+
+    # Recupero dell'immagine da GHCR e avvio del contenitore Docker
+    - name: Pull Image and Start Docker Container
+      if: steps.cache-docker.outputs.cache-hit == 'true'
+      run: |
+        docker pull ghcr.io/argo-swe/argo-docs-latexpdfbuilder:latest
+        docker tag ghcr.io/argo-swe/argo-docs-latexpdfbuilder:latest argo-docs-latexpdfbuilder:latest
+        cd ${{ github.workspace }}/tools
+        docker compose up -d
 
     # Compilazione dei documenti tramite shell interattiva all'interno del contenitore Docker
     - name: Compile Documents
