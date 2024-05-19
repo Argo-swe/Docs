@@ -16,50 +16,195 @@ A seguito di tale classificazione, ogni requisito verrà identificato con la for
 Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph{Importanza} fanno riferimento alle definizioni precedenti e sono indicate con le sigle corrispondenti, infine \emph{Codice} è un identificativo numerico univoco.
 
 \subsection{Requisiti funzionali}
-\begin{table}[H]
-\begin{center}
-  \begin{longtable}{|P{3cm}|P{6,5cm}|>{\arraybackslash}P{4cm}|}
+\begin{longtable}{|P{3cm}|P{6,5cm}|>{\arraybackslash}P{4cm}|}
     \hline
     \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
-    \hline 
-    
-    \textbf{R.FD1} & L’Utente Non Autenticato deve poter effettuare la procedura di login. &  \hyperref[UC1]{UC1}, \emph{Verbale Esterno 2024-04-09}\\
-    \hline \textbf{R.FD1.1} & L’Utente Non Autenticato deve poter inserire la propria e-mail per autenticarsi. & \hyperref[UC1point1]{UC1.1}\\
-    \hline \textbf{R.FD1.2} & L’Utente Non Autenticato deve poter inserire la propria password per autenticarsi. & \hyperref[UC1point2]{UC1.2}\\
     \hline
-  \end{longtable}
-\end{center}
+    \textbf{R.FO1} & L’Utente Non Autenticato deve poter effettuare la procedura di login. &  \hyperref[UC1]{UC1}, \emph{Verbale Esterno 2024-04-09}, \emph{Verbale Interno 2024-04-20}\\
+    \hline
+    \textbf{R.FO1.1} & L’Utente Non Autenticato deve poter inserire la propria e-mail per autenticarsi. & \hyperref[UC1point1]{UC1.1}, \emph{Verbale Interno 2024-04-20}\\
+    \hline
+    \textbf{R.FO1.2} & L’Utente Non Autenticato deve poter inserire la propria password per autenticarsi. & \hyperref[UC1point2]{UC1.2}, \emph{Verbale Interno 2024-04-20}\\
+    \hline
+    \textbf{R.FO2} & L'Utente Non Autenticato riceve un messaggio d'errore in caso di login errato. &  \hyperref[UC2]{UC2}\\
+    \hline
+    \textbf{R.FO2.1} & L'Utente Non Autenticato riceve un messaggio d'errore in caso di incompleto inserimento delle credenziali. & \hyperref[UC2point1]{UC2.1}\\
+    \hline
+    \textbf{R.FO2.2} & L’Utente Non Autenticato riceve un messaggio d'errore in caso di credenziali errate. & \hyperref[UC2point2]{UC2.2}\\
+    \hline
+    \textbf{R.FO2.3} & L’Utente Non Autenticato riceve un messaggio d'errore in caso non vega trovato un utente registrato corrispondente. & \hyperref[UC2point3]{UC2.3}\\
+    \hline
+    \textbf{R.FO3} & L’Utente Non Autenticato deve poter inserire una richiesta in linguaggio naturale. &  \hyperref[UC3]{UC3}, \emph{Capitolato}\\
+    \hline
+    \textbf{R.FO4} & L’Utente Autenticato deve poter selezionare il \glossario{dizionario dati}. &  \hyperref[UC4]{UC4}, \emph{Capitolato}\\
+    \hline
+    \textbf{R.FO5} & L'applicazione deve generare il prompt come output. &  \hyperref[UC5]{UC5}, \emph{Capitolato}\\
+    \hline
+    \textbf{R.FO6} & L’Utente Autenticato riceve un messaggio d'errore in caso di errore durante la generazione del prompt. &  \hyperref[UC6]{UC6}\\
+    \hline
+    \textbf{R.FD7} & L’Utente Autenticato deve poter scegliere la lingua in cui inserire la richiesta in linguaggio naturale. &  \hyperref[UC7]{UC7}\\
+    \hline
+    \textbf{R.FO8} & L’Utente Autenticato deve poter copiare il prompt generato. &  \hyperref[UC8]{UC8}, \emph{Capitolato}\\
+    \hline
+    \textbf{R.FO9} & L’Utente Autenticato deve poter visualizzare il dettaglio dei \glossario{dizionario dati} caricati. &  \hyperref[UC9]{UC9}\\
+    \hline
+    \textbf{R.FO9.1} & L’Utente Autenticato deve poter visualizzare il nome del \glossario{dizionario dati} selezionato. &  \hyperref[UC9point1]{UC9.1}\\
+    \hline
+    \textbf{R.FO9.2} & L’Utente Autenticato deve poter visualizzare la descrizione del \glossario{dizionario dati} selezionato. &  \hyperref[UC9point2]{UC9.2}\\
+    \hline
+    \textbf{R.FO10} & L’Utente Autenticato deve poter visualizzare la lista dei dizionari dati. &  \hyperref[UC10]{UC10}\\
+    \hline
+    \textbf{R.FO11} & L’Utente Autenticato riceve un messaggio d'errore in caso di errore durante il caricamento del dettaglio del\glossario{dizionario dati}. &  \hyperref[UC11]{UC11}\\
+    \hline
+    \textbf{R.FO12} & L’Utente Autenticato deve poter effettuare il logout. &  \hyperref[UC12]{UC12}\\
+    \hline
+    \textbf{R.FO13} & Il Tecnico deve poter caricare un \glossario{dizionario dati}. &  \hyperref[UC13]{UC13}, \emph{Capitolato}\\
+    \hline
+    \textbf{R.FO13.1} & Il Tecnico riceve un messaggio d'errore in caso di errore durante il caricamento dei dizionari dati. &  \hyperref[UC13point1]{UC13.1}\\
+    \hline
+    \textbf{R.FO14} & Il Tecnico deve poter vedere il dettaglio completo del \glossario{dizionario dati}. &  \hyperref[UC14]{UC14}, \emph{Capitolato}\\
+    \hline
+    \textbf{R.FOP15} & Il Tecnico deve poter vedere il dettaglio dei test di verifica correttezza del dizionario dati. &  \hyperref[UC15]{UC15}\\
+    \hline
+    \textbf{R.FOP15.1} & Il Tecnico deve poter eseguire i test di verifica correttezza basandosi su un reale database &  \hyperref[UC15point1]{UC15.1}\\
+    \hline
+    \textbf{R.FO16} & Il Tecnico deve poter modificare il \glossario{dizionario dati}. &  \hyperref[UC16]{UC16}, \emph{Capitolato}\\
+    \hline
+    \textbf{R.FO16.1} & Il Tecnico deve poter modificare il nome del \glossario{dizionario dati}. &  \hyperref[UC16point1]{UC16.1}\\
+    \hline
+    \textbf{R.FO16.2} & Il Tecnico deve poter modificare la descrizione del \glossario{dizionario dati}. &  \hyperref[UC16point2]{UC16.2}\\
+    \hline
+    \textbf{R.FO16.3} & Il Tecnico deve poter modificare il file del \glossario{dizionario dati}. &  \hyperref[UC16point3]{UC16.3}\\
+    \hline
+    \textbf{R.FO17} & Il Tecnico deve poter eliminare un \glossario{dizionario dati}. &  \hyperref[UC17]{UC17}\\
+    \hline
+    \textbf{R.FO17.1} & Il Tecnico riceve un messaggio d'errore in caso di errore durante l'eliminazione del\glossario{dizionario dati}. &  \hyperref[UC17point1]{UC17.1}\\
+    \hline
+    \textbf{R.FO18} & Il Tecnico deve poter eseguire il debug del \glossario{dizionario dati} &  \hyperref[UC18]{UC18}, \emph{Verbale Esterno 2024-04-09}\\
+    \hline
+    \textbf{R.FOP19} & Il Tecnico deve poter incollare la query SQL. &  \hyperref[UC19]{UC19}\\
+    \hline
 \caption{Requisiti funzionali}
 \label{requisitifunzionali}
-\end{table}
-
-TODO proseguire/aggiungere tabelle requisiti
+\end{longtable}
 
 \subsection{Requisiti di qualità}
-TODO
+In questa sezione vengono descritti i requisiti volti a garantire la quelità del sistema.
+
+\begin{longtable}{|P{3cm}|P{6,5cm}|>{\arraybackslash}P{4cm}|}
+  \hline
+  \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
+  \hline
+  \textbf{R.QO1} & Rispetto delle norme indicate nel documento \NdP{}. & \NdP{} \\
+  \hline
+  \textbf{R.QO2} & Rispetto delle metriche indicate nel documento \PdQ{}. & \NdP{} \\
+  \hline
+\caption{Requisiti di qualità}
+\label{requisitiqualita}
+\end{longtable}
 
 \subsection{Requisiti di vincolo}
-TODO
+In questa sezione vengono descritti i requisiti che pongolo le condizioni da rispettare durante lo sviluppo del sistema.
 
-\subsection{Tracciamento}
-TODO
+TODO una volta identificate le tecnologie e versioni (es. python, steamlit, struttura dizionario dati, ...) vanno inserite qui
+\begin{longtable}{|P{3cm}|P{6,5cm}|>{\arraybackslash}P{4cm}|}
+  \hline
+  \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
+  \hline
+  \textbf{R.VO1} & Il prodotto deve essere integrato in un unico sistema che permetta l'utilizzo in modo integrato. & \emph{Capitolato} \\
+  \hline
+  \textbf{R.VO2} & Sviluppo di un'applicazione web. & \emph{Capitolato} \\
+  \hline
+\caption{Requisiti di vincolo}
+\label{requisitivincolo}
+\end{longtable}
 
 \subsection{Fonti - Requisiti}
 Di seguito vengono mostrate le corrispondenze fonte - requisito, raggruppate per fonte.
 
 \subsubsection{Fonti - Requisiti funzionali}
-\begin{table}[H]
-  \begin{center}
-    \begin{longtable}{|P{4,5cm}|>{\arraybackslash}P{9cm}|}
-      \hline
-      \textbf{Fonte} & \textbf{Requisiti} \\
-      \hline 
-      
-      \hyperref[UC1]{UC1} & R.FD1 \\
-      \hline
-    \end{longtable}
-  \end{center}
-  \caption{Fonti- Requisiti funzionali}
-\end{table}
 
-TODO proseguire con le tabelle fonti
+\begin{longtable}{|P{4,5cm}|>{\arraybackslash}P{9cm}|}
+  \hline
+  \textbf{Fonte} & \textbf{Requisiti} \\
+  \hline
+  % capitolato
+  \emph{Capitolato} & R.FO3, R.FO4, R.FO5, R.FO8, R.FO13, R.FO14, R.FO16, R.VO1, R.V02 \\
+  \hline
+  % documenti
+  \NdP{} & R.QO1, R.QO2 \\
+  \hline
+  % verbali
+  \emph{Verbale Esterno 2024-04-09} & R.FO1, R.FO18 \\
+  \hline
+  \emph{Verbale Interno 2024-04-20} & R.FO1, R.FO1.1, R.FO1.2,  \\
+  \hline
+  % casi d'uso
+  \hyperref[UC1]{UC1} & R.FO1 \\
+  \hline
+  \hyperref[UC1point1]{UC1.1} & R.FO1.1 \\
+  \hline
+  \hyperref[UC1]{UC1.2} & R.FO1.2 \\
+  \hline
+  \hyperref[UC2]{UC2} & R.FO2 \\
+  \hline
+  \hyperref[UC2point1]{UC2.1} & R.FO2.1 \\
+  \hline
+  \hyperref[UC2point2]{UC2.2} & R.FO2.2 \\
+  \hline
+  \hyperref[UC2point3]{UC2.3} & R.FO2.3 \\
+  \hline
+  \hyperref[UC3]{UC3} & R.FO3 \\
+  \hline
+  \hyperref[UC4]{UC4} & R.FO4 \\
+  \hline
+  \hyperref[UC5]{UC5} & R.FO5 \\
+  \hline
+  \hyperref[UC6]{UC6} & R.FO6 \\
+  \hline
+  \hyperref[UC7]{UC7} & R.FD7 \\
+  \hline
+  \hyperref[UC8]{UC8} & R.FO8 \\
+  \hline
+  \hyperref[UC9]{UC9} & R.FO9 \\
+  \hline
+  \hyperref[UC9point1]{UC9.1} & R.FO9.1 \\
+  \hline
+  \hyperref[UC9point2]{UC9.2} & R.FO9.21 \\
+  \hline
+  \hyperref[UC10]{UC10} & R.FO10 \\
+  \hline
+  \hyperref[UC11]{UC11} & R.FO11 \\
+  \hline
+  \hyperref[UC12]{UC12} & R.FO12 \\
+  \hline
+  \hyperref[UC13]{UC13} & R.FO13 \\
+  \hline
+  \hyperref[UC13point1]{UC13.1} & R.FO13.1 \\
+  \hline
+  \hyperref[UC14]{UC14} & R.FO14 \\
+  \hline
+
+  \hyperref[UC15]{UC15} & R.FOP15 \\
+  \hline
+  \hyperref[UC15point1]{UC15.1} & R.FOP15.1 \\
+  \hline
+
+  \hyperref[UC16]{UC16} & R.FO16 \\
+  \hline
+  \hyperref[UC16point1]{UC16.1} & R.FO16.1 \\
+  \hline
+  \hyperref[UC16point2]{UC16.2} & R.FO16.2 \\
+  \hline
+  \hyperref[UC16point3]{UC16.3} & R.FO16.3 \\
+  \hline
+  \hyperref[UC17]{UC17} & R.FO17 \\
+  \hline
+  \hyperref[UC17point1]{UC17.1} & R.FO17.1 \\
+  \hline
+  \hyperref[UC18]{UC18} & R.FO18 \\
+  \hline
+  \hyperref[UC19]{UC19} & R.FOP19 \\
+  \hline
+\caption{Fonti- Requisiti funzionali}
+\end{longtable}
