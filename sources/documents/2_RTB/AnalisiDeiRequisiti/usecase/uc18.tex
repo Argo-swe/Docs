@@ -1,4 +1,5 @@
 \subsubsection{UC18 - Debug della generazione del prompt}\label{UC18}
+
 \paragraph*{Descrizione}
 Il Tecnico vuole poter testare il \glossario{dizionario dati} e interroga il sistema per comprendere la corretta formattazione del \glossario{dizionario dati}, riceverà in risposta uno schema motivato della selezione dei campi del dizionario per permettere eventuali modifiche volte ad ottimizzare le interrogazioni.
 
@@ -14,16 +15,16 @@ Tecnico
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il sistema genera uno schema facilmente comprensibile e motivato della selezione dei singoli campi delle tabelle per dare al Tecnico una visione dettagliata dei criteri di scelta di generazione del prompt.
+  \item Il sistema genera una lista dei migliori risultati individuati dal sistema, affiancati allo \glossario{score} ottenuto.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico desidera testare la correttezza di un dizionario;
+  \item Il Tecnico desidera testare la correttezza di un dizionario; 
   \item Il Tecnico seleziona un \glossario{dizionario dati} sul quale baserà l’interrogazione;
   \item Il Tecnico sceglie la lingua su cui farà l’interrogazione. La lingua è in italiano di default se non viene cambiata;
   \item Il Tecnico inserisce un’interrogazione in linguaggio naturale nel box testuale apposito;
-  \item Il sistema fornisce lo schema di debug relativo al sotto-modello selezionato per l’utilizzo nel prompt.
+  \item Il sistema fornisce lo schema di debug relativo al sotto-modello selezionato per l’utilizzo nel prompt.  
 \end{enumerate}
 
 \paragraph*{Inclusione}
