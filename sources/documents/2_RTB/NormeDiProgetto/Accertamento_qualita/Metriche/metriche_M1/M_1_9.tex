@@ -1,0 +1,24 @@
+\subsubsection{Numero di parametri per funzione}
+\begin{itemize}
+    \item \textbf{Notazione specifica}: M.1.9
+    \item \textbf{Nome}: Numero di parametri per funzione
+    \item \textbf{Descrizione}: Misura il numero medio di parametri passati alle funzioni nel codice sorgente del software;
+    \item \textbf{Caratteristica di riferimento}: Manutenibilità e complessità del software;
+    \item \textbf{Motivo}: Il numero di parametri per funzione è stato introdotto per valutare la complessità delle funzioni all'interno del software. Un numero elevato di parametri può indicare una scarsa progettazione modulare e può rendere il codice difficile da comprendere, testare e mantenere. Questa metrica aiuta a identificare funzioni che potrebbero beneficiare di una rifattorizzazione per migliorare la qualità del codice;
+    \item \textbf{Misurazione}: La metrica "Numero di Parametri per Funzione" viene calcolata utilizzando la seguente formula:
+    \[
+    \text{Numero di Parametri per Funzione} = \frac{\text{TP}}{\text{TF}}
+    \]
+    dove:
+    \begin{itemize}
+        \item \textbf{TP}: somma del numero di parametri di tutte le funzioni nel codice.
+        \item \textbf{TF}: numero totale di funzioni nel codice.
+    \end{itemize}
+    \item \textbf{Interpretazione del Risultato}:
+    \begin{itemize}
+        \item \textbf{0-3 parametri per funzione}: Bassa complessità; funzioni ben progettate e facili da mantenere.
+        \item \textbf{4-6 parametri per funzione}: Moderata complessità; le funzioni potrebbero essere accettabili, ma si potrebbe considerare una rifattorizzazione.
+        \item \textbf{7-10 parametri per funzione}: Alta complessità; potrebbe essere necessario semplificare le funzioni per migliorare la manutenibilità.
+        \item \textbf{>10 parametri per funzione}: Molto alta complessità; fortemente raccomandata la rifattorizzazione delle funzioni per ridurre il numero di parametri.
+    \end{itemize}
+\end{itemize}

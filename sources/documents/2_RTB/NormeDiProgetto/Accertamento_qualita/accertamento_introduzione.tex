@@ -1,15 +1,15 @@
 \subsection{Scopo}
-Il processo di Certificazione della Qualità mira a garantire che i prodotti software e i vari processi coinvolti nel ciclo di vita del progetto rispettino i requisiti definiti e si attengano ai piani stabiliti. L'obiettivo primario dell'assicurazione della qualità è garantire che tutto il lavoro svolto sia conforme agli standard e alle linee guida predefinite. È essenziale stabilire internamente parametri misurabili per valutare il grado di aderenza alle \glossario{best practices} dell'ingegneria del software, al fine di condurre un'autovalutazione e un miglioramento continuo del processo
+Il processo di Certificazione della qualità mira a garantire che i prodotti software e i vari processi coinvolti nel ciclo di vita del progetto rispettino i requisiti definiti e si attengano ai piani stabiliti. L'obiettivo primario dell'assicurazione della qualità è garantire che tutto il lavoro svolto sia conforme agli standard e alle linee guida predefinite. È essenziale stabilire internamente parametri misurabili per valutare il grado di aderenza alle \glossario{best practices} dell'ingegneria del software, al fine di condurre un'autovalutazione e un miglioramento continuo del processo
 
 \subsection{processo}
 
 Per garantire il raggiungimento e il mantenimento degli standard di qualità prefissati, viene adottato il metodo \glossario{PDCA}, che è un modello di gestione iterativo che aiuta a garantire il miglioramento continuo dei processi e dei prodotti all'interno di un'organizzazione e consente di adattarsi a cambiamenti nel lungo periodo. Il PDCA , noto anche come Ciclo di Deming, si divide in 4 fasi interconnesse:
 
 \begin{itemize}
-    \item SPlan (Pianificare): In questa fase, vengono definiti gli obiettivi specifici e misurabili da raggiungere, nonché le strategie e le azioni necessarie per realizzarli. È importante identificare chiaramente le risorse disponibili, i tempi e le modalità di implementazione del piano;
-    \item Do (Fare): Una volta pianificato, il piano viene messo in pratica. Questa fase coinvolge l'attuazione delle azioni pianificate, l'allocazione delle risorse e l'esecuzione delle attività secondo le specifiche stabilite nella fase precedente;
-    \item Check (Verificare): Qui si valutano i risultati ottenuti confrontandoli con gli obiettivi pianificati e gli standard di qualità prefissati. La verifica comporta la raccolta e l'analisi dei dati pertinenti per determinare se i processi stanno procedendo come previsto e se si stanno raggiungendo gli obiettivi desiderati;
-    \item Act (Agire): Sulla base dei risultati della fase di verifica, vengono identificate eventuali discrepanze o opportunità di miglioramento. In questa fase, si attuano le correzioni necessarie e si apportano le modifiche ai processi per eliminare le inefficienze e migliorare le prestazioni complessive. L'obiettivo è stabilire nuovi standard e procedure migliorate, al fine di avviare un nuovo ciclo di miglioramento continuo.
+    \item Plan (Pianificare): in questa fase, vengono definiti gli obiettivi specifici e misurabili da raggiungere, nonché le strategie e le azioni necessarie per realizzarli. È importante identificare chiaramente le risorse disponibili, i tempi e le modalità di implementazione del piano;
+    \item Do (Fare): una volta pianificato, il piano viene messo in pratica. Questa fase coinvolge l'attuazione delle azioni pianificate, l'allocazione delle risorse e l'esecuzione delle attività secondo le specifiche stabilite nella fase precedente;
+    \item Check (Verificare): qui si valutano i risultati ottenuti confrontandoli con gli obiettivi pianificati e gli standard di qualità prefissati. La verifica comporta la raccolta e l'analisi dei dati pertinenti per determinare se i processi stanno procedendo come previsto e se si stanno raggiungendo gli obiettivi desiderati;
+    \item Act (Agire): sulla base dei risultati della fase di verifica, vengono identificate eventuali discrepanze o opportunità di miglioramento. In questa fase, si attuano le correzioni necessarie e si apportano le modifiche ai processi per eliminare le inefficienze e migliorare le prestazioni complessive.
 \end{itemize}
 
 \subsection{Standard di riferimento}
@@ -20,15 +20,15 @@ TODO.
 Le metriche vengono identificate in modo univoco secondo questa notazione : M.Tipo.Codice
 Dove : 
 \begin{itemize}
-    \item \left[ M \right] identifica una “metrica”;
-    \item \left[ Tipo \right] è un numero da 1 a 4 che indica il tipo di metrica che si sta analizzando secondo 4 categorie: 
+    \item M: identifica una “metrica”;
+    \item Tipo: è un numero da 1 a 4 che indica il tipo di metrica che si sta analizzando secondo 4 categorie: 
         \begin{itemize}
             \item metriche di prodotto e qualità software; 
             \item metriche di processo e progetto;
             \item metriche di gestione dei rischi;
             \item metriche di documentazione.
         \end{itemize}
-    \item \left[ Codice \right] è un numero progressivo all’interno delle 4 macroaree precedenti che identifica in modo univoco la metrica in base al tipo.
+    \item Codice: è un numero progressivo all’interno delle 4 macroaree precedenti che identifica in modo univoco la metrica in base al tipo.
 \end{itemize}
 
 
@@ -36,27 +36,17 @@ Dove :
 \subsection{Didascalia}
 Le metriche descritte in seguito saranno definite secondo questi campi: 
 \begin{itemize}
-    \item Notazione specifica:in base alle norme sopra descritte;
+    \item Notazione specifica: in base alle norme sopra descritte;
     \item Nome: nome della metrica;
     \item Descrizione: descrizione della metrica;
     \item Caratteristica di riferimento: una o più caratteristiche definite dagli standard di cui la metrica si occupa;
     \item Motivo: ragione per cui è stata introdotta la metrica;
-    \item Misurazione: formula o strumenti con cui ricavare un valore quantificabile e tracciabile nel tempo;
-    \item Range: range entro cui la metrica deve stare per un andamento ottimale    ;
-    \item Modifiche nel tempo: in caso il range venga modificato nel tempo si tiene traccia dei valori e range precedenti e i motivi dei cambiamenti.
+    \item Misurazione: formula o strumenti con cui ricavare un valore quantificabile e tracciabile nel tempo.
+    %\item Range: range entro cui la metrica deve stare per un andamento ottimale    ;
+    %\item Modifiche nel tempo: in caso il range venga modificato nel tempo si tiene traccia dei valori e range precedenti e i motivi dei cambiamenti.
 \end{itemize}
 
-
-\subsubsection{Modified condition/decision coverage}
-\begin{itemize}
-    \item \textbf{Notazione specifica}: M.1.2
-    \item \textbf{Nome}: Modified condition/decision coverage;
-    \item \textbf{Descrizione}: è una combinazione delle metriche di function coverage (copertura delle funzioni chiamate) e branch coverage (copertura dei \glossario{branch} delle strutture di controllo). Questa metrica richiede che ogni punto di entrata o uscita in un programma sia invocato almeno una volta e che per ogni decisione condizionale vengano considerati tutti i possibili esiti. La versione modified richiede inoltre che entrambe le coperture siano soddisfatte, ed in particolare che ogni condizione influenzi gli esiti condizionali indipendentemente;
-    \item \textbf{Caratteristica di riferimento}: affidabilità e la correttezza del software;
-    \item \textbf{Motivo}: per garantire una copertura completa e accurata delle condizioni e delle decisioni nel codice sorgente. Ciò aiuta a ridurre il rischio di errori di logica nel software e a garantire che tutte le possibili combinazioni di risultati di condizioni siano testate in modo esaustivo;
-    \item \textbf{Misurazione}: i valori si prenodno dallo strumento di analisi per phyton Coverage.py;
-    \item \textbf{Range}: >80\%
-    %\item \textbf{Modifiche nel tempo}:  
-\end{itemize}
-
+per ohyton : 
+strumenti : Pylint è uno strumento di analisi del codice Python che verifica la conformità agli standard di codifica e rileva errori di programmazione e bug potenziali.
+libreria networkx
 

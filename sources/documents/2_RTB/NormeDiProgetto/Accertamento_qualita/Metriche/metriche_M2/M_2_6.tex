@@ -1,0 +1,18 @@
+\subsubsection{M.2.6 Dimensione del commit}
+\begin{itemize}
+    \item \textbf{Notazione specifica}: M.2.6
+    \item \textbf{Nome}: Dimensione del commit
+    \item \textbf{Descrizione}: Questa metrica misura la quantità di codice aggiunto, modificato o rimosso in un singolo commit. È un indicatore della granularità delle modifiche e della frequenza dei cambiamenti nel repository.
+    \item \textbf{Caratteristica di riferimento}: Manutenibilità, Qualità del codice
+    \item \textbf{Motivo}: Valutare la dimensione dei commit aiuta a comprendere la strategia di gestione del codice e a identificare pratiche di sviluppo che favoriscono la leggibilità e la facilità di revisione del codice.
+    \item \textbf{Misurazione}: La dimensione del commit (\textbf{DC}) può essere calcolata utilizzando la seguente formula:
+    \[ DC = L_{added} + L_{modified} + L_{deleted} \]
+    dove:
+    \begin{itemize}
+        \item \textbf{L_{added}}: Numero di linee di codice aggiunte
+        \item \textbf{L_{modified}}: Numero di linee di codice modificate
+        \item \textbf{L_{deleted}}: Numero di linee di codice rimosse
+    \end{itemize}
+    \item \textbf{Range}: Il range ideale per questa metrica può variare a seconda delle pratiche di sviluppo del progetto, ma generalmente i commit contenenti tra 10 e 200 linee di cambiamento sono considerati di dimensione ottimale.
+    \item \textbf{Spiegazione}: I commit di dimensione ottimale facilitano la revisione del codice e la gestione delle modifiche, migliorando la qualità complessiva del software e la collaborazione tra i membri del team.
+\end{itemize}

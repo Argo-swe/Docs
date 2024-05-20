@@ -1,0 +1,25 @@
+\subsubsection{Modified condition/decision coverage}
+\begin{itemize}
+    \item \textbf{Notazione specifica}: M.1.2
+    \item \textbf{Nome}: Modified condition/decision coverage
+    \item \textbf{Descrizione}: È una combinazione delle metriche di function coverage (copertura delle funzioni chiamate) e branch coverage (copertura dei \glossario{branch} delle strutture di controllo). Questa metrica richiede che ogni punto di entrata o uscita in un programma sia invocato almeno una volta e che per ogni decisione condizionale vengano considerati tutti i possibili esiti. La versione modified richiede inoltre che entrambe le coperture siano soddisfatte, ed in particolare che ogni condizione influenzi gli esiti condizionali indipendentemente;
+    \item \textbf{Caratteristica di riferimento}: Affidabilità e correttezza del software;
+    \item \textbf{Motivo}: Per garantire una copertura completa e accurata delle condizioni e delle decisioni nel codice sorgente. Ciò aiuta a ridurre il rischio di errori di logica nel software e a garantire che tutte le possibili combinazioni di risultati di condizioni siano testate in modo esaustivo;
+    \item \textbf{Misurazione}: I valori si prendono dallo strumento di analisi per Python \glossario{Coverage.py};
+    %\item \textbf{Range}: >80\%
+    %\item \textbf{Modifiche nel tempo}: 
+    %\item \textbf{Azioni Correttive}:
+    %\begin{itemize}
+        %\item Identificare le decisioni condizionali non completamente coperte e sviluppare test specifici per coprire tutte le combinazioni di condizioni.
+        %\item Migliorare i casi di test esistenti per garantire che ogni condizione influenzi l'esito della decisione in modo indipendente.
+        %\item Eseguire revisione del codice per individuare condizioni complesse che potrebbero richiedere una maggiore attenzione nei test.
+        %\item Implementare tecniche di test-driven development (TDD) per migliorare la copertura delle condizioni e delle decisioni durante lo sviluppo.
+    %\end{itemize}
+    %\item \textbf{Obiettivi di Miglioramento}:
+    %\begin{itemize}
+        %\item Aumentare la copertura delle condizioni e delle decisioni fino a raggiungere e mantenere un livello accettabile (>80\%).
+        %\item Garantire che tutte le nuove funzionalità e le modifiche al codice siano accompagnate da test adeguati per la copertura delle condizioni e delle decisioni.
+        %\item Ridurre il numero di errori di logica nel software migliorando la qualità complessiva del codice.
+        %\item Promuovere una cultura di test continuo e rigoroso all'interno del team di sviluppo per mantenere elevata la copertura delle condizioni e delle decisioni nel tempo.
+    %\end{itemize}
+\end{itemize}
