@@ -9,7 +9,7 @@ Tecnico
 \begin{itemize}
   \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
   \item Il Tecnico naviga alla lista dei dizionari dati caricati;
-  \item Il Tecnico seleziona un \glossario{dizionario dati} di cui vuole modificare qualcosa.  
+  \item Il Tecnico seleziona un \glossario{dizionario dati} di cui vuole modificare qualcosa.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -22,14 +22,14 @@ Tecnico
   \item Il Tecnico sceglie un \glossario{dizionario dati} che vuole modificare e lo seleziona;
   \item Il Tecnico sceglie quali campi modificare tra : titolo, descrizione o file che contiene il \glossario{dizionario dati};
   \item Il Tecnico seleziona quello che vuole modificare e inserisce una nuova stringa per titolo e descrizione oppure carica un nuovo file per il \glossario{dizionario dati};
-  \item Il Tecnico salva le modifiche.  
+  \item Il Tecnico salva le modifiche.
 \end{enumerate}
 
 \paragraph*{Sottocasi d'uso}
 \begin{itemize}
   \item Modifica titolo \glossario{dizionario dati} (\hyperref[UC16point1]{UC16.1});
   \item Modifica descrizione \glossario{dizionario dati} (\hyperref[UC16point2]{UC16.2});
-  \item TODO
+  \item Modifica file configurazione \glossario{dizionario dati} (\hyperref[UC16point3]{UC16.3});
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -44,7 +44,7 @@ Tecnico
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico ha selezionato un \glossario{dizionario dati} esistente di cui vuole modificare il titolo.  
+  \item Il Tecnico ha selezionato un \glossario{dizionario dati} esistente di cui vuole modificare il titolo.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -55,7 +55,7 @@ Tecnico
 \paragraph*{Scenario principale}
 \begin{enumerate}
   \item Il Tecnico ha selezionato il \glossario{dizionario dati} di cui vuole cambiare il titolo e inserisce il nuovo valore nell’apposito box;
-  \item Il Tecnico salva la modifica.  
+  \item Il Tecnico salva la modifica.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -70,7 +70,7 @@ Tecnico
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico ha selezionato un \glossario{dizionario dati} esistente di cui vuole modificare il la descrizione.  
+  \item Il Tecnico ha selezionato un \glossario{dizionario dati} esistente di cui vuole modificare la descrizione.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -84,4 +84,28 @@ Tecnico
   \item Il Tecnico salva la modifica.
 \end{enumerate}
 
-TODO Descrizioni vuote ammissibili o no?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC16.3 - Modifica file \glossario{dizionario dati}}\label{UC16point3}
+\paragraph*{Descrizione}
+Il Tecnico vuole modificare il file di configurazione di un \glossario{dizionario dati}.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha selezionato un \glossario{dizionario dati} esistente di cui vuole modificare il file di configurazione.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il \glossario{dizionario dati} ha come file di configurazione il nuovo file inserito dal Tecnico.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico ha selezionato il \glossario{dizionario dati} di cui vuole cambiare la il file di configurazione e inserisce il nuovo file nell’apposito input;
+  \item Il Tecnico salva la modifica.
+\end{enumerate}
