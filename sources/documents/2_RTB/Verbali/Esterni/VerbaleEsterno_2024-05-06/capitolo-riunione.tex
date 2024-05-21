@@ -1,0 +1,59 @@
+\section{Riunione}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\item Discutere delle tecnologie per lo sviluppo della web app;
+	\item Esporre studio preliminare delle tecnologie lato back-end;
+	\item Valutare l'ampliamento dei casi d'uso;
+\end{itemize}
+
+\subsection{Argomenti e temi dell'incontro}
+
+\subsubsection{Tecnologie per lo sviluppo della web app}
+
+\textbf{Domanda:} Tra le diverse tecnologie solitamente indicate per lo sviluppo di un'applicazione web (quali Node.js, Flask etc.), abbiamo individuato il \glossario{framework} \glossario{Streamlit}. 
+Questo permette uno sviluppo \glossario{front-end} più celere rispetto alle alternative, seppur conceda meno spazio alla personalizzazione. 
+Secondo lei, potrebbe essere una scelta opportuna?
+
+\textbf{Risposta:} La \glossario{Proponente} non è familiare col framework Streamlit, ma ne approverebbe l'utilizzo a seguito di una presentazione informativa da parte del gruppo in cui si spiegano approfonditamente, ovvero tramite paragoni con gli altri framework, le motivazioni di tale scelta.
+
+\subsubsection{Esposizione studio preliminare delle tecnologie lato \glossario{back-end}}
+
+\textbf{Descrizione:} Il \glossario{Programmatore} espone il lavoro di studio sulla libreria \glossario{txtai}, con particolare enfasi riguardo la componente di indicizzazione e ricerca. 
+Pone poi l'attenzione sulla necessità o meno di fasi di pre-processing delle queries, nel tentativo di semplificare la ricerca semantica per la LLM. 
+Questo riguarda l'elaborazione della query utente in modo tale da tokenizzarne solo le componenti semantiche ritenute fondamentali, e allo stesso modo l'elaborazione del dizionario dati in formato JSON per renderlo simile al linguaggio naturale, in modo che i modelli, allenati su quest'ultimo, riescano ad estrarne con più facilità il significato.
+
+\textbf{Risposta: }La \glossario{Proponente} ritiene le fasi di pre-processing non necessarie, in quanto il dizionario dati risulta sufficiente per creare degli embeddings efficaci ed associabili alle query utente senza ulteriori alterazioni. 
+Dimostra poi l'utilizzo di txtai per la ricerca semantica tramite BERTino di efederici, un modello operante su lingua italiana, ed invita all'utilizzo delle funzioni di load e save per ridurre l'overhead e gestire con più facilità il testing di più indici.
+
+\textbf{Descrizione:} Il \glossario{Programmatore} espone il lavoro di studio sulla libreria txtai, con particolare enfasi riguardo la componente di indicizzazione e ricerca. 
+Pone poi l'attenzione sulla necessità o meno di fasi di pre-processing delle queries, nel tentativo di semplificare la ricerca semantica per la LLM. 
+Questo riguarda l'elaborazione della query utente in modo tale da tokenizzarne solo le componenti semantiche ritenute fondamentali, e allo stesso modo l'elaborazione del dizionario dati in formato JSON per renderlo simile al linguaggio naturale, in modo che i modelli, allenati su quest'ultimo, riescano ad estrarne con più facilità il significato.
+
+\textbf{Risposta: }La \glossario{Proponente} ritiene le fasi di pre-processing non necessarie, in quanto il dizionario dati risulta sufficiente per creare degli embeddings efficaci ed associabili alle query utente senza ulteriori alterazioni. 
+Dimostra poi l'utilizzo di txtai per la ricerca semantica tramite BERTino di efederici, un modello operante su lingua italiana, ed invita all'utilizzo delle funzioni di load e save per ridurre l'overhead e gestire con più facilità il testing di più indici.
+
+\textbf{Descrizione:} Il \glossario{Programmatore} espone il problema dello scarso score dei risultati restituiti dalla funzione di search di txtai, e suggerisce la mitigazione del problema tramite un indice intermedio che si frapponga alla query utente e al risultato finale da fornire a una LLM come ChatGPT per ottenere l'effettiva query SQL.
+
+\textbf{Risposta: }La \glossario{Proponente} accoglie l'idea e ne invita la sperimentazione. 
+Riguardo la bassa rilevanza dei documenti restituiti dalla search, suggerisce la sperimentazione di più modelli. 
+Spiega inoltre l'utilizzo da parte di txtai della libreria FAISS, che si occupa della vettorializzazione e indicizzazione oltre che della ricerca semantica, e propone di eseguire dei paragoni con altre librerie interne.
+
+\subsubsection{Esplorazione dei casi d'uso}
+
+\textbf{Descrizione:} L'\glossario{Analista} spiega la struttura dei casi d'uso per le funzioni di debug disponibili per il \glossario{Tecnico}, e in particolare una vista a lui specifica comprendente una lista di tabelle con la corrispondenza tramite il punteggio di score tra la query utente e il risultato ottenuto. 
+Chiede poi se la \glossario{Proponente} avesse pensato a funzionalità aggiuntive per il debugging.
+
+\textbf{Risposta: }La \glossario{Proponente} conferma che la funzione degli strumenti di debug sia mostrare la correttezza del dizionario dati. 
+Propone poi che venga mostrata una spiegazione sull'eventuale esclusione di un risultato che invece sarebbe stato pertinente a favore di uno meno attinente.
+
+\textbf{Descrizione:} L'\glossario{Analista} chiede se sia ragionevole generare un elenco di punteggi, mostrando l'intero \glossario{indice} o gran parte di esso.
+
+\textbf{Risposta: }La \glossario{Proponente} spiega che grazie alla logica di \glossario{back-end} il riscontro sulla query è gerarchico e non avviene ogni volta per calcolo sequenziale, ovvero non si effettua ogni volta il calcolo della distanza del coseno su tutti i vettori dell'indice. 
+Eseguire una search non è costoso, mentre lo sarebbe di più visitare in maniera sequenziale l'intero indice. 
+Solo per crearlo, potrebbero essere necessari alcuni minuti.
+
+\subsubsection{Organizzazione presentazione Streamlit}
+
+\textbf{Descrizione:} Il \glossario{Responsabile} domanda alla Proponente se preferisca una presentazione del framework Streamlit indicandone vantaggi e svantaggi, o se preferisca un incontro intermedio o una relazione da spedire via mail.
+
+\textbf{Risposta: }La \glossario{Proponente} preferisce venire aggiornata in un incontro successivo tramite una presentazione con delle slide.
