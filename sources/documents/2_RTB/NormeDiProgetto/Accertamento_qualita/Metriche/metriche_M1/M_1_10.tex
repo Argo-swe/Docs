@@ -1,11 +1,11 @@
 \subsubsubsection{Core size}
 \begin{itemize}
-    \item \textbf{Notazione specifica}: M.1.10
-    \item \textbf{Nome}: Core size
+    \item \textbf{Notazione specifica}: M.1.10;
+    \item \textbf{Nome}: Core size;
     \item \textbf{Descrizione}: I core file sono file altamente interconnessi da una catena di dipendenze cicliche, i quali sono maggiormente propensi ad avere difetti. Core size è la percentuale di file con una o più dipendenze che hanno un alto fan-in (numero di moduli che dipendono da essi) ed un alto fan-out (numero di moduli da cui dipendono). Questi file sono critici per la stabilità e la manutenibilità del sistema poiché la loro complessità e interconnessione li rendono più vulnerabili a difetti e più difficili da modificare senza introdurre errori;
     \item \textbf{Caratteristica di riferimento}: Affidabilità, Manutenibilità;
     \item \textbf{Motivo}: Identificare i file critici nel sistema che sono suscettibili a difetti a causa della loro alta interconnessione e complessità. Monitorare il core size aiuta a prevenire la formazione di "nodi critici" che possono influire negativamente sulla qualità del software;
-    \item \textbf{Misurazione}: Il calcolo di questa metrica viene effettuato attraverso la libreria `networkx` per analizzare le dipendenze.
+    \item \textbf{Misurazione}: Il calcolo di questa metrica viene effettuato attraverso la libreria networkx per analizzare le dipendenze.
     
     %\item \textbf{Range}: 0\% - 10\%
     %\item \textbf{Spiegazione}: Un range ottimale per il core size dovrebbe essere mantenuto tra 0\% e 10\%. Un valore superiore al 10\% indica una presenza eccessiva di file critici, aumentando il rischio di difetti e difficoltà di manutenzione. Mantenere questa metrica entro il range suggerito aiuta a garantire che la complessità e l'interconnessione del sistema restino gestibili.

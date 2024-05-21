@@ -1,11 +1,11 @@
 \subsubsubsection{Modified condition/decision coverage}
 \begin{itemize}
-    \item \textbf{Notazione specifica}: M.1.2
-    \item \textbf{Nome}: Modified condition/decision coverage
+    \item \textbf{Notazione specifica}: M.1.2;
+    \item \textbf{Nome}: Modified condition/decision coverage;
     \item \textbf{Descrizione}: È una combinazione delle metriche di function coverage (copertura delle funzioni chiamate) e branch coverage (copertura dei \glossario{branch} delle strutture di controllo). Questa metrica richiede che ogni punto di entrata o uscita in un programma sia invocato almeno una volta e che per ogni decisione condizionale vengano considerati tutti i possibili esiti. La versione modified richiede inoltre che entrambe le coperture siano soddisfatte, ed in particolare che ogni condizione influenzi gli esiti condizionali indipendentemente;
     \item \textbf{Caratteristica di riferimento}: Affidabilità e correttezza del software;
-    \item \textbf{Motivo}: Per garantire una copertura completa e accurata delle condizioni e delle decisioni nel codice sorgente. Ciò aiuta a ridurre il rischio di errori di logica nel software e a garantire che tutte le possibili combinazioni di risultati di condizioni siano testate in modo esaustivo;
-    \item \textbf{Misurazione}: I valori si prendono dallo strumento di analisi per Python \glossario{Coverage.py};
+    \item \textbf{Motivo}: La metrica è stata inserita per garantire una copertura completa e accurata delle condizioni e delle decisioni nel codice sorgente. Ciò aiuta a ridurre il rischio di errori di logica nel software e a garantire che tutte le possibili combinazioni di risultati di condizioni siano testate in modo esaustivo;
+    \item \textbf{Misurazione}: I valori sono presi dallo strumento di analisi per Python ovvero Coverage.py.
     %\item \textbf{Range}: >80\%
     %\item \textbf{Modifiche nel tempo}: 
     %\item \textbf{Azioni Correttive}:

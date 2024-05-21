@@ -1,19 +1,20 @@
-\subsubsubsection{M.3.1 Livello di controllo dei guasti}
+\subsubsubsection{Livello di controllo dei guasti}
 \begin{itemize}
-    \item \textbf{Notazione specifica}: M.3.1
-    \item \textbf{Nome}: Livello di controllo dei guasti
-    \item \textbf{Descrizione}: Questa metrica valuta l'efficacia del sistema di controllo e gestione dei guasti all'interno del software. Include l'identificazione, la registrazione, la risoluzione e il monitoraggio dei guasti nel sistema.
-    \item \textbf{Caratteristica di riferimento}: Affidabilità, Manutenibilità
-    \item \textbf{Motivo}: Valutare il livello di controllo dei guasti aiuta a identificare la capacità del sistema di gestire e risolvere efficacemente i guasti che possono verificarsi durante l'uso del software, garantendo un'esperienza utente affidabile e riducendo i tempi di inattività.
-    \item \textbf{Misurazione}: Il livello di controllo dei guasti (\textbf{LCG}) può essere misurato come il rapporto tra il numero di guasti identificati e risolti correttamente rispetto al totale dei guasti riscontrati durante un periodo di tempo specifico.
-    \item \textbf{Formula}:
-    \[ LCG = \frac{NG}{NT} \times 100\% \]
+    \item \textbf{Notazione specifica}: M.3.1;
+    \item \textbf{Nome}: Livello di controllo dei guasti;
+    \item \textbf{Descrizione}: Questa metrica valuta l'efficacia del sistema di controllo e gestione dei guasti all'interno del software;
+    \item \textbf{Caratteristica di riferimento}: Affidabilità, Manutenibilità;
+    \item \textbf{Motivo}: Valutare il livello di controllo dei guasti aiuta a identificare la capacità del sistema di gestire e risolvere efficacemente i guasti che possono verificarsi durante l'uso del software, garantendo un'esperienza utente affidabile e riducendo i tempi di inattività;
+    \item \textbf{Misurazione}: Il livello di controllo dei guasti è misurato con la seguente formula: 
+    \[
+        \text{Livello di controllo dei guasti (\%)} =\frac{L_{g}}{N_{t}} \times 100 
+    \]
     dove:
     \begin{itemize}
-        \item \( LCG \) rappresenta il Livello di controllo dei guasti, espresso come percentuale.
-        \item \( NG \) è il numero di guasti identificati e risolti correttamente durante un periodo di tempo specifico.
-        \item \( NT \) è il numero totale di guasti riscontrati durante lo stesso periodo di tempo.
+        \item $L_{g}$: Numero di guasti identificati e risolti correttamente;
+        \item $N_{t}$: Numero totale di guasti riscontrati.
     \end{itemize}
-    \item \textbf{Range}: Il range ideale per questa metrica è dal 0\% (nessun guasto identificato e risolto) al 100\% (tutti i guasti identificati e risolti correttamente).
-    \item \textbf{Spiegazione}: Un livello più alto di controllo dei guasti indica una maggiore capacità del sistema di identificare, registrare e risolvere i guasti in modo tempestivo ed efficiente, migliorando l'affidabilità e la manutenibilità complessiva del software.
+    
+    %\item \textbf{Range}: Il range ideale per questa metrica è dal 0\% (nessun guasto identificato e risolto) al 100\% (tutti i guasti identificati e risolti correttamente).
+    %\item \textbf{Spiegazione}: Un livello più alto di controllo dei guasti indica una maggiore capacità del sistema di identificare, registrare e risolvere i guasti in modo tempestivo ed efficiente, migliorando l'affidabilità e la manutenibilità complessiva del software.
 \end{itemize}

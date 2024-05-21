@@ -1,19 +1,20 @@
 \subsubsubsection{Impatto delle modifiche}
 \begin{itemize}
-    \item \textbf{Notazione specifica}: M.1.15
-    \item \textbf{Nome}: Impatto delle modifiche
+    \item \textbf{Notazione specifica}: M.1.15;
+    \item \textbf{Nome}: Impatto delle modifiche;
     \item \textbf{Descrizione}: L'impatto delle modifiche è una misura che quantifica l'effetto che una modifica al codice sorgente ha su altre parti del sistema. Questa metrica valuta il numero di moduli o componenti che devono essere alterati o verificati a seguito di una modifica, riflettendo la propagazione delle dipendenze e la complessità del sistema;
     \item \textbf{Caratteristica di riferimento}: Manutenibilità, Affidabilità;
     \item \textbf{Motivo}: Ridurre l'impatto delle modifiche è essenziale per mantenere il sistema facilmente manutenibile e affidabile. Un alto impatto delle modifiche può indicare un sistema altamente interconnesso e fragile, dove piccoli cambiamenti possono causare effetti a catena significativi;
-    \item \textbf{Misurazione}: L'impatto delle modifiche può essere misurato calcolando il numero di moduli o componenti influenzati da una modifica. La formula per il calcolo è:
-    \begin{equation}
-    \text{Impatto delle modifiche} = \frac{\text{Mmod}}{\text{Mtot}} \times 100
-    \end{equation}
-    Dove:
+    \item \textbf{Misurazione}: L'impatto delle modifiche è misurato calcolando il numero di moduli o componenti influenzati da una modifica secondo la formula: 
+    \[
+    \text{Impatto delle modifiche} = \frac{M_{mod}}{M_{t}} \times 100
+    \]
+    dove:
     \begin{itemize}
-        \item \textbf{Mmod}: Numero di moduli modificati;
-        \item \textbf{Mtot}: Numero totale di moduli.
+        \item $M_{mod}$: Numero di moduli modificati;
+        \item $M_{t}$: Numero totale di moduli.
     \end{itemize}
+    
     %\item \textbf{Range}: 0\% - 10\%
     %\item \textbf{Spiegazione}: Un range ottimale per l'impatto delle modifiche dovrebbe essere mantenuto tra 0\% e 10\%. Un valore superiore al 10\% indica che una modifica influisce su una parte significativa del sistema, suggerendo che il codice è fortemente interconnesso e potenzialmente fragile. Mantenere questa metrica entro il range suggerito aiuta a garantire che le modifiche possano essere apportate in modo isolato, riducendo il rischio di introdurre difetti in altre parti del sistema.
 \end{itemize}
