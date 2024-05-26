@@ -1,24 +1,19 @@
-\subsubsubsection{Metriche di gestione degli errori}
+\subsubsubsection{Rischi non previsti su successi}
 \begin{itemize}
     \item \textbf{Notazione specifica}: M.3.2;
-    \item \textbf{Nome}: Metriche di gestione degli errori;
-    \item \textbf{Descrizione}: Questa metrica valuta l'efficacia del sistema di gestione degli errori all'interno del software;
-    \item \textbf{Caratteristica di riferimento}: Affidabilità, Manutenibilità;
-    \item \textbf{Motivo}: Valutare le metriche di gestione degli errori aiuta a identificare la capacità del sistema di gestire e correggere efficacemente gli errori che possono verificarsi durante l'esecuzione del software, garantendo un'esperienza utente affidabile e riducendo i tempi di inattività;
-    \item \textbf{Misurazione}: TODO
-    %\item \textbf{Range}: Il range ideale per questa metrica può variare in base al tipo e alla complessità del software, ma generalmente indica una gestione proattiva ed efficiente degli errori.
-   % \[
-    %ME = \begin{cases} 
-          %3 & \text{se la criticità dell'errore è bassa} \\
-          %2 & \text{se la criticità dell'errore è media} \\
-          %1 & \text{se la criticità dell'errore è alta} \\
-       %\end{cases}
-    %\]
-    %Dove:
-    %\begin{itemize}
-        %\item \( ME \) rappresenta il punteggio assegnato alla gestione dell'errore.
-        %\item La criticità dell'errore viene valutata con un punteggio da 1 a 3, dove 1 rappresenta un errore ad alta criticità che compromette l'avanzamento del progetto, 2 rappresenta un errore di criticità media e 3 rappresenta un errore di bassa criticità che non compromette significativamente l'avanzamento del progetto.
-    %\end{itemize}
-    %\item \textbf{Spiegazione}: Le metriche di gestione degli errori forniscono al team di sviluppo una panoramica delle prestazioni nel rilevare, registrare, risolvere e monitorare gli errori nel software, permettendo al team di prendere decisioni informate e di migliorare continuamente il processo di gestione degli errori.
+    \item \textbf{Nome}: Rischi non previsti su successi;
+    \item \textbf{Descrizione}: Questa metrica rappresenta il rapporto tra il numero di rischi non previsti che emergono durante lo sviluppo del software e il numero di errori di sistema successi. Gli errori di sistema successi sono quelli che sono stati risolti e corretti con successo durante il processo di sviluppo;
+    \item \textbf{Caratteristica di riferimento}: Gestione dei rischi, Affidabilità;
+    \item \textbf{Motivo}: Questa metrica fornisce una misura della proporzione di rischi non previsti rispetto agli errori di sistema che sono stati risolti con successo. Aiuta a valutare l'efficacia della gestione dei rischi nel ridurre l'incidenza degli errori nel sistema;
+    \item \textbf{Misurazione}: Il rapporto dei rischi è calcolato con questa formula:
+    \[
+        \text{Percentuale di metriche soddisfatte (\%)} =\frac{R_{n}}{E_{s}}
+    \]
+    dove:
+    \begin{itemize}
+        \item $R_{n}$: Numero i rischi non previsti;
+        \item $E_{s}$: Numero di sistema successi.
+    \end{itemize}
+    %\item \textbf{Range}: Il range ideale per questa metrica è tendente a zero, il che indica una bassa incidenza di rischi non previsti rispetto agli errori di sistema successi.
+    %\item \textbf{Spiegazione}: Un valore prossimo a zero per questa metrica indica che il numero di rischi non previsti è relativamente basso rispetto al numero di errori di sistema che sono stati correttamente identificati e risolti, suggerendo una gestione efficace dei rischi nel processo di sviluppo del software.
 \end{itemize}
-

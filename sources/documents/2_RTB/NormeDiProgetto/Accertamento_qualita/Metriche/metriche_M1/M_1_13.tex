@@ -2,19 +2,16 @@
 \begin{itemize}
     \item \textbf{Notazione specifica}: M.1.13;
     \item \textbf{Nome}: Accuratezza della risposta;
-    \item \textbf{Descrizione}: L'accuratezza della risposta è una misura della correttezza e precisione con cui un sistema software risponde a una richiesta o esegue una funzione;
+    \item \textbf{Descrizione}: L'accuratezza della risposta è una misura della correttezza e precisione con cui il sistema risponde a una interrogazione in linguaggio naturale. La metrica viene valutata in base a a dei test descritti nel \glossario{Dizionario dati};
     \item \textbf{Caratteristica di riferimento}: Funzionalità, Affidabilità;
     \item \textbf{Motivo}: Garantire che il sistema fornisca risposte corrette e affidabili è cruciale per la soddisfazione dell'utente e il funzionamento efficiente del software. Misurare l'accuratezza delle risposte aiuta a identificare e correggere errori nel sistema, migliorando la qualità complessiva del software;
-    \item \textbf{Misurazione}: L'accuratezza della risposta è misurata con questa formula:
+    \item \textbf{Misurazione}: L'accuratezza della risposta è misurata in base alla distanza della risposta ottenuta dopo la generazione di un prompt su frasi preselezionate e la risposta attesa scritta dall'attore tecnico nel dizionario dati.Questa percentuale l'abbiamo calcolata come :
     \[
-    \text{Accuratezza della risposta} = \frac{R_{c}}{R_{t}} \times 100
+    \text{Accuratezza della risposta} = \frac{R_{c}}{R_{a}} \times 100
     \]
     Dove:
     \begin{itemize}
-        \item $R_{c}$: Numero di risposte corrette;
-        \item $N_{t}$: Numero totale delle richieste.
+        \item $R_{c}$: Risposta corretta;
+        \item $N_{a}$: Risposta attesa.
     \end{itemize}
-    
-    %\item \textbf{Range}: 95\% - 100\%
-    %\item \textbf{Spiegazione}: Un range ottimale per l'accuratezza della risposta dovrebbe essere mantenuto tra il 95\% e il 100\%. Un valore superiore al 95\% indica che il sistema fornisce risposte per la maggior parte corrette, mentre valori inferiori suggeriscono che ci sono errori significativi da correggere. Mantenere questa metrica entro il range suggerito aiuta a garantire un alto livello di qualità e affidabilità del sistema.
-\end{itemize}
+ \end{itemize}
