@@ -1,0 +1,33 @@
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	% MAX 12.5cm
+ 	\begin{longtable}{|P{1cm}|P{5cm}|P{4cm}|>{\arraybackslash}P{4cm}|}
+	  \hline
+		\textbf{ID} & \textbf{Nome metrica} & \textbf{Valore tollerabile} & \textbf{Valore ambito} \\ 
+		\hline
+		\endfirsthead
+
+		\hline
+		\textbf{ID} & \textbf{Nome metrica} & \textbf{Valore tollerabile} & \textbf{Valore ambito} \\ 
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{4}{|r|}{{Continua nella prossima pagina}} \\ 
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+		\hline M.2.1 & Percentuale di metriche soddisfatte & > 80\% & 100\% \\
+        \hline M.2.2 & Variazione pianificazione task completati & 10-15\% & < 5\% \\
+        \hline M.2.3 & Variazione di costo & 5-10\% & < 5\% \\
+        \hline M.2.4 & Efficienza temporale & 5-10\% & < 1 giorno\% \\
+        \hline M.2.5 & Velocità di verifica dopo una pull request & < 2 giorni & < 1 giorno \\
+        \hline M.2.6 & Dimensione del commit & < 200 linee & < 50 linee\\
+        \hline M.2.7 & Tempo medio tra commit  & < 3 giorni & 1 giorno \\
+        \hline M.2.8 & Frequenza di merge & 1 al giorno & 3 al giorno \\
+    \end{longtable}
+\end{adjustwidth}
+\egroup
