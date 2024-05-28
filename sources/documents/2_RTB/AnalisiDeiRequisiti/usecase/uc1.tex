@@ -1,29 +1,30 @@
 \subsubsection{UC1 - Autenticazione}\label{UC1}
 \paragraph*{Descrizione}
-L’Autenticazione corrisponde al processo di login, tramite il quale l’Utente Non Autenticato può accedere all’applicativo in quanto Utente o Tecnico.
+L’Autenticazione corrisponde al processo di login, tramite il quale l'Utente può passare alle funzionalità del Tecnico.
 
 \paragraph*{Attori principali}
-Utente Non Autenticato
+Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L’Utente Non Autenticato si collega all’applicativo;
-  \item L’Utente Non Autenticato ha avviato la procedura di login all’applicativo.  
+  \item L’Utente si collega all’applicativo;
+  \item L'Utente non è già autenticato nella sessione corrente;
+  \item L’Utente ha avviato la procedura di login all’applicativo.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
   \item La procedura di autenticazione si è conclusa con successo;
-  \item L’Utente Non Autenticato diviene Utente o Tecnico a seconda del proprio ruolo e visualizza le funzioni generali;
+  \item L’Utente diventa Tecnico;
   \item Il Tecnico visualizza le funzionalità aggiuntive specifiche del ruolo.  
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{itemize}
-  \item L’Utente Non Autenticato accede all’applicativo;
-  \item L’Utente Non Autenticato seleziona la funzione di login;
-  \item L’Utente Non Autenticato inserisce le proprie credenziali di accesso;
-  \item In caso di corretto inserimento e verifica delle credenziali, l’Utente Non Autenticato accede all’applicativo come Utente o Tecnico.
+  \item L’Utente accede all’applicativo;
+  \item L’Utente seleziona la funzione di login;
+  \item L’Utente inserisce le proprie credenziali di accesso;
+  \item In caso di corretto inserimento e verifica delle credenziali, l’Utente accede all’applicativo come Tecnico.
 \end{itemize}
 
 \paragraph*{Estensione}
@@ -44,23 +45,23 @@ Utente Non Autenticato
 La procedura di inserimento e-mail corrisponde all’inserimento della propria e-mail nella sezione apposita di login.
 
 \paragraph*{Attori principali}
-Utente Non Autenticato
+Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L’Utente Non Autenticato non ha eseguito il login;
-  \item L’Utente Non Autenticato ha avviato la procedura di autenticazione.  
+  \item L’Utente non ha eseguito il login;
+  \item L’Utente ha avviato la procedura di autenticazione.  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item L’Utente Non Autenticato ha correttamente inserito la propria e-mail nel campo apposito.
+  \item L’Utente ha correttamente inserito la propria e-mail nel campo apposito.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente Non Autenticato avvia la procedura di autenticazione;
-  \item L’Utente Non Autenticato inserisce la propria e-mail nel campo apposito.  
+  \item L’Utente avvia la procedura di autenticazione;
+  \item L’Utente inserisce la propria e-mail nel campo apposito.  
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -70,23 +71,23 @@ Utente Non Autenticato
 La procedura di inserimento password corrisponde all’inserimento della propria password nella sezione apposita di login.
 
 \paragraph*{Attori principali}
-Utente Non Autenticato
+Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L’Utente Non Autenticato non ha eseguito il login;
-  \item L’Utente Non Autenticato ha avviato la procedura di autenticazione;
-  \item L’Utente Non Autenticato ha inserito la propria e-mail nel campo apposito.
+  \item L’Utente non ha eseguito il login;
+  \item L’Utente ha avviato la procedura di autenticazione;
+  \item L’Utente ha inserito la propria e-mail nel campo apposito.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item L’Utente Non Autenticato ha correttamente inserito la propria password nel campo apposito.
+  \item L’Utente ha correttamente inserito la propria password nel campo apposito.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente Non Autenticato avvia la procedura di autenticazione;
-  \item L’Utente Non Autenticato inserisce la propria e-mail nel campo apposito;
-  \item L’Utente Non Autenticato inserisce la propria password nel campo apposito.  
+  \item L’Utente avvia la procedura di autenticazione;
+  \item L’Utente inserisce la propria e-mail nel campo apposito;
+  \item L’Utente inserisce la propria password nel campo apposito.  
 \end{enumerate}
