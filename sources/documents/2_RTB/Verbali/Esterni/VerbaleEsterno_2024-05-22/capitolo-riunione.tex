@@ -33,3 +33,57 @@ Si riconferma inoltre che la tecnologia è valida poiché utilizza lo stesso lin
 \subsubsection{Discussione delle metriche di qualità}
 
 \par \textbf{Domanda:} Vista la novità nell'approccio alle metriche per il gruppo, si voleva chiedere se ci sono delle metriche a priori che si vuole vengano rispettate: il dubbio è per tanto volto alla richiesta di un consiglio alla Proponente a riguardo.
+
+\par \textbf{Risposta:} La Proponente esprime la sua opinione sulle metriche di prodotto che riguardano l'interfaccia, le quali vengono lasciate ai membri del gruppo perché non di particolare interesse.
+Si esprime invece sulle metriche di prodotto che si centrano sulla parte funzionale del prodotto, ossia sull'interazione tra l'applicazione e gli \glossario{LLM}. 
+In particolare è di interesse capire con una batteria di test, quante volte il risultato ottenuto come \glossario{prompt}\ è vicino a quello desiderato oppure capire dove e quali sono i problemi che portano ad una risposta non ottimale.
+Con un esempio fa capire al gruppo come approcciarsi alla produzione di test. 
+Questi devono cercare di ricoprire un numero maggiore di casistiche come ad esempio:
+\begin{itemize}
+	\item Frasi dove è coinvolta una tabella;
+	\item Condizioni dove vengono richiesti solo dei filtri;
+	\item Condizioni di raggruppamento;
+	\item Casi di ordinamento;
+	\item Dizionario dati con sole descrizioni;
+	\item Altri dizionari dati con descrizioni più brevi o lunghe.
+\end{itemize}
+E per ognuno l'ideale sarebbe avere un numero sufficiente di casi da capire quanti danno una risposta soddisfacente e quanti no.
+
+\par \textbf{Domanda:} Viene chiesto se è possibile avere un'idea di un valore desiderabile come risultato della batteria di test.
+
+\par \textbf{Risposta:} La Proponente non esprime una misura specifica, in quanto questa non è conoscibile ed è parte interessante per capire quanti casi riesce ad rispettare.
+
+\par \textbf{Domanda:} Viene chiesto se la metrica dovrebbe essere quindi l'affinità che questa ha con le batterie di test.
+
+\par \textbf{Risposta:} La Proponente conferma, indicando come gli \glossario{LLM}\ oggigiorno vengano venduti come prodotti sicuri e affidabili e lo scopo del prodotto è capire se e quanto questo corrisponda effettivamente alla realtà.
+
+\par \textbf{Domanda:} Viene domandato se c'è un valore specifico desiderabile in merito alla velocità e alle prestazioni nella traduzione.
+
+\par \textbf{Risposta:} La Proponente spiega che i gruppi del primo lotto non hanno mostrato particolari lacune o difficoltà in merito alla velocità di esecuzione, e che per tanto non pensa sia un problema fondamentale.
+L'unica cosa specificata in merito a ciò è capire come il prompt possa essere della dimensione minore possibile per evitare la formazione di troppi \glossario{token}\ in caso di interazioni con \glossario{API}\.
+Tuttavia si deve prestare attenzione alla dimensione finale del prompt, poiché seppur sia importante che questa sia la più breve possibile, si deve bilanciare ciò per evitare di avere un prompt troppo piccolo e povero quindi di elementi importanti per la realizzazione della \glossario{query}.
+Infine esprime come altre metriche più interne debbano essere discusse con il Professore e che la Proponente non può dare consigli a riguardo.
+
+\par \textbf{Domanda:} Viene chiesto se è possibile se non altro dare una stima approssimativa di quando si parla dell'avere troppe metriche.
+
+\par \textbf{Risposta:} La Proponente esprime difficoltà nella risposta, poiché non è facile dare una stima di questo tipo.
+A tal proposito riporta una situazione interna all'azienda dove furono create una serie di metriche e regole dettagliate che poi si è finito per non rispettare: questo per esprimere che neanche avere troppe metriche è utile, ma si deve trovare un equilibrio nello sviluppo.
+Indica però la presenza di 5 metriche che sono considerate fondamentali:
+\begin{itemize}
+	\item Tempo;
+	\item Sforzo;
+	\item Costo;
+	\item Qualità;
+	\item Dimensione;
+\end{itemize}
+Queste vengono presentate come caratteristiche di tutti i progetti.
+Un accenno importante viene portato sulla caratteristica del tempo, ossia in quanto tempo il team di sviluppo riesce a dare una risposta ad una data domanda o attività.
+Un'altra metrica è la dimensione in termini di "quanto è grande il programma". 
+Questa è una metrica che seppur utile, dipende da come viene usata: se si misurano solo le linee di codice e si indica un codice di qualità un codice lungo, potrebbe invece essere che questo è grande, ma non sufficientemente ottimizzato. 
+Un altro esempio interessante riguarda gli algoritmi di MergeSort e QuickSort, dove il primo seppur molto più lungo in termini di codice, è meno efficiente del secondo.
+
+\subsubsection{Funzione di traduzione di txtai}
+\par \textbf{Domanda:} Si chiede alla Proponente se per una richiesta in lingua sia più utile avere un prompt in italiano oppure avere una funzione di traduzione che restituisca il prompt in lingua.
+
+\par \textbf{Risposta:} La Proponente espone come l'obiettivo finale del progetto sia quello di avere un prompt che possa essere incollato per ricevere una risposta in SQL: questa non cambia anche al cambio della lingua, poiché il linguaggio utilizzato rimane quello dell'SQL.
+Esprime quindi come l'interesse non dev'essere quello della facoltà di lettura della risposta finale, ma della possibilità di copiare e incollare il prompt per ricevere una risposta in SQL.
