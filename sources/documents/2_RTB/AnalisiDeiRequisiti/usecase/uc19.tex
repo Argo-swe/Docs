@@ -1,0 +1,25 @@
+\subsubsection{UC19 - Inserimento Query SQL}\label{UC19}
+\paragraph*{Descrizione}
+Il tecnico inserisce la query SQL generata da un servizio esterno e sulla quale eseguire il test.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item Il tecnico ha selezionato il test da eseguire;
+  \item Il tecnico ha generato il prompt dalla frase di test relativa;
+  \item Il tecnico copia il prompt su un servizio esterno e genera la frase sql.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il tecnico visualizza la frase SQL copiata nell’input relativo.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il tecnico ha copiato da un servizio esterno la frase SQL generata dal prompt;
+  \item Il tecnico copia la frase SQL nel box relativo.
+\end{enumerate}
