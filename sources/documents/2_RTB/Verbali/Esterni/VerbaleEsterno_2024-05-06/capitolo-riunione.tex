@@ -1,59 +1,52 @@
 \section{Riunione}
 \subsection{Ordine del giorno}
 \begin{itemize}
-	\item Discutere delle tecnologie per lo sviluppo della web app;
-	\item Esporre studio preliminare delle tecnologie lato back-end;
-	\item Valutare l'ampliamento dei casi d'uso;
+\item Discutere delle tecnologie per lo sviluppo dell'applicativo;
+\item Presentare i dubbi emersi durante lo studio di \glossario{txtai};
+\item Valutare l'ampliamento dei \glossario{casi d'uso}.
 \end{itemize}
 
 \subsection{Argomenti e temi dell'incontro}
 
 \subsubsection{Tecnologie per lo sviluppo della web app}
 
-\textbf{Domanda:} Tra le diverse tecnologie solitamente indicate per lo sviluppo di un'applicazione web (quali Node.js, Flask etc.), abbiamo individuato il \glossario{framework} \glossario{Streamlit}. 
-Questo permette uno sviluppo \glossario{front-end} più celere rispetto alle alternative, seppur conceda meno spazio alla personalizzazione. 
+\textbf{Domanda:} Tra le diverse tecnologie solitamente indicate per lo sviluppo di un'applicazione web (quali Django, Flask, React, Vue.js), abbiamo individuato il \glossario{framework} \glossario{Streamlit}. 
+Il \glossario{framework} in questione permette di mantenere il linguaggio \glossario{Python} per sviluppare l'interfaccia grafica, seppur conceda meno spazio alla personalizzazione. 
 Secondo lei, potrebbe essere una scelta opportuna?
 
-\textbf{Risposta:} La \glossario{Proponente} non è familiare col framework Streamlit, ma ne approverebbe l'utilizzo a seguito di una presentazione informativa da parte del gruppo in cui si spiegano approfonditamente, ovvero tramite paragoni con gli altri framework, le motivazioni di tale scelta.
+\textbf{Risposta:} La \glossario{Proponente} non è familiare col framework Streamlit, ma ne approverebbe l'utilizzo a seguito di una presentazione informativa da parte del gruppo in cui si spiegano le motivazioni di tale scelta.
 
-\subsubsection{Esposizione studio preliminare delle tecnologie lato \glossario{back-end}}
+\subsubsection{Resoconto sullo studio preliminare di txtai}
 
-\textbf{Descrizione:} Il \glossario{Programmatore} espone il lavoro di studio sulla libreria \glossario{txtai}, con particolare enfasi riguardo la componente di indicizzazione e ricerca. 
-Pone poi l'attenzione sulla necessità o meno di fasi di pre-processing delle queries, nel tentativo di semplificare la ricerca semantica per la LLM. 
-Questo riguarda l'elaborazione della query utente in modo tale da tokenizzarne solo le componenti semantiche ritenute fondamentali, e allo stesso modo l'elaborazione del dizionario dati in formato JSON per renderlo simile al linguaggio naturale, in modo che i modelli, allenati su quest'ultimo, riescano ad estrarne con più facilità il significato.
+\textbf{Descrizione:} Il programmatore espone i risultati conseguiti durante lo studio della libreria \glossario{txtai}, con particolare enfasi sulla componente di \glossario{indicizzazione} e ricerca semantica. 
+Pone poi l'attenzione sulla necessità o meno delle fasi di pre-processing della richiesta dell'utente, nel tentativo di semplificare la ricerca semantica. 
+L'idea del team sarebbe di processare la richiesta in linguaggio naturale per \glossario{tokenizzare} solo le componenti semantiche ritenute fondamentali. Allo stesso modo, sarebbe prevista un'elaborazione del \glossario{dizionario dati} in formato \glossario{JSON} per renderlo simile al linguaggio naturale, cosicché i \glossario{modelli}, allenati su quest'ultimo, riescano ad estrarne con più facilità il significato.
 
-\textbf{Risposta: }La \glossario{Proponente} ritiene le fasi di pre-processing non necessarie, in quanto il dizionario dati risulta sufficiente per creare degli embeddings efficaci ed associabili alle query utente senza ulteriori alterazioni. 
-Dimostra poi l'utilizzo di txtai per la ricerca semantica tramite BERTino di efederici, un modello operante su lingua italiana, ed invita all'utilizzo delle funzioni di load e save per ridurre l'overhead e gestire con più facilità il testing di più indici.
+\textbf{Risposta:} La \glossario{Proponente} ritiene che le fasi di pre-processing non siano necessarie, poiché il formato del \glossario{dizionario dati} risulta sufficiente per creare degli \glossario{embeddings} efficaci.
+Illustra poi l'utilizzo di txtai per la ricerca semantica tramite sentence-BERTino di efederici, un modello operante su lingua italiana. Inoltre, la Proponente invita a trarre vantaggio dalle funzioni di load e save degli indici, per ridurre l'\glossario{overhead} e velocizzare la fase di testing.
 
-\textbf{Descrizione:} Il \glossario{Programmatore} espone il lavoro di studio sulla libreria txtai, con particolare enfasi riguardo la componente di indicizzazione e ricerca. 
-Pone poi l'attenzione sulla necessità o meno di fasi di pre-processing delle queries, nel tentativo di semplificare la ricerca semantica per la LLM. 
-Questo riguarda l'elaborazione della query utente in modo tale da tokenizzarne solo le componenti semantiche ritenute fondamentali, e allo stesso modo l'elaborazione del dizionario dati in formato JSON per renderlo simile al linguaggio naturale, in modo che i modelli, allenati su quest'ultimo, riescano ad estrarne con più facilità il significato.
+\textbf{Descrizione:} Il programmatore espone il problema dello scarso punteggio dei risultati restituiti dalla funzione search di txtai, e suggerisce la mitigazione del problema tramite l'aggiunta di un indice intermedio. 
 
-\textbf{Risposta: }La \glossario{Proponente} ritiene le fasi di pre-processing non necessarie, in quanto il dizionario dati risulta sufficiente per creare degli embeddings efficaci ed associabili alle query utente senza ulteriori alterazioni. 
-Dimostra poi l'utilizzo di txtai per la ricerca semantica tramite BERTino di efederici, un modello operante su lingua italiana, ed invita all'utilizzo delle funzioni di load e save per ridurre l'overhead e gestire con più facilità il testing di più indici.
+\textbf{Risposta:} La \glossario{Proponente} accoglie la proposta e ne invita la sperimentazione. 
+Riguardo allo score basso degli output forniti dalla search, la Proponente suggerisce l'esplorazione di più modelli. 
+Spiega inoltre che txtai utilizza, in maniera del tutto trasparente, la libreria \glossario{FAISS}, che si occupa della \glossario{vettorizzazione} e indicizzazione oltre che della ricerca semantica. In aggiunta, la Proponente suggerisce di confrontare FAISS con altre librerie.
 
-\textbf{Descrizione:} Il \glossario{Programmatore} espone il problema dello scarso score dei risultati restituiti dalla funzione di search di txtai, e suggerisce la mitigazione del problema tramite un indice intermedio che si frapponga alla query utente e al risultato finale da fornire a una LLM come ChatGPT per ottenere l'effettiva query SQL.
+\subsubsection{Analisi dei casi d'uso}
 
-\textbf{Risposta: }La \glossario{Proponente} accoglie l'idea e ne invita la sperimentazione. 
-Riguardo la bassa rilevanza dei documenti restituiti dalla search, suggerisce la sperimentazione di più modelli. 
-Spiega inoltre l'utilizzo da parte di txtai della libreria FAISS, che si occupa della vettorializzazione e indicizzazione oltre che della ricerca semantica, e propone di eseguire dei paragoni con altre librerie interne.
+\textbf{Domanda:} L'analista illustra i \glossario{casi d'uso} relativi alla funzionalità di \glossario{debug} disponibile per l'utente Tecnico. Il report ideato dal team comprende una lista di tabelle con annesso il punteggio di rilevanza. 
+La \glossario{Proponente} immagina delle funzionalità aggiuntive per il debugging?
 
-\subsubsection{Esplorazione dei casi d'uso}
+\textbf{Risposta:} La \glossario{Proponente} conferma come lo scopo del debugging sia mostrare l'accuratezza e la completezza del dizionario dati caricato dal Tecnico. 
+Suggerisce poi che venga fornita una spiegazione sull'eventuale esclusione di un risultato pertinente a favore di uno meno attinente.
 
-\textbf{Descrizione:} L'\glossario{Analista} spiega la struttura dei casi d'uso per le funzioni di debug disponibili per il \glossario{Tecnico}, e in particolare una vista a lui specifica comprendente una lista di tabelle con la corrispondenza tramite il punteggio di score tra la query utente e il risultato ottenuto. 
-Chiede poi se la \glossario{Proponente} avesse pensato a funzionalità aggiuntive per il debugging.
+\textbf{Descrizione:} L'analista chiede se sia ragionevole generare un elenco di punteggi, mostrando l'intero \glossario{indice} o gran parte di esso.
 
-\textbf{Risposta: }La \glossario{Proponente} conferma che la funzione degli strumenti di debug sia mostrare la correttezza del dizionario dati. 
-Propone poi che venga mostrata una spiegazione sull'eventuale esclusione di un risultato che invece sarebbe stato pertinente a favore di uno meno attinente.
+\textbf{Risposta:} La \glossario{Proponente} spiega che grazie alla logica di \glossario{back-end}, il processo di ricerca non avviene per calcolo sequenziale, ma attraversa una struttura gerarchica multistrato. Pertanto, la query utente non deve essere confrontata con tutti i vettori dell'indice. 
+Eseguire la funzione search non è costoso, mentre lo sarebbe visitare in maniera sequenziale l'intero indice. 
+L'unica operazione onerosa, per cui potrebbero essere necessari anche dei minuti, riguarda la creazione dell'indice; per tale motivo sono state introdotte le già menzionate funzioni load e save.
 
-\textbf{Descrizione:} L'\glossario{Analista} chiede se sia ragionevole generare un elenco di punteggi, mostrando l'intero \glossario{indice} o gran parte di esso.
+\subsubsection{Organizzazione della presentazione su Streamlit}
 
-\textbf{Risposta: }La \glossario{Proponente} spiega che grazie alla logica di \glossario{back-end} il riscontro sulla query è gerarchico e non avviene ogni volta per calcolo sequenziale, ovvero non si effettua ogni volta il calcolo della distanza del coseno su tutti i vettori dell'indice. 
-Eseguire una search non è costoso, mentre lo sarebbe di più visitare in maniera sequenziale l'intero indice. 
-Solo per crearlo, potrebbero essere necessari alcuni minuti.
+\textbf{Descrizione:} Il responsabile domanda alla \glossario{Proponente} se preferisca una presentazione del \glossario{framework} \glossario{Streamlit}, evidenziandone vantaggi e svantaggi, o se preferisca una relazione da spedire via email.
 
-\subsubsection{Organizzazione presentazione Streamlit}
-
-\textbf{Descrizione:} Il \glossario{Responsabile} domanda alla Proponente se preferisca una presentazione del framework Streamlit indicandone vantaggi e svantaggi, o se preferisca un incontro intermedio o una relazione da spedire via mail.
-
-\textbf{Risposta: }La \glossario{Proponente} preferisce venire aggiornata in un incontro successivo tramite una presentazione con delle slide.
+\textbf{Risposta:} La \glossario{Proponente} suggerisce al team di elaborare una breve presentazione da esporre durante l'incontro successivo.
