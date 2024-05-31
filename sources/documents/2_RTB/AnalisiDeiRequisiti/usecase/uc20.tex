@@ -1,0 +1,36 @@
+\subsubsection{UC20 - Selezione e copia del prompt generato per il Tecnico}\label{UC8}
+
+\paragraph*{Descrizione}
+Il tecnico vuole selezionare il prompt che è stato generato dal sistema per poterlo usare all’interno della richiesta ad un LLM esterno al fine di generare una query. Nel caso la risposta non soddisfi, il Tecnico può selezionare lo strumento di debug.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'applicazione è stata avviata con successo;
+  \item Il Tecnico ha generato un prompt con successo a partire da una richiesta in linguaggio naturale.
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1}). % Non sono sicuro di questo pezzo perché il login dovrebbe avvenire molto prima. Al momento lo tengo, ma nel caso sono da sviluppare i casi d'uso precedenti per il tecnico
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il prompt che è stato generato dal sistema come risultato dell’interrogazione è copiato negli appunti del sistema del Tecnico;
+  \item Il prompt che è stato generato dal sistema non è soddisfacente e viene selezionato lo strumento di debug.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico visualizza il prompt di risposta del sistema;
+  \item Il Tecnico salva nei suoi appunti di sistema una copia del prompt che potrà poi incollare su LLM esterni per la generazione della query;
+\end{enumerate}
+
+\paragraph*{Scenario alternativo}
+\begin{itemize}
+  \item Il tecnico seleziona lo strumento di debug (\hyperref[UC18]{UC18}).
+\end{itemize}
+
+\paragraph*{Generalizzazione}
+\begin{itemize}
+    \item Selezione e copia del prompt generato (\hyperref[UC8]{UC8}).
+\end{itemize}

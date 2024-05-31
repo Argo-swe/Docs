@@ -1,7 +1,7 @@
 \subsubsection{UC18 - Debug della generazione del prompt}\label{UC18}
 
 \paragraph*{Descrizione}
-Il Tecnico vuole poter testare il \glossario{dizionario dati} e interroga il sistema per comprendere la corretta formattazione del \glossario{dizionario dati}, riceverà in risposta uno schema motivato della selezione dei campi del dizionario per permettere eventuali modifiche volte ad ottimizzare le interrogazioni.
+Il Tecnico vuole poter testare il prompt generato e interroga il sistema per comprendere la corretta formattazione del \glossario{dizionario dati}. Riceverà in risposta uno schema motivato della selezione dei campi del dizionario e un log, che hanno portato al risultato ottenuto.
 
 \paragraph*{Attori principali}
 Tecnico
@@ -15,26 +15,20 @@ Tecnico
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il sistema genera una lista dei migliori risultati individuati dal sistema, affiancati allo \glossario{score} ottenuto.
+  \item Il sistema genera una lista dei migliori risultati individuati dal sistema, affiancati allo \glossario{score} ottenuto;
+  \item Il sistema genera un log che dia una narrazione della strutturazione del prompt. %da rivedere
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico desidera testare la correttezza di un dizionario; 
-  \item Il Tecnico seleziona un \glossario{dizionario dati} sul quale baserà l’interrogazione;
-  \item Il Tecnico sceglie la lingua su cui farà l’interrogazione. La lingua è in italiano di default se non viene cambiata;
-  \item Il Tecnico inserisce un’interrogazione in linguaggio naturale nel box testuale apposito;
-  \item Il sistema fornisce lo schema di debug relativo al sotto-modello selezionato per l’utilizzo nel prompt.  
+  \item Il Tecnico seleziona lo strumento di debug al ricevimento del prompt dal sistema;
+  \item Lo strumento di debug genera una lista dei risultati individuati dal sistema;
+  \item Lo strumento di debug genera un log descrittivo dei passaggi per la composizione del prompt.  
 \end{enumerate}
-
-\paragraph*{Inclusione}
-\begin{itemize}
-  \item Inserimento richiesta in linguaggio naturale (\hyperref[UC3]{UC3});
-  \item Selezione \glossario{dizionario dati} (\hyperref[UC4]{UC4}).
-\end{itemize}
 
 \paragraph*{Estensione}
 \begin{itemize}
-  \item Cambio lingua (\hyperref[UC7]{UC7});
   \item Messaggio d'errore nella generazione del prompt (\hyperref[UC6]{UC6}).
 \end{itemize}
+
+%Sottocasi d'uso (lista/log)?
