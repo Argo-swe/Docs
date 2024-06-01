@@ -1,13 +1,14 @@
 \subsubsection{UC14 - Visualizzazione dati dizionario}\label{UC14}
 \paragraph*{Descrizione}
-Viene mostrato il \glossario{dizionario dati} caricato dal Tecnico, comprendendo tutti i suoi dati in maniera esaustiva, con nome, descrizione, struttura del database, sinonimi, parte di test.
+Viene mostrato il \glossario{dizionario dati} caricato dal Tecnico, comprendendo tutti i suoi dati in maniera esaustiva, con nome, descrizione, impostazione del \glossario{database}, sinonimi, parte di test.
 
 \paragraph*{Attori principali}
-Tecnico
+Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1}).
+  \item Il Utente è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item È presente almeno un \glossario{dizionario dati}.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -17,26 +18,17 @@ Tecnico
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico naviga alla lista dei dizionari dati;
-  \item Il Tecnico seleziona il pulsante per visualizzare i dati di un dizionario;
-  \item Il Tecnico visualizza i dati del dizionario.
+  \item Il Utente naviga la lista dei \glossario{dizionari dati} (\hyperref[UC10]{UC10});
+  \item Il Utente seleziona un \glossario{dizionario dati};
+  \item Il Utente visualizza i dati del dizionario selezionato.
 \end{enumerate}
 
 \paragraph*{Inclusione}
 \begin{itemize}
-  \item Visualizzazione singolo \glossario{dizionario dati} (\hyperref[UC9]{UC9}).
-\end{itemize}
-
-\paragraph*{Sottocasi d'uso}
-TODO in base a come viene deciso il dizionario dati
-
-\begin{itemize}
+  \item Visualizzazione singolo \glossario{dizionario dati} (\hyperref[UC9]{UC9});
   \item Visualizzazione tabelle del dizionario (\hyperref[UC14point1]{UC14.1});
   \item Visualizzazione descrizione e sinonimi delle tabelle (\hyperref[UC14point2]{UC14.2});
   \item Visualizzazione sinonimi delle colonne (\hyperref[UC14point3]{UC14.3});
-  \item Visualizzazione test del dizionario TODO .
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-TODO estendere sottocasi in base a come viene deciso il dizionario dati

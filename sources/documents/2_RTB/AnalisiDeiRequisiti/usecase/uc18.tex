@@ -1,7 +1,7 @@
-\subsubsection{UC18 - Debug della generazione del prompt}\label{UC18}
+\subsubsection{UC18 - Debug della generazione del \glossario{prompt}}\label{UC18}
 
 \paragraph*{Descrizione}
-Il Tecnico vuole poter testare il prompt generato e interroga il sistema per comprendere la corretta formattazione del \glossario{dizionario dati}. Riceverà in risposta uno schema motivato della selezione dei campi del dizionario e un log, che hanno portato al risultato ottenuto.
+Il Tecnico vuole poter testare il \glossario{prompt} generato e interroga il sistema per comprendere la corretta formattazione del \glossario{dizionario dati}. Visualizza una tabella contenente i campi del \glossario{dizionario dati} e lo score ottenuto per questi.
 
 \paragraph*{Attori principali}
 Tecnico
@@ -10,25 +10,32 @@ Tecnico
 \begin{itemize}
   \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
   \item È presente almeno un \glossario{dizionario dati} nel sistema;
-  \item Il Tecnico seleziona l’interfaccia di debug.
+  \item Il Tecnico inserisce una richiesta in linguaggio naturale (\hyperref[UC3]{UC3});
+  \item Il sistema genera il \glossario{prompt} (\hyperref[UC5]{UC5});
+  \item Il Tecnico seleziona lo strumento di debug.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il sistema genera una lista dei migliori risultati individuati dal sistema, affiancati allo \glossario{score} ottenuto;
-  \item Il sistema genera un log che dia una narrazione della strutturazione del prompt. %da rivedere
+  \item Il sistema genera un \glossario{log};
+  \item Il sistema genera una tabella dei migliori risultati individuati;
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico seleziona lo strumento di debug al ricevimento del prompt dal sistema;
-  \item Lo strumento di debug genera una lista dei risultati individuati dal sistema;
-  \item Lo strumento di debug genera un log descrittivo dei passaggi per la composizione del prompt.  
+  \item Il Tecnico riceve il \glossario{prompt} dal sistema (\hyperref[UC5]{UC5});
+  \item Il Tecnico seleziona lo strumento di debug;
+  \item Lo strumento di debug genera una tabella dei risultati individuati dal sistema; 
+  \item Lo strumento di debug genera un \glossario{log} descrittivo dei passaggi per la composizione del \glossario{prompt}.  
 \end{enumerate}
+
+\paragraph*{Inclusione}
+\begin{itemize}
+  \item Visualizzazione della singola riga della tabella. %UC18.1
+\end{itemize}
 
 \paragraph*{Estensione}
 \begin{itemize}
-  \item Messaggio d'errore nella generazione del prompt (\hyperref[UC6]{UC6}).
+  \item Messaggio d'errore nella generazione del \glossario{prompt} (\hyperref[UC6]{UC6}).
+  \item Download del \glossario{log}. %UC19
 \end{itemize}
-
-%Sottocasi d'uso (lista/log)?

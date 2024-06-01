@@ -1,6 +1,6 @@
-\subsubsection{UC5 - Generazione prompt}\label{UC5}
+\subsubsection{UC5 - Generazione \glossario{prompt}}\label{UC5}
 \paragraph*{Descrizione}
-L’Utente desidera ottenere un prompt al fine di utilizzarlo poi con LLM esterni per generare \glossario{query} sql fornendo parti ristrette di \glossario{dizionario dati}.
+L’Utente desidera ottenere un \glossario{prompt} al fine di utilizzarlo poi con LLM esterni per generare \glossario{\glossario{query}} sql fornendo parti ristrette di \glossario{dizionario dati}.
 
 \paragraph*{Attori principali}
 Utente
@@ -13,22 +13,22 @@ Utente
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il sistema genera un prompt in base alla richiesta ricevuta e al \glossario{dizionario dati} scelto. Attraverso dei metadati restituisce un prompt con il quale stabilisce quali parti di database sono maggiormente necessarie ed efficienti per scrivere la richiesta ricevuta in SQL;
-  \item L’Utente riceve il prompt generato.
+  \item Il sistema genera un \glossario{prompt} in base alla richiesta ricevuta e al \glossario{dizionario dati} scelto. Attraverso dei metadati restituisce un \glossario{prompt} con il quale stabilisce quali parti di database sono maggiormente necessarie ed efficienti per scrivere la richiesta ricevuta in SQL;
+  \item L’Utente riceve il \glossario{prompt} generato.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente desidera ottenere il prompt che permette di generare la query SQL;
+  \item L’Utente desidera ottenere il \glossario{prompt} che permette di generare la \glossario{query} SQL;
   \item L’Utente seleziona un \glossario{dizionario dati} sul quale baserà l’interrogazione;
   \item L’Utente sceglie la lingua su cui farà l’interrogazione.La lingua è in italiano di default se non viene cambiata;
   \item L’Utente inserisce una interrogazione in linguaggio naturale nel box testuale apposito;
-  \item Inizia il processo di generazione del prompt e di raccolta di metadati.
+  \item Inizia il processo di generazione del \glossario{prompt} e di raccolta di metadati.
 \end{enumerate}
 
 \paragraph*{Scenario alternativo}
 \begin{enumerate}
-  \item Errore nella generazione del prompt (\hyperref[UC6]{UC6}).
+  \item Errore nella generazione del \glossario{prompt} (\hyperref[UC6]{UC6}).
 \end{enumerate}
 
 \paragraph*{Inclusione}
@@ -40,5 +40,5 @@ Utente
 \paragraph*{Estensione}
 \begin{itemize}
   \item Cambio lingua (\hyperref[UC7]{UC7});
-  \item Selezione e copia del prompt risultato (\hyperref[UC8]{UC8}).
+  \item Selezione e copia del \glossario{prompt} risultato (\hyperref[UC8]{UC8}).
 \end{itemize}
