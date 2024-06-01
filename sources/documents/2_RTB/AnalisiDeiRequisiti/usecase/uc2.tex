@@ -42,7 +42,7 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L’Utente non ha eseguito il login;
-  \item L’Utente ha inserito solo la propria e-mail o la propria password come credenziali nel tentativo di autenticarsi.  
+  \item L’Utente ha inserito solo il proprio username o la propria password come credenziali nel tentativo di autenticarsi.  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -60,7 +60,7 @@ Utente
 
 \subsubsection{UC2.2 - Errore credenziali errate}\label{UC2point2}
 \paragraph*{Descrizione}
-L’errore relativo alle credenziali errate viene mostrato in seguito all’inserimento di una e-mail dal formato incorretto o della non corrispondenza tra e-mail e password per un Tecnico registrato.
+L’errore relativo alle credenziali errate viene mostrato in seguito all’inserimento di un username dal formato incorretto o della non corrispondenza tra username e password per un Tecnico registrato.
 
 \paragraph*{Attori principali}
 Utente
@@ -84,9 +84,11 @@ Utente
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{UC2.3 - Errore utente non registrato}\label{UC2point3}
+% Questo usercase viene modificato a seguito della presenza di una mancata corrispondenza tra username e password in UC2.2
+
+\subsubsection{UC2.3 - Errore password errata}\label{UC2point3}
 \paragraph*{Descrizione}
-L’errore relativo all’assenza di un account Tecnico nel sistema viene mostrato nel caso in cui, al corretto inserimento dell’e-mail nell’apposita sezione da parte dell’Utente, questa risulta assente tra le credenziali degli utenti registrati.
+L’errore relativo all'inserimento di una password che non corrisponde a quella richiesta per l'accesso per l'username inserito per un Tecnico registrato.
 
 \paragraph*{Attori principali}
 Utente
@@ -94,16 +96,16 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L’Utente non ha eseguito il login;
-  \item L’Utente ha tentato l’autenticazione con una mail non presente nel sistema.  
+  \item L’Utente ha tentato l’autenticazione con un username corretto, ma una con una password errata.  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene mostrato un messaggio di errore per notificare l’Utente dell’assenza del profilo di Tecnico a cui si vuole accedere nel sistema.
+  \item Viene mostrato un messaggio di errore per notificare l’Utente dell'inserimento di una password errata.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente ha tentato la procedura di login inserendo una mail non associata ad alcun account Tecnico;
-  \item Il sistema mostra un messaggio di errore relativo all’assenza della mail inserita all’interno del sistema.     
+  \item L’Utente ha tentato la procedura di login inserendo un username associato ad un account Tecnico, ma con una password non corrispondente per quell'utente;
+  \item Il sistema mostra un messaggio di errore relativo all'inserimento errato della password     
 \end{enumerate}
