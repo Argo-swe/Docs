@@ -1,18 +1,18 @@
-\subsubsubsection{Functional Size Measurement}
+\subsubsubsection{Gestione delle operazioni non permesse}
 \begin{itemize}
     \item \textbf{Notazione specifica}: M.1.5;
-    \item \textbf{Nome}: Functional Size Measurement;
-    \item \textbf{Descrizione}: È una metrica utilizzata per quantificare la dimensione funzionale di un sistema software in base alle sue funzionalità o requisiti funzionali;
-    \item \textbf{Caratteristica di riferimento}: Dimensionamento;
-    \item \textbf{Motivo}: È stata introdotta per valutare la dimensione funzionale del software in modo da poter stimare il lavoro richiesto per lo sviluppo, il testing e la manutenzione del sistema;
-    \item \textbf{Misurazione}: La complessità totale del software può essere calcolata utilizzando la seguente formula:
+    \item \textbf{Nome}:  Gestione delle operazioni non permesse;
+    \item \textbf{Descrizione}: Appresenta la percentuale di operazioni non consentite o non gestite correttamente dal software durante l'esecuzione;
+    \item \textbf{Caratteristica di riferimento}: Affidabilità e robustezza;
+    \item \textbf{Motivo}: La gestione delle operazioni non permesse è stata introdotta per valutare la robustezza e l'affidabilità del software nell'affrontare input imprevisti o non validi. Misura quanto bene il sistema sia in grado di gestire eccezioni e situazioni anomale senza interrompere o compromettere il normale flusso di esecuzione;
+    \item \textbf{Misurazione}: Viene calcolata come:
     \[
-    \text{Functional Size Measurement} = \frac{\sum_{i=1}^{n} P_i}{n}
+    \text{Gestione delle operazioni non permesse (\%)} = \frac{N_{np}}{N_{t}} \times 100
     \]
-    Dove:
+    
+    dove:
     \begin{itemize}
-        \item $n$: numero totale di funzioni nel software;
-        \item $P_i$: punteggio assegnato alla funzione $i$, con $i$ che varia da 1 a $n$. Ogni $P_i$ può essere compreso tra 1 e 5, inclusi.
+        \item $N_{np}$: rappresenta il numero di operazioni non permesse o non gestite correttamente;
+        \item $N_{t}$: rappresenta il numero totale di operazioni eseguite durante il test.
     \end{itemize}
-   
 \end{itemize}

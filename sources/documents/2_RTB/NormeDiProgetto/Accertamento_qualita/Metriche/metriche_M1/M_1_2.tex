@@ -1,9 +1,18 @@
-\subsubsubsection{Modified condition/decision coverage}
+\subsubsubsection{Test eseguiti su totali}
 \begin{itemize}
     \item \textbf{Notazione specifica}: M.1.2;
-    \item \textbf{Nome}: Modified condition/decision coverage;
-    \item \textbf{Descrizione}: È una combinazione delle metriche di function coverage (copertura delle funzioni chiamate) e branch coverage (copertura dei \glossario{branch} delle strutture di controllo). Questa metrica richiede che ogni punto di entrata o uscita in un programma sia invocato almeno una volta e che per ogni decisione condizionale vengano considerati tutti i possibili esiti. La versione modified richiede inoltre che entrambe le coperture siano soddisfatte, ed in particolare che ogni condizione influenzi gli esiti condizionali indipendentemente;
-    \item \textbf{Caratteristica di riferimento}: Affidabilità e correttezza del software;
-    \item \textbf{Motivo}: La metrica è stata inserita per garantire una copertura completa e accurata delle condizioni e delle decisioni nel codice sorgente. Ciò aiuta a ridurre il rischio di errori di logica nel software e a garantire che tutte le possibili combinazioni di risultati di condizioni siano testate in modo esaustivo;
-    \item \textbf{Misurazione}: I valori sono presi dallo strumento di analisi per Python ovvero Coverage.py.
+    \item \textbf{Nome}: Test eseguiti su totali;
+    \item \textbf{Descrizione}: Questa metrica indica la percentuale di test effettivamente eseguiti rispetto al numero totale di test pianificati per il testing descritti nel Piano di Qualifica;
+    \item \textbf{Caratteristica di riferimento}: Efficacia;
+    \item \textbf{Motivo}: È stata introdotta per valutare l'efficacia dell'esecuzione dei test pianificati durante il processo di sviluppo del software. Misura quanto bene il team rispetti il piano di test stabilito e se vengono eseguite tutte le attività di testing pianificate;
+    \item \textbf{Misurazione}: La metrica viene calcolata utilizzando la seguente formula:
+    \[
+    \text{Test eseguiti su totali (\%)} = \frac{N_{te}}{N_{tt}} \times 100
+    \]
+    dove:
+    \begin{itemize}
+        \item $N_{te}$ rappresenta il numero di test effettivamente eseguiti;
+        \item $N_{tt}$ rappresenta il numero totale di test pianificati.
+    \end{itemize}
+   
 \end{itemize}

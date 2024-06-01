@@ -1,18 +1,10 @@
-\subsubsubsection{Gestione delle operazioni non permesse}
+\subsubsubsection{Indice di manutenibilità}
 \begin{itemize}
     \item \textbf{Notazione specifica}: M.1.8;
-    \item \textbf{Nome}:  Gestione delle operazioni non permesse;
-    \item \textbf{Descrizione}: Appresenta la percentuale di operazioni non consentite o non gestite correttamente dal software durante l'esecuzione;
-    \item \textbf{Caratteristica di riferimento}: Affidabilità e robustezza;
-    \item \textbf{Motivo}: La gestione delle operazioni non permesse è stata introdotta per valutare la robustezza e l'affidabilità del software nell'affrontare input imprevisti o non validi. Misura quanto bene il sistema sia in grado di gestire eccezioni e situazioni anomale senza interrompere o compromettere il normale flusso di esecuzione;
-    \item \textbf{Misurazione}: Viene calcolata come:
-    \[
-    \text{Gestione delle operazioni non permesse (\%)} = \frac{N_{np}}{N_{t}} \times 100
-    \]
+    \item \textbf{Nome}: Indice di manutenibilità;
+    \item \textbf{Descrizione}: L'indice di manutenibilità è una misura che riflette quanto sia facile mantenere, comprendere, modificare e correggere il codice sorgente;
+    \item \textbf{Caratteristica di riferimento}: Manutenibilità;
+    \item \textbf{Motivo}: Fornire una misura quantitativa della manutenibilità del software, aiutando a identificare aree del codice che potrebbero richiedere rifattorizzazione o miglioramenti per ridurre i costi di manutenzione e migliorare la qualità del software;
+    \item \textbf{Misurazione}: Il calcolo è attuato con lo strumento SonarQube.
     
-    dove:
-    \begin{itemize}
-        \item $N_{np}$: rappresenta il numero di operazioni non permesse o non gestite correttamente;
-        \item $N_{t}$: rappresenta il numero totale di operazioni eseguite durante il test.
-    \end{itemize}
 \end{itemize}

@@ -1,17 +1,17 @@
-\subsubsubsection{Accuratezza rispetto alle attese}
+\subsubsubsection{Numero di parametri per funzione}
 \begin{itemize}
     \item \textbf{Notazione specifica}: M.1.6;
-    \item \textbf{Nome}: Accuratezza rispetto alle attese;
-    \item \textbf{Descrizione}: Rappresenta la percentuale di risultati dei test che rispettano quanto previsto. Misura l'aderenza dei risultati dei test alle aspettative stabilite durante la fase di pianificazione dei test;
-    \item \textbf{Caratteristica di riferimento}: Affidabilità e conformità del software ai requisiti;
-    \item \textbf{Motivo}: L'accuratezza rispetto alle attese è stata introdotta per valutare quanto bene i risultati dei test corrispondano alle aspettative previste durante la fase di pianificazione dei test. Una percentuale alta indica una maggiore affidabilità del software nel produrre risultati conformi alle aspettative;
-    \item \textbf{Misurazione}: Viene calcolata utilizzando la seguente formula:
+    \item \textbf{Nome}: Numero di parametri per funzione;
+    \item \textbf{Descrizione}: Misura il numero medio di parametri passati alle funzioni nel codice sorgente del software;
+    \item \textbf{Caratteristica di riferimento}: Manutenibilità e complessità del software;
+    \item \textbf{Motivo}: Il numero di parametri per funzione è stato introdotto per valutare la complessità delle funzioni all'interno del software. Un numero elevato di parametri può indicare una scarsa progettazione modulare e può rendere il codice difficile da comprendere, testare e mantenere. Questa metrica aiuta a identificare funzioni che potrebbero beneficiare di una rifattorizzazione per migliorare la qualità del codice;
+    \item \textbf{Misurazione}: La metrica viene calcolata utilizzando la seguente formula:
     \[
-    \text{Accuratezza rispetto alle attese (\%)} = \left(1 - \frac{N_{rd}}{N_{te}}\right) \times 100
+    \text{Numero di Parametri per Funzione} = \frac{N_{p}}{N_{f}}
     \]
     dove:
     \begin{itemize}
-        \item $N_{rd}$: Numero di test che producono risultati discordanti;
-        \item $N_{te}$: Numero di test eseguiti.
-    \end{itemize} 
+        \item $N_{p}$: Somma del numero di parametri di tutte le funzioni nel codice;
+        \item $N_{f}$: Numero totale di funzioni nel codice.
+    \end{itemize}
 \end{itemize}
