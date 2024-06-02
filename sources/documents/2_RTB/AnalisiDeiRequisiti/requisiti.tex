@@ -56,8 +56,6 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{R.FO13} & Il Tecnico deve poter caricare un \glossario{dizionario dati}. &  \hyperref[UC13]{UC13}, \emph{Capitolato}\\
     \hline
-    \textbf{R.FO13.1} & Il Tecnico riceve un messaggio d'errore in caso di errore durante il caricamento dei dizionari dati. &  \hyperref[UC13point1]{UC13.1}\\
-    \hline
     \textbf{R.FO14} & Il Tecnico deve poter vedere il dettaglio completo del \glossario{dizionario dati}. &  \hyperref[UC14]{UC14}, \emph{Capitolato}\\
     \hline
     \textbf{R.FOP15} & Il Tecnico deve poter vedere il dettaglio dei test di verifica correttezza del dizionario dati. &  \hyperref[UC15]{UC15}\\
@@ -70,15 +68,23 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{R.FO16.2} & Il Tecnico deve poter modificare la descrizione del \glossario{dizionario dati}. &  \hyperref[UC16point2]{UC16.2}\\
     \hline
-    \textbf{R.FO16.3} & Il Tecnico deve poter modificare il file del \glossario{dizionario dati}. &  \hyperref[UC16point3]{UC16.3}\\
+    \textbf{R.FO16.3} & Il Tecnico deve poter modificare il file di configurazinoe del \glossario{dizionario dati}. &  \hyperref[UC16point3]{UC16.3}\\
     \hline
     \textbf{R.FO17} & Il Tecnico deve poter eliminare un \glossario{dizionario dati}. &  \hyperref[UC17]{UC17}\\
     \hline
-    \textbf{R.FO17.1} & Il Tecnico riceve un messaggio d'errore in caso di errore durante l'eliminazione del\glossario{dizionario dati}. &  \hyperref[UC17point1]{UC17.1}\\
-    \hline
     \textbf{R.FO18} & Il Tecnico deve poter eseguire il debug del \glossario{prompt} &  \hyperref[UC18]{UC18}, \emph{Verbale Esterno 2024-04-09}\\
     \hline
-    %\textbf{R.FOP19} & Il Tecnico deve poter incollare la \glossario{query} SQL. &  \hyperref[UC19]{UC19}\\ versione vecchia di un caso che non si sa se sia UC o test di unità
+    \textbf{R.FO19} & Il Tecnico riceve un messaggio d'errore nel caso in cui non riesca a caricare un \glossario{dizionario dati}. & \hyperref[UC19]{UC19} \\
+    \hline 
+    \textbf{R.FO20} & Il Tecnico riceve un messaggio d'errore nel caso in cui non riesca a modificare correttamente il \glossario{dizionario dati}. & \hyperref[UC20]{UC20} \\
+    \hline
+    \textbf{R.FO20.1} & Il Tecnico riceve un messaggio d'errore nel caso in cui non riesca a modificare correttamente il titolo del \glossario{dizionario dati}. & \hyperref[UC20point1]{UC20.1} \\
+    \hline
+    \textbf{R.FO20.2} & Il Tecnico riceve un messaggio d'errore nel caso in cui non riesca a modificare correttamente la descrizione del \glossario{dizionario dati}. & \hyperref[UC20point2]{UC20.2} \\
+    \hline
+    \textbf{R.FO21} & Il Tecnico riceve un messaggio d'errore in caso di errore durante l'eliminazione del \glossario{dizionario dati}. &  \hyperref[21]{UC21}\\
+    \hline
+    %\textbf{EX R.FOP19} & Il Tecnico deve poter incollare la \glossario{query} SQL. &  \hyperref[UC19]{UC19}\\ versione vecchia di un caso che non si sa se sia UC o test di unità
 \caption{Requisiti funzionali}
 \label{requisitifunzionali}
 \end{longtable}
@@ -171,16 +177,12 @@ Di seguito vengono mostrate le corrispondenze fonte - requisito, raggruppate per
   \hline
   \hyperref[UC13]{UC13} & R.FO13 \\
   \hline
-  \hyperref[UC13point1]{UC13.1} & R.FO13.1 \\
-  \hline
   \hyperref[UC14]{UC14} & R.FO14 \\
   \hline
-
   \hyperref[UC15]{UC15} & R.FOP15 \\
   \hline
   \hyperref[UC15point1]{UC15.1} & R.FOP15.1 \\
   \hline
-
   \hyperref[UC16]{UC16} & R.FO16 \\
   \hline
   \hyperref[UC16point1]{UC16.1} & R.FO16.1 \\
@@ -191,9 +193,17 @@ Di seguito vengono mostrate le corrispondenze fonte - requisito, raggruppate per
   \hline
   \hyperref[UC17]{UC17} & R.FO17 \\
   \hline
-  \hyperref[UC17point1]{UC17.1} & R.FO17.1 \\
-  \hline
   \hyperref[UC18]{UC18} & R.FO18 \\
+  \hline
+  \hyperref[UC19]{UC19} & R.FO19 \\
+  \hline
+  \hyperref[UC20]{UC20} & R.FO20 \\
+  \hline
+  \hyperref[UC20point1]{UC20.1} & R.FO20.1 \\
+  \hline
+  \hyperref[UC20point2]{UC20.2} & R.FO20.2 \\
+  \hline
+  \hyperref[UC21]{UC21} & R.FO21 \\
   \hline
 \caption{Fonti- Requisiti funzionali}
 \end{longtable}

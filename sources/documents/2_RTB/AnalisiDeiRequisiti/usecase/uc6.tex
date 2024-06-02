@@ -8,7 +8,7 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L'applicazione è stata avviata con successo;
-  \item L’Utente ha inserito una frase in linguaggio naturale;
+  \item L’Utente ha inserito una frase in linguaggio naturale (\hyperref[UC3]{UC3});
   \item L’Utente ha richiesto la generazione del \glossario{prompt} a partire dalla frase inserita.  
 \end{itemize}
 
@@ -20,7 +20,9 @@ Utente
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Dopo che l’Utente ha inserito una frase in linguaggio naturale e richiesto la generazione del \glossario{prompt} il sistema attua il meccanismo per identificare la parte di \glossario{dizionario dati} adeguata da restituire;
+  \item L’Utente ha inserito una frase in linguaggio naturale (\hyperref[UC3]{UC3});
+  \item L'Utente ha richiesto la generazione del \glossario{prompt} (\hyperref[UC5]{UC5});
+  \item Il sistema attua il meccanismo per identificare la parte di \glossario{dizionario dati} adeguata da restituire;
   \item Il sistema non è in grado di trovare le correlazioni adeguate e quindi non riesce a restituire un \glossario{prompt} coerente;
   \item Viene visualizzato un messaggio di errore.
 \end{enumerate}

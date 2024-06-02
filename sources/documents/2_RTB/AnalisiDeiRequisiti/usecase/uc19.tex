@@ -1,0 +1,26 @@
+\subsubsection{UC19 - Visualizzazione errore per mancato caricamento del \glossario{dizionario dati}}\label{UC19}
+\paragraph*{Descrizione}
+Il sistema mostra un messaggio d’errore relativo al mancato caricamento di un \glossario{dizionario dati}.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha selezionato l’opzione di caricamento di un nuovo \glossario{dizionario dati} (\hyperref[UC13]{UC13});
+  \item Il Tecnico ha inserito il file relativo al nuovo \glossario{dizionario dati} che desidera inserire.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il sistema mostra un messaggio d’errore per il mancato inserimento del nuovo \glossario{dizionario dati}.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico ha avviato la procedura di caricamento di un nuovo \glossario{dizionario dati};
+  \item Il sistema permette al Tecnico di inserire un nuovo file;
+  \item Il sistema registra un errore nel caricamento del file;
+  \item Il sistema segnala il mancato caricamento al Tecnico tramite un messaggio di errore.  
+\end{enumerate}

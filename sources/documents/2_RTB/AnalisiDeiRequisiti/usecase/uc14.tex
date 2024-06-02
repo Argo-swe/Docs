@@ -1,14 +1,16 @@
-\subsubsection{UC14 - Visualizzazione dati dizionario}\label{UC14}
+\subsubsection{UC14 - Visualizzazione delle informazionoi complete del \glossario{dizionario dati}}\label{UC14}
 \paragraph*{Descrizione}
-Viene mostrato il \glossario{dizionario dati} caricato dal Tecnico, comprendendo tutti i suoi dati in maniera esaustiva, con nome, descrizione, impostazione del \glossario{database}, sinonimi, parte di test.
+Viene mostrato il \glossario{dizionario dati} selezionato nella lista dei \glossario{dizionari dati} caricati dal Tecnico. Questo comprende tutti i suoi dati in maniera esaustiva, con nome, descrizione, impostazione del \glossario{database}, sinonimi, sezione di test.
 
 \paragraph*{Attori principali}
 Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Utente è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item L'Utente è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
   \item È presente almeno un \glossario{dizionario dati}.
+  \item L'Utente visualizza la lista dei \glossario{dizionari dati} (\hyperref[UC10]{UC10});
+  \item L'Utente sceglie un dizionario dalla lista (\hyperref[UC9]{UC9});
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -18,17 +20,31 @@ Utente
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Utente naviga la lista dei \glossario{dizionari dati} (\hyperref[UC10]{UC10});
-  \item Il Utente seleziona un \glossario{dizionario dati};
-  \item Il Utente visualizza i dati del dizionario selezionato.
+  \item L'Utente naviga la lista dei \glossario{dizionari dati} (\hyperref[UC10]{UC10});
+  \item L'Utente identifica un \glossario{dizionario dati} dalla lista (\hyperref[UC9]{UC9});
+  \item L'Utente visualizza i dati del dizionario identificato.
+\end{enumerate}
+
+\paragraph*{Scenario alternativo}
+\begin{enumerate}
+  \item L’Utente naviga alla lista dei dizionari dati (\hyperref[UC10]{UC10});
+  \item L'Utente seleziona un \glossario{dizionario dati} da visualizzare;
+  \item A causa di un errore, il sistema non riesce a caricare il \glossario{dizionario dati};
+  \item Viene generato un messaggio d'errore di fallimento visualizzazione del \glossario{dizionario dati} (\hyperref[UC11]{UC11}).
 \end{enumerate}
 
 \paragraph*{Inclusione}
 \begin{itemize}
-  \item Visualizzazione singolo \glossario{dizionario dati} (\hyperref[UC9]{UC9});
   \item Visualizzazione tabelle del dizionario (\hyperref[UC14point1]{UC14.1});
   \item Visualizzazione descrizione e sinonimi delle tabelle (\hyperref[UC14point2]{UC14.2});
   \item Visualizzazione sinonimi delle colonne (\hyperref[UC14point3]{UC14.3});
 \end{itemize}
 
+\paragraph*{Estensione}
+\begin{itemize}
+  \item Messaggio errore fallimento visualizzazione \glossario{dizionario dati} (\hyperref[UC11]{UC11}).
+\end{itemize}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Da definire i sottocasi

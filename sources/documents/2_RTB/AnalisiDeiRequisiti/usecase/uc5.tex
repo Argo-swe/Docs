@@ -1,6 +1,6 @@
 \subsubsection{UC5 - Generazione \glossario{prompt}}\label{UC5}
 \paragraph*{Descrizione}
-L’Utente desidera ottenere un \glossario{prompt} al fine di utilizzarlo poi con LLM esterni per generare \glossario{\glossario{query}} sql fornendo parti ristrette di \glossario{dizionario dati}.
+L’Utente desidera ottenere un \glossario{prompt} al fine di utilizzarlo poi con LLM esterni per generare \glossario{\glossario{query}} SQL fornendo parti ristrette di \glossario{dizionario dati}.
 
 \paragraph*{Attori principali}
 Utente
@@ -13,16 +13,19 @@ Utente
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il sistema genera un \glossario{prompt} in base alla richiesta ricevuta e al \glossario{dizionario dati} scelto. Attraverso dei metadati restituisce un \glossario{prompt} con il quale stabilisce quali parti di database sono maggiormente necessarie ed efficienti per scrivere la richiesta ricevuta in SQL;
-  \item L’Utente riceve il \glossario{prompt} generato.
+  \item Il sistema genera un \glossario{prompt} in base alla richiesta ricevuta e al \glossario{dizionario dati} scelto. Attraverso dei metadati restituisce un \glossario{prompt} con il quale stabilisce quali parti di \glossario{dizionario dati} sono maggiormente necessarie ed efficienti per scrivere la richiesta ricevuta in linguaggio naturale;
+  \item L’Utente riceve il \glossario{prompt} generato;
+  \item L'Utente può selezionare il \glossario{prompt} generato (\hyperref[UC8]{UC8}).
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
   \item L’Utente desidera ottenere il \glossario{prompt} che permette di generare la \glossario{query} SQL;
-  \item L’Utente seleziona un \glossario{dizionario dati} sul quale baserà l’interrogazione;
-  \item L’Utente sceglie la lingua su cui farà l’interrogazione.La lingua è in italiano di default se non viene cambiata;
-  \item L’Utente inserisce una interrogazione in linguaggio naturale nel box testuale apposito;
+  \item L'Utente visualizza la lista dei \glossario{dizionari dati} disponibili (\hyperref[UC10]{UC10});
+  \item L'Utente decide di visualizzare un \glossario{dizionario dati} dalla lista (\hyperref[UC9]{UC9});
+  \item L’Utente seleziona un \glossario{dizionario dati} sul quale baserà l’interrogazione (\hyperref[UC4]{UC4});
+  \item L’Utente sceglie la lingua su cui farà l’interrogazione. La lingua è in italiano di default se non viene cambiata (\hyperref[UC7]{UC7});
+  \item L’Utente inserisce una interrogazione in linguaggio naturale nel box testuale apposito (\hyperref[UC3]{UC3});
   \item Inizia il processo di generazione del \glossario{prompt} e di raccolta di metadati.
 \end{enumerate}
 
@@ -39,6 +42,8 @@ Utente
 
 \paragraph*{Estensione}
 \begin{itemize}
+  % Inserito anche selezione dizionario dati. Da capire se dopo il prompt si possa interagire nuovamente con la lista
+  \item Selezione \glossario{dizionario dati} (\hyperref[UC4]{UC4});
   \item Cambio lingua (\hyperref[UC7]{UC7});
   \item Selezione e copia del \glossario{prompt} risultato (\hyperref[UC8]{UC8}).
 \end{itemize}

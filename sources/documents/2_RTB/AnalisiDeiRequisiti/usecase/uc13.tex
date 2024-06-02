@@ -1,6 +1,6 @@
 \subsubsection{UC13 - Caricamento \glossario{dizionario dati}}\label{UC13}
 \paragraph*{Descrizione}
-Il caricamento del \glossario{dizionario dati} corrisponde alla procedura di importazione di un \glossario{dizionario dati} aggiuntivo all’interno del sistema.
+Il caricamento del \glossario{dizionario dati} corrisponde alla procedura di importazione di un \glossario{dizionario dati} all’interno del sistema.
 
 \paragraph*{Attori principali}
 Tecnico
@@ -8,7 +8,7 @@ Tecnico
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico ha selezionato l’opzione di caricamento di un nuovo \glossario{dizionario dati}.  
+  \item Il Tecnico vuole inserire un nuovo \glossario{dizionario dati}.  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -18,42 +18,22 @@ Tecnico
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico ha selezionato il pulsante per avviare la procedura di inserimento di un nuovo \glossario{dizionario dati};
+  \item Il Tecnico ha avviato la procedura di inserimento di un nuovo \glossario{dizionario dati};
   \item Il sistema permette al Tecnico di inserire un nuovo file dal formato appropriato;
-  \item Il Tecnico inserisce il file relativo al nuovo \glossario{dizionario dati};
-  \item Il \glossario{dizionario dati} viene aggiunto alla lista di quelli presenti nell’applicativo.  
+  \item Il Tecnico inserisce il file contenente il nuovo \glossario{dizionario dati};
+  \item Il \glossario{dizionario dati} viene aggiunto alla lista di \glossario{dizionari dati} presenti nell’applicativo.  
 \end{enumerate}
 
-\paragraph*{Sottocasi d'uso}
-\begin{itemize}
-  \item Visualizzazione errore per mancato caricamento del dizionario (\hyperref[UC13point1]{UC13.1}).
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsubsection{UC13.1 - Visualizzazione errore per mancato caricamento del dizionario}\label{UC13point1}
-\paragraph*{Descrizione}
-Il sistema mostra un messaggio d’errore relativo al mancato caricamento del nuovo \glossario{dizionario dati} che si desidera inserire nel momento in cui vengono rilevate anomalie relative al suo inserimento.
-
-\paragraph*{Attori principali}
-Tecnico
-
-\paragraph*{Precondizioni}
-\begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico ha selezionato l’opzione di caricamento di un nuovo \glossario{dizionario dati};
-  \item Il Tecnico ha inserito il file relativo al nuovo \glossario{dizionario dati} che desidera inserire.  
-\end{itemize}
-
-\paragraph*{Postcondizioni}
-\begin{itemize}
-  \item Il sistema mostra un messaggio d’errore per il mancato inserimento del nuovo \glossario{dizionario dati}.
-\end{itemize}
-
-\paragraph*{Scenario principale}
+\paragraph*{Scenario alternativo}
 \begin{enumerate}
-  \item Il Tecnico ha avviato la procedura di caricamento di un nuovo \glossario{dizionario dati};
+  \item Il Tecnico ha avviato la procedura di inserimento di un nuovo \glossario{dizionario dati};
   \item Il sistema permette al Tecnico di inserire un nuovo file;
-  \item Il sistema registra un errore nel caricamento del file;
-  \item Il sistema segnala il mancato caricamento al Tecnico tramite un messaggio di errore.  
+  \item Il Tecnico inserisce il file contenente il nuovo \glossario{dizionario dati};
+  \item Il sistema rileva un errore nel caricamento del file;
+  \item Viene visualizzato un messaggio d'errore per il mancato caricamento del \glossario{dizionario dati} (\hyperref[UC19]{UC19}).
 \end{enumerate}
+
+\paragraph*{Estensione}
+\begin{itemize}
+  \item Messaggio di errore per mancato caricamento del dizionario (\hyperref[UC19]{UC19}).
+\end{itemize}

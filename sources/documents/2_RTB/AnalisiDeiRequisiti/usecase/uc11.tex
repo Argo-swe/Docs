@@ -1,4 +1,4 @@
-\subsubsection{UC11 - Messaggio errore fallimento caricamento \glossario{dizionario dati}}\label{UC11}
+\subsubsection{UC11 - Messaggio errore fallimento visualizzazione \glossario{dizionario dati}}\label{UC11}
 \paragraph*{Descrizione}
 L’Utente visualizza il messaggio di errore che informa del fallimento del caricamento dei dizionari dati.
 
@@ -7,17 +7,20 @@ Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Esiste almeno un \glossario{dizionario dati} caricato.  
+  \item L'applicativo è stato avviato correttamente.
+  \item L'Utente visualizza la lista dei \glossario{dizionario dati} (\hyperref[UC10]{UC10});
+  \item L'Utente tenta di visualizzare un \glossario{dizionario dati}.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene mostrato il messaggio di errore.
+  \item Il sistema rileva un errore nel tentativo di caricare il \glossario{dizionario dati};
+  \item Viene generato un messaggio d'errore.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente accede alla modalità di visualizzazione della lista dei dizionari dati;
-  \item Il sistema non è in grado di elaborare la richiesta;
+  \item L’Utente visualizza la lista dei \glossario{dizionari dati} (\hyperref[UC10]{UC10});
+  \item L'Utente tenta di visualizzare un \glossario{dizionario dati};
   \item Viene presentato il messaggio d’errore corrispondente al tipo del problema.  
 \end{enumerate}
