@@ -1,19 +1,21 @@
-\subsubsubsection{Completezza della documentazione}
+\subsubsubsection{Vocaboli inseriti nel glossario ad ogni sprint}
 \begin{itemize}
     \item \textbf{Notazione specifica}: M.4.2;
-    \item \textbf{Nome}: Completezza della documentazione;
-    \item \textbf{Descrizione}: Questa metrica valuta quanto la documentazione copra tutti gli aspetti del software, inclusi requisiti, progettazione, implementazione, test e manutenzione;
-    \item \textbf{Caratteristica di riferimento}: Qualità della documentazione;
-    \item \textbf{Motivo}: Assicurarsi che la documentazione fornisca una visione completa e accurata del software, essenziale per il suo utilizzo e la sua manutenzione;
-    \item \textbf{Misurazione}: La completezza della documentazione è misurata utilizzando la seguente formula:
+    \item \textbf{Nome}: Vocaboli inseriti nel glossario ad ogni sprint;
+    \item \textbf{Descrizione}: Questa metrica misura il numero di nuove parole che vengono introdotte nel glossario del progetto ad ogni sprint. Il glossario del progetto include tutti i termini tecnici, acronimi e altri concetti specifici utilizzati nella documentazione e nelle comunicazioni del team;
+    \item \textbf{Caratteristica di riferimento}: Comunicazione, comprensione del linguaggio tecnico e accessibilità;
+    \item \textbf{Motivo}: Monitorare il tasso di crescita del glossario del progetto aiuta a valutare la complessità e l'evoluzione del linguaggio tecnico utilizzato all'interno del team e può evidenziare la necessità di formazione aggiuntiva o di chiarimenti sui concetti;
+    \item \textbf{Misurazione}: La metrica misura il numero di nuove parole introdotte nel glossario secondo la formula:
     \[
-        \text{Completezza della documentazione (\%)} =\frac{{N_p}}{{N_a}} \times 100 
+        \text{Parole inserite nel glossario ad ogni sprint (\%)} =\frac{P_{a}}{P_{t}} \times 100 
     \]
     dove:
     \begin{itemize}
-        \item $N_{p}$: Numero di documenti totali presenti;
-        \item $N_{a}$: Numero di documenti attesi.
+        \item $P_{a}$: Numero di vocaboli aggiunti nello sprint;
+        \item $P_{t}$: Numero di vocaboli totali.
     \end{itemize}
-    %\item \textbf{Range}: Ideale: >95\%
-    %\item \textbf{Spiegazione}: Una documentazione completa è essenziale per garantire la comprensione e la gestione efficace del software. Un valore del 95\% o superiore indica una documentazione completa che copre tutti gli aspetti significativi del software.
+    
+    
+    %\item \textbf{Range}: N/A (il valore ottimale dipende dalle esigenze specifiche del progetto e dalla sua complessità)
+    %\item \textbf{Spiegazione}: Un aumento significativo nel numero di parole introdotte potrebbe indicare una crescente complessità del progetto o una comunicazione inefficiente, mentre una diminuzione potrebbe indicare una maggiore stabilità o un'efficace condivisione della conoscenza.
 \end{itemize}
