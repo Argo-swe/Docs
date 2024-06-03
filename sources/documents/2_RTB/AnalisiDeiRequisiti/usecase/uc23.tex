@@ -1,0 +1,30 @@
+\subsubsection{UC23 - Visualizzazione messaggio d'errore durante il download del log}\label{UC23}
+\paragraph*{Descrizione}
+Il Tecnico visualizza un messaggio d'errore durante download del log di debug.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha generato correttamente un \glossario{prompt} basato su una richiesta in linguaggio naturale (\hyperref[UC5]{UC5});
+  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
+  \item Il Tecnico decide di scaricare il log di debug (\hyperref[UC22]{UC22});
+  \item Il sistema rileva un errore durante il tentativo di download;
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene visualizzato un messaggio con i dettagli dell'errore.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico ha correttamente generato un \glossario{prompt} (\hyperref[UC5]{UC5});
+  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
+  \item Il Tecnico decide di scaricare il log di debug (\hyperref[UC22]{UC22});
+  \item Il sistema avvia il download del log;
+  \item Il sistema rileva un errore durante il tentativo di download;
+  \item Viene visualizzato un messaggio con i dettagli dell'errore.
+\end{enumerate}

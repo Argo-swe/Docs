@@ -1,0 +1,43 @@
+\subsubsection{UC22 - Download del log per lo strumento di debug}\label{UC22}
+\paragraph*{Descrizione}
+Il sistema garantisce al Tecnico la possibilità di scaricare il log generato alla generazione del \glossario{prompt} in formato testuale.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item Il Tecnico genera un \glossario{prompt} basato su una richiesta in linguaggio naturale (\hyperref[UC5]{UC5});
+  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18}).
+  \item Il Tecnico decide di scaricare il log di debug.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il sistema ha effettuato correttamente il dowload del log.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico ha correttamente generato un \glossario{prompt} (\hyperref[UC5]{UC5});
+  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
+  \item Il Tecnico decide di scaricare il log di debug;
+  \item Il sistema avvia il download del log;
+  \item Il sistema conclude correttamente il download del log.
+\end{enumerate}
+
+\paragraph*{Scenario alternativo}
+\begin{enumerate}
+  \item Il Tecnico ha correttamente generato un \glossario{prompt} (\hyperref[UC5]{UC5});
+  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
+  \item Il Tecnico decide di scaricare il log di debug;
+  \item Il sistema avvia il download del log;
+  \item Il sistema riscontra un problema con il download del log;
+  \item Viene visualizzato un messaggio con i dettagli dell'errore (\hyperref[UC23]{UC23}).
+\end{enumerate}
+
+\paragraph*{Estensione}
+\begin{itemize}
+    \item Visualizzazione messaggio d'errore durante il download del log (\hyperref[UC23]{UC23}).
+\end{itemize}
