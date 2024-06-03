@@ -51,8 +51,34 @@ Di seguito viene descritta la documentazione che il gruppo si impegna a rendere 
 TODO
 
 \paragraph{Analisi dei Requisiti}
-%Breve descrizione dello scopo del documento e delle singole sezioni.
-TODO
+\begin{itemize}
+  \item La struttura di un UC è divisa nella seguente maniera:
+  \begin{itemize}
+    \item UCN - Nome UC
+    \item Descrizione 
+    \item Precondizioni
+    \item Postcondizioni
+    \item Scenario principale
+    \item Eventuale Scenario alternativo
+    \item Eventuale Inclusioni
+    \item Eventuali Estensioni
+  \end{itemize}
+  \item Le precondizioni dello UC devono essere condizioni necessarie per arrivare alla situazione che si presenta nello UC. Ad esempio per l'utilizzo dello strumento di debug per il Tecnico, saranno:
+  \begin{itemize}
+    \item Il Tecnico ha effettuato il login;
+    \item Il Tecnico ha ricevuto un prompt generato sulla base di una richiesta in liguaggio naturale;
+    \item Il Tecnico decide di utilizzare lo strumento di debug.
+  \end{itemize}
+  \item Le precondizioni vengono poste al passato per identificare la conclusione di un UC;
+  \item Le postcondizioni rappresentano cosa succede dopo lo sviluppo dello UC e sono per tanto descrittive e poste al presente;
+  \item Lo scenario principale riprende i passaggi che sono stati necessari per il verificarsi dello UC. Pertanto si parte a descriverle dalla prima estensione che l'attore riscontra dopo l'avvio dell'applicativo fino ad arrivare allo UC.
+  \item Lo scenario alternativo riprende i passaggi dello scenario principale fino all'estensione che porta allo UC alternativo.   
+  \item Ogni riferimento ad un UC viene riportato in precondizioni, postcondizioni, scenario principale, scenario alternativo, inclusione ed estensione.
+  \item I sottocasi d'uso di uno UC vengono inseriti sotto lo UC principale nello stesso file. 
+  \item I sottocasi sempre inclusioni del caso d'uso "padre".
+  \item I sottocasi vengono riferiti con un punto dopo il padre. Ad esempio un sottocaso potrebbe essere UC.1 e il sottocaso del sottocaso UC.1.1
+  \item Per gli errori si visualizza quasi sempre un messaggio. Quindi la postcondizione finale e la fine dello scenario principale sarà quasi sempre "Viene visualizzato un messaggio con i dettagli dell'errore".
+\end{itemize}
 
 \paragraph{Piano di Qualifica}
 %Breve descrizione dello scopo del documento e delle singole sezioni.
