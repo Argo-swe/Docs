@@ -1,14 +1,20 @@
-\subsubsubsection{Frequenza di merge}
+\subsubsubsection{Frequenza di pull request unite}
 \begin{itemize}
     \item \textbf{Notazione specifica}: M.2.6;
-    \item \textbf{Nome}: Frequenza di merge;
-    \item \textbf{Descrizione}: Questa metrica misura la frequenza con cui vengono effettuati i merge di branch nel repository del progetto. Indica la frequenza con cui il codice viene integrato nel branch principale dopo aver completato una determinata funzionalità o correzione;
+    \item \textbf{Nome}: Frequenza di \glossario{pull request} unite;
+    \item \textbf{Descrizione}: Questa metrica misura la frequenza con cui vengono effettuate le unioni di \glossario{pull request} nel ramo principare della repository del progetto al giorno. Indica la frequenza con cui il codice viene integrato nel branch principale dopo aver completato una determinata funzionalità o correzione;
     \item \textbf{Caratteristica di riferimento}: Integrazione continua, Efficienza dello sviluppo;
-    \item \textbf{Motivo}: Valutare la frequenza di merge aiuta a comprendere la rapidità con cui le nuove funzionalità o correzioni vengono integrate nel codice principale del progetto, favorendo un flusso di lavoro continuo e una collaborazione efficace tra i membri del team;
-    \item \textbf{Misurazione}: La frequenza di \glossario{merge} è calcolata come il numero totale di merge effettuati.
+    \item \textbf{Motivo}: Valutare la frequenza di \glossario{pull request} unite aiuta a comprendere la rapidità con cui le nuove funzionalità o correzioni vengono integrate nel codice principale del progetto, favorendo un flusso di lavoro continuo e una collaborazione efficace tra i membri del team;
+    \item \textbf{Misurazione}: La frequenza di \glossario{pull request} unite è calcolata utilizzando la seguente formula:
+    \[
+        \text{Frequenza di pull request unite} =\frac{N}{G} 
+    \]
+    dove:
+    \begin{itemize}
+        \item $N$: Numero totale di \glossario{pull request} unite;
+        \item $G$: Numero di giorni totali dall'inizio del progetto.
+    \end{itemize}
    
-   
-   
-    %\item \textbf{Range}: Il range ideale per questa metrica può variare a seconda delle pratiche di sviluppo del progetto, ma generalmente una frequenza di merge regolare indica una buona pratica di integrazione continua.
-    %\item \textbf{Spiegazione}: Una frequenza di merge regolare suggerisce che il team sta seguendo un flusso di lavoro collaborativo e integrando il codice in modo tempestivo, migliorando l'efficienza dello sviluppo e riducendo i rischi di conflitti di merge e divergenze nel codice.
+    %\item \textbf{Range}: Il range ideale per questa metrica può variare a seconda delle pratiche di sviluppo del progetto, ma generalmente una frequenza di pull request unitee regolare indica una buona pratica di integrazione continua.
+    %\item \textbf{Spiegazione}: Una frequenza di \glossario{pull request} unite regolare suggerisce che il team sta seguendo un flusso di lavoro collaborativo e integrando il codice in modo tempestivo, migliorando l'efficienza dello sviluppo e riducendo i rischi di conflitti di merge e divergenze nel codice.
 \end{itemize}
