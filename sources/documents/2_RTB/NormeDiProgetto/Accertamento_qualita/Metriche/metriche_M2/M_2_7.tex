@@ -1,0 +1,19 @@
+\subsubsubsection{Tempo medio tra commit}
+\begin{itemize}
+    \item \textbf{Notazione specifica}: M.2.7;
+    \item \textbf{Nome}: Tempo medio tra commit;
+    \item \textbf{Descrizione}: Questa metrica misura l'intervallo medio di tempo tra i commit successivi nel repository del progetto. È un indicatore della frequenza con cui gli sviluppatori effettuano commit nel sistema di controllo versione;
+    \item \textbf{Caratteristica di riferimento}: Frequenza del commit, Efficienza dello sviluppo;
+    \item \textbf{Motivo}: Valutare il tempo medio tra commit aiuta a comprendere il ritmo di sviluppo e l'approccio del team alla gestione delle versioni del codice. Una frequenza di commit regolare può indicare un flusso di lavoro sano e continuo;
+    \item \textbf{Misurazione}: Il tempo medio tra commit è calcolato utilizzando la seguente formula:
+    \[
+        \text{Tempo medio tra commit} =\frac{\sum_{i=1}^{N-1} (T_{i+1} - T_i)}{N-1}
+    \]
+    dove:
+    \begin{itemize}
+        \item $N$: Numero totale di commit;
+        \item $T_{i}$: Tempo del \(i\)-esimo commit.
+    \end{itemize}
+    %\item \textbf{Range}: Il range ideale per questa metrica varia a seconda delle pratiche di sviluppo del progetto, ma generalmente un tempo medio tra commit inferiore a un giorno (24 ore) è considerato indicativo di un flusso di lavoro continuo e regolare.
+    %\item \textbf{Spiegazione}: Un tempo medio tra commit più breve suggerisce una frequenza di commit regolare, che può facilitare la gestione delle versioni, la revisione del codice e l'integrazione continua. Intervalli più lunghi possono indicare potenziali problemi nel flusso di lavoro o nella gestione delle versioni.
+\end{itemize}
