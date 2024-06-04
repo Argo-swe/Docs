@@ -1,4 +1,11 @@
 \subsubsection{UC5 - Generazione \glossario{prompt}}\label{UC5}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc5.png}
+  \caption{UC5}
+\end{figure}
+
 \paragraph*{Descrizione}
 L’Utente desidera ottenere un \glossario{prompt} al fine di utilizzarlo poi con LLM esterni per generare \glossario{\glossario{query}} SQL fornendo parti ristrette di \glossario{dizionario dati}.
 
@@ -32,18 +39,19 @@ Utente
 \paragraph*{Scenario alternativo}
 \begin{enumerate}
   \item Errore nella generazione del \glossario{prompt} (\hyperref[UC6]{UC6}).
+  \item Viene visualizzato un messaggio con i dettagli dell'errore.
 \end{enumerate}
 
-\paragraph*{Inclusione}
+\paragraph*{Inclusioni}
 \begin{itemize}
   \item Inserimento richiesta in linguaggio naturale (\hyperref[UC3]{UC3});
   \item Selezione \glossario{dizionario dati} (\hyperref[UC4]{UC4}).
 \end{itemize}
 
-\paragraph*{Estensione}
+\paragraph*{Estensioni}
 \begin{itemize}
   % Inserito anche selezione dizionario dati. Da capire se dopo il prompt si possa interagire nuovamente con la lista
-  \item Selezione \glossario{dizionario dati} (\hyperref[UC4]{UC4});
   \item Cambio lingua (\hyperref[UC7]{UC7});
   \item Selezione e copia del \glossario{prompt} risultato (\hyperref[UC8]{UC8}).
+  \item Errore nella generazione del \glossario{prompt} (\hyperref[UC6]{UC6}).
 \end{itemize}
