@@ -1,0 +1,44 @@
+\subsubsection{UC5 - Generazione prompt}\label{UC5}
+\paragraph*{Descrizione}
+L’Utente desidera ottenere un prompt al fine di utilizzarlo poi con LLM esterni per generare \glossario{query} sql fornendo parti ristrette di \glossario{dizionario dati}.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'applicazione è stata avviata con successo;
+  \item È presente almeno un \glossario{dizionario dati} nel sistema.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il sistema genera un prompt in base alla richiesta ricevuta e al \glossario{dizionario dati} scelto. Attraverso dei metadati restituisce un prompt con il quale stabilisce quali parti di database sono maggiormente necessarie ed efficienti per scrivere la richiesta ricevuta in SQL;
+  \item L’Utente riceve il prompt generato.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente desidera ottenere il prompt che permette di generare la query SQL;
+  \item L’Utente seleziona un \glossario{dizionario dati} sul quale baserà l’interrogazione;
+  \item L’Utente sceglie la lingua su cui farà l’interrogazione.La lingua è in italiano di default se non viene cambiata;
+  \item L’Utente inserisce una interrogazione in linguaggio naturale nel box testuale apposito;
+  \item Inizia il processo di generazione del prompt e di raccolta di metadati.
+\end{enumerate}
+
+\paragraph*{Scenario alternativo}
+\begin{enumerate}
+  \item Errore nella generazione del prompt (\hyperref[UC6]{UC6}).
+\end{enumerate}
+
+\paragraph*{Inclusione}
+\begin{itemize}
+  \item Inserimento richiesta in linguaggio naturale (\hyperref[UC3]{UC3});
+  \item Selezione \glossario{dizionario dati} (\hyperref[UC4]{UC4}).
+\end{itemize}
+
+\paragraph*{Estensione}
+\begin{itemize}
+  \item Cambio lingua (\hyperref[UC7]{UC7});
+  \item Selezione e copia del prompt risultato (\hyperref[UC8]{UC8}).
+\end{itemize}

@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 	aspell-en \
 	aspell-it \
 	lmodern \
+	latexmk \
 	poppler-utils \
 	texlive \
 	texlive-extra-utils \

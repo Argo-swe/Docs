@@ -1,0 +1,83 @@
+\subsubsection{UC15 - Verifica correttezza dizionario}\label{UC15}
+\paragraph*{Descrizione}
+Il tecnico vuole poter testare il \glossario{dizionario} dati e interroga il sistema per con frasi predeterminate collegandosi direttamente al database per testarne i dati con quelli forniti da una query di confronto prefissata.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item Il Tecnico naviga alla lista dei dizionari dati caricati;
+  \item Il Tecnico seleziona un \glossario{dizionario dati} di cui vuole modificare qualcosa;
+  \item Il tecnico seleziona l’interfaccia di verifica;
+  \item Il tecnico visualizza la lista dei test di verifica preimpostati;
+  \item Il tecnico avvia la procedura di verifica.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il sistema genera un report che valida per ogni test la corrispondenza dei dati prodotti dalla query generata con quelli prodotti dalla query prefissata.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico desidera verificare la correttezza delle query generate dal dizionario;
+  \item Il Tecnico seleziona un\glossario{dizionario dati} sul quale baserà il processo di verifica;
+  \item Il Tecnico ottiene il risultato della verifica delle query generate.
+\end{enumerate}
+
+\paragraph*{Sottocasi d'uso}
+\begin{itemize}
+  \item Esecuzione test verifica correttezza (\hyperref[UC15point1]{UC15.1});
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC15.1 - Esecuzione test verifica correttezza}\label{UC15point1}
+\paragraph*{Descrizione}
+L’utente vuole verificare la correttezza verificando i dati in uscita tra una query generata e una prefissata
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item E’ presente almeno un\glossario{dizionario dati} nel sistema;
+  \item Il tecnico seleziona l’interfaccia di verifica;
+  \item Il tecnico visualizza la lista dei test di verifica preimpostati;
+  \item Il tecnico seleziona il test da avviare.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il tecnico visualizza un report che mostra se i dati in uscita dalla query generata corrispondono a quella fornita per il test.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il tecnico ha selezionato il test da eseguire
+  \item Il tecnico visualizza la frase SQL
+  \item SE NON IMPLEMENTATO \hyperref[UC9]{UC9} Visualizzazione frase SQL
+    \begin{itemize}
+      \item Il tecnico copia il prompt generato \hyperref[UC8]{UC8}
+      \item Il tecnico copia la frase SQL generata esternamente
+    \end{itemize}
+  \item SE NON IMPLEMENTATO \hyperref[UC9]{UC9} Visualizzazione frase SQL
+    \begin{itemize}
+      \item Il tecnico visualizza la frase generata
+    \end{itemize}
+  \item Il tecnico esegue il test con la frase SQL generata
+  \item Il tecnico riceve una risposta relativa l’esito del test.
+\end{enumerate}
+
+\paragraph*{Inclusione}
+\begin{itemize}
+  \item Inserimento query SQL (\hyperref[UC19]{UC19}).
+\end{itemize}
+
+\paragraph*{Estensione}
+\begin{itemize}
+  \item Copia del prompt risultato (\hyperref[UC8]{UC8}).
+\end{itemize}

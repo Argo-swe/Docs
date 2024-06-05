@@ -1,0 +1,20 @@
+\subsubsubsection{Velocità di verifica dopo una pull request}
+\begin{itemize}
+    \item \textbf{Notazione specifica}: M.2.5;
+    \item \textbf{Nome}: Velocità di verifica dopo una \glossario{pull request};
+    \item \textbf{Descrizione}: Questa metrica misura il tempo medio impiegato per verificare e approvare una \glossario{pull request} dopo che è stata sottomessa. È un indicatore della rapidità e dell'efficienza del processo di revisione del codice;
+    \item \textbf{Caratteristica di riferimento}: Efficienza, Manutenibilità;
+    \item \textbf{Motivo}: Valutare la rapidità con cui il team di sviluppo riesce a verificare e integrare le modifiche proposte, migliorando il flusso di lavoro e riducendo i tempi di attesa;
+    \item \textbf{Misurazione}: La velocità di verifica dopo una pull request è calcolata utilizzando la seguente formula:
+    \[
+        \text{Velocità di verifica dopo una pull request} =\frac{1}{N} \sum_{i=1}^{N} D_{c}i - D_{a}i 
+    \]
+    dove:
+    \begin{itemize}
+        \item $N$: Numero di \glossario{pull request} verificate;
+        \item $D_{a}$: Data apertura \glossario{pull request};
+        \item $D_{c}$: Data chiusura \glossario{pull request}.
+    \end{itemize}
+    %\item \textbf{Range}: Il range ideale per questa metrica può variare a seconda del progetto, ma generalmente un tempo medio di verifica inferiore a 24 ore è considerato efficiente.
+    %\item \textbf{Spiegazione}: Un tempo medio di verifica più basso indica una maggiore efficienza nel processo di revisione del codice, suggerendo un flusso di lavoro più snello e una più rapida integrazione delle modifiche.
+\end{itemize}

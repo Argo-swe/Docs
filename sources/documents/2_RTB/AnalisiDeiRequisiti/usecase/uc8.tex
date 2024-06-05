@@ -1,0 +1,24 @@
+\subsubsection{UC8 - Selezione e copia del prompt generato}\label{UC8}
+
+\paragraph*{Descrizione}
+L’Utente vuole selezionare il prompt che è stato generato dal sistema per poterlo usare all’interno della richiesta ad un LLM esterno al fine di generare una query.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'applicazione è stata avviata con successo;
+  \item L’Utente ha generato un prompt con successo a partire da una richiesta in linguaggio naturale.  
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il prompt che è stato generato dal sistema come risultato dell’interrogazione è copiato negli appunti del sistema dell’Utente.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Dopo aver visualizzato il prompt di risposta del sistema l’Utente seleziona la funzione di copia;
+  \item L’Utente salva nei suoi appunti di sistema una copia del prompt che potrà poi incollare su LLM esterni per la generazione della query.
+\end{enumerate}

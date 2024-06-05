@@ -7,6 +7,7 @@ sudo apt-get -qq install -y --no-install-recommends \
 	aspell-en \
 	aspell-it \
 	lmodern \
+	latexmk \
 	poppler-utils \
 	texlive \
 	texlive-extra-utils \

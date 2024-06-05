@@ -1,0 +1,32 @@
+\subsubsection{UC7 - Cambio lingua}\label{UC7}
+\paragraph*{Descrizione}
+L’Utente desidera inserire una richiesta in linguaggio naturale in una lingua diversa dall’italiano.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'applicazione è stata avviata con successo;
+  \item L’Utente vuole inserire una frase in linguaggio naturale.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item L'applicazione opera la generazione del prompt considerando la lingua selezionata.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L’Utente seleziona una lingua da una lista predefinita di lingue. La scelta è tra:
+    \begin{itemize}
+      \item Italiano;
+      \item Inglese;
+      \item Francese;
+      \item Spagnolo;
+      \item Tedesco.
+    \end{itemize}
+  \item L’Utente inserisce una interrogazione in linguaggio naturale nella lingua selezionata nell’ apposito box su cui poi il sistema potrà produrre un prompt in seguito. 
+\end{enumerate}
+
+% TODO [in caso di errore ed incongruenza tra la lingua scritta e quella selezionata teniamo solo errore uc6 del prompt? O viene controllata prima?]
