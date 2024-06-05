@@ -1,25 +1,17 @@
 \section{Casi d'uso}
 
 \subsection{Scopo}
-TODO
-\subsection{Introduzione ai casi d'uso}
-TODO
+Questa sezione descrive nel dettaglio i Casi d’Uso individuati dal gruppo durante l'analisi.
 
 \subsection{Attori}
-Il prodotto prevede tre attori:
+Il prodotto prevede due attori:
 \begin{itemize}
-  \item Utente Non Autenticato: è un utente generico che si presenta nella pagina di login dell'applicativo;
-  \item Utente autenticato: un utente che ha completato con successo l'autenticazione ed ha accesso alle funzionalità richieste per la generazione di un prompt utilizzando i dizionari dati precaricati;
-  \item Tecnico: un utente che ha completato con successo l'autenticazione ed è registrato come tecnico, ha accesso a tutte le funzionalità dell'utente autenticato e in aggiunta può gestire i dizionari dati ed accedere a funzioanlità di testing e debug.
+  \item Utente: un utente generico che ha accesso alle funzionalità richieste per la generazione di un prompt utilizzando i dizionari dati precaricati;
+  \item Tecnico: un utente che ha completato con successo l'autenticazione ed è registrato come tecnico, ha accesso a tutte le funzionalità dell'utente generico e in aggiunta può gestire i dizionari dati ed accedere a funzionalità di testing e debug.
 \end{itemize}
 
-\subsubsection{Dettagli aggiuntivi}
-TODO
-%Qua non lo fa quasi nessuno ma si può espandere se qualche punto dell'elenco merita di essere espanso (probabilmente no)
-
 \subsection{Gestione degli errori}
-TODO
-%Spiegazione della presenza dei casi d'uso per le situazioni che portano ad errore (dimostrando che il sistema è consistente e robusto)
+Alcuni dei casi d'uso gestiscono situazioni di errore, questo permette ai programmatori di gestire eventuali situazioni eccezionali, in modo che vengano intercettate e non portino ad un malfunzionamento del sistema, ma anzi gestite e notificate quando questo è utile.
 
 \subsection{Elenco dei \glossario{casi d'uso}}
 
@@ -41,3 +33,4 @@ TODO
 \input{usecase/uc16}
 \input{usecase/uc17}
 \input{usecase/uc18}
+\input{usecase/uc19}

@@ -1,0 +1,73 @@
+\section{Riunione}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\item Analisi delle attività svolte durante la settimana dai membri del gruppo;
+	\item Discussione dei punti che verranno trattati al diario di bordo del 3 maggio 2024;
+	\item Invio di una mail per l'organizzazione di un incontro con La Proponente per aggiornarLa sullo stato del progetto.
+\end{itemize}
+
+\subsection{Discussione e decisioni}
+\par All'inizio dell'incontro, viene chiesto di esporre al gruppo le attività svolte durante la settimana in vista della fine dello \glossario{sprint}.
+\subsubsection{Analista}
+\par L'Analista ha evidenziato difficoltà nella conversione del documento di \AdR\ e ha stimato a giorni la conclusione della conversione. Sono stati anche approfonditi i casi d'uso relativi al login per comprenderne la fattibilità, evidenziando la possibilità di avere un utente premium in caso di interazioni con l'\glossario{API}. È stata poi espressa la necessità di trovare mezzi e idee per l'approfondimento dei casi d'uso dello strumento di debug fornito al tecnico.
+\par Sono state inoltre evidenziate delle difficoltà sull'ordinamento del documento di \AdR\ date dallo strumento \glossario{LateX}. L'analista ha esposto la necessità di un incontro con il Professor. Riccardo Cardin per delucidazioni sulla funzione di login utente che sarebbe, con l'attuale impostazione, disponibile anche per il tecnico già loggato. Il problema rimane comunque arginabile definendo delle precondizioni per il login. 
+\subsubsection{Amministratore}
+\par Sono avanzati i lavori sul \PdP\ e sono iniziati i lavori sul \PdQ. Sono inoltre stati sviluppati tabelle e grafici da inserire per preventivi e consuntivi del \PdP\ e sono iniziati i lavori sui file di configurazione per la compilazione dei file pdf in automatico.
+\subsubsection{Responsabile} 
+\par Il Responsabile si è occupato della pianificazione del preventivo del primo \glossario{sprint}\ e l'elaborazione di tabelle e grafici per preventivo e consuntivo degli \glossario{sprint}. Sono inoltre stati definiti attività e grafico \glossario{Gannt}\ su \glossario{Jira}\ e steso il verbale del meeting precedente.
+\subsubsection{Programmatore}
+\par Il Programmatore discute dello studio e dei progressi ottenuti con \glossario{txtai}, spiegando al gruppo la trasformazione che la tecnologia opera al fine di trasformare il linguaggio naturale in un vettore e in un indice di vettori. L'idea per il funzionamento è quella di formattare dizionario dati, \glossario{query}\ e le informazioni delle tabelle in documenti che simulino il \glossario{database}. La \glossario{query} verrebbe pre-processata e generare dei \glossario{token} da questa, per renderla più accessibile ai meccanismi di \glossario{txtai}. La frase verrebbe quindi processata e passata all'indicizzatore che eseguirebbe lo stesso procedimento con il dizionario dati. Rispetto ai lavori precedenti sono stati aggiunti due nuovi moduli per la pre-processazione.
+\par Vengono infine discussi i prossimi lavori che riguardano la creazione di un secondo indice che faccia da indice intermedio tra la \glossario{query}\ e l'indice reale per estrarre l'informazione. Questo sarebbe utile perché arricchirebbe i risultati parziali con informazioni quali la descrizione della tabella e i vincoli comuni. Oltre a ciò c'è la volontà di testare l'inserimento del numero di colonne per confrontare e capire se il risultato finale sia ottimale.
+\subsubsection{Progettista}
+\par Il Progettista ha lavorato coordinandosi con il programmatore per la strutturazione di un dizionario dati in formato \glossario{JSON}\ che potesse essere più efficiente nell'interazione con \glossario{ChatGPT}. Sono stati citati diversi tipi di formato in linguaggio naturale che risultano essere più adatti gli \glossario{LLM} che verranno approfonditi in seguito. Infine è stato proposto di utilizzare il linguaggio \glossario{Python}\ per il \glossario{backend}\ visto che il gruppo sta lavorando con questo linguaggio e si sta trovando bene. Rimangono aperte e da esplorare diverse opzioni e software in cui sviluppare il prodotto.
+
+\subsubsection{Ridistribuzione dei ruoli}
+\par Per il terzo sprint vengono distribuite nuovamente le ore ai vari membri del gruppo. Da questo sprint, le ore non si concentreranno solo su un ruolo, ma spazieranno su più ruoli per fornire sostegno a membri che necessitano di maggiori risorse e per evitare di assegnare solo un ruolo con poche ore rimanenti. In particolare:
+\begin{itemize}
+	\item Sono state richieste più ore sul ruolo di progettista per dare una migliore definizione del lavoro al Programmatore. Allo stesso tempo saranno assegnate più ore al Programmatore e meno ad altri ruoli in vista di una ridistribuzione più mirata;
+	\item Vengono inoltre richieste più risorse al ruolo di Amministratore vista la mole di lavoro che altrimenti dovrebbe affrontare un solo membro. Vengono quindi assegnate altre ore a 2 membri del gruppo, in modo da offrire assistenza. 
+\end{itemize}
+
+\subsubsection{Incontro con La Proponente}
+\par Vengono in seguito discussi i punti da trattare con La Proponente in un meeting pianificato per il 6 maggio 2024.
+\begin{itemize}
+	\item Proposta dell'utilizzo del framework \glossario{Streamlit} per usare \glossario{Python}\ anche per a parte relativa al \glossario{frontend}\ o in alternativa l'utilizzo di altri framework per velocizzare i lavori;
+	\item Proposta dell'utilizzo di \glossario{Python}\ anche per il \glossario{backend}\ come da suggerimento del Progettista;
+	\item Aggiornamento sullo stato del progetto e sulle attività future.
+\end{itemize}
+
+\subsubsection{Punti da trattare nel prossimo diario di bordo}
+\par Il gruppo ha discusso i punti salienti da trattare nel diario di bordo del 3 maggio 2024.
+\paragraph{Done}
+\begin{itemize}
+	\item Pianificazione e preventivo \glossario{sprint} 3;
+	\item Inizio stesura del \PdQ;
+	\item Conversione in \glossario{LateX}\ del documento di \AdR;
+	\item Inserimento di grafici nel \PdP;
+	\item Progettazione della conversione da linguaggio naturale al prompt finale;
+	\item Definizione di un dizionario dati efficiente;
+	\item Aggiornamento \NdP\ e popolamento del \Gls;
+	\item Pianificazione di un incontro con La Proponente.
+\end{itemize}
+\paragraph{Difficoltà}
+\begin{itemize}
+	\item Poche risorse assegnate al ruolo di amministratore
+	\item Difficoltà date dal nuovo ruolo nella rotazione
+	\item Caricamento automatico di documenti da un \glossario{repository}\ ad un altro.
+\end{itemize}	
+\paragraph{Todo}
+\begin{itemize}
+	\item Creazione di un'indice intermedio per una maggior accuratezza nell'interazione tra dizionario dati e \glossario{query};
+	\item Bozza di interfaccia grafica della \glossario{web app};
+	\item Progettazione iniziale della \glossario{web app};
+	\item Avanzamento nella scrittura dei documenti (\Gls, \PdP, \AdR, \NdP, \PdQ);
+	\item Aggiornameto sullo stato del progetto alla proponente: qui verranno anche proposti gli strumenti di sviluppo della webapp.
+\end{itemize}
+\newpage
+\paragraph{Dubbi}
+\begin{itemize}
+	\item Dubbio sul come far valere le ore che ci si ritrova a fare in un ruolo diverso;
+	\item A che livello di dettaglio si dovrebbe arrivare nel documento di \NdP.
+\end{itemize}
+
+\par Gli argomenti sopracitati sono stati riportati nella presentazione per il diario di bordo del 3 maggio 2024.
