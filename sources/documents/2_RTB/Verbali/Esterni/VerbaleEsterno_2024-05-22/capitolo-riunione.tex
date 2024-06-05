@@ -1,0 +1,71 @@
+\section{Riunione}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\item Presentazione del \glossario{framework} \glossario{Streamlit};
+	\item Discussione delle metriche di qualità;
+	\item Discussione sulla feature di traduzione di \glossario{txtai}.
+\end{itemize}
+
+\subsection{Argomenti e temi dell'incontro}
+
+\subsubsection{Presentazione \glossario{Streamlit}\ e confronto con altre tecnologie}
+
+\par \textbf{Descrizione:} I programmatori elencano le caratteristiche di \glossario{Streamlit}, il \glossario{framework} individuato dal team per realizzare il prototipo dell'applicazione. Vengono indicati i vantaggi e gli svantaggi della suddetta tecnologia, quali:
+\begin{itemize}
+	\item Il back-end di Streamlit è sviluppato in \glossario{Python};
+	\item Il front-end, invece, sfrutta le funzionalità della libreria \glossario{React} e dell'estensione \glossario{JSX};
+	\item Tecnologia open source;
+	\item Utilizzato principalmente per applicazioni di data science e machine learning, che operano analisi e visualizzazione di dati, interazione con \glossario{LLM} ed elaborazione del linguaggio naturale;
+	\item Disponibilità di componenti interattivi facilmente integrabili nell'applicazione;
+	\item Comunità ampia e molto attiva, specialmente nella risoluzione dei problemi di personalizzazione.
+\end{itemize}
+
+\par \textbf{Risposta:} La Proponente non impone vincoli sulla scelta delle tecnologie, ma invita il gruppo, per la prossima riunione, a soffermarsi su come il framework individuato possa risolvere i problemi posti dal capitolato, piuttosto che sulle sue specifiche tecniche. Viene inoltre spiegato che adottando una tecnologia si accettano i rischi che ne conseguono, e tale decisione spetta al team di fornitori.
+
+\par \textbf{Descrizione:} Il gruppo propone quindi di mostrare i risultati ottenuti tramite l'interazione tra \glossario{txtai} e \glossario{Streamlit} durante il prossimo incontro. Dichiara inoltre di aver già iniziato la fase di integrazione e implementato i primi \glossario{casi d'uso}, ma che questi non coprono ancora i requisiti minimi. Nel frattempo, il team ha anche analizzato i pro e contro di framework più consolidati, sia back-end (\glossario{Flask}, \glossario{Django}) che front-end (\glossario{Vue.js}, \glossario{Next.js}). La coppia Flask-Vue.js è stata considerata dal gruppo come un’ottima alternativa, e pertanto verrà approfondita nel prossimo sprint.
+
+\par \textbf{Risposta:} La Proponente conferma la proposta del team, chiedendo di essere contattata qualora ci siano degli avanzamenti significativi nello sviluppo dei casi d'uso principali.
+
+\subsubsection{Discussione delle metriche di qualità}
+
+\par \textbf{Domanda:} La \glossario{Proponente} ha individuato delle metriche di qualità significative che il prodotto dovrà rispettare?
+
+\par \textbf{Risposta:} Relativamente all'interfaccia grafica, la Proponente non avanza richieste specifiche, lasciando che sia il gruppo a individuare metriche di qualità significative. Si esprime invece sulle metriche che riguardano la parte funzionale del prodotto, ossia l'interazione tra l'applicazione e gli \glossario{LLM}. In particolare, la Proponente invita il team a definire una batteria di test per verificare quante volte il risultato ottenuto (inteso come lista di tabelle pertinenti alla richieste dell'utente) è vicino a quello desiderato. Di seguito sono riportate alcune casistiche che la Proponente ritiene debbano essere verificate:
+\begin{itemize}
+	\item Frasi in cui è coinvolta una sola tabella;
+	\item Query con la clausola JOIN per combinare due o più tabelle;
+	\item Frasi che richiedono un ordinamento;
+	\item Query in cui vengono applicati dei filtri;
+	\item Query che richiedono funzioni di aggregazione.
+\end{itemize}
+Per ciascuno dei casi sopracitati, l'ideale sarebbe disporre di un numero sufficiente di test per capire quanti danno una risposta soddisfacente e quanti no.
+
+\par \textbf{Domanda:} Il team chiede alla Proponente se abbia già definito un range di tollerabilità per tale metrica.
+
+\par \textbf{Risposta:} La Proponente non esprime una misura specifica, in quanto l'individuazione di un valore desiderabile è parte integrante del processo di sviluppo e testing.
+
+\par \textbf{Domanda:} Lo scopo della metrica, quindi, è capire quanto i modelli siano in grado di fornire dei risultati soddisfacenti?
+
+\par \textbf{Risposta:} La Proponente sottolinea come gli \glossario{LLM} vengano ormai venduti come prodotti sicuri e affidabili; lo scopo del prodotto è capire se e quanto questo corrisponda alla realtà.
+
+\par \textbf{Domanda:} C'è un valore desiderabile riguardo la velocità e le prestazioni della traduzione?
+
+\par \textbf{Risposta:} La Proponente spiega che i gruppi del primo lotto non hanno riscontrato particolari lacune o difficoltà in merito alla velocità di esecuzione. Un aspetto da tenere in considerazione, invece, è la dimensione del \glossario{prompt} generato, poiché i ChatBOT impongono dei limiti, seppur grandi, in termini di \glossario{token}.
+Tuttavia, la riduzione della dimensione del prompt deve essere effettuata con accortezza, al fine di evitare l'esclusione di tabelle rilevanti. Si deve quindi trovare il giusto equilibrio tra dimensione e accuratezza del prompt, per garantire una corretta costruzione della \glossario{query} SQL.
+
+\par \textbf{Domanda:} Il team avanza un ulteriore dubbio riguardo la quantità delle metriche da applicare.
+
+\par \textbf{Risposta:} La Proponente ritiene che non sia facile effettuare una stima di questo tipo. A tal proposito spiega che un'eccessiva quantità di metriche non è sempre vantaggiosa, e anzi rischia di complicare la gestione del progetto. Indica però la presenza di 5 metriche che possono essere considerate fondamentali:
+\begin{itemize}
+	\item Tempo, ossia il tempo che il team di sviluppo impiega per dare una risposta a una certa domanda o per completare una determinata attività;
+	\item Sforzo;
+	\item Costo;
+	\item Qualità;
+	\item Dimensione;
+\end{itemize}
+La \glossario{Proponente} si sofferma sulla metrica "Dimensione", intesa come "grandezza di un programma". Se si misurano solo le linee di codice e si indica come "codice di qualità" un codice lungo, potrebbe risultare invece che quest'ultimo non sia sufficientemente ottimizzato. Un esempio riguarda gli algoritmi Merge sort e Quicksort; il primo, seppur più lungo in termini di linee di codice, è meno efficiente del secondo. Infine, la Proponente suggerisce di discutere delle metriche anche con il Committente.
+
+\subsubsection{Funzione di traduzione di txtai}
+\par \textbf{Domanda:} Per una richiesta in italiano, è più opportuno generare il prompt nella lingua del dizionario dati o predisporre una funzione di traduzione che restituisca il prompt in italiano?
+
+\par \textbf{Risposta:} La Proponente spiega che l'obiettivo del progetto è quello di fornire un prompt da copiare e incollare su ChatGPT (o altri ChatBOT). La query finale non cambia in base alla lingua della richiesta, poiché il linguaggio rimane l'SQL. Un utente non deve necessariamente leggere il contenuto del prompt, che può quindi mantenere la stessa lingua del dizionario dati.
