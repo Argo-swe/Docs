@@ -1,4 +1,11 @@
 \subsubsection{UC7 - Cambio lingua}\label{UC7}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc7.png}
+  \caption{UC7}
+\end{figure}
+
 \paragraph*{Descrizione}
 L’Utente desidera inserire una richiesta in linguaggio naturale in una lingua diversa dall’italiano.
 
@@ -8,19 +15,20 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L'applicazione è stata avviata con successo;
+  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
   \item L’Utente vuole inserire una frase in linguaggio naturale in un'altra lingua.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
   \item L'Utente ha selezionato una lingua tra quelle disponibili;
-  \item L'Utente inserisce una richiesta in linguaggio naturale nella lingua scelta (\hyperref[UC3]{UC3});
-  \item L'applicazione opera la generazione del \glossario{prompt} considerando la lingua selezionata (\hyperref[UC5]{UC5}).
+  \item L'Utente può ora inserire una richiesta in linguaggio naturale nella lingua scelta (\hyperref[UC3]{UC3}).
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente seleziona una lingua da una lista predefinita di lingue. La scelta è tra:
+  \item L'Utente seleziona un dizionario dati (\hyperref[UC4]{UC4});
+  \item L’Utente seleziona una lingua da una lista predefinita di lingue. La scelta è tra le seguenti lingue:
     \begin{itemize}
       \item Italiano;
       \item Inglese;
@@ -28,7 +36,11 @@ Utente
       \item Spagnolo;
       \item Tedesco.
     \end{itemize}
-  \item L’Utente inserisce una interrogazione in linguaggio naturale nella lingua selezionata (\hyperref[UC3]{UC3}).  
 \end{enumerate}
+
+\paragraph*{Inclusioni}
+\begin{itemize}
+  \item Selezione \glossario{dizionario dati} (\hyperref[UC4]{UC4}).
+\end{itemize}
 
 % TODO [in caso di errore ed incongruenza tra la lingua scritta e quella selezionata teniamo solo errore uc6 del \glossario{prompt}? O viene controllata prima?]
