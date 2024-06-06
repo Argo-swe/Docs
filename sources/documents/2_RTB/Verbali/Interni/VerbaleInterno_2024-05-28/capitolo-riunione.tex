@@ -3,32 +3,32 @@
 \begin{itemize}
 	\item Analisi e revisione delle \glossario{metriche di qualità};
 	\item Selezione di valori desiderabili e range di tollerabilità per le metriche;
-	\item Revisione dell'AdR\ e del caso d'uso sulla funzionalità di \glossario{debug};
+	\item Revisione dell'\AdR\ e del \glossario{caso d'uso} sulla funzionalità di \glossario{debug};
 	\item Definizione di nuovi ticket per l'aggiornamento dei documenti.
 \end{itemize}
 
 \subsection{Discussione e decisioni}
-\subsection{Metriche di qualità}
+\subsubsection{Metriche di qualità}
 \par All'inizio del meeting il gruppo ha discusso le \glossario{metriche} e le feature da integrare nel progetto. Successivamente è stata approfondita la funzionalità di \glossario{debug} a livello implementativo.
 \par Di seguito sono riportati i punti della discussione:
 \begin{itemize}
 	\item Selezione di \glossario{metriche di prodotto} significative;
-	\item Il team ha deciso di modificare la metrica M.2.4 (efficienza temporale) in: variazione temporale;
-	\item Aggiunta di una metrica per valutare l'efficienza temporale, intesa come rapporto tra ore di orologio e ore produttive;
+	\item Il team ha deciso di rinominare la metrica M.2.4 (efficienza temporale) in: Variazione temporale;
+	\item È stata aggiunta una metrica per valutare l'efficienza temporale, intesa come rapporto tra ore di orologio e ore produttive;
 	\item Le metriche M.2.6 (dimensione del commit) e M.2.7 (tempo medio tra commit) sono state rimosse, in quanto ritenute ambigue e di difficile applicazione pratica;
-	\item Il gruppo si è accordato sul fatto che i valori ambiti rappresentano dei risultati raggiungibili con un \glossario{\WoW} ideale a cui si dovrebbe aspirare; mentre i valori tollerabili sono quelli entro i quali il team considera le \glossario{metriche} rispettate;
-	\item Le metriche M.2.5 (velocità di verifica di una pull request) e M.2.8 (frequenza di merge) sono state accoparte in un'unica metrica: frequenza di merge delle pull request. Questa metrica misura l'efficienza del processo di verifica e di integrazione delle modifiche;
-	\item La metrica M.3.1 (rischi non previsti in assoluto per sprint) deve essere rinominata in: rischi inattesi;
-	\item La metrica M.3.2 (rischi non previsti su successi) deve essere rinominata in: rischi previsti ma non gestiti con successo. Questa metrica risponde alla domanda "Quanti rischi attesi hanno mostrato delle lacune nelle contromisure scelte?";
+	\item Il gruppo si è accordato sul fatto che i valori ambiti rappresentano dei risultati raggiungibili con un \glossario{\WoW} ideale a cui si dovrebbe aspirare. Mentre i valori tollerabili sono quelli entro i quali il team considera le \glossario{metriche} rispettate;
+	\item Le metriche M.2.5 (velocità di verifica di una pull request) e M.2.8 (frequenza di merge) sono state accorpate in un'unica metrica: Frequenza di merge delle pull request. Questa metrica misura l'efficienza del processo di verifica e di integrazione delle modifiche;
+	\item La metrica M.3.1 (rischi non previsti in assoluto per sprint) deve essere rinominata in: Rischi inattesi;
+	\item La metrica M.3.2 (rischi non previsti su successi) deve essere rinominata in: Rischi previsti ma non gestiti con successo. Questa metrica risponde alla domanda "Quanti rischi attesi hanno mostrato delle lacune nelle contromisure scelte?";
 	\item La metrica M.4.2 (completezza della documentazione) è stata rimossa, mentre la M.4.3 (vocaboli inseriti nel vocabolario) deve essere riscritta in modo più chiaro;
 	\item Il gruppo ha riscontrato delle difficoltà nell'individuare un range di tollerabilità opportuno per la metrica M.3.2. Tali difficoltà verranno riportate nel prossimo diario di bordo;
-	\item Sono emersi dei dubbi sugli strumenti da usare per valutare le metriche del codice. Durante lo \glossario{sprint} si testeranno: SonarQube, Coverage.py, Networkx e Pylint;
+	\item Sono emersi dei dubbi sugli strumenti da usare per misurare le metriche del codice. Durante lo \glossario{sprint} si testeranno: SonarQube, Coverage.py, Networkx e Pylint;
 	\item Il gruppo ha discusso la possibilità di considerare alcune metriche di prodotto come metriche di processo. I dubbi sulla categorizzazione delle metriche verranno esposti nel prossimo diario di bordo.
 \end{itemize}
 
-\subsection{Analisi dei requisti e funzionalità di debug}
+\subsubsection{Analisi dei requisti e funzionalità di debug}
 \begin{itemize}
-	\item Il gruppo ha discusso l'implementazione della funzionalità di debug. In particolare, si è deciso di gestire il \glossario{log} come un file separato che il \glossario{Tecnico} può scaricare. Nell'interfaccia grafica, invece, la visualizzazione sarà strutturata con dati tabulari;
-	\item I requisiti dovranno essere rivisti in base alle nuove funzionalità che il team sta sviluppando, specialmente i casi d'uso per la funzionalità di \glossario{debug}. Inoltre, il gruppo ha deciso di rivedere il caso d'uso relativo alla visualizzazione del \glossario{dizionario dati}(UC14).
+	\item Il gruppo ha discusso le modalità di implementazione della funzionalità di debug. In particolare, si è deciso di gestire il \glossario{log} come un file separato che il \glossario{Tecnico} può scaricare. Nell'interfaccia grafica, invece, la visualizzazione sarà strutturata con dati tabulari;
+	\item I requisiti dovranno essere rivisti in base alle nuove funzionalità che il team sta sviluppando, specialmente i casi d'uso per la funzionalità di \glossario{debug}. Inoltre, il gruppo ha deciso di aggiornare il \glossario{caso d'uso} relativo alla visualizzazione del \glossario{dizionario dati}(UC14).
 \end{itemize}
 
