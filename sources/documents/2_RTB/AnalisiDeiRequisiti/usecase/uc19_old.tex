@@ -1,0 +1,25 @@
+\subsubsection{UC19 - Inserimento Query SQL}\label{UC19}
+\paragraph*{Descrizione}
+Il Tecnico inserisce la \glossario{query} SQL generata da un servizio esterno e sulla quale eseguire il test.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha generato il \glossario{prompt} relativo alla richesta inserita (\hyperref[UC5]{UC5});
+  \item Il Tecnico copia il \glossario{prompt} (\hyperref[UC8]{UC8});
+  \item Il Tecnico incolla in un servizio esterno la frase per ricevere una \glossario{query} in SQL.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il Tecnico ha inserito una frase SQL nell'input relativo.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico ha copiato da un servizio esterno la frase SQL generata dal \glossario{prompt};
+  \item Il Tecnico copia la frase SQL nel box relativo.
+\end{enumerate}

@@ -1,6 +1,6 @@
-\subsubsection{UC6 - Messaggio d'errore nella generazione del prompt}\label{UC6}
+\subsubsection{UC6 - Errore nella generazione del \glossario{prompt}}\label{UC6}
 \paragraph*{Descrizione}
-L’Utente ha cercato di generare un prompt con una frase non totalmente inerente al \glossario{dizionario dati} scelto.
+L’Utente ha cercato di generare un \glossario{prompt} con una frase non totalmente inerente al \glossario{dizionario dati} scelto.
 
 \paragraph*{Attori principali}
 Utente
@@ -8,19 +8,21 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L'applicazione è stata avviata con successo;
-  \item L’Utente ha inserito una frase in linguaggio naturale;
-  \item L’Utente ha richiesto la generazione del prompt a partire dalla frase inserita.  
+  \item L’Utente ha inserito una frase in linguaggio naturale (\hyperref[UC3]{UC3});
+  \item L’Utente ha richiesto la generazione del \glossario{prompt} a partire dalla frase inserita.  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item L’applicazione ha riscontrato problemi nella generazione del prompt a causa di una non adeguata aderenza tra la frase inserita e il \glossario{dizionario dati} scelto;
+  \item L’applicazione ha riscontrato problemi nella generazione del \glossario{prompt} a causa di una non adeguata aderenza tra la frase inserita e il \glossario{dizionario dati} scelto;
   \item Viene visualizzato un messaggio di errore per orientare l’Utente alla comprensione del funzionamento del sistema.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Dopo che l’Utente ha inserito una frase in linguaggio naturale e richiesto la generazione del prompt il sistema attua il meccanismo per identificare la parte di \glossario{dizionario dati} adeguata da restituire;
-  \item Il sistema non è in grado di trovare le correlazioni adeguate e quindi non riesce a restituire un prompt coerente;
+  \item L’Utente ha inserito una frase in linguaggio naturale (\hyperref[UC3]{UC3});
+  \item L'Utente ha richiesto la generazione del \glossario{prompt} (\hyperref[UC5]{UC5});
+  \item Il sistema attua il meccanismo per identificare la parte di \glossario{dizionario dati} adeguata da restituire;
+  \item Il sistema non è in grado di trovare le correlazioni adeguate e quindi non riesce a restituire un \glossario{prompt} coerente;
   \item Viene visualizzato un messaggio di errore.
 \end{enumerate}
