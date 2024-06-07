@@ -1,4 +1,11 @@
 \subsubsection{UC1 - Autenticazione}\label{UC1}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc1.png}
+  \caption{UC1}
+\end{figure}
+
 \paragraph*{Descrizione}
 L’Autenticazione corrisponde al processo di login, tramite il quale l'Utente può passare alle funzionalità del Tecnico.
 
@@ -27,12 +34,18 @@ Utente
   \item In caso di corretto inserimento e verifica delle credenziali, l’Utente accede all’applicativo come Tecnico.
 \end{itemize}
 
-\paragraph*{Estensione}
+\paragraph*{Scenario alternativo}
+\begin{enumerate}
+  \item Il sistema riconosce un errore durante il tentativo di autenticazione da parte dell'Utente (\hyperref[UC2]{UC2});
+  \item Viene visualizzato un messaggio con i dettagli dell'errore.
+\end{enumerate}
+
+\paragraph*{Estensioni}
 \begin{itemize}
-  \item Visualizzazione del messaggio d’errore per fallita autenticazione (\hyperref[UC2]{UC2}).
+  \item Errore per fallita autenticazione (\hyperref[UC2]{UC2}).
 \end{itemize}
 
-\paragraph*{Sottocasi d'uso}
+\paragraph*{Inclusioni}
 \begin{itemize}
   \item Inserimento e-mail (\hyperref[UC1point1]{UC1.1});
   \item Inserimento password (\hyperref[UC1point2]{UC1.2}).
@@ -41,6 +54,7 @@ Utente
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{UC1.1 - Inserimento e-mail}\label{UC1point1}
+
 \paragraph*{Descrizione}
 La procedura di inserimento e-mail corrisponde all’inserimento della propria e-mail nella sezione apposita di login.
 
@@ -68,7 +82,7 @@ Utente
 
 \subsubsection{UC1.2 - Inserimento password}\label{UC1point2}
 \paragraph*{Descrizione}
-La procedura di inserimento password corrisponde all’inserimento della propria password nella sezione apposita di login.
+La procedura di inserimento password corrisponde all’inserimento della password dell'Utente nella sezione apposita di login.
 
 \paragraph*{Attori principali}
 Utente
@@ -76,8 +90,8 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L’Utente non ha eseguito il login;
-  \item L’Utente ha avviato la procedura di autenticazione;
-  \item L’Utente ha inserito la propria e-mail nel campo apposito.
+  \item L’Utente ha avviato la procedura di autenticazione (\hyperref[UC1]{UC1});
+  \item L’Utente ha inserito la propria e-mail nel campo apposito (\hyperref[UC1point1]{UC1.1}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -88,6 +102,6 @@ Utente
 \paragraph*{Scenario principale}
 \begin{enumerate}
   \item L’Utente avvia la procedura di autenticazione;
-  \item L’Utente inserisce la propria e-mail nel campo apposito;
+  \item L’Utente inserisce la propria e-mail nel campo apposito; 
   \item L’Utente inserisce la propria password nel campo apposito.  
 \end{enumerate}
