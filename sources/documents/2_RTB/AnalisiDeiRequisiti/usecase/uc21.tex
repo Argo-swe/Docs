@@ -1,0 +1,25 @@
+\subsubsection{UC21 - Errore per mancata eliminazione del \glossario{dizionario dati}}\label{UC21}
+\paragraph*{Descrizione}
+Il sistema mostra un messaggio d’errore relativo alla mancata eliminazione del \glossario{dizionario dati} selezionato dal Tecnico.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
+  \item Il Tecnico sceglie di eliminare un \glossario{dizionario dati} (\hyperref[UC17]{UC17});
+  \item Il sistema ha riscontrato un problema nell'eliminazione del \glossario{dizionario dati} selezionato dal Tecnico.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il sistema mostra un messaggio d’errore per la mancata eliminazione del nuovo \glossario{dizionario dati}.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico ha selezionato il dizionario da eliminare (\hyperref[UC17]{UC17});
+  \item Il Tecnico conferma la scelta di eliminazione;
+  \item Il sistema segnala la mancata eliminazione al Tecnico tramite un messaggio di errore.
+\end{enumerate}
