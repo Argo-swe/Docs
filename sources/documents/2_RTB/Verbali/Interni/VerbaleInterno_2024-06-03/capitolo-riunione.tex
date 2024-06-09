@@ -7,7 +7,49 @@
 	\item Programmazione di un incontro con il Professor Riccardo Cardin per la discussione dei dubbi del gruppo sui documenti di \AdR e \PdQ;
 	\item Pianificazione di un incontro con la Proponente per la fine del prossimo glossario{sprint};
 	\item Proposta di delegazione ai membri uscenti da un ruolo per la definizione delle attività per i membri entranti.
-	
 \end{itemize}
 
 \subsection{Discussione e decisioni}
+\subsubsection{Retrospettiva e Pianificazione}
+\par Il gruppo si è ritrovato come concordato per una retrospettiva dello \glossario{sprint} 3, vista esserne prossima la fine. Vengono individuate alcune le attività principali per lo \glossario{sprint} successivo. 
+Viene inoltre riproposto al gruppo di organizzare i prossimi due \glossario{sprint} in modo che la loro durata sia di dieci giorni o una settimana. 
+Questo permetterebbe al gruppo di focalizzarsi e concludere attività con più facilità in vista della revisione \RTB.
+Le attività da concludere nei prossimi due periodi consisterebbero nel completamento del Proof of Concept e nella conclusione dei documenti come l'\AdR e le \NdP.
+È stato evidenziato durante l'incontro come soprattutto quest'ultimo documento abbia bisogno di un aggiornamento sostanziale, in quanto necessita di espansioni nelle sezioni riguardanti la struttura dei documenti.
+
+\subsubsection{Modifica delle tecnologie}
+\par Per quanto riguarda il Proof of Concept nell'ultima settimana erano stati ultimati i lavori con il framework \glossario{Streamlit}, di conseguenza il gruppo si è proposto di fissare un incontro con la Proponente per presentare la versione demo e mostrare il lavoro svolto per la parte funzionale dell'applicativo.
+Tuttavia nell'ultimo periodo il gruppo si è reso conto dei limiti del \glossario{framework} utilizzato: infatti questo mostrava significativi ostacoli sia nella personalizzazione dell'interfaccia utente, sia difetti che non permettevano di poter realizzare l'applicativo seguendo un'architettura come richiesto dal corso di studi.
+Ciò ha portato il gruppo a cambiare \glossario{framework} e orientarsi su strumenti che potessero scavalcare gli ostacoli posti da \glossario{Streamlit}. 
+I \glossario{framework} individuati sono:
+\begin{itemize}
+	\item \glossario{Vue} per il \glossario{front-end}, in particolare per la componentistica;
+	\item \glossario{Bootstrap} come alternativa per il \glossario{front-end};
+	\item \glossario{Flask} per il \glossario{back-end}.
+\end{itemize}
+Questi sono strumenti che erano già stati individuati in precedenza, ma abbandonati per favorire l'uso di \glossario{Streamlit}; di conseguenza occorreranno delle sessioni di studio per conformare il gruppo sull'utilizzo di queste tecnologie. 
+Inoltre saranno limitati i lavori su \glossario{txtai}: ciò è dovuto alla necessità di una conversione rapida dell'applicativo ai nuovi strumenti e dal fatto che i lavori sulla parte funzionale dell'applicazione sono già a buon punto.
+
+\subsubsection{Divisione dei ruoli}
+\par Per il prossimo \glossario{sprint} viene proposto di avere un maggior numero di programmatori, in modo che i lavori di converisone possano procedere rapidamente e senza troppi intoppi.
+Si propone una rionione di aggiornamento sulle tecnologie, per allineare i vari membri sui nuovi \glossario{framework} che si andranno ad utilizzare.
+Questo implica che lo \glossario{sprint} 5 sarà incentrato sulla migrazione delle tecnologie avrà durata di una settimana e mezza, in modo da avere un paio di giorni per lo studio e l'aggiornamento e il resto per i lavori.
+Vengono inoltre stabiliti i documenti che dovranno essere aggiornati durante il prossimo \glossario{sprint}:
+\begin{itemize}
+	\item \PdP per l'aggiornamento dello \glossario{sprint};
+	\item \NdP per i motivi sopra spiegati;
+	\item \AdR per un'aggiornamento sui casi d'uso e l'inserimento dei grafici;
+	\item \Gls per un aggiornamento dei termini (meno focale rispetto ai documenti sopra).
+\end{itemize}
+Vengono infine ripartite le ore per ruolo ai vari membri, in modo da coprire tutti i ruoli pur mantenendo un numero di membri concentrato sul ruolo di Programmatore e viene anche riassegnata la data della revisione \RTB, idealmente fissata per fine giugno con un ritardo di circa due settimane rispetto a quanto preventivato inizialmente.
+
+\subsubsection{Incontro con il Professor Riccardo Cardin}
+\par Il gruppo esprime nuovamente la volontà di organizzare un incontro con il Professor Cardin, visto lo stato dei documenti di \AdR e \PdQ che permetterebbero un confronto per individuare eventuali errori o imprecisioni da correggere.
+I punti principali da trattare con il Professore saranno:
+\begin{itemize}
+	\item Metriche: per capire se la quantità e la divisione sono corretti;
+	\item Requisiti: per discutere su alcuni casi d'uso che hanno messo in difficoltà il gruppo, come sono stati collegati tra loro e altre domande più specifiche;
+	\item Funzionamento di \glossario{txtai}: per fornire un aggiornamento sullo stato del progetto e capire se includere alcuni lavori nell'\AdR.
+\end{itemize}
+
+Per finire il gruppo ha stabilito che, per i prossimi \glossario{sprint}, i membri dei ruoli uscenti definiranno le attività per i membri entranti con tanto di descrizione dell'attività su \glossario{Jira}. Questo dovrebbe permettere di avanzare più velocemente nell'andamento delle attività e avere una coordinazione più veloce. 
