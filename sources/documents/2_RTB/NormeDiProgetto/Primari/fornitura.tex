@@ -134,7 +134,7 @@ Il responsabile può duplicare il foglio di calcolo dello \glossario{sprint} pre
   \item Sprint-ID, dove ID corrisponde al numero dello \glossario{sprint};
   \item I riferimenti temporali, nel formato "dal aaaa-mm-gg al aaaa-mm-gg";
   \item Preventivo orario: per ciascuna coppia risora-ruolo, il responsabile deve inserire nella cella apposita le ore produttive previste;
-  \item Le tabelle "preventivo economico" e "ore rimanenti per la coppia risorsa-ruolo" si aggiornano dinamicamente.
+  \item La tabelle "preventivo economico" si aggiorna dinamicamente.
 \end{itemize}
 \par Per esportare le tabelle in formato \glossario{csv}, il team ha creato un foglio di calcolo aggiuntivo chiamato "Export". Il responsabile può copiare una tabella e incollarla su questo foglio, tramite le combinazioni di tasti "Ctrl+C" e "Ctrl+Shift+V". Una volta scaricato il file csv, il responsabile può convertire i dati in \glossario{LaTeX} e inserirli nel \PdP.
 \par I grafici sono generati automaticamente e si dividono in due categorie:
@@ -169,3 +169,33 @@ Il responsabile può duplicare il foglio di calcolo dello \glossario{sprint} pre
   \end{itemize}
 \end{itemize}
 \par Dopo aver creato un nuovo modulo, il responsabile può utilizzare la funzione "Importa domande". Questa feature consente di importare quesiti da un modulo esistente. Cliccando il pulsante "Invia", è possibile inoltre copiare il link da incollare nel foglio di calcolo. Nella dashboard \glossario{Google Sheets} viene aggiunto in automatico un foglio contenente le risposte al questionario; i fogli degli sprint precedenti possono essere nascosti.
+
+\paragraph*{Consuntivo}
+Tutte le tabelle del consuntivo vengono aggiornate automaticamente in base alla rendicontazione delle ore. Di seguito sono riporate le tre tabelle che compongono il consuntivo:
+\begin{itemize}
+  \item Consuntivo orario: il team ha definito una formula dinamica che somma le ore produttive per la coppia risorsa-ruolo. In questo modo è possibile automatizzare il calcolo del consuntivo anche quando i membri del team assumono più ruoli;
+  \item Ore rimanenti per la coppia risorsa-ruolo: viene calcolata la differenza tra le ore rimanenti al termine dello \glossario{sprint} precedente e le ore spese nello \glossario{sprint} attuale;
+  \item Consuntivo economico:
+  \begin{itemize}
+    \item Ruolo;
+    \item Ore per ruolo;
+    \item Delta ore preventivo - consuntivo: differenza tra le ore preventivate e quelle effettivamente spese;
+    \item Costo (in €);
+    \item Delta costo consuntivo - preventivo: differenza tra il costo preventivato e quello effettivo.	
+    \item Ore e budget spesi negli \glossario{sprint} precedenti;
+    \item Ore e budget restanti.
+  \end{itemize}
+\end{itemize}
+\par Il processo di esportazione di tabelle e grafici è il medesimo del preventivo. Tutte le tabelle e i grafici del consuntivo devono essere inseriti nel \PdP. Una volta completata la stesura del consuntivo nel \PdP, il responsabile deve aggiornare le variabili globali della dashboard:
+\begin{itemize}
+  \item Ultimo-Sprint: ID, dove ID è il numero dell'ultimo \glossario{sprint};
+  \item Preventivo complessivo del progetto (da modificare qualora sia necessaria una ridistribuzione delle ore per ruolo):
+  \begin{itemize}
+    \item Ruolo;
+    \item Ore per ruolo;
+    \item Ore individuali;
+    \item Costo orario (in €);
+    \item Costo totale (in €);
+    \item Ore e budget restanti, ricavati dal consuntivo economico dell'ultimo sprint. 
+\end{itemize}
+\par Se il preventivo complessivo dovesse mutare, sia la tabella che il grafico corrispondente andrebbero aggiornati nel \PdP.
