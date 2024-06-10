@@ -90,9 +90,6 @@ TODO
 \paragraph{Glossario}
 Raccolta esaustiva di tutti i termini tecnici utilizzati nella documentazione. Permette di eliminare ambiguità e fraintendimenti fornendo una defizione univoca ed esaustiva per l'intero gruppo e per chi consulta la documentazione prodotta.
 
-
-
-
 \subsubsection{Strumenti}
 Gli strumenti impiegati nel processo di fornitura sono:
 \begin{itemize}
@@ -106,9 +103,9 @@ Gli strumenti impiegati nel processo di fornitura sono:
 \end{itemize}
 
 \subsubsubsection{Dashboard Google Sheets}
-Lo \glossario{spreadsheet} condiviso, realizzato tramite \glossario{Google Sheets} e visibile su \glossario{Google Drive}, ha lo scopo di automazizare la generazione di preventivi e consuntivi (orari ed economici). Il foglio di calcolo principale è suddiviso in più fogli interni:
+Lo \glossario{spreadsheet} condiviso, realizzato tramite \glossario{Google Sheets} e visibile su \glossario{Google Drive}, ha lo scopo di automatizzare la generazione di preventivi e consuntivi (orari ed economici). Il foglio di calcolo principale è suddiviso nei seguenti fogli interni:
 \begin{itemize}
-  \item Un foglio contenente le variabili globali da utilizzare nei fogli successivi, inclusi il costo orario di ciascun ruolo e il budget totale del progetto;
+  \item Un foglio contenente le variabili globali del \PdP, inclusi il costo orario di ciascun ruolo e il budget totale;
   \item Un foglio nascosto per ciascun periodo, che include le risposte al questionario di valutazione dello sprint;
   \item Un foglio per ogni sprint con le seguenti informazioni:
   \begin{itemize}
@@ -124,27 +121,28 @@ Lo \glossario{spreadsheet} condiviso, realizzato tramite \glossario{Google Sheet
     \item Ore rimanenti per la coppia risorsa-ruolo.
   \end{itemize}
 \end{itemize}
-\par La dashboard affianca il responsabile nella stesura delle seguenti sezioni del \PdP:
+\vspace{0.5\baselineskip}
+\par La dashboard è stata progettata per affiancare il responsabile nella stesura delle seguenti sezioni del \PdP:
 \begin{itemize}
   \item Preventivo;
   \item Consuntivo.
 \end{itemize}
 
-\paragraph{Preventivo}
-Il responsabile può duplicare il foglio di calcolo dello \glossario{precedente} e modificare le seguenti informazioni:
+\paragraph*{Preventivo}
+Il responsabile può duplicare il foglio di calcolo dello \glossario{sprint} precedente e modificare le seguenti informazioni:
 \begin{itemize}
   \item Sprint-ID, dove ID corrisponde al numero dello \glossario{sprint};
   \item I riferimenti temporali, nel formato "dal aaaa-mm-gg al aaaa-mm-gg";
-  \item Preventivo orario: per ciascuna coppia risora-ruolo, devono essere inserite nella tabella le ore produttive previste;
-  \item Le tabelle "preventivo economico" e "ore rimanenti per la coppia risorsa-ruolo" si aggiornano dinamicamente;
+  \item Preventivo orario: per ciascuna coppia risora-ruolo, il responsabile deve inserire nella cella apposita le ore produttive previste;
+  \item Le tabelle "preventivo economico" e "ore rimanenti per la coppia risorsa-ruolo" si aggiornano dinamicamente.
 \end{itemize}
-\par Per esportare le tabelle in formato \glossario{csv}, il team ha creato un foglio di calcolo aggiuntivo chiamato "Export". Il responsabile può copiare una tabella e incollarla su questo foglio, tramite le combinazioni di tasti "Ctrl+C" e "Ctrl+Shift+V". Una volta scaricato il file .csv, il responsabile può convertire i dati in \glossario{LaTeX} per l'inserimento nel \PdP.
+\par Per esportare le tabelle in formato \glossario{csv}, il team ha creato un foglio di calcolo aggiuntivo chiamato "Export". Il responsabile può copiare una tabella e incollarla su questo foglio, tramite le combinazioni di tasti "Ctrl+C" e "Ctrl+Shift+V". Una volta scaricato il file csv, il responsabile può convertire i dati in \glossario{LaTeX} e inserirli nel \PdP.
 \par I grafici sono generati automaticamente e si dividono in due categorie:
 \begin{itemize}
-  \item Grafici a torta 3D, possono essere scaricati direttamente in formato PDF;
-  \item Grafici a barre sovrapposte, devono essere scaricati in SVG e poi convertiti in PDF.
+  \item Grafici a torta 3D: possono essere scaricati direttamente in formato PDF;
+  \item Grafici a barre sovrapposte: devono essere scaricati in SVG e poi convertiti in PDF.
 \end{itemize}
-\par Il PDF è un formato vettoriale, il che significa che le immagini possono essere scalate senza perdita di qualità. Questo è particolarmente utile per diagrammi e grafici, poiché manterranno la nitidezza anche se ingranditi. Inoltre, il formato PDF è compatibile e facilmente integrabile con \glossario{LaTeX}.
+\par Il PDF è un formato vettoriale, il che significa che le immagini possono essere scalate senza perdita di qualità. Questo è particolarmente utile per diagrammi e grafici, poiché mantengono la nitidezza anche se ingranditi. Inoltre, il formato PDF è compatibile e facilmente integrabile con \glossario{LaTeX}.
 \par Nella sezione rendicontazione ore, il responsabile deve inserire:
 \begin{itemize}
   \item Le date di inizio e fine dello \glossario{sprint};
@@ -153,9 +151,9 @@ Il responsabile può duplicare il foglio di calcolo dello \glossario{precedente}
 \end{itemize}
 \par Il questionario è un modulo \glossario{Google Moduli} che può essere creato all'interno della dashboard. Il questionario ha la seguente struttura:
 \begin{itemize}
-  \item Titolo: Valutazione Sprint-ID, dove ID corrisponde al numero dello \glossario{sprint};  
-  \item Descrizione: Questionario per la valutazione dello sprint-ID;
-  \item Domande (scelta multipla, scala lineare da 1 a 10, risposta breve, scala lineare da 1 a 5, paragrafo):
+  \item \textbf{Titolo:} Valutazione Sprint-ID, dove ID corrisponde al numero dello \glossario{sprint};  
+  \item \textbf{Descrizione:} Questionario per la valutazione dello sprint-ID;
+  \item \textbf{Domande} (scelta multipla, scala lineare da 1 a 10, risposta breve, scala lineare da 1 a 5, paragrafo):
   \begin{itemize}
     \item "Come ti è sembrata l'organizzazione dello sprint?";
     \item "Come si potrebbe migliorare la pianificazione?";
@@ -170,4 +168,4 @@ Il responsabile può duplicare il foglio di calcolo dello \glossario{precedente}
     \item "Quali azioni correttive avvieresti dal prossimo sprint?".
   \end{itemize}
 \end{itemize}
-\par Dopo aver creato un nuovo modulo, il responsabile può utilizzare la funzione "Importa domande". Questa feature consente di importare quesiti da un modulo esistente. Cliccando il pulsante "Invia", è inoltre possibile copiare il link da incollare nel foglio di calcolo. Nella dashboard \glossario{Google Sheets} viene aggiunto in automatico un foglio contenente le risposte al questionario; i fogli degli sprint precedenti possono essere nascosti.
+\par Dopo aver creato un nuovo modulo, il responsabile può utilizzare la funzione "Importa domande". Questa feature consente di importare quesiti da un modulo esistente. Cliccando il pulsante "Invia", è possibile inoltre copiare il link da incollare nel foglio di calcolo. Nella dashboard \glossario{Google Sheets} viene aggiunto in automatico un foglio contenente le risposte al questionario; i fogli degli sprint precedenti possono essere nascosti.
