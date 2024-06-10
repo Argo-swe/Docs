@@ -86,24 +86,24 @@ Il gruppo mantiene un versionamento per la documentazione nel formato:
 \end{itemize}
 
 \subsubsection{Repository}
-Il gruppo utilizza due repository, disponibili in \glossario{Github}:
+Il gruppo utilizza due repository, disponibili su \glossario{GitHub}:
 \begin{itemize}
-  \item Repository della documentazione: \href{https://github.com/argo-swe/docs}{https://github.com/argo-swe/docs}
-  \item Repository del codice sorgente: \href{https://github.com/argo-swe/chatsql}{https://github.com/argo-swe/chatsql}
+  \item Repository della documentazione: \href{https://github.com/argo-swe/docs}{https://github.com/argo-swe/docs};
+  \item Repository del codice sorgente: \href{https://github.com/argo-swe/chatsql}{https://github.com/argo-swe/chatsql}.
 \end{itemize}
-Il gruppo utilizza inoltre, per hosting del sito \href{https://argo-swe.github.io}{argo-swe.github.io}, un repository, da non considerare all'interno del workflow in quanto aggiornata e mantenuta solo come "vetrina" del gruppo.
+Il gruppo impiega inoltre, per l'hosting del sito \href{https://argo-swe.github.io}{argo-swe.github.io}, un repository aggiuntivo, da non considerare parte del workflow principale in quanto aggiornato e mantenuto solo come "vetrina" del gruppo.
 \begin{itemize}
-  \item Repository del sito github.io: \href{https://github.com/argo-swe/argo-swe.github.io}{https://github.com/argo-swe/argo-swe.github.io}
+  \item Repository del sito github.io: \href{https://github.com/argo-swe/argo-swe.github.io}{https://github.com/argo-swe/argo-swe.github.io}.
 \end{itemize}
 
 \paragraph{Repository \emph{Docs}}
 Il repository contiene il codice sorgente in LaTeX di tutta la documentazione ufficiale generata durante il progetto, oltre all'ambiente utile alla generazione dei file PDF corrispondenti.\\
-Di seguito è riportata la struttura del repository:
+\par Di seguito è riportata la struttura del repository:
 \begin{itemize}
   \item Il file \emph{README.md} illustra brevemente lo scopo del repository ed elenca i componenti del gruppo;
-  \item Il file \emph{.gitignore} evita il tracciamento di file ausiliari o artefatti di compilazione;
-  \item La directory \emph{Logo} contiene le versioni ufficiali del logo del gruppo, in formato SVG e/o PNG;
-  \item La directory \emph{sources} include il codice sorgente per la documentazione, separato in due directory: 
+  \item Il file \emph{.gitignore} evita il tracciamento di file ausiliari e artefatti di compilazione;
+  \item La directory \emph{Logo} contiene le versioni ufficiali del logo del gruppo, in formato SVG e PNG;
+  \item La directory \emph{sources} include il codice sorgente per la documentazione, suddiviso in due sotto-directory: 
   \begin{itemize}
     \item \emph{model} contiene i file di utilizzo globale all'interno della documentazione;
     \item \emph{documents} contiene, in maniera ordinata per fasi di progetto, la documentazione ufficiale.
@@ -123,9 +123,9 @@ Di seguito è riportata la struttura del repository:
     \item Recupero dell'immagine da \glossario{GHCR} e avvio del contenitore Docker (se avviene un "cache hit");
     \item Questa distinzione tra push e pull di un'immagine, in base alla presenza o meno di una chiave in cache, permette di ridurre significativamente i tempi di esecuzione del \glossario{workflow};
     \item Compilazione dei documenti tramite shell interattiva all'interno del contenitore Docker;
-    \item Rimozioni dei verbali esterni, poiché firmati dalla \glossario{Proponente}, dal build output;
+    \item Rimozione dei verbali esterni, poiché firmati dalla \glossario{Proponente}, dal build output;
     \item Pubblicazione dell'artefatto generato durante il processo di build;
-    \item Clonazione del repository di destinazione (argo-swe.github.io) in una directory temporanea accessibile tramite token;
+    \item Clonazione del repository di destinazione (argo-swe.github.io) in una directory temporanea accessibile mediante token;
     \item Caricamento dei file estratti dall'artefatto nella directory temporanea;
     \item Commit e push dei documenti in formato PDF nel ramo base del repository di destinazione;
     \item Arresto dell'esecuzione del contenitore Docker.
@@ -135,3 +135,5 @@ Il repository contiene un ramo base (main), in cui vengono inserite le versioni 
 
 \paragraph{Repository \emph{ChatSQL}}
 Il repository contiene il codice sorgente dell'applicativo ChatSQL, oltre a un \glossario{workflow} GitHub Actions per l'analisi statica del codice, l'esecuzione dei test e la generazione automatica dell'artefatto. Il workflow è definito da un file YAML archiviato nella directory \emph{.github/workflows}.
+
+\par TODO. La struttura di questo repository va completata dopo la configurazione finale dell'ambiente.
