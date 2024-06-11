@@ -76,33 +76,34 @@
 \end{itemize}
 
 \subsubsection{Pull request}
-Come riportato nel registro delle modifiche dei documenti, ogni avanzamento di versione deve essere accompagnato da una fase di verifica. Questo vale anche per lo sviluppo del codice sorgente, poiché quest’ultimo è sottoposto al versionamento. Per garantire un rilascio controllato delle modifiche, il team ha definito delle Branch Protection Rules. I branch che non accettano push dall’ambiente locale sono i seguenti: 
+Come riportato nel registro delle modifiche dei documenti, ogni avanzamento di versione deve essere accompagnato da una fase di verifica. Questo vale anche per lo sviluppo del codice sorgente dell'applicazione ChatSQL, poiché quest'ultimo è sottoposto al versionamento. Per garantire un rilascio controllato delle modifiche, il team ha definito delle Branch Protection Rules. I branch che non accettano push dall’ambiente locale sono i seguenti: 
 \begin{itemize}
-  \item main: ramo di produzione;
-  \item develop: ramo di sviluppo, disponibile all'interno del repository ChatSQL.
+  \item \textbf{main:} ramo di produzione;
+  \item \textbf{develop:} ramo di sviluppo, disponibile all'interno del repository ChatSQL.
 \end{itemize}
-\par Lo sviluppo in locale avviene nei cosiddetti feature branch. Quando una funzionalità è pronta per l'ambiente condiviso, l'assegnatario propone le modifiche tramite una pull request. La revisione è competenza del verificatore, che può decidere se approvare la richiesta, proporre ulteriori modifiche o, in caso di conflitti irriducibili, rifiutare la pull request. Sebbene la finalità principale delle pull request sia la verifica del codice, queste possono essere utilizzate anche come spazi di discussione e risoluzione di bug. Ad esempio, se un membro del team incontra delle difficoltà nello sviluppo di una feature, può inviare una richiesta e menzionare il resto del gruppo.
+\par Lo sviluppo in locale avviene nei cosiddetti feature branch. Quando una funzionalità è pronta per l'ambiente condiviso, l'assegnatario propone le modifiche tramite una pull request. La revisione è competenza del verificatore, che può decidere se approvare la richiesta, proporre ulteriori modifiche o, in caso di conflitti irriducibili, rifiutare la pull request. Sebbene la finalità principale delle pull request sia la verifica del codice, queste possono essere utilizzate anche come spazi di discussione e risoluzione di bug. Se un membro del team incontra delle difficoltà nello sviluppo di una feature, può quindi inviare una richiesta e menzionare il resto del gruppo.
 
 \subsubsubsection{Workflow}
 \par Il team adotta due tipi di workflow:
 \begin{itemize}
-  \item \textbf{Git feature branch:} utilizzato nel repository documentale. Questo workflow prevede che tutte le funzionalità siano sviluppate in un ramo dedicato anziché nel main branch. L'obiettivo del team è lavorare in un ambiente di \glossario{continuous integration}; di conseguenza, applicando il feature branch workflow, il ramo principale non dovrebbe mai contenere codice guasto. I comandi essenziali sono i seguenti:
+  \item \textbf{Git feature branch:} utilizzato nel repository documentale. Questo workflow prevede che tutte le funzionalità siano sviluppate in un ramo dedicato anziché nel main branch. L'obiettivo del team è lavorare in un ambiente di \glossario{continuous integration}; di conseguenza, applicando il "feature branch workflow", il ramo principale non dovrebbe mai contenere codice guasto. I comandi essenziali sono i seguenti:
   \begin{itemize}
     \item git pull origin main;
     \item git checkout -b feature-branch: creazione e passaggio automatico al nuovo branch;
-    \item git add .: aggiunta di tutti i file alla \glossario{staging area};
+    \item git add lista<nome_file>: aggiunta dei file alla \glossario{staging area};
     \item git commit -m "messaggio";
-    \item git push -u origin feature-branch: invia il branch al repository remoto.
+    \item git push -u origin feature-branch: invio del branch al repository remoto.
   \end{itemize}
-  \item \textbf{Gitflow:} utilizzato nel repository ChatSQL. Questo workflow prevede l'uso di due branch principali: main e develop. Il main branch contiene il codice sorgente pronto per il rilascio. Il develop, invece, funge da ramo di integrazione per le funzionalità sviluppate in locale. I comandi essenziali sono i seguenti:
+  \item \textbf{Gitflow:} utilizzato nel repository ChatSQL. Questo workflow prevede l'uso di due rami principali: main e develop. Il main contiene il codice sorgente pronto per il rilascio. Il develop, invece, funge da ramo di integrazione per le funzionalità sviluppate in locale. I comandi essenziali sono i seguenti:
   \begin{itemize}
     \item git pull origin develop;
     \item git checkout -b feature-branch;
-    \item git add .;
+    \item git add lista<nome_file>;
     \item git commit -m "messaggio";
     \item git push -u origin feature-branch.
+  \end{itemize}
 \end{itemize}
-\par La differenza principale rispetto al workflow precedente è che durante lo sviluppo, il ramo predefinito (ovvero il branch di destinazione delle pull request) è il develop. Il main branch registra la cronologia ufficiale dei rilasci. Quando si crea una branch di release, infatti, il merge deve essere effettuato sul main. Nel "gitflow workflow" è disponibile anche un branch di hotfix, che consente di aggiustare rapidamenti i rilasci di produzione.
+\par La differenza principale rispetto al workflow precedente è che durante lo sviluppo, il ramo predefinito (ovvero il branch di destinazione delle pull request) è il develop. Quando si crea una branch di release, invece, il merge deve essere effettuato sul main. Il branch main, infatti, registra la cronologia ufficiale dei rilasci. Nel "gitflow workflow" è disponibile anche un branch di hotfix, che consente di aggiustare rapidamenti i rilasci di produzione.
 \subsubsubsection{Apertura pull request}
 TODO
 \subsubsubsection{Verifica pull request}
