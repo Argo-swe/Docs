@@ -105,7 +105,43 @@ Come riportato nel registro delle modifiche dei documenti, ogni avanzamento di v
 \end{itemize}
 \par La differenza principale rispetto al workflow precedente è che durante lo sviluppo, il ramo predefinito (ovvero il branch di destinazione delle pull request) è il develop. Quando si crea una branch di release, invece, il merge deve essere effettuato sul main. Il branch main, infatti, registra la cronologia ufficiale dei rilasci. Nel "gitflow workflow" è disponibile anche un branch di hotfix, che consente di aggiustare rapidamenti i rilasci di produzione.
 \subsubsubsection{Apertura pull request}
-TODO
+Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team deve selezionare i seguenti branch:
+\begin{itemize}
+  \item \textbf{head ref:} il branch di partenza della pull request;
+  \item \textbf{base ref:} il branch di destinazione della pull request.
+\end{itemize}
+\par Una volta generata la pull request, il team deve compilare i seguenti campi:
+\begin{itemize}
+  \item \textbf{Titolo} della pull request: può contenere anche un riferimento al ticket \glossario{Jira} associato;
+  \item \textbf{Descrizione:} un resoconto delle modifiche proposte. Nella descrizione è opportuno inserire il commento [ARGO-ID], dove ID è il numero univoco del ticket;
+  \item \textbf{Reviewers:} uno o più verificatori;
+  \item \textbf{Assignees:} uno o più membri del team che propongono le modifiche e aggiornano la pull request;
+  \item \textbf{Labels:}
+  \begin{itemize}
+    \item Amministratore: attività assegnate agli amministratori;
+    \item Analista: attività assegnate agli analisti;
+    \item Progettista: attività assegnate ai progettisti;
+    \item Programmatore: attività assegnate ai programmatori;
+    \item Responsabile: attività assegnate ai responsabili;
+    \item Bug: anomalia software;
+    \item Documentazione: miglioramenti o integrazioni alla documentazione di progetto;
+    \item Help wanted: richiesta di supporto o assistenza;
+    \item Hotfix: soluzione immediata a un problema urgente;
+    \item Task: implementazione di una nuova funzionalità;
+    \item Ricerca: attività di ricerca (tecnologie, pattern, modelli, best practice);
+    \item Sviluppo: attività di sviluppo.
+  \end{itemize}
+  \item \textbf{Projects:} dopo l'adozione di \glossario{Jira} come \glossario{Issue Tracking System}, il team ha deciso di modificare la funzione della board di GitHub. Invece di registrare gli issue, la board elenca le pull request, suddivise in:
+  \begin{itemize}
+    \item No Status;
+    \item Todo;
+    \item In Progress;
+    \item Done.
+  \end{itemize}
+  \par Nel campo "Projects", il team deve selezionare la board del progetto Argo e la priorità della pull request, che può essere alta, media o bassa.
+\end{itemize}
+\par Se una pull request è stata creata ma non è ancora pronta per essere unita al ramo base, GitHub mette a disposizione un pulsante per convertirla in una bozza. Una volta ultimata la bozza, è possibile marcare la pull request come "pronta per la revisione".
+
 \subsubsubsection{Verifica pull request}
 TODO
 \subsubsubsection{Chiusura pull request}
