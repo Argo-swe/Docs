@@ -104,6 +104,7 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{RF.D.27} & Il sistema deve archiviare i vettori di embeddings generati durante il caricamento o la modifica del dizionario dati & Verbale Esterno\\
     \hline
+
     %\textbf{EX R.FOP19} & Il Tecnico deve poter incollare la \glossario{query} SQL. &  \hyperref[UC19]{UC19}\\ versione vecchia di un caso che non si sa se sia UC o test di unità
 \caption{Requisiti funzionali}
 \label{requisitifunzionali}
@@ -116,9 +117,19 @@ In questa sezione vengono descritti i requisiti volti a garantire la quelità de
   \hline
   \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
   \hline
-  \textbf{RQ.O.1} & Rispetto delle norme indicate nel documento \NdP{}. & \NdP{} \\
+  \textbf{RQ.O.1} & Rispetto delle norme indicate nel documento \NdP & \NdP \\
   \hline
-  \textbf{RQ.O.2} & Rispetto delle metriche indicate nel documento \PdQ{}. & \NdP{} \\
+  \textbf{RQ.O.2} & Rispetto delle metriche indicate nel documento \PdQ & \NdP \\
+  \hline
+  \textbf{RQ.D.3} & Il codice sorgente dell'applicazione deve essere pubblicato sul sito "github.com" o essere accessibile tramite altri repository pubblici & Capitolato \\
+  \hline
+  \textbf{RQ.D.4} & Il progetto deve essere di natura open source, per agevolare la continuità del prodotto risultante & Capitolato \\
+  \hline
+  \textbf{RQ.O.5} & Deve essere fornito un manuale utente per l'utilizzo dell'applicazione & Capitolato \\
+  \hline
+  \textbf{RQ.O.6} & Deve essere fornito un manuale per chiunque voglia estendere l'applicazione & Capitolato \\
+  \hline
+  \textbf{RQ.OP.7} & Deve essere definita una batteria di test per valutare l'accuratezza del prompt generato. Lo scopo dei test è verificare che mantenendo lo stesso prompt e chiedendo a un modello di riscrivere la frase dell'utente per un certo numero di volte, la query SQL risultante rimanga invariata & Verbale Esterno \\
   \hline
 \caption{Requisiti di qualità}
 \label{requisitiqualita}
