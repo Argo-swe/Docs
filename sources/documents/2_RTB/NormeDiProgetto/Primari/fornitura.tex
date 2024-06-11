@@ -94,10 +94,10 @@ Raccolta esaustiva di tutti i termini tecnici utilizzati nella documentazione. P
 Gli strumenti impiegati nel processo di fornitura sono:
 \begin{itemize}
   \item \textbf{LaTeX:} \glossario{markup language} utilizzato per la redazione della documentazione;
-  \item \textbf{Git:} \glossario{Version Control System} utilizzato dal gruppo;
-  \item \textbf{Zoom:} Strumento per videochiamate utilizzato nei rapporti con la Proponente;
+  \item \textbf{Git:} \glossario{Version Control System} adottato dal gruppo;
+  \item \textbf{Zoom:} Piattaforma per le riunioni con la Proponente e i Committenti;
   \item \textbf{Google Sheets:} Strumento per la creazione di \glossario{spreadsheet} condivisi, utilizzato per la pianificazione di \glossario{sprint} e per la rendicontazione delle ore;
-  \item \textbf{Google Moduli:} Strumento per la creazione di questionari online, utilizzato per la valutazione degli \glossario{sprint};
+  \item \textbf{Google Moduli:} Strumento per la creazione di questionari di valutazione degli \glossario{sprint};
   \item \textbf{Table Convert Online:} Strumento online per convertire file \glossario{csv} in \glossario{LaTeX} (disponibile al seguente link \href{https://tableconvert.com/it/csv-to-latex}{https://tableconvert.com/it/csv-to-latex});
   \item \textbf{PDF24 Tools:} Strumento online per convertire file SVG in PDF (disponibile al seguente link \href{https://tools.pdf24.org/it/svg-in-pdf}{https://tools.pdf24.org/it/svg-in-pdf}).
 \end{itemize}
@@ -139,8 +139,8 @@ Il responsabile può duplicare il foglio di calcolo dello \glossario{sprint} pre
 \par Per esportare le tabelle in formato \glossario{csv}, il team ha creato un foglio di calcolo aggiuntivo chiamato "Export". Il responsabile può copiare una tabella e incollarla su questo foglio, tramite le combinazioni di tasti "Ctrl+C" e "Ctrl+Shift+V". Una volta scaricato il file csv, il responsabile può convertire i dati in \glossario{LaTeX} e inserirli nel \PdP.
 \par I grafici sono generati automaticamente e si dividono in due categorie:
 \begin{itemize}
-  \item Grafici a torta 3D: possono essere scaricati direttamente in formato PDF;
-  \item Grafici a barre sovrapposte: devono essere scaricati in SVG e poi convertiti in PDF.
+  \item \textbf{Grafici a torta 3D:} possono essere scaricati direttamente in formato PDF;
+  \item \textbf{Grafici a barre sovrapposte:} devono essere scaricati in SVG e poi convertiti in PDF.
 \end{itemize}
 \par Il PDF è un formato vettoriale, il che significa che le immagini possono essere scalate senza perdita di qualità. Questo è particolarmente utile per diagrammi e grafici, poiché mantengono la nitidezza anche se ingranditi. Inoltre, il formato PDF è compatibile e facilmente integrabile con \glossario{LaTeX}.
 \par Nella sezione rendicontazione ore, il responsabile deve inserire:
@@ -173,7 +173,7 @@ Il responsabile può duplicare il foglio di calcolo dello \glossario{sprint} pre
 \paragraph*{Consuntivo}
 Tutte le tabelle del consuntivo vengono aggiornate automaticamente in base alla rendicontazione delle ore. Di seguito sono riporate le tre tabelle che compongono il consuntivo:
 \begin{itemize}
-  \item \textbf{Consuntivo orario:} il team ha definito una formula dinamica che somma le ore produttive per la coppia risorsa-ruolo. In questo modo è possibile automatizzare il calcolo del consuntivo anche quando i membri del team assumono più ruoli;
+  \item \textbf{Consuntivo orario:} il team ha definito una formula dinamica che somma le ore produttive per la coppia risorsa-ruolo. In questo modo è possibile automatizzare il calcolo del consuntivo anche quando i membri del team assumono più ruoli. La somma delle ore produttive per la coppia risorsa-ruolo è arrotondata per difetto;
   \item \textbf{Ore rimanenti} per la coppia risorsa-ruolo: viene calcolata la differenza tra le ore rimanenti al termine dello \glossario{sprint} precedente e le ore impiegate nello \glossario{sprint} attuale;
   \item \textbf{Consuntivo economico}, formato dai seguenti campi:
   \begin{itemize}
@@ -181,7 +181,7 @@ Tutte le tabelle del consuntivo vengono aggiornate automaticamente in base alla 
     \item Ore per ruolo;
     \item Delta ore preventivo - consuntivo: differenza tra le ore preventivate e quelle effettivamente spese;
     \item Costo (in €);
-    \item Delta costo consuntivo - preventivo: differenza tra il costo preventivato e quello effettivo.	
+    \item Delta costo preventivo - consuntivo: differenza tra il costo preventivato e quello effettivo.	
     \item Ore e budget spesi negli \glossario{sprint} precedenti;
     \item Ore e budget restanti.
   \end{itemize}
@@ -200,3 +200,14 @@ Tutte le tabelle del consuntivo vengono aggiornate automaticamente in base alla 
   \end{itemize}
 \end{itemize}
 \par Se il preventivo complessivo dovesse mutare, sia la tabella che il grafico corrispondente andrebbero aggiornati nel \PdP.
+
+\paragraph*{Rendicontazione ore} Ciascun foglio di calcolo dello \glossario{sprint} include una sezione dedicata alla rendicontazione delle ore. La tabella è organizzata come segue:
+\begin{itemize}
+  \item Data;
+  \item Membro del team:
+  \begin{itemize}
+    \item Ore produttive;
+    \item Ruolo;
+    \item Descrizione delle attività.
+  \end{itemize}
+\end{itemize}
