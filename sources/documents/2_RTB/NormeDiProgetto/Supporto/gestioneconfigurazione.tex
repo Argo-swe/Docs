@@ -143,10 +143,43 @@ Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team 
 \par Se una pull request è stata creata ma non è ancora pronta per essere unita al ramo base, GitHub mette a disposizione un pulsante per convertirla in una bozza. Una volta ultimata la bozza, è possibile marcare la pull request come "pronta per la revisione".
 
 \subsubsubsection{Verifica pull request}
-TODO
-\subsubsubsection{Chiusura pull request}
-TODO
+\par La lista delle pull request in attesa di revisione è visibile nella project board di GitHub. Per semplificare il lavoro dei verificatori, le pull request sono ordinate per priorità in ordine decrescente. Il contenuto delle pull request è suddiviso in tre sezioni principali:
+\begin{itemize}
+  \item L'area di conversazione: uno spazio di discussione funzionale alla risoluzione collaborativa di problemi;
+  \item La cronologia delle modifiche;
+  \item L'elenco dei file modificati: per ciascuna porzione di codice modificata, GitHub visualizza un confronto con il contenuto precedente alla modifica.
+\end{itemize}
+\par Il verificatore può applicare i seguenti filtri:
+\begin{itemize}
+  \item Visualizzazione di uno o più commit specifici;
+  \item Filtraggio dei file per estensione (es.: .tex);
+  \item Selezione della modalità di visualizzazione dei diff (differenze tra i file);
+  \item Filtraggio per il nome del file.
+\end{itemize}
+\par Per ogni file modificato, la procedura di revisione è la seguente:
+\begin{itemize}
+  \item Selezione di una riga o di una porzione di codice;
+  \item Cliccando sull'icona blu del commento, viene visualizzata una finestra di dialogo;
+  \item Inserimento di un commento descrittivo, positivo o negativo;
+  \item In alternativa, o in aggiunta, inserimento di una "suggestion". Un suggerimento è una modifica che gli sviluppatori possono integrare direttamente nel codice;
+  \item Pubblicazione del singolo commento o aggiunta del commento alla review. 
+\end{itemize}
+\par Il verificatore può lasciare anche un commento generale del file. Una volta completata la review, il verificatore deve selezionare una delle seguenti opzioni, lasciando al contempo un commento riassuntivo opzionale:
+\begin{itemize}
+  \item \textbf{Comment:} fornisce un feedback generale senza approvare esplicitamente la pull request;
+  \item \textbf{Approve:} accetta le modifiche proposte;
+  \item \textbf{Request changes:} suggerisce aggiustamenti e azioni correttive.
+\end{itemize}
+\par Quando uno sviluppatore apporta delle modifiche sostanziali a una pull request già verificata, deve richiedere nuovamente la revisione.
 
+\subsubsubsection{Chiusura pull request}
+\par La chiusura delle pull request che riguardano verbali interni ed esterni, o comunque documenti che richiedono un’approvazione pre-rilascio, spetta al responsabile. Questo perché, dopo la revisione del verificatore, è necessaria un’approvazione generale del documento e una firma. GitHub mette a disposizione del team tre modalità di merging e chiusura delle pull request:
+\begin{itemize}
+  \item \textbf{Create a merge commit:} i commit della pull request vengono aggiunti al ramo base tramite un merge commit;
+  \item \textbf{Squash and merge:} i commit della pull request vengono compressi in un unico commit e aggiunti al ramo base;
+  \item \textbf{Rebase and merge:} simile a un fast-forward merge che mantiene la cronologia del progetto lineare.
+\end{itemize}
+\par L'opzione scelta dal team è "Squash and merge", in quanto si tratta di una delle soluzioni più diffuse per mantenere la cronologia del progetto pulita nei \glossario{repository} pubblici.
 
 \subsubsection{Versionamento}
 Il gruppo mantiene un versionamento per la documentazione nel formato:
