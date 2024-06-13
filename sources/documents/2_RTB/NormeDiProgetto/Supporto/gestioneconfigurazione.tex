@@ -37,7 +37,7 @@
       \item clona/è clonato da;
       \item duplica/è duplicato da;
       \item item correlato a.
-    \end{itemize} 
+    \end{itemize}
   \item \textbf{Sviluppo}: un campo di integrazione tra \glossario{Jira} e \glossario{GitHub} che permette di monitorare lo stato di avanzamento dello sviluppo, con annessi link ai \glossario{branch}, \glossario{commit}, \glossario{pull request}, \glossario{build} e \glossario{distribuzioni} associati al \glossario{ticket};
   \item \textbf{Stato}: durante il suo ciclo di vita, un \glossario{ticket} attraversa tre stati: "To Do", "Doing" e "Done".
   \item \textbf{Versioni di correzione}: le versioni rappresentano punti temporali e traguardi intermedi nello svolgimento del progetto. Ciascun \glossario{ticket} può essere associato a una determinata versione. L'associazione \glossario{ticket}/versione può essere realizzata direttamente dal \glossario{backlog} del progetto. Le versioni possono trovarsi in uno dei seguenti tre stati:
@@ -57,7 +57,7 @@
 \par Su \glossario{Jira}, nelle impostazioni del progetto, è presente una sezione denominata “Automazione”, a sua volta suddivisa in quattro sottosezioni:
 \begin{itemize}
   \item \textbf{Regole}: elenco delle regole definite dall'amministratore; ciascuna regola richiede un trigger di innesco, ossia un evento che avvia l'esecuzione della procedura definita nel corpo della regola. Una volta stabilito il trigger di attivazione, l’amministratore può scegliere una delle seguenti opzioni:
-  \begin{itemize}  
+  \begin{itemize}
     \item THEN: aggiungi un'azione (es: transizione di un \glossario{ticket} da uno stato all'altro);
     \item IF: aggiungi una condizione (es: verifica se lo stato del \glossario{ticket} è diverso da “Completato”);
     \item FOR EACH: applica le azioni e le condizioni ad ogni task (es: esamina tutti i \glossario{ticket} collegati al \glossario{ticket} che ha attivato la regola ed esegue per ciascuno di essi una determinata azione);
@@ -86,25 +86,67 @@ Il gruppo mantiene un versionamento per la documentazione nel formato:
 \end{itemize}
 
 \subsubsection{Repository}
-Il gruppo utilizza due repository, disponibili in \glossario{Github}:
+Il gruppo utilizza due repository, disponibili su \glossario{GitHub}:
 \begin{itemize}
-  \item Repository della documentazione: \href{https://github.com/argo-swe/docs}{https://github.com/argo-swe/docs}
-  \item Repository del codice sorgente: \href{https://github.com/argo-swe/chatsql}{https://github.com/argo-swe/chatsql}
+  \item Repository della documentazione: \href{https://github.com/argo-swe/docs}{https://github.com/argo-swe/docs};
+  \item Repository del codice sorgente: \href{https://github.com/argo-swe/chatsql}{https://github.com/argo-swe/chatsql}.
 \end{itemize}
-Il gruppo utilizza inoltre, per hosting del sito \href{https://argo-swe.github.io}{argo-swe.github.io}, un repository, da non considerare all'interno del workflow in quanto aggiornata e mantenuta solo come "vetrina" del gruppo.
+Il gruppo impiega inoltre, per l'hosting del sito \href{https://argo-swe.github.io}{argo-swe.github.io}, un repository aggiuntivo, da non considerare parte del workflow principale in quanto aggiornato e mantenuto solo come "vetrina" del gruppo.
 \begin{itemize}
-  \item Repository del sito github.io: \href{https://github.com/argo-swe/argo-swe.github.io}{https://github.com/argo-swe/argo-swe.github.io}
+  \item Repository del sito github.io: \href{https://github.com/argo-swe/argo-swe.github.io}{https://github.com/argo-swe/argo-swe.github.io}.
 \end{itemize}
 
 \paragraph{Repository \emph{Docs}}
 Il repository contiene il codice sorgente in LaTeX di tutta la documentazione ufficiale generata durante il progetto, oltre all'ambiente utile alla generazione dei file PDF corrispondenti.\\
-Il repository include un file \emph{README.md} che illustra brevemente lo scopo del repository e i componenti del gruppo, un file \emph{.gitignore} per escludere il tracciamento di file ausiliari o artefatti di compilazione.\\
-La directory \emph{Logo} contiene le versioni ufficiali del logo del gruppo, in formato SVG o PNG.\\
-La directory \emph{sources} contiene il codice sorgente per la documentazione, separato in due directory: \emph{model} contiene i file di utilizzo globale all'interno della documentazione, \emph{documents} contiene, in maniera ordinata per fasi di progetto, la documentazione ufficiale.\\
-La directory \emph{tools} contiene gli strumenti \glossario{Docker} per utilizzare un ambiente unico nella compilazione e uno script per compilare autoamticamente uno o più documenti.\\
-\bigskip
-Il repository contiene un ramo base, in cui vengono inserite le versioni verificate dei documenti caricate nel repository attraverso \glossario{feature branch} su cui viene eseguita la verifica prima di eseguire \glossario{merge}.
-
+\par Di seguito è riportata la struttura del repository:
+\begin{itemize}
+  \item Il file \emph{README.md} illustra brevemente lo scopo del repository ed elenca i componenti del gruppo;
+  \item Il file \emph{.gitignore} evita il tracciamento di file ausiliari e artefatti di compilazione;
+  \item La directory \emph{Logo} contiene le versioni ufficiali del logo del gruppo, in formato SVG e PNG;
+  \item La directory \emph{sources} include il codice sorgente per la documentazione, suddiviso in due sotto-directory:
+  \begin{itemize}
+    \item \emph{model} contiene i file di utilizzo globale all'interno della documentazione;
+    \item \emph{documents} contiene, in maniera ordinata per fasi di progetto, la documentazione ufficiale.
+  \end{itemize}
+  \item La directory \emph{tools} contiene:
+  \begin{itemize}
+    \item Strumenti \glossario{Docker} per adottare un ambiente unico ed evitare problemi di compatibilità tra sistemi operativi;
+    \item Uno script per compilare automaticamente uno o più documenti.
+  \end{itemize}
+  \item La directory \emph{.github/workflows} contiene un file YAML che definisce un flusso di lavoro automatizzato. Il \glossario{workflow} viene attivato ad ogni merge di una pull request sul ramo base ed esegue i seguenti step:
+  \begin{itemize}
+    \item Clonazione del repository sorgente (tutta la cronologia, inclusi branch e tag) all'interno dell'ambiente di esecuzione del job (Ubuntu);
+    \item Salvataggio e ripristino della cache per evitare di scaricare nuovamente le dipendenze;
+    \item Nella cache viene memorizzata una chiave che include l'hash dei file \emph{docker-compose.yml} e \emph{Dockerfile}. Se il contenuto di uno di questi file cambia, anche la chiave cambia e la cache viene invalidata;
+    \item Autenticazione nel registro dei contenitori di GitHub attraverso un token di accesso in scrittura;
+    \item Avvio del contenitore Docker e caricamento dell'immagine su \glossario{GHCR} (se avviene un "cache miss");
+    \item Recupero dell'immagine da \glossario{GHCR} e avvio del contenitore Docker (se avviene un "cache hit");
+    \item Questa distinzione tra push e pull di un'immagine, in base alla presenza o meno di una chiave in cache, permette di ridurre significativamente i tempi di esecuzione del \glossario{workflow};
+    \item Compilazione dei documenti tramite shell interattiva all'interno del contenitore Docker;
+    \item Rimozione dei verbali esterni, poiché firmati dalla \glossario{Proponente}, dal build output;
+    \item Pubblicazione dell'artefatto generato durante il processo di build;
+    \item Clonazione del repository di destinazione (argo-swe.github.io) in una directory temporanea accessibile mediante token;
+    \item Caricamento dei file estratti dall'artefatto nella directory temporanea;
+    \item Commit e push dei documenti in formato PDF nel ramo base del repository di destinazione;
+    \item Arresto dell'esecuzione del contenitore Docker.
+  \end{itemize}
+\end{itemize}
+Il repository contiene un ramo base (main), in cui vengono inserite le versioni verificate e approvate dei documenti. I documenti vengono redatti all'interno di \glossario{feature branch}, i quali richiedono una fase di verifica prima di essere uniti al ramo base.
 
 \paragraph{Repository \emph{ChatSQL}}
-TODO
+Il repository contiene il codice sorgente dell'applicativo ChatSQL, oltre a un \glossario{workflow} GitHub Actions per l'analisi statica del codice, l'esecuzione dei test e la generazione automatica dell'artefatto. Il workflow è definito da un file YAML archiviato nella directory \emph{.github/workflows}.
+
+\par TODO. La struttura di questo repository va completata dopo la configurazione finale dell'ambiente.
+
+\begin{itemize}
+  \item Il file \emph{README.md} illustra brevemente lo scopo del repository ed elenca i componenti del gruppo;
+  \item Il file \emph{.gitignore} evita il tracciamento di file ausiliari e artefatti di compilazione;
+  \item Il file \emph{docker-compose.yml} definisce la struttura dei container docker;
+  \item La directory \emph{frontend} include il codice sorgente per la parte applicativa di frontend sviluppato in VueJS;
+  \item La directory \emph{backend} include il codice sorgente per la parte di backend, all'interno della sottocartella \emph{app} il codice è così suddivido:
+  \begin{itemize}
+    \item La directory \emph{engine} contiene la parte funzionale relativa la ricerca semantica;
+    \item La directory \emph{models} contiene i modelli \glossario{DTO} esposti dall'interfaccia;
+    \item La directory \emph{routes} contiene la definizione delle rotte dell'interfaccia esposta dal backend.
+  \end{itemize}
+\end{itemize}
