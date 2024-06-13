@@ -48,7 +48,7 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{RF.O.9} & L’Utente  deve poter visualizzare il dettaglio dei \glossario{dizionario dati} caricati, vedendone nome e descrizione. &  \hyperref[UC9]{UC9}\\
     \hline
-    \textbf{RF.O.10} & L’Utente  deve poter visualizzare la lista dei dizionari dati. &  \hyperref[UC10]{UC10}\\
+    \textbf{RF.O.10} & L’Utente  deve poter visualizzare la lista dei \glossario{dizionario dati}. &  \hyperref[UC10]{UC10}\\
     \hline
     \textbf{RF.O.11} & L’Utente  riceve un messaggio d'errore in caso di errore durante il caricamento del dettaglio del\glossario{dizionario dati}. &  \hyperref[UC11]{UC11}\\
     \hline
@@ -84,7 +84,7 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{RF.O.21} & Il Tecnico riceve un messaggio d'errore in caso di errore durante l'eliminazione del \glossario{dizionario dati}. &  \hyperref[21]{UC21}\\
     \hline
-    \textbf{RF.O.22} & Il Tecnico deve poter scaricare un log dallo strumento di debug &  \hyperref[UC22]{UC22}\\
+    \textbf{RF.O.22} & Il Tecnico deve poter scaricare un log dallo strumento di \glossario{debug}&  \hyperref[UC22]{UC22}\\
     \hline
     \textbf{RF.O.23} & Il Tecnico riceve un messaggio d'errore nel caso in cui il download del log non vada a buon fine. &  \hyperref[UC23]{UC23}\\
     \hline
@@ -120,7 +120,7 @@ In questa sezione vengono descritti i requisiti volti a garantire la quelità de
   \hline
   \textbf{RQ.O.2} & Rispetto delle metriche indicate nel documento \PdQ. & \NdP \\
   \hline
-  \textbf{RQ.D.3} & Il codice sorgente dell'applicazione deve essere pubblicato sul sito "github.com" o essere accessibile tramite altri repository pubblici. & Capitolato \\
+  \textbf{RQ.D.3} & Il codice sorgente dell'applicazione deve essere pubblicato sul sito "github.com" o essere accessibile tramite altri \glossario{repository} pubblici. & Capitolato \\
   \hline
   \textbf{RQ.D.4} & Il progetto deve essere di natura open source, per agevolare la continuità del prodotto risultante. & Capitolato \\
   \hline
@@ -128,9 +128,9 @@ In questa sezione vengono descritti i requisiti volti a garantire la quelità de
   \hline
   \textbf{RQ.O.6} & Deve essere fornito un manuale per chiunque voglia estendere l'applicazione. & Capitolato \\
   \hline
-  \textbf{RQ.OP.7} & Deve essere definita una batteria di test per valutare la ricerca semantica. Lo scopo dei test è verificare che tutte le tabelle necessarie siano presenti nel prompt. & Verbale Esterno 2024-05-22 \\
+  \textbf{RQ.OP.7} & Deve essere definita una batteria di test per valutare la \glossario{ricerca semantica}. Lo scopo dei test è verificare che tutte le tabelle necessarie siano presenti nel \glossario{prompt}. & Verbale Esterno 2024-05-22 \\
   \hline
-  \textbf{RQ.OP.8} & Deve essere definita una batteria di test per valutare l'accuratezza del prompt generato. Lo scopo dei test è verificare che mantenendo lo stesso prompt e chiedendo a un modello di riscrivere la frase dell'utente per un certo numero di volte, la query SQL rimanga invariata. & Verbale Esterno 2024-06-07 \\
+  \textbf{RQ.OP.8} & Deve essere definita una batteria di test per valutare l'accuratezza del prompt generato. Lo scopo dei test è verificare che mantenendo lo stesso prompt e chiedendo a un modello di riscrivere la frase dell'utente per un certo numero di volte, la \glossario{query} SQL rimanga invariata. & Verbale Esterno 2024-06-07 \\
   \hline
 \caption{Requisiti di qualità}
 \label{requisitiqualita}
@@ -150,7 +150,7 @@ TODO una volta identificate le tecnologie e versioni (es. python, steamlit, stru
   \hline
   \textbf{RV.O.3} & Il \glossario{dizionario dati} deve essere fornito tramite un file JSON. & Verbale interno \\
   \hline
-  \textbf{RV.O.4} & Il \glossario{dizionario dati} in formato JSON deve rispecchiare la struttura e il contenuto di un database. & Capitolato \\
+  \textbf{RV.O.4} & Il dizionario dati in formato JSON deve rispecchiare la struttura e il contenuto di un database. & Capitolato \\
   \hline
   \textbf{RV.O.5} & Il dizionario dati in formato JSON deve rispettare uno schema predefinito. & Verbale Interno \\
   \hline
@@ -158,35 +158,35 @@ TODO una volta identificate le tecnologie e versioni (es. python, steamlit, stru
   \hline
   \textbf{RV.OP.7} & Il file impiegato come dizionario dati può essere anche un \glossario{dump SQL} (esportabile direttamente da una base di dati). & Verbale Interno \\
   \hline
-  \textbf{RV.O.8} & Il \glossario{back-end} dell'applicativo deve essere implementato utilizzando il linguaggio \glossario{Python} versione 3.10.12. & Verbale Interno \\
+  \textbf{RV.O.8} & Il \glossario{back-end} dell'applicazione deve essere implementato utilizzando il linguaggio \glossario{Python} versione 3.10.12. & Verbale Interno \\
   \hline
-  \textbf{RV.O.9} & Il \glossario{back-end} dell'applicazione deve importare la libreria \glossario{Flask} versione 3.0.0 o successive. & Verbale Interno \\
+  \textbf{RV.O.9} & Il back-end dell'applicazione deve importare la libreria \glossario{Flask} versione 3.0.0 o successive. & Verbale Interno \\
   \hline
-  \textbf{RV.O.10} & Il \glossario{back-end} dell'applicazione deve importare la libreria \glossario{Flask-CORS} versione 4.0.0 o successive. & Verbale Interno \\
+  \textbf{RV.O.10} & Il back-end dell'applicazione deve importare la libreria \glossario{Flask-CORS} versione 4.0.0 o successive. & Verbale Interno \\
   \hline
-  \textbf{RV.O.11} & Il \glossario{back-end} dell'applicazione deve importare la libreria \glossario{txtai} versione 7.0.0 o successive. & Verbale Interno \\
+  \textbf{RV.O.11} & Il back-end dell'applicazione deve importare la libreria \glossario{txtai} versione 7.0.0 o successive. & Verbale Interno \\
   \hline
-  \textbf{RV.O.12} & Il \glossario{back-end} dell'applicazione deve utilizzare modelli di \glossario{sentence similarity} per la generazione degli \glossario{embeddings}. & Verbale Esterno 2024-05-06 \\
+  \textbf{RV.O.12} & Il back-end dell'applicazione deve utilizzare modelli di \glossario{sentence similarity} per la generazione degli \glossario{embeddings}. & Verbale Esterno 2024-05-06 \\
   \hline
-  \textbf{RV.O.13} & Gli \glossario{embeddings} devono essere salvati in un database di vettori. & Verbale Esterno 2024-05-06 \\
+  \textbf{RV.O.13} & Gli embeddings devono essere salvati in un database di vettori. & Verbale Esterno 2024-05-06 \\
   \hline
   \textbf{RV.O.14} & Il \glossario{front-end} dell'applicazione deve essere implementato utilizzando \glossario{Node.js} versione 20.14.0. & Verbale Interno \\
   \hline
-  \textbf{RV.O.15} & Il \glossario{front-end} dell'applicazione deve essere implementato utilizzando \glossario{Vue.js} versione 3.4.21. & Verbale Interno \\
+  \textbf{RV.O.15} & Il front-end dell'applicazione deve essere implementato utilizzando \glossario{Vue.js} versione 3.4.21. & Verbale Interno \\
   \hline
   \textbf{RV.O.16} & L'applicazione deve essere accessibile e fruibile da dispositivi mobili con sistema operativo Android versione 13 e successive. & Verbale Interno \\
   \hline
   \textbf{RV.O.17} & L'applicazione deve essere accessibile e fruibile da dispositivi mobili con sistema operativo iOS versione 17 e successive. & Verbale Interno \\
   \hline
-  \textbf{RV.O.18} & L'applicazione deve essere compatibile con il \glossario{browser} Google Chrome versione 110 e successive. & Verbale Interno \\
+  \textbf{RV.O.18} & L'applicazione deve essere compatibile con il browser Google Chrome versione 110 e successive. & Verbale Interno \\
   \hline
-  \textbf{RV.O.19} & L'applicazione deve essere compatibile con il \glossario{browser} Mozilla Firefox versione 109 e successive. & Verbale Interno \\
+  \textbf{RV.O.19} & L'applicazione deve essere compatibile con il browser Mozilla Firefox versione 109 e successive. & Verbale Interno \\
   \hline
-  \textbf{RV.O.20} & L'applicazione deve essere compatibile con il \glossario{browser} Safari versione 15 e successive. & Verbale Interno \\
+  \textbf{RV.O.20} & L'applicazione deve essere compatibile con il browser Safari versione 15 e successive. & Verbale Interno \\
   \hline
-  \textbf{RV.O.21} & L'applicazione deve essere compatibile con il \glossario{browser} Opera versione 94 e successive. & Verbale Interno \\
+  \textbf{RV.O.21} & L'applicazione deve essere compatibile con il browser Opera versione 94 e successive. & Verbale Interno \\
   \hline
-  \textbf{RV.O.22} & L'applicazione deve essere compatibile con il \glossario{browser} Microsoft Edge versione 110 e successive. & Verbale Interno \\
+  \textbf{RV.O.22} & L'applicazione deve essere compatibile con il browser Microsoft Edge versione 110 e successive. & Verbale Interno \\
   \hline
   \textbf{RV.OP.23} & L'applicazione deve essere sviluppata, testata e distribuita mediante \glossario{Docker}. & Verbale Interno \\
   \hline
