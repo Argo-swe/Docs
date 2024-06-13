@@ -137,7 +137,7 @@ In questa sezione vengono descritti i requisiti volti a garantire la quelità de
 \label{requisitiqualita}
 \end{longtable}
 
-\subsection{Requisiti di vincolo}
+\subsection{Requisiti di dominio / vincolo}
 In questa sezione vengono descritti i requisiti che pongolo le condizioni da rispettare durante lo sviluppo del sistema.
 
 TODO una volta identificate le tecnologie e versioni (es. python, steamlit, struttura dizionario dati, ...) vanno inserite qui
@@ -145,9 +145,37 @@ TODO una volta identificate le tecnologie e versioni (es. python, steamlit, stru
   \hline
   \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
   \hline
-  \textbf{RV.O.1} & Il prodotto deve essere integrato in un unico sistema che permetta l'utilizzo in modo integrato. & \emph{Capitolato} \\
+  \textbf{RV.O.1} & L'applicazione deve essere organica. Le funzionalità del prodotto devono essere incorporate in un unico sistema che permetta di utilizzarle in modo integrato. & Capitolato \\
   \hline
-  \textbf{RV.O.2} & Sviluppo di un'applicazione web. & \emph{Capitolato} \\
+  \textbf{RV.O.2} & Sviluppo di un'applicazione web. & Verbale esterno 2024-04-09 \\
+  \hline
+  \textbf{RV.O.3} & Il \glossario{dizionario dati} deve essere fornito tramite un file JSON & Verbale interno \\
+  \hline
+  \textbf{RV.O.4} & Il \glossario{dizionario dati} in formato JSON deve rispecchiare la struttura e il contenuto del database & Capitolato \\
+  \hline
+  \textbf{RV.O.5} & Il dizionario dati in formato JSON deve rispettare una struttura predefinita. & Verbale Interno \\
+  \hline
+  \textbf{RV.O.6} & La dimensione del file JSON utilizzato come dizionario dati deve essere inferiore a 1MB & Verbale Interno \\
+  \hline
+  \textbf{RV.OP.7} & Il file impiegato come dizionario dati può essere anche un \glossario{dump SQL} (esportabile direttamente da una base di dati) & Verbale Interno \\
+  \hline
+  \textbf{RV.O.8} & Il \glossario{back-end} dell'applicativo deve essere implementato utilizzando il linguaggio \glossario{Python} versione 3.10.12 & Verbale Interno \\
+  \hline
+  \textbf{RV.O.9} & Il \glossario{back-end} dell'applicativo deve importare la libreria \glossario{Flask} versione 3.0.0 o successive & Verbale Interno \\
+  \hline
+  \textbf{RV.O.10} & Il \glossario{back-end} dell'applicativo deve importare la libreria \glossario{Flask-CORS} versione 4.0.0 o successive & Verbale Interno \\
+  \hline
+  \textbf{RV.O.11} & Il \glossario{back-end} dell'applicativo deve importare la libreria \glossario{txtai} versione 7.0.0 o successive & Verbale Interno \\
+  \hline
+  \textbf{RV.O.12} & Il \glossario{back-end} dell'applicativo deve utilizzare modelli di \glossario{sentence similarity} per convertire input testuali in \glossario{embeddings} & Verbale Esterno 2024-05-06 \\
+  \hline
+  \textbf{RV.O.13} & Il \glossario{back-end} dell'applicativo deve utilizzare modelli di \glossario{sentence similarity} per convertire input testuali in \glossario{embeddings} & Verbale Esterno 2024-05-06 \\
+  \hline
+  \textbf{RV.O.14} & Gli \glossario{embeddings} devono essere salvati in un database di vettori & Verbale Esterno 2024-05-06 \\
+  \hline
+  \textbf{RV.O.15} & Il \glossario{front-end} dell'applicativo deve essere implementato utilizzando \glossario{Vue.js} versione 3.4.21 & Verbale Interno \\
+  \hline
+  \textbf{RV.OP.16} & L'applicativo deve essere eseguito in un contenitore \glossario{Docker} & Verbale Interno \\
   \hline
 \caption{Requisiti di vincolo}
 \label{requisitivincolo}
