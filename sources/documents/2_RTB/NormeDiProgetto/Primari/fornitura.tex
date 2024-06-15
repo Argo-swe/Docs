@@ -90,22 +90,22 @@ TODO
 \paragraph{Glossario}
 Raccolta esaustiva di tutti i termini tecnici utilizzati nella documentazione. Permette di eliminare ambiguità e fraintendimenti fornendo una defizione univoca ed esaustiva per l'intero gruppo e per chi consulta la documentazione prodotta.
 
-
-
-
 \subsubsection{Strumenti}
 Gli strumenti impiegati nel processo di fornitura sono:
 \begin{itemize}
   \item \textbf{LaTeX:} \glossario{markup language} utilizzato per la redazione della documentazione;
-  \item \textbf{Git:} \glossario{Version Control System} utilizzato dal gruppo;
-  \item \textbf{Zoom:} Strumento per videochiamate utilizzato nei rapporti con la Proponente;
-  \item \textbf{Google Sheets:} Strumento per la creazione di \glossario{spreadsheet} condivisi, utilizzato per la pianificazione di \glossario{sprint} e \glossario{rendicontazione ore}.
+  \item \textbf{Git:} \glossario{Version Control System} adottato dal gruppo;
+  \item \textbf{Zoom:} Piattaforma per le riunioni con la Proponente e i Committenti;
+  \item \textbf{Google Sheets:} Strumento per la creazione di \glossario{spreadsheet} condivisi, utilizzato per la pianificazione di \glossario{sprint} e per la rendicontazione delle ore;
+  \item \textbf{Google Moduli:} Strumento per la creazione di questionari di valutazione degli \glossario{sprint};
+  \item \textbf{Table Convert Online:} Strumento online per convertire file \glossario{csv} in \glossario{LaTeX} (disponibile al seguente link \href{https://tableconvert.com/it/csv-to-latex}{https://tableconvert.com/it/csv-to-latex});
+  \item \textbf{PDF24 Tools:} Strumento online per convertire file SVG in PDF (disponibile al seguente link \href{https://tools.pdf24.org/it/svg-in-pdf}{https://tools.pdf24.org/it/svg-in-pdf}).
 \end{itemize}
 
 \subsubsubsection{Dashboard Google Sheets}
-Lo \glossario{spreadsheet} condiviso, realizzato tramite \glossario{Google Sheets} e accessibile su \glossario{Google Drive}, ha lo scopo di automazizare la generazione di preventivi e consuntivi (orari ed economici). Il foglio di calcolo principale è suddiviso in più fogli interni:
+Lo \glossario{spreadsheet} condiviso, realizzato tramite \glossario{Google Sheets} e visibile su \glossario{Google Drive}, ha lo scopo di automatizzare la generazione di preventivi e consuntivi (orari ed economici). Il foglio di calcolo principale è suddiviso nei seguenti fogli interni:
 \begin{itemize}
-  \item Un foglio contenente le variabili globali da utilizzare nei fogli successivi, incluso il preventivo definito in fase di candidatura;
+  \item Un foglio contenente le variabili globali del \PdP, inclusi il costo orario di ciascun ruolo e il budget totale;
   \item Un foglio nascosto per ciascun periodo, che include le risposte al questionario di valutazione dello sprint;
   \item Un foglio per ogni sprint con le seguenti informazioni:
   \begin{itemize}
@@ -119,5 +119,95 @@ Lo \glossario{spreadsheet} condiviso, realizzato tramite \glossario{Google Sheet
     \item Pie chart con la stima delle ore spese sul totale;
     \item Pie chart con la stima del budget sul totale;
     \item Ore rimanenti per la coppia risorsa-ruolo.
+  \end{itemize}
+\end{itemize}
+\vspace{0.5\baselineskip}
+\par La dashboard è stata progettata per affiancare il responsabile nella stesura delle seguenti sezioni del \PdP:
+\begin{itemize}
+  \item Preventivo;
+  \item Consuntivo.
+\end{itemize}
+
+\paragraph*{Preventivo}
+Il responsabile può duplicare il foglio di calcolo dello \glossario{sprint} precedente e modificare le seguenti informazioni:
+\begin{itemize}
+  \item \textbf{Sprint-ID}, dove ID corrisponde al numero dello \glossario{sprint};
+  \item I riferimenti temporali, nel formato "dal aaaa-mm-gg al aaaa-mm-gg";
+  \item \textbf{Preventivo orario:} per ciascuna coppia risorsa-ruolo, il responsabile deve inserire nella cella apposita le ore produttive previste;
+  \item La tabella "preventivo economico" si aggiorna dinamicamente.
+\end{itemize}
+\par Per esportare le tabelle in formato \glossario{csv}, il team ha creato un foglio di calcolo aggiuntivo chiamato "Export". Il responsabile può copiare una tabella e incollarla su questo foglio, tramite le combinazioni di tasti "Ctrl+C" e "Ctrl+Shift+V". Una volta scaricato il file csv, il responsabile può convertire i dati in \glossario{LaTeX} e inserirli nel \PdP.
+\par I grafici sono generati automaticamente e si dividono in due categorie:
+\begin{itemize}
+  \item \textbf{Grafici a torta 3D:} possono essere scaricati direttamente in formato PDF;
+  \item \textbf{Grafici a barre sovrapposte:} devono essere scaricati in SVG e poi convertiti in PDF.
+\end{itemize}
+\par Il PDF è un formato vettoriale, il che significa che le immagini possono essere scalate senza perdita di qualità. Questo è particolarmente utile per diagrammi e grafici, poiché mantengono la nitidezza anche se ingranditi. Inoltre, il formato PDF è compatibile e facilmente integrabile con \glossario{LaTeX}.
+\par Nella sezione rendicontazione ore, il responsabile deve inserire:
+\begin{itemize}
+  \item Le date di inizio e fine dello \glossario{sprint};
+  \item I ruoli di ciascun componente del team;
+  \item Un link al questionario di valutazione dello \glossario{sprint}.
+\end{itemize}
+\par Il questionario è un modulo \glossario{Google Moduli} che può essere creato all'interno della dashboard. Il questionario ha la seguente struttura:
+\begin{itemize}
+  \item \textbf{Titolo:} Valutazione Sprint-ID, dove ID corrisponde al numero dello \glossario{sprint};  
+  \item \textbf{Descrizione:} Questionario per la valutazione dello sprint-ID;
+  \item \textbf{Domande} (scelta multipla, scala lineare da 1 a 10, risposta breve, scala lineare da 1 a 5, paragrafo):
+  \begin{itemize}
+    \item "Come ti è sembrata l'organizzazione dello sprint?";
+    \item "Come si potrebbe migliorare la pianificazione?";
+    \item "Sapevi sempre cosa fare nel tuo ruolo?";
+    \item "Spiega i motivi della risposta precedente (organizzazione, inesperienza, ecc.)";
+    \item "Il numero di riunioni è stato adeguato?";
+    \item "Le riunioni sono state organizzate con il giusto preavviso?";
+    \item "Come ti è sembrata la conduzione dei meeting interni?";
+    \item "Come ti è sembrata la conduzione dei meeting esterni?";
+    \item "Quanto ti sei impegnato/a in questo sprint?";
+    \item "Qual è stato il rapporto ore spese/ore produttive?";
+    \item "Quali azioni correttive avvieresti dal prossimo sprint?".
+  \end{itemize}
+\end{itemize}
+\par Dopo aver creato un nuovo modulo, il responsabile può utilizzare la funzione "Importa domande". Questa feature consente di importare quesiti da un modulo esistente. Cliccando il pulsante "Invia", è possibile inoltre copiare il link da incollare nel foglio di calcolo. Nella dashboard \glossario{Google Sheets} viene aggiunto in automatico un foglio contenente le risposte al questionario; i fogli degli sprint precedenti possono essere nascosti.
+
+\paragraph*{Consuntivo}
+Tutte le tabelle del consuntivo vengono aggiornate automaticamente in base alla rendicontazione delle ore. Di seguito sono riporate le tre tabelle che compongono il consuntivo:
+\begin{itemize}
+  \item \textbf{Consuntivo orario:} il team ha definito una formula dinamica che somma le ore produttive per la coppia risorsa-ruolo. In questo modo è possibile automatizzare il calcolo del consuntivo anche quando i membri del team assumono più ruoli. La somma delle ore produttive per la coppia risorsa-ruolo è arrotondata per difetto;
+  \item \textbf{Ore rimanenti} per la coppia risorsa-ruolo: viene calcolata la differenza tra le ore rimanenti al termine dello \glossario{sprint} precedente e le ore impiegate nello \glossario{sprint} attuale;
+  \item \textbf{Consuntivo economico}, formato dai seguenti campi:
+  \begin{itemize}
+    \item Ruolo;
+    \item Ore per ruolo;
+    \item Delta ore preventivo - consuntivo: differenza tra le ore preventivate e quelle effettivamente spese;
+    \item Costo (in €);
+    \item Delta costo preventivo - consuntivo: differenza tra il costo preventivato e quello effettivo.	
+    \item Ore e budget spesi negli \glossario{sprint} precedenti;
+    \item Ore e budget restanti.
+  \end{itemize}
+\end{itemize}
+\par Il processo di esportazione di tabelle e grafici segue le stesse regole del preventivo. Tutte le tabelle e i grafici del consuntivo devono essere inseriti nel \PdP. Una volta completata la stesura del consuntivo nel \PdP, il responsabile deve aggiornare le variabili globali nel foglio "Pdp-global":
+\begin{itemize}
+  \item \textbf{Ultimo-Sprint:} ID, dove ID è il numero dell'ultimo \glossario{sprint};
+  \item \textbf{Preventivo complessivo} (da modificare qualora sia necessaria una ridistribuzione delle ore per ruolo):
+  \begin{itemize}
+    \item Ruolo;
+    \item Ore per ruolo;
+    \item Ore individuali;
+    \item Costo orario (in €);
+    \item Costo totale (in €);
+    \item Ore e budget restanti, ricavati dal consuntivo economico dell'ultimo sprint. 
+  \end{itemize}
+\end{itemize}
+\par Se il preventivo complessivo dovesse mutare, sia la tabella che il grafico corrispondente andrebbero aggiornati nel \PdP.
+
+\paragraph*{Rendicontazione ore} Ciascun foglio di calcolo dello \glossario{sprint} include una sezione dedicata alla rendicontazione delle ore. La tabella è organizzata come segue:
+\begin{itemize}
+  \item Data;
+  \item Membro del team:
+  \begin{itemize}
+    \item Ore produttive;
+    \item Ruolo;
+    \item Descrizione delle attività.
   \end{itemize}
 \end{itemize}
