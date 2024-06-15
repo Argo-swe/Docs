@@ -172,6 +172,7 @@ Nell'arco del terzo \glossario{sprint}, il team ha svolto le seguenti attività:
   \item In seguito alle considerazioni del team riguardo la necessità di una maggiore supervisione da parte del responsabile, quest'ultimo dovrà impegnarsi, a partire dalla prossima iterazione, a stabilire degli intervalli di tempo sufficientemente brevi alla fine dei quali verificare lo stato di avanzamento delle attività;
   \item La conduzione delle riunioni esterne ha evidenziato l'inesperienza del team nel rapporto con la \glossario{Proponente}, che assume a tutti gli effetti il ruolo di cliente, le cui conoscenze tecniche sono spesso asimmetriche rispetto a quelle dei fornitori. La discussione dei dettagli implementativi è un processo interno al gruppo e, pertanto, non deve coinvolgere il cliente. In futuro sarà quindi opportuno mantenere la discussione a un livello più alto, concentrandosi sul "cosa" piuttosto che sul "come";
   \item Malgrado le difficoltà nell'individuare gli standard per la gestione dei servizi IT, i membri con il ruolo di amministratore sono stati in grado di reperire sufficiente documentazione, seppur meno recente, per un'adeguata stesura delle metriche di qualità e la loro categorizzazione;
+  \item Sebbene \glossario{Streamlit} abbia dei limiti dal punto di vista del design, il team ha deciso di investire un numero cospicuo di risorse nella progettazione dell'interfaccia grafica. In questo modo, qualora il gruppo dovesse scegliere di cambiare \glossario{framework}, la transizione risulterebbe meno gravosa.
 \end{itemize}
 
 \subsubsection{Aggiornamento pianificazione e preventivo}
@@ -185,6 +186,13 @@ Nell'arco del terzo \glossario{sprint}, il team ha svolto le seguenti attività:
 \end{itemize}
 
 \paragraph*{Pianificazione futura:}
+Data l'assenza di una suite di test automatici, il \glossario{benchmark} dei modelli di \glossario{sentence similarity} ha richiesto uno sforzo maggiore in termini di tempo e non ha prodotto risultati sufficientemente attendibili. Di conseguenza, il team ha aggiornato la pianificazione del prossimo \glossario{sprint}, fissando come task ad alta priorità la definizione dei test di unità. Mediante l'esecuzione automatica di una batteria di test, il gruppo ritiene di poter verificare con maggior rigore l'affidabilità dei modelli di AI scelti. Come definito nella \glossario{retrospettiva}, il team non ha ancora finalizzato la scelta delle tecnologie, in quanto lo sviluppo degli scenari critici verrà ultimato nel prossimo \glossario{sprint}. Pertanto, il gruppo ha stabilito di proseguire l'analisi di framework \glossario{back-end} e \glossario{front-end} alternativi anche nel prossimo periodo, al termine del quale verrà presa una decisione definitiva. La \glossario{dockerizzazione} dell'ambiente di sviluppo, invece, è stata pianificata per lo \glossario{sprint} 5. Le dipendenze del progetto verranno infatti delineate nell'arco della prossima iterazione.
+\par Per quanto riguarda le metriche di qualità, il team ha fissato i seguenti obiettivi:
+\begin{itemize}
+  \item Individuazione delle metriche più significative;
+  \item Identificazione di strumenti per automatizzare il calcolo delle metriche.
+\end{itemize}
+\par Dopo aver preso in considerazione un ampio insieme di indicatori, il gruppo ritiene infatti necessario operare una scrematura delle metriche individuate.
 
 \paragraph*{Preventivo "a finire" (\sezione{sec:stima_temporale}):}
 
