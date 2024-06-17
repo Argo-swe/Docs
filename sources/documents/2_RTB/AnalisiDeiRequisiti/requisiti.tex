@@ -115,6 +115,8 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{RF.O.33} & Il dizionario dati deve rispecchiare la struttura di un database, e contenere descrizioni in linguaggio naturale delle tabelle e dei rispettivi campi. & Verbale Esterno 2024-04-09 \\
     \hline
+    \textbf{RF.O.34} & Il prompt deve contenere almeno le descrizioni delle tabelle e delle colonne. & Verbale esterno 2024-06-07 \\
+    \hline
     %\textbf{EX R.FOP19} & Il Tecnico deve poter incollare la \glossario{query} SQL. &  \hyperref[UC19]{UC19}\\ versione vecchia di un caso che non si sa se sia UC o test di unità
 \caption{Requisiti funzionali}
 \label{requisitifunzionali}
@@ -139,11 +141,9 @@ In questa sezione vengono descritti i requisiti volti a garantire la quelità de
   \hline
   \textbf{RQ.O.6} & Deve essere fornito un manuale per chiunque voglia estendere l'applicazione. & Capitolato \\
   \hline
-  \textbf{RQ.D.7} & Verificare la correttezza della ricerca semantica, ovvero l'estrazione dal dizionario dati di tutte le tabelle necessarie. & Verbale Esterno 2024-05-22 \\
+  \textbf{RQ.O.7} & Il sistema deve avere un'alta recall, ovvero il prompt generato deve contenere le tabelle necessarie per costruire correttamente la query SQL. & Verbale Esterno 2024-05-22 \\
   \hline
-  \textbf{RQ.OP.8} & Verificare l'accuratezza del prompt generato. & Verbale Esterno 2024-06-07 \\
-  \hline
-  \textbf{RQ.OP.9} & Verificare la correttezza delle query SQL fornite dal sistema di AI. Avendo a disposizione un database, oltre ai metadati, è possibile controllare quante query SQL fornite da un \glossario{LLM} risultano efficaci. & Capitolato \\
+  \textbf{RQ.O.8} & Il prompt deve riportare, per ogni tabella, le informazioni necessarie affinché il modello di AI generi una query SQL corretta. & Verbale Esterno 2024-06-07 \\
   \hline
 \caption{Requisiti di qualità}
 \label{requisitiqualita}
@@ -167,7 +167,7 @@ TODO una volta identificate le tecnologie e versioni (es. python, steamlit, stru
   \hline
   \textbf{RV.O.5} & La dimensione del file JSON utilizzato come dizionario dati deve essere inferiore a 1MB. & Verbale Interno \\
   \hline
-  \textbf{RV.OP.6} & Il file impiegato come dizionario dati può essere anche un \glossario{dump SQL} (esportabile direttamente da una base di dati). & Verbale Interno \\
+  \textbf{RV.O.6} & Il file impiegato come dizionario dati può essere anche un \glossario{dump SQL} (esportabile direttamente da una base di dati). & Verbale Interno \\
   \hline
   \textbf{RV.O.7} & Il \glossario{back-end} dell'applicazione deve essere implementato utilizzando il linguaggio \glossario{Python} versione 3.10.12. & Verbale Interno \\
   \hline
