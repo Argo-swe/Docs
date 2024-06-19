@@ -20,45 +20,45 @@
 
 \par \textbf{Risposta:} La \glossario{Proponente} ha approvato la struttura generale del prototipo.
 
-\par \textbf{Descrizione:} Il gruppo ha mostrato la funzionalità di generazione di un \glossario{prompt} successivo alla scelta di un \glossario{dizionario dati} e all'inserimento di una richiesta. I modelli impiegati dal team sono stati "all-MiniLM-L6-v2", "all-MiniLM-L12-v2" e "paraphrase-multilingual-MiniLM-L12-v2".
+\par \textbf{Descrizione:} Il gruppo ha mostrato la funzionalità di generazione di un \glossario{prompt}, che avviene dopo la scelta di un \glossario{dizionario dati} e l'inserimento di una richiesta. I \glossario{modelli} impiegati dal team sono stati "all-MiniLM-L6-v2", "all-MiniLM-L12-v2" e "paraphrase-multilingual-MiniLM-L12-v2".
 
 \par \textbf{Risposta:} La Proponente ha consigliato di provare "sentence-BERTino" come \glossario{modello} in lingua italiana.
 
-\par \textbf{Descrizione:} Il gruppo ha utilizzato "sentence-BERTino" in precedenza, ma i punteggi restituiti dalla funzione search di \glossario{txtai}, per quanto superiori rispetto ad altri modelli, sembravano essere troppo uniformati. Tuttavia, il team ha impiegato questo modello solo nelle fasi iniziali del progetto, quando ancora il dizionario dati era incompleto.
+\par \textbf{Descrizione:} Il gruppo ha già utilizzato "sentence-BERTino" in precedenza, ma i punteggi restituiti dalla funzione search di \glossario{txtai}, per quanto superiori rispetto ad altri modelli, sembravano essere troppo uniformati. Tuttavia, il team ha impiegato questo modello solo nelle fasi iniziali del progetto, quando ancora il dizionario dati era incompleto.
 \par \textbf{Risposta:} La Proponente ha invitato il team a provare anche altri modelli, sempre in lingua italiana, come ad esempio “mmarco-sentence-BERTino”. Inoltre, ha consigliato al gruppo di inserire descrizioni in italiano all'interno del dizionario dati.
 
-\par \textbf{Descrizione:} Il gruppo ha testato la funzionalità di generazione del \glossario{prompt}.
+\par \textbf{Descrizione:} Il team ha testato la funzionalità di generazione del \glossario{prompt}.
 \par \textbf{Risposta:} La Proponente ha approvato la funzionalità e ha proposto dei test ulteriori che sono stati eseguiti durante la riunione. Questi test prevedono di copiare il \glossario{prompt} generato su chat.lmsys.org per verificare la costruzione delle \glossario{query} SQL con soluzioni alternative a ChatGPT.
-\par \textbf{Descrizione:} Il \glossario{prompt} è stato testato con 7 \glossario{LLM} diversi (GPT, yi-1.5-34b, qwen2-72b, claude-3-haiku, command-r, llama-3-8b, openhermes-2.5-mistral-7b). I risultati emersi hanno confermato la correttezza del \glossario{prompt}, in quanto i modelli hanno restituito la medesima \glossario{query} SQL. L'unica eccezione è stata l'aggiunta della lettera iniziale maiuscola per i nomi propri da parte di alcuni modelli, anche se non era specificato nella frase inserita dall'utente.
+\par \textbf{Descrizione:} Il \glossario{prompt} è stato testato con 7 \glossario{LLM} diversi (gpt, yi-1.5-34b, qwen2-72b, claude-3-haiku, command-r, llama-3-8b, openhermes-2.5-mistral-7b). I risultati emersi hanno confermato la correttezza del \glossario{prompt}, in quanto i modelli hanno restituito la medesima \glossario{query} SQL. L'unica eccezione è stata l'uso della lettera iniziale maiuscola per i nomi propri da parte di alcuni modelli, anche se non era specificato nella frase in linguaggio naturale.
 
 \par \textbf{Risposta:} La Proponente ha suggerito di cambiare il \glossario{DBMS} e di non utilizzare solo MariaDB, ma anche PostgreSQL o affini.
 
 \par \textbf{Descrizione:} Dopo aver testato con successo il cambio del DBMS, il team ha proposto l'implementazione di tale funzionalità e l'aggiunta di un caso d'uso simile alla selezione della lingua.
 
-\par \textbf{Risposta:} La Proponente ha manifestato interesse per questa funzionalità e ne ha sostenuto l'implementazione.
+\par \textbf{Risposta:} La Proponente ha manifestato interesse per questa funzionalità e ne ha appoggiato l'implementazione.
 \par \textbf{Descrizione:} Il team ha testato altre richieste, analizzando la struttura del \glossario{prompt}.
 
 \par \textbf{Risposta:} La Proponente ha evidenziato una lacuna nel \glossario{prompt} restituito, poiché quest'ultimo riportava i nomi delle tabelle e dei campi, ma non le descrizioni in linguaggio naturale. Nei database aziendali, i nomi delle tabelle e dei campi sono spesso poco significativi e necessitano di una descrizione esplicativa.
-\par \textbf{Descrizione:} Alla luce della nuova struttura del \glossario{prompt}, è possibile ridurre la dimensione del prompt restituendo solo le descrizioni delle colonne rilevanti?
-\par \textbf{Risposta:} La Proponente ha sottolineato come ChatGPT gestisca 128.000 token, mentre Gemini 1 milione. Inoltre, risulterebbe difficile stabilire un criterio con cui identificare le colonne rilevanti, specialmente nel caso di chavi esterne. Pertanto, la Proponente ha consigliato al team di restituire le descrizioni di tutti i campi delle tabelle.
+\par \textbf{Domanda:} Alla luce della nuova struttura del \glossario{prompt}, è possibile ridurre la dimensione del prompt restituendo solo le descrizioni delle colonne rilevanti?
+\par \textbf{Risposta:} La Proponente ha sottolineato come ChatGPT gestisca 128.000 token, mentre Gemini 1 milione. Inoltre, risulterebbe difficile stabilire un criterio con cui identificare le colonne rilevanti, specialmente nel caso di chiavi esterne. Pertanto, la Proponente ha consigliato al team di restituire le descrizioni di tutti i campi delle tabelle.
 
 \par \textbf{Descrizione:} Il gruppo ha discusso la possibilità che vengano inserite nel prompt delle tabelle non pertinenti alla richiesta dell'utente.
 
-\par \textbf{Risposta:} La Proponente ha evidenziato la scelta del team di privilegiare la recall del sistema rispetto alla precisione. Si tratta di una decisione che la Proponente si aspettava e che rispetta i requisiti del capitolato.
+\par \textbf{Risposta:} La Proponente ha evidenziato la scelta del team di privilegiare la recall del sistema rispetto alla precisione. Si tratta di una decisione che la Proponente si aspettava e che rispetta i requisiti del \glossario{capitolato}.
 
 \par \textbf{Descrizione:} Per la funzionalità di \glossario{debug}, il team ha creato un file di \glossario{log} che illustra il processo di generazione del prompt. Il file è diviso in due sezioni; la prima elenca le tabelle restituite dalla funzione search di txtai con il relativo punteggio. Per ogni tabella, è riportata una classifica di importanza dei termini della descrizione. La sezione successiva, invece, spiega il motivo per cui una tabella è stata inserita nel prompt oppure no.
 \par \textbf{Risposta:} La Proponente ha espresso un giudizio positivo sull'implementazione della funzionalità di debug.
 
 
-\subsubsection{Cambio di Tecnologie}
+\subsubsection{Cambio di tecnologie}
 
 \par \textbf{Descrizione:} Una volta terminata la dimostrazione della demo, il team ha comunicato alla Proponente la decisione di adottare nuove tecnologie per lo sviluppo dell'applicazione.
-\par \textbf{Risposta:} La Proponente ha ribadito la sua neutralità riguardo alle scelte tecnologiche, sottolineando però che la scelta del team sembra essere stata maturata dopo una valutazione approfondita delle problematiche che si sarebbero potute presentare con il \glossario{framework} precedente.
+\par \textbf{Risposta:} La Proponente ha ribadito la sua neutralità riguardo alle scelte tecnologiche, sottolineando però che la decisione del team sembra essere stata maturata dopo una valutazione approfondita delle problematiche che si sarebbero potute presentare con il \glossario{framework} precedente.
 
 \subsubsection{Range valori delle metriche di prodotto}
 
-\par \textbf{Descrizione:} Seguendo i gruppi del primo lotto coinvolti nello sviluppo di ChatSQL, le conclusioni raggiunte sono state sufficientemente precise per definire un metodo di valutazione delle metriche di qualità del prodotto?
-\par \textbf{Risposta:} La Proponente ha evidenziato come gli LLM migliorino rapidamente e ciò che mesi fa sembrava impossibile, ora probabilmente è già stato risolto. Definire dei range per la qualità del prodotto può essere più agevole rispetto a prima, in quanto è stato dimostrato come sia possibile generare codice SQL corretto a partire da un \glossario{prompt}. La Proponente ha invitato quindi il gruppo a testare \glossario{query} più complesse, magari con query annidate.
+\par \textbf{Domanda:} Dopo aver seguito i gruppi del primo lotto coinvolti nello sviluppo di ChatSQL, le conclusioni raggiunte sono state sufficientemente precise per definire un metodo di valutazione delle metriche di qualità del prodotto?
+\par \textbf{Risposta:} La Proponente ha evidenziato come gli LLM migliorino rapidamente e ciò che mesi fa sembrava impossibile, ora probabilmente è già stato risolto. Definire dei range per la qualità del prodotto può essere più agevole rispetto a prima, in quanto è stato dimostrato come sia possibile generare codice SQL corretto a partire da un \glossario{prompt}. La Proponente ha invitato quindi il gruppo a testare interrogazioni più complesse, magari con \glossario{query} annidate.
 
-\par \textbf{Descrizione:} Il team ha illustrato i test eseguiti per verificare la ricerca semantica. La Proponente suggerisce dei test ulteriori da implementare?
+\par \textbf{Domanda:} Il team ha illustrato i test eseguiti per valutare la ricerca semantica. La Proponente suggerisce delle verifiche ulteriori da effettuare?
 \par \textbf{Risposta:} La Proponente ha suggerito di effettuare dei test con un modello in locale tramite \glossario{LM Studio}. Lo scopo dei test è verificare che mantenendo lo stesso prompt e chiedendo a un LLM di riscrivere la frase dell'utente per un certo numero di volte, la \glossario{query} SQL resti semanticamente immutata.
