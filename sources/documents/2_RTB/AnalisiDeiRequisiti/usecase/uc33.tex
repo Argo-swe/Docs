@@ -1,0 +1,24 @@
+\subsubsection{UC33 - File troppo pesante}\label{UC33}
+\paragraph*{Descrizione}
+Nel caso in cui l'Utente tenti di salvare un file troppo pesante, la cui dimensione supera i limiti stabiliti, il sistema genera un messaggio d'errore.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'Utente ha richiesto il salvataggio di un file troppo pesante.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene visualizzato correttamente il messaggio di errore.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L'Utente inserisce un file con un peso eccessivo;
+  \item L'Utente richiede il salvataggio del file nel sistema;
+  \item Il sistema rileva un errore in quanto la dimensione del file supera i limiti;
+  \item Il sistema restituisce un messaggio di errore appropriato.
+\end{enumerate}

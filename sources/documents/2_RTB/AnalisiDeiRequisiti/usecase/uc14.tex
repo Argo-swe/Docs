@@ -1,36 +1,29 @@
-\subsubsection{UC14 - Visualizzazione delle informazionoi complete del \glossario{dizionario dati}}\label{UC14}
+\subsubsection{UC14 - Visualizzazione contenuto del dizionario dati}\label{UC14}
 \paragraph*{Descrizione}
-Viene mostrato il \glossario{dizionario dati} selezionato nella lista dei \glossario{dizionari dati} caricati dal Tecnico. Questo comprende tutti i suoi dati in maniera esaustiva, con nome, descrizione, impostazione del \glossario{database}, sinonimi, sezione di test.
+L'Utente visualizza il contenuto del \glossario{dizionario dati} selezionato. Questo comprende la lista delle tabelle e delle colonne, il titolo del \glossario{database} rappresentato dal dizionario e le descrizioni in linguaggio naturale. La visualizzazione del contenuto del dizionario dati può aiutare l'Utente a formulare la richiesta per il \glossario{modello}.
 
 \paragraph*{Attori principali}
 Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L'Utente è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item È presente almeno un \glossario{dizionario dati}.
-  \item L'Utente visualizza la lista dei \glossario{dizionari dati} (\hyperref[UC10]{UC10});
-  \item L'Utente sceglie un dizionario dalla lista (\hyperref[UC9]{UC9});
+  \item Il sistema è attivo e funzionante;
+  \item È presente almeno un \glossario{dizionario dati};
+  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Vengono visualizzati i dati del \glossario{dizionario dati} scelto.
+  \item Vengono visualizzati correttamente i dati del \glossario{dizionario dati} scelto.
 \end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole visualizzare il contenuto di un \glossario{dizionario dati} con l'obiettivo di formulare una richiesta opportuna al ChatBOT.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'Utente naviga la lista dei \glossario{dizionari dati} (\hyperref[UC10]{UC10});
-  \item L'Utente identifica un \glossario{dizionario dati} dalla lista (\hyperref[UC9]{UC9});
-  \item L'Utente visualizza i dati del dizionario identificato.
-\end{enumerate}
-
-\paragraph*{Scenario alternativo}
-\begin{enumerate}
-  \item L’Utente naviga alla lista dei dizionari dati (\hyperref[UC10]{UC10});
-  \item L'Utente seleziona un \glossario{dizionario dati} da visualizzare;
-  \item A causa di un errore, il sistema non riesce a caricare il \glossario{dizionario dati} (\hyperref[UC11]{UC11});
-  \item Viene generato un messaggio d'errore di fallimento visualizzazione del \glossario{dizionario dati}.
+  \item L'Utente seleziona un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
+  \item L'Utente visualizza le informazioni contenute nel dizionario.
 \end{enumerate}
 
 \paragraph*{Inclusioni}
@@ -38,11 +31,6 @@ Utente
   \item Visualizzazione tabelle del dizionario (\hyperref[UC14point1]{UC14.1});
   \item Visualizzazione descrizione e sinonimi delle tabelle (\hyperref[UC14point2]{UC14.2});
   \item Visualizzazione sinonimi delle colonne (\hyperref[UC14point3]{UC14.3});
-\end{itemize}
-
-\paragraph*{Estensioni}
-\begin{itemize}
-  \item Errore fallimento visualizzazione \glossario{dizionario dati} (\hyperref[UC11]{UC11}).
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

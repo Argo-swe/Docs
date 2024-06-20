@@ -1,0 +1,82 @@
+\subsubsection{UC31 - Visualizzazione errore nome dizionario dati}\label{UC31}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc31.png}
+  \caption{UC31}
+\end{figure}
+
+\paragraph*{Descrizione}
+Nel caso cui il sistema riscontri delle anomalie nella validazione del nome di un \glossario{dizionario dati}, l'Utente visualizza un messaggio d'errore.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'Utente ha richiesto il salvataggio o la modifica di un \glossario{dizionario dati} nel sistema;
+  \item Il nome del \glossario{dizionario dati} non è valido.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene visualizzato correttamente il messaggio d'errore.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il sistema riscontra un errore nella validazione del nome del \glossario{dizionario dati};
+  \item Il sistema restituisce un messaggio con i dettagli dell'errore.  
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC31.1 - Formato del nome non corretto}\label{UC31point1}
+\paragraph*{Descrizione}
+Il sistema restituisce un messaggio di errore nel caso in cui il formato del nome sia invalido.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il formato del nome del \glossario{dizionario dati} è invalido.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene restituito correttamente il messaggio d'errore.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il formato del nome del \glossario{dizionario dati} non è corretto;
+  \item Il sistema riscontra un errore nella validazione del nome;
+  \item Il sistema restituisce un messaggio con i dettagli dell'errore.  
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC31.2 - Nome già in uso}\label{UC31point2}
+\paragraph*{Descrizione}
+Il sistema restituisce un messaggio di errore nel caso in cui il nome del \glossario{dizionario dati} non sia univoco.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Nel sistema è già presente un \glossario{dizionario dati} con lo stesso nome.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene restituito correttamente il messaggio d'errore.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il nome del \glossario{dizionario dati} non è univoco;
+  \item Il sistema riscontra un errore nel salvataggio del \glossario{dizionario dati};
+  \item Il sistema restituisce un messaggio con i dettagli dell'errore.  
+\end{enumerate}

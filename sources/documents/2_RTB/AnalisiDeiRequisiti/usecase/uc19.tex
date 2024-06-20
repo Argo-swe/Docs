@@ -1,26 +1,30 @@
-\subsubsection{UC19 - Errore per mancato caricamento del \glossario{dizionario dati}}\label{UC19}
+\subsubsection{UC19 - Visualizzazione errore validazione file}\label{UC19}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc19.png}
+  \caption{UC19}
+\end{figure}
+
 \paragraph*{Descrizione}
-Il sistema mostra un messaggio d’errore relativo al mancato caricamento di un \glossario{dizionario dati}.
+Nel caso in cui il sistema riscontri delle anomalie nella validazione del file scelto come glossario{dizionario dati}, l'Utente visualizza un messaggio d'errore.
 
 \paragraph*{Attori principali}
 Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico ha selezionato l’opzione di caricamento di un nuovo \glossario{dizionario dati} (\hyperref[UC13]{UC13});
-  \item Il Tecnico ha inserito il file relativo al nuovo \glossario{dizionario dati} che desidera inserire.  
+  \item L'Utente ha richiesto il salvataggio o la modifica di un \glossario{dizionario dati} nel sistema;
+  \item Il file caricato non è valido.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il sistema mostra un messaggio d’errore per il mancato inserimento del nuovo \glossario{dizionario dati}.
+  \item Viene mostrato correttamente il messaggio d'errore.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico ha avviato la procedura di caricamento di un nuovo \glossario{dizionario dati};
-  \item Il sistema permette al Tecnico di inserire un nuovo file;
-  \item Il sistema registra un errore nel caricamento del file;
-  \item Il sistema segnala il mancato caricamento al Tecnico tramite un messaggio di errore.  
+  \item Il sistema riscontra un errore nella validazione del file scelto come \glossario{dizionario dati};
+  \item Il sistema restituisce un messaggio con i dettagli dell'errore. 
 \end{enumerate}

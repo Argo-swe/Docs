@@ -1,27 +1,26 @@
-\subsubsection{UC11 - Errore fallimento visualizzazione \glossario{dizionario dati}}\label{UC11}
+\subsubsection{UC11 - Visualizzazione errore generazione del \glossario{prompt}}\label{UC11}
 \paragraph*{Descrizione}
-L’Utente visualizza il messaggio di errore che informa del fallimento del caricamento dei dizionari dati.
+Viene visualizzato un messaggio a seguito di errori interni al sistema durante il processo di generazione del \glossario{prompt}.
 
 \paragraph*{Attori principali}
 Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L'applicativo è stato avviato correttamente.
-  \item L'Utente visualizza la lista dei \glossario{dizionario dati} (\hyperref[UC10]{UC10});
-  \item L'Utente tenta di visualizzare un \glossario{dizionario dati}.
+  \item L'applicazione è stata avviata con successo;
+  \item Nel sistema è stato caricato almeno un \glossario{dizionario dati};
+  \item L'Utente ha richiesto la generazione del \glossario{prompt} (\hyperref[UC5]{UC5}).  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il sistema rileva un errore nel tentativo di caricare il \glossario{dizionario dati};
-  \item Viene generato un messaggio d'errore.
+  \item Viene visualizzato correttamente il messaggio di errore.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente visualizza la lista dei \glossario{dizionari dati} (\hyperref[UC10]{UC10});
-  \item L'Utente tenta di visualizzare un \glossario{dizionario dati};
-  \item Il sistema rileva un problema nella visualizzazione del dizionario;
-  \item Viene visualizzato un messaggio con i dettagli dell'errore.  
+  \item Il sistema è attivo e funzionante;
+  \item L'Utente richiede la generazione del \glossario{prompt} (\hyperref[UC5]{UC5});
+  \item Il sistema rileva degli errori interni;
+  \item Viene visualizzato un messaggio di errore appropriato che suggerisce all'Utente di riprovare l'operazione, attendere o contattare il supporto tecnico.
 \end{enumerate}

@@ -1,39 +1,46 @@
-\subsubsection{UC13 - Caricamento \glossario{dizionario dati}}\label{UC13}
+\subsubsection{UC13 - Salvataggio del dizionario dati nel sistema}\label{UC13}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc13.png}
+  \caption{UC13}
+\end{figure}
+
 \paragraph*{Descrizione}
-Il caricamento del \glossario{dizionario dati} corrisponde alla procedura di importazione di un \glossario{dizionario dati} all’interno del sistema.
+Il salvataggio del \glossario{dizionario dati} corrisponde alla procedura di inserimento di un dizionario e delle sue informazioni all'interno del sistema.
 
 \paragraph*{Attori principali}
 Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico vuole inserire un nuovo \glossario{dizionario dati}.  
+  \item Il sistema è attivo e funzionante;
+  \item Il Tecnico ha effettuato correttamente l'autenticazione (\hyperref[UC1]{UC1});
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il Tecnico ha inserito un nuovo \glossario{dizionario dati} nel sistema.
+  \item Il \glossario{dizionario dati} è stato salvato con successo nel sistema.
 \end{itemize}
+
+\paragraph*{Trigger}
+Il Tecnico vuole salvare un \glossario{dizionario dati} nel sistema.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico ha avviato la procedura di inserimento di un nuovo \glossario{dizionario dati};
-  \item Il sistema permette al Tecnico di inserire un nuovo file dal formato appropriato;
-  \item Il Tecnico inserisce il file contenente il nuovo \glossario{dizionario dati};
-  \item Il \glossario{dizionario dati} viene aggiunto alla lista di \glossario{dizionari dati} presenti nell’applicativo.  
+  \item Il Tecnico inserisce il file, il nome e la descrizione del \glossario{dizionario dati};
+  \item Viene avviata la procedura di salvataggio del \glossario{dizionario dati};
+  \item Il \glossario{dizionario dati} viene aggiunto alla lista dei dizionari presenti nell'applicazione;
+  \item Il \glossario{dizionario dati} è ora disponibile a tutti gli utenti e può essere utilizzato per la generazione di \glossario{prompt}.
 \end{enumerate}
 
 \paragraph*{Scenario alternativo}
 \begin{enumerate}
-  \item Il Tecnico ha avviato la procedura di inserimento di un nuovo \glossario{dizionario dati};
-  \item Il sistema permette al Tecnico di inserire un nuovo file;
-  \item Il Tecnico inserisce il file contenente il nuovo \glossario{dizionario dati};
-  \item Il sistema rileva un errore nel caricamento del file (\hyperref[UC19]{UC19});
-  \item Viene visualizzato un messaggio d'errore per il mancato caricamento del \glossario{dizionario dati}.
+  \item Il sistema rileva un errore nella validazione del \glossario{dizionario dati} (\hyperref[UC19]{UC19});
+  \item Viene visualizzato un messaggio d'errore per il mancato salvataggio del \glossario{dizionario dati}.
 \end{enumerate}
 
 \paragraph*{Estensioni}
 \begin{itemize}
-  \item Errore per mancato caricamento del dizionario (\hyperref[UC19]{UC19}).
+  \item Visualizzazione errore salvataggio \glossario{dizionario dati} (\hyperref[UC19]{UC19}).
 \end{itemize}

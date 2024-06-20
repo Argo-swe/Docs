@@ -1,0 +1,28 @@
+% Da rivedere
+
+\subsubsection{UC11 - Errore visualizzazione dizionario dati}\label{UC11}
+\paragraph*{Descrizione}
+Il sistema restituisce un messaggio di errore per informare l'Utente del fallimento nella visualizzazione di un \glossario{dizionario dati}.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'applicazione è stata avviata con successo;
+  \item L'Utente visualizza la lista dei \glossario{dizionari dati} (\hyperref[UC10]{UC10});
+  \item L'Utente tenta di visualizzare un \glossario{dizionario dati}.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene mostrato correttamente il messaggio d'errore.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L'Utente visualizza la lista dei \glossario{dizionari dati} (\hyperref[UC10]{UC10});
+  \item L'Utente tenta di visualizzare un \glossario{dizionario dati};
+  \item Il sistema rileva un problema nella visualizzazione del singolo dizionario;
+  \item Viene mostrato un messaggio con i dettagli dell'errore.
+\end{enumerate}
