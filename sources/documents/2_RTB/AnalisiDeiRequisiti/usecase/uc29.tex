@@ -1,6 +1,13 @@
-\subsubsection{UC29 - Inserimento nome dizionario dati}\label{UC29}
+\subsubsection{UC29 - Modifica nome dizionario dati}\label{UC29}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc16.png}
+  \caption{UC16}
+\end{figure}
+
 \paragraph*{Descrizione}
-Il Tecnico inserisce il nome di un \glossario{dizionario dati}.
+Il Tecnico modifica il nome di un \glossario{dizionario dati}.
 
 \paragraph*{Attori principali}
 Tecnico
@@ -8,18 +15,34 @@ Tecnico
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il sistema è attivo e funzionante;
-  \item Il Tecnico ha effettuato correttamente l'autenticazione (\hyperref[UC1]{UC1}).
+  \item Il Tecnico ha effettuato correttamente l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha visualizzato la lista dei \glossario{dizionari dati} (\hyperref[UC9]{UC9});
+  \item Il Tecnico ha individuato il dizionario da modificare (\hyperref[UC9.1]{UC9.1}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il nome del \glossario{dizionario dati} è stato inserito correttamente.
+  \item Il nome del \glossario{dizionario dati} è stato modificato correttamente.
 \end{itemize}
 
 \paragraph*{Trigger}
-Il Tecnico vuole inserire il nome di un \glossario{dizionario dati}.
+Il Tecnico vuole modificare il nome di un \glossario{dizionario dati}.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico scrive il nome del \glossario{dizionario dati} nell'apposito campo di testo.
+  \item Il Tecnico avvia la procedura di modifica;
+  \item Il Tecnico modifica il nome del \glossario{dizionario dati};
+  \item Il Tecnico richiede il salvataggio della modifica;
+  \item Il sistema sostituisce il nome del \glossario{dizionario dati} con il nuovo valore inserito dal Tecnico.
 \end{enumerate}
+
+\paragraph*{Scenario alternativo}
+\begin{enumerate}
+  \item Il sistema riscontra un problema nella modifica del nome (\hyperref[UC31]{UC31});
+  \item Viene visualizzato un messaggio con i dettagli dell'errore.
+\end{enumerate}
+
+\paragraph*{Estensioni}
+\begin{itemize}
+  \item Visualizzazione errore nome \glossario{dizionario dati} (\hyperref[UC31]{UC31}).
+\end{itemize}

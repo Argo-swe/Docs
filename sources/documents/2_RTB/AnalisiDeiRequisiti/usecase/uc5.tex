@@ -31,6 +31,7 @@ L'Utente desidera ricevere un \glossario{prompt} da fornire in input a un modell
 \begin{enumerate}
   \item L'Utente seleziona un \glossario{dizionario dati}(\hyperref[UC4]{UC4}), un \glossario{DBMS} (\hyperref[UC26]{UC26}) e una lingua per la richiesta (\hyperref[UC7]{UC7});
   \item L'Utente inserisce un'interrogazione in linguaggio naturale (\hyperref[UC3]{UC3});
+  \item Se l'Utente che ha effettuato la richiesta è un Tecnico, il sistema genera automaticamente un file di \glossario{log} che documenta il processo di generazione del \glossario{prompt};
   \item Viene avviato il processo di generazione del \glossario{prompt} e di raccolta dei \glossario{metadati} dal \glossario{dizionario dati};
   \item Il sistema restituisce il \glossario{prompt} generato.
 \end{enumerate}
@@ -45,11 +46,11 @@ L'Utente desidera ricevere un \glossario{prompt} da fornire in input a un modell
 
 \paragraph*{Estensioni}
 \begin{itemize}
-  \item Richiesta non idonea (\hyperref[UC28]{UC28}).
+  \item Visualizzazione avviso richiesta non idonea (\hyperref[UC28]{UC28}).
   \begin{itemize}
     \item Extension point: richiesta non idonea per il modello di AI o per il \glossario{dizionario dati} scelto.
   \end{itemize}
-  \item Errore nella generazione del \glossario{prompt} (\hyperref[UC28]{UC28}).
+  \item Visualizzazione errore generazione del \glossario{prompt} (\hyperref[UC11]{UC11}).
     \begin{itemize}
       \item Extension point: errore interno al sistema.
     \end{itemize}

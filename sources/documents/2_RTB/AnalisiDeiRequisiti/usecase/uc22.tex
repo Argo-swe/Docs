@@ -1,43 +1,42 @@
-\subsubsection{UC22 - Download del log per lo strumento di debug}\label{UC22}
+\subsubsection{UC25 - Visualizzazione file di debug}\label{UC25}
 \paragraph*{Descrizione}
-Il sistema garantisce al Tecnico la possibilità di scaricare il log generato alla generazione del \glossario{prompt} in formato testuale.
+Il Tecnico visualizza un file di \glossario{log} che illustra il processo di generazione del \glossario{prompt}. Il debug può aiutare il Tecnico a capire come migliorare il \glossario{dizionario dati}, in particolare le descrizioni in linguaggio naturale delle tabelle e delle colonne del \glossario{database}. Nel file di log, infatti, viene documentato il modo in cui le descrizioni interagiscono con il modello di \glossario{AI}.
 
 \paragraph*{Attori principali}
 Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico genera un \glossario{prompt} basato su una richiesta in linguaggio naturale (\hyperref[UC5]{UC5});
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18}).
-  \item Il Tecnico decide di scaricare il log di debug.
+  \item Il sistema è attivo e funzionante;
+  \item Il Tecnico ha effettuato correttamente l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il sistema ha generato almeno un \glossario{prompt} e il rispettivo file di \glossario{log}.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il sistema ha effettuato correttamente il dowload del log.
+  \item Il contenuto del file viene visualizzato correttamente.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico ha correttamente generato un \glossario{prompt} (\hyperref[UC5]{UC5});
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
-  \item Il Tecnico decide di scaricare il log di debug;
-  \item Il sistema avvia il download del log;
-  \item Il sistema conclude correttamente il download del log.
+  \item Il Tecnico accede alla sezione dedicata ai \glossario{log};
+  \item Il Tecnico visualizza l'ultimo file di \glossario{log} generato;
+  \item Il sistema mostra tutte le informazioni contenute nel file:
+    \begin{itemize}
+      \item Data e ora di generazione del file;
+      \item Richiesta in linguaggio naturale;
+      \item Prima fase della generazione del \glossario{prompt} (lista delle tabelle considerate rilevanti dal modello):
+      \begin{itemize}
+        \item Nome della tabella;
+        \item Punteggio assegnato alla tabella;
+        \item Descrizione della tabella;
+        \item Classifica di importanza dei termini presenti nella descrizione della tabella;
+        \item Descrizione della colonna più rilevante;
+        \item Classifica di importanza dei termini presenti nella descrizione della colonna;
+      \end{itemize}
+      \item Seconda fase della generazione del \glossario{prompt} (lista delle tabelle pertinenti):
+      \begin{itemize}
+        \item Spiegazione del motivo per cui una tabella viene inserita o meno nel \glossario{prompt}.
+      \end{itemize}
+    \end{itemize}
 \end{enumerate}
-
-\paragraph*{Scenario alternativo}
-\begin{enumerate}
-  \item Il Tecnico ha correttamente generato un \glossario{prompt} (\hyperref[UC5]{UC5});
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
-  \item Il Tecnico decide di scaricare il log di debug;
-  \item Il sistema avvia il download del log;
-  \item Il sistema riscontra un problema con il download del log (\hyperref[UC23]{UC23});
-  \item Viene visualizzato un messaggio con i dettagli dell'errore.
-\end{enumerate}
-
-\paragraph*{Estensioni}
-\begin{itemize}
-  \item Errore durante il download del log (\hyperref[UC23]{UC23}).
-\end{itemize}

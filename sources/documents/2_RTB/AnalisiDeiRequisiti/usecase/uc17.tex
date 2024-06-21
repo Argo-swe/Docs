@@ -1,40 +1,25 @@
-\subsubsection{UC17 - Eliminazione dizionario dati}\label{UC17}
+\subsubsection{UC17 - Inserimento descrizione dizionario dati}\label{UC17}
 \paragraph*{Descrizione}
-Il Tecnico desidera eliminare uno dei \glossario{dizionari dati} inseriti in precedenza nella lista.
+Il Tecnico inserisce la descrizione di un \glossario{dizionario dati}.
 
 \paragraph*{Attori principali}
 Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico identifica il \glossario{dizionario dati} da eliminare (\hyperref[UC9]{UC9});
-  \item Il Tecnico visualizza i dettagli del \glossario{dizionario dati} (\hyperref[UC14]{UC14}).  
+  \item Il sistema è attivo e funzionante;
+  \item Il Tecnico ha effettuato correttamente l'autenticazione (\hyperref[UC1]{UC1}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il dizionario selezionato viene eliminato.
+  \item La descrizione del \glossario{dizionario dati} è stata inserita correttamente.
 \end{itemize}
+
+\paragraph*{Trigger}
+Il Tecnico vuole inserire la descrizione di un \glossario{dizionario dati}.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico identifica il \glossario{dizionario dati} da eliminare (\hyperref[UC9]{UC9});
-  \item Il Tecnico visualizza i dettagli del \glossario{dizionario dati} (\hyperref[UC14]{UC14});  
-  \item Il Tecnico sceglie di eliminare il dizionario selezionato;
-  \item Il \glossario{dizionario dati} selezionato viene rimosso dalla lista dei dizionari dati ed eliminato.  
+  \item Il Tecnico scrive la descrizione del \glossario{dizionario dati} nell'apposito campo di testo.
 \end{enumerate}
-
-\paragraph*{Scenario alternativo}
-\begin{enumerate}
-  \item Il Tecnico identifica il \glossario{dizionario dati} da eliminare (\hyperref[UC9]{UC9});
-  \item Il Tecnico visualizza i dettagli del \glossario{dizionario dati} (\hyperref[UC14]{UC14});  
-  \item Il Tecnico sceglie di eliminare il dizionario selezionato;
-  \item Il sistema riscontra un problema nel tentativo di eliminazione del \glossario{dizionario dati} (\hyperref[UC21]{UC21});
-  \item Viene mostrato un messaggio d'errore con i dettagli riguardanti il problema riscontrato.
-\end{enumerate}
-
-\paragraph*{Estensioni}
-\begin{itemize}
-  \item Errore per mancata eliminazione del \glossario{dizionario dati} (\hyperref[UC21]{UC21}).
-\end{itemize}
