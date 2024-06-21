@@ -7,7 +7,7 @@
 \end{figure}
 
 \paragraph*{Descrizione}
-L'Utente visualizza il contenuto del \glossario{dizionario dati} selezionato. Questo comprende la lista delle tabelle e delle colonne, il titolo del \glossario{database} rappresentato dal dizionario e le descrizioni in linguaggio naturale. La visualizzazione del contenuto del dizionario dati può aiutare l'Utente a formulare la richiesta per il \glossario{modello}.
+L'Utente visualizza il contenuto del \glossario{dizionario dati} selezionato. La visualizzazione del contenuto del dizionario può aiutare l'Utente a formulare correttamente la richiesta per il \glossario{modello}.
 
 \paragraph*{Attori principali}
 Utente
@@ -30,16 +30,198 @@ L'Utente vuole visualizzare il contenuto di un \glossario{dizionario dati} con l
 \paragraph*{Scenario principale}
 \begin{enumerate}
   \item L'Utente seleziona un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
-  \item L'Utente visualizza le informazioni contenute nel dizionario.
+  \item Il sistema mostra il contenuto del dizionario in formato testuale non strutturato.
 \end{enumerate}
 
-\paragraph*{Inclusioni}
+\paragraph*{Sottocasi d'uso}
 \begin{itemize}
-  \item Visualizzazione tabelle del dizionario (\hyperref[UC14point1]{UC14.1});
-  \item Visualizzazione descrizione e sinonimi delle tabelle (\hyperref[UC14point2]{UC14.2});
-  \item Visualizzazione sinonimi delle colonne (\hyperref[UC14point3]{UC14.3});
+  \item Visualizzazione nome database (\hyperref[UC14point1]{UC14.1});
+  \item Visualizzazione descrizione database (\hyperref[UC14point2]{UC14.2});
+  \item Visualizzazione lista tabelle (\hyperref[UC14point3]{UC14.3}).
 \end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc14_1.png}
+  \caption{UC14 - Sottocasi d'uso}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Da definire i sottocasi
+\subsubsection{UC14.1 - Visualizzazione nome database}\label{UC14point1}
+\paragraph*{Descrizione}
+L'Utente visualizza il nome del database descritto da un \glossario{dizionario dati}.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il nome del database viene visualizzato correttamente.
+\end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole visualizzare il nome del database rappresentato da un \glossario{dizionario dati}.
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L'Utente visualizza il nome del database.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC14.2 - Visualizzazione descrizione database}\label{UC14point2}
+\paragraph*{Descrizione}
+L'Utente visualizza la descrizione del database.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item La descrizione del database viene visualizzata correttamente.
+\end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole visualizzare la descrizione del database.
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L'Utente visualizza la descrizione del database.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC14.3 - Visualizzazione lista tabelle dizionario dati}\label{UC14point3}
+\paragraph*{Descrizione}
+L'Utente visualizza la lista delle tabelle descritte nel dizionario dati.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item La lista delle tabelle viene visualizzata correttamente.
+\end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole visualizzare la lista delle tabelle riportate nel \glossario{dizionario dati}.
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L'Utente visualizza la lista delle tabelle.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC14.3.1 - Visualizzazione singola tabella dizionario dati}\label{UC14point3point1}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc14_3_1.png}
+  \caption{UC14.3.1}
+\end{figure}
+
+\paragraph*{Descrizione}
+L'Utente visualizza una tabella tra quelle presenti nel \glossario{dizionario dati}.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
+  \item L'Utente ha visualizzato la lista delle tabelle (\hyperref[UC14point3]{UC14.3}).
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item La tabella viene visualizzata correttamente.
+\end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole visualizzare una tabella con le sue informazioni.
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L'Utente visualizza una singola tabella in lista.
+\end{enumerate}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc14_3_1_1.png}
+  \caption{UC14.3.1 - Sottocasi d'uso}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC14.3.1.1 - Visualizzazione nome tabella}\label{UC14point3point1point1}
+\paragraph*{Descrizione}
+L'Utente visualizza il nome di una tabella.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
+  \item L'Utente ha visualizzato la lista delle tabelle (\hyperref[UC14point3]{UC14.3});
+  \item L'Utente ha visualizzato una singola tabella in lista (\hyperref[UC14point3point1]{UC14.3.1}).
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il nome della tabella viene visualizzato correttamente.
+\end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole visualizzare il nome di una tabella.
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L'Utente visualizza il nome della tabella.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC14.3.1.2 - Visualizzazione descrizione tabella}\label{UC14point3point1point2}
+\paragraph*{Descrizione}
+L'Utente visualizza la descrizione di una tabella.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
+  \item L'Utente ha visualizzato la lista delle tabelle (\hyperref[UC14point3]{UC14.3});
+  \item L'Utente ha visualizzato una singola tabella in lista (\hyperref[UC14point3point1]{UC14.3.1}).
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item La descrizione della tabella viene visualizzata correttamente.
+\end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole visualizzare la descrizione di una tabella.
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L'Utente visualizza la descrizione della tabella.
+\end{enumerate}
