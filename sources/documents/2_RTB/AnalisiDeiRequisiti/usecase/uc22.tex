@@ -1,6 +1,6 @@
-\subsubsection{UC25 - Visualizzazione file di debug}\label{UC25}
+\subsubsection{UC25 - Visualizzazione messaggio di debug}\label{UC25}
 \paragraph*{Descrizione}
-Il Tecnico visualizza un file di \glossario{log} che illustra il processo di generazione del \glossario{prompt}. Il debug può aiutare il Tecnico a capire come migliorare il \glossario{dizionario dati}, in particolare le descrizioni in linguaggio naturale delle tabelle e delle colonne del \glossario{database}. Nel file di log, infatti, viene documentato il modo in cui le descrizioni interagiscono con il modello di \glossario{AI}.
+Il Tecnico visualizza un messaggio di \glossario{debug} che illustra il processo di generazione del \glossario{prompt}. Il debug può aiutare il Tecnico a capire come migliorare il \glossario{dizionario dati}, in particolare le descrizioni in linguaggio naturale delle tabelle e delle colonne del \glossario{database}. Nel messaggio di \glossario{log}, infatti, viene documentato il modo in cui le descrizioni interagiscono con il modello di \glossario{AI}.
 
 \paragraph*{Attori principali}
 Tecnico
@@ -8,22 +8,22 @@ Tecnico
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il sistema è attivo e funzionante;
-  \item Il Tecnico ha effettuato correttamente l'autenticazione (\hyperref[UC1]{UC1});
-  \item Il sistema ha generato almeno un \glossario{prompt} e il rispettivo file di \glossario{log}.
+  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il sistema ha generato almeno un \glossario{prompt} e il rispettivo \glossario{debug}.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il contenuto del file viene visualizzato correttamente.
+  \item Il messaggio di \glossario{debug} viene visualizzato correttamente.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
   \item Il Tecnico accede alla sezione dedicata ai \glossario{log};
-  \item Il Tecnico visualizza l'ultimo file di \glossario{log} generato;
-  \item Il sistema mostra tutte le informazioni contenute nel file:
+  \item Il Tecnico visualizza l'ultimo messaggio di \glossario{log} generato;
+  \item Il sistema mostra tutte le informazioni contenute nel messaggio:
     \begin{itemize}
-      \item Data e ora di generazione del file;
+      \item Data e ora di generazione del \glossario{log};
       \item Richiesta in linguaggio naturale;
       \item Prima fase della generazione del \glossario{prompt} (lista delle tabelle considerate rilevanti dal modello):
       \begin{itemize}
