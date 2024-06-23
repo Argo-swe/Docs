@@ -7,36 +7,38 @@
 \end{figure}
 
 \paragraph*{Descrizione}
-L’Autenticazione corrisponde al processo di login, tramite il quale l'Utente può passare alle funzionalità del Tecnico.
+L'autenticazione corrisponde al processo di login, tramite il quale l'Utente può passare alla schermata del Tecnico e ampliare le funzionalità disponibili.
 
 \paragraph*{Attori principali}
 Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L’Utente si collega all’applicativo;
-  \item L'Utente non è già autenticato nella sessione corrente;
-  \item L’Utente ha avviato la procedura di login all’applicativo.
+  \item Il sistema è attivo e funzionante;
+  \item L'Utente non è autenticato nella sessione corrente.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
   \item La procedura di autenticazione si è conclusa con successo;
-  \item L’Utente diventa Tecnico;
-  \item Il Tecnico visualizza le funzionalità aggiuntive specifiche del ruolo.  
+  \item L'Utente acquisisce il ruolo di Tecnico;
+  \item Il Tecnico visualizza le funzionalità aggiuntive nell'interfaccia.  
 \end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole effettuare il login all'area riservata al Tecnico.
 
 \paragraph*{Scenario principale}
 \begin{itemize}
-  \item L’Utente accede all’applicativo;
-  \item L’Utente seleziona la funzione di login;
-  \item L’Utente inserisce le proprie credenziali di accesso;
-  \item In caso di corretto inserimento e verifica delle credenziali, l’Utente accede all’applicativo come Tecnico.
+  \item L'Utente accede al sistema;
+  \item L'Utente seleziona la funzionalità "Login";
+  \item L'Utente inserisce le proprie credenziali di accesso;
+  \item L'utente accede alla schermata propria del Tecnico.
 \end{itemize}
 
 \paragraph*{Scenario alternativo}
 \begin{enumerate}
-  \item Il sistema riconosce un errore durante il tentativo di autenticazione da parte dell'Utente (\hyperref[UC2]{UC2});
+  \item Il sistema riconosce un errore durante l'inserimento delle credenziali da parte dell'Utente (\hyperref[UC2]{UC2});
   \item Viene visualizzato un messaggio con i dettagli dell'errore.
 \end{enumerate}
 
@@ -53,55 +55,57 @@ Utente
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{UC1.1 - Inserimento e-mail}\label{UC1point1}
+\subsubsection{UC1.1 - Inserimento username}\label{UC1point1}
 
 \paragraph*{Descrizione}
-La procedura di inserimento e-mail corrisponde all’inserimento della propria e-mail nella sezione apposita di login.
+La procedura di "inserimento username" corrisponde all'immissione del nome utente nella sezione apposita di login.
 
 \paragraph*{Attori principali}
 Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L’Utente non ha eseguito il login;
-  \item L’Utente ha avviato la procedura di autenticazione.  
+  \item Il sistema è attivo e funzionante;
+  \item L'Utente ha avviato la procedura di autenticazione (\hyperref[UC1]{UC1}).  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item L’Utente ha correttamente inserito la propria e-mail nel campo apposito.
+  \item Lo username è stato correttamente inserito nel campo apposito.
 \end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole inserire il proprio username per accedere alla sezione del Tecnico.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente avvia la procedura di autenticazione;
-  \item L’Utente inserisce la propria e-mail nel campo apposito.  
+  \item L'utente inserisce il proprio username come parte del processo di autenticazione.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{UC1.2 - Inserimento password}\label{UC1point2}
 \paragraph*{Descrizione}
-La procedura di inserimento password corrisponde all’inserimento della password dell'Utente nella sezione apposita di login.
+La procedura di "inserimento password" corrisponde all'immissione della password nella sezione apposita di login.
 
 \paragraph*{Attori principali}
 Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L’Utente non ha eseguito il login;
-  \item L’Utente ha avviato la procedura di autenticazione (\hyperref[UC1]{UC1});
-  \item L’Utente ha inserito la propria e-mail nel campo apposito (\hyperref[UC1point1]{UC1.1}).
+  \item Il sistema è attivo e funzionante;
+  \item L'Utente ha avviato la procedura di autenticazione (\hyperref[UC1]{UC1}). 
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item L’Utente ha correttamente inserito la propria password nel campo apposito.
+  \item La password è stata correttamente inserita nel campo apposito.
 \end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole inserire la propria password per accedere alla sezione del Tecnico.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente avvia la procedura di autenticazione;
-  \item L’Utente inserisce la propria e-mail nel campo apposito; 
-  \item L’Utente inserisce la propria password nel campo apposito.  
+  \item L'utente inserisce la propria password come parte del processo di autenticazione.
 \end{enumerate}

@@ -1,4 +1,4 @@
-\subsubsection{UC7 - Cambio lingua}\label{UC7}
+\subsubsection{UC7 - Selezione lingua}\label{UC7}
 
 \begin{figure}[H]
   \centering
@@ -7,7 +7,7 @@
 \end{figure}
 
 \paragraph*{Descrizione}
-L’Utente desidera inserire una richiesta in linguaggio naturale in una lingua diversa dall’italiano.
+L'Utente seleziona una lingua con cui effettuare la richiesta al ChatBOT. 
 
 \paragraph*{Attori principali}
 Utente
@@ -15,8 +15,7 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L'applicazione è stata avviata con successo;
-  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
-  \item L’Utente vuole inserire una frase in linguaggio naturale in un'altra lingua.
+  \item L'Utente sta visualizzando correttamente la chat.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -25,22 +24,19 @@ Utente
   \item L'Utente può ora inserire una richiesta in linguaggio naturale nella lingua scelta (\hyperref[UC3]{UC3}).
 \end{itemize}
 
+\paragraph*{Trigger}
+L'Utente vuole selezionare una lingua per la richiesta in linguaggio naturale.
+
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'Utente seleziona un dizionario dati (\hyperref[UC4]{UC4});
-  \item L’Utente seleziona una lingua da una lista predefinita di lingue. La scelta è tra le seguenti lingue:
+  \item L'Utente seleziona una lingua da una lista predefinita. La scelta è tra le seguenti lingue:
     \begin{itemize}
-      \item Italiano;
       \item Inglese;
+      \item Italiano;
       \item Francese;
       \item Spagnolo;
       \item Tedesco.
     \end{itemize}
 \end{enumerate}
-
-\paragraph*{Inclusioni}
-\begin{itemize}
-  \item Selezione \glossario{dizionario dati} (\hyperref[UC4]{UC4}).
-\end{itemize}
 
 % TODO [in caso di errore ed incongruenza tra la lingua scritta e quella selezionata teniamo solo errore uc6 del \glossario{prompt}? O viene controllata prima?]

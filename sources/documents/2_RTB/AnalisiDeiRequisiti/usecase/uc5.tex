@@ -7,7 +7,7 @@
 \end{figure}
 
 \paragraph*{Descrizione}
-L’Utente desidera ottenere un \glossario{prompt} al fine di utilizzarlo poi con LLM esterni per generare \glossario{\glossario{query}} SQL fornendo parti ristrette di \glossario{dizionario dati}.
+Il sistema genera un \glossario{prompt} a partire da una richiesta dell'Utente in linguaggio naturale, cercando delle corrispondenze con il \glossario{dizionario dati} selezionato.
 
 \paragraph*{Attori principali}
 Utente
@@ -16,41 +16,41 @@ Utente
 \begin{itemize}
   \item L'applicazione è stata avviata con successo;
   \item È presente almeno un \glossario{dizionario dati} nel sistema.
-  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
-  \item L'Utente ha inserito una richiesta in linguaggio naturale (\hyperref[UC3]{UC3}).
+  \item L'indice vettoriale (per la ricerca semantica) è stato creato a partire dal \glossario{dizionario dati}.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il sistema genera un \glossario{prompt} in base alla richiesta ricevuta e al \glossario{dizionario dati} scelto. Attraverso dei metadati restituisce un \glossario{prompt} con il quale stabilisce quali parti di \glossario{dizionario dati} sono maggiormente necessarie ed efficienti per scrivere la richiesta ricevuta in linguaggio naturale;
-  \item L’Utente riceve il \glossario{prompt} generato;
+  \item Il sistema ritorna con successo il \glossario{prompt} corrispondente alla richiesta dell'Utente. Il prompt contiene i \glossario{metadati} estratti dal \glossario{dizionario dati} scelto.
 \end{itemize}
+
+\paragraph*{Trigger}
+L'Utente desidera ricevere un \glossario{prompt} da fornire in input a un modello di AI esterno al fine di ottenere una \glossario{query} SQL.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente desidera ottenere il \glossario{prompt} che permette di generare la \glossario{query} SQL;
-  \item L'Utente visualizza la lista dei \glossario{dizionari dati} disponibili (\hyperref[UC10]{UC10});
-  \item L'Utente decide di visualizzare un \glossario{dizionario dati} dalla lista (\hyperref[UC9]{UC9});
-  \item L’Utente seleziona un \glossario{dizionario dati} sul quale baserà l’interrogazione (\hyperref[UC4]{UC4});
-  \item L’Utente inserisce una interrogazione in linguaggio naturale nel box testuale apposito (\hyperref[UC3]{UC3});
-  \item Inizia il processo di generazione del \glossario{prompt} e di raccolta di metadati.
-\end{enumerate}
-
-\paragraph*{Scenario alternativo}
-\begin{enumerate}
-  \item Errore nella generazione del \glossario{prompt} (\hyperref[UC6]{UC6}).
-  \item Viene visualizzato un messaggio con i dettagli dell'errore.
+  \item L'Utente seleziona un \glossario{dizionario dati}(\hyperref[UC4]{UC4}), un \glossario{DBMS} (\hyperref[UC26]{UC26}) e una lingua per la richiesta (\hyperref[UC7]{UC7});
+  \item L'Utente inserisce un'interrogazione in linguaggio naturale (\hyperref[UC3]{UC3});
+  \item Viene avviato il processo di generazione del \glossario{prompt} e di raccolta dei \glossario{metadati} dal \glossario{dizionario dati};
+  \item Il sistema restituisce il \glossario{prompt} generato.
 \end{enumerate}
 
 \paragraph*{Inclusioni}
 \begin{itemize}
+  \item Selezione \glossario{dizionario dati} (\hyperref[UC4]{UC4});
   \item Inserimento richiesta in linguaggio naturale (\hyperref[UC3]{UC3});
-  \item Selezione \glossario{dizionario dati} (\hyperref[UC4]{UC4}).
+  \item Selezione lingua (\hyperref[UC7]{UC7});
+  \item Selezione DBMS (\hyperref[UC26]{UC26}).
 \end{itemize}
 
 \paragraph*{Estensioni}
 \begin{itemize}
-  % Inserito anche selezione dizionario dati. Da capire se dopo il prompt si possa interagire nuovamente con la lista
-  \item Selezione e copia del \glossario{prompt} risultato (\hyperref[UC8]{UC8}).
-  \item Errore nella generazione del \glossario{prompt} (\hyperref[UC6]{UC6}).
+  \item Richiesta non idonea (\hyperref[UC28]{UC28}).
+  \begin{itemize}
+    \item Extension point: richiesta non idonea per il modello di AI o per il \glossario{dizionario dati} scelto.
+  \end{itemize}
+  \item Errore nella generazione del \glossario{prompt} (\hyperref[UC28]{UC28}).
+    \begin{itemize}
+      \item Extension point: errore interno al sistema.
+    \end{itemize}
 \end{itemize}
