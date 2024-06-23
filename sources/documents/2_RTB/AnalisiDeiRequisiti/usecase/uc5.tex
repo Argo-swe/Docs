@@ -1,4 +1,4 @@
-\subsubsection{UC5 - Generazione \glossario{prompt}}\label{UC5}
+\subsubsection{UC5 - Generazione prompt}\label{UC5}
 
 \begin{figure}[H]
   \centering
@@ -7,7 +7,7 @@
 \end{figure}
 
 \paragraph*{Descrizione}
-Il sistema genera un \glossario{prompt} a partire da una richiesta dell'Utente in linguaggio naturale, cercando delle corrispondenze con il \glossario{dizionario dati} selezionato.
+Il sistema genera un \glossario{prompt} a partire da una richiesta dell'Utente. Per comporre il \glossario{prompt}, il sistema cerca delle corrispondenze tra la richiesta e il \glossario{dizionario dati} selezionato. Il prompt generato può essere usato in combinazione con un modello di \glossario{AI} esterno per costruire \glossario{query} SQL.
 
 \paragraph*{Attori principali}
 Utente
@@ -15,24 +15,27 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L'applicazione è stata avviata con successo;
-  \item È presente almeno un \glossario{dizionario dati} nel sistema.
-  \item L'indice vettoriale (per la ricerca semantica) è stato creato a partire dal \glossario{dizionario dati}.
+  \item È presente almeno un \glossario{dizionario dati} nel sistema;
+  \item È stato creato almeno un \glossario{indice vettoriale} per la ricerca semantica.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il sistema ritorna con successo il \glossario{prompt} corrispondente alla richiesta dell'Utente. Il prompt contiene i \glossario{metadati} estratti dal \glossario{dizionario dati} scelto.
+  \item Il sistema ritorna con successo il \glossario{prompt} generato. Il prompt contiene i \glossario{metadati} estratti dal \glossario{dizionario dati}.
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente desidera ricevere un \glossario{prompt} da fornire in input a un modello di AI esterno al fine di ottenere una \glossario{query} SQL.
+L'Utente desidera ricevere un \glossario{prompt} in risposta alla sua richiesta.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'Utente seleziona un \glossario{dizionario dati}(\hyperref[UC4]{UC4}), un \glossario{DBMS} (\hyperref[UC26]{UC26}) e una lingua per la richiesta (\hyperref[UC7]{UC7});
-  \item L'Utente inserisce un'interrogazione in linguaggio naturale (\hyperref[UC3]{UC3});
-  \item Se l'Utente che ha effettuato la richiesta è un Tecnico, il sistema genera automaticamente un file di \glossario{log} che documenta il processo di generazione del \glossario{prompt};
-  \item Viene avviato il processo di generazione del \glossario{prompt} e di raccolta dei \glossario{metadati} dal \glossario{dizionario dati};
+  \item L'Utente seleziona un \glossario{dizionario dati}(\hyperref[UC4]{UC4});
+  \item L'Utene seleziona un \glossario{DBMS} (\hyperref[UC26]{UC26});
+  \item L'Utente seleziona una lingua (\hyperref[UC7]{UC7});
+  \item L'Utente inserisce una richiesta in linguaggio naturale (\hyperref[UC3]{UC3});
+  \item L'Utente richiede la generazione del \glossario{prompt};
+  \item Se l'Utente che ha effettuato la richiesta è un Tecnico, il sistema genera un file di \glossario{log} che documenta il processo di generazione del \glossario{prompt};
+  \item Viene avviato il processo di generazione del \glossario{prompt};
   \item Il sistema restituisce il \glossario{prompt} generato.
 \end{enumerate}
 
@@ -46,9 +49,9 @@ L'Utente desidera ricevere un \glossario{prompt} da fornire in input a un modell
 
 \paragraph*{Estensioni}
 \begin{itemize}
-  \item Visualizzazione avviso richiesta non idonea (\hyperref[UC28]{UC28}).
+  \item Visualizzazione avviso richiesta non idonea (\hyperref[UC6]{UC6}).
   \begin{itemize}
-    \item Extension point: richiesta non idonea per il modello di AI o per il \glossario{dizionario dati} scelto.
+    \item Extension point: richiesta non idonea per il modello di \glossario{AI} o per il \glossario{dizionario dati} scelto.
   \end{itemize}
   \item Visualizzazione errore generazione del \glossario{prompt} (\hyperref[UC11]{UC11}).
     \begin{itemize}

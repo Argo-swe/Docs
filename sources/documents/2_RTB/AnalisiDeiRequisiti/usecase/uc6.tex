@@ -1,6 +1,6 @@
 \subsubsection{UC6 - Visualizzazione avviso richiesta non idonea}\label{UC6}
 \paragraph*{Descrizione}
-Nel caso in cui l'Utente formuli una richiesta non idonea, o comunque una frase che non trova corrispondenze con il \glossario{dizionario dati}, il sistema restituisce un messaggio notificando l'Utente della mancata generazione del \glossario{prompt}.
+Nel caso in cui l'Utente formuli una richiesta non idonea, o comunque una richiesta che non trova corrispondenze con il \glossario{dizionario dati}, il sistema restituisce un avviso opportuno.
 
 \paragraph*{Attori principali}
 Utente
@@ -14,14 +14,14 @@ Utente
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene visualizzato correttamente il messaggio del ChatBOT, che avvisa l'Utente della mancata generazione del \glossario{prompt}.
+  \item Viene visualizzato l'avviso del ChatBOT, che informa l'Utente della sua incapacità di fornire una risposta adeguata alla domanda.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
   \item Il sistema è attivo e funzionante;
   \item L'Utente richiede la generazione del \glossario{prompt} (\hyperref[UC5]{UC5});
-  \item Il sistema non trova correlazioni tra la richiesta dell'Utente e il \glossario{dizionario dati};
-  \item Il sistema non è in grado restituire un \glossario{prompt} adeguato alla richiesta dell'Utente;
-  \item Viene visualizzato un messaggio che informa l'Utente dell'esito negativo della ricerca semantica e lo invita a riprovare.
+  \item Il sistema non trova correlazioni tra la richiesta e il \glossario{dizionario dati};
+  \item Il sistema non è in grado restituire un \glossario{prompt};
+  \item Viene visualizzato un messaggio esplicativo che invita l'Utente a riprovare.
 \end{enumerate}

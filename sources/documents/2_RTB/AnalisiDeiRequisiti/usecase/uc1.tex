@@ -21,7 +21,7 @@ Utente
 \paragraph*{Postcondizioni}
 \begin{itemize}
   \item La procedura di autenticazione si è conclusa con successo;
-  \item L'Utente acquisisce il ruolo di Tecnico;
+  \item L'Utente acquisisce il ruolo di tecnico;
   \item Il Tecnico visualizza le funzionalità aggiuntive nell'interfaccia.  
 \end{itemize}
 
@@ -31,8 +31,9 @@ L'Utente desidera accedere all'area riservata al Tecnico.
 \paragraph*{Scenario principale}
 \begin{itemize}
   \item L'Utente seleziona l'opzione "Login";
-  \item L'Utente inserisce le proprie credenziali di accesso;
-  \item L'utente accede alla schermata propria del Tecnico.
+  \item L'Utente inserisce le proprie credenziali;
+  \item L'Utente richiede l'accesso;
+  \item Il sistema mostra le funzionalità disponibili per il Tecnico.
 \end{itemize}
 
 \paragraph*{Scenario alternativo}
@@ -44,8 +45,13 @@ L'Utente desidera accedere all'area riservata al Tecnico.
 \paragraph*{Estensioni}
 \begin{itemize}
   \item Visualizzazione errore autenticazione (\hyperref[UC2]{UC2}).
+  \begin{itemize}
+    \item Extension point: Errore nella validazione delle credenziali;
+    \item Condition: Credenziali errate, credenziali incomplete.
+  \end{itemize}
 \end{itemize}
 
+% al posto dell'inclusione forse basta il sottocaso d'uso
 \paragraph*{Inclusioni}
 \begin{itemize}
   \item Inserimento username (\hyperref[UC1point1]{UC1.1});
@@ -70,11 +76,11 @@ Utente
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Lo username è stato correttamente inserito nel campo apposito.
+  \item Il nome utente è stato inserito nel campo apposito.
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente vuole inserire il proprio username per accedere alla sezione del Tecnico.
+L'Utente desidera inserire il proprio username per accedere alle funzionalità del tecnico.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
@@ -98,13 +104,13 @@ Utente
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item La password è stata correttamente inserita nel campo apposito.
+  \item La password è stata inserita nel campo apposito.
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente vuole inserire la propria password per accedere alla sezione del Tecnico.
+L'Utente vuole inserire la propria password per accedere alle funzionalità del tecnico.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'utente inserisce la propria password come parte del processo di autenticazione.
+  \item L'Utente inserisce la propria password come parte del processo di autenticazione.
 \end{enumerate}
