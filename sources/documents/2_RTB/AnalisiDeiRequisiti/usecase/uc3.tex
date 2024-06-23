@@ -7,7 +7,7 @@
 \end{figure}
 
 \paragraph*{Descrizione}
-L’Utente desidera inserire una richiesta in qualsiasi linguaggio naturale al fine di ottenere il \glossario{prompt} che selezioni la parte del \glossario{dizionario dati} più inerente alla richiesta. 
+L'inserimento della richiesta in linguaggio naturale corrisponde alla digitazione, nell'apposito campo di testo, del messaggio da inviare al ChatBOT.
 
 \paragraph*{Attori principali}
 Utente
@@ -15,26 +15,18 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L'applicazione è stata avviata con successo;
-  \item L’Utente ha in precedenza selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4}); 
-  \item L'Utente seleziona la lingua di inserimento, se non selezionata viene utilizzato l'italiano di default (\hyperref[UC7]{UC7}).
+  \item L'Utente sta visualizzando correttamente la chat.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item L’Utente ha scritto nell’apposito campo di testo un'interrogazione in linguaggio naturale.
+  \item L'Utente ha scritto nell'apposito campo di testo un messaggio da inviare al ChatBOT.
 \end{itemize}
+
+\paragraph*{Trigger}
+L'Utente desidera inserire una richiesta in linguaggio naturale.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente scrive un'interrogazione nell’apposito box su cui poi il sistema potrà produrre un \glossario{prompt} in seguito.
+  \item L'Utente scrive una richiesta nell'apposita sezione della chat.
 \end{enumerate}
-
-\paragraph*{Inclusioni}
-\begin{itemize}
-  \item Selezione \glossario{dizionario dati} (\hyperref[UC4]{UC4});
-\end{itemize}
-
-\paragraph*{Estensioni}
-\begin{itemize}
-  \item Cambio lingua (\hyperref[UC7]{UC7});
-\end{itemize}
