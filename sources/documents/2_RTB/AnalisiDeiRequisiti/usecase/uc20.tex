@@ -9,9 +9,9 @@ Tecnico
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il sistema è attivo e funzionante;
-  \item Il Tecnico ha effettuato correttamente l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1});
   \item Il Tecnico ha visualizzato la lista dei \glossario{dizionari dati} (\hyperref[UC9]{UC9});
-  \item Il Tecnico ha scelto il dizionario da modificare (\hyperref[UC9.1]{UC9.1}).
+  \item Il Tecnico ha individuato il dizionario da modificare (\hyperref[UC9.1]{UC9.1}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -32,16 +32,20 @@ Il Tecnico vuole modificare il file di configurazione di un \glossario{dizionari
 
 \paragraph*{Scenario alternativo}
 \begin{enumerate}
-  \item Il sistema riscontra un problema nella validazione del file (\hyperref[UC19]{UC19});
+  \item Il sistema riscontra un errore nella validazione del file (\hyperref[UC19]{UC19});
   \item Viene visualizzato un messaggio con i dettagli dell'errore.
 \end{enumerate}
 
 \paragraph*{Inclusioni}
 \begin{itemize}
-  \item Caricamento \glossario{dizionario dati} (\hyperref[UC15]{UC15});
+  \item Caricamento file \glossario{dizionario dati} (\hyperref[UC15]{UC15});
 \end{itemize}
 
 \paragraph*{Estensioni}
 \begin{itemize}
   \item Visualizzazione errore validazione file (\hyperref[UC19]{UC19}).
+  \begin{itemize}
+    \item Extension point: errore nella validazione del file;
+    \item Condition: formato del file non valido, file troppo pesante, file non conforme allo schema predefinito.
+  \end{itemize}
 \end{itemize}

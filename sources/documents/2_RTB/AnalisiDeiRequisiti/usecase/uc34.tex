@@ -1,24 +1,24 @@
 \subsubsection{UC34 - File non conforme allo schema predefinito}\label{UC34}
 \paragraph*{Descrizione}
-Il sistema restituisce un messaggio di errore in seguito alla richiesta dell'utente di salvare un file non conforme allo schema predefinito.
+Poiché il file inserito dal Tecnico non è conforme allo schema predefinito, il sistema restituisce un messaggio d'errore.
 
 \paragraph*{Attori principali}
-Utente
+Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L'Utente ha richiesto il salvataggio di un file non conforme allo schema predefinito.
+  \item Il Tecnico ha richiesto il salvataggio di un file non conforme allo schema predefinito.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene visualizzato correttamente il messaggio di errore.
+  \item Viene visualizzato un messaggio d'errore esplicativo.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'Utente inserisce un file non conforme allo schema predefinito;
-  \item L'Utente richiede il salvataggio del file nel sistema;
+  \item Il Tecnico inserisce un file non conforme allo schema predefinito;
+  \item Il Tecnico richiede il salvataggio del file nel sistema;
   \item Il sistema rileva un errore durante la validazione del file;
   \item Il sistema restituisce un messaggio di errore appropriato.
 \end{enumerate}

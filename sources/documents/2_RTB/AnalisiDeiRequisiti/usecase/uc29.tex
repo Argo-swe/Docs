@@ -2,8 +2,8 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.90\textwidth]{assets/uc16.png}
-  \caption{UC16}
+  \includegraphics[width=0.90\textwidth]{assets/uc29.png}
+  \caption{UC29}
 \end{figure}
 
 \paragraph*{Descrizione}
@@ -15,7 +15,7 @@ Tecnico
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il sistema è attivo e funzionante;
-  \item Il Tecnico ha effettuato correttamente l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1});
   \item Il Tecnico ha visualizzato la lista dei \glossario{dizionari dati} (\hyperref[UC9]{UC9});
   \item Il Tecnico ha individuato il dizionario da modificare (\hyperref[UC9.1]{UC9.1}).
 \end{itemize}
@@ -29,8 +29,7 @@ Tecnico
 Il Tecnico vuole modificare il nome di un \glossario{dizionario dati}.
 
 \paragraph*{Scenario principale}
-\begin{enumerate}
-  \item Il Tecnico avvia la procedura di modifica;
+\begin{enumerate};
   \item Il Tecnico modifica il nome del \glossario{dizionario dati};
   \item Il Tecnico richiede il salvataggio della modifica;
   \item Il sistema sostituisce il nome del \glossario{dizionario dati} con il nuovo valore inserito dal Tecnico.
@@ -38,11 +37,14 @@ Il Tecnico vuole modificare il nome di un \glossario{dizionario dati}.
 
 \paragraph*{Scenario alternativo}
 \begin{enumerate}
-  \item Il sistema riscontra un problema nella modifica del nome (\hyperref[UC31]{UC31});
+  \item Il sistema riscontra un errore durante la validazione del nome (\hyperref[UC31]{UC31});
   \item Viene visualizzato un messaggio con i dettagli dell'errore.
 \end{enumerate}
 
 \paragraph*{Estensioni}
 \begin{itemize}
   \item Visualizzazione errore nome \glossario{dizionario dati} (\hyperref[UC31]{UC31}).
+  \begin{itemize}
+    \item Extension point: errore nella validazione del nome del \glossario{dizionario dati}.
+  \end{itemize}
 \end{itemize}

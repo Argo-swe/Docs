@@ -1,25 +1,25 @@
 \subsubsection{UC21 - Visualizzazione errore eliminazione dizionario dati}\label{UC21}
 \paragraph*{Descrizione}
-Il sistema mostra un messaggio d'errore dovuto alla mancata eliminazione del \glossario{dizionario dati}.
+Il sistema mostra un messaggio di errore a causa della mancata eliminazione del \glossario{dizionario dati}.
 
 \paragraph*{Attori principali}
 Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Tecnico ha effettuato correttamente l'autenticazione (\hyperref[UC1]{UC1});
-  \item Il Tecnico ha richiesto l'eliminazione di un \glossario{dizionario dati} (\hyperref[UC17]{UC17});
-  \item Il sistema ha riscontrato un problema nel tentativo di eliminare il \glossario{dizionario dati}.
+  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha richiesto l'eliminazione di un \glossario{dizionario dati} (\hyperref[UC18]{UC18});
+  \item Il sistema ha riscontrato un errore nel tentativo di eliminare il \glossario{dizionario dati}.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene visualizzato correttamente il messaggio d'errore.
+  \item Viene visualizzato un messaggio d'errore esplicativo.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico richiede l'eliminazione di un \glossario{dizionario dati} (\hyperref[UC17]{UC17});
+  \item Il Tecnico richiede l'eliminazione di un \glossario{dizionario dati};
   \item Il Tecnico conferma la scelta;
   \item L'eliminazione del \glossario{dizionario dati} fallisce;
   \item Il sistema restituisce un messaggio con i dettagli dell'errore.

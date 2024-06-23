@@ -1,6 +1,6 @@
 \subsubsection{UC25 - Visualizzazione messaggio di debug}\label{UC25}
 \paragraph*{Descrizione}
-Il Tecnico visualizza un messaggio di \glossario{debug} che illustra il processo di generazione del \glossario{prompt}. Il debug può aiutare il Tecnico a capire come migliorare il \glossario{dizionario dati}, in particolare le descrizioni in linguaggio naturale delle tabelle e delle colonne del \glossario{database}. Nel messaggio di \glossario{log}, infatti, viene documentato il modo in cui le descrizioni interagiscono con il modello di \glossario{AI}.
+Il Tecnico visualizza un messaggio di \glossario{debug} che illustra il processo di generazione del \glossario{prompt}. Il debug può aiutare il Tecnico a capire come migliorare il \glossario{dizionario dati}, in particolare le descrizioni in linguaggio naturale delle tabelle e delle colonne del database. Nel file di \glossario{log}, infatti, è documentato il modo in cui le descrizioni interagiscono con il modello di \glossario{AI}.
 
 \paragraph*{Attori principali}
 Tecnico
@@ -9,7 +9,7 @@ Tecnico
 \begin{itemize}
   \item Il sistema è attivo e funzionante;
   \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1});
-  \item Il sistema ha generato almeno un \glossario{prompt} e il rispettivo \glossario{debug}.
+  \item Il sistema ha generato almeno un \glossario{prompt} e il rispettivo \glossario{log}.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -19,8 +19,8 @@ Tecnico
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico accede alla sezione dedicata ai \glossario{log};
-  \item Il Tecnico visualizza l'ultimo messaggio di \glossario{log} generato;
+  \item Il Tecnico accede alla sezione dedicata al debug del \glossario{prompt};
+  \item Il Tecnico visualizza l'ultimo messaggio di \glossario{debug} generato;
   \item Il sistema mostra tutte le informazioni contenute nel messaggio:
     \begin{itemize}
       \item Data e ora di generazione del \glossario{log};

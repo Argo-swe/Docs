@@ -1,25 +1,25 @@
 \subsubsection{UC24 - Visualizzazione errore download file}\label{UC24}
 \paragraph*{Descrizione}
-Il Tecnico visualizza un messaggio d'errore per il mancato completamento del download del file di \glossario{debug}.
+Il Tecnico visualizza un messaggio d'errore per il mancato download del file.
 
 \paragraph*{Attori principali}
 Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Tecnico ha effettuato correttamente l'autenticazione (\hyperref[UC1]{UC1});
-  \item Il Tecnico ha richiesto il download del file di debug (\hyperref[UC23]{UC23});
+  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha richiesto il download del file (\hyperref[UC23]{UC23});
   \item Il sistema ha rilevato un errore durante il download.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene visualizzato correttamente il messaggio d'errore.
+  \item Viene visualizzato un messaggio d'errore esplicativo.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico richiede il download del file di debug (\hyperref[UC23]{UC23});
+  \item Il Tecnico richiede il download del file;
   \item Il sistema avvia il download del file;
   \item Il sistema rileva un errore;
   \item Viene visualizzato un messaggio con i dettagli dell'errore.

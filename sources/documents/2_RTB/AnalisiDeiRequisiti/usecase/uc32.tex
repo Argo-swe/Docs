@@ -1,23 +1,23 @@
 \subsubsection{UC32 - Visualizzazione errore descrizione dizionario dati}\label{UC32}
 \paragraph*{Descrizione}
-Nel caso cui il sistema riscontri delle anomalie nella validazione della descrizione di un \glossario{dizionario dati}, l'Utente visualizza un messaggio d'errore.
+Nel caso cui il sistema riscontri delle anomalie nella validazione della descrizione di un \glossario{dizionario dati}, il Tecnico visualizza un messaggio d'errore.
 
 \paragraph*{Attori principali}
 Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L'Utente ha richiesto il salvataggio o la modifica di un \glossario{dizionario dati} nel sistema;
+  \item Il Tecnico ha richiesto il salvataggio o la modifica di un \glossario{dizionario dati} nel sistema;
   \item La descrizione del \glossario{dizionario dati} non è valida.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene visualizzato correttamente il messaggio d'errore.
+  \item Viene visualizzato un messaggio d'errore esplicativo.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il sistema riscontra un errore nella validazione del formato della descrizione del \glossario{dizionario dati};
+  \item Il sistema riscontra un errore nella validazione del formato della descrizione;
   \item Il sistema restituisce un messaggio con i dettagli dell'errore.  
 \end{enumerate}

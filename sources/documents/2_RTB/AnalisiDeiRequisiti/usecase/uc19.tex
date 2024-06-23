@@ -7,20 +7,20 @@
 \end{figure}
 
 \paragraph*{Descrizione}
-Nel caso in cui il sistema riscontri delle anomalie nella validazione del file scelto come glossario{dizionario dati}, l'Utente visualizza un messaggio d'errore.
+Nel caso in cui il sistema riscontri delle anomalie nella validazione del file scelto come \glossario{dizionario dati}, il Tecnico visualizza un messaggio d'errore.
 
 \paragraph*{Attori principali}
 Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L'Utente ha richiesto il salvataggio o la modifica di un \glossario{dizionario dati} nel sistema;
+  \item Il Tecnico ha richiesto il salvataggio o la modifica di un \glossario{dizionario dati} nel sistema;
   \item Il file caricato non è valido.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene mostrato correttamente il messaggio d'errore.
+  \item Viene mostrato un messaggio d'errore esplicativo.
 \end{itemize}
 
 \paragraph*{Scenario principale}
@@ -28,3 +28,9 @@ Tecnico
   \item Il sistema riscontra un errore nella validazione del file scelto come \glossario{dizionario dati};
   \item Il sistema restituisce un messaggio con i dettagli dell'errore. 
 \end{enumerate}
+
+\paragraph*{Specializzazioni}
+\begin{itemize}
+  \item Credenziali incomplete (\hyperref[UC37]{UC37});
+  \item Credenziali errate (\hyperref[UC38]{UC38}).
+\end{itemize}

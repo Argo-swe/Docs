@@ -1,7 +1,7 @@
 \subsubsection{UC26 - Selezione DBMS}\label{UC26}
 
 \paragraph*{Descrizione}
-Il Tecnico seleziona un \glossario{DBMS} tra quelli disponibili, da utilizzare per la generazione del \glossario{prompt} e la conseguente costruzione della query SQL tramite \glossario{LLM}.
+L'Utente seleziona un \glossario{DBMS} tra quelli disponibili. La scelta del DBMS è un passaggio chiave nella generazione del prompt. Sebbene \glossario{SQL} sia un linguaggio standard, esistono variazioni specifiche per ogni DBMS. Per garantire che un \glossario{LLM} generi una \glossario{query} SQL corretta, il prompt deve indicare anche il DBMS di destinazione.
 
 \paragraph*{Attori principali}
 Utente
@@ -22,7 +22,7 @@ Utente
   \item L'Utente visualizza la lista dei \glossario{DBMS} disponibili;
   \item L'Utente sceglie un \glossario{DBMS} da una lista predefinita. La scelta è tra i seguenti DBMS:
     \begin{itemize}
-      \item MySQL (valore di default, se nessun DBMS è selezionato in modo esplicito);
+      \item MySQL;
       \item MariaDB;
       \item PostgreSQL;
       \item Microsoft SQL Server;

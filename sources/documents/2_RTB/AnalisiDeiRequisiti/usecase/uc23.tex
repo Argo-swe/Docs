@@ -1,4 +1,4 @@
-\subsubsection{UC23 - Download file di debug}\label{UC23}
+\subsubsection{UC23 - Download file di log}\label{UC23}
 \paragraph*{Descrizione}
 Il sistema consente al Tecnico di scaricare il file di \glossario{log} (in formato testuale) creato durante la generazione del \glossario{prompt}.
 
@@ -8,8 +8,8 @@ Tecnico
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il sistema è attivo e funzionante;
-  \item Il Tecnico ha effettuato correttamente l'autenticazione (\hyperref[UC1]{UC1});
-  \item Il sistema ha generato almeno un \glossario{prompt} e il rispettivo file di \glossario{log}.
+  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il sistema ha generato almeno un \glossario{prompt} e il rispettivo \glossario{log}.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -19,19 +19,22 @@ Tecnico
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico accede alla sezione dedicata ai \glossario{log};
-  \item Il Tecnico seleziona l'opzione "Scarica file";
+  \item Il Tecnico accede alla sezione dedicata al \glossario{debug} del prompt;
+  \item Il Tecnico seleziona la funzionalità "Scarica file";
   \item Il sistema avvia il download del file;
   \item Il sistema esegue con successo il download del file.
 \end{enumerate}
 
 \paragraph*{Scenario alternativo}
 \begin{enumerate}
-  \item Il sistema rileva un problema durante il download del file (\hyperref[UC24]{UC24});
+  \item Il sistema rileva un errore durante il download del file (\hyperref[UC24]{UC24});
   \item Viene visualizzato un messaggio con i dettagli dell'errore.
 \end{enumerate}
 
 \paragraph*{Estensioni}
 \begin{itemize}
   \item Visualizzazione errore download file (\hyperref[UC24]{UC24}).
+  \begin{itemize}
+    \item Extension point: errore durante il download del file.
+  \end{itemize}
 \end{itemize}
