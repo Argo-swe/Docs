@@ -1,4 +1,4 @@
-\subsubsection{UC13 - Salvataggio di un dizionario dati nel sistema}\label{UC13}
+\subsubsection{UC13 - Salvataggio di un nuovo dizionario dati nel sistema}\label{UC13}
 
 \begin{figure}[H]
   \centering
@@ -52,11 +52,13 @@ Il Tecnico vuole aggiungere un nuovo \glossario{dizionario dati} nell'applicazio
 \begin{itemize}
   \item Visualizzazione errore validazione file (\hyperref[UC19]{UC19}).
   \begin{itemize}
-    \item Extension point: errore nella validazione del file scelto come \glossario{dizionario dati}.
+    \item Extension point: errore nella validazione del file scelto come \glossario{dizionario dati};
+    \item Condition: formato del file non valido, file troppo pesante, file non conforme allo schema predefinito.
   \end{itemize}
   \item Visualizzazione errore nome \glossario{dizionario dati} (\hyperref[UC31]{UC31}).
   \begin{itemize}
-    \item Extension point: errore nella validazione del nome del \glossario{dizionario dati}.
+    \item Extension point: errore nella validazione del nome del \glossario{dizionario dati};
+    \item Condition: formato del nome non corretto, nome già esistente.
   \end{itemize}
   \item Visualizzazione errore descrizione \glossario{dizionario dati} (\hyperref[UC32]{UC32}).
   \begin{itemize}
