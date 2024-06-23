@@ -1,155 +1,87 @@
-\subsubsection{UC25 - Visualizzazione tabella di debug}\label{UC25}
+\subsubsection{UC25 - Visualizzazione singolo messaggio}\label{UC25}
 \paragraph*{Descrizione}
-Il Tecnico visualizza una tabella contenenti titolo, descrizione e score del \glossario{dizionario dati} nello strumento di debug. 
+L'Utente visualizza un messaggio nella chat. Questo può essere un messaggio di richiesta in linguaggio naturale o un messaggio di risposta contenente il \glossario{prompt}. 
 
 \paragraph*{Attori principali}
-Tecnico
+Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico ha generato correttamente un \glossario{prompt} basato su una richiesta in linguaggio naturale (\hyperref[UC5]{UC5});
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
+  \item Dev'essere presente almeno un messaggio nella chat.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il Tecnico visualizza la tabella di debug.
+  \item L'Utente visualizza correttamente il messaggio nella chat.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico ha correttamente generato un \glossario{prompt} (\hyperref[UC5]{UC5});
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
-  \item Il Tecnico visualizza la tabella di debug.
+  \item Nel sistema è presente almeno un messaggio della chat.
+  \item L'Utente visualizza il messaggio.
 \end{enumerate}
 
 \paragraph*{Inclusioni}
 \begin{itemize}
-    \item Visualizzazione riga della tabella di debug (\hyperref[UC25point1]{25.1});
+    \item Visualizzazione messaggio di richiesta (\hyperref[UC25point1]{UC25.1});
+    \item Visualizzazione messaggio di risposta (\hyperref[UC25point2]{UC25.2});
 \end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc25.png}
+  \caption{UC25 - Sottocasi d'uso}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{UC25.1 - Visualizzazione riga della tabella di debug}\label{UC25point1}
+\subsubsection{UC25.1 - Visualizzazione messaggio di richiesta}\label{UC25point1}
 \paragraph*{Descrizione}
-Il Tecnico visualizza una riga della tabella di debug. 
+L'Utente visualizza un messaggio con la sua richiesta in linguaggio naturale nella chat.
 
 \paragraph*{Attori principali}
-Tecnico
+Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
-  \item Il Tecnico visualizza la tebella di debug (\hyperref[UC25]{UC25})
+  \item È presente almeno un messaggio di richiesta in linguaggio naturale nella chat (\hyperref[UC3]{UC3}).
+  \item L'Utente visualizza un messaggio nella chat.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il Tecnico visualizza la tabella di debug.
+  \item Il messaggio visualizzato è un messaggio con una richiesta in linguaggio naturale.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
-  \item Il Tecnico visualizza la tabella di debug (\hyperref[UC25]{UC25}). 
+  \item Nel sistema è presente almeno un messaggio di richiesta in linguaggio naturale (\hyperref[UC3]{UC3}).
+  \item L'Utente visualizza il messaggio di richiesta.
 \end{enumerate}
-
-\paragraph*{Inclusioni}
-\begin{itemize}
-    \item Visualizzazione nome nella riga della tabella di debug (\hyperref[UC25poin1point1]{25.1.1});
-    \item Visualizzazione descrizione nella riga della tabella di debug (\hyperref[UC25poin1point2]{25.1.2});
-    \item Visualizzazione score nella riga della tabella di debug (\hyperref[UC25poin1point3]{25.1.3});
-\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{UC25.1.1 - Visualizzazione nome nella riga della tabella di debug}\label{UC25point1point1}
+\subsubsection{UC25.2 - Visualizzazione messaggio di risposta}\label{UC25point2}
 \paragraph*{Descrizione}
-Il Tecnico visualizza il nome della riga nella tabella di debug.
+L'Utente viualizza un messaggio di risposta, contenente il \glossario{prompt} generato da una richiesta in linguaggio naturale.
 
 \paragraph*{Attori principali}
-Tecnico
+Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
-  \item Il Tecnico visualizza la tebella di debug (\hyperref[UC25]{UC25});
-  \item Il Tecnico visualizza una riga della tabella di debug (\hyperref[25point1]{25.1}).
+  \item È presente almeno un messaggio di risposta contenente un \glossario{prompt} (\hyperref[UC5]{UC5}).
+  \item L'Utente visualizza un messaggio nella chat.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il Tecnico visualizza il nome nella riga
+  \item Il messaggio visualizzato è un messaggio con una riposta contenente un \glossario{prompt}.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
-  \item Il Tecnico visualizza la tabella di debug (\hyperref[UC25]{UC25});
-  \item Il Tecnico visualizza la riga della tabella di debug (\hyperref[UC25poin1]{25.1}).
-  \item Il Tecnico visualizza il nome nella riga.
-\end{enumerate}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsubsection{UC25.1.2 - Visualizzazione descrizione nella riga della tabella di debug}\label{UC25point1point2}
-\paragraph*{Descrizione}
-Il Tecnico visualizza la descrizione nella riga nella tabella di debug.
-
-\paragraph*{Attori principali}
-Tecnico
-
-\paragraph*{Precondizioni}
-\begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
-  \item Il Tecnico visualizza la tebella di debug (\hyperref[UC25]{UC25});
-  \item Il Tecnico visualizza una riga della tabella di debug (\hyperref[25point1]{25.1}).
-\end{itemize}
-
-\paragraph*{Postcondizioni}
-\begin{itemize}
-  \item Il Tecnico visualizza la descrizione nella riga.
-\end{itemize}
-
-\paragraph*{Scenario principale}
-\begin{enumerate}
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
-  \item Il Tecnico visualizza la tabella di debug (\hyperref[UC25]{UC25});
-  \item Il Tecnico visualizza la riga della tabella di debug (\hyperref[UC25poin1]{25.1}).
-  \item Il Tecnico visualizza la descrizione nella riga.
-\end{enumerate}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsubsection{UC25.1.3 - Visualizzazione score nella riga della tabella di debug}\label{UC25point1point3}
-\paragraph*{Descrizione}
-Il Tecnico visualizza lo score nella riga nella tabella di debug.
-
-\paragraph*{Attori principali}
-Tecnico
-
-\paragraph*{Precondizioni}
-\begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
-  \item Il Tecnico visualizza la tebella di debug (\hyperref[UC25]{UC25});
-  \item Il Tecnico visualizza una riga della tabella di debug (\hyperref[25point1]{25.1}).
-\end{itemize}
-
-\paragraph*{Postcondizioni}
-\begin{itemize}
-  \item Il Tecnico visualizza lo score nella riga
-\end{itemize}
-
-\paragraph*{Scenario principale}
-\begin{enumerate}
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
-  \item Il Tecnico visualizza la tabella di debug (\hyperref[UC25]{UC25});
-  \item Il Tecnico visualizza la riga della tabella di debug (\hyperref[UC25poin1]{25.1}).
-  \item Il Tecnico visualizza lo score nella riga.
+  \item Nel sistema è presente almeno un messaggio di risposta contenente un \glossario{prompt} (\hyperref[UC5]{UC5}).
+  \item L'Utente visualizza il messaggio di riposta.
 \end{enumerate}
 
