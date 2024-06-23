@@ -1,4 +1,4 @@
-\subsubsection{UC14 - Visualizzazione contenuto del dizionario dati}\label{UC14}
+\subsubsection{UC14 - Visualizzazione contenuto dizionario dati}\label{UC14}
 
 \begin{figure}[H]
   \centering
@@ -15,29 +15,28 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il sistema è attivo e funzionante;
-  \item È presente almeno un \glossario{dizionario dati};
   \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Vengono visualizzati correttamente i dati del \glossario{dizionario dati} scelto.
+  \item Viene visualizzato il contenuto del dizionario scelto.
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente vuole visualizzare il contenuto di un \glossario{dizionario dati} con l'obiettivo di formulare una richiesta opportuna al ChatBOT.
+L'Utente desidera visualizzare il contenuto di un \glossario{dizionario dati}.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
   \item L'Utente seleziona un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
-  \item Il sistema mostra il contenuto del dizionario in formato testuale non strutturato.
+  \item Il sistema mostra il contenuto del dizionario in un formato comprensibile per l'Utente.
 \end{enumerate}
 
-\paragraph*{Sottocasi d'uso}
+\paragraph*{Sottocasi d'uso:}
 \begin{itemize}
-  \item Visualizzazione nome database (\hyperref[UC14point1]{UC14.1});
-  \item Visualizzazione descrizione database (\hyperref[UC14point2]{UC14.2});
-  \item Visualizzazione lista tabelle (\hyperref[UC14point3]{UC14.3}).
+  \item UC14.1: Visualizzazione nome database;
+  \item UC14.2: Visualizzazione descrizione database;
+  \item UC14.3: Visualizzazione lista tabelle.
 \end{itemize}
 
 \begin{figure}[H]
@@ -66,7 +65,7 @@ Utente
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente vuole visualizzare il nome del database rappresentato da un \glossario{dizionario dati}.
+L'Utente desidera visualizzare il nome del database.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
@@ -93,7 +92,7 @@ Utente
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente vuole visualizzare la descrizione del database.
+L'Utente desidera visualizzare la descrizione del database.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
@@ -104,7 +103,7 @@ L'Utente vuole visualizzare la descrizione del database.
 
 \subsubsection{UC14.3 - Visualizzazione lista tabelle dizionario dati}\label{UC14point3}
 \paragraph*{Descrizione}
-L'Utente visualizza la lista delle tabelle descritte nel dizionario dati.
+L'Utente visualizza la lista delle tabelle descritte nel \glossario{dizionario dati}.
 
 \paragraph*{Attori principali}
 Utente
@@ -120,12 +119,17 @@ Utente
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente vuole visualizzare la lista delle tabelle riportate nel \glossario{dizionario dati}.
+L'Utente desidera visualizzare la lista delle tabelle.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
   \item L'Utente visualizza la lista delle tabelle.
 \end{enumerate}
+
+\paragraph*{Sottocasi d'uso:}
+\begin{itemize}
+  \item UC14.3.1: Visualizzazione singola tabella \glossario{dizionario dati}.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -138,7 +142,7 @@ L'Utente vuole visualizzare la lista delle tabelle riportate nel \glossario{dizi
 \end{figure}
 
 \paragraph*{Descrizione}
-L'Utente visualizza una tabella tra quelle presenti nel \glossario{dizionario dati}.
+L'Utente visualizza una tabella tra quelle descritte nel \glossario{dizionario dati}.
 
 \paragraph*{Attori principali}
 Utente
@@ -155,12 +159,18 @@ Utente
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente vuole visualizzare una tabella con le sue informazioni.
+L'Utente desidera visualizzare una tabella con le sue informazioni.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
   \item L'Utente visualizza una singola tabella in lista.
 \end{enumerate}
+
+\paragraph*{Sottocasi d'uso:}
+\begin{itemize}
+  \item UC14.3.1.1: Visualizzazione nome tabella;
+  \item UC14.3.1.2: Visualizzazione descrizione tabella.
+\end{itemize}
 
 \begin{figure}[H]
   \centering
@@ -190,7 +200,7 @@ Utente
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente vuole visualizzare il nome di una tabella.
+L'Utente desidera visualizzare il nome di una tabella.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
@@ -219,7 +229,7 @@ Utente
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente vuole visualizzare la descrizione di una tabella.
+L'Utente desidera visualizzare la descrizione di una tabella.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
