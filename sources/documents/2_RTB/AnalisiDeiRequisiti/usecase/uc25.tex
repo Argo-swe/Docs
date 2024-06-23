@@ -1,30 +1,32 @@
-\subsubsection{UC25 - Visualizzazione singolo messaggio}\label{UC25}
+\subsubsection{UC25 - Visualizzazione lista messaggi nella chat}\label{UC25}
 \paragraph*{Descrizione}
-L'Utente visualizza un messaggio nella chat. Questo può essere un messaggio di richiesta in linguaggio naturale o un messaggio di risposta contenente il \glossario{prompt}. 
+L'Utente visualizza il contenuto di una chat. La lista dei messaggi comprende sia le richieste dell'Utente che le risposte del ChatBOT.
 
 \paragraph*{Attori principali}
 Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Dev'essere presente almeno un messaggio nella chat.
+  \item Il sistema è attivo e funzionante;
+  \item È presente almeno un messaggio nella chat.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item L'Utente visualizza correttamente il messaggio nella chat.
+  \item Viene visualizzato correttamente il contenuto della chat.
 \end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole visualizzare la lista dei messaggi nella chat.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Nel sistema è presente almeno un messaggio della chat.
-  \item L'Utente visualizza il messaggio.
+  \item L'Utente visualizza il contenuto della chat.
 \end{enumerate}
 
-\paragraph*{Inclusioni}
+\paragraph*{Sottocasi d'uso:}
 \begin{itemize}
-    \item Visualizzazione messaggio di richiesta (\hyperref[UC25point1]{UC25.1});
-    \item Visualizzazione messaggio di risposta (\hyperref[UC25point2]{UC25.2});
+  \item UC25.1: Visualizzazione singolo messaggio nella chat.
 \end{itemize}
 
 \begin{figure}[H]
@@ -33,55 +35,96 @@ Utente
   \caption{UC25 - Sottocasi d'uso}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{UC25.1 - Visualizzazione messaggio di richiesta}\label{UC25point1}
+\subsubsection{UC25.1 - Visualizzazione singolo messaggio nella chat}\label{UC25point1}
 \paragraph*{Descrizione}
-L'Utente visualizza un messaggio con la sua richiesta in linguaggio naturale nella chat.
+L'Utente visualizza un messaggio nella chat.
 
 \paragraph*{Attori principali}
 Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item È presente almeno un messaggio di richiesta in linguaggio naturale nella chat (\hyperref[UC3]{UC3}).
-  \item L'Utente visualizza un messaggio nella chat.
+  \item L'Utente sta visualizzando la lista dei messaggi (\hyperref[UC25]{UC25}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il messaggio visualizzato è un messaggio con una richiesta in linguaggio naturale.
+  \item Il sistema mostra il singolo messaggio nella chat.
 \end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole visualizzare un singolo messaggio all'interno della chat.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Nel sistema è presente almeno un messaggio di richiesta in linguaggio naturale (\hyperref[UC3]{UC3}).
-  \item L'Utente visualizza il messaggio di richiesta.
+  \item L'Utente visualizza il messaggio.
 \end{enumerate}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph*{Sottocasi d'uso:}
+\begin{itemize}
+  \item UC25.1.1: Visualizzazione contenuto messaggio;
+  \item UC25.1.2: Visualizzazione mittente messaggio.
+\end{itemize}
 
-\subsubsection{UC25.2 - Visualizzazione messaggio di risposta}\label{UC25point2}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc25_1.png}
+  \caption{UC25.1 - Sottocasi d'uso}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC25.1.1 - Visualizzazione contenuto messaggio}\label{UC25point1point1}
 \paragraph*{Descrizione}
-L'Utente viualizza un messaggio di risposta, contenente il \glossario{prompt} generato da una richiesta in linguaggio naturale.
+L'Utente visualizza il contenuto di un messaggio. 
 
 \paragraph*{Attori principali}
 Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item È presente almeno un messaggio di risposta contenente un \glossario{prompt} (\hyperref[UC5]{UC5}).
-  \item L'Utente visualizza un messaggio nella chat.
+  \item L'Utente sta visualizzando un singolo messaggio nella chat (\hyperref[UC25point1]{UC25.1}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il messaggio visualizzato è un messaggio con una riposta contenente un \glossario{prompt}.
+  \item Viene visualizzato correttamente il contenuto del messaggio.
 \end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole visualizzare il contenuto di un messaggio all'interno della chat.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Nel sistema è presente almeno un messaggio di risposta contenente un \glossario{prompt} (\hyperref[UC5]{UC5}).
-  \item L'Utente visualizza il messaggio di riposta.
+  \item L'Utente visualizza il contenuto del messaggio.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC25.1.2 - Visualizzazione mittente messaggio}\label{UC25point1point2}
+\paragraph*{Descrizione}
+L'Utente visualizza il mittente di un messaggio. Il mittente può essere l'Utente stesso o il ChatBOT.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'Utente sta visualizzando un singolo messaggio nella chat (\hyperref[UC25point1]{UC25.1}).
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene visualizzato correttamente il mittente del messaggio.
+\end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole visualizzare il mittente di un messaggio all'interno della chat.
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L'Utente visualizza il mittente del messaggio.
 \end{enumerate}
 
