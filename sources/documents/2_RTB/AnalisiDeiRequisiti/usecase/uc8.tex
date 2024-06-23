@@ -1,7 +1,13 @@
-\subsubsection{UC8 - Selezione e copia del \glossario{prompt} generato}\label{UC8}
+\subsubsection{UC8 - Copia del \glossario{prompt} generato}\label{UC8}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc8.png}
+  \caption{UC8}
+\end{figure}
 
 \paragraph*{Descrizione}
-L’Utente vuole selezionare il \glossario{prompt} che è stato generato dal sistema per poterlo usare all’interno della richiesta ad un LLM esterno al fine di generare una \glossario{query}.
+L'Utente può copiare il contenuto del \glossario{prompt} negli appunti di sistema, per poi incollarlo agevolmente in un servizio esterno.
 
 \paragraph*{Attori principali}
 Utente
@@ -9,16 +15,20 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L'applicazione è stata avviata con successo;
-  \item L’Utente ha generato un \glossario{prompt} con successo a partire da una richiesta in linguaggio naturale.  
+  \item Il sistema ha generato almeno un \glossario{prompt}.  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il \glossario{prompt} che è stato generato dal sistema come risultato dell’interrogazione è copiato negli appunti del sistema dell’Utente.
+  \item Il \glossario{prompt} viene correttamente copiato negli appunti di sistema dell'Utente.
 \end{itemize}
+
+\paragraph*{Trigger}
+L'Utente desidera copiare il \glossario{prompt} generato, con l'obiettivo di effettuare un'operazione di "Copy and Paste", incollando il contenuto del prompt in un servizio esterno che implementi \glossario{LLM}.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Dopo aver visualizzato il \glossario{prompt} di risposta del sistema l’Utente seleziona la funzione di copia;
-  \item L’Utente salva nei suoi appunti di sistema una copia del \glossario{prompt} che potrà poi incollare su LLM esterni per la generazione della \glossario{query}.
+  \item L'Utente visualizza il \glossario{prompt} generato;
+  \item L'Utente seleziona la funzione di copia;
+  \item Negli appunti di sistema viene salvata una copia del \glossario{prompt}, che può essere fornita in input a un \glossario{LLM} esterno per la generazione di una \glossario{query} SQL.
 \end{enumerate}
