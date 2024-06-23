@@ -1,6 +1,6 @@
 \subsubsection{UC11 - Visualizzazione errore generazione del \glossario{prompt}}\label{UC11}
 \paragraph*{Descrizione}
-Viene visualizzato un messaggio a seguito di errori interni al sistema durante il processo di generazione del \glossario{prompt}.
+Il sistema restituisce un messaggio a causa di errori durante il processo di generazione del \glossario{prompt}.
 
 \paragraph*{Attori principali}
 Utente
@@ -14,12 +14,12 @@ Utente
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene visualizzato correttamente il messaggio di errore.
+  \item Viene visualizzato un messaggio d'errore esplicativo.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'Utente richiede la generazione del \glossario{prompt} (\hyperref[UC5]{UC5});
+  \item L'Utente richiede la generazione del \glossario{prompt};
   \item Il sistema rileva degli errori interni;
-  \item Viene visualizzato un messaggio di errore appropriato che suggerisce all'Utente di riprovare l'operazione, attendere o contattare il supporto tecnico.
+  \item L'Utente visualizza un messaggio d'errore che lo invita a riprovare l'operazione, attendere o contattare il supporto tecnico.
 \end{enumerate}

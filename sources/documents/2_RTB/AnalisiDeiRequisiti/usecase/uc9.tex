@@ -1,3 +1,5 @@
+% da valutare se questa cosa è solo per il tecnico
+
 \subsubsection{UC9 - Visualizzazione lista dizionari dati caricati nel sistema}\label{UC9}
 
 \begin{figure}[H]
@@ -15,12 +17,12 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il sistema è attivo e funzionante;
-  \item È stato caricato almeno un \glossario{dizionario dati} nel sistema.  
+  \item È stato caricato almeno un \glossario{dizionario dati}.  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-\item Viene visualizzata correttamente la lista dei \glossario{dizionari dati} presenti nel sistema.
+\item Viene visualizzata la lista dei \glossario{dizionari dati} presenti nel sistema.
 \end{itemize}
 
 \paragraph*{Trigger}
@@ -31,17 +33,22 @@ L'Utente desidera visualizzare i \glossario{dizionari dati} disponibili.
   \item L'Utente visualizza la lista dei \glossario{dizionari dati}.
 \end{enumerate}
 
+\paragraph*{Sottocasi d'uso:}
+\begin{enumerate}
+  \item UC9.1: Visualizzazione singolo dizionario dati.
+\end{enumerate}
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.90\textwidth]{assets/uc9_1.png}
-  \caption{UC9 - Sottocaso d'uso}
+  \caption{UC9 - Sottocasi d'uso}
 \end{figure}
 
-% Da aggiungere forse un UC per il fallimento di visualizzazione della lista
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{UC9.1 - Visualizzazione singolo dizionario dati}\label{UC9point1}
 \paragraph*{Descrizione}
-L'Utente visualizza un singolo dizionario all'interno della lista dei \glossario{dizionari dati} caricati nel sistema.
+L'Utente visualizza un dizionario all'interno della lista dei \glossario{dizionari dati} caricati nel sistema.
 
 \paragraph*{Attori principali}
 Utente
@@ -49,17 +56,17 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il sistema è attivo e funzionante;
-  \item È stato caricato almeno un \glossario{dizionario dati} nel sistema;
+  \item È stato caricato almeno un \glossario{dizionario dati};
   \item È visibile la lista dei \glossario{dizionari dati} (\hyperref[UC9]{UC9}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item L'Utente visualizza correttamente un singolo \glossario{dizionario dati}.
+  \item Viene visualizzato correttamente il \glossario{dizionario dati}.
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente vuole visualizzare un singolo \glossario{dizionari dati} presente nella lista.
+L'Utente desidera visualizzare un dizionario all'interno della lista.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
