@@ -20,120 +20,151 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
     \hline
-    \textbf{RF.O.1} & L’Utente deve poter effettuare la procedura di login per passare al profilo di Tecnico. &  \hyperref[UC1]{UC1}, \emph{Verbale Esterno 2024-04-09}, \emph{Verbale Interno 2024-04-20}\\
+    \textbf{RF.O.1} & L'Utente deve poter effettuare il login per passare al profilo di Tecnico. & \hyperref[UC1]{UC1}, Verbale Esterno 2024-04-09, Verbale Interno 2024-04-20\\
     \hline
-    \textbf{RF.O.1.1} & L’Utente deve poter inserire la propria e-mail per autenticarsi. & \hyperref[UC1point1]{UC1.1}, \emph{Verbale Interno 2024-04-20}\\
+    \textbf{RF.O.1.1} & L'Utente deve inserire uno username in fase di autenticazione. & \hyperref[UC1point1]{UC1.1}, Verbale Interno 2024-04-20\\
     \hline
-    \textbf{RF.O.1.2} & L’Utente deve poter inserire la propria password per autenticarsi. & \hyperref[UC1point2]{UC1.2}, \emph{Verbale Interno 2024-04-20}\\
+    \textbf{RF.O.1.2} & L'Utente deve inserire una password in fase di autenticazione. & \hyperref[UC1point2]{UC1.2}, Verbale Interno 2024-04-20\\
     \hline
-    \textbf{RF.O.2} & L'Utente riceve un messaggio d'errore in caso di login errato. &  \hyperref[UC2]{UC2}\\
+    \textbf{RF.O.2} & Il sistema deve restituire un messaggio d'errore in caso di fallimento del login. & \hyperref[UC2]{UC2}\\
     \hline
-    \textbf{RF.O.2.1} & L'Utente  riceve un messaggio d'errore in caso di incompleto inserimento delle credenziali. & \hyperref[UC2point1]{UC2.1}\\
+    \textbf{RF.O.2.1} & L'Utente deve visualizzare un messaggio di errore se inserisce delle credenziali incomplete. & \hyperref[UC2point1]{UC2.1}\\
     \hline
-    \textbf{RF.O.2.2} & L’Utente  riceve un messaggio d'errore in caso di credenziali errate. & \hyperref[UC2point2]{UC2.2}\\
+    \textbf{RF.O.2.2} & L'Utente deve visualizzare un messaggio di errore se inserisce delle credenziali errate. & \hyperref[UC2point2]{UC2.2}\\
     \hline
-    \textbf{RF.O.2.3} & L’Utente  riceve un messaggio d'errore nel caso dell'inserimento di una password errata per quell'username & \hyperref[UC2point3]{UC2.3}\\
+    \textbf{RF.O.3} & L'Utente deve poter inserire una richiesta in linguaggio naturale. & \hyperref[UC3]{UC3}, Capitolato\\
     \hline
-    \textbf{RF.O.3} & L’Utente  deve poter inserire una richiesta in linguaggio naturale. &  \hyperref[UC3]{UC3}, \emph{Capitolato}\\
+    \textbf{RF.O.4} & L'Utente deve poter selezionare un \glossario{dizionario dati} da utilizzare nel sistema. & \hyperref[UC4]{UC4}, Capitolato\\
     \hline
-    \textbf{RF.O.4} & L’Utente  deve poter selezionare il \glossario{dizionario dati}. &  \hyperref[UC4]{UC4}, \emph{Capitolato}\\
+    \textbf{RF.O.5} & Il sistema deve generare un \glossario{prompt} in risposta alla richiesta dell'Utente. & \hyperref[UC5]{UC5}, Capitolato\\
     \hline
-    \textbf{RF.O.5} & L'applicazione deve generare il \glossario{prompt} come output. &  \hyperref[UC5]{UC5}, \emph{Capitolato}\\
+    \textbf{RF.O.6} & L'Utente deve visualizzare un avviso in caso venga formulata una richiesta non idonea. & \hyperref[UC6]{UC6}\\
     \hline
-    \textbf{RF.O.6} & L’Utente  riceve un messaggio d'errore in caso di errore durante la generazione del \glossario{prompt}. &  \hyperref[UC6]{UC6}\\
+    \textbf{RF.D.7} & L'Utente deve poter scegliere la lingua con cui effettuare una richiesta al ChatBOT. & \hyperref[UC7]{UC7}\\
     \hline
-    \textbf{RF.D.7} & L’Utente  deve poter scegliere la lingua in cui inserire la richiesta in linguaggio naturale. &  \hyperref[UC7]{UC7}\\
+    \textbf{RF.O.8} & L'Utente deve poter copiare il contenuto del \glossario{prompt} generato. Il prompt può essere fornito in input a un \glossario{LLM} esterno per convertire la frase dell'Utente in una query \glossario{SQL}. & \hyperref[UC8]{UC8}, Capitolato\\
     \hline
-    \textbf{RF.O.8} & L’Utente  deve poter copiare il \glossario{prompt} generato. &  \hyperref[UC8]{UC8}, \emph{Capitolato}\\
+    \textbf{RF.O.9} & L'Utente deve poter visualizzare la lista dei \glossario{dizionario dati} caricati nel sistema. & \hyperref[UC10]{UC10}\\
     \hline
-    \textbf{RF.O.9} & L’Utente  deve poter visualizzare il dettaglio dei \glossario{dizionario dati} caricati, vedendone nome e descrizione. &  \hyperref[UC9]{UC9}\\
+    \textbf{RF.O.9.1} & L'Utente deve poter visualizzare un singolo \glossario{dizionario dati} all'interno della lista. & \hyperref[UC9point1]{UC9.1}\\
     \hline
-    \textbf{RF.O.10} & L’Utente  deve poter visualizzare la lista dei \glossario{dizionario dati}. &  \hyperref[UC10]{UC10}\\
+    \textbf{RF.O.10} & L'Utente deve poter visualizzare le caratteristiche di un \glossario{dizionario dati}. & \hyperref[UC10]{UC10}\\
     \hline
-    \textbf{RF.O.11} & L’Utente  riceve un messaggio d'errore in caso di errore durante il caricamento del dettaglio del\glossario{dizionario dati}. &  \hyperref[UC11]{UC11}\\
+    \textbf{RF.O.10.1} & L'Utente deve poter visualizzare il nome di un \glossario{dizionario dati}. & \hyperref[UC10point1]{UC10.1}\\
     \hline
-    \textbf{RF.O.12} & Il Tecnico deve poter effettuare il logout. &  \hyperref[UC12]{UC12}\\
+    \textbf{RF.O.10.2} & L'Utente deve poter visualizzare l'estensione del file scelto come \glossario{dizionario dati}. & \hyperref[UC10point2]{UC10.2}\\
     \hline
-    \textbf{RF.O.13} & Il Tecnico deve poter caricare un \glossario{dizionario dati}. &  \hyperref[UC13]{UC13}, \emph{Capitolato}\\
+    \textbf{RF.O.10.3} & L'Utente deve poter visualizzare la descrizione di un \glossario{dizionario dati}. & \hyperref[UC10point3]{UC10.3}\\
     \hline
-    \textbf{RF.O.14} & Il Tecnico deve poter vedere il dettaglio completo del \glossario{dizionario dati}. &  \hyperref[UC14]{UC14}, \emph{Capitolato}\\
+    \textbf{RF.O.10.4} & L'Utente deve poter visualizzare la dimensione del file scelto come \glossario{dizionario dati}. & \hyperref[UC10point4]{UC10.4}\\
     \hline
-    \textbf{RF.OP.15} & Il Tecnico deve poter vedere il dettaglio dei test di verifica correttezza del dizionario dati. &  \hyperref[UC15]{UC15}\\
+    \textbf{RF.O.10.5} & L'Utente deve poter visualizzare la data di ultimo aggiornamento di un \glossario{dizionario dati}. & \hyperref[UC10point5]{UC10.5}\\
     \hline
-    \textbf{RF.OP.15.1} & Il Tecnico deve poter eseguire i test di verifica correttezza basandosi su un reale database &  \hyperref[UC15point1]{UC15.1}\\
+    \textbf{RF.O.11} & L'Utente deve visualizzare un messaggio esplicativo nel caso in cui si verifichi un errore durante la generazione del \glossario{prompt}. & \hyperref[UC11]{UC11}\\
     \hline
-    \textbf{RF.O.16} & Il Tecnico deve poter modificare il \glossario{dizionario dati}. &  \hyperref[UC16]{UC16}, \emph{Capitolato}\\
+    \textbf{RF.O.12} & Il Tecnico deve poter effettuare il logout per terminare la sessione corrente. & \hyperref[UC12]{UC12}\\
     \hline
-    \textbf{RF.O.16.1} & Il Tecnico deve poter modificare il nome del \glossario{dizionario dati}. &  \hyperref[UC16point1]{UC16.1}\\
+    \textbf{RF.O.13} & Il Tecnico deve poter inserire un nuovo \glossario{dizionario dati} all'interno del sistema. & \hyperref[UC13]{UC13}\\
     \hline
-    \textbf{RF.O.16.2} & Il Tecnico deve poter modificare la descrizione del \glossario{dizionario dati}. &  \hyperref[UC16point2]{UC16.2}\\
+    \textbf{RF.O.14} & L'Utente deve poter visualizzare il contenuto testuale di un \glossario{dizionario dati}. & \hyperref[UC14]{UC14}, Verbale Esterno 2024-06-07\\
     \hline
-    \textbf{RF.O.16.3} & Il Tecnico deve poter modificare il file di configurazinoe del \glossario{dizionario dati}. &  \hyperref[UC16point3]{UC16.3}\\
+    \textbf{RF.O.14.1} & L'Utente deve poter visualizzare il nome del database riportato nel dizionario dati. & \hyperref[UC14point1]{UC14.1}\\
     \hline
-    \textbf{RF.O.17} & Il Tecnico deve poter eliminare un \glossario{dizionario dati}. &  \hyperref[UC17]{UC17}\\
+    \textbf{RF.O.14.2} & L'Utente deve poter visualizzare la descrizione del database riportato nel dizionario dati. & \hyperref[UC14point2]{UC14.2}\\
     \hline
-    \textbf{RF.O.18} & Il Tecnico deve poter eseguire il debug del \glossario{prompt} &  \hyperref[UC18]{UC18}, \emph{Verbale Esterno 2024-04-09}\\
+    \textbf{RF.O.14.3} & L'Utente deve poter visualizzare la lista delle tabelle descritte nel dizionario dati. & \hyperref[UC14point3]{UC14.3}\\
     \hline
-    \textbf{RF.O.19} & Il Tecnico riceve un messaggio d'errore nel caso in cui non riesca a caricare un \glossario{dizionario dati}. & \hyperref[UC19]{UC19} \\
+    \textbf{RF.O.14.3.1} & L'Utente deve poter visualizzare il nome di una singola tabella tra quelle descritte nel dizionario dati. & \hyperref[UC14point3point1]{UC14.3.1}\\
+    \hline
+    \textbf{RF.O.14.3.2} & L'Utente deve poter visualizzare la descrizione di una singola tabella tra quelle descritte nel dizionario dati. & \hyperref[UC14point3point2]{UC14.3.2}\\
+    \hline
+    \textbf{RF.OP.15} & Il Tecnico deve poter caricare il file relativo a un \glossario{dizionario dati}. & \hyperref[UC15]{UC15}\\
+    \hline
+    \textbf{RF.O.16} & Il Tecnico deve poter inserire il nome di un \glossario{dizionario dati}. & \hyperref[UC16]{UC16}, \emph{Capitolato}\\
+    \hline
+    \textbf{RF.O.17} & Il Tecnico deve poter inserire la descrizione di un \glossario{dizionario dati}. & \hyperref[UC17]{UC17}\\
+    \hline
+    \textbf{RF.O.18} & Il Tecnico deve poter eliminare un \glossario{dizionario dati} dal sistema. & \hyperref[UC18]{UC18}\\
+    \hline
+    \textbf{RF.O.19} & Il sistema restituisce un messaggio d'errore qualora non riesca a validare il file scelto come \glossario{dizionario dati}. & \hyperref[UC19]{UC19} \\
     \hline 
-    \textbf{RF.O.20} & Il Tecnico riceve un messaggio d'errore nel caso in cui non riesca a modificare correttamente il \glossario{dizionario dati}. & \hyperref[UC20]{UC20} \\
+    \textbf{RF.O.20} & Il Tecnico deve poter sovrascrivere il file di configurazione di un \glossario{dizionario dati}. & \hyperref[UC20]{UC20} \\
     \hline
-    \textbf{RF.O.20.1} & Il Tecnico riceve un messaggio d'errore nel caso in cui non riesca a modificare correttamente il titolo del \glossario{dizionario dati}. & \hyperref[UC20point1]{UC20.1} \\
+    \textbf{RF.O.21} & Il Tecnico deve visualizzare un errore se l'eliminazione di un \glossario{dizionario dati} fallisce. & \hyperref[21]{UC21}\\
     \hline
-    \textbf{RF.O.20.2} & Il Tecnico riceve un messaggio d'errore nel caso in cui non riesca a modificare correttamente la descrizione del \glossario{dizionario dati}. & \hyperref[UC20point2]{UC20.2} \\
+    \textbf{RF.O.22} & Il Tecnico deve poter visualizzare l'ultimo messaggio di \glossario{debug}. Il debug illustra il processo di generazione del prompt. & \hyperref[22]{UC22}\\
     \hline
-    \textbf{RF.O.21} & Il Tecnico riceve un messaggio d'errore in caso di errore durante l'eliminazione del \glossario{dizionario dati}. &  \hyperref[21]{UC21}\\
+    \textbf{RF.O.23} & Il Tecnico deve poter scaricare il file di \glossario{log} creato durante la generazione del prompt. & \hyperref[23]{UC23}\\
     \hline
-    \textbf{RF.O.22} & Il Tecnico deve poter scaricare un log dallo strumento di \glossario{debug}&  \hyperref[UC22]{UC22}\\
+    \textbf{RF.O.24} & Il Tecnico deve visualizzare un errore nel caso in cui il download del file non vada a buon fine. &  \hyperref[UC24]{UC24}\\
     \hline
-    \textbf{RF.O.23} & Il Tecnico riceve un messaggio d'errore nel caso in cui il download del log non vada a buon fine. &  \hyperref[UC23]{UC23}\\
+    \textbf{RF.O.25} & L'Utente deve poter visualizzare il contenuto della chat. &  \hyperref[UC25]{UC25}\\
     \hline
-    \textbf{RF.O.24} & Il Tecnico riceve un messaggio d'errore nel caso in cui ci siano anomalie nella generazione della tabella o del log nello strumento di debug. &  \hyperref[UC24]{UC24}\\
+    \textbf{RF.O.25.1} & L'Utente deve poter visualizzare un singolo messaggio nella chat. &  \hyperref[UC25point1]{UC25.1}\\
     \hline
-    \textbf{RF.O.25} & Il Tecnico deve poter visualizzare una tabella con i nomi, le descrizioni e gli score delle tabelle considerate dal \glossario{dizionario dati}. &  \hyperref[UC25]{UC25}\\
+    \textbf{RF.O.25.1.1} & L'Utente deve poter visualizzare il contenuto di un singolo messaggio nella chat. &  \hyperref[UC25point1point1]{UC25.1.1}\\
     \hline
-    \textbf{RF.O.25.1} & Il Tecnico deve poter visualizzare una riga nella tabella di debug &  \hyperref[UC25point1]{UC25.1}\\
+    \textbf{RF.O.25.1.2} & L'Utente deve poter visualizzare il mittente di un messaggio. &  \hyperref[UC25poin1point2]{UC25.1.2}\\
     \hline
-    \textbf{RF.O.25.1.1} & Il Tecnico deve poter visualizzare il nome nella riga della tabella di debug. &  \hyperref[UC25poin1point1]{UC25.1.1}\\
+    \textbf{RF.O.26} & L'Utente deve poter selezionare un \glossario{DBMS} tra quelli disponibili. & \hyperref[UC26]{UC26} \\
     \hline
-    \textbf{RF.O.25.1.2} & Il Tecnico deve poter visualizzare la descrizione nella riga della tabella di debug. &  \hyperref[UC25poin1point2]{UC25.1.2}\\
+    \textbf{RF.O.27} & L'Utente deve poter eliminare la cronologia della chat. & \hyperref[UC27]{UC27} \\
     \hline
-    \textbf{RF.O.25.1.3} & Il Tecnico deve poter visualizzare lo score nella riga della tabella di debug. &  \hyperref[UC25poin1point3]{UC25.1.3}\\
+    \textbf{RF.O.28} & Il sistema restituisce un messaggio d'errore se il file inserito dal Tecnico è in un formato non supportato. & \hyperref[UC28]{UC28} \\
     \hline
-    \textbf{RF.O.26} & Il sistema deve memorizzare i dizionari caricati dal Tecnico. & Capitolato \\
+    \textbf{RF.O.29} & Il Tecnico deve poter modificare il nome di un \glossario{dizionario dati}. & \hyperref[UC29]{UC29} \\
     \hline
-    \textbf{RF.D.27} & Il sistema deve memorizzare gli \glossario{embeddings index} creati durante il caricamento o la modifica del dizionario dati. & Verbale Esterno 2024-05-06 \\
+    \textbf{RF.O.30} & Il Tecnico deve poter modificare la descrizione di un \glossario{dizionario dati}. & \hyperref[UC30]{UC30} \\
     \hline
-    \textbf{RF.O.28} & Nel caso in cui un utente formuli una richiesta non idonea, il ChatBOT deve fornire una risposta cordiale, invitando l'utente ad attenersi all'argomento del \glossario{dizionario dati}. & Verbale Interno \\
+    \textbf{RF.O.31} & Il sistema restituisce un messaggio di errore qualora non riesca a validare il nome di un \glossario{dizionario dati}. & \hyperref[UC31]{UC31} \\
     \hline
-    \textbf{RF.OP.30} & Il prompt generato dall'applicazione deve essere compatibile con sistemi di AI alternativi a ChatGPT. & Capitolato \\
+    \textbf{RF.O.31.1} & Il sistema restituisce un messaggio di errore nel caso in cui il formato del nome del \glossario{dizionario dati} non sia valido. & \hyperref[UC31point1]{UC31.1} \\
     \hline
-    \textbf{RF.OP.31} & Oltre a visualizzare il prompt generato, il ChatBOT mostra all'utente anche la frase SQL prodotta dal sistema di AI. & Capitolato \\
+    \textbf{RF.O.31.2} & Il sistema restituisce un messaggio di errore nel caso in cui il nome del \glossario{dizionario dati} non sia univoco. & \hyperref[UC31point2]{UC31.2} \\
     \hline
-    \textbf{RF.OP.32} & La richiesta dell'utente deve poter essere inserita tramite input vocale. & Capitolato \\
+    \textbf{RF.O.32} & Il sistema restituisce un messaggio di errore qualora non riesca a validare la descrizione di un \glossario{dizionario dati}. & \hyperref[UC32]{UC32} \\
     \hline
+    \textbf{RF.O.33} & Il sistema restituisce un messaggio di errore se il file inserito dal Tecnico ha una dimensione superiore a 1 MB. & \hyperref[UC33]{UC33} \\
     \hline
-    \textbf{RF.O.33} & Il dizionario dati deve rispecchiare la struttura di un database, e contenere descrizioni in linguaggio naturale delle tabelle e dei rispettivi campi. & Verbale Esterno 2024-04-09 \\
+    \textbf{RF.O.34} & Il sistema restituisce un messaggio di errore se il file inserito dal Tecnico non è conforme allo schema predefinito. & \hyperref[UC34]{UC34} \\
     \hline
-    \textbf{RF.O.34} & Il prompt deve contenere almeno le descrizioni delle tabelle e delle colonne. & Verbale esterno 2024-06-07 \\
+    \textbf{RF.O.35} & L'Utente deve poter visualizzare il contenuto del \glossario{prompt} generato. & \hyperref[UC35]{UC35} \\
     \hline
-    \textbf{RF.O.35} & La cronologia della chat deve essere eliminata quando viene attivato un nuovo \glossario{dizionario dati} nel sistema. & Verbale interno \\
+    \textbf{RF.O.36} & L'Utente deve poter effettuare una ricerca tra i \glossario{dizionari dati} caricati nel sistema. & \hyperref[UC36]{UC36} \\
     \hline
-    \textbf{RF.O.36} & Quando il Tecnico richiede la generazione del prompt, il sistema elabora in automatico un file di \glossario{log}. & Verbale esterno \\
+    \textbf{RF.O.37} & Il sistema deve memorizzare i dizionari caricati dal Tecnico. & Capitolato \\
     \hline
-    \textbf{RF.OP.37} & Il sistema di generazione del prompt deve supportare richieste in lingue diverse dall'inglese. & Verbale interno \\
+    \textbf{RF.D.38} & Il sistema deve memorizzare gli \glossario{indici vettoriali} creati durante il caricamento o la modifica del dizionario dati. & Verbale Esterno 2024-05-06 \\
     \hline
-    \textbf{RF.O.38} & La scelta del dizionario dati deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
+    \textbf{RF.D.39} & Nel caso in cui un utente formuli una richiesta non idonea, il ChatBOT deve fornire una risposta cordiale, invitando l'utente ad attenersi all'argomento del \glossario{dizionario dati}. & Verbale Interno \\
     \hline
-    \textbf{RF.O.39} & Per procedere con l'inserimento di una richiesta, è necessario aver selezionato un dizionario dati. & Verbale interno \\
+    \textbf{RF.OP.40} & Il prompt generato dall'applicazione deve essere compatibile con sistemi di AI alternativi a ChatGPT. & Capitolato \\
     \hline
-    \textbf{RF.O.40} & La scelta della lingua deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
+    \textbf{RF.OP.41} & Oltre a visualizzare il prompt generato, il ChatBOT mostra all'utente anche la frase SQL prodotta dal sistema di \glossario{AI}. & Capitolato \\
     \hline
-    \textbf{RF.O.41} & La scelta del DBMS deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
+    \textbf{RF.OP.42} & La richiesta dell'utente deve poter essere inserita tramite input vocale. & Capitolato \\
     \hline
-    \textbf{RF.O.42} & Il sistema di generazione del prompt deve supportare richieste in lingua inglese. & Capitolato \\
+    \textbf{RF.O.43} & Il dizionario dati deve rispecchiare la struttura di un database, e contenere descrizioni in linguaggio naturale delle tabelle e dei rispettivi campi. & Verbale Esterno 2024-04-09 \\
     \hline
-    \textbf{RF.OP.43} & Quando un utente ripete più volte lo stesso messaggio, il ChatBOT restituisce la risposta formulata alla prima occorrenza del messaggio. & Verbale interno \\
+    \textbf{RF.O.44} & Il prompt deve contenere almeno le descrizioni delle tabelle e delle colonne. & Verbale esterno 2024-06-07 \\
+    \hline
+    \textbf{RF.D.45} & La cronologia della chat deve essere eliminata quando viene attivato un nuovo \glossario{dizionario dati} nel sistema. & Verbale interno \\
+    \hline
+    \textbf{RF.O.46} & Quando il Tecnico richiede la generazione del prompt, il sistema elabora in automatico un file di \glossario{log}. & Verbale esterno \\
+    \hline
+    \textbf{RF.OP.47} & Il sistema di generazione del prompt deve supportare richieste in lingua inglese. & Verbale interno \\
+    \hline
+    \textbf{RF.O.48} & La scelta del dizionario dati deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
+    \hline
+    \textbf{RF.O.49} & Per procedere con l'inserimento di una richiesta, è necessario aver selezionato un dizionario dati. & Verbale interno \\
+    \hline
+    \textbf{RF.O.50} & La scelta della lingua deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
+    \hline
+    \textbf{RF.O.51} & La scelta del DBMS deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
+    \hline
+    \textbf{RF.D.52} & Il sistema di generazione del prompt deve supportare richieste in lingue diverse dall'inglese. & Capitolato \\
+    \hline
+    \textbf{RF.OP.53} & Quando un utente ripete più volte lo stesso messaggio, il ChatBOT restituisce la risposta formulata alla prima occorrenza del messaggio. & Verbale interno \\
     \hline
 \caption{Requisiti funzionali}
 \label{requisitifunzionali}
