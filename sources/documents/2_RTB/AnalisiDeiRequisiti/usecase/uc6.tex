@@ -1,6 +1,6 @@
-\subsubsection{UC6 - Errore nella generazione del \glossario{prompt}}\label{UC6}
+\subsubsection{UC6 - Visualizzazione avviso richiesta non idonea}\label{UC6}
 \paragraph*{Descrizione}
-L’Utente ha cercato di generare un \glossario{prompt} con una frase non totalmente inerente al \glossario{dizionario dati} scelto.
+Nel caso in cui l'Utente formuli una richiesta non idonea, o comunque una richiesta che non trova corrispondenze con il \glossario{dizionario dati}, il sistema restituisce un avviso opportuno.
 
 \paragraph*{Attori principali}
 Utente
@@ -8,21 +8,19 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L'applicazione è stata avviata con successo;
-  \item L’Utente ha inserito una frase in linguaggio naturale (\hyperref[UC3]{UC3});
-  \item L’Utente ha richiesto la generazione del \glossario{prompt} a partire dalla frase inserita.  
+  \item Nel sistema è stato caricato almeno un \glossario{dizionario dati};
+  \item L'Utente ha richiesto la generazione del \glossario{prompt} (\hyperref[UC5]{UC5}).  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item L’applicazione ha riscontrato problemi nella generazione del \glossario{prompt} a causa di una non adeguata aderenza tra la frase inserita e il \glossario{dizionario dati} scelto;
-  \item Viene visualizzato un messaggio di errore per orientare l’Utente alla comprensione del funzionamento del sistema.
+  \item Viene visualizzato l'avviso del ChatBOT, che informa l'Utente della sua incapacità di fornire una risposta adeguata alla domanda.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente ha inserito una frase in linguaggio naturale (\hyperref[UC3]{UC3});
-  \item L'Utente ha richiesto la generazione del \glossario{prompt} (\hyperref[UC5]{UC5});
-  \item Il sistema attua il meccanismo per identificare la parte di \glossario{dizionario dati} adeguata da restituire;
-  \item Il sistema non è in grado di trovare le correlazioni adeguate e quindi non riesce a restituire un \glossario{prompt} coerente;
-  \item Viene visualizzato un messaggio di errore.
+  \item L'Utente richiede la generazione del \glossario{prompt};
+  \item Il sistema non trova correlazioni tra la richiesta e il \glossario{dizionario dati};
+  \item Il sistema non è in grado restituire un \glossario{prompt};
+  \item Viene visualizzato un messaggio esplicativo che invita l'Utente a riprovare.
 \end{enumerate}

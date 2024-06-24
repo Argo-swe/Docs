@@ -1,4 +1,4 @@
-\subsubsection{UC4 - Selezione \glossario{dizionario dati}}\label{UC4}
+\subsubsection{UC4 - Selezione dizionario dati}\label{UC4}
 
 \begin{figure}[H]
   \centering
@@ -7,7 +7,7 @@
 \end{figure}
 
 \paragraph*{Descrizione}
-L’Utente desidera selezionare il \glossario{dizionario dati} sul quale basare in seguito l’interrogazione in linguaggio naturale.
+L'Utente seleziona un \glossario{dizionario dati} da utilizzare nel sistema.
 
 \paragraph*{Attori principali}
 Utente
@@ -15,18 +15,21 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L'applicazione è stata avviata con successo;
-  \item Nell'applicazione web è stato caricato precedentemente almeno un \glossario{dizionario dati} (\hyperref[UC13]{UC13}).
+  \item Nel sistema è stato inserito almeno un \glossario{dizionario dati} (\hyperref[UC13]{UC13}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Un \glossario{dizionario dati} è stato selezionato in modo corretto ed univoco.
+  \item Il \glossario{dizionario dati} è stato selezionato in modo corretto;
+  \item Il \glossario{dizionario dati} è ora attivo nel sistema.
 \end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole selezionare un \glossario{dizionario dati} da utilizzare nell'applicazione.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L’Utente visualizza la lista dei dizionari disponibili (\hyperref[UC10]{UC10});
-  \item L'Utente sceglie un \glossario{dizionario dati} tra quelli presenti.
+  \item L'Utente sceglie un \glossario{dizionario dati} tra quelli disponibili.
 \end{enumerate}
 
 % Da inserire caso d'errore per l'indisponibilità del dizionario dati

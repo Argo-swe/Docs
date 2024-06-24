@@ -1,10 +1,9 @@
-version: "3.8"
 name: argo-docs
 
 services:
   latexpdfbuilder:
     build: ./docker
-    command: tail -F anything
+    command: tail -F /dev/null
     environment:
       - TEXINPUTS=/data/sources/model//:${TEXINPUTS}
     volumes:

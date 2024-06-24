@@ -1,27 +1,26 @@
-\subsubsection{UC24 - Errore nello strumento di debug}\label{UC23}
+\subsubsection{UC24 - Visualizzazione errore download file}\label{UC24}
 \paragraph*{Descrizione}
-Il Tecnico visualizza un messaggio d'errore nelle tabelle o nel log, all'interno dello strumento di debug. 
+Il Tecnico visualizza un messaggio d'errore per il mancato download del file.
 
 \paragraph*{Attori principali}
 Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico ha generato correttamente un \glossario{prompt} basato su una richiesta in linguaggio naturale (\hyperref[UC5]{UC5});
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
-  \item Il sistema rileva un'anomalia durante la generazione delle tabelle o del log di debug.
+  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha richiesto il download del file (\hyperref[UC23]{UC23});
+  \item Il sistema ha rilevato un errore durante il download.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene visualizzato un messaggio con i dettagli dell'errore.
+  \item Viene visualizzato un messaggio d'errore esplicativo.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico ha correttamente generato un \glossario{prompt} (\hyperref[UC5]{UC5});
-  \item Il Tecnico accede allo strumento di debug (\hyperref[UC18]{UC18});
-  \item Il sistema rileva un'anomalia durante la generazione delle tabelle o del log di debug;
+  \item Il Tecnico richiede il download del file;
+  \item Il sistema avvia il download del file;
+  \item Il sistema rileva un errore;
   \item Viene visualizzato un messaggio con i dettagli dell'errore.
 \end{enumerate}

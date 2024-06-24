@@ -1,0 +1,24 @@
+\subsubsection{UC28 - Formato del file non valido}\label{UC28}
+\paragraph*{Descrizione}
+Poiché il file inserito dal Tecnico è in un formato non supportato, il sistema restituisce un messaggio d'errore.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico ha richiesto il salvataggio di un file il cui formato non è supportato.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene visualizzato un messaggio di errore esplicativo.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico inserisce un file in un formato non valido;
+  \item Il Tecnico richiede il salvataggio del file nel sistema;
+  \item Il sistema rileva un errore nella validazione del file;
+  \item Il sistema restituisce un messaggio di errore appropriato.
+\end{enumerate}

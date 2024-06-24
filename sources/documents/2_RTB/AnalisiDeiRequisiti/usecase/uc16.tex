@@ -1,173 +1,25 @@
-\subsubsection{UC16 - Modifica \glossario{dizionario dati}}\label{UC16}
+\subsubsection{UC16 - Inserimento nome dizionario dati}\label{UC16}
 \paragraph*{Descrizione}
-Il Tecnico vuole modificare un \glossario{dizionario dati} già presente nel sistema.
-
-% Estendere o modificare questa sezione in vista di eventuali rivisitazioni al sistema di modifica del dizionario dati
+Il Tecnico inserisce il nome di un \glossario{dizionario dati}.
 
 \paragraph*{Attori principali}
 Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico naviga alla lista dei dizionari dati caricati (\hyperref[UC10]{UC10});
-  \item Il Tecnico seleziona un \glossario{dizionario dati} di cui vuole modificare qualcosa.
+  \item Il sistema è attivo e funzionante;
+  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il Tecnico ha modificato una o più sezioni.
+  \item Il nome del \glossario{dizionario dati} è stato inserito correttamente.
 \end{itemize}
+
+\paragraph*{Trigger}
+Il Tecnico vuole inserire il nome di un \glossario{dizionario dati}.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico sceglie un \glossario{dizionario dati} che vuole modificare e lo seleziona;
-  \item Il Tecnico sceglie quali campi modificare tra:
-  \begin{itemize}
-    \item Titolo
-    \item Descrizione 
-    \item File contenente il \glossario{dizionario dati};
-  \end{itemize}
-  \item Il Tecnico attua le modifiche;
-  \item Il Tecnico salva le modifiche.
+  \item Il Tecnico scrive il nome del \glossario{dizionario dati} nell'apposito campo di testo.
 \end{enumerate}
-
-\paragraph*{Estensioni}
-\begin{itemize}
-  \item Modifica titolo \glossario{dizionario dati} (\hyperref[UC16point1]{UC16.1});
-  \item Modifica descrizione \glossario{dizionario dati} (\hyperref[UC16point2]{UC16.2});
-  \item Modifica file di configurazione del \glossario{dizionario dati} (\hyperref[UC16point3]{UC16.3});
-  \item Errore per modifica incorretta del \glossario{dizionario dati} (\hyperref[UC20]{UC20})
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsubsection{UC16.1 - Modifica titolo \glossario{dizionario dati}}\label{UC16point1}
-\paragraph*{Descrizione}
-Il Tecnico vuole modificare il titolo di un \glossario{dizionario dati}.
-
-\paragraph*{Attori principali}
-Tecnico
-
-\paragraph*{Precondizioni}
-\begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico visualizza la lista dei \glossario{dizionari dati} (\hyperref[UC10]{UC10});
-  \item Il Tecnico identifica il dizionario da modificare nella lista (\hyperref[UC9]{UC9});
-  \item Il Tecnico visualizza i dettagli del \glossario{dizionario dati} (\hyperref[UC14]{UC14});
-  \item Il Tecnico sceglie di modificare il dizionario (\hyperref[UC16]{UC16});
-  \item Il Tecnico modifica il titolo del \glossario{dizionario dati}.
-\end{itemize}
-
-\paragraph*{Postcondizioni}
-\begin{itemize}
-  \item Il \glossario{dizionario dati} ha come titolo il nuovo valore inserito dal Tecnico.
-\end{itemize}
-
-\paragraph*{Scenario principale}
-\begin{enumerate}
-  \item Il Tecnico ha selezionato il \glossario{dizionario dati} che vuole modificare (\hyperref[UC16]{UC16});
-  \item Il Tecnico modifica il titolo;
-  \item Il Tecnico salva la modifica.
-\end{enumerate}
-
-\paragraph*{Scenario alternativo}
-\begin{enumerate}
-  \item Il Tecnico ha selezionato il \glossario{dizionario dati} che vuole modificare (\hyperref[UC16]{UC16});
-  \item Il Tecnico modifica il titolo;
-  \item Il sistema riscontra un problema nella modifica del titolo (\hyperref[UC20point1]{UC20.1});
-  \item Viene visualizzato un messaggio con i dettagli dell'errore.
-\end{enumerate}
-
-\paragraph*{Estensioni}
-\begin{itemize}
-  \item Errore per modifica incorretta del titolo del \glossario{dizionario dati} (\hyperref[UC20point1]{UC20.1}).
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsubsection{UC16.2 - Modifica descrizione \glossario{dizionario dati}}\label{UC16point2}
-\paragraph*{Descrizione}
-Il Tecnico vuole modificare la descrizione di un \glossario{dizionario dati}.
-
-\paragraph*{Attori principali}
-Tecnico
-
-\paragraph*{Precondizioni}
-\begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico visualizza la lista dei \glossario{dizionari dati} (\hyperref[UC10]{UC10});
-  \item Il Tecnico identifica il dizionario da modificare nella lista (\hyperref[UC9]{UC9});
-  \item Il Tecnico visualizza i dettagli del \glossario{dizionario dati} (\hyperref[UC14]{UC14});
-  \item Il Tecnico sceglie di modificare il dizionario (\hyperref[UC16]{UC16});
-  \item Il Tecnico modifica la descrizione del \glossario{dizionario dati}.
-\end{itemize}
-
-\paragraph*{Postcondizioni}
-\begin{itemize}
-  \item Il \glossario{dizionario dati} ha come descrizione il nuovo valore inserito dal Tecnico.
-\end{itemize}
-
-\paragraph*{Scenario principale}
-\begin{enumerate}
-  \item Il Tecnico ha selezionato il \glossario{dizionario dati} che vuole modificare (\hyperref[UC16]{UC16});
-  \item Il Tecnico modifica la descrizione;
-  \item Il Tecnico salva la modifica.
-\end{enumerate}
-
-\paragraph*{Scenario alternativo}
-\begin{enumerate}
-  \item Il Tecnico ha selezionato il \glossario{dizionario dati} che vuole modificare (\hyperref[UC16]{UC16});
-  \item Il Tecnico modifica la descrizione;
-  \item Il sistema riscontra un problema nella modifica della descrizione (\hyperref[UC20point2]{UC20.2});
-  \item Viene visualizzato un messaggio con i dettagli dell'errore.
-\end{enumerate}
-
-\paragraph*{Estensioni}
-\begin{itemize}
-  \item Errore per modifica incorretta della descrizione del \glossario{dizionario dati} (\hyperref[UC20point2]{UC20.2}).
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsubsection{UC16.3 - Modifica file di configurazione del \glossario{dizionario dati}}\label{UC16point3}
-\paragraph*{Descrizione}
-Il Tecnico vuole modificare il file di configurazione di un \glossario{dizionario dati}.
-
-\paragraph*{Attori principali}
-Tecnico
-
-\paragraph*{Precondizioni}
-\begin{itemize}
-  \item Il Tecnico è correttamente autenticato tramite login (\hyperref[UC1]{UC1});
-  \item Il Tecnico visualizza la lista dei \glossario{dizionari dati} (\hyperref[UC10]{UC10});
-  \item Il Tecnico identifica il dizionario da modificare nella lista (\hyperref[UC9]{UC9});
-  \item Il Tecnico visualizza i dettagli del \glossario{dizionario dati} (\hyperref[UC14]{UC14});
-  \item Il Tecnico sceglie di modificare il dizionario (\hyperref[UC16]{UC16});
-  \item Il Tecnico carica il nuovo file di configurazione nel formato corretto (\hyperref[UC13]{UC13});
-\end{itemize}
-
-\paragraph*{Postcondizioni}
-\begin{itemize}
-  \item Il \glossario{dizionario dati} ha come file di configurazione il nuovo file inserito dal Tecnico.
-\end{itemize}
-
-\paragraph*{Scenario principale}
-\begin{enumerate}
-  \item Il Tecnico ha selezionato il \glossario{dizionario dati} che vuole modificare (\hyperref[UC16]{UC16});
-  \item Il Tecnico modifica il file di configurazione, caricando un nuovo \glossario{dizionario dati} che sovrascrive il precedente (\hyperref[UC13]{UC13});
-  \item Il Tecnico salva la modifica.
-\end{enumerate}
-
-\paragraph*{Scenario alternativo}
-\begin{enumerate}
-  \item Il Tecnico ha selezionato il \glossario{dizionario dati} che vuole modificare (\hyperref[UC16]{UC16});
-  \item Il Tecnico modifica il file di configurazione, caricando un nuovo \glossario{dizionario dati} che sovrascrive il precedente (\hyperref[UC13]{UC13});
-  \item Il sistema riscontra un errore nel caricamento del file di configurazione (\hyperref[UC19]{UC19});
-  \item Viene mostrato un messaggio d'errore contenente i dettagli.
-\end{enumerate}
-
-\paragraph*{Estensioni}
-\begin{itemize}
-  \item Errore per mancato caricamento del \glossario{dizionario dati} (\hyperref[UC19]{UC19}).
-\end{itemize}

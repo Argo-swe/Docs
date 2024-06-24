@@ -135,7 +135,7 @@ Nell'arco del terzo \glossario{sprint}, il team ha svolto le seguenti attività:
     \item Scelta dei range di tolleranza per le metriche M1, M2, M3, M4;
     \item Benchmark iniziale dei modelli;
     \item Unificazione dei differenti metodi di estrazione del \glossario{dizionario dati} in un modulo unico;
-    \item Stesura delle sezioni incomplete nel documento di \AdR\;
+    \item Stesura delle sezioni incomplete nel documento di \AdR;
     \item Espansione dei casi d'uso e rifinitura delle definizioni dei requisiti e delle fonti;
     \item Approfondimento del funzionamento di \glossario{txtai};
     \item Creazione di un dizionario dati in italiano per testare il modello sentence-BERTino di efederici;
@@ -172,6 +172,7 @@ Nell'arco del terzo \glossario{sprint}, il team ha svolto le seguenti attività:
   \item In seguito alle considerazioni del team riguardo la necessità di una maggiore supervisione da parte del responsabile, quest'ultimo dovrà impegnarsi, a partire dalla prossima iterazione, a stabilire degli intervalli di tempo sufficientemente brevi alla fine dei quali verificare lo stato di avanzamento delle attività;
   \item La conduzione delle riunioni esterne ha evidenziato l'inesperienza del team nel rapporto con la \glossario{Proponente}, che assume a tutti gli effetti il ruolo di cliente, le cui conoscenze tecniche sono spesso asimmetriche rispetto a quelle dei fornitori. La discussione dei dettagli implementativi è un processo interno al gruppo e, pertanto, non deve coinvolgere il cliente. In futuro sarà quindi opportuno mantenere la discussione a un livello più alto, concentrandosi sul "cosa" piuttosto che sul "come";
   \item Malgrado le difficoltà nell'individuare gli standard per la gestione dei servizi IT, i membri con il ruolo di amministratore sono stati in grado di reperire sufficiente documentazione, seppur meno recente, per un'adeguata stesura delle metriche di qualità e la loro categorizzazione;
+  \item Sebbene \glossario{Streamlit} abbia dei limiti dal punto di vista del design, il team ha deciso di investire un numero cospicuo di risorse nella progettazione dell'interfaccia grafica. In questo modo, qualora il gruppo dovesse scegliere di cambiare \glossario{framework}, la transizione risulterebbe meno gravosa.
 \end{itemize}
 
 \subsubsection{Aggiornamento pianificazione e preventivo}
@@ -185,8 +186,20 @@ Nell'arco del terzo \glossario{sprint}, il team ha svolto le seguenti attività:
 \end{itemize}
 
 \paragraph*{Pianificazione futura:}
+Data l'assenza di una suite di test automatici, il \glossario{benchmark} dei modelli di \glossario{sentence similarity} ha richiesto uno sforzo maggiore in termini di tempo e non ha prodotto risultati sufficientemente attendibili. Di conseguenza, il team ha aggiornato la pianificazione del prossimo \glossario{sprint}, fissando come task ad alta priorità la definizione dei test di unità. Mediante l'esecuzione automatica di una batteria di test, il gruppo ritiene di poter verificare con maggior rigore l'affidabilità dei modelli di AI scelti. Come definito nella \glossario{retrospettiva}, il team non ha ancora finalizzato la scelta delle tecnologie, in quanto lo sviluppo degli scenari critici verrà ultimato nel prossimo \glossario{sprint}. Pertanto, il gruppo ha stabilito di proseguire l'analisi di framework alternativi anche nel prossimo periodo, al termine del quale verrà presa una decisione definitiva. La \glossario{dockerizzazione} dell'ambiente di sviluppo, invece, è stata pianificata per lo \glossario{sprint} 5. Le dipendenze del progetto verranno infatti delineate nell'arco della prossima iterazione.
+\par Per quanto riguarda le metriche di qualità, il team ha fissato i seguenti obiettivi:
+\begin{itemize}
+  \item Individuazione delle metriche più significative;
+  \item Identificazione di strumenti per automatizzare il calcolo delle metriche.
+\end{itemize}
+\par Dopo aver preso in considerazione un ampio insieme di indicatori, il gruppo ritiene infatti necessario operare una scrematura delle metriche individuate.
 
 \paragraph*{Preventivo "a finire" (\sezione{sec:stima_temporale}):}
+Il consuntivo del terzo \glossario{sprint} ha evidenziato una discrepanza di tre ore produttive rispetto a quanto preventivato. Questo perché la maggior parte del tempo è stata impiegata nello studio e nella valutazione delle tecnologie per il \glossario{PoC}. Nonostante i programmatori abbiano iniziato lo sviluppo del prototipo con \glossario{Streamlit}, il team ha ritenuto opportuno esaminare \glossario{framework} alternativi come \glossario{Django}, \glossario{Vue.js} e \glossario{Next.js}. Inoltre, l’uso delle funzionalità avanzate di \glossario{txtai} e la progettazione della bozza dell’interfaccia grafica hanno richiesto una fase di studio non indifferente. Per tale motivo, il gruppo ha deciso di rivedere il calendario di massima del progetto. Nel prossimo sprint, infatti, il team si focalizzerà sullo sviluppo dei \glossario{casi d’uso} all’interno dell’applicazione. Qualora la risposta di \glossario{Streamlit} dovesse risultare negativa (in termini di flessibilità, prestazioni e personalizzazione), il gruppo dovrebbe optare per due nuovi framework (back-end e front-end). Dunque, il team ha ridefinito la finestra temporale per la revisione \glossario{RTB} come segue:
+\begin{itemize}
+  \item Data di inizio: 2024-06-03;
+  \item Scadenza: 2024-06-14.
+\end{itemize}
 
 \paragraph*{Gestione dei rischi (\sezione{sec:analisi_rischi}):}
 \par Nel corso del terzo \glossario{sprint}, il team ha riscontrato l'affioramento di un rischio inatteso:
