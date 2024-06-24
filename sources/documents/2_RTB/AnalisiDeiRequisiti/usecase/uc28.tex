@@ -1,26 +1,24 @@
-\subsubsection{UC28 - Errore nella generazione del \glossario{prompt}}\label{UC28}
+\subsubsection{UC28 - Formato del file non valido}\label{UC28}
 \paragraph*{Descrizione}
-Viene visualizzato un messaggio a seguito di errori interni al sistema durante il processo di generazione del \glossario{prompt}.
+Poiché il file inserito dal Tecnico è in un formato non supportato, il sistema restituisce un messaggio d'errore.
 
 \paragraph*{Attori principali}
-Utente
+Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L'applicazione è stata avviata con successo;
-  \item Nel sistema è stato caricato almeno un \glossario{dizionario dati};
-  \item L'Utente ha richiesto la generazione del \glossario{prompt} (\hyperref[UC5]{UC5}).  
+  \item Il Tecnico ha richiesto il salvataggio di un file il cui formato non è supportato.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene visualizzato correttamente il messaggio di errore.
+  \item Viene visualizzato un messaggio di errore esplicativo.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il sistema è attivo e funzionante;
-  \item L'Utente richiede la generazione del \glossario{prompt} (\hyperref[UC5]{UC5});
-  \item Il sistema rileva degli errori interni;
-  \item Viene visualizzato un messaggio di errore appropriato che suggerisce all'Utente di riprovare l'operazione, attendere o contattare il supporto tecnico.
+  \item Il Tecnico inserisce un file in un formato non valido;
+  \item Il Tecnico richiede il salvataggio del file nel sistema;
+  \item Il sistema rileva un errore nella validazione del file;
+  \item Il sistema restituisce un messaggio di errore appropriato.
 \end{enumerate}

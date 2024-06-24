@@ -7,7 +7,7 @@
 \end{figure}
 
 \paragraph*{Descrizione}
-L'utente desidera eliminare la cronologia della chat, composta dalle richieste dell'utente in linguaggio naturale e dalle risposte del ChatBOT.
+L'Utente elimina la cronologia della chat. La chat è composta da un elenco di messaggi, che possono essere richieste dell'utente o risposte del ChatBOT.
 
 \paragraph*{Attori principali}
 Utente
@@ -15,18 +15,21 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item L'applicazione è stata avviata con successo;
-  \item È presente almeno una richiesta dell'utente e una risposta fornita dal ChatBOT.
+  \item È presente almeno un messaggio all'interno della chat.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item La cronologia della chat è stata eliminata correttamente.
+  \item La cronologia della chat è stata eliminata.
 \end{itemize}
+
+\paragraph*{Trigger}
+L'Utente vuole eliminare la cronologia della chat.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'utente accede alla pagina di generazione del prompt;
-  \item L'utente visualizza, all'interno della chat, almeno una richiesta in linguaggio naturale e una risposta del ChatBOT;
+  \item L'utente accede alla chat;
+  \item L'utente visualizza, all'interno della chat, almeno un messaggio;
   \item L'utente seleziona l'opzione per eliminare la cronologia della chat;
   \item La cronologia della chat viene eliminata.
 \end{enumerate}

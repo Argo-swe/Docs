@@ -1,0 +1,23 @@
+\subsubsection{UC39 - Formato del nome non corretto}\label{UC39}
+\paragraph*{Descrizione}
+Il sistema restituisce un messaggio di errore nel caso in cui il formato del nome sia invalido.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il formato del nome del \glossario{dizionario dati} è errato.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene restituito un messaggio d'errore esplicativo.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il formato del nome del \glossario{dizionario dati} non è corretto;
+  \item Il sistema riscontra un errore nella validazione del nome;
+  \item Il sistema restituisce un messaggio con i dettagli dell'errore.  
+\end{enumerate}
