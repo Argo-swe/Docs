@@ -21,35 +21,40 @@ Utente
 \paragraph*{Postcondizioni}
 \begin{itemize}
   \item La procedura di autenticazione si è conclusa con successo;
-  \item L'Utente acquisisce il ruolo di Tecnico;
+  \item L'Utente acquisisce il ruolo di tecnico;
   \item Il Tecnico visualizza le funzionalità aggiuntive nell'interfaccia.  
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente vuole effettuare il login all'area riservata al Tecnico.
+L'Utente desidera accedere all'area riservata al Tecnico.
 
 \paragraph*{Scenario principale}
 \begin{itemize}
-  \item L'Utente accede al sistema;
-  \item L'Utente seleziona la funzionalità "Login";
-  \item L'Utente inserisce le proprie credenziali di accesso;
-  \item L'utente accede alla schermata propria del Tecnico.
+  \item L'Utente seleziona l'opzione "Login";
+  \item L'Utente inserisce le proprie credenziali;
+  \item L'Utente effettua l'accesso;
+  \item Il sistema mostra le funzionalità disponibili per il Tecnico.
 \end{itemize}
 
 \paragraph*{Scenario alternativo}
 \begin{enumerate}
-  \item Il sistema riconosce un errore durante l'inserimento delle credenziali da parte dell'Utente (\hyperref[UC2]{UC2});
+  \item Il sistema riscontra un errore durante la validazione delle credenziali (\hyperref[UC2]{UC2});
   \item Viene visualizzato un messaggio con i dettagli dell'errore.
 \end{enumerate}
 
 \paragraph*{Estensioni}
 \begin{itemize}
-  \item Errore per fallita autenticazione (\hyperref[UC2]{UC2}).
+  \item Visualizzazione errore autenticazione (\hyperref[UC2]{UC2}).
+  \begin{itemize}
+    \item Extension point: Errore nella validazione delle credenziali;
+    \item Condition: Credenziali errate, credenziali incomplete.
+  \end{itemize}
 \end{itemize}
 
+% al posto dell'inclusione forse basta il sottocaso d'uso
 \paragraph*{Inclusioni}
 \begin{itemize}
-  \item Inserimento e-mail (\hyperref[UC1point1]{UC1.1});
+  \item Inserimento username (\hyperref[UC1point1]{UC1.1});
   \item Inserimento password (\hyperref[UC1point2]{UC1.2}).
 \end{itemize}
 
@@ -71,11 +76,11 @@ Utente
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Lo username è stato correttamente inserito nel campo apposito.
+  \item Il nome utente è stato inserito nel campo apposito.
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente vuole inserire il proprio username per accedere alla sezione del Tecnico.
+L'Utente desidera inserire il proprio username per accedere alle funzionalità del tecnico.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
@@ -99,13 +104,13 @@ Utente
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item La password è stata correttamente inserita nel campo apposito.
+  \item La password è stata inserita nel campo apposito.
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente vuole inserire la propria password per accedere alla sezione del Tecnico.
+L'Utente vuole inserire la propria password per accedere alle funzionalità del tecnico.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'utente inserisce la propria password come parte del processo di autenticazione.
+  \item L'Utente inserisce la propria password come parte del processo di autenticazione.
 \end{enumerate}

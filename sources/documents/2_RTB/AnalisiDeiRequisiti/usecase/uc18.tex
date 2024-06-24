@@ -1,4 +1,4 @@
-\subsubsection{UC18 - Debug della generazione del \glossario{prompt}}\label{UC18}
+\subsubsection{UC18 - Eliminazione dizionario dati}\label{UC18}
 
 \begin{figure}[H]
   \centering
@@ -7,40 +7,48 @@
 \end{figure}
 
 \paragraph*{Descrizione}
-Il Tecnico interroga il sistema per verificare l'interazione tra il \glossario{dizionario dati} e il modello di intelligenza artificiale. Visualizza quindi un file di \glossario{log} contenente il processo di generazione del \glossario{prompt}.
+Il Tecnico elimina un \glossario{dizionario dati} dall'applicazione.
 
 \paragraph*{Attori principali}
 Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L'applicazione è stata avviata con successo;
-  \item Il Tecnico ha effettuato correttamente il login (\hyperref[UC1]{UC1});
-  \item Il Tecnico ha selezionato l'opzione relativa al \glossario{debug} del sistema;
-  \item Il Tecnico ha inserito una richiesta in linguaggio naturale (\hyperref[UC3]{UC3});
-  \item Il sistema ha generato un \glossario{prompt} (\hyperref[UC5]{UC5}).
+  \item Il sistema è attivo e funzionante;
+  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha visualizzato la lista dei \glossario{dizionari dati} (\hyperref[UC9]{UC9});
+  \item Il Tecnico ha individuato il dizionario da eliminare (\hyperref[UC9.1]{UC9.1}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Il tecnico visualizza il file di \glossario{log} generato dal sistema.
+  \item Il \glossario{dizionario dati} è stato rimosso con successo;
+  \item Il \glossario{dizionario dati} non è più disponibile per gli utenti dell'applicazione.
 \end{itemize}
+
+\paragraph*{Trigger}
+Il Tecnico vuole eliminare un \glossario{dizionario dati}.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico seleziona lo strumento di debug;
-  \item Il Tecnico inserisce una richiesta (\hyperref[UC3]{UC3});
-  \item Il sistema genera, oltre al \glossario{prompt} (\hyperref[UC5]{UC5}), un file di \glossario{log} che descrive in linguaggio naturale il processo di generazione del prompt stesso; 
+  \item Il Tecnico tenta di eliminare il \glossario{dizionario dati} scelto;
+  \item Il sistema richiede una conferma per procedere con l'eliminazione;
+  \item Il Tecnico conferma la decisione;
+  \item Il \glossario{dizionario dati} viene rimosso dalla lista dei dizionari presenti nel sistema.  
 \end{enumerate}
 
-\paragraph*{Inclusioni}
-\begin{itemize}
-  \item Generazione del \glossario{prompt}.
-\end{itemize}
+\paragraph*{Scenario alternativo}
+\begin{enumerate}
+  \item Il sistema riscontra un errore nel tentativo di eliminare il \glossario{dizionario dati} (\hyperref[UC21]{UC21});
+  \item Viene restituito un messaggio con i dettagli riguardanti l'errore.
+\end{enumerate}
+
+% aggiungere condition?
 
 \paragraph*{Estensioni}
 \begin{itemize}
-  \item Errore nella generazione del file di \glossario{log} (\hyperref[UC24]{UC24});
-  \item Visualizzazione del contenuto del file di \glossario{log} (\hyperref[UC25]{UC25});
-  \item Download del file di \glossario{log} (\hyperref[UC22]{UC22}).
+  \item Visualizzazione errore eliminazione \glossario{dizionario dati} (\hyperref[UC21]{UC21}).
+  \begin{itemize}
+    \item Extension point: errore nell'eliminazione del \glossario{dizionario dati}.
+  \end{itemize}
 \end{itemize}
