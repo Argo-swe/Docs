@@ -20,11 +20,11 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
     \hline
-    \textbf{RF.O.1} & L'Utente deve poter effettuare il login per passare al profilo di Tecnico. & \hyperref[UC1]{UC1}, Verbale Esterno 2024-04-09, Verbale Interno 2024-04-20\\
+    \textbf{RF.O.1} & L'Utente deve poter effettuare il login per passare al profilo di Tecnico. & \hyperref[UC1]{UC1}, Verbale Esterno, Verbale Interno\\
     \hline
-    \textbf{RF.O.1.1} & L'Utente deve inserire uno username in fase di autenticazione. & \hyperref[UC1point1]{UC1.1}, Verbale Interno 2024-04-20\\
+    \textbf{RF.O.1.1} & L'Utente deve inserire uno username in fase di autenticazione. & \hyperref[UC1point1]{UC1.1}, Verbale Interno\\
     \hline
-    \textbf{RF.O.1.2} & L'Utente deve inserire una password in fase di autenticazione. & \hyperref[UC1point2]{UC1.2}, Verbale Interno 2024-04-20\\
+    \textbf{RF.O.1.2} & L'Utente deve inserire una password in fase di autenticazione. & \hyperref[UC1point2]{UC1.2}, Verbale Interno\\
     \hline
     \textbf{RF.O.2} & Il sistema deve restituire un messaggio d'errore in caso di fallimento del login. & \hyperref[UC2]{UC2}\\
     \hline
@@ -66,7 +66,7 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{RF.O.13} & Il Tecnico deve poter inserire un nuovo \glossario{dizionario dati} all'interno del sistema. & \hyperref[UC13]{UC13}\\
     \hline
-    \textbf{RF.O.14} & L'Utente deve poter visualizzare il contenuto testuale di un \glossario{dizionario dati}. & \hyperref[UC14]{UC14}, Verbale Esterno 2024-06-07\\
+    \textbf{RF.O.14} & L'Utente deve poter visualizzare il contenuto testuale di un \glossario{dizionario dati}. & \hyperref[UC14]{UC14}, Verbale Esterno\\
     \hline
     \textbf{RF.O.14.1} & L'Utente deve poter visualizzare il nome del database riportato nel dizionario dati. & \hyperref[UC14point1]{UC14.1}\\
     \hline
@@ -134,7 +134,7 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{RF.O.37} & Il sistema deve memorizzare i dizionari caricati dal Tecnico. & Capitolato \\
     \hline
-    \textbf{RF.D.38} & Il sistema deve memorizzare gli \glossario{indici vettoriali} creati durante il caricamento o la modifica del dizionario dati. & Verbale Esterno 2024-05-06 \\
+    \textbf{RF.D.38} & Il sistema deve memorizzare gli \glossario{indici vettoriali} creati durante il caricamento o la modifica del dizionario dati. & Verbale Esterno\\
     \hline
     \textbf{RF.D.39} & Nel caso in cui un utente formuli una richiesta non idonea, il ChatBOT deve fornire una risposta cordiale, invitando l'utente ad attenersi all'argomento del \glossario{dizionario dati}. & Verbale Interno \\
     \hline
@@ -144,9 +144,9 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{RF.OP.42} & La richiesta dell'utente deve poter essere inserita tramite input vocale. & Capitolato \\
     \hline
-    \textbf{RF.O.43} & Il dizionario dati deve rispecchiare la struttura di un database, e contenere descrizioni in linguaggio naturale delle tabelle e dei rispettivi campi. & Verbale Esterno 2024-04-09 \\
+    \textbf{RF.O.43} & Il dizionario dati deve rispecchiare la struttura di un database, e contenere descrizioni in linguaggio naturale delle tabelle e dei rispettivi campi. & Verbale Esterno \\
     \hline
-    \textbf{RF.O.44} & Il prompt deve contenere almeno le descrizioni delle tabelle e delle colonne. & Verbale esterno 2024-06-07 \\
+    \textbf{RF.O.44} & Il prompt deve contenere almeno le descrizioni delle tabelle e delle colonne. & Verbale esterno\\
     \hline
     \textbf{RF.D.45} & La cronologia della chat deve essere eliminata quando viene attivato un nuovo \glossario{dizionario dati} nel sistema. & Verbale interno \\
     \hline
@@ -265,15 +265,15 @@ Di seguito vengono mostrate le corrispondenze fonte - requisito, raggruppate per
   \textbf{Fonte} & \textbf{Requisiti} \\
   \hline
   % capitolato
-  \emph{Capitolato} & RF.O.3, RF.O.4, RF.O.5, RF.O.8, RF.O.13, RF.O.14, RF.O.16, RV.O.1, RV.O.2 \\
+  \emph{Capitolato} & RF.O.3, RF.O.4, RF.O.5, RF.O.8, RF.O.16, RV.O.37, RF.OP.40, RV.O.41, RF.OP.42, RF.D.52, RQ.D.3, RQ.D.4, RQ.O.5, RQ.O.6, RQ.OP.10 \\
   \hline
   % documenti
   \NdP{} & RQ.O.1, RQ.O.2 \\
   \hline
   % verbali
-  \emph{Verbale Esterno 2024-04-09} & RF.O.1, RF.O.18 \\
+  \emph{Verbali Esterni} & RF.O.1, RF.O.14, RF.D.38, RF.O.43, RF.O.44, RF.O.46, RF.O.48, RF.O.49, RF.O.50, RF.O.51, RF.O.53 \\
   \hline
-  \emph{Verbale Interno 2024-04-20} & RF.O.1, RF.O.1.1, RF.O.1.2,  \\
+  \emph{Verbali Interni} & RF.O.1, RF.O.1.1, RF.O.1.2, RF.D.39, RF.D.45, RF.OP.47, \\
   \hline
   % casi d'uso
   \hyperref[UC1]{UC1} & RF.O.1 \\
