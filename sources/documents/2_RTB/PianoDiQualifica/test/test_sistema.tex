@@ -5,45 +5,58 @@
 \bgroup
 \begin{adjustwidth}{-0.5cm}{-0.5cm}
 	% MAX 12.5cm
- 	\begin{longtable}{|P{1.5cm}|>{\raggedright}P{7cm}|P{2.5cm}|>{\arraybackslash}P{1.5cm}|}
+ 	\begin{longtable}{|P{1.5cm}|>{\raggedright}P{9.5cm}|>{\arraybackslash}P{1.5cm}|}
+		\caption{Test di sistema}
+  	\label{tab:test-sistema} \\
 	  \hline
-		\textbf{ID} & \textbf{Descrizione} & \textbf{Requisito} & \textbf{Stato} \\ 
+		\textbf{ID} & \textbf{Descrizione} & \textbf{Stato} \\ 
 		\hline
 		\endfirsthead
 
+		\caption[]{Test di sistema (continua)} \\
 		\hline
-		\textbf{ID} & \textbf{Descrizione} & \textbf{Requisito} & \textbf{Stato} \\ 
+		\textbf{ID} & \textbf{Descrizione} & \textbf{Stato} \\ 
 		\hline
 		\endhead
 
 		\hline
-		\multicolumn{4}{|r|}{{Continua nella prossima pagina}} \\ 
+		\multicolumn{3}{|r|}{{Continua nella prossima pagina}} \\ 
 		\hline
 		\endfoot
 
 		\hline
 		\endlastfoot
 
-		TS.1 & Verificare che l'Utente possa effettuare il login per accedere alla sezione del tecnico. & RF.O.1 & / \\ 
-    \hline TS.- & Verificare che l'Utente possa inserire lo username in fase di autenticazione. & RF.O.1.1 & / \\ 
-    \hline TS.- & Verificare che l'Utente possa inserire la password in fase di autenticazione. & RF.O.1.2 & / \\
-		\hline TS.- & Verificare che il Tecnico possa inserire un nuovo \glossario{dizionario dati} nel sistema. & RF.O.13 & / \\ 
-		\hline TS.- & Verificare che il Tecnico possa eliminare un \glossario{dizionario dati} dal sistema. & RF.O.18 & / \\ 
-		\hline TS.- & Verificare che l'Utente visualizzi un errore nel caso in cui il nome del \glossario{dizionario dati} contenga caratteri non supportati. & RF.O.31.1 & / \\ 
-		\hline TS.- & Verificare che il sistema restituisca un messaggio di errore qualora l'Utente inserisca un nome già esistente per il \glossario{dizionario dati}. & RF.O.31.2 & / \\ 
-		\hline TS.- & Verificare che l'Utente visualizzi un errore nel caso in cui la descrizione del \glossario{dizionario dati} contenga caratteri non supportati. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che il sistema restituisca un messaggio di errore qualora l'Utente inserisca un \glossario{dizionario dati} non conforme allo schema predefinito. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che il sistema restituisca un messaggio di errore qualora l'Utente inserisca un file troppo pesante. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che l'Utente visualizzi un errore nel caso in cui l'estensione del file caricato non sia supportata. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che l'Utente possa selezionare un \glossario{dizionario dati} da utilizzare nel sistema. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che l'Utente possa visualizzare il contenuto del \glossario{dizionario dati} selezionato. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che l'Utente possa selezionare una lingua per la generazione del \glossario{prompt}. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che l'Utente possa selezionare un DBMS per la generazione del \glossario{prompt}. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che l'Utente possa inserire un messaggio nella maschera di richiesta all'interno della chat. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che l'Utente non possa inserire una richiesta senza aver selezionato un \glossario{dizionario dati}. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che l'Utente possa inviare un messaggio al ChatBOT e richiedere la generazione di un \glossario{prompt}. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che il Tecnico possa effettuare il logout per terminare la sessione corrente. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che l'Utente possa visualizzare il \glossario{prompt} generato. Il prompt deve contenere le seguenti informazioni:
+		TS.1 & Verificare che l'Utente possa effettuare il login per accedere alla sezione del tecnico. & N-D \\
+		\hline TS.2 & Verificare che l'Utente visualizzi un errore qualora inserisca delle credenziali errate in fase di autenticazione. & N-D \\
+		\hline TS.3 & Verificare che il Tecnico possa inserire un nuovo \glossario{dizionario dati} nel sistema. & N-D \\ 
+		\hline TS.4 & Verificare che il Tecnico possa modificare il nome di un \glossario{dizionario dati}. & N-D \\ 
+		\hline TS.5 & Verificare che il Tecnico possa modificare la descrizione di un \glossario{dizionario dati}. & N-D \\
+		\hline TS.6 & Verificare che il Tecnico possa modificare il file di configurazione di un \glossario{dizionario dati}. & N-D \\
+		\hline TS.7 & Verificare che il Tecnico visualizzi un errore nel caso in cui il nome del \glossario{dizionario dati} contenga caratteri non supportati. & N-D \\ 
+		\hline TS.8 & Verificare che il sistema restituisca un messaggio di errore qualora l'Utente inserisca un nome già esistente per il \glossario{dizionario dati}. & N-D \\ 
+		\hline TS.9 & Verificare che il Tecnico visualizzi un errore nel caso in cui la descrizione del \glossario{dizionario dati} contenga caratteri non supportati. & N-D \\ 
+		\hline TS.10 & Verificare che il sistema restituisca un messaggio di errore qualora l'Utente inserisca un \glossario{dizionario dati} con una dimensione superiore a 1 MB. & N-D \\
+		\hline TS.11 & Verificare che il Tecnico visualizzi un errore nel caso in cui l'estensione del file caricato sia diversa da .json. & N-D \\ 
+		\hline TS.12 & Verificare che il sistema restituisca un messaggio di errore qualora l'Utente inserisca un \glossario{dizionario dati} non conforme allo schema predefinito. & N-D \\  
+		\hline TS.13 & Verificare che il Tecnico possa eliminare un \glossario{dizionario dati} dal sistema. & N-D \\ 
+		\hline TS.14 & Verificare che il sistema restituisca un messaggio di errore nel caso in cui l'eliminazione del \glossario{dizionario dati} abbia esito negativo. & N-D \\  
+		\hline TS.15 & Verificare che l'Utente possa accedere alla chat e inserire un messaggio nella maschera di richiesta. & N-D \\   
+		\hline TS.16 & Verificare che l'Utente possa selezionare un \glossario{dizionario dati} e renderlo operativo nel sistema. & N-D \\ 
+		\hline TS.17 & Verificare che l'Utente possa visualizzare il contenuto del \glossario{dizionario dati} attivo nel sistema. Il sistema deve mostrare le seguenti informazioni:
+		\begin{itemize}
+			\item Nome del database;
+			\item Descrizione del database;
+			\item Lista delle tabelle del database. Per ciascuna tabella devono essere riportate le seguenti informazioni:
+				\begin{itemize}
+					\item Nome della tabella;
+					\item Descrizione della tabella.
+				\end{itemize}
+		\end{itemize} & N-D \\  
+		\hline TS.18 & Verificare che l'Utente possa inviare una richiesta al ChatBOT e ottenere il \glossario{prompt} risultante. & N-D \\ 
+		\hline TS.19 & Verificare che il sistema restituisca un avviso qualora l'Utente inserisca una richiesta ritenuta non idonea dal modello di \glossario{AI}. & N-D \\
+		\hline TS.20 & Verificare che il sistema restituisca un messaggio di errore nel caso in cui la generazione del \glossario{prompt} venga interrotta senza preavviso. & N-D \\ 
+		\hline TS.21 & Verificare che l'Utente possa visualizzare correttamente il \glossario{prompt} generato. Il prompt deve contenere le seguenti informazioni:
 		\begin{itemize}
 			\item Legenda dei simboli utilizzati;
 			\item Lista delle tabelle pertinenti. Per ogni tabella devono essere riportate le seguenti informazioni:
@@ -57,13 +70,11 @@
 			\item DBMS di riferimento;
 			\item Lingua di riferimento;
 			\item Richiesta il linguaggio naturale.
-		\end{itemize}
-	 	& RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che l'Utente possa copiare il contenuto del \glossario{prompt} generato. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che il sistema restituisca un avviso qualora l'Utente inserisca una richiesta ritenuta non idonea dal modello di \glossario{AI}. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che il sistema restituisca un messaggio di errore nel caso in cui la generazione del \glossario{prompt} venga interrotta senza preavviso. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che il sistema generi un \glossario{log} se la richiesta viene inviata dal Tecnico. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che il Tecnico possa visualizzare il \glossario{log} relativo all'ultima richiesta inviata. Il log deve contenere le seguenti informazioni:
+		\end{itemize} & N-D \\
+		\hline TS.22 & Verificare che il Tecnico possa effettuare il logout per terminare la sessione corrente. & N-D \\ 
+		\hline TS.23 & Verificare che l'Utente possa copiare il contenuto del \glossario{prompt} generato. & N-D \\ 
+		\hline TS.24 & Verificare che il sistema generi un \glossario{log} se la richiesta viene inviata dal Tecnico. & N-D \\ 
+		\hline TS.25 & Verificare che il Tecnico possa visualizzare il \glossario{log} relativo all'ultima richiesta inviata. Il log deve contenere le seguenti informazioni:
     \begin{itemize}
       \item Data e ora di generazione del \glossario{log};
       \item Richiesta in linguaggio naturale;
@@ -80,25 +91,92 @@
       \begin{itemize}
         \item Spiegazione del motivo per cui una tabella viene inserita o meno nel \glossario{prompt}.
       \end{itemize}
-    \end{itemize}
-		& RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che il Tecnico possa scaricare un file di \glossario{log} contenente il debug della generazione del \glossario{prompt}. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che l'Utente possa modificare il nome di un \glossario{dizionario dati}. & RF.O.1.2 & / \\ 
-		\hline TS.- & Verificare che l'Utente possa modificare la descrizione di un \glossario{dizionario dati}. & RF.O.1.2 & / \\
-		\hline TS.- & Verificare che l'Utente possa sovrascrivere il file di configurazione di un \glossario{dizionario dati}. & RF.O.1.2 & / \\
-		\hline TS.- & Verificare che l'Utente possa visualizzare il contenuto della chat. & RF.O.1.2 & / \\  
-		\hline TS.- & Verificare che l'Utente possa visualizzare i singoli messaggi nella chat. & RF.O.1.2 & / \\  
-		\hline TS.- & Verificare che l'Utente possa visualizzare il contenuto di un messaggio nella chat. & RF.O.1.2 & / \\  
-		\hline TS.- & Verificare che l'Utente possa visualizzare il mittente di un messaggio nella chat. & RF.O.1.2 & / \\  
-		\hline TS.- &  & RF.O.1.2 & / \\  
-		\hline TS.- &  & RF.O.1.2 & / \\  
-		\hline TS.- &  & RF.O.1.2 & / \\  
-		\hline TS.- &  & RF.O.1.2 & / \\  
-		\hline TS.- &  & RF.O.1.2 & / \\  
-		\hline TS.- &  & RF.O.1.2 & / \\  
-		\hline TS.- &  & RF.O.1.2 & / \\  
-		\hline TS.- &  & RF.O.1.2 & / \\  
-		\hline TS.- &  & RF.O.1.2 & / \\    
+    \end{itemize} & N-D \\ 
+		\hline TS.26 & Verificare che il Tecnico possa scaricare un file di \glossario{log} contenente il debug della generazione del \glossario{prompt}. & N-D \\
+		\hline TS.27 & Verificare che il sistema restituisca un messaggio di errore nel caso in cui il download del file fallisca. & N-D \\  
+		\hline TS.28 & Verificare che l'Utente possa visualizzare correttamente il contenuto della chat. & N-D \\  
+		\hline TS.29 & Verificare che il Tecnico possa visualizzare i dizionari dati caricati nell'applicazione con le relative informazioni. Di ciascun dizionario devono essere visibili: 
+		\begin{itemize}
+			\item Il nome;
+			\item L'estensione del file;
+			\item La dimensione del file;
+			\item La descrizione;
+			\item La data di ultimo aggiornamento.
+		\end{itemize} & N-D \\  
+		\hline TS.30 & Verificare che la cronologia della chat venga eliminata quando l'Utente attiva un nuovo \glossario{dizionario dati}. & N-D \\  
+		\hline TS.31 & Verificare che il sistema di generazione del \glossario{prompt} supporti richieste in lingue diverse dall'inglese. Le lingue supportate sono: 
+		\begin{itemize}
+			\item Italiano;
+			\item Francese;
+			\item Tedesco;
+			\item Spagnolo;
+			\item Portoghese. 
+		\end{itemize}
+		& N-D \\  
 	\end{longtable}
 \end{adjustwidth}
 \egroup
+
+\subsubsection{Tracciamento dei test di sistema}
+
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	\centering
+	% MAX 12.5cm
+  \begin{longtable}{|c|c|}
+		\caption{Tracciamento test di sistema}
+  	\label{tab:tracciamento-test-sistema} \\
+    \hline
+		\textbf{ID} & \textbf{Requisito} \\ 
+		\hline
+		\endfirsthead
+
+		\caption[]{Tracciamento test di sistema (continua)} \\
+		\hline
+		\textbf{ID} & \textbf{Requisito} \\ 
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{2}{|r|}{{Continua nella prossima pagina}} \\ 
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    TS.1 & RF.O.1, RF.O.1.1, RF.O.1.2\\
+		\hline TS.2 & R.F.O.2\\
+		\hline TS.3 & RF.O.13\\
+		\hline TS.4 & RF.O.29\\
+		\hline TS.5 & RF.O.30\\
+		\hline TS.6 & RF.O.20\\
+		\hline TS.7 & RF.O.31, RF.O.31.1\\
+		\hline TS.8 & RF.O.31, RF.O.31.2\\
+		\hline TS.9 & RF.O.32\\
+		\hline TS.10 & RF.O.33\\
+		\hline TS.11 & RF.O.28\\
+		\hline TS.12 & RF.O.34\\
+		\hline TS.13 & RF.O.18\\
+		\hline TS.14 & RF.O.21\\
+		\hline TS.15 & RF.O.3\\
+		\hline TS.16 & RF.O.4\\
+		\hline TS.17 & RF.O.14, RF.O.14.1, RF.O.14.2, RF.O.14.3, RF.O.14.3.1, RF.O.14.3.2\\
+		\hline TS.18 & RF.O.23\\
+		\hline TS.19 & RF.O.6\\
+		\hline TS.20 & RF.O.11\\
+		\hline TS.21 & RF.O.35\\
+		\hline TS.22 & RF.O.12\\
+		\hline TS.23 & RF.O.8\\
+		\hline TS.24 & RF.O.46\\
+		\hline TS.25 & RF.O.22\\
+		\hline TS.26 & RF.O.23\\
+		\hline TS.27 & RF.O.24\\
+		\hline TS.28 & RF.O.25, RF.O.25.1, RF.O.25.1.1, RF.O.25.1.2\\
+		\hline TS.29 & RF.O.9, RF.O.9.1, RF.O.10, RF.O.10.1, RF.O.10.2, RF.O.10.3, RF.O.10.4, RF.O.10.5\\
+		\hline TS.30 & RF.D.45\\
+		\hline TS.31 & RF.D.52, RF.D.7\\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
+
