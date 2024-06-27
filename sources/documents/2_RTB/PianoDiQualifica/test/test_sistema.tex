@@ -43,7 +43,7 @@
 		\hline TS.14 & Verificare che il sistema restituisca un messaggio di errore nel caso in cui l'eliminazione del \glossario{dizionario dati} abbia esito negativo. & N-D \\  
 		\hline TS.15 & Verificare che l'Utente possa accedere alla chat e inserire un messaggio nella maschera di richiesta. & N-D \\   
 		\hline TS.16 & Verificare che l'Utente possa selezionare un \glossario{dizionario dati} e renderlo operativo nel sistema. & N-D \\ 
-		\hline TS.17 & Verificare che l'Utente possa visualizzare il contenuto del \glossario{dizionario dati} attivo nel sistema. Il sistema deve mostrare le seguenti informazioni:
+		\hline TS.17 & Verificare che l'Utente possa visualizzare il contenuto del \glossario{dizionario dati} selezionato. Il sistema deve mostrare le seguenti informazioni:
 		\begin{itemize}
 			\item Nome del database;
 			\item Descrizione del database;
@@ -58,10 +58,9 @@
 		\hline TS.20 & Verificare che il sistema restituisca un messaggio di errore nel caso in cui la generazione del \glossario{prompt} venga interrotta senza preavviso. & N-D \\ 
 		\hline TS.21 & Verificare che l'Utente possa visualizzare correttamente il \glossario{prompt} generato. Il prompt deve contenere le seguenti informazioni:
 		\begin{itemize}
-			\item Legenda dei simboli utilizzati;
-			\item Lista delle tabelle pertinenti. Per ogni tabella devono essere riportate le seguenti informazioni:
+			\item Lista delle tabelle pertinenti. Ogni tabella deve essere corredata da:
 			\begin{itemize}
-				\item Schema della tabella: composto dal nome della tabella e da una lista di nomi e tipi di colonne;
+				\item Schema della tabella: composto dal nome della tabella e da una lista di colonne, a loro volte suddivise in nome e tipo (es.: integer, string);
 				\item Chiave primaria;
 				\item Descrizione della tabella;
 				\item Descrizione delle colonne della tabella;
@@ -74,43 +73,25 @@
 		\hline TS.22 & Verificare che il Tecnico possa effettuare il logout per terminare la sessione corrente. & N-D \\ 
 		\hline TS.23 & Verificare che l'Utente possa copiare il contenuto del \glossario{prompt} generato. & N-D \\ 
 		\hline TS.24 & Verificare che il sistema generi un \glossario{log} se la richiesta viene inviata dal Tecnico. & N-D \\ 
-		\hline TS.25 & Verificare che il Tecnico possa visualizzare il \glossario{log} relativo all'ultima richiesta inviata. Il log deve contenere le seguenti informazioni:
-    \begin{itemize}
-      \item Data e ora di generazione del \glossario{log};
-      \item Richiesta in linguaggio naturale;
-      \item Prima fase della generazione del \glossario{prompt} (lista delle tabelle considerate rilevanti dal modello):
-      \begin{itemize}
-        \item Nome della tabella;
-        \item Punteggio assegnato alla tabella;
-        \item Descrizione della tabella;
-        \item Classifica di importanza dei termini presenti nella descrizione della tabella;
-        \item Descrizione della colonna più rilevante;
-        \item Classifica di importanza dei termini presenti nella descrizione della colonna;
-      \end{itemize}
-      \item Seconda fase della generazione del \glossario{prompt} (lista delle tabelle pertinenti):
-      \begin{itemize}
-        \item Spiegazione del motivo per cui una tabella viene inserita o meno nel \glossario{prompt}.
-      \end{itemize}
-    \end{itemize} & N-D \\ 
+		\hline TS.25 & Verificare che il Tecnico possa visualizzare il \glossario{log} relativo all'ultima richiesta inviata. & N-D \\ 
 		\hline TS.26 & Verificare che il Tecnico possa scaricare un file di \glossario{log} contenente il debug della generazione del \glossario{prompt}. & N-D \\
 		\hline TS.27 & Verificare che il sistema restituisca un messaggio di errore nel caso in cui il download del file fallisca. & N-D \\  
 		\hline TS.28 & Verificare che l'Utente possa visualizzare correttamente il contenuto della chat. & N-D \\  
-		\hline TS.29 & Verificare che il Tecnico possa visualizzare i dizionari dati caricati nell'applicazione con le relative informazioni. Di ciascun dizionario devono essere visibili: 
+		\hline TS.29 & Verificare che il Tecnico possa visualizzare i dizionari dati con le relative informazioni:
 		\begin{itemize}
-			\item Il nome;
-			\item L'estensione del file;
-			\item La dimensione del file;
-			\item La descrizione;
-			\item La data di ultimo aggiornamento.
+			\item Nome del dizionario dati;
+			\item Estensione del file;
+			\item Dimensione del file;
+			\item Descrizione del dizionario dati;
+			\item Data di ultimo aggiornamento.
 		\end{itemize} & N-D \\  
 		\hline TS.30 & Verificare che la cronologia della chat venga eliminata quando l'Utente attiva un nuovo \glossario{dizionario dati}. & N-D \\  
-		\hline TS.31 & Verificare che il sistema di generazione del \glossario{prompt} supporti richieste in lingue diverse dall'inglese. Le lingue supportate sono: 
+		\hline TS.31 & Verificare che il sistema di generazione del \glossario{prompt} supporti richieste in lingue diverse dall'inglese. Di seguito sono riportate le lingue che devono essere verificate: 
 		\begin{itemize}
 			\item Italiano;
 			\item Francese;
 			\item Tedesco;
-			\item Spagnolo;
-			\item Portoghese. 
+			\item Spagnolo. 
 		\end{itemize}
 		& N-D \\  
 	\end{longtable}
