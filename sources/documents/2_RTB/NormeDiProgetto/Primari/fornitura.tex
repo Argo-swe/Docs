@@ -52,16 +52,19 @@ TODO
 
 \paragraph{Analisi dei Requisiti}
 \begin{itemize}
-  \item La struttura di un UC è divisa nella seguente maniera:
+  \item La struttura di un UC è divisa nella seguente struttura:
   \begin{itemize}
     \item UCN - Nome UC;
     \item Descrizione;
+    \item Attori principali;
     \item Precondizioni;
     \item Postcondizioni;
+    \item Trigger;
     \item Scenario principale;
     \item Eventuale Scenario alternativo;
     \item Eventuale Inclusioni;
-    \item Eventuali Estensioni.
+    \item Eventuali Estensioni;
+    \item Eventuali sottocasi d'uso.
   \end{itemize}
   \item Le precondizioni dello UC devono essere condizioni necessarie per arrivare alla situazione che si presenta nello UC. Ad esempio per l'utilizzo dello strumento di debug per il Tecnico, saranno:
   \begin{itemize}
@@ -69,15 +72,16 @@ TODO
     \item Il Tecnico ha ricevuto un prompt generato sulla base di una richiesta in liguaggio naturale;
     \item Il Tecnico decide di utilizzare lo strumento di debug.
   \end{itemize}
-  \item Le precondizioni vengono poste al passato per identificare la conclusione di un UC;
+  \item Le precondizioni vengono poste al passato per identificare la conclusione di un UC, possono includere altri UC;
   \item Le postcondizioni rappresentano cosa succede dopo lo sviluppo dello UC e sono per tanto descrittive e poste al presente;
-  \item Lo scenario principale riprende i passaggi che sono stati necessari per il verificarsi dello UC. Pertanto si parte a descriverle dalla prima estensione che l'attore riscontra dopo l'avvio dell'applicativo fino ad arrivare allo UC.
-  \item Lo scenario alternativo riprende i passaggi dello scenario principale fino all'estensione che porta allo UC alternativo.   
-  \item Ogni riferimento ad un UC viene riportato in precondizioni, postcondizioni, scenario principale, scenario alternativo, inclusione ed estensione.
-  \item I sottocasi d'uso di uno UC vengono inseriti sotto lo UC principale nello stesso file. 
-  \item I sottocasi sempre inclusioni del caso d'uso "padre".
-  \item I sottocasi vengono riferiti con un punto dopo il padre. Ad esempio un sottocaso potrebbe essere UC.1 e il sottocaso del sottocaso UC.1.1
-  \item Per gli errori si visualizza quasi sempre un messaggio. Quindi la postcondizione finale e la fine dello scenario principale sarà quasi sempre "Viene visualizzato un messaggio con i dettagli dell'errore".
+  \item Lo scenario principale riprende i passaggi che sono stati necessari per il verificarsi dello UC. Pertanto si parte a descriverle dalla prima estensione che l'attore riscontra dopo l'avvio dell'applicativo fino ad arrivare allo UC;
+  \item Lo scenario alternativo riprende i passaggi dello scenario principale fino all'estensione che porta allo UC alternativo;
+  \item Ogni riferimento ad un UC viene riportato in precondizioni, postcondizioni, scenario principale, scenario alternativo, inclusione ed estensione;
+  \item I sottocasi d'uso di uno UC vengono inseriti sotto lo UC principale nello stesso file;
+  \item I sottocasi sono sempre inclusioni del caso d'uso "padre";
+  \item I sottocasi vengono riferiti con un punto dopo il padre. Ad esempio un sottocaso potrebbe essere UC.1 e il sottocaso del sottocaso UC.1.1;
+  \item Per gli errori si visualizza quasi sempre un messaggio. Quindi la postcondizione finale e la fine dello scenario principale sarà quasi sempre "Viene visualizzato un messaggio con i dettagli dell'errore";
+  \item Il Trigger è l'azione che l'utente vuole svolgere e che viene soddisfatta dallo UC.
 \end{itemize}
 
 \paragraph{Piano di Qualifica}
@@ -151,7 +155,7 @@ Il responsabile può duplicare il foglio di calcolo dello \glossario{sprint} pre
 \end{itemize}
 \par Il questionario è un modulo \glossario{Google Moduli} che può essere creato all'interno della dashboard. Il questionario ha la seguente struttura:
 \begin{itemize}
-  \item \textbf{Titolo:} Valutazione Sprint-ID, dove ID corrisponde al numero dello \glossario{sprint};  
+  \item \textbf{Titolo:} Valutazione Sprint-ID, dove ID corrisponde al numero dello \glossario{sprint};
   \item \textbf{Descrizione:} Questionario per la valutazione dello sprint-ID;
   \item \textbf{Domande} (scelta multipla, scala lineare da 1 a 10, risposta breve, scala lineare da 1 a 5, paragrafo):
   \begin{itemize}
@@ -181,7 +185,7 @@ Tutte le tabelle del consuntivo vengono aggiornate automaticamente in base alla 
     \item Ore per ruolo;
     \item Delta ore preventivo - consuntivo: differenza tra le ore preventivate e quelle effettivamente spese;
     \item Costo (in €);
-    \item Delta costo preventivo - consuntivo: differenza tra il costo preventivato e quello effettivo.	
+    \item Delta costo preventivo - consuntivo: differenza tra il costo preventivato e quello effettivo.
     \item Ore e budget spesi negli \glossario{sprint} precedenti;
     \item Ore e budget restanti.
   \end{itemize}
@@ -196,7 +200,7 @@ Tutte le tabelle del consuntivo vengono aggiornate automaticamente in base alla 
     \item Ore individuali;
     \item Costo orario (in €);
     \item Costo totale (in €);
-    \item Ore e budget restanti, ricavati dal consuntivo economico dell'ultimo sprint. 
+    \item Ore e budget restanti, ricavati dal consuntivo economico dell'ultimo sprint.
   \end{itemize}
 \end{itemize}
 \par Se il preventivo complessivo dovesse mutare, sia la tabella che il grafico corrispondente andrebbero aggiornati nel \PdP.
