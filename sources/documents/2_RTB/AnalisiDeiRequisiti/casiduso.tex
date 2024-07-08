@@ -1,17 +1,23 @@
 \section{Casi d'uso}
 
 \subsection{Scopo}
-La seguente sezione illustra i \glossario{casi d'uso} relativi all'applicazione ChatSQL. Questi sono stati definiti mediante l'analisi del capitolato, nonché tramite dialoghi interni e incontri con la \glossario{Proponente}.
+\par La seguente sezione illustra i \glossario{casi d'uso} relativi all'applicazione ChatSQL. Questi sono stati definiti mediante l'analisi del capitolato, nonché tramite dialoghi interni e incontri con la \glossario{Proponente}.
 
 \subsection{Attori}
-Il prodotto prevede due attori:
+\par Il prodotto prevede due attori:
 \begin{itemize}
   \item Utente: un utente generico che ha accesso alle funzionalità di generazione di un \glossario{prompt} a partire da un \glossario{dizionario dati} già presente nel sistema; 
   \item Tecnico: un utente registrato nel sistema; ha accesso a tutte le funzionalità dell'utente generico e, una volta autenticato, può gestire i dizionari dati e visualizzare il debug del prompt.
 \end{itemize}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/attori.png}
+  \caption{Attori che interagiscono con il sistema}
+\end{figure}
+
 \subsection{Gestione degli errori}
-Alcuni dei casi d'uso gestiscono situazioni di errore; questo permette ai programmatori di gestire eventuali situazioni eccezionali, in modo che vengano intercettate e non portino ad un malfunzionamento del sistema, ma anzi gestite e notificate quando questo è utile.
+\par Alcuni \glossario{casi d'uso} delineano situazioni di errore; questo permette al team di sviluppo di gestire situazioni impreviste o eccezioni in modo appropriato e coerente con le aspettative, garantendo l'affidabilità del sistema e migliorando l'esperienza utente.
 
 \subsection{Elenco dei \glossario{casi d'uso}}
 

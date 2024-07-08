@@ -1,25 +1,25 @@
 \section{Descrizione}
 
 \subsection{Obiettivi del prodotto}
-Lo scopo del prodotto è quello di favorire l’interrogazione di un database di tipo SQL attraverso un’applicazione web, nel quale inserire richieste in linguaggio naturale che verranno poi convertite in \glossario{query} di interrogazione tramite l’utilizzo di un \glossario{LLM}
+\par L’obiettivo finale del prodotto è consentire agli utenti di ottenere in risposta da ChatGPT (o altri servizi) una \glossario{query} SQL valida e funzionante, usando come input il \glossario{prompt} generato dal sistema ChatSQL. L’applicazione web deve semplificare il processo di conversione di interrogazioni in linguaggio naturale in query da eseguire su database di tipo SQL.
 
 \subsection{Funzioni del prodotto}
-Le funzioni principali necessarie al corretto funzionamento del prodotto sono:
+\par Le funzioni necessarie al corretto funzionamento del sistema sono:
 \begin{itemize}
-  \item Login: necessaria per identificare lo specifico ruolo dell’utente e quindi abilitarne le funzionalità ad esso dedicate;
-  \item Gestione dei dizionari dati: tramite le operazioni \glossario{CRUDL} è possibile gestire i vari dizionari dati utilizzati poi per l’interrogazione;
-  \item Selezione del \glossario{dizionario dati} da interrogare;
+  \item Autenticazione: necessaria per abilitare le funzionalità del profilo tecnico;
+  \item Gestione dei dizionari dati: tramite le operazioni \glossario{CRUDL} è possibile gestire i dizionari dati nel sistema;
+  \item Selezione di un \glossario{dizionario dati};
   \item Selezione della lingua di interrogazione;
-  \item Copia del \glossario{prompt} SQL;
-  \item Esecuzione di una richiesta con risposta di un report per il debug;
-  \item Esecuzione di una batteria di test predefinita nella configurazione del \glossario{dizionario dati}.
+  \item Selezione di un \glossario{DBMS};
+  \item Generazione di un \glossario{prompt} a partire da una richiesta in linguaggio naturale;
+  \item Copia del prompt generato;
+  \item Visualizzazione del debug del prompt.
 \end{itemize}
 
 \subsection{Caratteristiche utente}
-Dopo una confronto e analisi con la Proponente, è stato evidenziato un interesse nello sviluppo di questo progetto per varie tipologie di utenti.\\
-Potrebbe essere richiesto per:
+Dopo un confronto con la \glossario{Proponente}, è stato evidenziato un interesse nello sviluppo di questo progetto per diverse tipologie di utenti e ambiti, tra cui:\\
 \begin{itemize}
-  \item L'ottimizzazione di \glossario{query} durante lo sviluppo di nuovi programmi;
-  \item Generare \glossario{query} per interrogare direttamente il database da parte di utenti con conoscenze di SQL scarse o nulle;
-  \item Aiutare i reclutatori a generare \glossario{query} da poter utilizzare come confronto in sede di colloquio per possibile collaboratori.
+  \item Ottimizzare le \glossario{query} durante lo sviluppo di nuovi programmi;
+  \item Generare query per interrogare un database da parte di utenti con conoscenze di \glossario{SQL} limitate o nulle;
+  \item Aiutare i reclutatori (o assuntori) a generare query da poter utilizzare come confronto in sede di colloquio.
 \end{itemize}

@@ -7,33 +7,33 @@
 \end{figure}
 
 \paragraph*{Descrizione}
-L'autenticazione corrisponde al processo di login, tramite il quale l'Utente può passare alla schermata del Tecnico e ampliare le funzionalità disponibili.
+L'autenticazione corrisponde al processo di login, tramite il quale il Tecnico può ampliare le funzionalità disponibili.
 
 \paragraph*{Attori principali}
-Utente
+Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il sistema è attivo e funzionante;
-  \item L'Utente non è autenticato nella sessione corrente.
+  \item Il Tecnico è stato registrato presso il sistema;
+  \item Il Tecnico non è autenticato nella sessione corrente.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
   \item La procedura di autenticazione si è conclusa con successo;
-  \item L'Utente acquisisce il ruolo di tecnico;
   \item Il Tecnico visualizza le funzionalità aggiuntive nell'interfaccia.  
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente desidera accedere all'area riservata al Tecnico.
+Il Tecnico desidera accedere all'area di amministrazione.
 
 \paragraph*{Scenario principale}
 \begin{itemize}
-  \item L'Utente seleziona l'opzione "Login";
-  \item L'Utente inserisce le proprie credenziali;
-  \item L'Utente effettua l'accesso;
-  \item Il sistema mostra le funzionalità disponibili per il Tecnico.
+  \item Il Tecnico seleziona l'opzione "Login";
+  \item Il Tecnico inserisce le proprie credenziali;
+  \item Il Tecnico effettua l'accesso;
+  \item Il sistema mostra la schermata aggiornata con le funzionalità disponibili.
 \end{itemize}
 
 \paragraph*{Scenario alternativo}
@@ -72,12 +72,12 @@ L'Utente desidera accedere all'area riservata al Tecnico.
 La procedura di "inserimento username" corrisponde all'immissione del nome utente nella sezione apposita di login.
 
 \paragraph*{Attori principali}
-Utente
+Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il sistema è attivo e funzionante;
-  \item L'Utente ha avviato la procedura di autenticazione (\hyperref[UC1]{UC1}).  
+  \item Il Tecnico ha avviato la procedura di autenticazione (\hyperref[UC1]{UC1}).  
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -86,11 +86,11 @@ Utente
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente desidera inserire il proprio username per accedere alle funzionalità del tecnico.
+Il Tecnico desidera inserire il proprio username per accedere alle funzionalità del tecnico.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'utente inserisce il proprio username come parte del processo di autenticazione.
+  \item Il Tecnico inserisce il proprio username come parte del processo di autenticazione.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -100,12 +100,12 @@ L'Utente desidera inserire il proprio username per accedere alle funzionalità d
 La procedura di "inserimento password" corrisponde all'immissione della password nella sezione apposita di login.
 
 \paragraph*{Attori principali}
-Utente
+Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il sistema è attivo e funzionante;
-  \item L'Utente ha avviato la procedura di autenticazione (\hyperref[UC1]{UC1}). 
+  \item Il Tecnico ha avviato la procedura di autenticazione (\hyperref[UC1]{UC1}). 
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -114,9 +114,9 @@ Utente
 \end{itemize}
 
 \paragraph*{Trigger}
-L'Utente vuole inserire la propria password per accedere alle funzionalità del tecnico.
+Il Tecnico vuole inserire la propria password per accedere alle funzionalità del tecnico.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'Utente inserisce la propria password come parte del processo di autenticazione.
+  \item Il Tecnico inserisce la propria password come parte del processo di autenticazione.
 \end{enumerate}
