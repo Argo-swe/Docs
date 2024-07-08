@@ -1,21 +1,23 @@
 \section{Requisiti}
-All'interno di questa sezione sarano elencati, in formato tabulare e raggruppati per categoria, i requisiti alla base dello sfiluppo dell'applicativo ChatSQL. Questi sono divisi nelle seguenti tipologie:
+\par In questa sezione sono illustrati i requisiti alla base dello sviluppo dell'applicativo ChatSQL. Questi sono stati delineati in conseguenza dell'analisi del capitolato e di riunioni interne ed esterne. I requisiti sono suddivisi nelle seguenti tipologie:
 \begin{description}
-  \item[Funzionali (F):] I requisiti funzionali corrispondono alle funzionalità del sistema. Ciò equivale all’insieme di azioni che l’utente e lo stesso sistema sono in grado di compiere;
-  \item[Qualitativi (Q):] I requisiti di qualità si fondano sull'assolvimento degli standard qualitativi al fine di garantire e preservare la qualità del prodotto;
-  \item[Di vincolo (V):] I requisiti di vincolo delineano le restrizioni e vincoli normativi da rispettare nel corso dello sviluppo dell’applicativo.
+  \item[Funzionali (F):] i requisiti funzionali corrispondono alle funzionalità del sistema. Ciò equivale all'insieme di operazioni che il sistema deve fornire agli utenti;
+  \item[Qualitativi (Q):] i requisiti di qualità si fondano sul rispetto degli standard qualitativi al fine di garantire e preservare la qualità del prodotto;
+  \item[Di vincolo (V):] i requisiti di vincolo delineano le restrizioni e vincoli da rispettare nell'arco dello sviluppo.
 \end{description}
-A ciascun requisito è inoltre assegnato un grado di importanza:
+A ciascun requisito è assegnato un grado di importanza:
 \begin{description}
-  \item[Obbligatorio (O):] L'implementazione del requisito risulta inderogabile;
-  \item[Desiderabile (D):] L'implementazione del requisito non viene specificata come obbligatoria ma risulta appetibile alla \glossario{Proponente}.
-  \item[Opzionale (OP):] L'implementazione del requisito è lasciata alla discrezione del \glossario{Fornitore}.
+  \item[Obbligatorio (O):] l'implementazione del requisito risulta inderogabile;
+  \item[Desiderabile (D):] l'implementazione del requisito, per quanto non obbligatoria, è di particolare interesse per la \glossario{Proponente};
+  \item[Opzionale (OP):] la decisione sull'implementazione del requisito è lasciata al fornitore.
 \end{description}
 A seguito di tale classificazione, ogni requisito verrà identificato con la forma:
-\textbf{\[R.[Tipologia][Importanza][Codice]\]}
-Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph{Importanza} fanno riferimento alle definizioni precedenti e sono indicate con le sigle corrispondenti, infine \emph{Codice} è un identificativo numerico univoco.
+\textbf{\[R[Tipologia].[Importanza].[Codice]\]}
+Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph{Importanza} fanno riferimento alle definizioni precedenti e sono menzionate con le sigle corrispondenti; infine, \emph{Codice} è un identificatore numerico univoco.
 
 \subsection{Requisiti funzionali}
+\par In questa sezione vengono illustrate le funzionalità e i comportamenti di cui il sistema deve disporre.
+
 \begin{longtable}{|P{3cm}|P{6,5cm}|>{\arraybackslash}P{4cm}|}
     \hline
     \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
@@ -144,44 +146,42 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{RF.OP.42} & La richiesta dell'utente deve poter essere inserita tramite input vocale. & Capitolato \\
     \hline
-    \textbf{RF.O.43} & Il dizionario dati deve rispecchiare la struttura di un database, e contenere descrizioni in linguaggio naturale delle tabelle e dei rispettivi campi. & Verbale Esterno \\
+    \textbf{RF.O.43} & Il prompt deve contenere almeno le descrizioni in linguaggio naturale delle tabelle e delle colonne. & Verbale esterno\\
     \hline
-    \textbf{RF.O.44} & Il prompt deve contenere almeno le descrizioni delle tabelle e delle colonne. & Verbale esterno\\
+    \textbf{RF.O.44} & Quando il Tecnico richiede la generazione del prompt, il sistema elabora in automatico un \glossario{log}. & Verbale esterno \\
     \hline
-    \textbf{RF.D.45} & La cronologia della chat deve essere eliminata quando viene attivato un nuovo \glossario{dizionario dati} nel sistema. & Verbale interno \\
+    \textbf{RF.OP.45} & Il sistema di generazione del prompt deve supportare richieste in lingua inglese. & Verbale interno \\
     \hline
-    \textbf{RF.O.46} & Quando il Tecnico richiede la generazione del prompt, il sistema elabora in automatico un file di \glossario{log}. & Verbale esterno \\
+    \textbf{RF.O.46} & La scelta del dizionario dati deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
     \hline
-    \textbf{RF.OP.47} & Il sistema di generazione del prompt deve supportare richieste in lingua inglese. & Verbale interno \\
+    \textbf{RF.O.47} & Per procedere con l'inserimento di una richiesta, è necessario aver selezionato un dizionario dati. & Verbale interno \\
     \hline
-    \textbf{RF.O.48} & La scelta del dizionario dati deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
+    \textbf{RF.O.48} & La scelta della lingua deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
     \hline
-    \textbf{RF.O.49} & Per procedere con l'inserimento di una richiesta, è necessario aver selezionato un dizionario dati. & Verbale interno \\
+    \textbf{RF.O.49} & La scelta del DBMS deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
     \hline
-    \textbf{RF.O.50} & La scelta della lingua deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
+    \textbf{RF.D.50} & Il sistema di generazione del prompt deve supportare richieste in lingue diverse dall'inglese. & Capitolato \\
     \hline
-    \textbf{RF.O.51} & La scelta del DBMS deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
+    \textbf{RF.OP.51} & Quando un utente ripete più volte lo stesso messaggio, il ChatBOT restituisce la risposta formulata alla prima occorrenza del messaggio. & Verbale interno \\
     \hline
-    \textbf{RF.D.52} & Il sistema di generazione del prompt deve supportare richieste in lingue diverse dall'inglese. & Capitolato \\
-    \hline
-    \textbf{RF.OP.53} & Quando un utente ripete più volte lo stesso messaggio, il ChatBOT restituisce la risposta formulata alla prima occorrenza del messaggio. & Verbale interno \\
+    \textbf{RF.OP.52} & Il sistema deve accertarsi che la query \glossario{SQL} generata da un LLM tramite un servizio esterno come ChatGPT sia valida e funzionante. & Capitolato \\
     \hline
 \caption{Requisiti funzionali}
 \label{requisitifunzionali}
 \end{longtable}
 
 \subsection{Requisiti di qualità}
-In questa sezione vengono descritti i requisiti volti a garantire la quelità del sistema.
+\par In questa sezione vengono descritti gli attributi qualitativi che il sistema deve possedere.
 
 \begin{longtable}{|P{3cm}|P{6,5cm}|>{\arraybackslash}P{4cm}|}
   \hline
   \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
   \hline
-  \textbf{RQ.O.1} & Rispetto delle norme indicate nel documento \NdP. & \NdP \\
+  \textbf{RQ.O.1} & Il prodotto software deve rispettare quanto descritto nelle \VersioneNP. & Regolamento \\
   \hline
-  \textbf{RQ.O.2} & Rispetto delle metriche indicate nel documento \PdQ. & \NdP \\
+  \textbf{RQ.O.2} & Il prodotto software deve rispettare quanto descritto nel \VersionePQ. & Regolamento \\
   \hline
-  \textbf{RQ.D.3} & Il codice sorgente dell'applicazione deve essere pubblicato sul sito "github.com" o essere accessibile tramite altri \glossario{repository} pubblici. & Capitolato \\
+  \textbf{RQ.O.3} & Il codice sorgente dell'applicazione deve essere pubblicato sul sito "github.com" o essere accessibile tramite altri \glossario{repository} pubblici. & Capitolato \\
   \hline
   \textbf{RQ.D.4} & Il progetto deve essere di natura open source, per agevolare la continuità del prodotto risultante. & Capitolato \\
   \hline
@@ -189,43 +189,38 @@ In questa sezione vengono descritti i requisiti volti a garantire la quelità de
   \hline
   \textbf{RQ.O.6} & Deve essere fornito un manuale per chiunque voglia estendere l'applicazione. & Capitolato \\
   \hline
-  \textbf{RQ.D.7} & Il sistema di generazione del prompt deve avere un'alta recall, per evitare di escludere tabelle rilevanti. & Verbale Esterno 2024-05-22 \\
-  \hline
-  \textbf{RQ.O.8} & Il prompt deve riportare, per ogni tabella, le informazioni necessarie affinché il modello di AI generi una query SQL corretta. & Verbale Esterno 2024-06-07 \\
+  \textbf{RQ.D.7} & Il sistema di generazione del prompt deve avere un'alta recall, per evitare di escludere elementi rilevanti. & Verbale Esterno 2024-05-22 \\
   \hline
   \textbf{RQ.O.9} & L'applicazione deve avere un design responsive. & Verbale Interno \\
   \hline
-  \textbf{RQ.OP.10} & Il sistema deve accertarsi che la query \glossario{SQL} ricevuta da un servizio esterno sia valida e funzionante. & Capitolato \\
+  \textbf{RQ.O.10} & Il sistema deve permettere agli utenti di cambiare il colore del tema dell'interfaccia da chiaro a scuro. & Verbale Interno \\
   \hline
-  \textbf{RQ.D.11} & Il sistema deve permettere agli utenti di cambiare il colore del tema dell'interfaccia da chiaro a scuro. & Verbale Interno \\
+  \textbf{RQ.D.11} & Il sistema deve permettere agli utenti di cambiare la scala degli elementi dell'interfaccia, ovvero ingrandire o ridurre la dimensione dei componenti sullo schermo. & Verbale Interno \\
   \hline
-  \textbf{RQ.D.12} & Il sistema deve permettere agli utenti di cambiare la scala degli elementi dell'interfaccia, ovvero ingrandire o ridurre la dimensione dei componenti sullo schermo. & Verbale Interno \\
-  \hline
-  \textbf{RQ.OP.13} & Il sistema deve permettere agli utenti di cambiare la lingua dell'interfaccia da italiano a inglese e viceversa. Le modifiche devono essere applicate senza necessità di riavviare l'applicazione. & Verbale Interno \\
+  \textbf{RQ.OP.12} & Il sistema deve permettere agli utenti di cambiare la lingua dell'interfaccia da italiano a inglese e viceversa. Le modifiche devono essere applicate senza necessità di riavviare l'applicazione. & Verbale Interno \\
   \hline
 \caption{Requisiti di qualità}
 \label{requisitiqualita}
 \end{longtable}
 
 \subsection{Requisiti di dominio / vincolo}
-In questa sezione vengono descritti i requisiti che pongolo le condizioni da rispettare durante lo sviluppo del sistema.
+\par In questa sezione vengono elencate le restrizioni o condizioni da rispettare durante lo sviluppo dell'applicativo.
 
-TODO una volta identificate le tecnologie e versioni (es. python, steamlit, struttura dizionario dati, ...) vanno inserite qui
 \begin{longtable}{|P{3cm}|P{6,5cm}|>{\arraybackslash}P{4cm}|}
   \hline
   \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
   \hline
   \textbf{RV.O.1} & L'applicazione deve essere organica. Le funzionalità del prodotto devono essere incorporate in un unico sistema che permetta di utilizzarle in modo integrato. & Capitolato \\
   \hline
-  \textbf{RV.O.2} & Sviluppo di un'applicazione web. & Verbale esterno 2024-04-09 \\
+  \textbf{RV.O.2} & Sviluppo di un applicativo web-based. & Verbale esterno 2024-04-09 \\
   \hline
   \textbf{RV.O.3} & Il \glossario{dizionario dati} deve essere fornito tramite un file JSON. & Verbale interno \\
   \hline
-  \textbf{RV.O.4} & Il dizionario dati in formato JSON deve rispettare uno schema predefinito. & Verbale Interno \\
+  \textbf{RV.O.4} & Il dizionario dati deve rispettare uno schema predefinito. In particolare, il dizionario deve rispecchiare la struttura di un database, e contenere descrizioni delle tabelle e dei rispettivi campi. & Verbale Interno \\
   \hline
   \textbf{RV.O.5} & La dimensione del file JSON utilizzato come dizionario dati deve essere inferiore a 1MB. & Verbale Interno \\
   \hline
-  \textbf{RV.OP.6} & Il file impiegato come dizionario dati può essere anche un \glossario{dump SQL} (esportabile direttamente da una base di dati). & Verbale Interno \\
+  \textbf{RV.OP.6} & Il dizionario dati può essere anche un \glossario{dump SQL} (esportabile direttamente da una base di dati). & Verbale Interno \\
   \hline
   \textbf{RV.O.7} & Il \glossario{back-end} dell'applicazione deve essere implementato utilizzando il linguaggio \glossario{Python} versione 3.10.12. & Verbale Interno \\
   \hline
@@ -233,7 +228,7 @@ TODO una volta identificate le tecnologie e versioni (es. python, steamlit, stru
   \hline
   \textbf{RV.O.9} & Il back-end dell'applicazione deve importare la libreria \glossario{txtai} versione 7.0.0 o successive. & Verbale Interno \\
   \hline
-  \textbf{RV.O.10} & Il back-end dell'applicazione deve utilizzare modelli di \glossario{sentence similarity} per la generazione degli \glossario{embeddings}. & Verbale Esterno 2024-05-06 \\
+  \textbf{RV.O.10} & Il back-end dell'applicazione deve utilizzare modelli di \glossario{sentence similarity} per la generazione dei dati vettoriali. & Verbale Esterno 2024-05-06 \\
   \hline
   \textbf{RV.O.11} & Il \glossario{front-end} dell'applicazione deve essere implementato utilizzando \glossario{Node.js} versione 20.14.0. & Verbale Interno \\
   \hline
@@ -396,3 +391,22 @@ Di seguito vengono mostrate le corrispondenze fonte - requisito, raggruppate per
   \hline
 \caption{Fonti- Requisiti funzionali}
 \end{longtable}
+
+\subsection{Riepilogo}
+
+\begin{table}[H]
+	\centering
+	% MAX 12.5cm
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+		\textbf{Requisito} & \textbf{Obbligatorio} & \textbf{Desiderabile} & \textbf{Opzionale} & \textbf{Totale} \\ 
+    \hline
+    Funzionale & 21 & 21 & 21 & 21 \\
+    \hline
+    Di qualità & 21 & 21 & 21 & 21 \\
+    \hline 
+    Di vincolo & 21 & 21 & 21 & 21 \\
+    \hline
+  \end{tabular}
+  \caption{Tabella di riepilogo dei requisiti}
+\end{table}

@@ -1,17 +1,17 @@
 \section{Casi d'uso}
 
 \subsection{Scopo}
-Questa sezione descrive nel dettaglio i Casi d’Uso individuati dal gruppo durante l'analisi.
+La seguente sezione illustra i \glossario{casi d'uso} relativi all'applicazione ChatSQL. Questi sono stati definiti mediante l'analisi del capitolato, nonché tramite dialoghi interni e incontri con la \glossario{Proponente}.
 
 \subsection{Attori}
 Il prodotto prevede due attori:
 \begin{itemize}
-  \item Utente: un utente generico che ha accesso alle funzionalità richieste per la generazione di un \glossario{prompt} utilizzando i dizionari dati precaricati;
-  \item Tecnico: un utente che ha completato con successo l'autenticazione ed è registrato come Tecnico, ha accesso a tutte le funzionalità dell'utente generico e in aggiunta può gestire i dizionari dati ed accedere a funzionalità di testing e debug.
+  \item Utente: un utente generico che ha accesso alle funzionalità di generazione di un \glossario{prompt} a partire da un \glossario{dizionario dati} già presente nel sistema; 
+  \item Tecnico: un utente registrato nel sistema; ha accesso a tutte le funzionalità dell'utente generico e, una volta autenticato, può gestire i dizionari dati e visualizzare il debug del prompt.
 \end{itemize}
 
 \subsection{Gestione degli errori}
-Alcuni dei casi d'uso gestiscono situazioni di errore, questo permette ai programmatori di gestire eventuali situazioni eccezionali, in modo che vengano intercettate e non portino ad un malfunzionamento del sistema, ma anzi gestite e notificate quando questo è utile.
+Alcuni dei casi d'uso gestiscono situazioni di errore; questo permette ai programmatori di gestire eventuali situazioni eccezionali, in modo che vengano intercettate e non portino ad un malfunzionamento del sistema, ma anzi gestite e notificate quando questo è utile.
 
 \subsection{Elenco dei \glossario{casi d'uso}}
 
@@ -30,7 +30,7 @@ Alcuni dei casi d'uso gestiscono situazioni di errore, questo permette ai progra
 \subsubsection*{Gestione dizionari dati}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.90\textwidth, height=0.95\textheight]{assets/gestione_dizionari.png}
+  \includegraphics[width=0.90\textwidth, height=0.90\textheight]{assets/gestione_dizionari.png}
   \caption{Diagramma gestione dizionari}
 \end{figure}
 \input{usecase/uc13}
@@ -42,9 +42,10 @@ Alcuni dei casi d'uso gestiscono situazioni di errore, questo permette ai progra
 \input{usecase/uc19}
 \input{usecase/uc20}
 \input{usecase/uc21}
+\subsubsection*{Area debug del prompt}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.90\textwidth]{assets/debug.png}
+  \includegraphics[width=0.95\textwidth]{assets/debug.png}
   \caption{Diagramma area debug prompt}
 \end{figure}
 \input{usecase/uc22}
