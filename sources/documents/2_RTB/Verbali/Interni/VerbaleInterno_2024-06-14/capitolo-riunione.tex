@@ -2,55 +2,65 @@
 \subsection{Ordine del giorno}
 \begin{itemize}
 	\item Divisione delle metriche per l'espansione del \PdQ;
-	\item Divisione dei compiti dei programmatori;
+	\item Suddivisione dei compiti dei programmatori;
 	\item Discussione dei punti per il diario di bordo del 14 giugno;
-	\item Discussione per l'impostazione del template del \glossario{front-end}.
+	\item Impostazione del template \glossario{front-end}.
 \end{itemize}
 
 \subsection{Discussione e decisioni}
 \subsubsection{Divisione delle metriche per l'espansione del \PdQ}
 \par Il gruppo si è ritrovato per discutere della divisione dei compiti in vista del prossimo \glossario{sprint}. 
-La prima divisione viene fatta tra gli amministratori, per l'espansione del \PdQ con i grafici di metriche calcolate nel tempo. 
-Vengono divise le metriche da inserire graficamente tra gli amministratori in maniera proporzionale al numero di ore per lo \glossario{sprint}: lo scopo è creare una vista che possa mostrare l'andamento delle metriche durante gli sprint, inserendo un valore effettivo che si spera rimanga all'interno di un intervallo tra il loro valore ambito e tollerabile. 
-Ovviamente lo scopo è mantenere le metriche sul valore ambito nei prossimi \glossario{sprint}.
-Le metriche vengono anche dotate di un paragrafo che ha lo scopo di descrivere l'andamento nel tempo.
+La prima ripartizione è stata effettuata tra gli amministratori, al fine di espandere il \PdQ\ con i grafici di misurazione delle metriche. 
+Le metriche sono state suddivise tra gli amministratori in maniera proporzionale al numero di ore produttive assegnate nel preventivo. Lo scopo del cruscotto di valutazione della qualità è creare una vista che possa mostrare l'andamento delle metriche durante gli sprint; il valore misurato dovrebbe rimanere all'interno di un intervallo tra il loro valore ambito e tollerabile. 
+L'obiettivo del progetto è raggiungere o avvicinarsi il più possibile al valore ambito.
+Il team ha pianificato anche la stesura di un paragrafo per descrivere in forma testuale i grafici.
 
 \subsubsection{Divisione dei compiti dei programmatori}
-TODO
+\par I programmatori hanno analizzato il template front-end e suddiviso i compiti relativi allo sviluppo della chat. Le seguenti attività sono state definite come prioritarie:
+\begin{itemize}
+	\item Inserimento dei messaggi nella chat;
+	\item Scelta delle componenti grafiche per la selezione del dizionario dati, della lingua e del DBMS.
+\end{itemize}
+\par Per quanto riguarda il back-end, invece, il team di programmatori ha risolto alcuni problemi legati alla struttura del \glossario{PoC}. In seguito, sono state pianificate le seguenti attività:
+\begin{itemize}
+	\item Conclusione della funzionalità di login;
+	\item Sviluppo dei metodi per la gestione dei dizionari dati.
+\end{itemize}
 
 \subsubsection{Discussione dei punti per il diario di bordo}
-\par Il gruppo ha discusso i punti salienti da trattare nel diario di bordo del 14 giugno 2024.
+\par Il gruppo ha discusso i punti salienti da trattare nel diario di bordo del 14 giugno.
 \paragraph{Done}
 \begin{itemize}
-	\item Implementazione \glossario{front-end} con il \glossario{framework} \glossario{Vue.js};
+	\item Setup del \glossario{front-end} con il \glossario{framework} \glossario{Vue.js};
 	\item Implementazione del \glossario{back-end} con la libreria \glossario{Flask};
-	\item Confronto tra le librerie \glossario{Flask} e \glossario{FastAPI};
-	\item Aggiunta delle descrizioni tabelle e colonne nel \glossario{prompt};
-	\item Modifica gestione chiavi esterne del \glossario{dizionario dati};
-	\item Test di generazione \glossario{query SQL} con modelli in locale tramite \glossario{LM Studio};
-	\item Revisione dei casi d’uso \AdR;
-	\item Aggiunta requisiti funzionali, di qualità e di vincolo nell'\AdR.
+	\item Confronto tra le librerie Flask e \glossario{FastAPI};
+	\item Aggiunta delle descrizioni di tabelle e colonne nel \glossario{prompt};
+	\item Modifica delle chiavi esterne nel \glossario{dizionario dati};
+	\item Test di generazione di \glossario{query SQL} con modelli locali tramite \glossario{LM Studio};
+	\item Revisione dei casi d'uso nell'\AdR;
+	\item Aggiunta di requisiti funzionali, di qualità e di vincolo nell'\AdR.
 	
 \end{itemize}
 \paragraph{Difficoltà}
 \begin{itemize}
-	\item Configurazione \glossario{Docker} per interazione con il \glossario{front-end};
+	\item Configurazione di \glossario{Docker} per l'interazione con il \glossario{front-end};
 	\item Modellazione di \glossario{DTO} con \glossario{Flask};
-	\item Comprendere come legare tra loro i casi d’uso;
-	\item Configurazione del server locale di \glossario{LM Studio};
-	\item Utilizzo di una libreria \glossario{front-end}.
+	\item Configurazione del server locale di \glossario{LM Studio}.
 \end{itemize}	
+
 \paragraph{Todo}
 \begin{itemize}
-	\item Aggiunta dei grafici nell’\AdR;
+	\item Aggiunta dei grafici nell'\AdR;
 	\item Aggiornamento della documentazione (\PdP, \PdQ, \AdR);
-	\item Scegliere quali metodi esporre al \glossario{front-end};
-	\item Completare lo sviluppo delle componenti grafiche;
-	\item Continuare l’integrazione tra \glossario{front-end} e \glossario{back-end}.		
-\end{itemize}
-\paragraph{Dubbi}
-\begin{itemize}
-	\item I test di correttezza del \glossario{prompt} richiesti dalla Proponente possono rientrare tra i requisiti di qualità?
+	\item Esposizione dei metodi al \glossario{front-end};
+	\item Conclusione dello sviluppo delle componenti grafiche;
+	\item Prosecuzione dell'integrazione tra \glossario{front-end} e \glossario{back-end}.		
 \end{itemize}
 
-\par Gli argomenti sopracitati sono stati riportati nella presentazione per il diario di bordo del 14 giugno 2024.
+\paragraph{Dubbi}
+\begin{itemize}
+	\item Legame tra test di correttezza e requisiti di qualità.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Gli argomenti sopracitati sono stati riportati nella presentazione per il diario di bordo del 14 giugno.
