@@ -1,38 +1,55 @@
 \section{Requisiti}
 \par In questa sezione sono illustrati i requisiti alla base dello sviluppo dell'applicativo ChatSQL. Questi sono stati delineati in conseguenza dell'analisi del capitolato e di riunioni interne ed esterne. I requisiti sono suddivisi nelle seguenti tipologie:
 \begin{description}
-  \item[Funzionali (F):] i requisiti funzionali corrispondono alle funzionalità del sistema. Ciò equivale all'insieme di operazioni che il sistema deve fornire agli utenti;
+  \item[Funzionali (F):] i requisiti funzionali corrispondono alle funzionalità  e comportamenti del sistema;
   \item[Qualitativi (Q):] i requisiti di qualità si fondano sul rispetto degli standard qualitativi al fine di garantire e preservare la qualità del prodotto;
   \item[Di vincolo (V):] i requisiti di vincolo delineano le restrizioni e vincoli da rispettare nell'arco dello sviluppo.
 \end{description}
-A ciascun requisito è assegnato un grado di importanza:
+\par A ciascun requisito è assegnato un grado di importanza:
 \begin{description}
   \item[Obbligatorio (O):] l'implementazione del requisito risulta inderogabile;
   \item[Desiderabile (D):] l'implementazione del requisito, per quanto non obbligatoria, è di particolare interesse per la \glossario{Proponente};
   \item[Opzionale (OP):] la decisione sull'implementazione del requisito è lasciata al fornitore.
 \end{description}
-A seguito di tale classificazione, ogni requisito verrà identificato con la forma:
-\textbf{\[R[Tipologia].[Importanza].[Codice]\]}
-Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph{Importanza} fanno riferimento alle definizioni precedenti e sono menzionate con le sigle corrispondenti; infine, \emph{Codice} è un identificatore numerico univoco.
+\par A seguito di tale classificazione, ogni requisito verrà identificato con la forma:
+\par \textbf{\[R[Tipologia].[Importanza].[Codice]\]}
+\par Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph{Importanza} fanno riferimento alle definizioni precedenti e sono menzionate con le sigle corrispondenti; infine, \emph{Codice} è un identificatore numerico univoco.
 
 \subsection{Requisiti funzionali}
 \par In questa sezione vengono illustrate le funzionalità e i comportamenti di cui il sistema deve disporre.
 
-\begin{longtable}{|P{3cm}|P{6,5cm}|>{\arraybackslash}P{4cm}|}
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+  % MAX 12.5cm
+  \begin{longtable}{|P{3cm}|P{6,5cm}|>{\arraybackslash}P{4cm}|}
+    \caption{Tabella dei requisiti funzionali}
+  	\label{tab:requisiti-funzionali} \\
     \hline
     \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
     \hline
-    \textbf{RF.O.1} & L'Utente deve poter effettuare il login per passare al profilo di Tecnico. & \hyperref[UC1]{UC1}, Verbale Esterno, Verbale Interno\\
+    \endfirsthead
+
+    \caption[]{Tabella dei requisiti funzionali (continua)} \\
+		\hline
+		\textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\ 
+		\hline
+		\endhead
+
     \hline
-    \textbf{RF.O.1.1} & L'Utente deve inserire uno username in fase di autenticazione. & \hyperref[UC1point1]{UC1.1}, Verbale Interno\\
+		\multicolumn{3}{|r|}{{Continua nella prossima pagina}} \\ 
+		\hline
+		\endfoot
+
     \hline
-    \textbf{RF.O.1.2} & L'Utente deve inserire una password in fase di autenticazione. & \hyperref[UC1point2]{UC1.2}, Verbale Interno\\
+		\endlastfoot
+
+    \textbf{RF.O.1} & Il Tecnico deve poter effettuare il login. & \hyperref[UC1]{UC1}, Verbale esterno 2024-04-09, Verbale interno\\
+    \hline
+    \textbf{RF.O.1.1} & Il Tecnico deve poter inserire uno username in fase di autenticazione. & \hyperref[UC1point1]{UC1.1}, Verbale interno\\
+    \hline
+    \textbf{RF.O.1.2} & Il Tecnico deve poter inserire una password in fase di autenticazione. & \hyperref[UC1point2]{UC1.2}, Verbale interno\\
     \hline
     \textbf{RF.O.2} & Il sistema deve restituire un messaggio d'errore in caso di fallimento del login. & \hyperref[UC2]{UC2}\\
-    \hline
-    \textbf{RF.O.2.1} & L'Utente deve visualizzare un messaggio di errore se inserisce delle credenziali incomplete. & \hyperref[UC2point1]{UC2.1}\\
-    \hline
-    \textbf{RF.O.2.2} & L'Utente deve visualizzare un messaggio di errore se inserisce delle credenziali errate. & \hyperref[UC2point2]{UC2.2}\\
     \hline
     \textbf{RF.O.3} & L'Utente deve poter inserire una richiesta in linguaggio naturale. & \hyperref[UC3]{UC3}, Capitolato\\
     \hline
@@ -68,7 +85,7 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{RF.O.13} & Il Tecnico deve poter inserire un nuovo \glossario{dizionario dati} all'interno del sistema. & \hyperref[UC13]{UC13}\\
     \hline
-    \textbf{RF.O.14} & L'Utente deve poter visualizzare il contenuto testuale di un \glossario{dizionario dati}. & \hyperref[UC14]{UC14}, Verbale Esterno\\
+    \textbf{RF.O.14} & L'Utente deve poter visualizzare il contenuto testuale di un \glossario{dizionario dati}. & \hyperref[UC14]{UC14}, Verbale esterno 2024-05-22\\
     \hline
     \textbf{RF.O.14.1} & L'Utente deve poter visualizzare il nome del database riportato nel dizionario dati. & \hyperref[UC14point1]{UC14.1}\\
     \hline
@@ -76,27 +93,29 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{RF.O.14.3} & L'Utente deve poter visualizzare la lista delle tabelle descritte nel dizionario dati. & \hyperref[UC14point3]{UC14.3}\\
     \hline
-    \textbf{RF.O.14.3.1} & L'Utente deve poter visualizzare il nome di una singola tabella tra quelle descritte nel dizionario dati. & \hyperref[UC14point3point1]{UC14.3.1}\\
+    \textbf{RF.O.14.3.1} & L'Utente deve poter visualizzare una singola tabella tra quelle descritte nel dizionario dati. & \hyperref[UC14point3]{UC14.3}\\
     \hline
-    \textbf{RF.O.14.3.2} & L'Utente deve poter visualizzare la descrizione di una singola tabella tra quelle descritte nel dizionario dati. & \hyperref[UC14point3point2]{UC14.3.2}\\
+    \textbf{RF.O.14.3.1.1} & L'Utente deve poter visualizzare il nome di una tabella in lista. & \hyperref[UC14point3point1]{UC14.3.1}\\
     \hline
-    \textbf{RF.OP.15} & Il Tecnico deve poter caricare il file relativo a un \glossario{dizionario dati}. & \hyperref[UC15]{UC15}\\
+    \textbf{RF.O.14.3.1.2} & L'Utente deve poter visualizzare la descrizione di una tabella in lista. & \hyperref[UC14point3point2]{UC14.3.2}\\
     \hline
-    \textbf{RF.O.16} & Il Tecnico deve poter inserire il nome di un \glossario{dizionario dati}. & \hyperref[UC16]{UC16}, \emph{Capitolato}\\
+    \textbf{RF.O.15} & Il Tecnico deve poter caricare il file relativo a un \glossario{dizionario dati}. & \hyperref[UC15]{UC15}\\
+    \hline
+    \textbf{RF.O.16} & Il Tecnico deve poter inserire il nome di un \glossario{dizionario dati}. & \hyperref[UC16]{UC16}, Capitolato\\
     \hline
     \textbf{RF.O.17} & Il Tecnico deve poter inserire la descrizione di un \glossario{dizionario dati}. & \hyperref[UC17]{UC17}\\
     \hline
     \textbf{RF.O.18} & Il Tecnico deve poter eliminare un \glossario{dizionario dati} dal sistema. & \hyperref[UC18]{UC18}\\
     \hline
-    \textbf{RF.O.19} & Il sistema restituisce un messaggio d'errore qualora non riesca a validare il file scelto come \glossario{dizionario dati}. & \hyperref[UC19]{UC19} \\
+    \textbf{RF.O.19} & Il sistema deve restituire un messaggio d'errore qualora non riesca a validare il file scelto come \glossario{dizionario dati}. & \hyperref[UC19]{UC19} \\
     \hline 
-    \textbf{RF.O.20} & Il Tecnico deve poter sovrascrivere il file di configurazione di un \glossario{dizionario dati}. & \hyperref[UC20]{UC20} \\
+    \textbf{RF.O.20} & Il Tecnico deve poter modificare il file di configurazione di un \glossario{dizionario dati}. & \hyperref[UC20]{UC20} \\
     \hline
     \textbf{RF.O.21} & Il Tecnico deve visualizzare un errore se l'eliminazione di un \glossario{dizionario dati} fallisce. & \hyperref[21]{UC21}\\
     \hline
     \textbf{RF.O.22} & Il Tecnico deve poter visualizzare l'ultimo messaggio di \glossario{debug}. Il debug illustra il processo di generazione del prompt. & \hyperref[22]{UC22}\\
     \hline
-    \textbf{RF.O.23} & Il Tecnico deve poter scaricare il file di \glossario{log} creato durante la generazione del prompt. & \hyperref[23]{UC23}\\
+    \textbf{RF.O.23} & Il Tecnico deve poter scaricare un file di \glossario{log}. & \hyperref[23]{UC23}\\
     \hline
     \textbf{RF.O.24} & Il Tecnico deve visualizzare un errore nel caso in cui il download del file non vada a buon fine. &  \hyperref[UC24]{UC24}\\
     \hline
@@ -104,9 +123,9 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{RF.O.25.1} & L'Utente deve poter visualizzare un singolo messaggio nella chat. &  \hyperref[UC25point1]{UC25.1}\\
     \hline
-    \textbf{RF.O.25.1.1} & L'Utente deve poter visualizzare il contenuto di un singolo messaggio nella chat. &  \hyperref[UC25point1point1]{UC25.1.1}\\
+    \textbf{RF.O.25.1.1} & L'Utente deve poter visualizzare il contenuto di un messaggio in lista. &  \hyperref[UC25point1point1]{UC25.1.1}\\
     \hline
-    \textbf{RF.O.25.1.2} & L'Utente deve poter visualizzare il mittente di un messaggio. &  \hyperref[UC25poin1point2]{UC25.1.2}\\
+    \textbf{RF.O.25.1.2} & L'Utente deve poter visualizzare il mittente di un messaggio in lista. &  \hyperref[UC25poin1point2]{UC25.1.2}\\
     \hline
     \textbf{RF.O.26} & L'Utente deve poter selezionare un \glossario{DBMS} tra quelli disponibili. & \hyperref[UC26]{UC26} \\
     \hline
@@ -118,279 +137,421 @@ Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph
     \hline
     \textbf{RF.O.30} & Il Tecnico deve poter modificare la descrizione di un \glossario{dizionario dati}. & \hyperref[UC30]{UC30} \\
     \hline
-    \textbf{RF.O.31} & Il sistema restituisce un messaggio di errore qualora non riesca a validare il nome di un \glossario{dizionario dati}. & \hyperref[UC31]{UC31} \\
+    \textbf{RF.O.31} & Il sistema deve restituire un messaggio di errore qualora non riesca a validare il nome di un \glossario{dizionario dati}. & \hyperref[UC31]{UC31} \\
     \hline
-    \textbf{RF.O.31.1} & Il sistema restituisce un messaggio di errore nel caso in cui il formato del nome del \glossario{dizionario dati} non sia valido. & \hyperref[UC31point1]{UC31.1} \\
+    \textbf{RF.O.31.1} & Il sistema deve restituire un messaggio di errore se il formato del nome non è valido. & \hyperref[UC31point1]{UC31.1} \\
     \hline
-    \textbf{RF.O.31.2} & Il sistema restituisce un messaggio di errore nel caso in cui il nome del \glossario{dizionario dati} non sia univoco. & \hyperref[UC31point2]{UC31.2} \\
+    \textbf{RF.O.31.2} & Il sistema deve restituire un messaggio di errore se il nome non è univoco. & \hyperref[UC31point2]{UC31.2} \\
     \hline
-    \textbf{RF.O.32} & Il sistema restituisce un messaggio di errore qualora non riesca a validare la descrizione di un \glossario{dizionario dati}. & \hyperref[UC32]{UC32} \\
+    \textbf{RF.O.32} & Il sistema deve restituire un messaggio di errore qualora non riesca a validare la descrizione di un \glossario{dizionario dati}. & \hyperref[UC32]{UC32} \\
     \hline
-    \textbf{RF.O.33} & Il sistema restituisce un messaggio di errore se il file inserito dal Tecnico ha una dimensione superiore a 1 MB. & \hyperref[UC33]{UC33} \\
+    \textbf{RF.O.33} & Il sistema deve restituire un messaggio di errore se il file inserito dal Tecnico ha una dimensione superiore a 1 MB. & \hyperref[UC33]{UC33} \\
     \hline
-    \textbf{RF.O.34} & Il sistema restituisce un messaggio di errore se il file inserito dal Tecnico non è conforme allo schema predefinito. & \hyperref[UC34]{UC34} \\
+    \textbf{RF.O.34} & Il sistema deve restituire un messaggio di errore se il file inserito dal Tecnico non è conforme allo schema predefinito. & \hyperref[UC34]{UC34} \\
     \hline
     \textbf{RF.O.35} & L'Utente deve poter visualizzare il contenuto del \glossario{prompt} generato. & \hyperref[UC35]{UC35} \\
     \hline
     \textbf{RF.O.36} & L'Utente deve poter effettuare una ricerca tra i \glossario{dizionari dati} caricati nel sistema. & \hyperref[UC36]{UC36} \\
     \hline
-    \textbf{RF.O.37} & Il sistema deve memorizzare i dizionari caricati dal Tecnico. & Capitolato \\
+    \textbf{RF.O.37} & Il Tecnico deve poter scaricare il file relativo a un dizionario dati. & \hyperref[UC37]{UC37} \\
     \hline
-    \textbf{RF.D.38} & Il sistema deve memorizzare gli \glossario{indici vettoriali} creati durante il caricamento o la modifica del dizionario dati. & Verbale Esterno\\
+    \textbf{RF.O.38} & Il Tecnico deve poter copiare il contenuto del messaggio di \glossario{debug}.  & \hyperref[UC38]{UC38} \\
     \hline
-    \textbf{RF.D.39} & Nel caso in cui un utente formuli una richiesta non idonea, il ChatBOT deve fornire una risposta cordiale, invitando l'utente ad attenersi all'argomento del \glossario{dizionario dati}. & Verbale Interno \\
+    \textbf{RF.O.39} & Il sistema deve memorizzare i dizionari caricati dal Tecnico. & Capitolato \\
     \hline
-    \textbf{RF.OP.40} & Il prompt generato dall'applicazione deve essere compatibile con sistemi di AI alternativi a ChatGPT. & Capitolato \\
+    \textbf{RF.D.40} & Il sistema deve memorizzare gli \glossario{indici} creati durante il caricamento o la modifica di un dizionario dati. & Verbale esterno 2024-05-06\\
     \hline
-    \textbf{RF.OP.41} & Oltre a visualizzare il prompt generato, il ChatBOT mostra all'utente anche la frase SQL prodotta dal sistema di \glossario{AI}. & Capitolato \\
+    \textbf{RF.O.41} & Nel caso in cui un utente formuli una richiesta non idonea, il ChatBOT deve fornire una risposta cordiale, invitando l'utente a riprovare. & Verbale interno \\
     \hline
-    \textbf{RF.OP.42} & La richiesta dell'utente deve poter essere inserita tramite input vocale. & Capitolato \\
+    \textbf{RF.OP.42} & Il prompt generato dall'applicazione deve essere compatibile con sistemi di AI alternativi a ChatGPT. & Capitolato \\
     \hline
-    \textbf{RF.O.43} & Il prompt deve contenere almeno le descrizioni in linguaggio naturale delle tabelle e delle colonne. & Verbale esterno\\
+    \textbf{RF.OP.43} & Oltre a visualizzare il prompt generato, il ChatBOT mostra all'utente anche la frase SQL prodotta dal sistema di \glossario{AI}. & Capitolato \\
     \hline
-    \textbf{RF.O.44} & Quando il Tecnico richiede la generazione del prompt, il sistema elabora in automatico un \glossario{log}. & Verbale esterno \\
+    \textbf{RF.OP.44} & La richiesta dell'utente deve poter essere inserita tramite input vocale. & Capitolato \\
     \hline
-    \textbf{RF.OP.45} & Il sistema di generazione del prompt deve supportare richieste in lingua inglese. & Verbale interno \\
+    \textbf{RF.O.45} & Il prompt deve contenere almeno le descrizioni in linguaggio naturale delle tabelle e delle colonne. & Verbale esterno 2024-06-07\\
     \hline
-    \textbf{RF.O.46} & La scelta del dizionario dati deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
+    \textbf{RF.O.46} & Quando il Tecnico richiede un prompt, il sistema elabora in automatico un \glossario{log} che ne illustra il processo di generazione. & Verbale esterno 2024-05-06 \\
     \hline
-    \textbf{RF.O.47} & Per procedere con l'inserimento di una richiesta, è necessario aver selezionato un dizionario dati. & Verbale interno \\
+    \textbf{RF.O.47} & Il sistema di generazione del prompt deve supportare richieste in lingua inglese. & Verbale interno \\
     \hline
-    \textbf{RF.O.48} & La scelta della lingua deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
+    \textbf{RF.O.48} & La scelta del dizionario dati deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
     \hline
-    \textbf{RF.O.49} & La scelta del DBMS deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
+    \textbf{RF.O.49} & Per procedere con l'inserimento di una richiesta, è necessario aver selezionato un dizionario dati. & Verbale interno \\
     \hline
-    \textbf{RF.D.50} & Il sistema di generazione del prompt deve supportare richieste in lingue diverse dall'inglese. & Capitolato \\
+    \textbf{RF.O.50} & La scelta della lingua deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
     \hline
-    \textbf{RF.OP.51} & Quando un utente ripete più volte lo stesso messaggio, il ChatBOT restituisce la risposta formulata alla prima occorrenza del messaggio. & Verbale interno \\
+    \textbf{RF.O.51} & La scelta del DBMS deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
     \hline
-    \textbf{RF.OP.52} & Il sistema deve accertarsi che la query \glossario{SQL} generata da un LLM tramite un servizio esterno come ChatGPT sia valida e funzionante. & Capitolato \\
+    \textbf{RF.D.52} & Il sistema di generazione del prompt deve supportare richieste in lingue diverse dall'inglese. & Capitolato \\
     \hline
-\caption{Requisiti funzionali}
-\label{requisitifunzionali}
-\end{longtable}
+    \textbf{RF.OP.53} & Quando un utente ripete più volte lo stesso messaggio, il ChatBOT restituisce la risposta formulata alla prima occorrenza del messaggio. & Verbale interno \\
+    \hline
+    \textbf{RF.OP.54} & Il sistema deve accertarsi che la query \glossario{SQL} restituita da un servizio esterno come ChatGPT sia valida e funzionante. & Capitolato \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
 
 \subsection{Requisiti di qualità}
 \par In questa sezione vengono descritti gli attributi qualitativi che il sistema deve possedere.
 
-\begin{longtable}{|P{3cm}|P{6,5cm}|>{\arraybackslash}P{4cm}|}
-  \hline
-  \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
-  \hline
-  \textbf{RQ.O.1} & Il prodotto software deve rispettare quanto descritto nelle \VersioneNP. & Regolamento \\
-  \hline
-  \textbf{RQ.O.2} & Il prodotto software deve rispettare quanto descritto nel \VersionePQ. & Regolamento \\
-  \hline
-  \textbf{RQ.O.3} & Il codice sorgente dell'applicazione deve essere pubblicato sul sito "github.com" o essere accessibile tramite altri \glossario{repository} pubblici. & Capitolato \\
-  \hline
-  \textbf{RQ.D.4} & Il progetto deve essere di natura open source, per agevolare la continuità del prodotto risultante. & Capitolato \\
-  \hline
-  \textbf{RQ.O.5} & Deve essere fornito un manuale utente per l'utilizzo dell'applicazione. & Capitolato \\
-  \hline
-  \textbf{RQ.O.6} & Deve essere fornito un manuale per chiunque voglia estendere l'applicazione. & Capitolato \\
-  \hline
-  \textbf{RQ.D.7} & Il sistema di generazione del prompt deve avere un'alta recall, per evitare di escludere elementi rilevanti. & Verbale Esterno 2024-05-22 \\
-  \hline
-  \textbf{RQ.O.9} & L'applicazione deve avere un design responsive. & Verbale Interno \\
-  \hline
-  \textbf{RQ.O.10} & Il sistema deve permettere agli utenti di cambiare il colore del tema dell'interfaccia da chiaro a scuro. & Verbale Interno \\
-  \hline
-  \textbf{RQ.D.11} & Il sistema deve permettere agli utenti di cambiare la scala degli elementi dell'interfaccia, ovvero ingrandire o ridurre la dimensione dei componenti sullo schermo. & Verbale Interno \\
-  \hline
-  \textbf{RQ.OP.12} & Il sistema deve permettere agli utenti di cambiare la lingua dell'interfaccia da italiano a inglese e viceversa. Le modifiche devono essere applicate senza necessità di riavviare l'applicazione. & Verbale Interno \\
-  \hline
-\caption{Requisiti di qualità}
-\label{requisitiqualita}
-\end{longtable}
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+  % MAX 12.5cm
+  \begin{longtable}{|P{3cm}|P{6,5cm}|>{\arraybackslash}P{4cm}|}
+    \caption{Tabella dei requisiti di qualità}
+  	\label{tab:requisiti-qualità} \\
+    \hline
+    \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
+    \hline
+    \endfirsthead
 
-\subsection{Requisiti di dominio / vincolo}
+    \caption[]{Tabella dei requisiti di qualità (continua)} \\
+		\hline
+		\textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\ 
+		\hline
+		\endhead
+
+    \hline
+		\multicolumn{3}{|r|}{{Continua nella prossima pagina}} \\ 
+		\hline
+		\endfoot
+
+    \hline
+		\endlastfoot
+
+    \textbf{RQ.O.1} & Il prodotto software deve rispettare quanto descritto nelle \VersioneNP. & Regolamento \\
+    \hline
+    \textbf{RQ.O.2} & Il prodotto software deve rispettare quanto descritto nel \VersionePQ. & Regolamento \\
+    \hline
+    \textbf{RQ.O.3} & Il codice sorgente dell'applicazione deve essere pubblicato sul sito "github.com" o essere accessibile tramite altri \glossario{repository} pubblici. & Capitolato \\
+    \hline
+    \textbf{RQ.D.4} & Il progetto deve essere di natura open source, per agevolare la continuità del prodotto risultante. & Capitolato \\
+    \hline
+    \textbf{RQ.O.5} & Deve essere fornito un manuale utente per l'utilizzo dell'applicazione. & Capitolato \\
+    \hline
+    \textbf{RQ.O.6} & Deve essere fornito un manuale per chiunque voglia estendere l'applicazione. & Capitolato \\
+    \hline
+    \textbf{RQ.D.7} & Il sistema di generazione del prompt deve avere un'alta recall, per evitare di escludere elementi rilevanti. & Verbale esterno 2024-05-22 \\
+    \hline
+    \textbf{RQ.O.8} & L'applicazione deve avere un design responsive. & Verbale interno \\
+    \hline
+    \textbf{RQ.O.9} & Il sistema deve permettere agli utenti di cambiare il colore del tema dell'interfaccia da chiaro a scuro. & Verbale interno \\
+    \hline
+    \textbf{RQ.D.10} & Il sistema deve permettere agli utenti di cambiare la scala degli elementi dell'interfaccia, ovvero ingrandire o ridurre la dimensione dei componenti sullo schermo. & Verbale interno \\
+    \hline
+    \textbf{RQ.OP.11} & Il sistema deve permettere agli utenti di cambiare la lingua dell'interfaccia da italiano a inglese e viceversa. Le modifiche devono essere applicate senza necessità di riavviare l'applicazione. & Verbale interno \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
+
+\subsection{Requisiti di vincolo / dominio}
 \par In questa sezione vengono elencate le restrizioni o condizioni da rispettare durante lo sviluppo dell'applicativo.
 
-\begin{longtable}{|P{3cm}|P{6,5cm}|>{\arraybackslash}P{4cm}|}
-  \hline
-  \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
-  \hline
-  \textbf{RV.O.1} & L'applicazione deve essere organica. Le funzionalità del prodotto devono essere incorporate in un unico sistema che permetta di utilizzarle in modo integrato. & Capitolato \\
-  \hline
-  \textbf{RV.O.2} & Sviluppo di un applicativo web-based. & Verbale esterno 2024-04-09 \\
-  \hline
-  \textbf{RV.O.3} & Il \glossario{dizionario dati} deve essere fornito tramite un file JSON. & Verbale interno \\
-  \hline
-  \textbf{RV.O.4} & Il dizionario dati deve rispettare uno schema predefinito. In particolare, il dizionario deve rispecchiare la struttura di un database, e contenere descrizioni delle tabelle e dei rispettivi campi. & Verbale Interno \\
-  \hline
-  \textbf{RV.O.5} & La dimensione del file JSON utilizzato come dizionario dati deve essere inferiore a 1MB. & Verbale Interno \\
-  \hline
-  \textbf{RV.OP.6} & Il dizionario dati può essere anche un \glossario{dump SQL} (esportabile direttamente da una base di dati). & Verbale Interno \\
-  \hline
-  \textbf{RV.O.7} & Il \glossario{back-end} dell'applicazione deve essere implementato utilizzando il linguaggio \glossario{Python} versione 3.10.12. & Verbale Interno \\
-  \hline
-  \textbf{RV.O.8} & Il back-end dell'applicazione deve importare la libreria \glossario{FastAPI} versione 0.110.0 o successive. & Verbale Interno \\
-  \hline
-  \textbf{RV.O.9} & Il back-end dell'applicazione deve importare la libreria \glossario{txtai} versione 7.0.0 o successive. & Verbale Interno \\
-  \hline
-  \textbf{RV.O.10} & Il back-end dell'applicazione deve utilizzare modelli di \glossario{sentence similarity} per la generazione dei dati vettoriali. & Verbale Esterno 2024-05-06 \\
-  \hline
-  \textbf{RV.O.11} & Il \glossario{front-end} dell'applicazione deve essere implementato utilizzando \glossario{Node.js} versione 20.14.0. & Verbale Interno \\
-  \hline
-  \textbf{RV.O.12} & Il front-end dell'applicazione deve essere implementato utilizzando \glossario{Vue.js} versione 3.4.21. & Verbale Interno \\
-  \hline
-  \textbf{RV.O.13} & L'applicazione deve essere accessibile e fruibile da dispositivi mobili con sistema operativo Android versione 13 e successive. & Verbale Interno \\
-  \hline
-  \textbf{RV.O.14} & L'applicazione deve essere accessibile e fruibile da dispositivi mobili con sistema operativo iOS versione 17 e successive. & Verbale Interno \\
-  \hline
-  \textbf{RV.O.15} & L'applicazione deve essere compatibile con il browser Google Chrome versione 110 e successive. & Verbale Interno \\
-  \hline
-  \textbf{RV.O.16} & L'applicazione deve essere compatibile con il browser Mozilla Firefox versione 109 e successive. & Verbale Interno \\
-  \hline
-  \textbf{RV.O.17} & L'applicazione deve essere compatibile con il browser Safari versione 15 e successive. & Verbale Interno \\
-  \hline
-  \textbf{RV.D.18} & L'applicazione deve essere compatibile con il browser Opera versione 94 e successive. & Verbale Interno \\
-  \hline
-  \textbf{RV.D.19} & L'applicazione deve essere compatibile con il browser Microsoft Edge versione 110 e successive. & Verbale Interno \\
-  \hline
-  \textbf{RV.OP.20} & L'applicazione deve essere sviluppata, testata e distribuita mediante \glossario{Docker}. & Verbale Interno \\
-  \hline
-  \textbf{RV.OP.21} & I colori di primo piano e di sfondo devono avere un rapporto di contrasto di almeno 4.5:1 per testo di dimensioni "normali", e almeno 3:1 per testo grande (linee guida WCAG 2.1, livello di conformità AA). & Verbale Interno \\
-  \hline
-\caption{Requisiti di vincolo e dominio}
-\label{requisitivincolo}
-\end{longtable}
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+  % MAX 12.5cm
+  \begin{longtable}{|P{3cm}|P{6,5cm}|>{\arraybackslash}P{4cm}|}
+    \caption{Tabella dei requisiti di vincolo / dominio}
+  	\label{tab:requisiti-vincolo-dominio} \\
+    \hline
+    \textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\
+    \hline
+    \endfirsthead
+
+    \caption[]{Tabella dei requisiti di vincolo / dominio (continua)} \\
+		\hline
+		\textbf{Codice} & \textbf{Descrizione} & \textbf{Fonti} \\ 
+		\hline
+		\endhead
+
+    \hline
+		\multicolumn{3}{|r|}{{Continua nella prossima pagina}} \\ 
+		\hline
+		\endfoot
+
+    \hline
+		\endlastfoot
+
+    \textbf{RV.O.1} & L'applicazione deve essere organica. Le funzionalità del prodotto devono essere incorporate in un unico sistema che permetta di utilizzarle in modo integrato. & Capitolato \\
+    \hline
+    \textbf{RV.O.2} & Sviluppo di un applicativo web-based. & Verbale esterno 2024-04-09 \\
+    \hline
+    \textbf{RV.O.3} & Il \glossario{dizionario dati} deve essere fornito tramite un file JSON. & Verbale interno \\
+    \hline
+    \textbf{RV.O.4} & Il dizionario dati deve rispettare uno schema predefinito. In particolare, il dizionario deve rispecchiare la struttura di un database, e contenere descrizioni delle tabelle e dei rispettivi campi. & Verbale interno \\
+    \hline
+    \textbf{RV.O.5} & La dimensione del dizionario dati deve essere inferiore a 1MB. & Verbale interno \\
+    \hline
+    \textbf{RV.OP.6} & Il dizionario dati può essere anche un \glossario{dump SQL} (esportabile direttamente da una base di dati). & Verbale interno \\
+    \hline
+    \textbf{RV.O.7} & Il \glossario{back-end} dell'applicazione deve essere implementato utilizzando il linguaggio \glossario{Python} versione 3.10.12. & Verbale interno \\
+    \hline
+    \textbf{RV.O.8} & Il back-end dell'applicazione deve importare la libreria \glossario{FastAPI} versione 0.110.0 o successive. & Verbale interno \\
+    \hline
+    \textbf{RV.O.9} & Il back-end dell'applicazione deve importare la libreria \glossario{txtai} versione 7.0.0 o successive. & Verbale interno \\
+    \hline
+    \textbf{RV.O.10} & Il back-end dell'applicazione deve utilizzare modelli di \glossario{sentence similarity} per la generazione dei dati vettoriali. & Verbale esterno 2024-05-06 \\
+    \hline
+    \textbf{RV.O.11} & Il \glossario{front-end} dell'applicazione deve essere implementato utilizzando \glossario{Node.js} versione 20.14.0. & Verbale interno \\
+    \hline
+    \textbf{RV.O.12} & Il front-end dell'applicazione deve essere implementato utilizzando \glossario{Vue.js} versione 3.4.21. & Verbale interno \\
+    \hline
+    \textbf{RV.O.13} & L'applicazione deve essere accessibile e fruibile da dispositivi mobili con sistema operativo Android versione 13 e successive. & Verbale interno \\
+    \hline
+    \textbf{RV.O.14} & L'applicazione deve essere accessibile e fruibile da dispositivi mobili con sistema operativo iOS versione 17 e successive. & Verbale interno \\
+    \hline
+    \textbf{RV.O.15} & L'applicazione deve essere compatibile con il browser Google Chrome versione 110 e successive. & Verbale interno \\
+    \hline
+    \textbf{RV.O.16} & L'applicazione deve essere compatibile con il browser Mozilla Firefox versione 109 e successive. & Verbale interno \\
+    \hline
+    \textbf{RV.O.17} & L'applicazione deve essere compatibile con il browser Safari versione 15 e successive. & Verbale interno \\
+    \hline
+    \textbf{RV.D.18} & L'applicazione deve essere compatibile con il browser Opera versione 94 e successive. & Verbale interno \\
+    \hline
+    \textbf{RV.O.19} & L'applicazione deve essere compatibile con il browser Microsoft Edge versione 110 e successive. & Verbale interno \\
+    \hline
+    \textbf{RV.D.20} & L'applicazione deve essere sviluppata, testata e distribuita mediante \glossario{Docker}. & Verbale interno \\
+    \hline
+    \textbf{RV.OP.21} & I colori di primo piano e di sfondo devono avere un rapporto di contrasto di almeno 4.5:1 per testo di dimensioni "normali", e almeno 3:1 per testo grande (linee guida WCAG 2.1, livello di conformità AA). & Verbale interno \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
 
 \subsection{Fonti - Requisiti}
-Di seguito vengono mostrate le corrispondenze fonte - requisito, raggruppate per fonte.
+Di seguito sono illustrate le corrispondenze fonte - requisito, raggruppate per fonte.
 
 \subsubsection{Fonti - Requisiti funzionali}
 
-\begin{longtable}{|P{4,5cm}|>{\arraybackslash}P{9cm}|}
-  \hline
-  \textbf{Fonte} & \textbf{Requisiti} \\
-  \hline
-  % capitolato
-  \emph{Capitolato} & RF.O.3, RF.O.4, RF.O.5, RF.O.8, RF.O.16, RF.O.37, RF.OP.40, RF.O.41, RF.OP.42, RF.D.52, RQ.D.3, RQ.D.4, RQ.O.5, RQ.O.6, RQ.OP.10, RV.O.1,  \\
-  \hline
-  % documenti
-  \NdP{} & RQ.O.1, RQ.O.2 \\
-  \hline
-  % verbali
-  \emph{Verbali Esterni} & RF.O.1, RF.O.14, RF.D.38, RF.O.43, RF.O.44, RF.O.46, RF.O.48, RF.O.49, RF.O.50, RF.O.51, RF.O.53, RQ.D.7, RQ.O.8, RV.O.2, RV.O.10, \\
-  \hline
-  \emph{Verbali Interni} & RF.O.1, RF.O.1.1, RF.O.1.2, RF.D.39, RF.D.45, RF.OP.47, RQ.O.9, RV.O.3, RV.O.4, RV.O.5, RV.OP.6, RV.O.7, RV.O.8, RV.O.9, RV.O.11, RV.O.12, RV.O.13, RV.O.14, RV.O.15, RV.O.16, RV.O.17, RV.D.18, RV.D.19, RV.OP.20, RV.OP.21 \\
-  \hline
-  % casi d'uso
-  \hyperref[UC1]{UC1} & RF.O.1 \\
-  \hline
-  \hyperref[UC1point1]{UC1.1} & RF.O.1.1 \\
-  \hline
-  \hyperref[UC1]{UC1.2} & R.F.O.1.2 \\
-  \hline
-  \hyperref[UC2]{UC2} & RF.O.2 \\
-  \hline
-  \hyperref[UC2point1]{UC2.1} & RF.O.2.1 \\
-  \hline
-  \hyperref[UC2point2]{UC2.2} & RF.O.2.2 \\
-  \hline
-  \hyperref[UC3]{UC3} & RF.O.3 \\
-  \hline
-  \hyperref[UC4]{UC4} & RF.O.4 \\
-  \hline
-  \hyperref[UC5]{UC5} & RF.O.5 \\
-  \hline
-  \hyperref[UC6]{UC6} & RF.O.6 \\
-  \hline
-  \hyperref[UC7]{UC7} & RF.D.7 \\
-  \hline
-  \hyperref[UC8]{UC8} & RF.O.8 \\
-  \hline
-  \hyperref[UC9]{UC9} & RF.O.9 \\
-  \hline
-  \hyperref[UC9point1]{UC9.1} & RF.O.9.1 \\
-  \hline
-  \hyperref[UC10]{UC10} & RF.O.10 \\
-  \hline
-  \hyperref[UC10point1]{UC10.1} & RF.O.10.1 \\ 
-  \hline
-  \hyperref[UC10point2]{UC10.2} & RF.O.10.2\\
-  \hline
-  \hyperref[UC10point3]{UC10.3} & RF.O.10.3\\
-  \hline
-  \hyperref[UC10point4]{UC10.4} & RF.O.10.4\\
-  \hline
-  \hyperref[UC10point5]{UC10.5} & RF.O.10.5\\
-  \hline
-  \hyperref[UC11]{UC11} & RF.O.11 \\
-  \hline
-  \hyperref[UC12]{UC12} & RF.O.12 \\
-  \hline
-  \hyperref[UC13]{UC13} & RF.O.13 \\
-  \hline
-  \hyperref[UC14]{UC14} & RF.O.14 \\
-  \hline
-  \hyperref[UC14point1]{UC14.1} & RF.O.14.1 \\
-  \hline
-  \hyperref[UC14point2]{UC14.2} & RF.O.14.2 \\
-  \hline
-  \hyperref[UC14point3]{UC14.3} & RF.O.14.3 \\
-  \hline
-  \hyperref[UC14point3point1]{UC14.3.1} & RF.O.14.3.1 \\
-  \hline
-  \hyperref[UC14point3point2]{UC14.3.2} & RF.O.14.3.2 \\
-  \hline
-  \hyperref[UC15]{UC15} & RF.OP.15 \\
-  \hline
-  \hyperref[UC16]{UC16} & RF.O.16 \\
-  \hline
-  \hyperref[UC17]{UC17} & RF.O.17 \\
-  \hline
-  \hyperref[UC18]{UC18} & RF.O.18 \\
-  \hline
-  \hyperref[UC19]{UC19} & RF.O.19 \\
-  \hline
-  \hyperref[UC20]{UC20} & RF.O.20 \\
-  \hline
-  \hyperref[UC21]{UC21} & RF.O.21 \\
-  \hline
-  \hyperref[UC22]{UC22} & RF.O.22 \\
-  \hline
-  \hyperref[UC23]{UC23} & RF.O.23 \\
-  \hline
-  \hyperref[UC24]{UC24} & RF.O.24 \\
-  \hline
-  \hyperref[UC25]{UC25} & RF.O.25 \\
-  \hline
-  \hyperref[UC25point1]{UC25.1} & RF.O.25.1 \\
-  \hline
-  \hyperref[UC25point1point1]{UC25.1.1} & RF.O.25.1.1 \\
-  \hline
-  \hyperref[UC25poin1point2]{UC25.1.2} & RF.O.25.1.2 \\
-  \hline
-  \hyperref[UC26]{UC26} & RF.O.26 \\
-  \hline
-  \hyperref[UC27]{UC27} & RF.O.27 \\
-  \hline
-  \hyperref[UC28]{UC28} & RF.O.28 \\
-  \hline
-  \hyperref[UC29]{UC29} & RF.O.29 \\
-  \hline
-  \hyperref[UC30]{UC30} & RF.O.30 \\
-  \hline
-  \hyperref[UC31]{UC31} & RF.O.31 \\
-  \hline
-  \hyperref[UC31point1]{UC31.1} & RF.O.31.1 \\
-  \hline
-  \hyperref[UC31point2]{UC31.2} & RF.O.31.2 \\
-  \hline
-  \hyperref[UC32]{UC32} & RF.O.32 \\
-  \hline
-  \hyperref[UC33]{UC33} & RF.O.33 \\
-  \hline
-  \hyperref[UC34]{UC34} & RF.O.34 \\
-  \hline
-  \hyperref[UC35]{UC35} & RF.O.35\\
-  \hline
-  \hyperref[UC36]{UC36} & RF.O.36 \\
-  \hline
-\caption{Fonti- Requisiti funzionali}
-\end{longtable}
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+  % MAX 12.5cm
+  \begin{longtable}{|P{4,5cm}|>{\arraybackslash}P{9cm}|}
+    \caption{Fonti - Requisiti funzionali}
+  	\label{tab:fonti-requisiti-funzionali} \\
+    \hline
+    \textbf{Fonte} & \textbf{Requisiti} \\
+    \hline
+    \endfirsthead
+
+    \caption[]{Fonti - Requisiti funzionali (continua)} \\
+		\hline
+    \textbf{Fonte} & \textbf{Requisiti} \\
+    \hline
+		\endhead
+
+    \hline
+		\multicolumn{2}{|r|}{{Continua nella prossima pagina}} \\ 
+		\hline
+		\endfoot
+
+    \hline
+		\endlastfoot
+
+    % capitolato
+    Capitolato & RF.O.3, RF.O.4, RF.O.5, RF.O.8, RF.O.16, RF.O.39, RF.OP.42, RF.OP.43, RF.OP.44, RF.D.52, RF.OP.54 \\
+    \hline
+    % verbali
+    Verbali esterni & RF.O.1, RF.O.14, RF.D.40, RF.O.45, RF.O.46 \\
+    \hline
+    Verbali interni & RF.O.1, RF.O.1.1, RF.O.1.2, RF.O.41, RF.O.47, RF.O.48, RF.O.49, RF.O.50, RF.O.51, RF.OP.53 \\
+    \hline
+    % casi d'uso
+    \hyperref[UC1]{UC1} & RF.O.1 \\
+    \hline
+    \hyperref[UC1point1]{UC1.1} & RF.O.1.1 \\
+    \hline
+    \hyperref[UC1point2]{UC1.2} & R.F.O.1.2 \\
+    \hline
+    \hyperref[UC2]{UC2} & RF.O.2 \\
+    \hline
+    \hyperref[UC3]{UC3} & RF.O.3 \\
+    \hline
+    \hyperref[UC4]{UC4} & RF.O.4 \\
+    \hline
+    \hyperref[UC5]{UC5} & RF.O.5 \\
+    \hline
+    \hyperref[UC6]{UC6} & RF.O.6 \\
+    \hline
+    \hyperref[UC7]{UC7} & RF.D.7 \\
+    \hline
+    \hyperref[UC8]{UC8} & RF.O.8 \\
+    \hline
+    \hyperref[UC9]{UC9} & RF.O.9 \\
+    \hline
+    \hyperref[UC9point1]{UC9.1} & RF.O.9.1 \\
+    \hline
+    \hyperref[UC10]{UC10} & RF.O.10 \\
+    \hline
+    \hyperref[UC10point1]{UC10.1} & RF.O.10.1 \\ 
+    \hline
+    \hyperref[UC10point2]{UC10.2} & RF.O.10.2\\
+    \hline
+    \hyperref[UC10point3]{UC10.3} & RF.O.10.3\\
+    \hline
+    \hyperref[UC10point4]{UC10.4} & RF.O.10.4\\
+    \hline
+    \hyperref[UC10point5]{UC10.5} & RF.O.10.5\\
+    \hline
+    \hyperref[UC11]{UC11} & RF.O.11 \\
+    \hline
+    \hyperref[UC12]{UC12} & RF.O.12 \\
+    \hline
+    \hyperref[UC13]{UC13} & RF.O.13 \\
+    \hline
+    \hyperref[UC14]{UC14} & RF.O.14 \\
+    \hline
+    \hyperref[UC14point1]{UC14.1} & RF.O.14.1 \\
+    \hline
+    \hyperref[UC14point2]{UC14.2} & RF.O.14.2 \\
+    \hline
+    \hyperref[UC14point3]{UC14.3} & RF.O.14.3 \\
+    \hline
+    \hyperref[UC14point3point1]{UC14.3.1} & RF.O.14.3.1 \\
+    \hline
+    \hyperref[UC14point3point1point1]{UC14.3.1.1} & RF.O.14.3.1.1 \\
+    \hline
+    \hyperref[UC14point3point1point2]{UC14.3.1.2} & RF.O.14.3.1.2 \\
+    \hline
+    \hyperref[UC15]{UC15} & RF.OP.15 \\
+    \hline
+    \hyperref[UC16]{UC16} & RF.O.16 \\
+    \hline
+    \hyperref[UC17]{UC17} & RF.O.17 \\
+    \hline
+    \hyperref[UC18]{UC18} & RF.O.18 \\
+    \hline
+    \hyperref[UC19]{UC19} & RF.O.19 \\
+    \hline
+    \hyperref[UC20]{UC20} & RF.O.20 \\
+    \hline
+    \hyperref[UC21]{UC21} & RF.O.21 \\
+    \hline
+    \hyperref[UC22]{UC22} & RF.O.22 \\
+    \hline
+    \hyperref[UC23]{UC23} & RF.O.23 \\
+    \hline
+    \hyperref[UC24]{UC24} & RF.O.24 \\
+    \hline
+    \hyperref[UC25]{UC25} & RF.O.25 \\
+    \hline
+    \hyperref[UC25point1]{UC25.1} & RF.O.25.1 \\
+    \hline
+    \hyperref[UC25point1point1]{UC25.1.1} & RF.O.25.1.1 \\
+    \hline
+    \hyperref[UC25poin1point2]{UC25.1.2} & RF.O.25.1.2 \\
+    \hline
+    \hyperref[UC26]{UC26} & RF.O.26 \\
+    \hline
+    \hyperref[UC27]{UC27} & RF.O.27 \\
+    \hline
+    \hyperref[UC28]{UC28} & RF.O.28 \\
+    \hline
+    \hyperref[UC29]{UC29} & RF.O.29 \\
+    \hline
+    \hyperref[UC30]{UC30} & RF.O.30 \\
+    \hline
+    \hyperref[UC31]{UC31} & RF.O.31 \\
+    \hline
+    \hyperref[UC31point1]{UC31.1} & RF.O.31.1 \\
+    \hline
+    \hyperref[UC31point2]{UC31.2} & RF.O.31.2 \\
+    \hline
+    \hyperref[UC32]{UC32} & RF.O.32 \\
+    \hline
+    \hyperref[UC33]{UC33} & RF.O.33 \\
+    \hline
+    \hyperref[UC34]{UC34} & RF.O.34 \\
+    \hline
+    \hyperref[UC35]{UC35} & RF.O.35\\
+    \hline
+    \hyperref[UC36]{UC36} & RF.O.36 \\
+    \hline
+    \hyperref[UC37]{UC37} & RF.O.37 \\
+    \hline
+    \hyperref[UC38]{UC38} & RF.O.38 \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
+
+\subsubsection{Fonti - Requisiti di qualità}
+
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+  % MAX 12.5cm
+  \begin{longtable}{|P{4,5cm}|>{\arraybackslash}P{9cm}|}
+    \caption{Fonti - Requisiti di qualità}
+  	\label{tab:fonti-requisiti-qualità} \\
+    \hline
+    \textbf{Fonte} & \textbf{Requisiti} \\
+    \hline
+    \endfirsthead
+
+    \caption[]{Fonti - Requisiti di qualità (continua)} \\
+		\hline
+    \textbf{Fonte} & \textbf{Requisiti} \\
+    \hline
+		\endhead
+
+    \hline
+		\multicolumn{2}{|r|}{{Continua nella prossima pagina}} \\ 
+		\hline
+		\endfoot
+
+    \hline
+		\endlastfoot
+
+    % regolamento
+    Regolamento & RQ.O.1, RQ.O.2 \\
+    \hline
+    % capitolato
+    Capitolato & RQ.O.3, RQ.D.4, RQ.O.5, RQ.O.6 \\
+    \hline
+    % verbali
+    Verbali esterni & RQ.D.7 \\
+    \hline
+    Verbali interni & RQ.O.8, RQ.O.9, RQ.D.10, RQ.OP.11 \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
+
+\subsubsection{Fonti - Requisiti di vincolo / dominio}
+
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+  % MAX 12.5cm
+  \begin{longtable}{|P{4,5cm}|>{\arraybackslash}P{9cm}|}
+    \caption{Fonti - Requisiti di vincolo / dominio}
+  	\label{tab:fonti-requisiti-vincolo-dominio} \\
+    \hline
+    \textbf{Fonte} & \textbf{Requisiti} \\
+    \hline
+    \endfirsthead
+
+    \caption[]{Fonti - Requisiti di vincolo / dominio (continua)} \\
+		\hline
+    \textbf{Fonte} & \textbf{Requisiti} \\
+    \hline
+		\endhead
+
+    \hline
+		\multicolumn{2}{|r|}{{Continua nella prossima pagina}} \\ 
+		\hline
+		\endfoot
+
+    \hline
+		\endlastfoot
+
+    % capitolato
+    Capitolato & RV.O.1 \\
+    \hline
+    % verbali
+    Verbali esterni & RV.O.2, RV.O.10 \\
+    \hline
+    Verbali interni & RV.O.3, RV.O.4, RV.O.5, RV.OP.6, RV.O.7, RV.O.8, RV.O.9, RV.O.11, RV.O.12, RV.O.13, RV.O.14, RV.O.15, RV.O.16, RV.O.17, RV.D.18, RV.O.19, RV.OP.20, RV.OP.21 \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
 
 \subsection{Riepilogo}
 
@@ -401,11 +562,13 @@ Di seguito vengono mostrate le corrispondenze fonte - requisito, raggruppate per
     \hline
 		\textbf{Requisito} & \textbf{Obbligatorio} & \textbf{Desiderabile} & \textbf{Opzionale} & \textbf{Totale} \\ 
     \hline
-    Funzionale & 21 & 21 & 21 & 21 \\
+    Funzionale & 65 & 3 & 5 & 73 \\
     \hline
-    Di qualità & 21 & 21 & 21 & 21 \\
+    Di qualità & 7 & 3 & 1 & 11 \\
     \hline 
-    Di vincolo & 21 & 21 & 21 & 21 \\
+    Di vincolo & 17 & 2 & 2 & 21 \\
+    \hline
+    \textbf{Totale} & 89 & 8 & 8 & \textbf{105} \\ 
     \hline
   \end{tabular}
   \caption{Tabella di riepilogo dei requisiti}
