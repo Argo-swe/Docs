@@ -9,12 +9,13 @@
 \subsubsection{Presentazione del Proof of Concept}
 
 \par Dopo l'arrivo della \glossario{Proponente} il gruppo espone il motivo dell'incontro per presentare la versione del Proof of Concept, realizzata con \glossario{VueJS} come strumento per il \glossario{front-end} e \glossario{FastAPI} per il \glossario{back-end}.
-Il gruppo spiega quelli che sono stati i cambiamenti fatti dall'ultimo incontro, soprattutto riguardanti delle correzioni nella gestione delle chiavi esterne che sono ora gestite considerando possibilità di chiavi esterne meno banali.
+Il gruppo ha inizialmente illustrato quelli che sono stati i cambiamenti fatti dall'ultimo incontro, soprattutto riguardanti le correzioni nella gestione delle chiavi esterne che sono ora gestite considerando possibilità di chiavi esterne meno banali.
 Vengono poi spiegati i modelli in lingua italiana utilizzati per effettuare dei test per la generazione del \glossario{prompt}. In particolare sono stati testati i modelli m-bertino e m-marco di Efederici. I test sono stati effettuati con \glossario{LMstudio} utilizzando una macchina potente e modelli in locale utilizzando \glossario{Llama3}. 
 I test sono stati eseguiti con lo stesso \glossario{prompt}, ripetuti per un numero di volte e i risultati salvati in un documento di testo per poi eseguire un confronto.
 
-\par E' stato poi presentato il Proof of Concept tramite il quale la \glossario{proponente} ha potuto visionare diverse feature come la gestione dell'autenticazione con la quale l'utente può ricevere i privilegi da admin. 
-Da qui viene incollata la richiesta "the surname of users who paid for all their orders with PayPal", sufficientemente complessa che genera un \glossario{prompt} e viene mostrato il risultato ottenuto.
+
+\par È stato poi presentato il Proof of Concept tramite il quale la \glossario{proponente} ha potuto visionare diverse feature come la gestione dell'autenticazione con la quale l'utente può ricevere i privilegi da admin. 
+Successivamente viene incollato una richiesta preselezionata dal team e sufficientemente complessa che genera un \glossario{prompt} e viene mostrato il risultato ottenuto.
 Il risultato viene poi copiato per essere incollato su \glossario{ChatGPT} e \glossario{LMsys} per ottenere un confornto sui risultati ottenuti dalla generazione della query su vari modelli.
 
 \par La \glossario{Proponente} trova interessante il risultato ottenuto da \glossario{ChatGPT}, in particolare l'utilizzo di un NOT EXIST e che la query risultato fosse abbastanza ridotta. Il gruppo commenta osservando che, dai test svolti, \glossario{ChatGPT} sembri essere quello che ritorna le  \glossario{query} più ridotte.
@@ -22,11 +23,11 @@ La \glossario{Proponente} chiede di testare il \glossario{prompt} su altri model
 La \glossario{Proponente} chiede al gruppo se sono stati svolti dei test anche su un \glossario{database} locale: il gruppo afferma di aver svolto dei test sempre con una stessa richiesta e che questa ha portato i risultati richiesti.
 La \glossario{Proponente} evidenzia come non ci siano errori strutturali evidenti nella generazione delle \glossario{query}, tuttavia da questo esempio si evince che potrebbero verificarsi condizioni di errore e viene chiesto al gruppo di svolgere più test provando con dei \glossario{database} in locale.
 
-\par Il gruppo ritorna al Proof of Concept per illustrare le funzionalità rimanenti. Viene mostrato il \glossario{debug} che illustra in un \glossario{log} i valori rilevanti e da' la possibilità di scaricarlo in un formato testuale. Inoltre viene mostrata la sezione riguardante la visualizzazione, l'aggiunta, la modifica e l'eliminazione dei \glossario{dizionari dati}.
+\par Al termine dei test con gli LLM il gruppo ha riportato l'attenzione al Proof of Concept per illustrare le funzionalità rimanenti. Viene mostrato il \glossario{debug} che illustra in un \glossario{log} i valori rilevanti e da la possibilità di scaricarlo in un formato testuale. Inoltre viene mostrata la sezione riguardante la visualizzazione, l'aggiunta, la modifica e l'eliminazione dei \glossario{dizionari dati}.
 Viene poi effettuato il logout per mostrare come l'utente interagisce con l'applicativo: viene mostrata la pagina della chat con la quale l'utente può interagire inviando richieste in linguaggio naturale per ottenere il \glossario{prompt}. Successivamente vengono mostrate le impostazioni della chat, con le quali l'utente può selezionare il \glossario{dizionario dati}, vederne un'anteprima con una descrizione delle tabelle che contiene, selezionare il \glossario{DBMS} e la lingua di inserimento.
 Infine vengono illustrate le impostazioni di accessibilità con le quali è possibile cambiare la lingua dell'applicazione, la dimensione del font e il tema della pagina.
 
-\par La Proponente chiede se il gruppo è pronto per affrontare la prima revisione e suggerisce che ogni membro si prepari qualcosa da dire o esporre, durante la revisione. Inoltre rimarca l'utilità di effettuare più test su \glossario{database}, sfruttandone uno in locale.
+\par La \glossario{Proponente }chiede se il gruppo è pronto per affrontare la prima revisione e suggerisce che ogni membro si prepari qualcosa da dire o esporre, durante la revisione. Inoltre rimarca l'utilità di effettuare più test su \glossario{database}, sfruttandone uno in locale.
 
 \subsubsection{Conclusioni}
 \par Il gruppo conclude con alcune domande per la \glossario{Proponente} in vista del Proof of Concept
