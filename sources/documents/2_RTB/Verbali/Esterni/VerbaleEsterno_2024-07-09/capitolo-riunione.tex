@@ -1,0 +1,40 @@
+\section{Riunione}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\item Presentazione del Proof of Concept realizzato con le nuove tecnologie.
+\end{itemize}
+
+\subsection{Argomenti e temi dell'incontro}
+
+\subsubsection{Presentazione del Proof of Concept}
+
+\par Dopo l'arrivo della Proponente il gruppo espone il motivo dell'incontro per presentare la versione del Proof of Concept, realizzata con \glossario{VueJS} come strumento per il \glossario{front-end} e \glossario{FastAPI} per il \glossario{back-end}.
+Il gruppo spiega quelli che sono stati i cambiamenti fatti dall'ultimo incontro, soprattutto riguardanti delle correzioni nella gestione delle chiavi esterne che sono ora gestite come chiavi primarie.
+Vengono poi spiegati i modelli in lingua italiana utilizzati per effettuare dei test per la generazione del \glossario{prompt}. In particolare sono stati testati i modelli m-bertino e m-marco di Efederici. I test sono stati effettuati con \glossario{LMstudio} utilizzando una macchina potente e modelli in locale utilizzando \glossario{Llama3}. 
+I test sono stati eseguiti con lo stesso \glossario{prompt}, ripetuti per un numero di volte e i risultati salvati in un documento di testo per poi eseguire un confronto.
+
+\par Viene poi avviata la condivisione con la quale la Proponente ha potuto visionare la versione del Proof of Concept. Viene presentata la gestione dell'autenticazione con la quale l'utente può ricevere i privilegi da admin. 
+Da qui viene incollato una richiesta sufficientemente complessa che genera un \glossario{prompt} e viene mostrato il risultato ottenuto.
+Il risultato viene poi copiato per essere incollato su \glossario{ChatGPT} e \glossario{LMsys} per ottenere un confornto sui risultati ottenuti dalla generazione della query su vari modelli.
+
+\par La Proponente trova interessante il risultato ottenuto da \glossario{ChatGPT}, in particolare l'utilizzo di un NOT EXIST e che la query risultato fosse abbastanza ridotta. Il gruppo commenta osservando che, dai test svolti, \glossario{ChatGPT} sembri essere quello che ritorna le query più ridotte.
+La Proponente chiede di testare il \glossario{prompt} su altri modelli, utilizzando \glossario{LMsys}. Vengono svolti test diversi con modelli che propongono risultati simili, ma con delle divergenze nell'espressione della query. Ad ogni test, la Proponente esamina con il gruppo il significato e la correttezza delle query generate, evidenziando come, di modello in modello, ci siano delle sezioni dove il modello sembri confondersi data la complessità della ricerca.
+La Proponenete chiede al gruppo se sono stati svolti dei test anche su un \glossario{database} locale: il gruppo afferma di aver svolto dei test sempre con una stessa richiesta e che questa ha portato i risultati richiesti.
+La Proponente evidenzia come non ci siano errori palesi, tuttavia nelle query generate si verificano situazioni che potrebbero portare a delle condizioni di errore e chiede al gruppo di svolgere più test provando con dei \glossario{database} in locale.
+
+\par Il gruppo ritorna al Proof of Concept per illustrare le funzionalità rimanenti. Viene mostrato il \glossario{debug} che illustra in un \glossario{log} i valori rilevanti e da la possibilità di scaricarlo in un formato testuale. Inoltre viene mostrata la sezione riguardante la visualizzazione, l'aggiunta, la modifica e l'eliminazione dei \glossario{dizionari dati}.
+Viene poi effettuato il logout per mostrare come l'utente interagisce con l'applicativo: viene mostrata la pagina della chat con la quale l'utente può interagire inviando richieste in linguaggio naturale per ottenere il \glossario{prompt}. Successivamente vengono mostrate le impostazioni della chat, con le quali l'utente può selezionare il \glossario{dizionario dati}, vederne un'anteprima con una descrizione delle tabelle che contiene, selezionare il \glossario{BDSM} e la lingua di inserimento.
+Infine vengono illustrate le impostazioni di accessibilità con le quali è possibile cambiare la lingua dell'applicazione, la dimensione del font e il tema della pagina.
+
+\par La Proponente chiede se il gruppo è pronto per affrontare la prima revisione e suggerisce che ogni membro si prepari qualcosa da dire o esporre, durante la revisione. Inoltre consiglia di effettuare più test su \glossario{database}, sfruttandone uno in locale.
+
+\subsubsection{Conclusioni}
+\par Il gruppo conclude con alcune domande per la Proponente in vista del Proof of Concept
+
+\par \textbf{Domanda:} Ci siamo accorti come alcuni modelli tendano a mettere delle parentesi in più o ad effettuare altre operazioni rispetto ad altri modelli. È normale? \\
+\textbf{Risposta:} Sì, è normale. I \glossario{database} hanno modi di scrivere diversi, come ad esempio il segno di "diverso da" che in alcuni viene presentato in stile "SQL" e in altri in stile "C++": la disuguaglianza quindi ad esempio, può essere motivo di confusione per il modello che procede a cercare quali \glossario{database} usano quella notazione e scrive altre informazioni di conseguenza.
+
+\par \textbf{Domanda:} Il Professor Cardin ci ha detto che è necessario avere una notazione quando un \glossario{database} è indicizzato. Lei cosa ne pensa a riguardo? Pensa sia necessario? \\
+\textbf{Risposta:} Non è necessario, poiché avendo quest'informazione l'unica cosa che cambia è la struttura e non la correttezza delle query, che è quello che chiediamo al fine del progetto.
+
+\par Il gruppo conclude la riunione ringraziando la Proponente per la disponibilità. La Proponente resta in attesa di notizie sul risultato della \RTB.
