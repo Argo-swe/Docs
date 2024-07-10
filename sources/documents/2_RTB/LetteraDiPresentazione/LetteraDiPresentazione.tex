@@ -45,7 +45,7 @@
 
 % Ends the declared geometry for the titlepage
 \restoregeometry
-
+\section*{Candidatura per Requirements and Tecnology Baseline}
 Stimato Professore Cardin, \newline
 
 Stimato Professor Vardanega, \newline
@@ -60,10 +60,11 @@ La pagina di presentazione del team, insieme alla documentazione riguardanti l'R
 \quad \href{https://argo-swe.github.io/}{https://argo-swe.github.io/} \newline
 
 Desideriamo informarVi che in questa sezione, oltre alla presente lettera, potrete trovare:
+\begin{itemize}
 
-La cartella "Documentazione Interna", che include il documento "Norme di Progetto" e la sottocartella "Verbali Interni" contenente i verbali delle riunioni del gruppo.
-La cartella "Documentazione Esterna", che comprende il "Piano di Qualifica", il "Piano di Progetto", l'"Analisi dei Requisiti" e il "Glossario". 
-Inoltre, è presente la sottocartella "Verbali Esterni" con i verbali degli incontri con il proponente, approvati da quest'ultimo.
+  \item La cartella "Documentazione Interna", che include il documento "Norme di Progetto" e la sottocartella "Verbali Interni" contenente i verbali delle riunioni del gruppo;
+  \item La cartella "Documentazione Esterna", che comprende il "Piano di Qualifica", il "Piano di Progetto", l'"Analisi dei Requisiti" e il "Glossario". Inoltre, è presente la sottocartella "Verbali Esterni" con i verbali degli incontri con il proponente, approvati da quest'ultimo.\newline
+\end{itemize}
 
 Nello specifico, i documenti elaborati sono i seguenti: 
 \begin{itemize}
@@ -97,7 +98,7 @@ Nello specifico, i documenti elaborati sono i seguenti:
     \end{itemize}
 \end{itemize}
 
-\subsection{Aggiornamento Impegni}
+\section*{Aggiornamento Impegni}
 Con la presente desideriamo aggiornarVi sugli impegni assunti, confermando il costo finale per la realizzazione del progetto pari a \textbf{13.020,00 €} e la data prevista per la consegna è il \textbf{13 settembre 2024}. \newline
 
 Il gruppo Argo è costituito dai seguenti componenti: 
@@ -128,9 +129,24 @@ Il gruppo Argo è costituito dai seguenti componenti:
 \end{center}
 \egroup
 
-Con fiducia nel nostro potenziale e nel nostro impegno, accogliamo con entusiasmo l'opportunità di collaborare e portare a termine il progetto commissionato. \newline
-
 Cordiali saluti, \\
 Il gruppo Argo.
+
+\begin{samepage}
+
+  \vspace*{\fill}
+  Luogo e Data: \\
+  Padova (PD) 2024-03-26 \\
+
+  \vspace{10px}
+
+  \begin{tikzpicture}[overlay]
+      \node [anchor = south west] at (0cm,-0.14cm) {Firma:};
+      %\node [anchor = south east] at (\textwidth-1cm,-0.6cm) {\includegraphics[width=5.5cm]{\ModelAssets{signatures/firma_mattia.png}}}; % Dimensioni e coordinate da variare in base a ciascuna firma
+      \node [anchor = north east] at (\textwidth,-0.1cm) {Responsabile: \ResponsabileInCarica};
+      \draw [anchor = south west] (1.5cm,0cm) -- (\columnwidth,0cm);
+  \end{tikzpicture}
+  \vspace{10px} \\
+\end{samepage}
 
 \end{document}
