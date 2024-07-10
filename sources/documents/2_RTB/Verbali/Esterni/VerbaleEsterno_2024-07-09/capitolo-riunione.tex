@@ -22,19 +22,19 @@ La Proponente chiede di testare il \glossario{prompt} su altri modelli, utilizza
 La Proponenete chiede al gruppo se sono stati svolti dei test anche su un \glossario{database} locale: il gruppo afferma di aver svolto dei test sempre con una stessa richiesta e che questa ha portato i risultati richiesti.
 La Proponente evidenzia come non ci siano errori palesi, tuttavia nelle query generate si verificano situazioni che potrebbero portare a delle condizioni di errore e chiede al gruppo di svolgere più test provando con dei \glossario{database} in locale.
 
-\par Il gruppo ritorna al Proof of Concept per illustrare le funzionalità rimanenti. Viene mostrato il \glossario{debug} che illustra in un \glossario{log} i valori rilevanti e da la possibilità di scaricarlo in un formato testuale. Inoltre viene mostrata la sezione riguardante la visualizzazione, l'aggiunta, la modifica e l'eliminazione dei \glossario{dizionari dati}.
+\par Il gruppo ritorna al Proof of Concept per illustrare le funzionalità rimanenti. Viene mostrato il \glossario{debug} che illustra in un \glossario{log} i valori rilevanti e da' la possibilità di scaricarlo in un formato testuale. Inoltre viene mostrata la sezione riguardante la visualizzazione, l'aggiunta, la modifica e l'eliminazione dei \glossario{dizionari dati}.
 Viene poi effettuato il logout per mostrare come l'utente interagisce con l'applicativo: viene mostrata la pagina della chat con la quale l'utente può interagire inviando richieste in linguaggio naturale per ottenere il \glossario{prompt}. Successivamente vengono mostrate le impostazioni della chat, con le quali l'utente può selezionare il \glossario{dizionario dati}, vederne un'anteprima con una descrizione delle tabelle che contiene, selezionare il \glossario{DBSM} e la lingua di inserimento.
 Infine vengono illustrate le impostazioni di accessibilità con le quali è possibile cambiare la lingua dell'applicazione, la dimensione del font e il tema della pagina.
 
-\par La Proponente chiede se il gruppo è pronto per affrontare la prima revisione e suggerisce che ogni membro si prepari qualcosa da dire o esporre, durante la revisione. Inoltre consiglia di effettuare più test su \glossario{database}, sfruttandone uno in locale.
+\par La Proponente chiede se il gruppo è pronto per affrontare la prima revisione e suggerisce che ogni membro si prepari qualcosa da dire o esporre, durante la revisione. Inoltre rimarca l'utilità di effettuare più test su \glossario{database}, sfruttandone uno in locale.
 
 \subsubsection{Conclusioni}
 \par Il gruppo conclude con alcune domande per la Proponente in vista del Proof of Concept
 
 \par \textbf{Domanda:} Ci siamo accorti come alcuni modelli tendano a mettere delle parentesi in più o ad effettuare altre operazioni rispetto ad altri modelli. È normale? \\
-\textbf{Risposta:} Sì, è normale. I \glossario{database} hanno modi di scrivere diversi, come ad esempio il segno di "diverso da" che in alcuni viene presentato in stile "SQL" e in altri in stile "C++": la disuguaglianza quindi ad esempio, può essere motivo di confusione per il modello che procede a cercare quali \glossario{database} usano quella notazione e scrive altre informazioni di conseguenza.
+\textbf{Risposta:} Sì, è normale. I \glossario{database} hanno modi di scrivere diversi, come ad esempio il segno di "diverso da" che in alcuni viene presentato in stile "SQL" e in altri in stile "C++": la disuguaglianza quindi ad esempio, può essere motivo di confusione per il modello che procede a cercare quali \glossario{database} usano quella notazione e scrive altre informazioni di conseguenza. Anche l'utilizzo di "LIKE" rispetto a controlli di uguaglianza stretta sono adeguati, in quanto meno stringenti nel confronto tra stringhe.
 
-\par \textbf{Domanda:} Il Professor Cardin ci ha detto che è necessario avere una notazione quando un \glossario{database} è indicizzato. Lei cosa ne pensa a riguardo? Pensa sia necessario? \\
-\textbf{Risposta:} Non è necessario, poiché avendo quest'informazione l'unica cosa che cambia è la struttura e non la correttezza delle query, che è quello che chiediamo al fine del progetto.
+\par \textbf{Domanda:} Nel considerare la performance di una query abbiamo considerato se agiungere una notazioneper descrivere gli indici di un \glossario{database}. Lei cosa ne pensa a riguardo? Ritiene sia necessario? \\
+\textbf{Risposta:} Non è necessario, poiché avendo quest'informazione l'unica cosa che cambia è la struttura e non la correttezza delle query, che è quello che chiediamo al fine del progetto. Va considerato inoltre il rischio che aggiungere l'informazione nel prompt lo "inquini", inducendo il Large Language Model a query meno corrette.
 
 \par Il gruppo conclude la riunione ringraziando la Proponente per la disponibilità. La Proponente resta in attesa di notizie sul risultato della \RTB.
