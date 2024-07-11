@@ -1,41 +1,59 @@
 \section{Riunione}
 \subsection{Ordine del giorno}
 \begin{itemize}
-	\item Presentazione del Proof of Concept realizzato con le nuove tecnologie.
+	\item Presentazione del \glossario{PoC} realizzato con le nuove tecnologie.
 \end{itemize}
 
 \subsection{Argomenti e temi dell'incontro}
 
 \subsubsection{Presentazione del Proof of Concept}
 
-\par Dopo l'arrivo della \glossario{Proponente} il gruppo espone il motivo dell'incontro per presentare la versione del Proof of Concept, realizzata con \glossario{VueJS} come strumento per il \glossario{front-end} e \glossario{FastAPI} per il \glossario{back-end}.
-Il gruppo ha inizialmente illustrato quelli che sono stati i cambiamenti fatti dall'ultimo incontro, soprattutto riguardanti le correzioni nella gestione delle chiavi esterne che sono ora gestite considerando possibilità di chiavi esterne meno banali.
-Vengono poi spiegati i modelli in lingua italiana utilizzati per effettuare dei test per la generazione del \glossario{prompt}. In particolare sono stati testati i modelli m-bertino e m-marco di Efederici. I test sono stati effettuati con \glossario{LMstudio} utilizzando una macchina potente e modelli in locale utilizzando \glossario{Llama3}. 
-I test sono stati eseguiti con lo stesso \glossario{prompt}, ripetuti per un numero di volte e i risultati salvati in un documento di testo per poi eseguire un confronto.
+\par Il gruppo espone il motivo dell'incontro, ovvero presentare la versione finale del Proof of Concept, realizzata con \glossario{Vue.js} come strumento per il \glossario{front-end} e \glossario{FastAPI} per il \glossario{back-end}.
+In primo luogo, il team illustra i cambiamenti effettuati dall'ultima riunione, specialmente quelli riguardanti la gestione delle chiavi esterne composte.
+Vengono poi menzionati i modelli in lingua italiana utilizzati per eseguire i test di generazione del \glossario{prompt}. In particolare, sono stati testati i modelli "sentence-BERTino" e "mmarco-sentence-BERTino" di efederici. I test in locale sono stati effettuati con \glossario{LMstudio} utilizzando "Llama 3". 
+Questi test sono stati eseguiti mantenendo lo stesso \glossario{prompt}, e chiedendo a un \glossario{LLM} di riscrivere la frase dell'utente per un certo numero di volte. Le \glossario{query} risultanti sono state salvate in un documento di testo al fine di realizzare un confronto.
 
+\par In seguito, il gruppo presenta il Proof of Concept tramite il quale la \glossario{Proponente} può osservare le funzionalità implementate, tra cui:
+\begin{itemize}
+	\item Processo di autenticazione per accedere alla sezione riservata all'admin;
+	\item Generazione di un \glossario{prompt};
+	\item Copia del prompt.
+\end{itemize}
 
-\par È stato poi presentato il Proof of Concept tramite il quale la \glossario{proponente} ha potuto visionare diverse feature come la gestione dell'autenticazione con la quale l'utente può ricevere i privilegi da admin. 
-Successivamente viene incollato una richiesta preselezionata dal team e sufficientemente complessa che genera un \glossario{prompt} e viene mostrato il risultato ottenuto.
-Il risultato viene poi copiato per essere incollato su \glossario{ChatGPT} e \glossario{LMsys} per ottenere un confornto sui risultati ottenuti dalla generazione della query su vari modelli.
+\vspace{0.5\baselineskip}
+\par Successivamente, il team mostra il prompt generato a partire dalla seguente richiesta: "the surname of users who paid for all their orders with PayPal".
+Il risultato viene copiato e incollato su ChatGPT e chat.lmsys.org per confrontare le query \glossario{SQL} generate da modelli differenti.
 
-\par La \glossario{Proponente} trova interessante il risultato ottenuto da \glossario{ChatGPT}, in particolare l'utilizzo di un NOT EXIST e che la query risultato fosse abbastanza ridotta. Il gruppo commenta osservando che, dai test svolti, \glossario{ChatGPT} sembri essere quello che ritorna le  \glossario{query} più ridotte.
-La \glossario{Proponente} chiede di testare il \glossario{prompt} su altri modelli, utilizzando \glossario{LMsys}. Vengono svolti test diversi con modelli che propongono risultati simili, ma con delle divergenze nell'espressione della \glossario{query}. Ad ogni test, la \glossario{Proponente} esamina con il gruppo il significato e la correttezza delle  \glossario{query} generate, evidenziando come, di modello in modello, ci siano delle sezioni dove il modello sembra confondersi data la complessità della ricerca.
-La \glossario{Proponente} chiede al gruppo se sono stati svolti dei test anche su un \glossario{database} locale: il gruppo afferma di aver svolto dei test sempre con una stessa richiesta e che questa ha portato i risultati richiesti.
-La \glossario{Proponente} evidenzia come non ci siano errori strutturali evidenti nella generazione delle \glossario{query}, tuttavia da questo esempio si evince che potrebbero verificarsi condizioni di errore e viene chiesto al gruppo di svolgere più test provando con dei \glossario{database} in locale.
+\par La \glossario{Proponente} si sofferma sulla query restituita da ChatGPT, che utilizza soltanto un operatore "NOT EXISTS". Il gruppo evidenzia che, sulla base dei test svolti, ChatGPT ritorna spesso \glossario{query} più contenute rispetto ad altri modelli.
+La Proponente chiede di testare il \glossario{prompt} con altri modelli, utilizzando chat.lmsys.org. Ad ogni tentativo, la Proponente esamina con il gruppo il significato e la correttezza delle \glossario{query}, mostrando come alcuni modelli sembrino omettere dei controlli o costruire query eccessivamente complesse.
+La Proponente domanda al gruppo se sono stati svolti dei test anche su un \glossario{database} locale; il gruppo afferma di aver svolto dei test con la stessa richiesta, senza verificare, però, il caso in cui un utente non abbia effettuato alcun ordine.
+La Proponente sottolinea come non vi siano errori strutturali evidenti nella \glossario{query}. Tuttavia, da questo esempio si evince che potrebbero verificarsi condizioni di errore; pertanto, viene chiesto al gruppo di svolgere ulteriori test con \glossario{database} reali.
 
-\par Al termine dei test con gli LLM il gruppo ha riportato l'attenzione al Proof of Concept per illustrare le funzionalità rimanenti. Viene mostrato il \glossario{debug} che illustra in un \glossario{log} i valori rilevanti e da la possibilità di scaricarlo in un formato testuale. Inoltre viene mostrata la sezione riguardante la visualizzazione, l'aggiunta, la modifica e l'eliminazione dei \glossario{dizionari dati}.
-Viene poi effettuato il logout per mostrare come l'utente interagisce con l'applicativo: viene mostrata la pagina della chat con la quale l'utente può interagire inviando richieste in linguaggio naturale per ottenere il \glossario{prompt}. Successivamente vengono mostrate le impostazioni della chat, con le quali l'utente può selezionare il \glossario{dizionario dati}, vederne un'anteprima con una descrizione delle tabelle che contiene, selezionare il \glossario{DBMS} e la lingua di inserimento.
-Infine vengono illustrate le impostazioni di accessibilità con le quali è possibile cambiare la lingua dell'applicazione, la dimensione del font e il tema della pagina.
+\vspace{1.5\baselineskip}
+\par Al termine dei test, il gruppo riporta l'attenzione al Proof of Concept per illustrare le funzionalità rimanenti:
+\begin{itemize}
+	\item Debug della generazione del \glossario{prompt}, con la possibilità di scaricare un file in formato testuale;
+	\item Gestione \glossario{CRUD} dei dizionari dati;
+	\item Persistenza degli \glossario{indici};
+	\item Processo di logout;
+	\item Pagina della chat, con una sezione per le impostazioni (selezione del dizionario dati, del \glossario{DBMS} e della lingua);
+	\item Visualizzazione di un'anteprima del dizionario dati;
+	\item Eliminazione della cronologia della chat.
+\end{itemize}
 
-\par La \glossario{Proponente }chiede se il gruppo è pronto per affrontare la prima revisione e suggerisce che ogni membro si prepari qualcosa da dire o esporre, durante la revisione. Inoltre rimarca l'utilità di effettuare più test su \glossario{database}, sfruttandone uno in locale.
+\vspace{0.5\baselineskip}
+\par Infine, il team illustra le impostazioni di accessibilità con le quali è possibile cambiare la lingua, il tema e le dimensioni dell'interfaccia.
+
+\par La Proponente rinnova l’invito a effettuare test su un database locale, al fine di verificare la correttezza sintattica e semantica delle query generate. Gli aspetti da valutare includono:
+\begin{itemize}
+	\item Correttezza delle query;
+	\item Posizionamento delle parentesi;
+	\item Complessità delle query;
+	\item Operatori utilizzati (LIKE oppure =, != oppure <>).
+\end{itemize}
 
 \subsubsection{Conclusioni}
-\par Il gruppo conclude con alcune domande per la \glossario{Proponente} in vista del Proof of Concept
+\par Il gruppo conclude con una domanda in vista della revisione \glossario{RTB}.
 
-\par \textbf{Domanda:} Ci siamo accorti come alcuni modelli tendano a mettere delle parentesi in più o ad effettuare altre operazioni rispetto ad altri modelli. È normale? \\
-\textbf{Risposta:} Sì, è normale. I \glossario{database} hanno modi di scrivere diversi, come ad esempio il segno di "diverso da" che in alcuni viene presentato in stile "SQL" e in altri in stile "C++": la disuguaglianza quindi ad esempio, può essere motivo di confusione per il modello che procede a cercare quali \glossario{database} usano quella notazione e scrive altre informazioni di conseguenza. Anche l'utilizzo di "LIKE" rispetto a controlli di uguaglianza stretta sono adeguati, in quanto meno stringenti nel confronto tra stringhe.
-
-\par \textbf{Domanda:} Nel considerare la performance di una query abbiamo considerato se agiungere una notazioneper descrivere gli indici di un \glossario{database}. Lei cosa ne pensa a riguardo? Ritiene sia necessario? \\
-\textbf{Risposta:} Non è necessario, poiché avendo quest'informazione l'unica cosa che cambia è la struttura e non la correttezza delle query, che è quello che chiediamo al fine del progetto. Va considerato inoltre il rischio che aggiungere l'informazione nel prompt lo "inquini", inducendo il Large Language Model a query meno corrette.
-
-\par Il gruppo conclude la riunione ringraziando la \glossario{Proponente} per la disponibilità. La Proponente resta in attesa di notizie sul risultato della \RTB.
+\par \textbf{Domanda:} Ritiene che sia necessario aggiungere un flag nel dizionario dati per segnalare i campi indicizzati del database?
+\par \textbf{Risposta:} No, non è necessario ai fini della correttezza della query SQL. Bisogna considerare inoltre il rischio derivante dall'aggiunta di questa informazione nel prompt, che potrebbe indurre un \glossario{Large Language Model} a generare una query non appropriata.
