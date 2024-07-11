@@ -14,18 +14,19 @@ Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Tecnico ha richiesto il salvataggio o la modifica di un \glossario{dizionario dati} nel sistema;
+  \item Il Tecnico ha richiesto l'inserimento o la modifica di un \glossario{dizionario dati} nel sistema;
   \item Il nome del \glossario{dizionario dati} non è valido.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene visualizzato un messaggio d'errore esplicativo.
+  \item Viene visualizzato un messaggio d'errore esplicativo;
+  \item L'operazione non viene portata a termine.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il sistema riscontra un errore nella validazione del nome del \glossario{dizionario dati};
+  \item Il sistema riscontra un errore nella validazione del nome di un \glossario{dizionario dati};
   \item Il sistema restituisce un messaggio con i dettagli dell'errore.  
 \end{enumerate}
 
@@ -42,11 +43,11 @@ Tecnico
 Il sistema restituisce un messaggio di errore nel caso in cui il formato del nome sia invalido.
 
 \paragraph*{Attori principali}
-Utente
+Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il formato del nome del \glossario{dizionario dati} è errato.
+  \item Il formato del nome di un \glossario{dizionario dati} è errato.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -56,7 +57,6 @@ Utente
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il formato del nome del \glossario{dizionario dati} non è corretto;
   \item Il sistema riscontra un errore nella validazione del nome;
   \item Il sistema restituisce un messaggio con i dettagli dell'errore.  
 \end{enumerate}
@@ -65,10 +65,10 @@ Utente
 
 \subsubsection{UC31.2 - Nome già in uso}\label{UC31point2}
 \paragraph*{Descrizione}
-Il sistema restituisce un messaggio di errore nel caso in cui il nome del \glossario{dizionario dati} non sia univoco.
+Il sistema restituisce un messaggio di errore nel caso in cui il nome di un \glossario{dizionario dati} non sia univoco.
 
 \paragraph*{Attori principali}
-Utente
+Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
@@ -82,7 +82,6 @@ Utente
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il nome del \glossario{dizionario dati} non è univoco;
   \item Il sistema riscontra un errore nella validazione del nome;
   \item Il sistema restituisce un messaggio con i dettagli dell'errore.  
 \end{enumerate}

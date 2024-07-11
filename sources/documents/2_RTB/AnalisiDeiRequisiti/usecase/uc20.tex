@@ -1,7 +1,13 @@
 \subsubsection{UC20 - Modifica file di configurazione del dizionario dati}\label{UC20}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc20.png}
+  \caption{UC20}
+\end{figure}
+
 \paragraph*{Descrizione}
-Il Tecnico modifica il file di configurazione del \glossario{dizionario dati}. 
+Il Tecnico modifica il file di configurazione di un \glossario{dizionario dati}. Con il termine file di configurazione si intende il file che contiene la descrizione del database in formato strutturato. 
 
 \paragraph*{Attori principali}
 Tecnico
@@ -24,7 +30,7 @@ Il Tecnico vuole modificare il file di configurazione di un \glossario{dizionari
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico avvia la procedura di modifica del \glossario{dizionario dati};
+  \item Il Tecnico avvia la procedura di modifica di un \glossario{dizionario dati};
   \item Il Tecnico inserisce un nuovo file;
   \item Il Tecnico richiede il salvataggio del file;
   \item Il sistema sovrascrive il file precedentemente caricato.
@@ -43,9 +49,9 @@ Il Tecnico vuole modificare il file di configurazione di un \glossario{dizionari
 
 \paragraph*{Estensioni}
 \begin{itemize}
-  \item Visualizzazione errore validazione file (\hyperref[UC19]{UC19}).
+  \item Visualizzazione errore validazione file (\hyperref[UC19]{UC19}):
   \begin{itemize}
-    \item Extension point: errore nella validazione del file;
-    \item Condition: formato del file non valido, file troppo pesante, file non conforme allo schema predefinito.
+    \item Extension point: Errore nella validazione del file;
+    \item Condition: Formato del file non valido, file troppo pesante, file non conforme allo schema predefinito.
   \end{itemize}
 \end{itemize}

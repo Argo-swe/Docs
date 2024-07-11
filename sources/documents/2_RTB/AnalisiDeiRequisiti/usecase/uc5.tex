@@ -7,7 +7,7 @@
 \end{figure}
 
 \paragraph*{Descrizione}
-Il sistema genera un \glossario{prompt} a partire da una richiesta dell'Utente. Per comporre il \glossario{prompt}, il sistema cerca delle corrispondenze tra la richiesta e il \glossario{dizionario dati} selezionato. Il prompt generato può essere usato in combinazione con un modello di \glossario{AI} esterno per costruire \glossario{query} SQL.
+Il sistema genera un \glossario{prompt} a partire da una richiesta dell'Utente. Per comporre il prompt, il sistema cerca delle corrispondenze tra la richiesta e il \glossario{dizionario dati} selezionato. Il prompt generato può essere usato in combinazione con un modello di \glossario{AI} esterno per costruire \glossario{query} SQL.
 
 \paragraph*{Attori principali}
 Utente
@@ -30,13 +30,13 @@ L'Utente desidera ricevere un \glossario{prompt} in risposta alla sua richiesta.
 \paragraph*{Scenario principale}
 \begin{enumerate}
   \item L'Utente seleziona un \glossario{dizionario dati}(\hyperref[UC4]{UC4});
-  \item L'Utene seleziona un \glossario{DBMS} (\hyperref[UC26]{UC26});
+  \item L'Utente seleziona un \glossario{DBMS} (\hyperref[UC26]{UC26});
   \item L'Utente seleziona una lingua (\hyperref[UC7]{UC7});
   \item L'Utente inserisce una richiesta in linguaggio naturale (\hyperref[UC3]{UC3});
   \item L'Utente richiede la generazione del \glossario{prompt};
-  \item Se l'Utente che ha effettuato la richiesta è un Tecnico, il sistema genera un file di \glossario{log} che documenta il processo di generazione del \glossario{prompt};
-  \item Viene avviato il processo di generazione del \glossario{prompt};
-  \item Il sistema restituisce il \glossario{prompt} generato.
+  \item Se l'Utente che ha effettuato la richiesta è un Tecnico, il sistema genera un \glossario{log} che documenta il processo di generazione del prompt;
+  \item Viene avviato il processo di generazione del prompt;
+  \item Il sistema restituisce il prompt generato.
 \end{enumerate}
 
 \paragraph*{Inclusioni}
@@ -49,12 +49,12 @@ L'Utente desidera ricevere un \glossario{prompt} in risposta alla sua richiesta.
 
 \paragraph*{Estensioni}
 \begin{itemize}
-  \item Visualizzazione avviso richiesta non idonea (\hyperref[UC6]{UC6}).
+  \item Visualizzazione avviso richiesta non idonea (\hyperref[UC6]{UC6}):
   \begin{itemize}
-    \item Extension point: richiesta non idonea per il modello di \glossario{AI} o per il \glossario{dizionario dati} scelto.
+    \item Extension point: Richiesta non idonea per il modello di \glossario{AI} o per il \glossario{dizionario dati} scelto.
   \end{itemize}
-  \item Visualizzazione errore generazione del \glossario{prompt} (\hyperref[UC11]{UC11}).
+  \item Visualizzazione errore generazione del \glossario{prompt} (\hyperref[UC11]{UC11}):
     \begin{itemize}
-      \item Extension point: errore interno al sistema.
+      \item Extension point: Errore interno al sistema.
     \end{itemize}
 \end{itemize}

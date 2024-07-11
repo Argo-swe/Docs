@@ -28,11 +28,11 @@ Il Tecnico vuole aggiungere un nuovo \glossario{dizionario dati} nell'applicazio
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico inserisce il file, il nome e la descrizione del \glossario{dizionario dati};
-  \item Il Tecnico richiede il salvataggio del \glossario{dizionario dati};
-  \item Il \glossario{dizionario dati} viene salvato nel sistema;
-  \item Il \glossario{dizionario dati} è disponibile a tutti gli utenti;
-  \item Il \glossario{dizionario dati} può essere utilizzato per la generazione di \glossario{prompt}.
+  \item Il Tecnico inserisce il file, il nome e la descrizione di un \glossario{dizionario dati};
+  \item Il Tecnico richiede il salvataggio del dizionario;
+  \item Il dizionario dati viene salvato nel sistema;
+  \item Il dizionario dati è disponibile a tutti gli utenti;
+  \item Il dizionario dati può essere utilizzato per la generazione di \glossario{prompt}.
 \end{enumerate}
 
 \paragraph*{Scenario alternativo}
@@ -50,18 +50,18 @@ Il Tecnico vuole aggiungere un nuovo \glossario{dizionario dati} nell'applicazio
 
 \paragraph*{Estensioni}
 \begin{itemize}
-  \item Visualizzazione errore validazione file (\hyperref[UC19]{UC19}).
+  \item Visualizzazione errore validazione file (\hyperref[UC19]{UC19}):
   \begin{itemize}
-    \item Extension point: errore nella validazione del file scelto come \glossario{dizionario dati};
-    \item Condition: formato del file non valido, file troppo pesante, file non conforme allo schema predefinito.
+    \item Extension point: Errore nella validazione del file scelto come \glossario{dizionario dati};
+    \item Condition: Formato del file non valido, file troppo pesante, file non conforme allo schema predefinito.
   \end{itemize}
-  \item Visualizzazione errore nome \glossario{dizionario dati} (\hyperref[UC31]{UC31}).
+  \item Visualizzazione errore nome dizionario dati (\hyperref[UC31]{UC31}):
   \begin{itemize}
-    \item Extension point: errore nella validazione del nome del \glossario{dizionario dati};
-    \item Condition: formato del nome non corretto, nome già esistente.
+    \item Extension point: Errore nella validazione del nome del dizionario dati;
+    \item Condition: Formato del nome non corretto, nome già esistente.
   \end{itemize}
-  \item Visualizzazione errore descrizione \glossario{dizionario dati} (\hyperref[UC32]{UC32}).
+  \item Visualizzazione errore descrizione dizionario dati (\hyperref[UC32]{UC32}):
   \begin{itemize}
-    \item Extension point: errore nella validazione della descrizione del \glossario{dizionario dati}.
+    \item Extension point: Errore nella validazione della descrizione del dizionario dati.
   \end{itemize}
 \end{itemize}

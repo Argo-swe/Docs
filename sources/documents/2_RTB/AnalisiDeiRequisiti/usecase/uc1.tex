@@ -44,23 +44,21 @@ Il Tecnico desidera accedere all'area di amministrazione.
 
 \paragraph*{Estensioni}
 \begin{itemize}
-  \item Visualizzazione errore autenticazione (\hyperref[UC2]{UC2}).
+  \item Visualizzazione errore autenticazione (\hyperref[UC2]{UC2}):
   \begin{itemize}
-    \item Extension point: Errore nella validazione delle credenziali;
-    \item Condition: Credenziali errate, credenziali incomplete.
+    \item Extension point: Errore nella validazione delle credenziali.
   \end{itemize}
 \end{itemize}
 
-% al posto dell'inclusione forse basta il sottocaso d'uso
 \paragraph*{Sottocasi d'uso:}
 \begin{itemize}
-  \item UC1.1: Inserimento username;
-  \item UC1.2: Inserimento password.
+  \item \hyperref[UC1point1]{UC1.1}: Inserimento username;
+  \item \hyperref[UC1point2]{UC1.2}: Inserimento password.
 \end{itemize}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.85\textwidth, height=0.85\textheight]{assets/uc1_1.png}
+  \includegraphics[width=0.80\textwidth]{assets/uc1_1.png}
   \caption{UC1 - Sottocasi d'uso}
 \end{figure}
 
@@ -86,11 +84,11 @@ Tecnico
 \end{itemize}
 
 \paragraph*{Trigger}
-Il Tecnico desidera inserire il proprio username per accedere alle funzionalità del tecnico.
+Il Tecnico desidera inserire il proprio username come parte del processo di autenticazione.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico inserisce il proprio username come parte del processo di autenticazione.
+  \item Il Tecnico inserisce lo username.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -114,9 +112,9 @@ Tecnico
 \end{itemize}
 
 \paragraph*{Trigger}
-Il Tecnico vuole inserire la propria password per accedere alle funzionalità del tecnico.
+Il Tecnico vuole inserire la propria password come parte del processo di autenticazione.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico inserisce la propria password come parte del processo di autenticazione.
+  \item Il Tecnico inserisce la password.
 \end{enumerate}
