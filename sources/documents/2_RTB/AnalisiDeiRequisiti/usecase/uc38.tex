@@ -1,15 +1,16 @@
 \subsubsection{UC38 - Copia del messaggio di debug}\label{UC38}
 
 \paragraph*{Descrizione}
-Il sistema consente al Tecnico di copiare il messaggio di \glossario{debug} negli appunti di sistema.
+Il sistema permette al Tecnico di copiare un messaggio di \glossario{debug} negli appunti di sistema.
 
 \paragraph*{Attori principali}
 Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L'applicazione è stata avviata con successo;
-  \item È presente almeno un messaggio di \glossario{debug}.  
+  \item Il sistema è attivo e funzionante;
+  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il sistema ha generato almeno un \glossario{prompt} e il rispettivo \glossario{log}.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -18,11 +19,11 @@ Tecnico
 \end{itemize}
 
 \paragraph*{Trigger}
-Il Tecnico desidera copiare il messaggio mostrato dal sistema in relazione al \glossario{debug} della generazione del prompt.
+Il Tecnico desidera copiare il messaggio fornito dal sistema in relazione al \glossario{debug} del prompt.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item Il Tecnico visualizza il messaggio di debug;
+  \item Il Tecnico accede alla sezione dedicata al debug del \glossario{prompt};
   \item Il Tecnico seleziona la funzionalità "Copia";
   \item Negli appunti di sistema viene salvata una copia del messaggio.
 \end{enumerate}
