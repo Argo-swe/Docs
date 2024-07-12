@@ -3,7 +3,7 @@
 \begin{description}
   \item[Funzionali (F):] i requisiti funzionali corrispondono alle funzionalità  e comportamenti del sistema;
   \item[Qualitativi (Q):] i requisiti di qualità si fondano sul rispetto degli standard qualitativi al fine di garantire e preservare la qualità del prodotto;
-  \item[Di vincolo (V):] i requisiti di vincolo delineano le restrizioni e vincoli da rispettare nell'arco dello sviluppo.
+  \item[Di vincolo / dominio (V):] i requisiti di vincolo / dominio delineano le restrizioni e condizioni da rispettare nell'arco dello sviluppo.
 \end{description}
 \par A ciascun requisito è assegnato un grado di importanza:
 \begin{description}
@@ -13,7 +13,7 @@
 \end{description}
 \par A seguito di tale classificazione, ogni requisito verrà identificato con la forma:
 \par \textbf{\[R[Tipologia].[Importanza].[Codice]\]}
-\par Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph{Importanza} fanno riferimento alle definizioni precedenti e sono menzionate con le sigle corrispondenti; infine, \emph{Codice} è un identificatore numerico univoco.
+\par Dove \textbf{\(R\)} indica il termine \emph{Requisito}, \emph{Tipologia} e \emph{Importanza} fanno riferimento alle definizioni precedenti e vengono menzionate con le sigle corrispondenti; infine, \emph{Codice} è un identificatore numerico univoco.
 
 \subsection{Requisiti funzionali}
 \par In questa sezione vengono illustrate le funzionalità e i comportamenti di cui il sistema deve disporre.
@@ -61,23 +61,23 @@
     \hline
     \textbf{RF.D.7} & L'Utente deve poter scegliere la lingua con cui effettuare una richiesta al ChatBOT. & \hyperref[UC7]{UC7}, Verbale esterno 2024-04-09\\
     \hline
-    \textbf{RF.O.8} & L'Utente deve poter copiare il contenuto del \glossario{prompt} generato. Il prompt può essere fornito in input a un \glossario{LLM} esterno per convertire la frase dell'Utente in una query \glossario{SQL}. & \hyperref[UC8]{UC8}, Capitolato\\
+    \textbf{RF.O.8} & L'Utente deve poter copiare il contenuto del \glossario{prompt} generato. Il prompt può essere fornito in input a un \glossario{LLM} per convertire la frase dell'Utente in una query \glossario{SQL}. & \hyperref[UC8]{UC8}, Capitolato\\
     \hline
     \textbf{RF.O.9} & L'Utente deve poter visualizzare la lista dei \glossario{dizionari dati} caricati nel sistema. & \hyperref[UC9]{UC9}\\
     \hline
-    \textbf{RF.O.9.1} & L'Utente deve poter visualizzare un singolo \glossario{dizionario dati} all'interno della lista. & \hyperref[UC9point1]{UC9.1}\\
+    \textbf{RF.O.9.1} & L'Utente deve poter visualizzare un singolo dizionario dati all'interno della lista. & \hyperref[UC9point1]{UC9.1}\\
     \hline
-    \textbf{RF.O.10} & L'Utente deve poter visualizzare le caratteristiche di un \glossario{dizionario dati}. & \hyperref[UC10]{UC10}\\
+    \textbf{RF.O.10} & L'Utente deve poter visualizzare le caratteristiche di un dizionario dati. & \hyperref[UC10]{UC10}\\
     \hline
-    \textbf{RF.O.10.1} & L'Utente deve poter visualizzare il nome di un \glossario{dizionario dati}. & \hyperref[UC10point1]{UC10.1}\\
+    \textbf{RF.O.10.1} & L'Utente deve poter visualizzare il nome di un dizionario dati. & \hyperref[UC10point1]{UC10.1}\\
     \hline
-    \textbf{RF.O.10.2} & L'Utente deve poter visualizzare l'estensione del file scelto come \glossario{dizionario dati}. & \hyperref[UC10point2]{UC10.2}\\
+    \textbf{RF.O.10.2} & L'Utente deve poter visualizzare l'estensione del file scelto come dizionario dati. & \hyperref[UC10point2]{UC10.2}\\
     \hline
-    \textbf{RF.O.10.3} & L'Utente deve poter visualizzare la descrizione di un \glossario{dizionario dati}. & \hyperref[UC10point3]{UC10.3}\\
+    \textbf{RF.O.10.3} & L'Utente deve poter visualizzare la descrizione di un dizionario dati. & \hyperref[UC10point3]{UC10.3}\\
     \hline
-    \textbf{RF.O.10.4} & L'Utente deve poter visualizzare la dimensione del file scelto come \glossario{dizionario dati}. & \hyperref[UC10point4]{UC10.4}\\
+    \textbf{RF.O.10.4} & L'Utente deve poter visualizzare la dimensione del file scelto come dizionario dati. & \hyperref[UC10point4]{UC10.4}\\
     \hline
-    \textbf{RF.O.10.5} & L'Utente deve poter visualizzare la data di ultimo aggiornamento di un \glossario{dizionario dati}. & \hyperref[UC10point5]{UC10.5}\\
+    \textbf{RF.O.10.5} & L'Utente deve poter visualizzare la data di ultimo aggiornamento di un dizionario dati. & \hyperref[UC10point5]{UC10.5}\\
     \hline
     \textbf{RF.O.11} & L'Utente deve visualizzare un messaggio esplicativo nel caso in cui si verifichi un errore durante la generazione del \glossario{prompt}. & \hyperref[UC11]{UC11}\\
     \hline
@@ -101,19 +101,19 @@
     \hline
     \textbf{RF.O.15} & Il Tecnico deve poter caricare il file relativo a un \glossario{dizionario dati}. & \hyperref[UC15]{UC15}\\
     \hline
-    \textbf{RF.O.16} & Il Tecnico deve poter inserire il nome di un \glossario{dizionario dati}. & \hyperref[UC16]{UC16}\\
+    \textbf{RF.O.16} & Il Tecnico deve poter inserire il nome di un dizionario dati. & \hyperref[UC16]{UC16}\\
     \hline
-    \textbf{RF.O.17} & Il Tecnico deve poter inserire la descrizione di un \glossario{dizionario dati}. & \hyperref[UC17]{UC17}\\
+    \textbf{RF.O.17} & Il Tecnico deve poter inserire la descrizione di un dizionario dati. & \hyperref[UC17]{UC17}\\
     \hline
-    \textbf{RF.O.18} & Il Tecnico deve poter eliminare un \glossario{dizionario dati} dal sistema. & \hyperref[UC18]{UC18}\\
+    \textbf{RF.O.18} & Il Tecnico deve poter eliminare un dizionario dati dal sistema. & \hyperref[UC18]{UC18}\\
     \hline
-    \textbf{RF.O.19} & Il sistema deve restituire un messaggio d'errore qualora non riesca a validare il file scelto come \glossario{dizionario dati}. & \hyperref[UC19]{UC19} \\
+    \textbf{RF.O.19} & Il sistema deve restituire un messaggio d'errore qualora non riesca a validare il file scelto come dizionario dati. & \hyperref[UC19]{UC19} \\
     \hline 
-    \textbf{RF.O.20} & Il Tecnico deve poter modificare il file di configurazione di un \glossario{dizionario dati}. & \hyperref[UC20]{UC20} \\
+    \textbf{RF.O.20} & Il Tecnico deve poter modificare il file di configurazione di un dizionario dati. & \hyperref[UC20]{UC20} \\
     \hline
-    \textbf{RF.O.21} & Il Tecnico deve visualizzare un errore se l'eliminazione di un \glossario{dizionario dati} fallisce. & \hyperref[21]{UC21}\\
+    \textbf{RF.O.21} & Il Tecnico deve visualizzare un errore se l'eliminazione di un dizionario dati fallisce. & \hyperref[21]{UC21}\\
     \hline
-    \textbf{RF.O.22} & Il Tecnico deve poter visualizzare l'ultimo messaggio di \glossario{debug}. Il debug illustra il processo di generazione del prompt. & \hyperref[22]{UC22}, Verbale esterno 2024-04-09 \\
+    \textbf{RF.O.22} & Il Tecnico deve poter visualizzare un messaggio di \glossario{debug}. Il debug illustra il processo di generazione del prompt. & \hyperref[22]{UC22}, Verbale esterno 2024-04-09 \\
     \hline
     \textbf{RF.O.23} & Il Tecnico deve poter scaricare un file di \glossario{log}. & \hyperref[23]{UC23}, Verbale interno\\
     \hline
@@ -131,13 +131,13 @@
     \hline
     \textbf{RF.O.27} & L'Utente deve poter eliminare la cronologia della chat. & \hyperref[UC27]{UC27} \\
     \hline
-    \textbf{RF.O.28} & Il sistema restituisce un messaggio d'errore se il file inserito dal Tecnico è in un formato non supportato. & \hyperref[UC28]{UC28} \\
+    \textbf{RF.O.28} & Il sistema deve restituire un messaggio d'errore se il file inserito dal Tecnico è in un formato non supportato. & \hyperref[UC28]{UC28} \\
     \hline
     \textbf{RF.O.29} & Il Tecnico deve poter modificare il nome di un \glossario{dizionario dati}. & \hyperref[UC29]{UC29} \\
     \hline
-    \textbf{RF.O.30} & Il Tecnico deve poter modificare la descrizione di un \glossario{dizionario dati}. & \hyperref[UC30]{UC30} \\
+    \textbf{RF.O.30} & Il Tecnico deve poter modificare la descrizione di un dizionario dati. & \hyperref[UC30]{UC30} \\
     \hline
-    \textbf{RF.O.31} & Il sistema deve restituire un messaggio di errore qualora non riesca a validare il nome di un \glossario{dizionario dati}. & \hyperref[UC31]{UC31} \\
+    \textbf{RF.O.31} & Il sistema deve restituire un messaggio di errore qualora non riesca a validare il nome di un dizionario dati. & \hyperref[UC31]{UC31} \\
     \hline
     \textbf{RF.O.31.1} & Il sistema deve restituire un messaggio di errore se il formato del nome non è valido. & \hyperref[UC31point1]{UC31.1} \\
     \hline
@@ -161,13 +161,13 @@
     \hline
     \textbf{RF.D.40} & Il sistema deve memorizzare gli \glossario{indici} creati durante il caricamento o la modifica di un dizionario dati. & Verbale esterno 2024-05-06\\
     \hline
-    \textbf{RF.O.41} & Nel caso in cui un utente formuli una richiesta non idonea, il ChatBOT deve fornire una risposta cordiale, invitando l'utente a riprovare. & Verbale interno \\
+    \textbf{RF.O.41} & Nel caso in cui l'Utente formuli una richiesta non idonea, il ChatBOT deve fornire una risposta cordiale, invitando l'Utente a riprovare. & Verbale interno \\
     \hline
     \textbf{RF.OP.42} & Il prompt generato dall'applicazione deve essere compatibile con sistemi di AI alternativi a ChatGPT. & Capitolato \\
     \hline
-    \textbf{RF.OP.43} & Oltre a visualizzare il prompt generato, il ChatBOT mostra all'utente anche la frase SQL prodotta dal sistema di \glossario{AI}. & Capitolato \\
+    \textbf{RF.OP.43} & Oltre a visualizzare il prompt generato, il ChatBOT mostra all'Utente anche la frase SQL prodotta dal sistema di \glossario{AI}. & Capitolato \\
     \hline
-    \textbf{RF.OP.44} & La richiesta dell'utente deve poter essere inserita tramite input vocale. & Capitolato \\
+    \textbf{RF.OP.44} & La richiesta dell'Utente deve poter essere inserita tramite input vocale. & Capitolato \\
     \hline
     \textbf{RF.O.45} & Il prompt deve contenere almeno le descrizioni in linguaggio naturale delle tabelle e delle colonne. & Verbale esterno 2024-06-07\\
     \hline
@@ -175,7 +175,7 @@
     \hline
     \textbf{RF.O.47} & Il sistema di generazione del prompt deve supportare richieste in lingua inglese. & Verbale interno \\
     \hline
-    \textbf{RF.O.48} & La scelta del dizionario dati deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
+    \textbf{RF.O.48} & La scelta del \glossario{dizionario dati} deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
     \hline
     \textbf{RF.O.49} & Per procedere con l'inserimento di una richiesta, è necessario aver selezionato un dizionario dati. & Verbale interno \\
     \hline
@@ -185,7 +185,7 @@
     \hline
     \textbf{RF.D.52} & Il sistema di generazione del prompt deve supportare richieste in lingue diverse dall'inglese. & Verbale esterno 2024-04-09 \\
     \hline
-    \textbf{RF.OP.53} & Quando un utente ripete più volte lo stesso messaggio, il ChatBOT restituisce la risposta formulata alla prima occorrenza del messaggio. & Verbale interno \\
+    \textbf{RF.OP.53} & Quando l'Utente ripete più volte lo stesso messaggio, il ChatBOT restituisce la risposta formulata alla prima occorrenza del messaggio. & Verbale interno \\
     \hline
     \textbf{RF.OP.54} & Il sistema deve accertarsi che la query \glossario{SQL} restituita da un servizio esterno come ChatGPT sia valida e funzionante. & Capitolato \\
   \end{longtable}
@@ -277,9 +277,9 @@
     \hline
     \textbf{RV.O.2} & Sviluppo di un applicativo web-based. & Verbale esterno 2024-04-09 \\
     \hline
-    \textbf{RV.O.3} & Il \glossario{dizionario dati} deve essere fornito tramite un file JSON. & Capitolato, Verbale interno \\
+    \textbf{RV.O.3} & Il \glossario{dizionario dati} deve essere fornito tramite un file JSON. & Capitolato, verbale interno \\
     \hline
-    \textbf{RV.O.4} & Il dizionario dati deve rispettare uno schema predefinito. In particolare, il dizionario deve rispecchiare la struttura di un database, e contenere descrizioni delle tabelle e dei rispettivi campi. & Capitolato, Verbale interno \\
+    \textbf{RV.O.4} & Il dizionario dati deve rispettare uno schema predefinito. In particolare, il dizionario deve rispecchiare la struttura di un database, e contenere descrizioni delle tabelle e dei rispettivi campi. & Capitolato, verbale interno \\
     \hline
     \textbf{RV.O.5} & La dimensione del dizionario dati deve essere inferiore a 1MB. & Verbale interno \\
     \hline
