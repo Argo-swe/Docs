@@ -1,37 +1,48 @@
 \section{Riunione}
 \subsection{Ordine del giorno}
 \begin{itemize}
-	\item Stesura della lettera di presentazione per la \RTB e strutturazione della presentazione;
-	\item Divisione delle attività da terminare in vista della \RTB;
-	\item Merge del branch develop per il primo rilascio della versione del Proof of Concept;
+	\item Stesura della lettera di presentazione per la revisione \glossario{RTB};
+	\item Definizione della struttura della presentazione dei requisiti e delle tecnologie;
+	\item Suddivisione delle attività in vista della RTB;
+	\item Rilascio della versione 1.0.0 del \glossario{PoC}.
 \end{itemize}
 
 \subsection{Discussione e decisioni}
-\subsubsection{Stesura della lettera di presentazione per la \RTB e strutturazione della presentazione}
-\par Il gruppo si è ritrovato inizialmente in presenza per discutere ed elaborare la lettera di presentazione da sottoporre al Professor Riccardo Cardin e al Professor Tullio Vardanega in vista della prima revisione. 
-La lettera tratta delle cause e delle motivazioni con le quali il gruppo sostiene di essere pronto per sottoporsi alla prima revisione.
-Inoltre, il gruppo si è concentrato nella strutturazione della presentazione per l'incontro con il Professor Riccardo Cardin, dividendola 7 sezioni da trattare e suddividere tra i membri del gruppo. Le sezioni sono le seguenti:
+\subsubsection{Stesura della lettera di presentazione per la RTB}
+\par Il gruppo si è ritrovato per discutere ed elaborare la lettera di presentazione per la prima revisione di avanzamento. 
+Nella lettera sono stati inseriti i seguenti riferimenti:
 \begin{itemize}
-	\item Overview generale del prodotto;
-	\item Discussione dei requisiti individuati dal gruppo;
-	\item Descrizione \glossario{web app}; 
-	\item Discussione in merito alle tecnologie \glossario{txtai};
-	\item Discussione in merito alle tecnologie \glossario{back-end};
-	\item Discussione in merito alle tecnologie \glossario{frontend};
-	\item Feature nel Proof of Concept e dimostrazione dell'applicativo.
+	\item Documentazione di progetto (\AdR\ e verbali);
+	\item Repository ChatSQL, contentente il PoC.
 \end{itemize}
-Le sezioni da trattare sono state abbozzate in una presentazione Google Slides, inserendo un'elenco puntato degli argomenti chiave da trattare per ogni sezione.
 
-\subsubsection{Divisione delle attività da terminare in vista della \RTB}
-\par Il gruppo ha poi individuato le attività mancanti da terminare sulla documentazione in vista della \RTB. In particolare le attività individuate sono state le seguenti:
+\vspace{0.5\baselineskip}
+\par In seguito, il team ha definito la struttura e i punti da trattare nella presentazione dei requisiti e delle tecnologie. La presentazione è stata divisa in 7 sezioni principali. Gli argomenti individuati sono i seguenti:
 \begin{itemize}
-	\item Aggiornamento del \PdP allo \glossario{sprint} corrente;
+	\item Panoramica generale del prodotto;
+	\item Requisiti funzionali e non funzionali;
+	\item Architettura della web app; 
+	\item Tecnologie back-end: \glossario{txtai} e Python;
+	\item Tecnologie back-end: \glossario{FastAPI}, Pydantic e SQLAlchemy;
+	\item Tecnologie front-end: \glossario{Vue.js}, Axios e PrimeVue;
+	\item Funzionalità del Proof of Concept e dimostrazione dell'applicativo.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Gli argomenti sopra citati sono stati inseriti all'interno di una presentazione Google Slides tramite elenco puntato.
+
+\subsubsection{Suddivisione delle attività in vista della RTB}
+\par Il gruppo ha identificato le attività da completare in vista della RTB. In particolare, sono state fissate le seguenti attività:
+\begin{itemize}
+	\item Aggiornamento del \PdP\ (preventivo "a finire" e gestione dei rischi);
 	\item Revisione del documento di \AdR;
-	\item Espansione delle sezioni del \PdQ che trattano della descrizione della documentazione;\
+	\item Espansione della sezione del \PdQ\ relativa all'Indice Gulpease;
 	\item Ultimazione dei verbali mancanti o incompleti.
 \end{itemize}
-Dopo aver individuato le attività, il gruppo si è messo a lavorare separatamente per portarle a termine.
 
-\subsubsection{Merge del branch develop per il primo rilascio della versione del Proof of Concept}
-\par Vista la conclusione dei lavori sul Proof of Concept, è stato deciso di rilasciare la prima versione del prodotto, unendo il branch di develop nel branch principale main. Questo ha portato il gruppo a lavorare sulla risoluzione di possibili conflitti che si sarebbero potuti creare in vista dell'unione dei rami.
-Terminata la risoluzione sono stati effettuati dei test per verificare che l'applicativo funzionasse correttamente.
+\vspace{0.5\baselineskip}
+\par Dopo aver individuato le attività, il gruppo ha lavorato in autonomia per portarle a termine.
+
+\subsubsection{Rilascio della versione 1.0.0 del PoC}
+\par In seguito all'approvazione della \glossario{Proponente} e alla risoluzione dei conflitti con il main branch, il team ha rilasciato la prima versione del prodotto.
+Una volta effettuato il merge, il gruppo ha eseguito dei test per verificare il corretto funzionamento del sistema.
