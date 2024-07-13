@@ -9,19 +9,18 @@
 \paragraph*{Descrizione}
 Il logout è una procedura che permette al Tecnico di uscire dall'area e dalle funzionalità che richiedono l'autenticazione.
 
-
 \paragraph*{Attori principali}
 Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
   \item Il Tecnico ha eseguito il logout con successo;
-  \item Il Tecnico ha a disposizione unicamente le funzionalità di un utente generico.
+  \item Il Tecnico ha a disposizione unicamente le funzionalità che non richiedono l'autenticazione.
 \end{itemize}
 
 \paragraph*{Trigger}
@@ -31,6 +30,5 @@ Il Tecnico vuole effettuare il logout e terminare la sessione corrente.
 \begin{enumerate}
   \item Il Tecnico seleziona l'opzione "Logout";
   \item Viene avviata la procedura di logout;
-  \item Il Tecnico viene disconnesso dalla piattaforma;
-  \item Le funzionalità proprie del Tecnico non sono più visibili.
+  \item Il Tecnico viene disconnesso dalla piattaforma.
 \end{enumerate}

@@ -1,25 +1,29 @@
-\subsubsection{UC38 - Credenziali errate}\label{UC38}
+\subsubsection{UC38 - Copia del messaggio di debug}\label{UC38}
+
 \paragraph*{Descrizione}
-Il sistema restituisce un messaggio di errore qualora l'Utente inserisca delle credenziali non valide in fase di autenticazione.
+Il sistema permette al Tecnico di copiare un messaggio di \glossario{debug} negli appunti di sistema.
 
 \paragraph*{Attori principali}
-Utente
+Tecnico
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L'Utente ha inserito credenziali errate;
-  \item L'Utente ha richiesto l'autenticazione. 
+  \item Il sistema è attivo e funzionante;
+  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il sistema ha generato almeno un \glossario{prompt} e il rispettivo \glossario{log}.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene visualizzato un messaggio di errore esplicativo.
+  \item Il contenuto del messaggio viene copiato negli appunti di sistema del Tecnico.
 \end{itemize}
+
+\paragraph*{Trigger}
+Il Tecnico desidera copiare il messaggio fornito dal sistema in relazione al \glossario{debug} del prompt.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'Utente richiede l'autenticazione inserendo credenziali errate; 
-  \item Il sistema non riconosce le credenziali fornite;  
-  \item La procedura di autenticazione fallisce;
-  \item L'Utente visualizza un messaggio con i dettagli dell'errore.
+  \item Il Tecnico accede alla sezione dedicata al debug del \glossario{prompt};
+  \item Il Tecnico seleziona la funzionalità "Copia";
+  \item Negli appunti di sistema viene salvata una copia del messaggio.
 \end{enumerate}
