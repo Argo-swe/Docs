@@ -178,13 +178,15 @@
   \begin{tabular}{ r|l }
     \multicolumn{2}{c}{\textbf{Informazioni sul documento}} \\
     \hline
-		% differenzia a seconda che \DocVersion{} stampi testo o no
-		\setbox0=\hbox{\DocVersion{}\unskip}\ifdim\wd0=0pt
-			% nulla (non ho trovato come togliere l'a capo)
-			\\
-		\else
-			\textbf{Versione} & \faIcon{tag} \DocVersion{} \\
-		\fi
+    \ifx\DocVersion\empty
+      \ifx\DocData\empty
+        % lascio vuoto
+      \else
+        \textbf{Data} & \DocData{} \\
+      \fi
+    \else
+      \textbf{Versione} & \faIcon{tag} \DocVersion{} \\
+    \fi
     \textbf{Approvazione} & \multiLineCell[t]{\DocApprovazione{}} \\
     \textbf{Uso} & \DocUso{} \\
     \textbf{Distribuzione} & \multiLineCell[t]{\DocDistribuzione{}} \\
