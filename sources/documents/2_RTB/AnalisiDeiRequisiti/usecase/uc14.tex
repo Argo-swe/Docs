@@ -7,7 +7,7 @@
 \end{figure}
 
 \paragraph*{Descrizione}
-L'Utente visualizza il contenuto del \glossario{dizionario dati} selezionato. La visualizzazione del contenuto del dizionario può aiutare l'Utente a formulare correttamente la richiesta per il \glossario{modello}.
+L'Utente visualizza il contenuto del \glossario{dizionario dati} selezionato. La visualizzazione del contenuto del dizionario può aiutare l'Utente a formulare correttamente la richiesta per il \glossario{modello}. Questa operazione equivale a visualizzare un'anteprima del dizionario dati.
 
 \paragraph*{Attori principali}
 Utente
@@ -15,7 +15,7 @@ Utente
 \paragraph*{Precondizioni}
 \begin{itemize}
   \item Il sistema è attivo e funzionante;
-  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
+  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -28,15 +28,14 @@ L'Utente desidera visualizzare il contenuto di un \glossario{dizionario dati}.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'Utente seleziona un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
   \item Il sistema mostra il contenuto del dizionario in un formato comprensibile per l'Utente.
 \end{enumerate}
 
 \paragraph*{Sottocasi d'uso:}
 \begin{itemize}
-  \item UC14.1: Visualizzazione nome database;
-  \item UC14.2: Visualizzazione descrizione database;
-  \item UC14.3: Visualizzazione lista tabelle.
+  \item \hyperref[UC14point1]{UC14.1}: Visualizzazione nome database;
+  \item \hyperref[UC14point2]{UC14.2}: Visualizzazione descrizione database;
+  \item \hyperref[UC14point3]{UC14.3}: Visualizzazione lista tabelle.
 \end{itemize}
 
 \begin{figure}[H]
@@ -49,14 +48,14 @@ L'Utente desidera visualizzare il contenuto di un \glossario{dizionario dati}.
 
 \subsubsection{UC14.1 - Visualizzazione nome database}\label{UC14point1}
 \paragraph*{Descrizione}
-L'Utente visualizza il nome del database descritto da un \glossario{dizionario dati}.
+L'Utente visualizza il nome del database descritto nel \glossario{dizionario dati}.
 
 \paragraph*{Attori principali}
 Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
+  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -76,14 +75,14 @@ L'Utente desidera visualizzare il nome del database.
 
 \subsubsection{UC14.2 - Visualizzazione descrizione database}\label{UC14point2}
 \paragraph*{Descrizione}
-L'Utente visualizza la descrizione del database.
+L'Utente visualizza la descrizione del database riportato nel \glossario{dizionario dati}.
 
 \paragraph*{Attori principali}
 Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
+  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -110,7 +109,7 @@ Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4});
+  \item L'Utente ha selezionato un \glossario{dizionario dati} (\hyperref[UC4]{UC4}).
 \end{itemize}
 
 \paragraph*{Postcondizioni}
@@ -128,7 +127,7 @@ L'Utente desidera visualizzare la lista delle tabelle.
 
 \paragraph*{Sottocasi d'uso:}
 \begin{itemize}
-  \item UC14.3.1: Visualizzazione singola tabella \glossario{dizionario dati}.
+  \item \hyperref[UC14point3point1]{UC14.3.1}: Visualizzazione singola tabella.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -168,8 +167,8 @@ L'Utente desidera visualizzare una tabella con le sue informazioni.
 
 \paragraph*{Sottocasi d'uso:}
 \begin{itemize}
-  \item UC14.3.1.1: Visualizzazione nome tabella;
-  \item UC14.3.1.2: Visualizzazione descrizione tabella.
+  \item \hyperref[UC14point3point1point1]{UC14.3.1.1}: Visualizzazione nome tabella;
+  \item \hyperref[UC14point3point1point2]{UC14.3.1.2}: Visualizzazione descrizione tabella.
 \end{itemize}
 
 \begin{figure}[H]
@@ -204,7 +203,7 @@ L'Utente desidera visualizzare il nome di una tabella.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'Utente visualizza il nome della tabella.
+  \item L'Utente visualizza il nome di una tabella.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -233,5 +232,5 @@ L'Utente desidera visualizzare la descrizione di una tabella.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'Utente visualizza la descrizione della tabella.
+  \item L'Utente visualizza la descrizione di una tabella.
 \end{enumerate}
