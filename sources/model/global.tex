@@ -179,10 +179,12 @@
     \multicolumn{2}{c}{\textbf{Informazioni sul documento}} \\
     \hline
     \ifx\DocVersion\empty
-      \ifx\DocData\empty
-        % lascio vuoto
-      \else
-        \textbf{Data} & \DocData{} \\
+      \ifdefined\stampfile
+        \ifx\DocData\empty
+          % lascio vuoto
+        \else
+          \textbf{Data} & \DocData{} \\
+        \fi
       \fi
     \else
       \textbf{Versione} & \faIcon{tag} \DocVersion{} \\
