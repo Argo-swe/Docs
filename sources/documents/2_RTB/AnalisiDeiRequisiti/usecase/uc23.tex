@@ -1,6 +1,6 @@
 \subsubsection{UC23 - Download file di log}\label{UC23}
 \paragraph*{Descrizione}
-Il sistema consente al Tecnico di scaricare il file di \glossario{log} (in formato testuale) creato durante la generazione del \glossario{prompt}.
+Il sistema consente al Tecnico di scaricare, in formato testuale, il \glossario{log} creato durante la generazione del \glossario{prompt}.
 
 \paragraph*{Attori principali}
 Tecnico
@@ -17,12 +17,14 @@ Tecnico
   \item Il file è stato scaricato correttamente.
 \end{itemize}
 
+\paragraph*{Trigger}
+Il Tecnico vuole scaricare un file di \glossario{log}.
+
 \paragraph*{Scenario principale}
 \begin{enumerate}
   \item Il Tecnico accede alla sezione dedicata al \glossario{debug} del prompt;
   \item Il Tecnico seleziona la funzionalità "Scarica file";
-  \item Il sistema avvia il download del file;
-  \item Il sistema esegue con successo il download del file.
+  \item Il sistema esegue il download del file.
 \end{enumerate}
 
 \paragraph*{Scenario alternativo}
@@ -33,8 +35,8 @@ Tecnico
 
 \paragraph*{Estensioni}
 \begin{itemize}
-  \item Visualizzazione errore download file (\hyperref[UC24]{UC24}).
+  \item Visualizzazione errore download file (\hyperref[UC24]{UC24}):
   \begin{itemize}
-    \item Extension point: errore durante il download del file.
+    \item Extension point: Errore durante il download del file.
   \end{itemize}
 \end{itemize}
