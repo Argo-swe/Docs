@@ -29,7 +29,7 @@
 \newcommand{\Proponente}{Zucchetti S.p.A.}
 \newcommand{\Committente}{Prof. Tullio Vardanega \\ Prof. Riccardo Cardin}
 \newcommand{\CommittenteInline}{Prof. Tullio Vardanega, Prof. Riccardo Cardin}
-\newcommand{\ResponsabileInCarica}{\raul}
+\newcommand{\ResponsabileInCarica}{\mattia}
 
 % La versione dei documenti deve essere definita qui in global, perchè serve anche agli altri documenti
 \newcommand{\VersioneAR}{1.0.0}  % Analisi dei Requisiti
@@ -178,13 +178,17 @@
   \begin{tabular}{ r|l }
     \multicolumn{2}{c}{\textbf{Informazioni sul documento}} \\
     \hline
-		% differenzia a seconda che \DocVersion{} stampi testo o no
-		\setbox0=\hbox{\DocVersion{}\unskip}\ifdim\wd0=0pt
-			% nulla (non ho trovato come togliere l'a capo)
-			\\
-		\else
-			\textbf{Versione} & \faIcon{tag} \DocVersion{} \\
-		\fi
+    \ifx\DocVersion\empty
+      \ifdefined\DocData
+        \ifx\DocData\empty
+          % lascio vuoto
+        \else
+          \textbf{Data} & \DocData{} \\
+        \fi
+      \fi
+    \else
+      \textbf{Versione} & \faIcon{tag} \DocVersion{} \\
+    \fi
     \textbf{Approvazione} & \multiLineCell[t]{\DocApprovazione{}} \\
     \textbf{Uso} & \DocUso{} \\
     \textbf{Distribuzione} & \multiLineCell[t]{\DocDistribuzione{}} \\
