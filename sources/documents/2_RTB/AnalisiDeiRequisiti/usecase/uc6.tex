@@ -7,20 +7,17 @@ Utente
 
 \paragraph*{Precondizioni}
 \begin{itemize}
-  \item L'applicazione è stata avviata con successo;
-  \item Nel sistema è stato caricato almeno un \glossario{dizionario dati};
-  \item L'Utente ha richiesto la generazione del \glossario{prompt} (\hyperref[UC5]{UC5}).  
+  \item L'Utente ha richiesto la generazione di un \glossario{prompt} (\hyperref[UC5]{UC5});
+  \item Il sistema non ha trovato correlazioni tra la richiesta e il \glossario{dizionario dati}.
 \end{itemize}
 
 \paragraph*{Postcondizioni}
 \begin{itemize}
-  \item Viene visualizzato l'avviso del ChatBOT, che informa l'Utente della sua incapacità di fornire una risposta adeguata alla domanda.
+  \item Viene visualizzato l'avviso del ChatBOT, che informa l'Utente della sua incapacità di fornire una risposta adeguata alla domanda;
+  \item Il sistema non restituisce il \glossario{prompt}.
 \end{itemize}
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'Utente richiede la generazione del \glossario{prompt};
-  \item Il sistema non trova correlazioni tra la richiesta e il \glossario{dizionario dati};
-  \item Il sistema non è in grado restituire un \glossario{prompt};
   \item Viene visualizzato un messaggio esplicativo che invita l'Utente a riprovare.
 \end{enumerate}

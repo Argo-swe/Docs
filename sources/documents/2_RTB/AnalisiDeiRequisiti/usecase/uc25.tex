@@ -1,6 +1,14 @@
 \subsubsection{UC25 - Visualizzazione lista messaggi nella chat}\label{UC25}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{assets/uc25.png}
+  \caption{UC25}
+\end{figure}
+
+
 \paragraph*{Descrizione}
-L'Utente visualizza il contenuto di una chat. La lista dei messaggi comprende sia le richieste dell'Utente che le risposte del ChatBOT.
+L'Utente visualizza il contenuto della chat. La lista dei messaggi comprende sia le richieste dell'Utente che le risposte del ChatBOT.
 
 \paragraph*{Attori principali}
 Utente
@@ -26,12 +34,12 @@ L'Utente vuole visualizzare la lista dei messaggi nella chat.
 
 \paragraph*{Sottocasi d'uso:}
 \begin{itemize}
-  \item UC25.1: Visualizzazione singolo messaggio nella chat.
+  \item \hyperref[UC25point1]{UC25.1}: Visualizzazione singolo messaggio nella chat.
 \end{itemize}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.90\textwidth]{assets/uc25.png}
+  \includegraphics[width=0.90\textwidth]{assets/uc25_1.png}
   \caption{UC25 - Sottocasi d'uso}
 \end{figure}
 
@@ -59,18 +67,18 @@ L'Utente vuole visualizzare un singolo messaggio all'interno della chat.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'Utente visualizza il messaggio.
+  \item L'Utente visualizza un messaggio.
 \end{enumerate}
 
 \paragraph*{Sottocasi d'uso:}
 \begin{itemize}
-  \item UC25.1.1: Visualizzazione contenuto messaggio;
-  \item UC25.1.2: Visualizzazione mittente messaggio.
+  \item \hyperref[UC25point1point1]{UC25.1.1}: Visualizzazione contenuto messaggio;
+  \item \hyperref[UC25point1point2]{UC25.1.2}: Visualizzazione mittente messaggio.
 \end{itemize}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.90\textwidth]{assets/uc25_1.png}
+  \includegraphics[width=0.90\textwidth]{assets/uc25_1_1.png}
   \caption{UC25.1 - Sottocasi d'uso}
 \end{figure}
 
@@ -78,7 +86,7 @@ L'Utente vuole visualizzare un singolo messaggio all'interno della chat.
 
 \subsubsection{UC25.1.1 - Visualizzazione contenuto messaggio}\label{UC25point1point1}
 \paragraph*{Descrizione}
-L'Utente visualizza il contenuto di un messaggio. 
+L'Utente visualizza il contenuto di un messaggio nella chat. 
 
 \paragraph*{Attori principali}
 Utente
@@ -98,14 +106,14 @@ L'Utente vuole visualizzare il contenuto di un messaggio all'interno della chat.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'Utente visualizza il contenuto del messaggio.
+  \item L'Utente visualizza il contenuto di un messaggio.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{UC25.1.2 - Visualizzazione mittente messaggio}\label{UC25point1point2}
 \paragraph*{Descrizione}
-L'Utente visualizza il mittente di un messaggio. Il mittente può essere l'Utente stesso o il ChatBOT.
+L'Utente visualizza il mittente di un messaggio nella chat. Il mittente può essere l'Utente stesso o il ChatBOT.
 
 \paragraph*{Attori principali}
 Utente
@@ -125,5 +133,5 @@ L'Utente vuole visualizzare il mittente di un messaggio all'interno della chat.
 
 \paragraph*{Scenario principale}
 \begin{enumerate}
-  \item L'Utente visualizza il mittente del messaggio.
+  \item L'Utente visualizza il mittente di un messaggio.
 \end{enumerate}
