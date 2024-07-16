@@ -182,10 +182,10 @@ Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team 
 \par L'opzione scelta dal team è "Squash and merge", in quanto si tratta di una delle soluzioni più diffuse per mantenere la cronologia del progetto pulita nei \glossario{repository} pubblici.
 
 \subsubsection{Versionamento}
-Il gruppo mantiene un versionamento per la documentazione nel formato:
+Il gruppo mantiene un versionamento per il codice e la documentazione nel seguente formato:
 \[ X.Y.Z \]
 \begin{itemize}
-  \item[X] Avanza alla approvazione del Responsabile, corrisponde percui ad ogni rilascio;
+  \item[X] Avanza alla approvazione del responsabile, corrisponde percui ad ogni rilascio;
   \item[Y] Avanza ad ogni verifica completa del documento;
   \item[Z] Avanza ad ogni modifica verificata di un documento.
 \end{itemize}
@@ -241,8 +241,6 @@ Il repository contiene un ramo base (main), in cui vengono inserite le versioni 
 \paragraph{Repository \emph{ChatSQL}}
 Il repository contiene il codice sorgente dell'applicativo ChatSQL, oltre a un \glossario{workflow} GitHub Actions per l'analisi statica del codice, l'esecuzione dei test e la generazione automatica dell'artefatto. Il workflow è definito da un file YAML archiviato nella directory \emph{.github/workflows}.
 
-\par TODO. La struttura di questo repository va completata dopo la configurazione finale dell'ambiente.
-
 \begin{itemize}
   \item Il file \emph{README.md} illustra brevemente lo scopo del repository ed elenca i componenti del gruppo;
   \item Il file \emph{.gitignore} evita il tracciamento di file ausiliari e artefatti di compilazione;
@@ -254,4 +252,36 @@ Il repository contiene il codice sorgente dell'applicativo ChatSQL, oltre a un \
     \item La directory \emph{models} contiene i modelli \glossario{DTO} esposti dall'interfaccia;
     \item La directory \emph{routes} contiene la definizione delle rotte dell'interfaccia esposta dal backend.
   \end{itemize}
+\end{itemize}
+
+\subsubsection{Release}
+\par Come riportato nella sezione dedicata al versionamento, il team adotta una politica di rilascio basata su versioni numeriche, in cui ogni rilascio è identificato da un numero di versione univoco. Attraverso il processo di release management, il gruppo garantisce che il prodotto software e la documentazione siano rilasciati in modo controllato e conforme alle specifiche. Un rilascio può effettuato quando:
+\begin{itemize}
+  \item Il branch develop (o il branch di default) ha acquisito funzionalità sufficienti per una release;
+  \item La data di rilascio predeterminata si avvicina.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Il processo di rilascio si compone dei seguenti passaggi:
+\begin{itemize}
+  \item Creazione di un branch di release, denominato "release-X.Y.Z";
+  \item Caricamento di eventuali modifiche (correzione di bug o altre attività orientate al rilascio);
+  \item Una volta pronto, il release branch viene unito a quello principale e reintegrato nel ramo di develop (se presente);
+  \item Creazione di un tag per il rilascio, con il numero di versione associato (la formula da seguire è "vX.Y.Z");
+  \item Il passaggio precedente può essere effettuato tramite l'interfaccia web di GitHub o da riga di comando;
+  \item Una volta creato il tag, il team può procedere con la pubblicazione della release;
+  \item Nell'interfaccia web di GitHub, è visibile la sezione "Tags"; 
+  \item Al suo interno, oltre a visualizzare la lista dei tag, è possibile creare una nuova release (cliccando su "Draft a new release");
+  \item Ciascuna release include le seguenti informazioni:
+  \begin{itemize}
+    \item Tag (selezionato dalla lista dei tag esistenti o creato appositamente);
+    \item Target (branch o commit di riferimento per la release);
+    \item Note di rilascio (release notes): elencano gli sviluppatori e il registro delle modifiche;
+    \item Titolo della release;
+    \item Descrizione della release;
+    \item Allegati (file binari, documentazione, ecc.);
+    \item Flag di pre-release (opzionale): la versione viene etichettata come "non pronta per l'ambiente di produzione";
+    \item Flag di latest-release (opzionale): la versione viene etichettata come "release più recente".
+  \end{itemize}
+  \item Pubblicazione della release o salvataggio come bozza.
 \end{itemize}
