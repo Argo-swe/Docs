@@ -46,50 +46,120 @@ TODO
 \subsubsection{Documentazione fornita}\label{documentazionefornita}
 Di seguito viene descritta la documentazione che il gruppo si impegna a rendere disponibile alla Proponente e ai Committenti.
 
-\paragraph{Piano di Progetto}
+\paragraph{Piano di Progetto:}
 %Breve descrizione dello scopo del documento e delle singole sezioni.
-TODO
-
-\paragraph{Analisi dei Requisiti}
-\begin{itemize}
-  \item La struttura di un UC è divisa nella seguente struttura:
+Il \PdP\ è il documento che tratta della gestione e dell'organizzazione del gruppo. Tratta dell'analisi e la gestione dei rischi, valuta lo stato del progetto rappresentando la divisione delle ore per \glossario{sprint}, il preventivo e il consuntivo orari ed economici e definisce una retrospettiva dello \glossario{sprint} precedente e la pianificazione degli \glossario{sprint} successivi.
+Il documento è diviso nelle seguenti sezioni:
+\begin{enumerate}
+  \item \textbf{Introduzione:} indica lo scopo del documento e del prodotto con eventuali riferimenti normativi e informativi;
+  \item \textbf{Analisi dei rischi:} quali sono i rischi ai quali il gruppo può andare incontro, l'impatto dei rischi sulle risorse del progetto, le strategie di rilevamento e di mitigazione per contrastarli. L'analisi dei rischi viene suddivisa in sezioni in base alla categoria del rischio:
   \begin{itemize}
-    \item UCN - Nome UC;
-    \item Descrizione;
-    \item Attori principali;
-    \item Precondizioni;
-    \item Postcondizioni;
-    \item Trigger;
-    \item Scenario principale;
-    \item Eventuale Scenario alternativo;
-    \item Eventuale Inclusioni;
-    \item Eventuali Estensioni;
-    \item Eventuali sottocasi d'uso.
-  \end{itemize}
-  \item Le precondizioni dello UC devono essere condizioni necessarie per arrivare alla situazione che si presenta nello UC. Ad esempio per l'utilizzo dello strumento di debug per il Tecnico, saranno:
+    \item Rischi tecnologici;
+    \item Rischi organizzativi;
+    \item Rischi di natura personale;
+  \end{itemize} 
+  \item \textbf{Modello di sviluppo:} descrive il modello di sviluppo adottato dal gruppo, definendone la struttura e i punti di forza;
+  \item \textbf{Stima temporale del progetto:} indica la stima delle date delle revisioni alle quali il gruppo si deve sottoporre. Viene indicata l'ultima data di aggiornamento della sezione;
+  \item \textbf{Stima dei costi:} serve a dare una stima preliminare sui costi del progetto. Viene aggiornata ad ogni \glossario{sprint};
+  \item \textbf{Pianificazione:} serve a pianificare lo \glossario{sprint} definendo gli obbiettivi che il gruppo vuole raggiungere. Viene disposta una sezione di pianificazione per ogni \glossario{sprint};
+  \item \textbf{Preventivo:} dispone il preventivo per lo \glossario{sprint}. Ogni \glossario{sprint} ha sezione di preventivo. Il preventivo si compone di:
   \begin{itemize}
-    \item Il Tecnico ha effettuato il login;
-    \item Il Tecnico ha ricevuto un prompt generato sulla base di una richiesta in liguaggio naturale;
-    \item Il Tecnico decide di utilizzare lo strumento di debug.
+    \item Preventivo orario: tabella di distribuzione delle ore preventivate per ciascun membro del gruppo;
+    \item Distribuzione ore per la coppia risorsa-ruolo: istogramma che indica le ore preventivate per ciascun ruolo;
+    \item Distribuzione ore per ruolo: aereogramma che indica la distribuzione in percentuale preventivata per i ruoli;
+    \item Preventivo economico: tabella che riporta il costo del ruolo per il numero di ore preventivate. Riporta il totale, ossia il preventivo economico per lo \glossario{sprint}.
   \end{itemize}
-  \item Le precondizioni vengono poste al passato per identificare la conclusione di un UC, possono includere altri UC;
-  \item Le postcondizioni rappresentano cosa succede dopo lo sviluppo dello UC e sono per tanto descrittive e poste al presente;
-  \item Lo scenario principale riprende i passaggi che sono stati necessari per il verificarsi dello UC. Pertanto si parte a descriverle dalla prima estensione che l'attore riscontra dopo l'avvio dell'applicativo fino ad arrivare allo UC;
-  \item Lo scenario alternativo riprende i passaggi dello scenario principale fino all'estensione che porta allo UC alternativo;
-  \item Ogni riferimento ad un UC viene riportato in precondizioni, postcondizioni, scenario principale, scenario alternativo, inclusione ed estensione;
-  \item I sottocasi d'uso di uno UC vengono inseriti sotto lo UC principale nello stesso file;
-  \item I sottocasi sono sempre inclusioni del caso d'uso "padre";
-  \item I sottocasi vengono riferiti con un punto dopo il padre. Ad esempio un sottocaso potrebbe essere UC.1 e il sottocaso del sottocaso UC.1.1;
-  \item Per gli errori si visualizza quasi sempre un messaggio. Quindi la postcondizione finale e la fine dello scenario principale sarà quasi sempre "Viene visualizzato un messaggio con i dettagli dell'errore";
-  \item Il Trigger è l'azione che l'utente vuole svolgere e che viene soddisfatta dallo UC.
-\end{itemize}
+  \item \textbf{Consuntivo:} dispone il consuntivo per lo \glossario{sprint}. Ogni \glossario{sprint} ha sezione di consuntivo. Il consuntivo si compone di:
+  \begin{itemize}
+    \item Consuntivo orario: tabella di distribuzione delle ore effettivamente impiegate per ciascun membro del gruppo;
+    \item Distribuzione ore per la coppia risorsa-ruolo: istogramma che indica le ore impiegate per ciascun ruolo;
+    \item Distribuzione ore per ruolo: aereogramma che indica la distribuzione in percentuale impiegata per i ruoli;
+    \item Consuntivo economico: tabella che riporta il costo del ruolo per il numero di ore impiegate. Riporta il totale, ossia il consuntivo economico per lo \glossario{sprint}.
+    \item Copertura oraria rispetto al totale: aereogramma che indica la percentuale di tempo speso in rapporto al tempo totale per il completamento del progetto;
+    \item Budget speso rispetto al totale: aereogramma che indica la percentuale di budget speso rispetto al budget totale per il completamento del progetto;
+    \item Ore rimanenti per la coppia risorsa-ruolo: riporta il numero di ore per ruolo rimanenti ad ogni membro del gruppo. Indica anche le ore rimanenti in totale per membro;
+    \item Revisione delle attività: indica le attività svolte durante lo \glossario{sprint};
+    \item Retrospettiva: indica i risultati del questionario che ogni membro deve compilare al termine di ogni \glossario{sprint} per valutarne l'andamento. Oltre a ciò, vengono raccolte delle considerazioni sullo \glossario{sprint} come la presenza di rischi;
+    \item Aggiornamento pianificazione e preventivo: definisce le azioni migliorative per il prossimo \glossario{sprint} e una prima pianificazione dei macro obiettivi da esaminare nella pianificazione dello \glossario{sprint} successivo. Delinea inoltre la gestione dei rischi, ossia i rischi rilevati durante lo \glossario{sprint}, il loro impatto e la loro mitigazione.
+  \end{itemize}
+\end{enumerate} 
 
-\paragraph{Piano di Qualifica}
+\paragraph{Analisi dei Requisiti:}
+L'\AdR\ è il documento che tratta l'analisi dei requisiti richiesti dal progetto e individuati dal gruppo. Sviluppa inoltre i casi d'uso per questi, ossia le interazioni tra il sistema e l'utente.
+Il documento è diviso nelle seguenti sezioni:
+\begin{enumerate}
+  \item \textbf{Introduzione:} indica lo scopo del documento e del prodotto con eventuali riferimenti normativi e informativi;
+  \item \textbf{Descrizione:} indica le funzioni principali del prodotto e le caratteristiche dell'utente, ossia i motivi che spingono l'utente ad usare l'applicativo;
+  \item \textbf{Casi d'uso:} indica tutti i casi d'uso individuati dal gruppo durante l'analisi. La struttura dei casi d'uso è la seguente:
+  \begin{itemize}
+    \item La struttura di un UC è divisa nella seguente struttura:
+    \begin{itemize}
+      \item UCN - Nome UC;
+      \item Descrizione;
+      \item Attori principali;
+      \item Precondizioni;
+      \item Postcondizioni;
+      \item Trigger;
+      \item Scenario principale;
+      \item Eventuale Scenario alternativo;
+      \item Eventuale Inclusioni;
+      \item Eventuali Estensioni;
+      \item Eventuali sottocasi d'uso.
+    \end{itemize}
+    \item Le precondizioni dello UC devono essere condizioni necessarie per arrivare alla situazione che si presenta nello UC. Ad esempio per l'utilizzo dello strumento di debug per il Tecnico, saranno:
+    \begin{itemize}
+      \item Il Tecnico ha effettuato il login;
+      \item Il Tecnico ha ricevuto un prompt generato sulla base di una richiesta in liguaggio naturale;
+      \item Il Tecnico decide di utilizzare lo strumento di debug.
+    \end{itemize}
+    \item Le precondizioni vengono poste al passato per identificare la conclusione di un UC, possono includere altri UC;
+    \item Le postcondizioni rappresentano cosa succede dopo lo sviluppo dello UC e sono per tanto descrittive e poste al presente;
+    \item Lo scenario principale riprende i passaggi che sono stati necessari per il verificarsi dello UC. Pertanto si parte a descriverle dalla prima estensione che l'attore riscontra dopo l'avvio dell'applicativo fino ad arrivare allo UC;
+    \item Lo scenario alternativo riprende i passaggi dello scenario principale fino all'estensione che porta allo UC alternativo;
+    \item Ogni riferimento ad un UC viene riportato in precondizioni, postcondizioni, scenario principale, scenario alternativo, inclusione ed estensione;
+    \item I sottocasi d'uso di uno UC vengono inseriti sotto lo UC principale nello stesso file;
+    \item I sottocasi sono sempre inclusioni del caso d'uso "padre";
+    \item I sottocasi vengono riferiti con un punto dopo il padre. Ad esempio un sottocaso potrebbe essere UC.1 e il sottocaso del sottocaso UC.1.1;
+    \item Per gli errori si visualizza quasi sempre un messaggio. Quindi la postcondizione finale e la fine dello scenario principale sarà quasi sempre "Viene visualizzato un messaggio con i dettagli dell'errore";
+    \item Il Trigger è l'azione che l'utente vuole svolgere e che viene soddisfatta dallo UC.
+  \end{itemize}
+  \item \textbf{Requisiti:} elenca i requisiti in forma tabulare e li raggruppa per categoria. Le categorie sono:
+  \begin{itemize}
+    \item Funzionali: corrispondono alle funzionalità del sistema;
+    \item Qualitativi: garantiscono la qualità del prodotto;
+    \item Di vincolo: indicano le restrizioni e i vincoli normativi del progetto;
+    \item Obbligatorio: requisiti inderogabili;
+    \item Desiderabile: requisiti non obbligatori, ma comunque di interesse per la \glossario{Proponente};
+    \item Opzionale: l'implementazione di questi requisiti è lasciata alla discrezione del \glossario{Fornitore}.
+    \item Sono inoltre indicate le fonti pero ogni requisito, ossia lo use case corrispondente o il riferimento ad un documento, nel quale il requisito veniva menzionato.
+  \end{itemize}
+\end{enumerate}
+
+\paragraph{Piano di Qualifica:}
 %Breve descrizione dello scopo del documento e delle singole sezioni.
-TODO
+Il \PdQ\ è il documento che si tratta della specifica degli obbiettivi quantitativi di qualità di prodotto e processo. Delinea quindi un'insieme di indici di vautazione e validazione del progetto.
+Il documento è diviso nelle seguenti sezioni:
+\begin{enumerate}
+  \item \textbf{Introduzione:} indica lo scopo del documento e del prodotto con eventuali riferimenti normativi e informativi;
+  \item \textbf{Obiettivi di qualità:} la sezione illustra i valori accettabili e ambiti per le metriche individuate dal team. Viene divisa per metriche e ogni sotto sezione è dotata di una tabella che descrive le righe delle metriche con le colonne: ID della metrica, nome, valore tollerabile e valore ambito. Le metriche sono così divise:
+  \begin{itemize}
+    \item Qualità di processo: indicatori utilizzati per monitorare e valutare la qualità dei processi coinvolti nello sviluppo software. 
+    \item Qualità di prodotto: valutano in modo obiettivo le caratteristiche quantitative e qualitative del software e assicurano la conformità agli standard di qualità del cliente.
+    \item Qualità per obiettivo: misura la qualità dei processi primari, di supporto e organizzativi dello sviluppo software.
+  \end{itemize}
+  \item \textbf{Verifica:} sezione dedicata alla verifica e al collaudo del software. Misura a rilevare, correggere e prevenire i possibili errori del software. È divisa in sezioni in base alla tipologia di test. Le sezioni sono dotate di tabelle che descrivono le righe dei test con le colonne: ID, descrizione e stato del test. I test sono così divisi:
+  \begin{itemize}
+    \item Test di unità:  attività di collaudo di singole \glossario{unità} del software;
+    \item Test di integrazione: verificano che i diversi moduli, componenti o servizi utilizzati dall’applicazione funzionino in modo integrato;
+    \item Test di sistema:  controllano il comportamento del sistema nel suo complesso e verificano che l’applicazione funzioni secondo i requisiti specificati
+    \item Test di accettazione sono test formali che precedono il rilascio del prodotto e valutano se l’applicazione è conforme alle aspettative del cliente:
+    \item Checklist: sono strumenti che affiancano il team nell'attività di ispezione. Sono diverse dai test riportati in precedenza poiché la loro tabella descrive le righe di checklist con le colonne: titolo e descrizione.
+  \end{itemize}
+  \item \textbf{Cruscotto di valutazione delle qualità:} sezione dedicata alla dimostrazione del rispetto delle norme. Le sottosezioni sono norme alle quali è stata data una rappresentazione grafica che ne misura l'andamento durante gli \glossario{sprint}. Il grafico in questione rileva, oltre all'andamento generale, tre rette che rappresentano il valore ambito, il valore tollerabile e la tendenza. Ogni grafico è dotato di una descrizione che ne descrive l'andamento. Le metriche nel cruscotto di qualità vengono aggiornate periodicamente per aggiornarle agli \glossario{sprint} più recenti.
+\end{enumerate}
 
 \paragraph{Lettera di Presentazione}
-TODO
+La Lettera di Presentazione è il documento con il quale il gruppo intende candidarsi alla prima fase di revisione di avanzamento: la \RTB. Vengono riportati i \glossario{repository} di documentazione e di codice sorgente, assieme all'indirizzo dove il Proof of Concept. Infine viene dato l'aggiornamento impegni con la stima del preventivo a finire aggiornato del progetto.
 
 \paragraph{Glossario}
 Raccolta esaustiva di tutti i termini tecnici utilizzati nella documentazione. Permette di eliminare ambiguità e fraintendimenti fornendo una defizione univoca ed esaustiva per l'intero gruppo e per chi consulta la documentazione prodotta.
