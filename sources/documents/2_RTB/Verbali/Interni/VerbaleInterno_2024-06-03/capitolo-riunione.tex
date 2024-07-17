@@ -1,55 +1,64 @@
 \section{Riunione}
 \subsection{Ordine del giorno}
 \begin{itemize}
-	\item Decisione definitiva di accorciare o meno i prossimi  due \glossario{sprint};
-	\item Definizione degli elementi finali del Proof of Concept;
-	\item Resoconto delle attività attive nel backlog corrente che vanno riassegnate al prossimo \glossario{sprint};
-	\item Programmazione di un incontro con il Professor Riccardo Cardin per la discussione dei dubbi del gruppo sui documenti di \AdR e \PdQ;
-	\item Pianificazione di un incontro con la Proponente per la fine del prossimo \glossario{sprint};
-	\item Proposta di delegare la descrizione delle attività da fare nello \glossario{sprint} successivo, divise per ruolo, ai componenti uscenti dal ruolo stesso in modo tale da avere più precisione nella definizione del backlog.
+	\item Decisione definitiva sulla durata dei prossimi \glossario{sprint};
+	\item Selezione delle funzionalità da implementare nel \glossario{Proof of Concept};
+	\item Resoconto delle attività svolte durante lo \glossario{sprint};
+	\item Programmazione di un incontro con il Professor Riccardo Cardin per chiarire i dubbi sull'\AdR;
+	\item Pianificazione di un incontro con la Proponente per la fine del prossimo \glossario{sprint}.
 \end{itemize}
 
 \subsection{Discussione e decisioni}
-\subsubsection{Retrospettiva e Pianificazione}
-\par Il gruppo si è ritrovato come concordato per una retrospettiva dello \glossario{sprint} 4, vista esserne prossima la fine. Vengono individuate poi alcune le attività principali per lo \glossario{sprint} successivo.
-Viene inoltre riproposto dal gruppo di organizzare i prossimi due \glossario{sprint} in modo che la loro durata sia di dieci giorni o una settimana.
-Questo permetterebbe al gruppo di focalizzarsi e concludere attività con più facilità in vista della revisione \RTB.
-Le attività da concludere nei prossimi due periodi consisterebbero nel completamento del Proof of Concept e nella conclusione dei documenti come l'\AdR e le \NdP.
-È stato evidenziato durante l'incontro come soprattutto quest'ultimo documento abbia bisogno di un aggiornamento sostanziale, in quanto necessita di espansioni nelle sezioni riguardanti la struttura dei documenti.
-
-\subsubsection{Modifica delle tecnologie}
-\par Per quanto riguarda il Proof of Concept nell'ultima settimana sono terminati i lavori con il framework \glossario{Streamlit}, di conseguenza il gruppo si è proposto di fissare un incontro con la Proponente per presentare la versione demo e mostrare il lavoro svolto per la parte funzionale dell'applicativo.
-Tuttavia nell'ultimo periodo il gruppo si è reso conto dei limiti del \glossario{framework} utilizzato: infatti questo mostrava significativi ostacoli sia nella personalizzazione dell'interfaccia utente, sia difetti che non permettevano di poter realizzare l'applicativo seguendo un'architettura come richiesto dal corso di studi.
-Ciò ha portato il gruppo a cambiare \glossario{framework} e orientarsi su strumenti che potessero ovviare agli ostacoli posti da \glossario{Streamlit}.
-I \glossario{framework} individuati sono:
+\subsubsection{Retrospettiva e pianificazione}
+\par Il gruppo si è ritrovato per la retrospettiva dello \glossario{sprint} 4.
+È stato concordato di organizzare \glossario{sprint} più brevi, della durata di una settimana o massimo dieci giorni.
+Questo permetterebbe al gruppo di ridurre al minimo i periodi di inattività in vista della sessione di esami e della revisione \glossario{RTB}.
+Per i prossimi due sprint, il team ha fissato le seguenti attività:
 \begin{itemize}
-	\item \glossario{Vue.js} per il \glossario{front-end}, in particolare per la componentistica;
-	\item \glossario{Bootstrap} come alternativa per il \glossario{front-end};
-	\item \glossario{Flask} per il \glossario{back-end}.
+	\item Avanzamento del Proof of Concept;
+	\item Ultimazione del documento di \AdR.
 \end{itemize}
-Questi sono strumenti che erano già stati individuati in precedenza, ma abbandonati per favorire l'uso di \glossario{Streamlit}; di conseguenza occorreranno delle sessioni di studio per conformare il gruppo sull'utilizzo di queste tecnologie.
-Inoltre ci saranno dei rallentamenti nell'approfondimento della libreria \glossario{txtai}: ciò è dovuto alla necessità di una conversione rapida dell'applicativo ai nuovi strumenti e dal fatto che i lavori sulla parte funzionale dell'applicazione sono già a buon punto.
+
+\vspace{0.5\baselineskip}
+\par Inoltre, il team ha convenuto che le \NdP\ debbano essere aggiornate per approfondire le sezioni riguardanti la struttura dei documenti.
+
+\subsubsection{Sostituzione delle tecnologie}
+\par Per quanto riguarda il \glossario{PoC}, il gruppo ha ultimato lo sviluppo con il framework \glossario{Streamlit}. Pertanto, il team ha deciso di fissare un incontro con la \glossario{Proponente} per presentare una demo funzionante.
+Tuttavia, nel corso dell'ultimo sprint il gruppo ha constatato le limitazioni di Streamlit; in particolare, limiti nella personalizzazione e nelle prestazioni. Inoltre, il team ha riscontrato delle difficoltà nella riusabilità del codice.
+Ciò ha portato il gruppo a cambiare \glossario{framework} e a orientarsi su tecnologie che potessero ovviare ai problemi posti da \glossario{Streamlit}.
+I framework individuati sono:
+\begin{itemize}
+	\item \glossario{Vue.js} per il front-end;
+	\item BootstrapVue (o PrimeVue) come libreria di componenti;
+	\item \glossario{Flask} per il back-end.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Questi \glossario{framework} erano già stati valutati in precedenza; tuttavia, il team ha preventivato un periodo di formazione e di adattamento per garantire una transizione efficace.
 
 \subsubsection{Divisione dei ruoli}
-\par Per il prossimo \glossario{sprint} viene proposto di avere un maggior numero di programmatori, in modo che i lavori di conversione possano procedere rapidamente.
-E' stata proposta una riunione di aggiornamento sulle tecnologie, per allineare i vari membri sui nuovi \glossario{framework} che si andranno ad utilizzare.
-Questo implica che lo \glossario{sprint} 5 sarà: incentrato sul cambiamento delle tecnologie e avrà durata di una settimana e mezza, in modo tale d'avere un paio di giorni per lo studio e l'aggiornamento e il resto per il ruolo effettivo di programmatori.
-Vengono inoltre stabiliti i documenti che dovranno essere aggiornati durante il prossimo \glossario{sprint}:
+\par Per il prossimo \glossario{sprint}, il team ha assegnato un maggior numero di risorse al ruolo di programmatore, in modo da agevolare il cambiamento tecnologico.
+Inoltre, è stata proposta una riunione intermedia di aggiornamento sulle tecnologie, con l'obiettivo di allineare le conoscenze del gruppo.
+Di conseguenza, il quinto \glossario{sprint} sarà incentrato sul cambio di tecnologie e avrà durata di una settimana e mezza.
+Infine, il team ha stabilito i documenti che dovranno essere aggiornati:
 \begin{itemize}
-	\item \PdP per l'aggiornamento dello \glossario{sprint};
-	\item \NdP per i motivi spiegati sopra;
-	\item \AdR per un'aggiornamento sui casi d'uso e l'inserimento dei grafici;
-	\item \Gls per un aggiornamento dei termini (di minor rilevanza rispetto ai documenti sopra citati).
-\end{itemize}
-Vengono inoltre ripartite le ore per ruolo ai vari membri, in modo da coprire tutti i ruoli durante lo \glossario{sprint} successivo pur mantenendo un numero maggiore di programmatori. Viene infine riassegnata la data della revisione \RTB, idealmente fissata per fine giugno con un ritardo di circa due settimane rispetto a quanto preventivato inizialmente.
-
-\subsubsection{Incontro con il Professor Riccardo Cardin}
-\par Il gruppo esprime nuovamente la volontà di organizzare un incontro con il Professor Cardin, visto lo stato dei documenti di \AdR e \PdQ che permetterebbero un confronto per individuare eventuali errori o imprecisioni da correggere.
-I punti principali da trattare con il Professore saranno:
-\begin{itemize}
-	\item Metriche: per capire se la quantità e la divisione sono corrette;
-	\item Requisiti: per discutere su alcuni casi d'uso che hanno messo in difficoltà il gruppo, come sono stati collegati tra loro e altre domande più specifiche che saranno analizzate in un documento a parte;
-	\item Funzionamento di \glossario{txtai}: per fornire un aggiornamento sullo stato del progetto e capire se includere alcuni lavori nell'\AdR.
+	\item \PdP;
+	\item \NdP;
+	\item \AdR\ (aggiornamento dei casi d'uso e inserimento dei grafici);
+	\item \Gls.
 \end{itemize}
 
-Il gruppo ha stabilito che, per i prossimi \glossario{sprint}, i membri che cambieranno ruolo nel passaggio da uno \glossario{sprint} a quello successivo definiranno le attività per i membri che inizieranno lo \glossario{sprint} successivo aventi quello specifico ruolo. Sarà quindi di competenza dei membri con i ruoli uscenti definire le attività e le loro descrizioni su \glossario{Jira} e sarà il responsabile ad assegnarle o modificarle se necessario. Questo dovrebbe permettere di avanzare con più precisione e coerenza nell'andamento delle attività e avere una maggiore coordinazione.
+\vspace{0.5\baselineskip}
+\par A causa del cambio di tecnologie, il team ha posticipato la data della revisione \glossario{RTB}, prevedendo un ritardo di circa due o tre settimane rispetto al piano iniziale.
+
+\subsubsection{Incontro con il Professor Cardin}
+\par Il gruppo ha programmato un incontro con il Professor Riccardo Cardin, al fine di individuare eventuali errori o imprecisioni nell'\AdR\ e nel \PdQ.
+I punti da trattare saranno i seguenti:
+\begin{itemize}
+	\item Quantità e suddivisione delle metriche;
+	\item Caso d'uso di autenticazione;
+	\item Inclusioni ed estensioni.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Il team ha stabilito che, per i prossimi \glossario{sprint}, i membri che cambieranno ruolo dovranno supportare il responsabile nella definizione delle attività per il ruolo appena ricoperto. Con questo approccio, il gruppo ritiene di poter coordinare le attività con maggior precisione.
