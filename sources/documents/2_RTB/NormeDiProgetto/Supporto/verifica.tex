@@ -53,7 +53,7 @@
 \par Data l’inesperienza del team nell'attività di verifica, inizialmente è stata utilizzata la tecnica “walkthrough”. Ciò ha permesso al gruppo di rilevare gli errori più comuni e acquisire le conoscenze necessarie per definire le liste di controllo ed eseguire verifiche più mirate. Le checklist sono raccolte nel \PianoDiQualifica.
 
 \subsubsection{Analisi dinamica}
-\par L’analisi dinamica è un processo di verifica basato sull’osservazione del comportamento di un sistema software o di un suo componente in esecuzione. Spesso il termine "testing" viene utilizzato come sinonimo di analisi dinamica, poiché quest’ultima prevede la definizione di un insieme di prove (test), preferibilmente automatiche e ripetibili. La precondizione necessaria per poter effettuare un test è la conoscenza del comportamento atteso (oracolo). Un oracolo è un metodo usato nel collaudo del software per determinare se un test ha avuto successo o è fallito. L’obiettivo dei test è produrre una misura quanto più oggettiva della qualità del prodotto. Come parte del processo di analisi dinamica, il team ha individuato le seguenti tipologie di test da eseguire:
+\par L’analisi dinamica è un processo di verifica basato sull’osservazione del comportamento di un sistema software o di un suo componente in esecuzione. Spesso il termine "testing" viene utilizzato come sinonimo di analisi dinamica, poiché quest’ultima prevede la definizione di un insieme di prove (test), preferibilmente automatizzate e riproducibili. Le precondizioni necessarie per poter effettuare un test sono la configurazione dell'ambiente di esecuzione e la conoscenza del comportamento atteso (determinato dall'oracolo). Un oracolo è un metodo usato nel collaudo del software per determinare se un test ha avuto successo o è fallito. L’obiettivo dei test è produrre una misura quanto più oggettiva della qualità del prodotto e, di conseguenza, devono essere eseguiti in parallelo all'attività di codifica. Come parte del processo di analisi dinamica, il team ha individuato le seguenti tipologie di test da eseguire:
 \begin{itemize}
   \item \textbf{Test di unità};
   \item \textbf{Test di integrazione};
@@ -63,6 +63,6 @@
 \subsubsection{Test di unità}
 \par I test di unità si dividono in due categorie:
 \begin{itemize}
-  \item \textbf{Test funzionali} (black-box);
-  \item \textbf{Test strutturali} (white-box).
+  \item \textbf{Test funzionali} (black-box): utilizzano dati di ingresso capaci di provocare l’esito atteso. L'obiettivo è accertare che, fornito un determinato input e definita un'aspettativa di output, l'esecuzione di una funzionalità generi il comportamento previsto. I test black-box contribuiscono a misurare quante specifiche e requisiti funzionali sono soddisfatti dal prodotto software. Non possono valutare la correttezza e la completezza della logica interna dell’unità, pertanto devono essere integrati con test strutturali;
+  \item \textbf{Test strutturali} (white-box): verificano la struttura interna dell’unità software, esaminando i cammini di esecuzione all’interno dell’unità stessa. L'obiettivo è valutare il funzionamento interno del software, analizzando la logica, i flussi di controllo e la copertura del codice.
 \end{itemize}
