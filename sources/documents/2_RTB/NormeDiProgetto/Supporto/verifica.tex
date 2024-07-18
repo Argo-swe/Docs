@@ -61,8 +61,25 @@
 \end{itemize}
 
 \subsubsection{Test di unità}
+\par I test di unità sono una categoria di test del software che si focalizza sulla verifica del corretto funzionamento dei singoli moduli o componenti del codice. In genere, una “unità” è la più piccola porzione o segmento (una funzione, un metodo o una classe) testabile in modo autonomo e isolato all’interno del sistema. I test di unità vengono definiti durante la progettazione di dettaglio con l’obiettivo di individuare difetti o malfunzionamenti. La maggior parte dei difetti rilevati tramite analisi dinamica (circa 2/3 del totale) deriva dall’esecuzione dei test di unità. A ogni unità software può essere associata una suite o batteria di test. Nelle fasi iniziali dello sviluppo, il team potrebbe riscontrare delle difficoltà nel testare singole unità, poiché alcuni moduli o componenti potrebbero essere incompleti o non disponibili. Pertanto, sono stati introdotti degli strumenti a supporto dell'analisi dinamica:
+\begin{itemize}
+  \item \textbf{Stub} (o metodo stub): simula una funzionalità del sistema (non ancora codificata e non oggetto di test) come parte del processo di testing di un’unità software;
+  \item \textbf{Driver}: componente di supporto che controlla l'esecuzione dei test e aiuta a configurare l'ambiente. Sostituisce il modulo chiamante di una funzionalità sotto test;
+  \item \textbf{Mock object}: simula il comportamento di oggetti reali in condizioni controllate; può fornire una risposta preimpostata.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
 \par I test di unità si dividono in due categorie:
 \begin{itemize}
   \item \textbf{Test funzionali} (black-box): utilizzano dati di ingresso capaci di provocare l’esito atteso. L'obiettivo è accertare che, fornito un determinato input e definita un'aspettativa di output, l'esecuzione di una funzionalità generi il comportamento previsto. I test black-box contribuiscono a misurare quante specifiche e requisiti funzionali sono soddisfatti dal prodotto software. Non possono valutare la correttezza e la completezza della logica interna dell’unità, pertanto devono essere integrati con test strutturali;
   \item \textbf{Test strutturali} (white-box): verificano la struttura interna dell’unità software, esaminando i cammini di esecuzione all’interno dell’unità stessa. L'obiettivo è valutare il funzionamento interno del software, analizzando la logica, i flussi di controllo e la copertura del codice.
 \end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Per l'esecuzione dei test funzionali e strutturali, il team utilizza strumenti di automazione appropriati e coerenti con le tecnologie e i linguaggi di programmazione selezionati. Ciascuna unità software deve rispettare le specifiche stabilite durante la progettazione di dettaglio.
+
+\subsubsection{Test di integrazione}
+\par TODO
+
+\subsubsection{Test di sistema}
+\par TODO
