@@ -87,3 +87,27 @@
 
 \subsubsection{Test di sistema}
 \par TODO
+
+\subsubsection{Test: Notazione}
+\par I test vengono identificati in modo univoco secondo questa notazione: 
+\par \quad \textbf{T.[Tipo].[Codice]}
+\par dove: 
+\begin{itemize}
+    \item \textbf{T}: indica la parola "test";
+    \item \textbf{Tipo}: indica la tipologia di test: 
+        \begin{itemize}
+            \item \textbf{U} (Unità); 
+            \item \textbf{I} (Integrazione);
+            \item \textbf{S} (Sistema);
+            \item \textbf{A} (Accettazione).
+        \end{itemize}
+    \item \textbf{Codice}: è un numero progressivo che identifica in modo univoco i test per ogni tipologia.
+\end{itemize}
+
+\subsubsection{Test: Stato}
+\par Ogni test è corredato da un flag che segnala il suo stato, aggiornato in base alla versione corrente del prodotto software. Il flag può assumere i seguenti valori:
+\begin{itemize}
+    \item \textbf{N-D}: test non definito (o non disponibile);
+    \item \textbf{S}: test eseguito con successo;
+    \item \textbf{F}: test fallito.
+\end{itemize}
