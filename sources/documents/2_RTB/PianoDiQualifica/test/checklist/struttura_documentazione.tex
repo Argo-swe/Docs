@@ -1,0 +1,51 @@
+\subsubsection{Struttura della documentazione}
+
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	% MAX 12.5cm
+  \begin{longtable}{|P{4.5cm}|>{\raggedright\arraybackslash}P{9cm}|}
+    \caption{Checklist - Struttura della documentazione}
+  	\label{tab:check-struttura-documentazione} \\
+    \hline
+		\textbf{Titolo} & \textbf{Descrizione} \\ 
+		\hline
+		\endfirsthead
+
+    \caption[]{Checklist - Struttura della documentazione (continua)} \\
+		\hline
+		\textbf{Titolo} & \textbf{Descrizione} \\ 
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{2}{|r|}{{Continua nella prossima pagina}} \\ 
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    Riferimento a documenti soggetti al versionamento & Quando viene menzionato il contenuto di un documento soggetto al versionamento, il riferimento deve riportare, oltre al nome del documento, anche il numero di versione.\\
+		\hline Riferimento a materiali online & Le risorse web, per loro stessa natura, sono mutevoli. Pertanto, il riferimento a materiali online deve riportare la data di ultimo accesso alla risorsa. Inoltre, il collegamento ipertestuale deve essere visibile direttamente come URL.\\
+    \hline Didascalie ed etichette & Tutte le immagini e le tabelle devono essere corredate da una didascalia che ne descriva il contenuto, e da un'etichetta univoca che funga da riferimento globale.\\
+    \hline Sezioni vuote o incomplete & Nessun documento deve contenere sezioni vuote o incomplete (ovvero sezioni il cui contenuto è descritto come "Todo").\\
+    \hline Suddivisione indice & L'indice dei documenti deve essere suddiviso in tre sezioni:
+    \begin{itemize}
+      \item Indice generale;
+      \item Elenco delle tabelle;
+      \item Elenco delle figure.
+    \end{itemize}\\
+    \hline Occorrenze multiple di un termine nel \Gls & Quando un termine definito nel \Gls\ appare più volte all'interno di un documento, tutte le ricorrenze devono essere formattate in corsivo e marcate con una lettera \ped{G} in pedice (a meno di non compromettere la leggibilità). \\
+    \hline Occorrenze multiple di un termine nel \Gls\ (verbali esterni) & Quando un termine definito nel \Gls\ appare più volte all'interno di un verbale esterno, solamente la prima ricorrenza deve essere formattata. \\
+    \hline Introduzione \Gls\ (verbali esterni) & L'introduzione del \Gls\ nei verbali esterni deve essere diversa rispetto a quella degli altri documenti.\\
+    \hline Punteggiatura elenchi puntati o numerati & La frase di introduzione di un elenco puntato o numerato deve terminare con i due punti. Le voci di un elenco, invece, devono finire con un punto se rappresentano la conclusione dell'elenco o sotto-elenco in questione, altrimenti con un punto e virgola.\\
+    \hline Formato delle date & Tutte le date non incluse in un paragrafo discorsivo devono apparire nella forma "AAAA-MM-GG".\\
+    \hline Indice di leggibilità & Le modifiche ai documenti devono rispettare la soglia di tollerabilità stabilita per l'Indice Gulpease.\\
+    \hline Distribuzione verbali esterni & Nella distribuzione dei verbali esterni deve essere menzionata, oltre al gruppo fornitore e ai Committenti, anche la Proponente.\\
+    \hline Ordinamento registro modifiche per data & Nel changelog, le modifiche devono essere ordinate dalla più recente alla più vecchia.\\
+    \hline Ordinamento task per ID & I task devono essere disposti in ordine crescente sulla base del loro ID. \\
+    \hline Menzione di un soggetto & Quando si menziona una persona, la formula da utilizzare è la seguente: "Nome Cognome". Per mantenere coerenza all’interno dei documenti e sfruttare i comandi \glossario{LaTeX}, il team ha adottato questa formula anche negli elenchi e nelle tabelle. Pertanto, i nomi non vengono disposti in ordine alfabetico, ma seguono l'ordinamento definito nel template globale. \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
+
