@@ -1,49 +1,60 @@
 \subsection{Scopo}
-Il processo di Certificazione della qualità mira a garantire che i prodotti software e i vari processi coinvolti nel ciclo di vita del progetto rispettino i requisiti definiti e si attengano ai piani stabiliti. L'obiettivo primario dell'assicurazione della qualità è garantire che tutto il lavoro svolto sia conforme agli standard e alle linee guida predefinite. È essenziale stabilire internamente parametri misurabili per valutare il grado di aderenza alle \glossario{best practices} dell'ingegneria del software, al fine di condurre un'autovalutazione e un miglioramento continuo del processo
+\par Il processo di certificazione della qualità mira a garantire che i prodotti software e i processi coinvolti nel ciclo di vita del progetto siano conformi ai requisiti e alle aspettative. L'obiettivo primario dell'accertamento della qualità è garantire che il lavoro svolto rispetti gli standard e le linee guida. È essenziale stabilire internamente parametri misurabili per valutare il grado di aderenza alle \glossario{best practice} dell'ingegneria del software, al fine di condurre un controllo e un miglioramento continuo dei processi. L'assicurazione della qualità può avvalersi dei risultati di altri processi di supporto (es.: verifica e validazione).
 
-\subsection{Processo}
+\subsection{Garanzia della qualità}
 
-Per garantire il raggiungimento e il mantenimento degli standard di qualità prefissati, viene adottato il metodo \glossario{PDCA}, che è un modello di gestione iterativo che aiuta a garantire il miglioramento continuo dei processi e dei prodotti all'interno di un'organizzazione e consente di adattarsi a cambiamenti nel lungo periodo. Il PDCA , noto anche come Ciclo di Deming, si divide in 4 fasi interconnesse:
-
+\par Per garantire il raggiungimento e il mantenimento degli standard di qualità prefissati, il team applica il ciclo di \glossario{PDCA}, un metodo di gestione iterativo che contribuisce al controllo e al miglioramento continuo dei processi e dei prodotti all'interno di un'organizzazione; consente inoltre di adattarsi a cambiamenti nel lungo periodo. Il PDCA, noto anche come ciclo di Deming, si divide in 4 fasi interconnesse:
 \begin{itemize}
-    \item Plan (Pianificare): in questa fase, vengono definiti gli obiettivi specifici e misurabili da raggiungere, nonché le strategie e le azioni necessarie per realizzarli. È importante identificare chiaramente le risorse disponibili, i tempi e le modalità di implementazione del piano;
-    \item Do (Fare): una volta pianificato, il piano viene messo in pratica. Questa fase coinvolge l'attuazione delle azioni pianificate, l'allocazione delle risorse e l'esecuzione delle attività secondo le specifiche stabilite nella fase precedente;
-    \item Check (Verificare): qui si valutano i risultati ottenuti confrontandoli con gli obiettivi pianificati e gli standard di qualità prefissati. La verifica comporta la raccolta e l'analisi dei dati pertinenti per determinare se i processi stanno procedendo come previsto e se si stanno raggiungendo gli obiettivi desiderati;
-    \item Act (Agire): sulla base dei risultati della fase di verifica, vengono identificate eventuali discrepanze o opportunità di miglioramento. In questa fase, si attuano le correzioni necessarie e si apportano le modifiche ai processi per eliminare le inefficienze e migliorare le prestazioni complessive.
+    \item \textbf{Plan} (Pianificare): in questa fase vengono definiti gli obiettivi di qualità da conseguire, nonché le strategie e le azioni necessarie per raggiungerli e misurarli. È importante identificare chiaramente le risorse disponibili, i tempi e le modalità di implementazione del piano. La pianificazione aiuta a stabilire obiettivi e processi necessari per fornire i risultati desiderati;
+    \item \textbf{Do} (Fare): una volta stabilito, il piano viene messo in pratica. Questa fase coinvolge l'attuazione delle azioni pianificate, l'allocazione delle risorse e l'esecuzione delle attività secondo le specifiche stabilite al passaggio precedente. Inoltre, vengono raccolti dati per la generazione di grafici e analisi;
+    \item \textbf{Check} (Verificare): in questa fase si valutano i risultati ottenuti confrontandoli con gli obiettivi pianificati e gli standard di qualità prefissati. Attraverso un insieme di indicatori, il team può determinare la qualità dei processi e verificare se i risultati prodotti sono in linea con le attese. I grafici dei dati possono agevolare il processo di test, in quanto è possibile osservare le tendenze di più cicli di PDCA;
+    \item \textbf{Act} (Agire): sulla base dei risultati della fase di verifica, vengono identificate eventuali discrepanze, non conformità, opportunità di miglioramento o inefficienze. Durante questa fase, si attuano azioni correttive per migliorare la qualità dei processi e del prodotto.
 \end{itemize}
-
-\subsection{Standard di riferimento}
-
-TODO.
 
 \subsection{Notazione delle metriche}
-Le metriche vengono identificate in modo univoco secondo questa notazione : M.Tipo.Codice
-Dove : 
+\par Le metriche vengono identificate in modo univoco secondo questa notazione: 
+\par \textbf{M.[Tipo].[Codice]}
+dove: 
 \begin{itemize}
-    \item M: identifica una “metrica”;
-    \item Tipo: è un numero da 1 a 4 che indica il tipo di metrica che si sta analizzando secondo 4 categorie: 
+    \item \textbf{M}: indica la parola "metrica";
+    \item \textbf{Tipo}: indica il tipo di qualità: 
         \begin{itemize}
-            \item 1: Metriche di prodotto e qualità software; 
-            \item 2: Metriche di processo e progetto;
-            \item 3: Metriche di gestione dei rischi;
-            \item 4: Metriche di documentazione.
+            \item \textbf{PC}: qualità di processo; 
+            \item \textbf{PD}: qualità di prodotto.
         \end{itemize}
-    \item Codice: è un numero progressivo all’interno delle 4 macroaree precedenti che identifica in modo univoco la metrica in base al tipo.
+    \item \textbf{Codice}: è un numero progressivo che identifica in modo univoco le metriche per ogni tipologia.
 \end{itemize}
-
-
 
 \subsection{Didascalia}
-Le metriche descritte in seguito saranno definite secondo questi campi: 
+Le metriche sono descritte dai seguenti campi:
 \begin{itemize}
-    \item Notazione specifica: in base alle norme sopra descritte;
-    \item Nome: nome della metrica;
-    \item Descrizione: descrizione della metrica;
-    \item Caratteristica di riferimento: una o più caratteristiche definite dagli standard di cui la metrica si occupa;
-    \item Motivo: ragione per cui è stata introdotta la metrica;
-    \item Misurazione: formula o strumenti con cui ricavare un valore quantificabile e tracciabile nel tempo.
-    %\item Range: range entro cui la metrica deve stare per un andamento ottimale    ;
-    %\item Modifiche nel tempo: in caso il range venga modificato nel tempo si tiene traccia dei valori e range precedenti e i motivi dei cambiamenti.
+    \item \textbf{Notazione}: segue le specifiche sopra elencate;
+    \item \textbf{Nome}: nome della metrica;
+    \item \textbf{Descrizione}: descrizione della metrica;
+    \item \textbf{Caratteristiche}: una o più caratteristiche definite dallo standard di riferimento. Questo campo è disponibile solo per le metriche di prodotto;
+    \item \textbf{Motivo}: ragione per cui la metrica viene misurata;
+    \item \textbf{Misurazione}: formula e/o strumenti con cui calcolare la metrica.
 \end{itemize}
+
+\subsection{Standard di riferimento per la qualità di prodotto}
+\par Per l'identificazione e la classificazione delle metriche, il team segue lo standard ISO/IEC 9126, che suddivide la qualità in: esterna (comportamento del software durante la sua esecuzione), interna (si applica al software non eseguibile) e in uso. Il modello di qualità è suddiviso in sei caratteristiche generali:
+\begin{itemize}
+    \item \textbf{Funzionalità}: capacità del software di fornire le funzioni necessarie per soddisfare esigenze specifiche operando in determinate condizioni;
+    \item \textbf{Affidabilità}: capacità del software di mantenere un determinato livello di prestazioni quando viene usato in condizioni specifiche per un certo periodo di tempo;
+    \item \textbf{Usabilità}: capacità del software di essere compreso dall'utente. L'usabilità comprende un insieme di attributi che incidono sullo sforzo necessario per l'uso del prodotto;
+    \item \textbf{Efficienza}: capacità del software di fornire prestazioni adeguate in relazione alla quantità di risorse usate;
+    \item \textbf{Manutenibilità}: capacità del software di essere modificato per includere correzioni, miglioramenti o adattamenti;
+    \item \textbf{Portabilità}: capacità del software di essere trasferito tra ambienti di lavoro diversi, che possono variare sia per hardware che per sistema operativo.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par La qualità in uso rappresenta il punto di vista dell'utente sul software. Nel contesto della qualità in uso, le metriche misurano le seguenti caratteristiche:
+\begin{itemize}
+    \item \textbf{Efficacia}: capacità del software di consentire agli utenti di raggiungere gli obiettivi desiderati con accuratezza e completezza;
+    \item \textbf{Produttività}: capacità del software di permettere agli utenti di impiegare una quantità di risorse appropriate in relazione all'efficacia ottenuta in un determinato contesto d'uso;
+    \item \textbf{Soddisfazione}: capacità del software di soddisfare gli utenti che ne usufruiscono;
+    \item \textbf{Sicurezza}: capacità del software di raggiungere livelli accettabili di rischio, indipendentemente dalla natura del rischio.
+\end{itemize}
+
 
 
