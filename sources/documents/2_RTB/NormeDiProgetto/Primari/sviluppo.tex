@@ -66,10 +66,46 @@ Data tale classificazione, i requisiti vengono identificati da un indice univoco
 Dove \emph{R} sta per Requisito, \emph{Tipologia} è la sigla associata alla categoria del requisito, \emph{Importanza} è la sigla per il valore di importanza e \emph{Codice} è un valore numerico univoco.\\
 Descrivere le fonti è una pratica necessaria per orientare sia l'Analista che gli altri membri del gruppo verso una definizione più ampia e chiara del requisito, per cui ciascuna fonte di un requisito viene indicata assieme alla sua descrizione.
 
-
 \subsubsection{Progettazione}\label{progettazione}
-\paragraph{Descrizione}
-L'attività, svolta dal Progettista segue quella di analisi e ha il compito di impostare un'\glossario{architettura} del software capace di soddisfare i requisiti definiti. Il Progettista sviluppa l'architettura attraverso la creazione di unità e di relazioni tra loro, utilizzando opportunamente dei \glossario{design pattern} architetturali.\\
+\subsubsubsection{Scopo}
+\par L'attività di progettazione segue quella di analisi e ha lo scopo di definire un'architettura per il prodotto capace di soddisfare i requisiti specificati nell’\AnalisiDeiRequisiti. Questa attività viene svolta dai progettisti e prevede l'utilizzo di stili e pattern architetturali. La progettazione ha dunque il compito di assicurare il soddisfacimento delle caratteristiche individuate durante l'analisi. In genere, l'architettura è un sistema formato da componenti, che raggruppano delle unità software composte da uno o più moduli.
+
+\par Una buona architettura dovrebbe possedere i seguenti attributi di qualità misurabili:
+\begin{itemize}
+  \item \textbf{Sufficienza}: adeguato livello di soddisfacimento dei requisiti;
+  \item \textbf{Modularità}: scomposizione in elementi distinti tra loro e con compiti non sovrapposti;
+  \item \textbf{Robustezza}: tolleranza a diverse classi di input;
+  \item \textbf{Flessibilità}: capacità di adattarsi a cambiamenti sia adattivi che evolutivi;
+  \item \textbf{Riusabilità}: agevola il riuso dei componenti in altri contesti;
+  \item \textbf{Efficienza}: utilizzo ottimale delle risorse;
+  \item \textbf{Affidabilità}: capacità di mantenere il livello di prestazioni in condizioni specifiche;
+  \item \textbf{Semplicità}: minimizza i componenti ed evita l'introduzione di soluzioni o dettagli troppo complessi;
+  \item \textbf{Incapsulamento}: nasconde i dettagli implementativi (black-box), con l'obiettivo di ridurre le dipendenze e aumentare la riusabilità e la manutenibilità;
+  \item \textbf{Coesione}: gli elementi che concorrono agli stessi obiettivi devono essere raggruppati nello stesso componente;
+  \item \textbf{Basso accoppiamento}: limita le dipendenze tra elementi distinti.
+\end{itemize}
+
+\subsubsubsection{Proof of Concept}\label{poc}
+Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione \glossario{RTB} è la dimostrazione della validità delle tecnologie scelte dal team. Sulla base delle richieste e delle necessità espresse dalla \glossario{Proponente}, il team valuta i pro e contro delle tecnologie disponibili, considerando fattori come la curva di apprendimento, le prestazioni e la modernità. Una volta ultimata la scelta tecnologica, i progettisti e i programmatori devono realizzare un \glossario{Proof of Concept}. Qualora il team ritenesse le tecnologie selezionate inadeguate, i progettisti e i programmatori saranno responsabili della realizzazione di un ulteriore Proof of Concept (PoC), avvalendosi, ove possibile, delle soluzioni già sviluppate. Lo scopo del \glossario{Poc} è:
+\begin{itemize}
+  \item Verificare la fattibilità del progetto;
+  \item Dimostrare che il team è in grado di soddisfare i requisiti mediante l'uso delle tecnologie scelte;
+  \item Acquisire un controllo quanto più completo delle tecnologie;
+  \item Ricevere un feedback dalla \glossario{Proponente} in merito al grado di conformità delle soluzioni sviluppate rispetto al capitolato.
+\end{itemize}
+
+\subsubsubsection{Fasi di progettazione}\label{fasi-progettazione}
+\par Seguendo il modello di sviluppo a V, l'attività di progettazione è suddivisa in due fasi: 
+\begin{itemize}
+  \item \textbf{Progettazione logica};
+  \item \textbf{Progettazione di dettaglio}.
+\end{itemize}
+
+\subsubsubsection{Progettazione logica}\label{progettazione-logica}
+\par TODO
+
+\subsubsubsection{Progettazione di dettaglio}\label{progettazione-dettaglio}
+\par TODO
 
 \subsubsection{Codifica e testing}\label{codificatesting}
 \paragraph{Descrizione}
