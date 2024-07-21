@@ -121,22 +121,28 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
   \item Definizione delle specifiche dei test di unità.
 \end{itemize}
 
+\subsubsubsection{Specifica tecnica}\label{specifica-tecnica}
+\par La fase di progettazione deve essere documentata in modo chiaro ed esaustivo, poiché costituisce la base fondamentale per le successive attività di codifica e testing del software. Le scelte progettuali sono dettagliate nel documento 'Specifica tecnica', la cui stesura inizia al termine della prima fase della revisione \glossario{RTB}.
 
 \subsubsection{Codifica e testing}\label{codificatesting}
-\paragraph{Descrizione}
-La codifica segue l'attività di progettazione e viene svolta dal Programmatore. Ha lo scopo di trasformare l'architettura prodotta dal Progettista in codice rispettando le norme definite per ottenere codice mantenibile e di qualità. Il testing è una parte stessa dell'attività di codifica, necessaria ad assicurare la correttezza di ciascuna unità software.
 
-\paragraph{Elementi comuni di stile}
+\subsubsubsection{Scopo}
+\par La codifica, effettuata dai programmatori, ha l'obiettivo di sviluppare il software in conformità con le specifiche architetturali definite dai progettisti. I programmatori traducono la struttura del sistema in codice sorgente utilizzando uno o più linguaggi di programmazione. Questa fase influisce sia sul testing che sulla manutenzione del software. Durante lo sviluppo, è essenziale che i programmatori aderiscano agli standard di programmazione stabiliti.
+
+\subsubsubsection{Elementi comuni di stile}
 \begin{itemize}
-  \item La lingua da utilizzare nella nomenclatura di termini all'interno del codice è inglese, sono esenti commenti o contenuti di testo che necessitano la lingua italiana;
-  \item Sezioni incomplete vanno indicate con un commento contenente "TODO", sezioni di codice non funzionanti o da rivedere vanno indicate con un commento contenente "FIXME" per una individuazione più semplice e una ricerca agevolata all'interno del codice.
+  \item \textbf{Nomi autoesplicativi} (self-explanatory): i nomi di classi, metodi e variabili devono essere sufficientemente descrittivi da rendere chiaro il loro significato, scopo o contenuto senza necessità di ulteriori commenti esplicativi, salvo nei casi in cui la complessità del codice lo richieda. È fondamentale trovare un equilibrio tra lunghezza e chiarezza descrittiva;
+  \item \textbf{Lingua}: utilizzare la lingua inglese per la nomenclatura all'interno del codice sorgente, inclusi i commenti;
+  \item \textbf{Sezioni incomplete}: devono essere indicate con un commento preceduto dalla dicitura "TODO";
+  \item \textbf{Sezioni in attesa di revisione o miglioramento}: vanno indicate con un commento preceduto dalla dicitura "FIXME";
+  \item \textbf{Indentazione}: utilizzare quattro spazi o un carattere di tabulazione.
 \end{itemize}
 
-\paragraph{Python}
+\subsubsubsection{Python}
 \begin{itemize}
-  \item \textbf{Tab size:} 4;
-  \item \textbf{Nome delle variabili:} minuscolo;
-  \item \textbf{Nome dei metodi:} camelCase;
+  \item \textbf{Tab size}: 4;
+  \item \textbf{Nome delle variabili}: minuscolo;
+  \item \textbf{Nome dei metodi}: camelCase;
 \end{itemize}
 
 \paragraph{JavaScript/TypeScript}
@@ -145,12 +151,12 @@ TODO
 \paragraph{CSS}
 
 \begin{itemize}
-  \item \textbf{Organizzazione:} Il CSS è organizzato in tre sezioni:
+  \item \textbf{Organizzazione}: Il CSS è organizzato in tre sezioni:
   \begin{itemize}
-    \item \textbf{Layout:} nella cartella \texttt{frontend/src/assets/layout}, dove sono presenti i file CSS che definiscono la struttura generale del layout dell'applicazioni, comprendendo classi comuni per la gestione di griglie, allineamenti e margini;
-    \item \textbf{Componente:} CSS del singolo componente, utile a definire la sua caratteristica disposizione, è descritto nel file stesso del componente, in modo da mantenere la modularità;
-    \item \textbf{Temi:} nella cartella \texttt{frontend/public/themes}, che contiene cartelle di temi CSS che definiscono l'aspetto estetico, applicabile all'applicazione, ad esempio tema scuro e chiaro sono definiti in questa cartella.
+    \item \textbf{Layout}: nella cartella \texttt{frontend/src/assets/layout}, dove sono presenti i file CSS che definiscono la struttura generale del layout dell'applicazioni, comprendendo classi comuni per la gestione di griglie, allineamenti e margini;
+    \item \textbf{Componente}: CSS del singolo componente, utile a definire la sua caratteristica disposizione, è descritto nel file stesso del componente, in modo da mantenere la modularità;
+    \item \textbf{Temi}: nella cartella \texttt{frontend/public/themes}, che contiene cartelle di temi CSS che definiscono l'aspetto estetico, applicabile all'applicazione, ad esempio tema scuro e chiaro sono definiti in questa cartella.
   \end{itemize}
-  \item \textbf{Nome delle classi:} kebab-case;
-  \item \textbf{Nome degli id:} kebab-case;
+  \item \textbf{Nome delle classi}: kebab-case;
+  \item \textbf{Nome degli id}: kebab-case;
 \end{itemize}
