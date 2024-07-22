@@ -130,20 +130,83 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \par La codifica, effettuata dai programmatori, ha l'obiettivo di sviluppare il software in conformità con le specifiche architetturali definite dai progettisti. I programmatori traducono la struttura del sistema in codice sorgente utilizzando uno o più linguaggi di programmazione. Questa fase influisce sia sul testing che sulla manutenzione del software. Durante lo sviluppo, è essenziale che i programmatori aderiscano agli standard di programmazione stabiliti.
 
 \subsubsubsection{Elementi comuni di stile}
+\par Di seguito sono riportati gli elementi comuni di stile:
 \begin{itemize}
   \item \textbf{Nomi autoesplicativi} (self-explanatory): i nomi di classi, metodi e variabili devono essere sufficientemente descrittivi da rendere chiaro il loro significato, scopo o contenuto senza necessità di ulteriori commenti esplicativi, salvo nei casi in cui la complessità del codice lo richieda. È fondamentale trovare un equilibrio tra lunghezza e chiarezza descrittiva;
   \item \textbf{Lingua}: utilizzare la lingua inglese per la nomenclatura all'interno del codice sorgente, inclusi i commenti;
-  \item \textbf{Sezioni incomplete}: devono essere indicate con un commento preceduto dalla dicitura "TODO";
+  \item \textbf{Abbreviazioni}: utilizzare abbreviazioni e acronimi consolidati o riconosciuti dalla comunità informatica;
+  \item \textbf{Sezioni incomplete}: vanno indicate con un commento preceduto dalla dicitura "TODO";
   \item \textbf{Sezioni in attesa di revisione o miglioramento}: vanno indicate con un commento preceduto dalla dicitura "FIXME";
-  \item \textbf{Indentazione}: utilizzare quattro spazi o un carattere di tabulazione.
+  \item \textbf{Indentazione}: utilizzare quattro spazi o un carattere di tabulazione;
+  \item \textbf{Spaziatura}: aggiungere uno spazio attorno agli operatori binari e ternari per migliorare la leggibilità del codice.
 \end{itemize}
 
-\subsubsubsection{Python}
+\subsubsubsection{Stile di codifica: Python}
+\paragraph*{Struttura dei file}
 \begin{itemize}
-  \item \textbf{Tab size}: 4;
-  \item \textbf{Nome delle variabili}: minuscolo;
-  \item \textbf{Nome dei metodi}: camelCase;
+  \item \textbf{Import}: insieme di istruzioni per includere moduli, librerie o pacchetti nello script:
+  \begin{itemize}
+    \item Librerie interne o moduli personalizzati;
+    \item Librerie standard o di terze parti.
+  \end{itemize}
+  \item \textbf{Variabili globali}: variabili accessibili in tutto il programma;
+  \item \textbf{Classi}: definiscono un tipo di oggetto o raggruppano funzioni di utilità.
 \end{itemize}
+
+\paragraph*{Struttura delle classi}
+\begin{itemize}
+  \item \textbf{Riferimenti}: lista di classi base (ereditarietà) o interfaccia implementata;
+  \item \textbf{Costruttore}: metodo speciale chiamato \verb|__init__| (inizializzatore);
+  \item \textbf{Metodi}: funzioni definite all'interno di una classe;
+  \item \textbf{Attributi}: variabili definite all'interno di una classe.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par La documentazione del codice sorgente deve essere conforme alle linee guida di Google relative alla scrittura di \glossario{docstring} in Python. In particolare:
+\begin{itemize}
+  \item Ogni classe deve essere corredata da:
+  \begin{itemize}
+    \item Panoramica del ruolo o dello scopo della classe;
+    \item Descrizione dettagliata (opzionale);
+    \item Lista degli argomenti richiesti del costruttore;
+    \item Lista degli attributi, accompagnati da una breve descrizione; 
+    \item Lista dei metodi.
+  \end{itemize}
+  \item Ogni metodo deve essere corredato da:
+  \begin{itemize}
+    \item Panoramica del comportamento e della funzionalità del metodo;
+    \item Descrizione dettagliata (opzionale);
+    \item Lista degli argomenti, accompagnati da una breve descrizione; 
+    \item Lista degli eventuali valori di ritorno, accompagnati da una breve descrizione;
+    \item Lista delle eventuali eccezioni sollevate, accompagnate da una breve descrizione.
+  \end{itemize}
+\end{itemize}
+
+\paragraph*{Best practices}
+\begin{itemize}
+  \item \textbf{Import}: importare moduli, librerie o pacchetti all'inizio del file, evitando l'uso dell'asterisco;
+  \item \textbf{Self}: utilizzare la parola chiave "self" per riferirsi all'istanza dell'oggetto su cui viene chiamato un metodo;
+  \item \textbf{Metodi setter e getter}: utilizzare metodi dedicati per interagire con gli attributi, evitando l'accesso diretto alle proprietà di una classe;
+  \item \textbf{Concordanza nomi attributi-argomenti}: gli argomenti di un metodo devono avere lo stesso nome degli attributi corrispondenti nella classe;
+  \item \textbf{Lunghezza massima riga (codice)}: 79 caratteri;
+  \item \textbf{Lunghezza massima riga (commenti)}: 72 caratteri;
+  \item \textbf{Lunghezza massima riga (docstring)}: 72 caratteri.
+\end{itemize}
+
+\paragraph*{Convenzioni sintattiche}
+\begin{itemize}
+  \item \textbf{Nomenclatura}: seguire le convenzioni stabilite da PEP 8;
+  \item \textbf{Nomi della classi}: \glossario{PascalCase};
+  \item \textbf{Nomi dei metodi}: \glossario{camelCase};
+  \item \textbf{Nomi delle variabili}: \glossario{snake\_case};
+  \item \textbf{Nomi delle costanti}: \glossario{UPPER\_SNAKE\_CASE};
+  \item \textbf{Commenti}: utilizzare il simbolo \# per i commenti;
+  \item \textbf{Docstring}: utilizzare il simbolo """ per i commenti;
+  \item \textbf{Stringhe}: utilizzare il simbolo ' oppure ''' per le stringhe.
+\end{itemize}
+
+\paragraph*{Formattazione del codice}
+\par Il team aderisce alle convenzioni di formattazione stabilite da PEP 8 (Python Enhancement Proposal 8), la guida ufficiale per lo stile di codifica Python pubblicata dalla Python Software Foundation (PSF). Il rispetto delle linee guida è assicurato e automatizzato tramite uno strumento integrato nell'estensione Python di Visual Studio Code.
 
 \paragraph{JavaScript/TypeScript}
 TODO
