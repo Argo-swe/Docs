@@ -2,62 +2,68 @@
 \subsection{Ordine del giorno}
 \begin{itemize}
 	\item Analisi dell'andamento dello \glossario{sprint} in vista del diario di bordo;
-	\item Esposizione delle funzionalità di \glossario{Jira} e organizzazione della migrazione da \glossario{GitHub} a \glossario{Jira Software};
+	\item Esposizione delle funzionalità di \glossario{Jira} e organizzazione della migrazione da \glossario{GitHub} a Jira;
 	\item Pianificazione delle attività da svolgere entro la fine dello \glossario{sprint}.
 \end{itemize}
 
 \subsection{Discussione e decisioni}
-\par All'inizio del meeting il gruppo ha discusso le attività svolte durante la prima settimana di \glossario{sprint}.
+\par All'inizio del meeting, il gruppo ha discusso le attività svolte durante la prima settimana di \glossario{sprint}.
+
 \subsubsection{Programmatore} \label{sec:programmatore}
-\par Il Programmatore ha descritto brevemente le tecnologie studiate e ha mostrato al team i test svolti su una versione preliminare del \glossario{dizionario dati} (definita con l'intento di comprendere il funzionamento dei \glossario{modelli}). Sono stati esposti inoltre i dubbi e le difficoltà riscontrate, con un confronto collettivo per mitigare i problemi.
+\par Il programmatore ha descritto brevemente le tecnologie studiate e ha mostrato al team i test svolti su una versione preliminare del \glossario{dizionario dati} (definita con l'intento di comprendere il funzionamento dei \glossario{modelli}). Sono stati esposti inoltre i dubbi e le difficoltà riscontrate, con un confronto collettivo per mitigare i problemi.
+
 \par Di seguito sono riportati i punti della discussione:
 \begin{itemize}
-	\item È stato necessario l'impiego di \glossario{txtai} che richiedeva del materiale per svolgere i test: per questo è stato utilizzato un \glossario{dizionario dati} prelevato da un \glossario{database} di esempio (\glossario{chinook}) di \glossario{SQLite};
-	\item L'idea iniziale è stata quella di prendere uno schema di \glossario{database}, in formato \glossario{JSON}, che potesse essere analizzato assieme alla richiesta (in linguaggio naturale) dell'utente e restituire la porzione di \glossario{dizionario dati} relativa alla richiesta originale e un punteggio che ne indicasse l'accuratezza;
-	\item È emerso un problema che coinvolgeva il formato \glossario{JSON}; quest'ultimo, infatti, non si armonizzava con il \glossario{modello}, che prediligeva invece documenti in linguaggio naturale;
-	\item Il Programmatore ha spiegato che \glossario{txtai} si occupa della generazione e archiviazione di \glossario{embeddings}, ovvero \glossario{vettori} rappresentanti specifici documenti (ad esempio frasi, nel nostro caso), all'interno di un \glossario{indice}, per facilitare la comparazione con uno schema già precedentemente indicizzato;
-	\item Il Programmatore ha consigliato, per il prossimo \glossario{sprint}, di assegnare più risorse al ruolo di programmatore, in modo da disporre di maggior personale impiegato nella risoluzione dei problemi incontrati;
-	\item Il team ha deciso di confermare il Programmatore attuale anche per l’iterazione successiva, cosicché l'apprendimento delle tecnologie e la condivisione delle conoscenze possano risultare più immediati;
-	\item Si è discussa la possibilità di modificare il formato del \glossario{dizionario dati} (in modo che il linguaggio risulti meno complesso per il \glossario{modello}) o, in alternativa, trovare un \glossario{modello} che supporti la lettura del \glossario{dizionario dati} nel formato richiesto;
-	\item Il gruppo ha valutato lo sviluppo di un \glossario{parser} per convertire il \glossario{dizionario dati} dal formato \glossario{JSON} a un formato in linguaggio naturale.
+	\item L'impiego di \glossario{txtai} richiedeva del materiale per svolgere i test; per questo il programmatore aveva utilizzato un \glossario{dizionario dati} prelevato da un \glossario{database} di esempio (\glossario{chinook}) di \glossario{SQLite};
+	\item L'idea iniziale era quella di prendere uno schema di \glossario{database}, in formato \glossario{JSON}, che potesse essere analizzato assieme alla richiesta (in linguaggio naturale) dell'utente e restituire la porzione di dizionario dati pertinente alla richiesta originale e un punteggio che ne indicasse l'accuratezza;
+	\item Era emerso un problema che coinvolgeva il formato \glossario{JSON}; quest'ultimo, infatti, non si armonizzava con il \glossario{modello}, che prediligeva invece documenti in linguaggio naturale;
+	\item Il programmatore ha spiegato che \glossario{txtai} si occupa della generazione e archiviazione di \glossario{embeddings}, ovvero \glossario{vettori} rappresentanti specifici documenti (ad esempio frasi, nel nostro caso), all'interno di un \glossario{indice}, per facilitare la comparazione con uno schema già indicizzato;
+	\item Il programmatore ha consigliato, per il prossimo \glossario{sprint}, di assegnare più risorse al ruolo di programmatore, in modo da disporre di maggior personale impiegato nella risoluzione dei problemi;
+	\item Il team ha deciso di confermare il programmatore attuale anche per lo sprint successivo, cosicché l'apprendimento delle tecnologie e la condivisione delle conoscenze possano risultare più immediati;
+	\item Si è discussa la possibilità di modificare il formato del dizionario dati (in modo che il linguaggio risulti meno complesso per il modello) o, in alternativa, trovare un modello che supporti la lettura del dizionario dati nel formato richiesto;
+	\item Il gruppo ha valutato lo sviluppo di un \glossario{parser} per convertire il dizionario dati dal formato JSON a un formato in linguaggio naturale.
 \end{itemize}
 
 \subsubsection{Amministratore}
-\par L'Amministratore ha illustrato le modifiche effettuate al template \glossario{LaTeX} e ha aggiornato il gruppo sulla stesura del \Gls. È stata evidenziata la necessità di chiarire con il Prof. Tullio Vardanega il criterio col quale inserire i termini nel \Gls. Relativamente al \Gls, si è discusso anche se il documento fosse a uso interno o esterno. Questi dubbi verranno esposti nel diario di bordo del 26 aprile 2024.
+\par L'amministratore ha illustrato le modifiche effettuate al template \glossario{LaTeX} e ha aggiornato il gruppo sulla stesura del \Gls. È stata evidenziata la necessità di chiarire con il Professor Tullio Vardanega il criterio col quale inserire i termini nel \Gls. Relativamente al \Gls, si è discusso anche se il documento fosse a uso interno o esterno. Questi dubbi verranno esposti nel diario di bordo del 26 aprile.
 
 \subsubsection{Progettista}
-\par Il team ha esaminato la struttura del \glossario{dizionario dati}, in formato \glossario{JSON}, che il Progettista ha usato come prototipo in fase di apprendimento delle tecnologie. Durante la prima settimana di \glossario{sprint}, il Progettista ha anche studiato la possibile composizione del \glossario{prompt} da fornire in output all'utente.
+\par Il team ha esaminato la struttura del \glossario{dizionario dati}, che il progettista ha usato come prototipo in fase di apprendimento delle tecnologie. Durante la prima settimana di \glossario{sprint}, il progettista ha anche studiato la possibile composizione del \glossario{prompt} da fornire in output all'utente.
 
 \subsubsection{Analista}
-\par La discussione si è poi spostata sul documento di \AdR\ e sulla sua conversione in \glossario{LateX}. Entro la fine dello \glossario{sprint}, verrà finalizzata la conversione in \glossario{LaTeX} e, contestualmente, verranno sviluppati i \glossario{casi d'uso}.
+\par La discussione si è poi spostata sul documento di \AdR\ e sulla sua conversione in \glossario{LateX}. Entro la fine dello sprint, verrà finalizzata la conversione in LaTeX e, contestualmente, verranno sviluppati i \glossario{casi d'uso}.
 
-\subsubsection{Jira Software}
-\par Sono state esposte al gruppo le funzionalità essenziali di \glossario{Jira}, specialmente la creazione del \glossario{diagramma di Gantt} in fase di pianificazione dello \glossario{sprint}. In aggiunta, l'Amministratore ha illustrato il sistema di apertura dei \glossario{ticket}, l'interazione con le \glossario{pull request} di \glossario{GitHub} e la prassi da seguire per automatizzare il cambio di stato dei task.
+\subsubsection{Jira}
+\par Sono state esposte al gruppo le funzionalità essenziali di \glossario{Jira}, specialmente la creazione del \glossario{diagramma di Gantt} in fase di pianificazione. In aggiunta, l'amministratore ha illustrato il sistema di apertura dei \glossario{ticket}, l'interazione con le \glossario{pull request} di \glossario{GitHub} e la prassi da seguire per automatizzare il cambio di stato dei task.
 
 \subsubsection{Punti da trattare nel prossimo diario di bordo}
-\par Il gruppo ha discusso i punti salienti da trattare nel diario di bordo del 26 aprile 2024.
+\par Il gruppo ha discusso i punti salienti da trattare nel diario di bordo del 26 aprile.
+
 \paragraph{Done}
 \begin{itemize}
-	\item Passaggio a \glossario{Jira Software} come \glossario{Issue Tracking System};
+	\item Passaggio a \glossario{Jira} come \glossario{Issue Tracking System};
 	\item Studio preliminare delle tecnologie (\glossario{txtai} e interazione tra i \glossario{modelli} e il \glossario{dizionario dati} in formato \glossario{JSON});
-	\item Definizione del \glossario{dizionario dati};
-	\item Avanzamento scrittura dei documenti (\PdP, \NdP, \AdR, \Gls);
-	\item Consuntivo primo \glossario{sprint};
+	\item Definizione del dizionario dati;
+	\item Avanzamento scrittura dei documenti;
+	\item Consuntivo del primo \glossario{sprint};
 	\item Modifica del template \glossario{LaTeX} (modifiche estetiche e funzionali).
 \end{itemize}
+
 \paragraph{Difficoltà}
 \begin{itemize}
 	\item Gestione delle attività di natura organizzativa su \glossario{GitHub};
-	\item Configurazione di \glossario{Jira Software}.
-\end{itemize}	
+	\item Configurazione di \glossario{Jira}.
+\end{itemize}
+
 \paragraph{Todo}
 \begin{itemize}
-	\item Aggiornamento migliorativo della pianificazione futura nel consuntivo;
+	\item Aggiornamento migliorativo della pianificazione nel consuntivo;
 	\item Stesura del \PdQ;
-	\item Approfondire la funzionalità di debug nel documento di \AdR\ (come suggerito dalla \glossario{Proponente});
+	\item Approfondimento della funzionalità di debug nel documento di \AdR\ (come suggerito dalla \glossario{Proponente});
 	\item Individuazione delle tecnologie di sviluppo per la \glossario{web app};
-	\item Inserimento nel \Gls\ dei termini individuati durante la stesura dei documenti di progetto.	
+	\item Inserimento nel \Gls\ dei termini identificati durante la stesura dei documenti.	
 \end{itemize}
+
 \paragraph{Dubbi}
 \begin{itemize}
 	\item \Gls\ come documento interno o esterno;
@@ -67,4 +73,4 @@
 \end{itemize}
 
 \vspace{0.5\baselineskip}
-\par Gli argomenti sopracitati sono stati riportati nella presentazione per il diario di bordo del 26 aprile 2024.
+\par Gli argomenti sopracitati sono stati riportati nella presentazione per il diario di bordo del 26 aprile.
