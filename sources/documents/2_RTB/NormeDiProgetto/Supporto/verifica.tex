@@ -58,54 +58,5 @@
   \item \textbf{Test di sistema}.
 \end{itemize}
 
-\subsubsection{Test di unità}
-\par I test di unità sono una categoria di test del software che si focalizza sulla verifica del corretto funzionamento dei singoli moduli del codice. In genere, una “unità” è la più piccola porzione o segmento (una funzione, un metodo o una classe) testabile in modo autonomo e isolato all’interno del sistema. I test di unità vengono definiti durante la progettazione di dettaglio con l’obiettivo di individuare difetti o malfunzionamenti. La maggior parte dei difetti rilevati tramite analisi dinamica (circa 2/3 del totale) deriva dall’esecuzione dei test di unità. A ogni unità software può essere associata una suite o batteria di test. Nelle fasi iniziali dello sviluppo, il team potrebbe riscontrare delle difficoltà nel testare singole unità, poiché alcuni moduli potrebbero essere incompleti o non disponibili. Pertanto, sono stati introdotti degli strumenti a supporto dell'analisi dinamica:
-\begin{itemize}
-  \item \textbf{Stub} (o metodo stub): simula una funzionalità del sistema (non ancora codificata e non oggetto di test) come parte del processo di testing di un’unità software;
-  \item \textbf{Driver}: componente di supporto che controlla l'esecuzione dei test e aiuta a configurare l'ambiente. Sostituisce il modulo chiamante di una funzionalità sotto test;
-  \item \textbf{Mock object}: simula il comportamento di oggetti reali in condizioni controllate; può fornire una risposta preimpostata.
-\end{itemize}
-
 \vspace{0.5\baselineskip}
-\par I test di unità si dividono in due categorie:
-\begin{itemize}
-  \item \textbf{Test funzionali} (black-box): utilizzano dati di ingresso capaci di provocare l’esito atteso. L'obiettivo è accertare che, fornito un determinato input e definita un'aspettativa di output, l'esecuzione di una funzionalità generi il comportamento previsto. I test black-box contribuiscono a misurare quante specifiche e requisiti funzionali sono soddisfatti dal prodotto software. Non possono valutare la correttezza e la completezza della logica interna dell’unità, pertanto devono essere integrati con test strutturali;
-  \item \textbf{Test strutturali} (white-box): verificano la struttura interna dell’unità software, esaminando i cammini di esecuzione all’interno dell’unità stessa. L'obiettivo è valutare il funzionamento interno del software, analizzando la logica, i flussi di controllo e la copertura del codice.
-\end{itemize}
-
-\vspace{0.5\baselineskip}
-\par Per l'esecuzione dei test funzionali e strutturali, il team utilizza strumenti di automazione appropriati e coerenti con le tecnologie e i linguaggi di programmazione selezionati. Ciascuna unità software deve rispettare le specifiche stabilite durante la progettazione di dettaglio.
-
-\subsubsection{Test di integrazione}
-\par I test di integrazione vengono definiti durante la progettazione architetturale e si basano sui componenti in essa specificati. L’integrazione può essere di tipo incrementale, aumentando il valore funzionale a ogni passo. Questo approccio prevede che i componenti vengano integrati in insiemi già verificati, agevolando la rimozione di eventuali difetti o malfunzionamenti in seguito a cambiamenti. Lo scopo dei test di integrazione è rilevare difetti di design o una scarsa qualità dei test di unità, garantendo che i dati scambiati attraverso ciascuna interfaccia siano conformi alle specifiche. Vi sono due modalità di integrazione incrementale:
-\begin{itemize}
-  \item \textbf{Bottom-up}: l’integrazione avviene partendo dai moduli più interni al sistema, che sono meno visibili a livello utente e possiedono un minor numero di dipendenze funzionali. Questa strategia richiede l’uso di pochi stub, ma può rallentare la fornitura di servizi di "alto livello". Nell’approccio bottom-up, i driver vengono utilizzati per testare i moduli nei layer inferiori, qualora i moduli nei layer superiori siano ancora incompleti;
-  \item \textbf{Top-down}: l’integrazione avviene partendo dai moduli più esterni, che possiedono un maggior numero di dipendenze funzionali e sono quindi di maggior interesse per l’utente. Questa strategia richiede l'uso di molti stub per simulare i moduli mancanti, consentendo di integrare fin da subito le funzionalità di "alto livello".
-\end{itemize}
-
-\subsubsection{Test di sistema}
-\par I test di sistema verificano il comportamento dinamico dell'intero sistema rispetto ai requisiti specificati nel documento di \AnalisiDeiRequisiti. Questa fase della verifica ha inizio al completamento dei test di unità e di integrazione, ed è il precursore del collaudo. I test di sistema sono inerentemente funzionali (black-box) e, pertanto, non dovrebbero richiedere conoscenza della logica interna del software. L’ambiente di esecuzione dovrebbe essere simile a quello di produzione, al fine di replicare le condizioni reali di utilizzo del sistema. I test di sistema coprono il software nel suo complesso, verificando tutte le funzionalità integrate e interconnesse.
-
-\subsubsection{Test: Notazione}
-\par I test vengono identificati in modo univoco secondo questa notazione: 
-\par \quad \textbf{T.[Tipo].[Codice]}
-\par dove: 
-\begin{itemize}
-    \item \textbf{T}: indica la parola "test";
-    \item \textbf{Tipo}: indica la tipologia di test: 
-        \begin{itemize}
-            \item \textbf{U} (Unità); 
-            \item \textbf{I} (Integrazione);
-            \item \textbf{S} (Sistema);
-            \item \textbf{A} (Accettazione).
-        \end{itemize}
-    \item \textbf{Codice}: è un numero progressivo che identifica in modo univoco i test per ogni tipologia.
-\end{itemize}
-
-\subsubsection{Test: Stato}
-\par Ogni test è corredato da un flag che segnala il suo stato, aggiornato in base alla versione corrente del prodotto software. Il flag può assumere i seguenti valori:
-\begin{itemize}
-    \item \textbf{N-D}: test non definito (o non disponibile);
-    \item \textbf{S}: test eseguito con successo;
-    \item \textbf{F}: test fallito.
-\end{itemize}
+\par La classificazione dettagliata dei test è disponibile nella \sezione{testing-codice}.
