@@ -146,8 +146,8 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \begin{itemize}
   \item \textbf{Import}: insieme di istruzioni per includere moduli, librerie o pacchetti nello script:
   \begin{itemize}
-    \item Librerie interne o moduli personalizzati;
-    \item Librerie standard o di terze parti.
+    \item Librerie standard o di terze parti;
+    \item Librerie interne o moduli personalizzati.
   \end{itemize}
   \item \textbf{Variabili globali}: variabili accessibili in tutto il programma;
   \item \textbf{Classi}: definiscono un tipo di oggetto o raggruppano funzioni di utilità.
@@ -208,7 +208,7 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \paragraph*{Formattazione del codice}
 \par Il team aderisce alle convenzioni di formattazione stabilite da PEP 8 (Python Enhancement Proposal 8), la guida ufficiale per lo stile di codifica Python pubblicata dalla Python Software Foundation (PSF). Il rispetto delle linee guida è assicurato e automatizzato tramite uno strumento integrato nell'estensione Python di Visual Studio Code.
 
-\paragraph{Componenti e viste Vue}
+\subsubsubsection{Componenti e viste Vue}
 \begin{itemize}
   \item \textbf{Nome dei file:} PascalCase;
 \end{itemize}
@@ -220,13 +220,31 @@ Un componente/vista contiene 3 sezioni:
 \end{itemize}
 Queste sezioni appaiono nel file del componente, nell'ordine: \textbf{script}, \textbf{template}, \textbf{style}.
 
-\paragraph{JavaScript/TypeScript}
+\subsubsubsection{Stile di codifica: JavaScript/TypeScript (Vue.js)}
+\paragraph*{Struttura dei file}
+\begin{itemize}
+  \item \textbf{Import}: insieme di istruzioni per includere componenti, servizi o altre dipendenze nello script:
+  \begin{itemize}
+    \item Dipendenze esterne;
+    \item Dipendenze interne.
+  \end{itemize}
+  \item \textbf{Variabili}: variabili reattive, props, variabili computed, variabili locali, variabili di riferimento a oggetti o funzioni di utilità;
+  \item \textbf{Funzioni}: definiscono la logica di un componente o rappresentano funzioni di utilità.
+\end{itemize}
+
+\paragraph*{Struttura dei componenti}
+\begin{itemize}
+  \item \textbf{Setup}: utilizzare il blocco \verb|<script setup>| oppure la funzione "defineComponent" con il blocco \verb|<script>|;
+  \item \textbf{Export} (opzionale): esporta il componente per renderlo accessibile dall'esterno. Il blocco \verb|<script setup>| gestisce automaticamente l'esportazione del componente;
+  \item 
+\end{itemize}
+
 \begin{itemize}
   \item \textbf{Nome delle variabili:} camelCase;
   \item \textbf{Nome dei metodi:} camelCase;
 \end{itemize}
 
-\paragraph{CSS}
+\subsubsubsection{CSS}
 
 \begin{itemize}
   \item \textbf{Organizzazione}: Il CSS è organizzato in tre sezioni:
