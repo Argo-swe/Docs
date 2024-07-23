@@ -210,17 +210,17 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \paragraph*{Formattazione del codice}
 \par Il team aderisce alle convenzioni di formattazione stabilite da PEP 8 (Python Enhancement Proposal 8), la guida ufficiale per lo stile di codifica Python pubblicata dalla Python Software Foundation (PSF). Il rispetto delle linee guida è assicurato e automatizzato tramite uno strumento integrato nell'estensione Python di Visual Studio Code.
 
-\subsubsubsection{Struttura font-end}
-Il front-end è contenuto nella cartella \texttt{frontend}; al suo interno contiene le seguenti cartelle principali:
+\subsubsubsection{Struttura front-end}
+\par Il front-end contiene le seguenti cartelle principali:
 \begin{itemize}
+  \item \textbf{public}: risorse statiche come immagini, temi e favicon;
   \item \textbf{src/components}: componenti riutilizzabili;
-  \item \textbf{src/components/layout}: componenti che definiscono la struttura generale dell'applicazione, come header, footer, sidebar;
-  \item \textbf{src/views}: pagine principali;
-  \item \textbf{src/services}: servizi per la gestione delle chiamate API;
-  \item \textbf{src/assets}: risorse come font e css generale del layout;
-  \item \textbf{src/locales}: traduzioni del contenuto dell'interfaccia in diverse lingue;
-  \item \textbf{src/router}: definizione delle rotte dell'applicazione;
-  \item \textbf{public}: risorse statiche come immagini, temi e favicon.
+  \item \textbf{src/components/layout}: componenti che definiscono la struttura generale dell'applicazione (es.: header, footer, sidebar);
+  \item \textbf{src/views}: pagine dell'applicazione;
+  \item \textbf{src/services}: moduli per la gestione delle interazioni con servizi interni o esterni (chiamate API, autenticazione, messaggi, servizi di utilità);
+  \item \textbf{src/assets}: risorse come font e fogli di stile del layout;
+  \item \textbf{src/locales}: file JSON per la gestione dell'interfaccia multilingua;
+  \item \textbf{src/router}: definizione delle \glossario{route}.
 \end{itemize}
 
 \subsubsubsection{Componenti (Vue.js)}
@@ -313,7 +313,82 @@ Il front-end è contenuto nella cartella \texttt{frontend}; al suo interno conti
   \item \textbf{Visual Studio Code}.
 \end{itemize}
 
-\subsubsection{Testing del codice}\label{testing}
-\par Il testing è un'attività necessaria ad assicurare la correttezza di ciascuna unità software.
+\subsubsection{Testing del codice}\label{testing-codice}
+\par Il testing ha lo scopo di verificare il comportamento di ciascuna unità software; viene condotto in parallelo all'attività di codifica. Di seguito sono riportate le tipologie di test che il team si impegna a eseguire come parte integrante del processo di verifica.
 
-\par TODO (da mettere i punti già definiti in Verifica)
+\subsubsubsection{Tipologie di test}
+\par I test eseguiti nella fase antecedente la convalida sono suddivisi in tre categorie principali:
+\begin{itemize}
+  \item \textbf{Test di unità};
+  \item \textbf{Test di integrazione};
+  \item \textbf{Test di sistema}.
+\end{itemize}
+
+\subsubsubsection{Test di unità}
+\par I test di unità sono una categoria di test del software che si focalizza sulla verifica del corretto funzionamento dei singoli moduli del codice. In genere, una “unità” è la più piccola porzione o segmento (una funzione, un metodo o una classe) testabile in modo autonomo e isolato all’interno del sistema. I test di unità vengono definiti durante la progettazione di dettaglio con l’obiettivo di individuare difetti o malfunzionamenti. La maggior parte dei difetti rilevati tramite analisi dinamica (circa 2/3 del totale) deriva dall’esecuzione dei test di unità. A ogni unità software può essere associata una suite o batteria di test. Nelle fasi iniziali dello sviluppo, il team potrebbe riscontrare delle difficoltà nel testare singole unità, poiché alcuni moduli potrebbero essere incompleti o non disponibili. Pertanto, sono stati introdotti degli strumenti a supporto dell'analisi dinamica:
+\begin{itemize}
+  \item \textbf{Stub} (o metodo stub): simula una funzionalità del sistema (non ancora codificata e non oggetto di test) come parte del processo di testing di un’unità software;
+  \item \textbf{Driver}: componente di supporto che controlla l'esecuzione dei test e aiuta a configurare l'ambiente. Sostituisce il modulo chiamante di una funzionalità sotto test;
+  \item \textbf{Mock object}: simula il comportamento di oggetti reali in condizioni controllate; può fornire una risposta preimpostata.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par I test di unità si dividono in due categorie:
+\begin{itemize}
+  \item \textbf{Test funzionali} (black-box): utilizzano dati di ingresso capaci di provocare l’esito atteso. L'obiettivo è accertare che, fornito un determinato input e definita un'aspettativa di output, l'esecuzione di una funzionalità generi il comportamento previsto. I test black-box contribuiscono a misurare quante specifiche e requisiti funzionali sono soddisfatti dal prodotto software. Non possono valutare la correttezza e la completezza della logica interna dell’unità, pertanto devono essere integrati con test strutturali;
+  \item \textbf{Test strutturali} (white-box): verificano la struttura interna dell’unità software, esaminando i cammini di esecuzione all’interno dell’unità stessa. L'obiettivo è valutare il funzionamento interno del software, analizzando la logica, i flussi di controllo e la copertura del codice.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Per l'esecuzione dei test funzionali e strutturali, il team utilizza strumenti di automazione appropriati e coerenti con le tecnologie e i linguaggi di programmazione selezionati. Ciascuna unità software deve rispettare le specifiche stabilite durante la progettazione di dettaglio.
+
+\subsubsubsection{Test di integrazione}
+\par I test di integrazione vengono definiti durante la progettazione architetturale e si basano sui componenti in essa specificati. L’integrazione può essere di tipo incrementale, aumentando il valore funzionale a ogni passo. Questo approccio prevede che i componenti vengano integrati in insiemi già verificati, agevolando la rimozione di eventuali difetti o malfunzionamenti in seguito a cambiamenti. Lo scopo dei test di integrazione è rilevare difetti di design o una scarsa qualità dei test di unità, garantendo che i dati scambiati attraverso ciascuna interfaccia siano conformi alle specifiche. Vi sono due modalità di integrazione incrementale:
+\begin{itemize}
+  \item \textbf{Bottom-up}: l’integrazione avviene partendo dai moduli più interni al sistema, che sono meno visibili a livello utente e possiedono un minor numero di dipendenze funzionali. Questa strategia richiede l’uso di pochi stub, ma può rallentare la fornitura di servizi di "alto livello". Nell’approccio bottom-up, i driver vengono utilizzati per testare i moduli nei layer inferiori, qualora i moduli nei layer superiori siano ancora incompleti;
+  \item \textbf{Top-down}: l’integrazione avviene partendo dai moduli più esterni, che possiedono un maggior numero di dipendenze funzionali e sono quindi di maggior interesse per l’utente. Questa strategia richiede l'uso di molti stub per simulare i moduli mancanti, consentendo di integrare fin da subito le funzionalità di "alto livello".
+\end{itemize}
+
+\subsubsubsection{Test di sistema}
+\par I test di sistema verificano il comportamento dinamico dell'intero sistema rispetto ai requisiti specificati nel documento di \AnalisiDeiRequisiti. Questa fase della verifica ha inizio al completamento dei test di unità e di integrazione, ed è il precursore del collaudo. I test di sistema sono inerentemente funzionali (black-box) e, pertanto, non dovrebbero richiedere conoscenza della logica interna del software. L’ambiente di esecuzione dovrebbe essere simile a quello di produzione, al fine di replicare le condizioni reali di utilizzo del sistema. I test di sistema coprono il software nel suo complesso, verificando tutte le funzionalità integrate e interconnesse.
+
+\subsubsubsection{Test: Notazione}
+\par I test vengono identificati in modo univoco secondo questa notazione: 
+\par \quad \textbf{T.[Tipo].[Codice]}
+\par dove: 
+\begin{itemize}
+    \item \textbf{T}: indica la parola "test";
+    \item \textbf{Tipo}: indica la tipologia di test: 
+        \begin{itemize}
+            \item \textbf{U} (Unità); 
+            \item \textbf{I} (Integrazione);
+            \item \textbf{S} (Sistema);
+            \item \textbf{A} (Accettazione).
+        \end{itemize}
+    \item \textbf{Codice}: è un numero progressivo che identifica in modo univoco i test per ogni tipologia.
+\end{itemize}
+
+\subsubsubsection{Test: Stato}
+\par Ogni test è corredato da un flag che segnala il suo stato, aggiornato in base alla versione corrente del prodotto software. Il flag può assumere i seguenti valori:
+\begin{itemize}
+    \item \textbf{N-D}: test non definito (o non disponibile);
+    \item \textbf{S}: test eseguito con successo;
+    \item \textbf{F}: test fallito.
+\end{itemize}
+
+\subsubsubsection{Strumenti}
+\begin{itemize}
+  \item \textbf{GitHub};
+  \item \textbf{Visual Studio Code}.
+\end{itemize}
+
+\subsubsection{Integrazione software}
+\par Il team adotta la pratica di \glossario{continuous integration} (CI), che consiste nell’allineamento frequente delle modifiche con l’ambiente condiviso. La cronologia dello sviluppo viene mantenuta in un ramo chiamato develop, mentre nel branch principale è registrata la cronologia dei rilasci. A partire dal branch develop, ciascun membro del team può creare un ramo di feature, orientato allo sviluppo di nuove funzionalità, alla definizione di test o alla correzione di bug. Una volta completate le modifiche, viene aperta una pull request per richiedere la verifica del codice. Come definito nella \sezione{sec:pull_request}, ciascuna pull request deve essere opportunamente etichettata.
+
+\par Il processo di integrazione continua implica l’automazione delle fasi di build e test. Pertanto, quando viene aperta una pull request, GitHub Actions avvia un workflow che esegue i test di unità, di integrazione e di sistema definiti nel \PianoDiQualifica. L’obiettivo del team è garantire che il ramo di sviluppo rimanga stabile e il più possibile privo di difetti.
+
+\subsubsubsection{Strumenti}
+\begin{itemize}
+  \item \textbf{GitHub};
+  \item \textbf{GitHub Actions}.
+\end{itemize}
