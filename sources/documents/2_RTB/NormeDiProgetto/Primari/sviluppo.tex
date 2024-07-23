@@ -210,6 +210,19 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \paragraph*{Formattazione del codice}
 \par Il team aderisce alle convenzioni di formattazione stabilite da PEP 8 (Python Enhancement Proposal 8), la guida ufficiale per lo stile di codifica Python pubblicata dalla Python Software Foundation (PSF). Il rispetto delle linee guida è assicurato e automatizzato tramite uno strumento integrato nell'estensione Python di Visual Studio Code.
 
+\subsubsubsection{Struttura font-end}
+Il front-end è contenuto nella cartella \texttt{frontend}; al suo interno contiene le seguenti cartelle principali:
+\begin{itemize}
+  \item \textbf{src/components}: componenti riutilizzabili;
+  \item \textbf{src/components/layout}: componenti che definiscono la struttura generale dell'applicazione, come header, footer, sidebar;
+  \item \textbf{src/views}: pagine principali;
+  \item \textbf{src/services}: servizi per la gestione delle chiamate API;
+  \item \textbf{src/assets}: risorse come font e css generale del layout;
+  \item \textbf{src/locales}: traduzioni del contenuto dell'interfaccia in diverse lingue;
+  \item \textbf{src/router}: definizione delle rotte dell'applicazione;
+  \item \textbf{public}: risorse statiche come immagini, temi e favicon.
+\end{itemize}
+
 \subsubsubsection{Componenti (Vue.js)}
 \par Un SFC (Single File Component) è suddiviso in 3 sezioni:
 \begin{itemize}
