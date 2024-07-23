@@ -95,7 +95,7 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \end{itemize}
 
 \subsubsubsection{Fasi di progettazione}\label{fasi-progettazione}
-\par Seguendo il modello di sviluppo a V, l'attività di progettazione è suddivisa in due fasi: 
+\par L'attività di progettazione è suddivisa in due fasi: 
 \begin{itemize}
   \item \textbf{Progettazione logica};
   \item \textbf{Progettazione di dettaglio}.
@@ -129,7 +129,7 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \subsubsubsection{Scopo}
 \par La codifica, effettuata dai programmatori, ha l'obiettivo di sviluppare il software in conformità con le specifiche architetturali definite dai progettisti. I programmatori traducono la struttura del sistema in codice sorgente utilizzando uno o più linguaggi di programmazione. Questa fase influisce sia sul testing che sulla manutenzione del software. Durante lo sviluppo, è essenziale che i programmatori aderiscano agli standard di programmazione stabiliti.
 
-\subsubsubsection{Elementi comuni di stile}
+\subsubsubsection{Elementi comuni di stile}\label{sec:elementi-comuni-stile}
 \par Di seguito sono riportati gli elementi comuni di stile:
 \begin{itemize}
   \item \textbf{Nomi autoesplicativi} (self-explanatory): i nomi di classi, metodi e variabili devono essere sufficientemente descrittivi da rendere chiaro il loro significato, scopo o contenuto senza necessità di ulteriori commenti esplicativi, salvo nei casi in cui la complessità del codice lo richieda. È fondamentale trovare un equilibrio tra lunghezza e chiarezza descrittiva;
@@ -161,6 +161,7 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
   \item \textbf{Attributi}: variabili definite all'interno di una classe.
 \end{itemize}
 
+\paragraph*{Documentazione del codice}
 \vspace{0.5\baselineskip}
 \par La documentazione del codice sorgente deve essere conforme alle linee guida di Google relative alla scrittura di \glossario{docstring} in Python. In particolare:
 \begin{itemize}
@@ -168,13 +169,13 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
   \begin{itemize}
     \item Panoramica del ruolo o dello scopo della classe;
     \item Descrizione dettagliata (opzionale);
-    \item Lista degli argomenti richiesti del costruttore;
+    \item Lista degli argomenti del costruttore;
     \item Lista degli attributi, accompagnati da una breve descrizione; 
     \item Lista dei metodi.
   \end{itemize}
   \item Ogni metodo deve essere corredato da:
   \begin{itemize}
-    \item Panoramica del comportamento e della funzionalità del metodo;
+    \item Panoramica del comportamento o della funzionalità del metodo;
     \item Descrizione dettagliata (opzionale);
     \item Lista degli argomenti, accompagnati da una breve descrizione; 
     \item Lista degli eventuali valori di ritorno, accompagnati da una breve descrizione;
@@ -196,31 +197,43 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \paragraph*{Convenzioni sintattiche}
 \begin{itemize}
   \item \textbf{Nomenclatura}: seguire le convenzioni stabilite da PEP 8;
+  \item \textbf{Nomi dei file}: \glossario{snake\_case};
   \item \textbf{Nomi della classi}: \glossario{PascalCase};
-  \item \textbf{Nomi dei metodi}: \glossario{snake\_case};
-  \item \textbf{Nomi delle variabili}: \glossario{snake\_case};
+  \item \textbf{Nomi dei metodi}: snake\_case;
+  \item \textbf{Nomi delle variabili}: snake\_case;
   \item \textbf{Nomi delle costanti}: \glossario{UPPER\_SNAKE\_CASE};
-  \item \textbf{Commenti}: utilizzare il simbolo \# per i commenti;
-  \item \textbf{Docstring}: utilizzare il simbolo \verb|"""| per i commenti;
+  \item \textbf{Commenti}: utilizzare il simbolo \verb|#| per i commenti;
+  \item \textbf{Docstring}: utilizzare il simbolo \verb|"""| per le docstring;
   \item \textbf{Stringhe}: utilizzare il simbolo \verb|'| oppure \verb|'''| per le stringhe.
 \end{itemize}
 
 \paragraph*{Formattazione del codice}
 \par Il team aderisce alle convenzioni di formattazione stabilite da PEP 8 (Python Enhancement Proposal 8), la guida ufficiale per lo stile di codifica Python pubblicata dalla Python Software Foundation (PSF). Il rispetto delle linee guida è assicurato e automatizzato tramite uno strumento integrato nell'estensione Python di Visual Studio Code.
 
-\subsubsubsection{Componenti e viste Vue}
+\subsubsubsection{Componenti (Vue.js)}
+\par Un SFC (Single File Component) è suddiviso in 3 sezioni:
 \begin{itemize}
-  \item \textbf{Nome dei file:} PascalCase;
+  \item \textbf{Script}: definisce la logica e il comportamento del componente. Il tag da utilizzare è \verb|<script setup>|, che gestisce automaticamente l'esportazione del componente e migliora la leggibilità e la concisione;
+  \item \textbf{Template}: definisce la struttura del componente;
+  \item \textbf{Style}: definisce lo stile e l'aspetto del componente.
 \end{itemize}
-Un componente/vista contiene 3 sezioni:
-\begin{itemize}
-  \item \textbf{Script}: codice JavaScript/TypeScript che gestisce la logica del componente;
-  \item \textbf{Template}: HTML della struttura del componente;
-  \item \textbf{Style}: CSS dell'aspetto del componente.
-\end{itemize}
-Queste sezioni appaiono nel file del componente, nell'ordine: \textbf{script}, \textbf{template}, \textbf{style}.
 
-\subsubsubsection{Stile di codifica: JavaScript/TypeScript (Vue.js)}
+\vspace{0.5\baselineskip}
+\par Queste sezioni appaiono nell'ordine: \textbf{script}, \textbf{template}, \textbf{style}.
+
+\paragraph*{Best practices}
+\begin{itemize}
+  \item \textbf{Riusabilità}: creare componenti riutilizzabili, evitando la duplicazione del codice;
+  \item \textbf{Numero di componenti per file}: definire un solo componente per ogni file;
+  \item \textbf{Funzioni di utilità}: raggruppare le funzioni di utilità in classi dedicate, evitando di includere le "utility" all'interno dei componenti che ne usufruiscono.
+\end{itemize}
+
+\paragraph*{Convenzioni sintattiche}
+\begin{itemize}
+  \item \textbf{Nome dei file}: \glossario{kebab-case}.
+\end{itemize}.
+
+\subsubsubsection{Stile di codifica: JavaScript/TypeScript}
 \paragraph*{Struttura dei file}
 \begin{itemize}
   \item \textbf{Import}: insieme di istruzioni per includere componenti, servizi o altre dipendenze nello script:
@@ -228,36 +241,66 @@ Queste sezioni appaiono nel file del componente, nell'ordine: \textbf{script}, \
     \item Dipendenze esterne;
     \item Dipendenze interne.
   \end{itemize}
-  \item \textbf{Variabili}: variabili reattive, props, variabili computed, variabili locali, variabili di riferimento a oggetti o funzioni di utilità;
-  \item \textbf{Funzioni}: definiscono la logica di un componente o rappresentano funzioni di utilità.
+  \item \textbf{Variabili};
+  \item \textbf{Funzioni}.
 \end{itemize}
 
-\paragraph*{Struttura dei componenti}
+\paragraph*{Documentazione del codice}
+\vspace{0.5\baselineskip}
+\par La documentazione del codice sorgente deve essere conforme al formato \glossario{JSDoc}, compatibile sia con JavaScript che con TypeScript.
+
+\paragraph*{Convenzioni sintattiche}
 \begin{itemize}
-  \item \textbf{Setup}: utilizzare il blocco \verb|<script setup>| oppure la funzione "defineComponent" con il blocco \verb|<script>|;
-  \item \textbf{Export} (opzionale): esporta il componente per renderlo accessibile dall'esterno. Il blocco \verb|<script setup>| gestisce automaticamente l'esportazione del componente;
-  \item 
+  \item \textbf{Nomi dei file}: \glossario{kebab-case};
+  \item \textbf{Nomi della classi}: \glossario{PascalCase};
+  \item \textbf{Nomi delle funzioni}: \glossario{camelCase};
+  \item \textbf{Nomi delle variabili}: camelCase;
+  \item \textbf{Nomi delle costanti}: \glossario{UPPER\_SNAKE\_CASE};
+  \item \textbf{Commenti}: utilizzare il simbolo \verb|//| per i commenti;
+  \item \textbf{Blocchi JSDoc}: utilizzare il simbolo \verb|/** ... */| per i blocchi JSDoc.
 \end{itemize}
 
+\paragraph*{Formattazione del codice}
+\par Il team aderisce alle convenzioni di formattazione stabilite da \glossario{Prettier}. Prettier può essere integrato in Visual Studio Code ed è compatibile con \glossario{ESLint}.
+
+\subsubsubsection{Stile di codifica: CSS}
+\par Il team aderisce alle regole di formattazione e stile per CSS definite al seguente indirizzo: \href{https://google.github.io/styleguide/htmlcssguide.html}{https://google.github.io/styleguide/htmlcssguide.html} (ultimo accesso: 2024-07-23), con alcune eccezioni (vedi \ref{sec:elementi-comuni-stile}). Il codice CSS è organizzato in tre sezioni:
 \begin{itemize}
-  \item \textbf{Nome delle variabili:} camelCase;
-  \item \textbf{Nome dei metodi:} camelCase;
+  \item \textbf{Layout}: disposizione generale degli elementi all'interno dell'applicazione; include classi per la gestione di griglie, allineamenti e margini;
+  \item \textbf{Componente}: stile di un singolo componente; definisce le sue proprietà distintive e le sue caratteristiche visive;
+  \item \textbf{Tema}: personalizzazione dell'aspetto estetico (tema chiaro/scuro).
 \end{itemize}
 
-\subsubsubsection{CSS}
-
+\paragraph*{Convenzioni sintattiche}
 \begin{itemize}
-  \item \textbf{Organizzazione}: Il CSS è organizzato in tre sezioni:
-  \begin{itemize}
-    \item \textbf{Layout}: nella cartella \texttt{frontend/src/assets/layout}, dove sono presenti i file CSS che definiscono la struttura generale del layout dell'applicazioni, comprendendo classi comuni per la gestione di griglie, allineamenti e margini;
-    \item \textbf{Componente}: CSS del singolo componente, utile a definire la sua caratteristica disposizione, è descritto nel file stesso del componente, in modo da mantenere la modularità;
-    \item \textbf{Temi}: nella cartella \texttt{frontend/public/themes}, che contiene cartelle di temi CSS che definiscono l'aspetto estetico, applicabile all'applicazione, ad esempio tema scuro e chiaro sono definiti in questa cartella.
-  \end{itemize}
+  \item \textbf{Nomi dei file}: \glossario{kebab-case};
+  \item \textbf{Nome delle proprietà}: kebab-case;
+  \item \textbf{Commenti}: utilizzare il simbolo \verb|/* ... */| per i commenti.
+\end{itemize}
+
+\subsubsubsection{Stile di codifica: HTML}
+\par Il team aderisce alle regole di formattazione e stile per HTML definite al seguente indirizzo: \href{https://google.github.io/styleguide/htmlcssguide.html}{https://google.github.io/styleguide/htmlcssguide.html} (ultimo accesso: 2024-07-23), con alcune eccezioni (vedi \sezione{sec:elementi-comuni-stile}).
+
+\paragraph*{Best practices}
+\begin{itemize}
+  \item \textbf{Attributi ARIA}: utilizzare attributi ARIA per migliorare l'accessibilità.
+\end{itemize}
+
+\paragraph*{Convenzioni sintattiche}
+\begin{itemize}
+  \item \textbf{Nomi dei file}: \glossario{kebab-case};
   \item \textbf{Nome delle classi}: kebab-case;
   \item \textbf{Nome degli id}: kebab-case;
+  \item \textbf{Commenti}: utilizzare il simbolo \verb|<!-- ... -->| per i commenti.
 \end{itemize}
 
-\subsubsection{Testing}\label{testing}
+\subsubsubsection{Strumenti}
+\begin{itemize}
+  \item \textbf{Git};
+  \item \textbf{Visual Studio Code}.
+\end{itemize}
+
+\subsubsection{Testing del codice}\label{testing}
 \par Il testing è un'attività necessaria ad assicurare la correttezza di ciascuna unità software.
 
 \par TODO (da mettere i punti già definiti in Verifica)
