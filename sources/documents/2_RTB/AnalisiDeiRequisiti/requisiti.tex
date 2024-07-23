@@ -51,11 +51,11 @@
     \hline
     \textbf{RF.O.2} & Il sistema deve restituire un messaggio d'errore in caso di fallimento del login. & \hyperref[UC2]{UC2}\\
     \hline
-    \textbf{RF.O.3} & L'Utente deve poter inserire una richiesta in linguaggio naturale. & \hyperref[UC3]{UC3}, Capitolato\\
+    \textbf{RF.O.3} & Il sistema deve generare un \glossario{prompt} in risposta alla richiesta dell'Utente. & \hyperref[UC3]{UC3}, Capitolato\\
     \hline
     \textbf{RF.O.4} & L'Utente deve poter selezionare un \glossario{dizionario dati} da utilizzare nel sistema. & \hyperref[UC4]{UC4}, Capitolato\\
     \hline
-    \textbf{RF.O.5} & Il sistema deve generare un \glossario{prompt} in risposta alla richiesta dell'Utente. & \hyperref[UC5]{UC5}, Capitolato\\
+    \textbf{RF.O.5} & L'Utente deve poter inserire una richiesta in linguaggio naturale. & \hyperref[UC5]{UC5}, Capitolato\\
     \hline
     \textbf{RF.O.6} & L'Utente deve visualizzare un avviso in caso venga formulata una richiesta non idonea. & \hyperref[UC6]{UC6}\\
     \hline
@@ -188,6 +188,22 @@
     \textbf{RF.OP.53} & Quando l'Utente ripete più volte lo stesso messaggio, il ChatBOT restituisce la risposta formulata alla prima occorrenza del messaggio. & Verbale interno \\
     \hline
     \textbf{RF.OP.54} & Il sistema deve accertarsi che la query \glossario{SQL} restituita da un servizio esterno come ChatGPT sia valida e funzionante. & Capitolato \\
+    \hline
+    \textbf{RF.O.55} & Il dizionario dati deve essere fornito tramite un file JSON. & Capitolato, verbale interno \\
+    \hline
+    \textbf{RF.O.56} & Il dizionario dati deve rispettare uno schema predefinito. In particolare, il dizionario deve rispecchiare la struttura di un database, e contenere descrizioni delle tabelle e dei rispettivi campi. & Capitolato, verbale interno \\
+    \hline
+    \textbf{RF.O.57} & La dimensione del dizionario dati deve essere inferiore a 1MB. & Verbale interno \\
+    \hline
+    \textbf{RF.OP.58} & Il dizionario dati può essere anche un \glossario{dump SQL} (esportabile direttamente da una base di dati). & Verbale interno \\
+    \hline
+    \textbf{RF.O.59} & L'applicazione deve avere un design responsive. & Verbale interno \\
+    \hline
+    \textbf{RF.O.60} & Il sistema deve permettere agli utenti di cambiare il colore del tema dell'interfaccia da chiaro a scuro. & Verbale interno \\
+    \hline
+    \textbf{RF.D.61} & Il sistema deve permettere agli utenti di cambiare la scala degli elementi dell'interfaccia, ovvero ingrandire o ridurre la dimensione dei componenti sullo schermo. & Verbale interno \\
+    \hline
+    \textbf{RF.OP.62} & Il sistema deve permettere agli utenti di cambiare la lingua dell'interfaccia da italiano a inglese e viceversa. Le modifiche devono essere applicate senza necessità di riavviare l'applicazione. & Verbale interno \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
@@ -233,14 +249,6 @@
     \textbf{RQ.O.6} & Deve essere fornito un manuale per chiunque voglia estendere l'applicazione. & Capitolato \\
     \hline
     \textbf{RQ.D.7} & Il sistema di generazione del prompt deve avere un'alta recall, per evitare di escludere elementi rilevanti. & Verbale esterno 2024-05-22 \\
-    \hline
-    \textbf{RQ.O.8} & L'applicazione deve avere un design responsive. & Verbale interno \\
-    \hline
-    \textbf{RQ.O.9} & Il sistema deve permettere agli utenti di cambiare il colore del tema dell'interfaccia da chiaro a scuro. & Verbale interno \\
-    \hline
-    \textbf{RQ.D.10} & Il sistema deve permettere agli utenti di cambiare la scala degli elementi dell'interfaccia, ovvero ingrandire o ridurre la dimensione dei componenti sullo schermo. & Verbale interno \\
-    \hline
-    \textbf{RQ.OP.11} & Il sistema deve permettere agli utenti di cambiare la lingua dell'interfaccia da italiano a inglese e viceversa. Le modifiche devono essere applicate senza necessità di riavviare l'applicazione. & Verbale interno \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
@@ -273,47 +281,37 @@
     \hline
 		\endlastfoot
 
-    \textbf{RV.O.1} & L'applicazione deve essere organica. Le funzionalità del prodotto devono essere incorporate in un unico sistema che permetta di utilizzarle in modo integrato. & Capitolato \\
+    \textbf{RV.O.1} & Sviluppo di un applicativo web-based. & Verbale esterno 2024-04-09 \\
     \hline
-    \textbf{RV.O.2} & Sviluppo di un applicativo web-based. & Verbale esterno 2024-04-09 \\
+    \textbf{RV.O.2} & Il \glossario{back-end} dell'applicazione deve essere implementato utilizzando il linguaggio \glossario{Python} versione 3.10.12. & Verbale interno \\
     \hline
-    \textbf{RV.O.3} & Il \glossario{dizionario dati} deve essere fornito tramite un file JSON. & Capitolato, verbale interno \\
+    \textbf{RV.O.3} & Il back-end dell'applicazione deve importare la libreria \glossario{FastAPI} versione 0.110.0 o successive. & Verbale interno \\
     \hline
-    \textbf{RV.O.4} & Il dizionario dati deve rispettare uno schema predefinito. In particolare, il dizionario deve rispecchiare la struttura di un database, e contenere descrizioni delle tabelle e dei rispettivi campi. & Capitolato, verbale interno \\
+    \textbf{RV.O.4} & Il back-end dell'applicazione deve importare la libreria \glossario{txtai} versione 7.0.0 o successive. & Verbale interno \\
     \hline
-    \textbf{RV.O.5} & La dimensione del dizionario dati deve essere inferiore a 1MB. & Verbale interno \\
+    \textbf{RV.O.5} & Il back-end dell'applicazione deve utilizzare modelli di \glossario{sentence similarity} per la generazione dei dati vettoriali. & Verbale esterno 2024-05-06 \\
     \hline
-    \textbf{RV.OP.6} & Il dizionario dati può essere anche un \glossario{dump SQL} (esportabile direttamente da una base di dati). & Verbale interno \\
+    \textbf{RV.O.6} & Il \glossario{front-end} dell'applicazione deve essere implementato utilizzando \glossario{Node.js} versione 20.14.0. & Verbale interno \\
     \hline
-    \textbf{RV.O.7} & Il \glossario{back-end} dell'applicazione deve essere implementato utilizzando il linguaggio \glossario{Python} versione 3.10.12. & Verbale interno \\
+    \textbf{RV.O.7} & Il front-end dell'applicazione deve essere implementato utilizzando \glossario{Vue.js} versione 3.4.21. & Verbale interno \\
     \hline
-    \textbf{RV.O.8} & Il back-end dell'applicazione deve importare la libreria \glossario{FastAPI} versione 0.110.0 o successive. & Verbale interno \\
+    \textbf{RV.O.8} & L'applicazione deve essere accessibile e fruibile da dispositivi mobili con sistema operativo Android versione 13 e successive. & Verbale interno \\
     \hline
-    \textbf{RV.O.9} & Il back-end dell'applicazione deve importare la libreria \glossario{txtai} versione 7.0.0 o successive. & Verbale interno \\
+    \textbf{RV.O.9} & L'applicazione deve essere accessibile e fruibile da dispositivi mobili con sistema operativo iOS versione 17 e successive. & Verbale interno \\
     \hline
-    \textbf{RV.O.10} & Il back-end dell'applicazione deve utilizzare modelli di \glossario{sentence similarity} per la generazione dei dati vettoriali. & Verbale esterno 2024-05-06 \\
+    \textbf{RV.O.10} & L'applicazione deve essere compatibile con il browser Google Chrome versione 110 e successive. & Verbale interno \\
     \hline
-    \textbf{RV.O.11} & Il \glossario{front-end} dell'applicazione deve essere implementato utilizzando \glossario{Node.js} versione 20.14.0. & Verbale interno \\
+    \textbf{RV.O.11} & L'applicazione deve essere compatibile con il browser Mozilla Firefox versione 109 e successive. & Verbale interno \\
     \hline
-    \textbf{RV.O.12} & Il front-end dell'applicazione deve essere implementato utilizzando \glossario{Vue.js} versione 3.4.21. & Verbale interno \\
+    \textbf{RV.O.12} & L'applicazione deve essere compatibile con il browser Safari versione 15 e successive. & Verbale interno \\
     \hline
-    \textbf{RV.O.13} & L'applicazione deve essere accessibile e fruibile da dispositivi mobili con sistema operativo Android versione 13 e successive. & Verbale interno \\
+    \textbf{RV.D.13} & L'applicazione deve essere compatibile con il browser Opera versione 94 e successive. & Verbale interno \\
     \hline
-    \textbf{RV.O.14} & L'applicazione deve essere accessibile e fruibile da dispositivi mobili con sistema operativo iOS versione 17 e successive. & Verbale interno \\
+    \textbf{RV.O.14} & L'applicazione deve essere compatibile con il browser Microsoft Edge versione 110 e successive. & Verbale interno \\
     \hline
-    \textbf{RV.O.15} & L'applicazione deve essere compatibile con il browser Google Chrome versione 110 e successive. & Verbale interno \\
+    \textbf{RV.D.15} & L'applicazione deve essere sviluppata, testata e distribuita mediante \glossario{Docker}. & Verbale interno \\
     \hline
-    \textbf{RV.O.16} & L'applicazione deve essere compatibile con il browser Mozilla Firefox versione 109 e successive. & Verbale interno \\
-    \hline
-    \textbf{RV.O.17} & L'applicazione deve essere compatibile con il browser Safari versione 15 e successive. & Verbale interno \\
-    \hline
-    \textbf{RV.D.18} & L'applicazione deve essere compatibile con il browser Opera versione 94 e successive. & Verbale interno \\
-    \hline
-    \textbf{RV.O.19} & L'applicazione deve essere compatibile con il browser Microsoft Edge versione 110 e successive. & Verbale interno \\
-    \hline
-    \textbf{RV.D.20} & L'applicazione deve essere sviluppata, testata e distribuita mediante \glossario{Docker}. & Verbale interno \\
-    \hline
-    \textbf{RV.OP.21} & I colori di primo piano e di sfondo devono avere un rapporto di contrasto di almeno 4.5:1 per testo di dimensioni "normali", e almeno 3:1 per testo grande (linee guida WCAG 2.1, livello di conformità AA). & Verbale interno \\
+    \textbf{RV.OP.16} & I colori di primo piano e di sfondo devono avere un rapporto di contrasto di almeno 4.5:1 per testo di dimensioni "normali", e almeno 3:1 per testo grande (linee guida WCAG 2.1, livello di conformità AA). & Verbale interno \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
@@ -349,12 +347,12 @@ Di seguito sono illustrate le corrispondenze fonte - requisito, raggruppate per 
 		\endlastfoot
 
     % capitolato
-    Capitolato & RF.O.3, RF.O.4, RF.O.5, RF.O.8, RF.O.13, RF.O.35, RF.O.39, RF.OP.42, RF.OP.43, RF.OP.44, RF.OP.54 \\
+    Capitolato & RF.O.3, RF.O.4, RF.O.5, RF.O.8, RF.O.13, RF.O.35, RF.O.39, RF.OP.42, RF.OP.43, RF.OP.44, RF.OP.54, RF.O.55, RF.O.56 \\
     \hline
     % verbali
     Verbali esterni & RF.O.1, RF.D.7, RF.O.22, RF.D.40, RF.O.45, RF.O.46, RF.D.52 \\
     \hline
-    Verbali interni & RF.O.1, RF.O.1.1, RF.O.1.2, RF.O.23, RF.O.26, RF.O.36, RF.O.41, RF.O.47, RF.O.48, RF.O.49, RF.O.50, RF.O.51, RF.OP.53 \\
+    Verbali interni & RF.O.1, RF.O.1.1, RF.O.1.2, RF.O.23, RF.O.26, RF.O.36, RF.O.41, RF.O.47, RF.O.48, RF.O.49, RF.O.50, RF.O.51, RF.OP.53, RF.O.55, RF.O.56, RF.O.57, RF.OP.58, RF.O.59, RF.O.60, RF.O.61, RF.OP.62 \\
     \hline
     % casi d'uso
     \hyperref[UC1]{UC1} & RF.O.1 \\
@@ -509,8 +507,6 @@ Di seguito sono illustrate le corrispondenze fonte - requisito, raggruppate per 
     \hline
     % verbali
     Verbali esterni & RQ.D.7 \\
-    \hline
-    Verbali interni & RQ.O.8, RQ.O.9, RQ.D.10, RQ.OP.11 \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
@@ -543,12 +539,11 @@ Di seguito sono illustrate le corrispondenze fonte - requisito, raggruppate per 
 		\endlastfoot
 
     % capitolato
-    Capitolato & RV.O.1 \\
-    \hline
+    
     % verbali
-    Verbali esterni & RV.O.2, RV.O.10 \\
+    Verbali esterni & RV.O.1, RV.O.4 \\
     \hline
-    Verbali interni & RV.O.3, RV.O.4, RV.O.5, RV.OP.6, RV.O.7, RV.O.8, RV.O.9, RV.O.11, RV.O.12, RV.O.13, RV.O.14, RV.O.15, RV.O.16, RV.O.17, RV.D.18, RV.O.19, RV.D.20, RV.OP.21 \\
+    Verbali interni & RV.O.2, RV.O.3, RV.O.5, RV.O.6, RV.O.7, RV.O.8, RV.O.9, RV.O.10, RV.O.11, RV.O.12, RV.O.13, RV.O.14, RV.O.15, RV.OP.16 \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
