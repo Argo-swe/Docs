@@ -20,7 +20,7 @@
 \end{itemize}
 
 \subsubsection{Descrizione}
-\par Per assicurare la conformità dei risultati prodotti, a ogni azione di modifica è associato un passo di verifica. L’avanzamento di versione avviene soltanto a valle di verifica e conseguente approvazione. Il processo di revisione viene svolto dai membri impiegati nel ruolo di verificatore. Come indicato nella \sezione{sec:pull_request}, il gruppo ha definito delle Branch Protection Rules, al fine di garantire un'integrazione controllata delle modifiche all'interno del \glossario{repository}. In linea con le specifiche di GitHub, la verifica non può essere effettuata dallo stesso componente a cui è stato assegnato il task.
+\par Per assicurare la conformità dei risultati prodotti, a ogni azione di modifica è associato un passo di verifica. L’avanzamento di versione avviene soltanto a valle di verifica e conseguente approvazione. Il processo di revisione viene svolto dai membri impiegati nel ruolo di \Verificatore\. Come indicato nella \sezione{sec:pull_request}, il gruppo ha definito delle Branch Protection Rules, al fine di garantire un'integrazione controllata delle modifiche all'interno del \glossario{repository}. In linea con le specifiche di GitHub, la verifica non può essere effettuata dallo stesso componente a cui è stato assegnato il task.
 
 \subsubsection{Analisi statica}
 \par L’analisi statica è un approccio alla verifica che prevede una disamina del software e dei documenti alla ricerca di difetti, senza richiedere l’esecuzione del codice. Può essere vista come un’attività complementare all’analisi dinamica. Il team utilizza due tecniche di analisi statica:
@@ -30,17 +30,17 @@
 \end{itemize}
 
 \subsubsubsection{Walkthrough}
-\par Il walkthrough è una tecnica informale di analisi statica che prevede una lettura critica e approfondita del documento o del codice sorgente. Questo processo coinvolge il verificatore e l’autore (uno sviluppatore o un redattore). Il walkthrough è un'attività collaborativa, che può coinvolgere anche un team di tre o cinque persone. In caso di verifica del codice sorgente, i verificatori lo percorrono simulando possibili esecuzioni. Il walkthrough si articola nelle seguenti fasi:
+\par Il walkthrough è una tecnica informale di analisi statica che prevede una lettura critica e approfondita del documento o del codice sorgente. Questo processo coinvolge il \Verificatore\ e l’autore (uno sviluppatore o un redattore). Il walkthrough è un'attività collaborativa, che può coinvolgere anche un team di tre o cinque persone. In caso di verifica del codice sorgente, i verificatori lo percorrono simulando possibili esecuzioni. Il walkthrough si articola nelle seguenti fasi:
 \begin{itemize}
-  \item \textbf{Pianificazione}: il verificatore e l'autore si accordano su come procedere con il walkthrough;
-  \item \textbf{Lettura}: il codice o il documento viene letto dall'autore, mentre il verificatore annota i difetti riscontrati;
-  \item \textbf{Discussione}: al termine della lettura, il verificatore comunica i problemi rilevati e propone eventuali suggerimenti, con l'obiettivo di correggere i difetti.
+  \item \textbf{Pianificazione}: il \Verificatore\ e l'autore si accordano su come procedere con il walkthrough;
+  \item \textbf{Lettura}: il codice o il documento viene letto dall'autore, mentre il \Verificatore\ annota i difetti riscontrati;
+  \item \textbf{Discussione}: al termine della lettura, il \Verificatore\ comunica i problemi rilevati e propone eventuali suggerimenti, con l'obiettivo di correggere i difetti.
 \end{itemize}
 
 \subsubsubsection{Inspection}
 \par L'inspection (o ispezione) è una tecnica formale di analisi statica che prevede una revisione sistematica e mirata del prodotto. A differenza del walkthrough, l’ispezione utilizza liste di controllo (checklist) per rilevare i difetti. In questo modo è possibile ricercare errori frequenti di programmazione o di altra natura, senza dover analizzare l’oggetto in esame nella sua interezza; pertanto, l’ispezione si concentra sulla verifica dei punti ritenuti critici. Le checklist possono derivare da conoscenze pregresse ottenute tramite walkthrough. L'ispezione si articola nelle seguenti fasi:
 \begin{itemize}
-  \item \textbf{Pianificazione}: il verificatore e l'autore si accordano su come procedere con l'ispezione;
+  \item \textbf{Pianificazione}: il \Verificatore\ e l'autore si accordano su come procedere con l'ispezione;
   \item \textbf{Definizione delle checklist}: vengono definiti i punti critici del codice o della documentazione; le liste di controllo vengono aggiornate sulla base dell’esperienza acquisita e degli errori più ricorrenti;
   \item \textbf{Lettura}: il prodotto viene esaminato seguendo le liste di controllo;
   \item \textbf{Correzione dei difetti}: A seguito dell'ispezione, l'autore implementa le modifiche necessarie e intraprende le azioni correttive identificate;
