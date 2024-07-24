@@ -33,7 +33,7 @@ La struttura di un UC è divisa nella seguente struttura:
   \item Eventuali Estensioni;
   \item Eventuali sottocasi d'uso.
 \end{itemize}
-Nella scrittura e definizione di un UC va tenuto conto delle seguentio considerazioni:
+Nella scrittura e definizione di un UC va tenuto conto delle seguenti considerazioni:
 \begin{itemize}
   \item Le precondizioni dello UC devono essere condizioni necessarie per arrivare alla situazione che si presenta nello UC.
   \item Le precondizioni vengono poste al passato per identificare la conclusione di un UC, possono includere altri UC;
@@ -69,7 +69,7 @@ Descrivere le fonti è una pratica necessaria per orientare sia l'Analista che g
 \paragraph{Grafici}
 I grafici dei casi d'uso sono così composti:
 \begin{itemize}
-  \item È sempre presente almeno un attore che interagisce con il le parti del sistema. L'attore è indicato con la figura di riferimento in UML ed è dotato di un nome per identificarne il tipo;
+  \item È sempre presente almeno un attore che interagisce con le parti del sistema. L'attore è indicato con la figura di riferimento in UML ed è dotato di un nome per identificarne il tipo;
   \item È presente il frame che identifica in quale parte del sistema si sta svolgendo il caso d'uso. È così composto:
   \begin{itemize}
     \item All'esterno del frame sono presenti gli attori che interagiscono con le sue parti;
@@ -179,7 +179,6 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \end{itemize}
 
 \paragraph*{Documentazione del codice}
-\vspace{0.5\baselineskip}
 \par La documentazione del codice sorgente deve essere conforme alle linee guida di Google relative alla scrittura di \glossario{docstring} in Python. In particolare:
 \begin{itemize}
   \item Ogni classe deve essere corredata da:
@@ -261,7 +260,7 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \paragraph*{Convenzioni sintattiche}
 \begin{itemize}
   \item \textbf{Nome dei file}: \glossario{kebab-case}.
-\end{itemize}.
+\end{itemize}
 
 \subsubsubsection{Stile di codifica: JavaScript/TypeScript}
 \paragraph*{Struttura dei file}
@@ -371,7 +370,7 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 
 \subsubsubsection{Test: Notazione}
 \par I test vengono identificati in modo univoco secondo questa notazione: 
-\par \quad \textbf{T.[Tipo].[Codice]}
+\[T.[Tipo].[Codice]\]
 \par dove: 
 \begin{itemize}
     \item \textbf{T}: indica la parola "test";
