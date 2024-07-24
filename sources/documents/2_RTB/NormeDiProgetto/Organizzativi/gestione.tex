@@ -1,7 +1,7 @@
 \subsection{Gestione}
 
 \subsubsection{Descrizione}
-\par Il processo di gestione include i task che vengono eseguiti dal responsabile per il coordinamento del processo.
+\par Il processo di gestione include i task che vengono eseguiti dal responsabile per il coordinamento del progetto.
 \par Tra le attività principali del processo di gestione si possono distinguere:
 \begin{itemize}
   \item Pianificazione;
@@ -22,67 +22,84 @@
 \vspace{0.5\baselineskip}
 \par Una volta pianificata un'attività, il responsabile e l'amministratore hanno il compito di aprire uno o più ticket su \glossario{Jira}, seguendo le linee guida riportate nella \sezione{gestione-configurazione}.
 
+\paragraph*{Strumenti}
+\begin{itemize}
+  \item Jira;
+  \item Google Sheets.
+\end{itemize}
+
 \subsubsection{Esecuzione e controllo}
-\par Il responsabile provvede a far eseguire e mantenere il risultato della pianificazione, analizzando e risolvendo i problemi sorti durante l'avanzamento. Problemi e soluzioni saranno documentate.
-\par Il responsabile inoltre si occupa di comunicare con gli \glossario{stakeholder}.
+\par Il responsabile deve garantire l'esecuzione e il mantenimento del piano definito nella fase precedente, affrontando e risolvendo eventuali problemi emersi durante l'avanzamento del processo. La risoluzione dei problemi può richiedere modifiche alla pianificazione. Per assicurare che l'impatto di tali modifiche sia adeguatamente controllato, è fondamentale documentare i problemi riscontrati con le relative soluzioni. Inoltre, il responsabile ha il compito di monitorare l'esecuzione del processo, fornendo report sia per uso interno che esterno.
+
+\paragraph*{Strumenti}
+\begin{itemize}
+  \item Jira;
+  \item GitHub;
+  \item Google Sheets.
+\end{itemize}
 
 \subsubsection{Valutazione e approvazione}
-Il responsabile assicura la soddisfazione dei requisiti del software o la completezza e correttezza della documentazione durante e alla fine dell'esecuzione dei rispettivi processi.
+\par La revisione di un'attività è effettuata dal verificatore incaricato di esaminare la pull request prima della sua integrazione nell'ambiente condiviso. Dopo aver accettato, o rifiutato, le modifiche al codice o alla documentazione, il verificatore deve richiedere l'approvazione finale del responsabile. In questo modo, il team garantisce la validità dei risultati delle attività completate durante il processo. In particolare, il gruppo deve assicurare che i requisiti del software siano soddisfatti e che la documentazione sia completa e corretta.
+
+\paragraph*{Strumenti}
+\begin{itemize}
+  \item GitHub.
+\end{itemize}
 
 \subsubsection{Ruoli}
-\par Il progetto didattico prevede l'assegnazione dei seguenti ruoli, con una rotazione costante e bilanciata che va considerata nella pianificazione.
+\par Il progetto didattico prevede l'assegnazione di sei ruoli distinti, con una rotazione costante e bilanciata che va considerata nella pianificazione delle attività.
 
 \subsubsubsection{Responsabile}
-\par Il responsabile è il ruolo che coordina le attività dell'intero gruppo internamente e gestisce i contatti con la Proponente e i Committenti come riferimento unico per tutto il gruppo.
-\par La responsabilità del ruolo sono:
+\par Il responsabile coordina le attività interne al gruppo e gestisce la comunicazione con la Proponente e i Committenti.
+\par I compiti assegnati al responsabile sono i seguenti:
 \begin{itemize}
-  \item Pianificazione dello sprint (task);
-  \item Sviluppo del preventivo dello sprint;
-  \item Redazione e cura del \PdP;
-  \item Controllo delle attività del gruppo;
+  \item Pianificazione delle attività;
+  \item Stesura del preventivo dello sprint;
+  \item Redazione e miglioramento continuo del \PdP;
+  \item Tracciamento e monitoraggio delle attività del gruppo;
   \item Valutazione e gestione dei rischi;
   \item Preparazione dell'ordine del giorno e moderazione delle riunioni;
   \item Sviluppo del consuntivo dello sprint.
 \end{itemize}
 
 \subsubsubsection{Amministratore}
-\par L'amministratore è il ruolo legato alla gestione della configurazione e manutenzione dell'ambiente di sviluppo comune.
-\par Le responsabilità del ruolo sono:
+\par L'amministratore è incaricato della configurazione e della manutenzione dell'ambiente di sviluppo condiviso.
+\par I compiti assegnati all'amministratore sono i seguenti:
 \begin{itemize}
-  \item Attività legate al processo di gestione della configurazione;
-  \item Cura delle \NdP\ (non come unico redattore, ma gestore delle modifiche da attuare);
-  \item Misurazione delle metriche di qualità e aggiornamento del \PdQ;
+  \item Svolgimento delle attività legate al processo di "configuration management" (\sezione{gestione-configurazione});
+  \item Stesura delle \NdP\ (non come unico redattore, ma come supervisore);
+  \item Misurazione delle metriche di qualità e aggiornamento del \PdQ.
 \end{itemize}
 
 \subsubsubsection{Analista}
-\par L'analista è il ruolo legato all'ingegneria dei requisiti.
-\par Le responsabilità dell'analista sono:
+\par Il ruolo dell'analista è focalizzato sull'ingegneria dei requisiti.
+\par I compiti assegnati all'analista sono i seguenti:
 \begin{itemize}
   \item Svolgimento delle attività descritte nella \sezione{analisi-requisiti};
   \item Redazione del documento di \AdR.
 \end{itemize}
 
 \subsubsubsection{Progettista}
-\par Il progettista definisce soluzioni architetturali e implementative per lo sviluppo del prodotto.
-\par Le responsabilità del progettista sono:
+\par Il progettista definisce soluzioni e stili architetturali per lo sviluppo del prodotto.
+\par I compiti assegnati al progettista sono i seguenti:
 \begin{itemize}
   \item Svolgimento delle attività descritte nella \sezione{progettazione};
   \item Redazione del documento Specifica Tecnica.
 \end{itemize}
 
 \subsubsubsection{Programmatore}
-\par Il programmatore implementa l'architettura definita producendo codice che ne soddisfa le necessità. Inoltre si occupa di implementare test di unità e integrazione per la verifica del codice scritto
-\par Le responsabilità del ruolo sono:
+\par Il programmatore implementa l'architettura delineata dal progettista. Inoltre, si occupa di definire test di unità e di integrazione per la verifica del prodotto software.
+\par I compiti assegnati al programmatore sono i seguenti:
 \begin{itemize}
-  \item Attività descritte nella \sezione{codifica} e nella \sezione{testing-codice}.
+  \item Svolgimento delle attività descritte nella \sezione{codifica} e nella \sezione{testing-codice}.
 \end{itemize}
 
 \subsubsubsection{Verificatore}
-\par Il verificatore controlla il risultato del lavoro degli altri ruoli accertando la qualità e il funzionamento del risultato delle attività.
-\par Le responsabilità del ruolo sono:
+\par Il verificatore si occupa della revisione delle modifiche apportate dal gruppo, assicurandosi che i risultati delle attività soddisfino gli standard di qualità e di funzionamento previsti.
+\par I compiti assegnati al verificatore sono i seguenti:
 \begin{itemize}
-  \item Assicurare la qualità del contenuto prodotto dal gruppo, assicurando la coerenza con il \WoW\ stabilito e con gli obiettivi della modifica;
-  \item Approvare un avanzamento di versione di un documento (escluso il rilascio).
+  \item Accertamento della qualità del codice e della documentazione;
+  \item Approvazione di un avanzamento di versione (escluso il rilascio).
 \end{itemize}
 
 \subsubsection{Gestione dei rischi}
