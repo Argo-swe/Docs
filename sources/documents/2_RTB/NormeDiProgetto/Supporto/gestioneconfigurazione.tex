@@ -81,7 +81,7 @@ Come riportato nel registro delle modifiche dei documenti, ogni avanzamento di v
   \item \textbf{main}: ramo di produzione;
   \item \textbf{develop}: ramo di sviluppo, disponibile all'interno del repository ChatSQL.
 \end{itemize}
-\par Lo sviluppo in locale avviene nei cosiddetti feature branch. Quando una funzionalità è pronta per l'ambiente condiviso, l'assegnatario propone le modifiche tramite una pull request. La revisione è di competenza del \Verificatore\, che può decidere se approvare la richiesta, proporre ulteriori modifiche o, in caso di conflitti irriducibili, rifiutare la pull request. Sebbene la finalità principale delle pull request sia la verifica del codice, queste possono essere utilizzate anche come spazi di discussione e risoluzione di bug. Se un membro del team incontra delle difficoltà nello sviluppo di una feature, può quindi inviare una richiesta e menzionare il resto del gruppo.
+\par Lo sviluppo in locale avviene nei cosiddetti feature branch. Quando una funzionalità è pronta per l'ambiente condiviso, l'assegnatario propone le modifiche tramite una pull request. La revisione è di competenza del \Verificatore, che può decidere se approvare la richiesta, proporre ulteriori modifiche o, in caso di conflitti irriducibili, rifiutare la pull request. Sebbene la finalità principale delle pull request sia la verifica del codice, queste possono essere utilizzate anche come spazi di discussione e risoluzione di bug. Se un membro del team incontra delle difficoltà nello sviluppo di una feature, può quindi inviare una richiesta e menzionare il resto del gruppo.
 
 \subsubsubsection{Workflow}
 \par Il team adotta due tipi di workflow:
@@ -173,7 +173,7 @@ Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team 
 \par Quando uno sviluppatore apporta delle modifiche sostanziali a una pull request già verificata, deve richiedere nuovamente la revisione.
 
 \subsubsubsection{Chiusura pull request}
-\par La chiusura delle pull request che riguardano verbali interni ed esterni, o comunque documenti che richiedono un’approvazione pre-rilascio, spetta al \Responsabile\. Questo perché, dopo la revisione del \Verificatore\, è necessaria un’approvazione generale del documento e una firma. GitHub mette a disposizione del team tre modalità di merging e chiusura delle pull request:
+\par La chiusura delle pull request che riguardano verbali interni ed esterni, o comunque documenti che richiedono un’approvazione pre-rilascio, spetta al \Responsabile. Questo perché, dopo la revisione del \Verificatore, è necessaria un’approvazione generale del documento e una firma. GitHub mette a disposizione del team tre modalità di merging e chiusura delle pull request:
 \begin{itemize}
   \item \textbf{Create a merge commit:} i commit della pull request vengono aggiunti al ramo base tramite un merge commit;
   \item \textbf{Squash and merge:} i commit della pull request vengono compressi in un unico commit e aggiunti al ramo base;
@@ -185,7 +185,7 @@ Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team 
 Il gruppo mantiene un versionamento per il codice e la documentazione nel seguente formato:
 \[ X.Y.Z \]
 \begin{itemize}
-  \item[X] Avanza alla approvazione del \Responsabile\, corrisponde percui ad ogni rilascio;
+  \item[X] Avanza alla approvazione del \Responsabile, corrisponde percui ad ogni rilascio;
   \item[Y] Avanza ad ogni verifica completa del documento;
   \item[Z] Avanza ad ogni modifica verificata di un documento.
 \end{itemize}
