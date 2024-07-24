@@ -1,30 +1,40 @@
 \subsection{Gestione}
 
 \subsubsection{Descrizione}
-Il processo di gestione contiene le attività e i task che vengono adottati dal Responsabile per il coordinamento del processo.\\
-Il processo consiste nelle seguenti attività:
+\par Il processo di gestione include i task che vengono eseguiti dal responsabile per il coordinamento del processo.
+\par Tra le attività principali del processo di gestione si possono distinguere:
 \begin{itemize}
   \item Pianificazione;
   \item Esecuzione e controllo;
-  \item Valutazione e approvazione;
+  \item Valutazione e approvazione.
 \end{itemize}
 
-\paragraph{Pianificazione}
-Questa attività comprende tutta la programmazione di assegnazione ruoli e attività, scadenze e previsione del periodo corrente e dei successivi.
+\subsubsection{Pianificazione}
+\par Questa fase include l'assegnazione di ruoli e attività. Ogni attività è corredata da:
+\begin{itemize}
+  \item Uno o più membri incaricati di svolgere l'attività;
+  \item Data di inizio e fine;
+  \item Priorità;
+  \item Uno o più verificatori incaricati di valutare il risultato;
+  \item Eventuali rischi associati all'attività.
+\end{itemize}
 
-\paragraph{Esecuzione e controllo}
-Il responsabile provvede a far eseguire e mantenere il risultato della pianificazione, analizzando e risolvendo i problemi sorti durante l'avanzamento. Problemi e soluzioni saranno documentate.\\
-Il responsabile inoltre si occupa di comunicare con gli \glossario{stakeholder}.
+\vspace{0.5\baselineskip}
+\par Una volta pianificata un'attività, il responsabile e l'amministratore hanno il compito di aprire uno o più ticket su \glossario{Jira}, seguendo le linee guida riportate nella \sezione{gestione-configurazione}.
 
-\paragraph{Valutazione e approvazione}
+\subsubsection{Esecuzione e controllo}
+\par Il responsabile provvede a far eseguire e mantenere il risultato della pianificazione, analizzando e risolvendo i problemi sorti durante l'avanzamento. Problemi e soluzioni saranno documentate.
+\par Il responsabile inoltre si occupa di comunicare con gli \glossario{stakeholder}.
+
+\subsubsection{Valutazione e approvazione}
 Il responsabile assicura la soddisfazione dei requisiti del software o la completezza e correttezza della documentazione durante e alla fine dell'esecuzione dei rispettivi processi.
 
 \subsubsection{Ruoli}
-Questo progetto didattico prevede l'assegnazione dei seguenti ruoli, con una rotazione costante e bilanciata che va considerata nella pianificazione.
+\par Il progetto didattico prevede l'assegnazione dei seguenti ruoli, con una rotazione costante e bilanciata che va considerata nella pianificazione.
 
-\paragraph{Responsabile}
-Il responsabile è il ruolo che coordina le attività dell'intero gruppo internamente e gestisce i contatti con la Proponente e i Committenti come riferimento unico per tutto il gruppo.\\
-La responsabilità del ruolo sono:
+\subsubsubsection{Responsabile}
+\par Il responsabile è il ruolo che coordina le attività dell'intero gruppo internamente e gestisce i contatti con la Proponente e i Committenti come riferimento unico per tutto il gruppo.
+\par La responsabilità del ruolo sono:
 \begin{itemize}
   \item Pianificazione dello sprint (task);
   \item Sviluppo del preventivo dello sprint;
@@ -35,51 +45,107 @@ La responsabilità del ruolo sono:
   \item Sviluppo del consuntivo dello sprint.
 \end{itemize}
 
-\paragraph{Amministratore}
-L'amministratore è il ruolo legato alla gestione della configurazione e manutenzione dell'ambiente di sviluppo comune.\\
-Le responsabilità del ruolo sono:
+\subsubsubsection{Amministratore}
+\par L'amministratore è il ruolo legato alla gestione della configurazione e manutenzione dell'ambiente di sviluppo comune.
+\par Le responsabilità del ruolo sono:
 \begin{itemize}
   \item Attività legate al processo di gestione della configurazione;
-  \item Cura delle \NdP{} (non come unico redattore, ma gestore delle modifiche da attuare);
+  \item Cura delle \NdP\ (non come unico redattore, ma gestore delle modifiche da attuare);
   \item Misurazione delle metriche di qualità e aggiornamento del \PdQ;
 \end{itemize}
 
-\paragraph{Analista}
-L'analista{} è il ruolo legato all'attività di analisi, del processo di sviluppo.
-Le responsabilità del ruolo sono:
+\subsubsubsection{Analista}
+\par L'analista è il ruolo legato all'ingegneria dei requisiti.
+\par Le responsabilità dell'analista sono:
 \begin{itemize}
-  \item Attività descritte in \ref{analisi}
-  \item Redazione e cura dell'\AdR.
+  \item Svolgimento delle attività descritte nella \sezione{analisi-requisiti};
+  \item Redazione del documento di \AdR.
 \end{itemize}
 
-\paragraph{Progettista}
-Il progettista definisce soluzioni architetturali e implementative per lo sviluppo del prodotto.\\
-Le responsabilità del ruolo sono:
+\subsubsubsection{Progettista}
+\par Il progettista definisce soluzioni architetturali e implementative per lo sviluppo del prodotto.
+\par Le responsabilità del progettista sono:
 \begin{itemize}
-  \item Attività descritte in \ref{progettazione};
+  \item Svolgimento delle attività descritte nella \sezione{progettazione};
+  \item Redazione del documento Specifica Tecnica.
 \end{itemize}
 
-\paragraph{Programmatore}
-Il programmatore{} implementa l'architettura definita producendo codice che ne soddisfa le necessità. Inoltre si occupa di implementare test di unità e integrazione per la verifica del codice scritto.\\
-Le responsabilità del ruolo sono:
+\subsubsubsection{Programmatore}
+\par Il programmatore implementa l'architettura definita producendo codice che ne soddisfa le necessità. Inoltre si occupa di implementare test di unità e integrazione per la verifica del codice scritto
+\par Le responsabilità del ruolo sono:
 \begin{itemize}
   \item Attività descritte nella \sezione{codifica} e nella \sezione{testing-codice}.
 \end{itemize}
 
-\paragraph{Verificatore}
-Il \Verificatore{} controlla il risultato del lavoro degli altri ruoli accertando la qualità e il funzionamento del risultato delle attività.\\
-Le responsabilità del ruolo sono:
+\subsubsubsection{Verificatore}
+\par Il verificatore controlla il risultato del lavoro degli altri ruoli accertando la qualità e il funzionamento del risultato delle attività.
+\par Le responsabilità del ruolo sono:
 \begin{itemize}
-  \item Assicurare la qualità del contenuto prodotto dal gruppo, assicurando la coerenza con il \WoW{} stabilito e con gli obiettivi della modifica;
+  \item Assicurare la qualità del contenuto prodotto dal gruppo, assicurando la coerenza con il \WoW\ stabilito e con gli obiettivi della modifica;
   \item Approvare un avanzamento di versione di un documento (escluso il rilascio).
 \end{itemize}
 
-\subsubsection{Comunicazione}
-\paragraph{Comunicazione interna}
-La comunicazione tra i membri del gruppo è gestita attraverso Telegram e Discord.\\
-Attraverso Telegram il gruppo comunica in modo asincrono e generale, pertanto è opportuno per comunicazioni di interesse di tutto il gruppo e di breve contenuto.\\
-Attraverso Discord il gruppo partecipa a chiamate di gruppo, riunioni o meno, e tramite canali testuali divisi per ruolo è l'organizzazione interna di gruppi ristretti è favorita.\\
-Questi strumenti non devono sovrapporsi tuttavia a mezzi di comunicazione e coordinamento, come ad esempio un \glossario{Issue Tracking System}, in quanto le infromazioni riportate tramite questi strumenti sono più difficilmente tracciabili e riferibili in momenti futuri.
+\subsubsection{Gestione dei rischi}
+\par La gestione dei rischi è un’attività svolta dal responsabile, con il supporto dell’amministratore per quanto riguarda i rischi legati all’infrastruttura. Questa attività è inclusa nel \PianoDiProgetto e viene eseguita alla fine di ogni sprint come parte del consuntivo di periodo. La pratica di gestione dei rischi alimenta e influenza l’analisi dei rischi, anch’essa riportata nel \PianoDiProgetto.
 
-\paragraph{Comunicazione esterna}
-La comunicazione esterna è gestita dal Responsabile, attraverso il recapito di posta elettronica del gruppo \href{mailto:argo.unipd@gmail.com}{argo.unipd\-@\-gmail.com}.
+\subsubsubsection{Rischi: Notazione}
+\par I rischi vengono identificati in modo univoco secondo questa notazione: 
+\par \quad \textbf{R[Tipo][Numero]}
+\par dove: 
+\begin{itemize}
+  \item \textbf{R}: indica la parola "rischio";
+  \item \textbf{Tipo}: indica il tipo di rischio: 
+  \begin{itemize}
+    \item \textbf{O}: rischio organizzativo; 
+    \item \textbf{T}: rischio tecnologico;
+    \item \textbf{P}: rischio di natura personale.
+  \end{itemize}
+  \item \textbf{Numero}: è un numero progressivo che identifica in modo univoco il rischio per ogni tipologia.
+\end{itemize}
+
+\subsubsubsection{Rischi: Didascalia}
+\par I rischi sono definiti come segue:
+\begin{itemize}
+  \item \textbf{Probabilità}: stima di occorrenza del rischio (Alta, Media, Bassa);
+  \item \textbf{Grado di criticità}: impatto del rischio (Alto, Medio, Basso);
+  \item \textbf{Descrizione}: descrizione del rischio;
+  \item \textbf{Strategie di rilevamento}: metodi per anticipare l'insorgenza di situazioni problematiche;
+  \item \textbf{Contromisure}: misure di mitigazione da applicare qualora il rischio si manifesti.
+\end{itemize}
+
+\subsubsection{Comunicazione}
+\par Il gruppo adotta canali di comunicazione differenti per la comunicazione interna (tra i membri del gruppo) e quella esterna (con la Proponente e i Committenti). Di seguito sono illustrate le modalità di comunicazione e le applicazioni utilizzate.
+
+\subsubsubsection{Comunicazione interna}
+\par La comunicazione tra i membri del gruppo avviene attraverso le seguenti modalità di interazione:
+\begin{itemize}
+  \item \textbf{Telegram} (comunicazione asincrona): utilizzato per comunicazioni di interesse generale e di breve contenuto. È possibile creare gruppi di discussione per argomenti specifici. I messaggi più importanti vengono fissati all'interno della rispettiva chat;
+  \item \textbf{Slack} (comunicazione asincrona): utilizzato per inviare promemoria ai verificatori riguardo alla revisione delle pull request;
+  \item \textbf{Discord} (comunicazione sincrona): utilizzato per chiamate di gruppo, formali o informali, e per la comunicazione interna tra membri del team che ricoprono lo stesso ruolo. È possibile creare canali di testo e vocali per argomenti specifici. Inoltre, il gruppo utilizza Discord come piattaforma di supporto per la "pair programming", disponibile da remoto tramite condivisione schermo o per mezzo dell'estensione Live Share di \glossario{Visual Studio Code};
+  \item \textbf{Google Meet} (comunicazione sincrona): fallback per le chiamate di gruppo, in caso di problemi con Discord;
+  \item \textbf{Incontri in presenza} (comunicazione sincrona): il gruppo si riunisce in presenza con cadenza mensile (o bisettimanale a ridosso delle revisioni di avanzamento).
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Questi strumenti devono essere integrati con un \glossario{Issue Tracking System}, poiché le decisioni prese durante gli incontri, a meno che non siano documentate in un verbale, sono più difficili da tracciare e recuperare in futuro.
+
+\paragraph*{Strumenti}
+\begin{itemize}
+  \item \textbf{Telegram};
+  \item \textbf{Slack};
+  \item \textbf{Discord};
+  \item \textbf{Google Meet}.
+\end{itemize}
+
+\subsubsubsection{Comunicazione esterna}
+\par La comunicazione con la Proponente e i Committenti avviene attraverso le seguenti modalità di interazione:
+\begin{itemize}
+  \item \textbf{Gmail} (comunicazione asincrona): utilizzata per comunicazioni formali. La comunicazione esterna è gestita dal responsabile, attraverso il recapito di posta elettronica del gruppo \href{mailto:argo.unipd@gmail.com}{argo.unipd\-@\-gmail.com};
+  \item \textbf{Zoom} (comunicazione sincrona): utilizzato per incontri formali.
+\end{itemize}
+
+\paragraph*{Strumenti}
+\begin{itemize}
+  \item \textbf{Gmail};
+  \item \textbf{Zoom}.
+\end{itemize}
