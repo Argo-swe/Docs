@@ -43,10 +43,10 @@ I documenti da produrre e mantenere durante il corso del progetto sono:
 Il ciclo di vita di un documento è composto dai seguenti eventi:
 \begin{enumerate}
   \item Vengono definite le caratteristiche di base del documento o di una sua parte come da sezione \ref{implementazioneprocessodocumentazione};
-  \item Il \Redattore stila una bozza iniziale. Se è necessario l'input di più persone in maniera sincrona, tale bozza viene prodotto in un ambiente condiviso;
-  \item Prodotta una bozza di tutto il contenuto necessario, il \Redattore produce una versione del documento con la forma e i metodi stabiliti in queste norme;
-  \item Viene sottoposto a verifica il risultato della redazione. Se il \Verificatore propone delle modifiche, vengono attuate ritornando alla fase precedente;
-  \item In seguito a un esito positivo della verifica, se il risultato è un documento completo e che richiede rilascio, viene sottoposto ad un'approvazione finale del responsabile, bloccante in modo analogo alla verifica.
+  \item Il \Redattore\ stila una bozza iniziale. Se è necessario l'input di più persone in maniera sincrona, tale bozza viene prodotto in un ambiente condiviso;
+  \item Prodotta una bozza di tutto il contenuto necessario, il \Redattore\ produce una versione del documento con la forma e i metodi stabiliti in queste norme;
+  \item Viene sottoposto a verifica il risultato della redazione. Se il \Verificatore\ propone delle modifiche, vengono attuate ritornando alla fase precedente;
+  \item In seguito a un esito positivo della verifica, se il risultato è un documento completo e che richiede rilascio, viene sottoposto ad un'approvazione finale del \Responsabile\, bloccante in modo analogo alla verifica.
 \end{enumerate}
 
 \subsubsection{Ambiente di lavoro}
@@ -57,7 +57,7 @@ L'utilizzo del template garantisce:
 \begin{itemize}
   \item Il disaccoppiamento di forma e contenuto della documentazione;
   \item L'uniformità dello stile della documentazione;
-  \item La responsabilità del \Redattore è il solo contenuto;
+  \item La responsabilità del \Redattore\ è il solo contenuto;
   \item La possibilità di creare documenti in maniera modulare, conciliata in modo uniforme.
 \end{itemize}
 
@@ -86,8 +86,8 @@ Ciascun documento è fornito di questi elementi:
   \begin{itemize}
     \item Versione del documento in seguito alla modifica;
     \item Data della modifica;
-    \item Redattore della modifica (coincide con il \Verificatore nel caso di riga associata alla verifica generale, col responsabile del caso di riga associata al rilascio);
-    \item Verificatore della modifica (coincide con il Responsabile nel caso di riga associata al rilascio);
+    \item Redattore della modifica (coincide con il \Verificatore\ nel caso di riga associata alla verifica generale, col \Responsabile\ del caso di riga associata al rilascio);
+    \item Verificatore della modifica (coincide con il \Responsabile\ nel caso di riga associata al rilascio);
     \item Descrizione della modifica.
   \end{itemize}
   \item Indice dei contenuti;
@@ -104,12 +104,12 @@ Ciascun documento è fornito di questi elementi:
     \item Tipo di incontro (in presenza/da remoto);
     \item Descrizione dell'incontro;
     \item \textbf{Partecipanti}: sezione che include l'elenco dei partecipanti interni e, in caso di riunione con la \glossario{Proponente}, anche esterni. Per ciascun membro del team, si riporta la durata (in ore e minuti) della partecipazione;
-    \item \textbf{Glossario}: paragrafo finalizzato a stabilire la modalità di formattazione dei termini definiti nel \Gls\ e il numero di occorrenze identificate. 
+    \item \textbf{Glossario}: paragrafo finalizzato a stabilire la modalità di formattazione dei termini definiti nel \Gls\ e il numero di occorrenze identificate.
   \end{itemize}
   \item \textbf{Riunione}: i meeting vengono organizzati con lo scopo di rendicontare il lavoro svolto da ciascun membro del gruppo, chiarire eventuali dubbi, mitigare i rischi, intraprendere azioni correttive e pianificare le attività future. Il capitolo relativo alla riunione è suddiviso in due sezioni:
   \begin{itemize}
     \item \textbf{Ordine del giorno}: scaletta degli argomenti generali affrontati durante la riunione;
-    \item \textbf{Discussione e decisioni}: sezione contenente l'elenco cronologico degli argomenti trattati nel corso del meeting. La discussione di ciascuna tematica non è mai fine a sé stessa, ma mira a prendere decisioni consapevoli e a definire un piano d'azione (vedere tabella Todo / In Progress). Durante le riunioni, si valuta anche il progresso delle attività assegnate negli incontri precedenti. Il team può quindi decidere di considerare un task completato, di prolungare la sua data di scadenza o, se necessario, di suddividere l'attività in sotto-task. Nei verbali esterni, alcune sezioni sono organizzate secondo lo schema "domanda-risposta", per formalizzare l'interazione tra il team e la \glossario{Proponente}.  
+    \item \textbf{Discussione e decisioni}: sezione contenente l'elenco cronologico degli argomenti trattati nel corso del meeting. La discussione di ciascuna tematica non è mai fine a sé stessa, ma mira a prendere decisioni consapevoli e a definire un piano d'azione (vedere tabella Todo / In Progress). Durante le riunioni, si valuta anche il progresso delle attività assegnate negli incontri precedenti. Il team può quindi decidere di considerare un task completato, di prolungare la sua data di scadenza o, se necessario, di suddividere l'attività in sotto-task. Nei verbali esterni, alcune sezioni sono organizzate secondo lo schema "domanda-risposta", per formalizzare l'interazione tra il team e la \glossario{Proponente}.
   \end{itemize}
   \item \textbf{Tabella di task Todo / In Progress}:
   Durante le riunioni, interne ed esterne, il team pianifica le attività a breve e medio-lungo termine. Al fine di ottimizzare la fase di creazione dei \glossario{ticket} su \glossario{Jira Software}, viene redatta una tabella con le azioni da intraprendere o, in alternativa, i task da portare a termine. Ogni voce è affiancata dal codice univoco del \glossario{ticket} correlato (se presente) nell'\glossario{ITS} di \glossario{Jira}. L'ID del \glossario{ticket} è composto dalla stringa ARGO- seguita da un numero univoco autoincrementante. I campi della tabella sono i seguenti:
@@ -120,7 +120,7 @@ Ciascun documento è fornito di questi elementi:
     \item Data di scadenza, in formato AAAA-MM-GG per mantenere la coerenza con il \glossario{repository} documentale e il registro delle modifiche.
   \end{itemize}
   \item \textbf{Prossima riunione}: sezione contenente la data ed, eventualmente, l'orario della prossima riunione (se pianificata), con annessa breve descrizione dell'ordine del giorno. Nel caso in cui un meeting sia stato organizzato durante l'incontro precedente (e non tramite chat Telegram), il verbale interno deve includere un link al verbale appropriato come mezzo di pianificazione;
-  \item \textbf{Firma del documento}: spazio per la firma del responsabile. In caso di verbale esterno, l'approvazione finale è a carico della \glossario{Proponente}, che produce in output un documento, in formato PDF, firmato e timbrato.
+  \item \textbf{Firma del documento}: spazio per la firma del \Responsabile\. In caso di verbale esterno, l'approvazione finale è a carico della \glossario{Proponente}, che produce in output un documento, in formato PDF, firmato e timbrato.
 \end{enumerate}
 
 \subsubsection{Stile}
