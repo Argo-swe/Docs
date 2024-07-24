@@ -56,7 +56,7 @@
 \subsubsection{Automazione chiusura ticket}
 \par Su \glossario{Jira}, nelle impostazioni del progetto, è presente una sezione denominata “Automazione”, a sua volta suddivisa in quattro sottosezioni:
 \begin{itemize}
-  \item \textbf{Regole}: elenco delle regole definite dall'\Amministratore\; ciascuna regola richiede un trigger di innesco, ossia un evento che avvia l'esecuzione della procedura definita nel corpo della regola. Una volta stabilito il trigger di attivazione, l’amministratore può scegliere una delle seguenti opzioni:
+  \item \textbf{Regole}: elenco delle regole definite dall'\Amministratore{}; ciascuna regola richiede un trigger di innesco, ossia un evento che avvia l'esecuzione della procedura definita nel corpo della regola. Una volta stabilito il trigger di attivazione, l’\Amministratore{} può scegliere una delle seguenti opzioni:
   \begin{itemize}
     \item THEN: aggiungi un'azione (es: transizione di un \glossario{ticket} da uno stato all'altro);
     \item IF: aggiungi una condizione (es: verifica se lo stato del \glossario{ticket} è diverso da “Completato”);
@@ -81,7 +81,7 @@ Come riportato nel registro delle modifiche dei documenti, ogni avanzamento di v
   \item \textbf{main}: ramo di produzione;
   \item \textbf{develop}: ramo di sviluppo, disponibile all'interno del repository ChatSQL.
 \end{itemize}
-\par Lo sviluppo in locale avviene nei cosiddetti feature branch. Quando una funzionalità è pronta per l'ambiente condiviso, l'assegnatario propone le modifiche tramite una pull request. La revisione è di competenza del \Verificatore, che può decidere se approvare la richiesta, proporre ulteriori modifiche o, in caso di conflitti irriducibili, rifiutare la pull request. Sebbene la finalità principale delle pull request sia la verifica del codice, queste possono essere utilizzate anche come spazi di discussione e risoluzione di bug. Se un membro del team incontra delle difficoltà nello sviluppo di una feature, può quindi inviare una richiesta e menzionare il resto del gruppo.
+\par Lo sviluppo in locale avviene nei cosiddetti feature branch. Quando una funzionalità è pronta per l'ambiente condiviso, l'assegnatario propone le modifiche tramite una pull request. La revisione è di competenza del \Verificatore{}, che può decidere se approvare la richiesta, proporre ulteriori modifiche o, in caso di conflitti irriducibili, rifiutare la pull request. Sebbene la finalità principale delle pull request sia la verifica del codice, queste possono essere utilizzate anche come spazi di discussione e risoluzione di bug. Se un membro del team incontra delle difficoltà nello sviluppo di una feature, può quindi inviare una richiesta e menzionare il resto del gruppo.
 
 \subsubsubsection{Workflow}
 \par Il team adotta due tipi di workflow:
@@ -149,7 +149,7 @@ Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team 
   \item La cronologia delle modifiche;
   \item L'elenco dei file modificati: per ciascuna porzione di codice modificata, GitHub visualizza un confronto con il contenuto precedente alla modifica.
 \end{itemize}
-\par Il \Verificatore\ può applicare i seguenti filtri:
+\par Il \Verificatore{} può applicare i seguenti filtri:
 \begin{itemize}
   \item Visualizzazione di uno o più commit specifici;
   \item Filtraggio dei file per estensione (es.: .tex);
@@ -164,7 +164,7 @@ Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team 
   \item In alternativa, o in aggiunta, inserimento di una "suggestion". Un suggerimento è una modifica che gli sviluppatori possono integrare direttamente nel codice;
   \item Pubblicazione del singolo commento o aggiunta del commento alla review.
 \end{itemize}
-\par Il \Verificatore\ può lasciare anche un commento generale del file. Una volta completata la review, il \Verificatore\ deve selezionare una delle seguenti opzioni, lasciando al contempo un commento riassuntivo opzionale:
+\par Il \Verificatore{} può lasciare anche un commento generale del file. Una volta completata la review, il \Verificatore{} deve selezionare una delle seguenti opzioni, lasciando al contempo un commento riassuntivo opzionale:
 \begin{itemize}
   \item \textbf{Comment:} fornisce un feedback generale senza approvare esplicitamente la pull request;
   \item \textbf{Approve:} accetta le modifiche proposte;
@@ -173,7 +173,7 @@ Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team 
 \par Quando uno sviluppatore apporta delle modifiche sostanziali a una pull request già verificata, deve richiedere nuovamente la revisione.
 
 \subsubsubsection{Chiusura pull request}
-\par La chiusura delle pull request che riguardano verbali interni ed esterni, o comunque documenti che richiedono un’approvazione pre-rilascio, spetta al \Responsabile. Questo perché, dopo la revisione del \Verificatore, è necessaria un’approvazione generale del documento e una firma. GitHub mette a disposizione del team tre modalità di merging e chiusura delle pull request:
+\par La chiusura delle pull request che riguardano verbali interni ed esterni, o comunque documenti che richiedono un’approvazione pre-rilascio, spetta al \Responsabile{}. Questo perché, dopo la revisione del \Verificatore{}, è necessaria un’approvazione generale del documento e una firma. GitHub mette a disposizione del team tre modalità di merging e chiusura delle pull request:
 \begin{itemize}
   \item \textbf{Create a merge commit:} i commit della pull request vengono aggiunti al ramo base tramite un merge commit;
   \item \textbf{Squash and merge:} i commit della pull request vengono compressi in un unico commit e aggiunti al ramo base;
@@ -185,7 +185,7 @@ Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team 
 Il gruppo mantiene un versionamento per il codice e la documentazione nel seguente formato:
 \[ X.Y.Z \]
 \begin{itemize}
-  \item[X] Avanza alla approvazione del \Responsabile, corrisponde percui ad ogni rilascio;
+  \item[X] Avanza alla approvazione del \Responsabile{}, corrisponde percui ad ogni rilascio;
   \item[Y] Avanza ad ogni verifica completa del documento;
   \item[Z] Avanza ad ogni modifica verificata di un documento.
 \end{itemize}

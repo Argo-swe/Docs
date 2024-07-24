@@ -87,17 +87,71 @@
 
 
 % Comandi utili per riferirsi ai ruoli di progetto
-\newcommand{\Responsabile}{\textit{responsabile di progetto}}
-\newcommand{\Amministratore}{\textit{amministratore}}
-\newcommand{\Analista}{\textit{analista}}
-\newcommand{\Progettista}{\textit{progettista}}
-\newcommand{\Programmatore}{\textit{programmatore}}
-\newcommand{\Verificatore}{\textit{verificatore}}
-\newcommand{\Redattore}{\textit{redattore}}
+%% non rimuovere i caratteri % gestiscono gli spazi
+\NewDocumentCommand{\Responsabile}{o}{%
+  \IfNoValueTF{#1}
+    {\textit{responsabile di progetto}}
+    {\textit{Responsabile di progetto}}%
+}
+\NewDocumentCommand{\Amministratore}{o}{%
+  \IfNoValueTF{#1}
+    {\textit{amministratore}}
+    {\textit{Amministratore}}%
+}
+\NewDocumentCommand{\Analista}{o}{%
+  \IfNoValueTF{#1}
+    {\textit{analista}}
+    {\textit{Analista}}%
+}
+\NewDocumentCommand{\Progettista}{o}{%
+  \IfNoValueTF{#1}
+    {\textit{progettista}}
+    {\textit{Progettista}}%
+}
+\NewDocumentCommand{\Programmatore}{o}{%
+  \IfNoValueTF{#1}
+    {\textit{programmatore}}
+    {\textit{Programmatore}}%
+}
+\NewDocumentCommand{\Verificatore}{o}{%
+  \IfNoValueTF{#1}
+    {\textit{verificatore}}
+    {\textit{Verificatore}}%
+}
+\NewDocumentCommand{\Redattore}{o}{%
+  \IfNoValueTF{#1}
+    {\textit{redattore}}
+    {\textit{Redattore}}%
+}
 
-\newcommand{\Amministratrice}{\textit{amministratrice}}
-\newcommand{\Programmatrice}{\textit{programmatrice}}
-\newcommand{\Redattrice}{\textit{redattrice}}
+\NewDocumentCommand{\Amministratrice}{o}{%
+  \IfNoValueTF{#1}
+    {\textit{amministratrice}}
+    {\textit{Amministratrice}}%
+}
+\NewDocumentCommand{\Programmatrice}{o}{%
+  \IfNoValueTF{#1}
+    {\textit{programmatrice}}
+    {\textit{Programmatrice}}%
+}
+\NewDocumentCommand{\Redattrice}{o}{%
+  \IfNoValueTF{#1}
+    {\textit{redattrice}}
+    {\textit{Redattrice}}%
+}
+
+% FIXME: rimuovere
+% \newcommand{\Responsabile}{\textit{responsabile di progetto}}
+% \newcommand{\Amministratore}{\textit{amministratore}}
+% \newcommand{\Analista}{\textit{analista}}
+% \newcommand{\Progettista}{\textit{progettista}}
+% \newcommand{\Programmatore}{\textit{programmatore}}
+% \newcommand{\Verificatore}{\textit{verificatore}}
+% \newcommand{\Redattore}{\textit{redattore}}
+
+% \newcommand{\Amministratrice}{\textit{amministratrice}}
+% \newcommand{\Programmatrice}{\textit{programmatrice}}
+% \newcommand{\Redattrice}{\textit{redattrice}}
 
 
 \newcommand{\ScopoDelProdotto}{}
