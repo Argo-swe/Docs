@@ -1,24 +1,23 @@
 \subsection{Risoluzione dei problemi}\label{risoluzione_problemi}
 
 \subsubsection{Scopo}
-\par Il processo di risoluzione dei problemi serve ad analizzare, individuare e contrastare i problemi che possono insorgere durante lo sviluppo. Il gruppo si impegna ad analizzare continuamente lo stato del lavoro per individuare quanto prima la presenza di un problema che possa creare una criticità per il progetto. Individuato il problema, il gruppo si impegna ad arginarlo in modo da non sprecare risorse preziose allo sviluppo e mantenere l'efficienza. I metodi per segnalare i problemi sono molteplici: dalle discussioni durante i meeting, alla creazione di ticket su \glossario{Jira} che individuano attività critiche da risolvere, alle discussioni all'interno delle \glossario{pull request} su \glossario{GitHub} durante lo sviluppo di un branch.
+\par Il processo di risoluzione dei problemi mira ad analizzare e contrastare i problemi che possono insorgere durante lo sviluppo. Il gruppo esamina costantemente lo stato di esecuzione dei processi per individuare criticità e difetti. Una volta rilevato un problema, il gruppo si impegna ad arginarlo tempestivamente, documentando le cause e pianificando soluzioni per ridurre la probabilità che si ripresenti. 
 
 \subsubsection{Implementazione del processo}
-\par All'insorgere di una criticità all'interno del progetto, i membri del gruppo si impegnano a segnalare con quanto più preavviso possibile, l'insorgenza di un problema. Questo avviene con una comunicazione in uno degli strumenti utilizzati dal gruppo, come \glossario{Discord} o \glossario{Telegram}. Spesso le criticità possono anche essere rilevate durante le discussioni tra membri del gruppo, durante le riunioni.
-\par Individuato il potenziale rischio, viene creato un opportuno ticket per la risoluzione del problema su \glossario{Jira}, in modo che uno o più membri del gruppo, lo possano prendere in carico per portarne avanti la risoluzione. La descrizione del problema è riportata sul ticket stesso o discussa tra i membri del gruppo nelgi appositi canali di comunicazione. 
-\par Una volta individuato e segnalato il problema, questo viene assegnato a uno o più membri del gruppo, i quali si occuperanno di risolverlo e di validare la risoluzione.
+\par All'insorgere di una criticità, i membri del gruppo devono segnalare prontamente il problema, tracciandolo nell’\glossario{ITS} come ticket di tipo "bug". Inoltre, il problema deve essere comunicato al resto del team tramite i canali di comunicazione dedicati (\sezione{sec:comunicazione}). Chi rileva il bug ha il compito di descrivere la natura del problema e aprire uno spazio di discussione su \glossario{GitHub}. Ogni problema viene classificato per categoria e priorità.
+\par Spesso le criticità emergono durante le riunioni; in tal caso, verranno documentate in un verbale interno. Una volta individuato e segnalato un problema, questo viene preso in carico da o uno più membri del gruppo, i quali si occuperanno di risolverlo e di formalizzare la soluzione.
 
 \subsubsection{Risoluzione dei problemi}
-\par Se il problema è stato rilevato all'interno del progetto in un branch già aperto in precedenza, i verificatori si occupano di segnalarlo con una correzione che viene poi integrata all'interno della \glossario{pull request}. 
-\par Nel caso ciò non avvenga in un branch aperto, verrà aperto un branch apposito per la risoluzione. 
+\par Se il problema è stato rilevato in un \glossario{branch} già aperto, un membro del team può apportare direttamente una correzione (bug fix) che verrà poi integrata all'interno dell'ambiente condiviso.
+\par In caso contrario, verrà aperto un branch dedicato per la risoluzione. 
 
 \subsubsection{Strumenti}
 \IntroStrumenti
 \begin{itemize}
-    \item \textbf{Jira};
-    \item \textbf{Zoom};
-    \item \textbf{Discord};
-    \item \textbf{Telegram};
-    \item \textbf{Google Meet};
-    \item \textbf{GitHub}.
+    \item Jira;
+    \item Zoom;
+    \item Discord;
+    \item Telegram;
+    \item Google Meet;
+    \item GitHub.
 \end{itemize}
