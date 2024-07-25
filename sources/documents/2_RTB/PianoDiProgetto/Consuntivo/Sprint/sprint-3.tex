@@ -53,17 +53,17 @@
       \hline
       \textbf{Ruolo} & \textbf{Ore per ruolo} & \textbf{Delta ore preventivo - consuntivo} & \textbf{Costo (in \texteuro)} & \textbf{Delta costo preventivo - consuntivo (in \texteuro)} \\
       \hline
-      Responsabile & 5 & +1 & 150,00 & +30,00 \\ 
+      \Responsabile[U] & 5 & +1 & 150,00 & +30,00 \\ 
       \hline
-      Amministratore & 11 & +1 & 220,00 & +20,00 \\ 
+      \Amministratore[U] & 11 & +1 & 220,00 & +20,00 \\ 
       \hline
-      Analista & 5 & -1 & 125,00 & -25,00 \\ 
+      \Analista[U] & 5 & -1 & 125,00 & -25,00 \\ 
       \hline
-      Progettista & 9 & -3 & 225,00 & -75,00 \\ 
+      \Progettista[U] & 9 & -3 & 225,00 & -75,00 \\ 
       \hline
-      Programmatore & 17 & -1 & 255,00 & -15,00 \\ 
+      \Programmatore[U] & 17 & -1 & 255,00 & -15,00 \\ 
       \hline
-      Verificatore & 7 & 0 & 105,00 & 0,00 \\ 
+      \Verificatore[U] & 7 & 0 & 105,00 & 0,00 \\ 
       \hline
       \textbf{Totale} & \textbf{54} & -3 & \textbf{1.080,00} & -65,00 \\ 
       \hline
@@ -162,14 +162,14 @@ Nell'arco del terzo \glossario{sprint}, il team ha svolto le seguenti attività:
   \item Le riunioni sono state organizzate quasi sempre con il giusto preavviso;
   \item Il rapporto ore spese/ore produttive è discreto, ma può essere ancora migliorato;
   \item La produttività generale deve essere incrementata;
-  \item Alcuni membri del team ritengono sia necessario un maggior controllo sulle attività da parte del responsabile.
+  \item Alcuni membri del team ritengono sia necessario un maggior controllo sulle attività da parte del \Responsabile{}.
 \end{itemize}
 
 \vspace{0.5\baselineskip}
 \par A seguire le \textbf{analisi a posteriori} del terzo \glossario{sprint}:
 \begin{itemize}
-  \item Nonostante quanto emerso dal consuntivo orario, dove l'assegnazione temporale per ruolo è risultata sbilanciata a favore dei ruoli più tecnici (analista, progettista, programmatore) rispetto a quelli amministrativi (amministratore, responsabile), il team ha ritenuto opportuno non allocare ulteriori risorse a questi ultimi per concentrare gli sforzi sullo sviluppo del PoC;
-  \item In seguito alle considerazioni del team riguardo la necessità di una maggiore supervisione da parte del responsabile, quest'ultimo dovrà impegnarsi, a partire dalla prossima iterazione, a stabilire degli intervalli di tempo sufficientemente brevi alla fine dei quali verificare lo stato di avanzamento delle attività;
+  \item Nonostante quanto emerso dal consuntivo orario, dove l'assegnazione temporale per ruolo è risultata sbilanciata a favore dei ruoli più tecnici (analista, progettista, \Programmatore{}) rispetto a quelli amministrativi (amministratore, \Responsabile{}), il team ha ritenuto opportuno non allocare ulteriori risorse a questi ultimi per concentrare gli sforzi sullo sviluppo del PoC;
+  \item In seguito alle considerazioni del team riguardo la necessità di una maggiore supervisione da parte del \Responsabile{}, quest'ultimo dovrà impegnarsi, a partire dalla prossima iterazione, a stabilire degli intervalli di tempo sufficientemente brevi alla fine dei quali verificare lo stato di avanzamento delle attività;
   \item La conduzione delle riunioni esterne ha evidenziato l'inesperienza del team nel rapporto con la \glossario{Proponente}, che assume a tutti gli effetti il ruolo di cliente, le cui conoscenze tecniche sono spesso asimmetriche rispetto a quelle dei fornitori. La discussione dei dettagli implementativi è un processo interno al gruppo e, pertanto, non deve coinvolgere il cliente. In futuro sarà quindi opportuno mantenere la discussione a un livello più alto, concentrandosi sul "cosa" piuttosto che sul "come";
   \item Malgrado le difficoltà nell'individuare gli standard per la gestione dei servizi IT, i membri con il ruolo di amministratore sono stati in grado di reperire sufficiente documentazione, seppur meno recente, per un'adeguata stesura delle metriche di qualità e la loro categorizzazione;
   \item Sebbene \glossario{Streamlit} abbia dei limiti dal punto di vista del design, il team ha deciso di investire un numero cospicuo di risorse nella progettazione dell'interfaccia grafica. In questo modo, qualora il gruppo dovesse scegliere di cambiare \glossario{framework}, la transizione risulterebbe meno gravosa.
