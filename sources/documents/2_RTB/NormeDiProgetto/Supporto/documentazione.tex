@@ -10,7 +10,7 @@ Il processo consiste nelle seguenti attività:
 \end{itemize}
 
 \paragraph{Implementazione del processo}\label{implementazioneprocessodocumentazione}
-Questa attività definisce quali documenti saranno generati durante il progetto, definendo per ciascuno:
+\par Questa attività definisce quali documenti saranno generati durante il progetto, definendo per ciascuno:
 \begin{itemize}
   \item Titolo;
   \item Scopo;
@@ -20,13 +20,13 @@ Questa attività definisce quali documenti saranno generati durante il progetto,
 \end{itemize}
 
 \paragraph{Progettazione e sviluppo}
-Questa attività consiste nel progettare e redarre ciascun documento nel rispetto degli standard definiti per formato e contenuto, successivamente controllati dal \Verificatore{}.
+\par Questa attività consiste nel progettare e redarre ciascun documento nel rispetto degli standard definiti per formato e contenuto, successivamente controllati dal \Verificatore{}.
 
 \paragraph{Rilascio}
-Questa attività comincia con l'approvazione finale del documento da parte del Responsabile in carica, e della Proponente nel caso di verbali ad uso esterno. Prosegue con la pubblicazione del documento nel \glossario{repository} apposito della documentazione.
+\par Questa attività comincia con l'approvazione finale del documento da parte del Responsabile in carica, e della Proponente nel caso di verbali ad uso esterno. Prosegue con la pubblicazione del documento nel \glossario{repository} apposito della documentazione.
 
 \subsubsection{Lista documenti}
-I documenti da produrre e mantenere durante il corso del progetto sono:
+\par I documenti da produrre e mantenere durante il corso del progetto sono:
 \begin{itemize}
   \item \emph{Piano di Progetto};
   \item \emph{Norme di Progetto};
@@ -40,7 +40,7 @@ I documenti da produrre e mantenere durante il corso del progetto sono:
 \end{itemize}
 
 \subsubsection{Ciclo di vita}
-Il ciclo di vita di un documento è composto dai seguenti eventi:
+\par Il ciclo di vita di un documento è composto dai seguenti eventi:
 \begin{enumerate}
   \item Vengono definite le caratteristiche di base del documento o di una sua parte come da sezione \ref{implementazioneprocessodocumentazione};
   \item Il \Redattore{} stila una bozza iniziale. Se è necessario l'input di più persone in maniera sincrona, tale bozza viene prodotto in un ambiente condiviso;
@@ -51,9 +51,10 @@ Il ciclo di vita di un documento è composto dai seguenti eventi:
 
 \subsubsection{Ambiente di lavoro}
 \paragraph{\glossario{LaTeX}}
-Per lo sviluppo della documentazione del gruppo viene utilizzato un \glossario{template} \glossario{LaTeX} personalizzato. All'interno del template è definito lo stile della pagina iniziale, delle intestazioni e della formattazione generale.
-Parte del template permette l'uso di comandi personalizzati per favorire la consistenza di termini specifici spesso utilizzati (es.: nomi di documenti, nomi dei membri), inoltre è gestita sempre attraverso il template l'interazione con i termini per il Glossario.\\
-L'utilizzo del template garantisce:
+\par Per lo sviluppo della documentazione del gruppo viene utilizzato un \glossario{template} \glossario{LaTeX} personalizzato. All'interno del template è definito lo stile della pagina iniziale, delle intestazioni e della formattazione generale.
+Parte del template permette l'uso di comandi personalizzati per favorire la consistenza di termini specifici spesso utilizzati (es.: nomi di documenti, nomi dei membri), inoltre è gestita sempre attraverso il template l'interazione con i termini per il \Gls.
+
+\par L'utilizzo del template garantisce:
 \begin{itemize}
   \item Il disaccoppiamento di forma e contenuto della documentazione;
   \item L'uniformità dello stile della documentazione;
@@ -62,13 +63,13 @@ L'utilizzo del template garantisce:
 \end{itemize}
 
 \paragraph{\glossario{Docker}}
-La compilazione di file LaTeX può differire in base al compilatore utlizzato, il sistema operativo o altre caratteristiche del sistema locale. Per garantirne l'uniformità, la compilazione dei documenti viene effettuata all'interno di un container Docker costruito a partire da un'immagine comune.
+\par La compilazione di file LaTeX può differire in base al compilatore utlizzato, il sistema operativo o altre caratteristiche del sistema locale. Per garantirne l'uniformità, la compilazione dei documenti viene effettuata all'interno di un container Docker costruito a partire da un'immagine comune.
 
 \paragraph{Google Docs}
-Per scrivere un documento è spesso necessario lavorare in maniera sincrona, Google Docs permette la condivisione e il lavoro contemporaneo di più persone. I limiti del software tuttavia non permettono di generare un documento finale adeguato, per cui le produzioni tramite questo mezzo sono da considerarsi bozza da cui eseguire la coversione.
+\par Per scrivere un documento è spesso necessario lavorare in maniera sincrona, Google Docs permette la condivisione e il lavoro contemporaneo di più persone. I limiti del software tuttavia non permettono di generare un documento finale adeguato, per cui le produzioni tramite questo mezzo sono da considerarsi bozza da cui eseguire la coversione.
 
 \subsubsection{Struttura documenti}
-Ciascun documento è fornito di questi elementi:
+\par Ciascun documento è fornito di questi elementi:
 \begin{itemize}
   \item Prima pagina:
   \begin{itemize}
@@ -124,10 +125,10 @@ Ciascun documento è fornito di questi elementi:
 \end{enumerate}
 
 \subsubsection{Stile}
-Di seguito sono elencate la convenzioni stilistiche adottate dalla documentazione del gruppo.
+\par Di seguito sono elencate la convenzioni stilistiche adottate dalla documentazione del gruppo.
 
 \paragraph{Utilizzo del femminile}
-Quando è necessario fare riferimento tramite ruolo di progetto ad un membro del gruppo con il genere femminile, si utilizzano i seguenti termini:
+\par Quando è necessario fare riferimento tramite ruolo di progetto ad un membro del gruppo con il genere femminile, si utilizzano i seguenti termini:
 \begin{itemize}
   \item \textbf{Responsabile} è invariato;
   \item \textbf{Amministratrice} al posto di \Amministratore[U]{};
@@ -140,23 +141,23 @@ Quando è necessario fare riferimento tramite ruolo di progetto ad un membro del
 
 \paragraph{Formattazione testo}
 \begin{itemize}
-  \item \textbf{Termini nel Glossario:} indicati in \textit{corsivo} e con una lettera \ped{G} in pedice alla fine della parola. In base a ciascun documento tale formattazione può comparire alla sola prima occorrenza (quando il documento ha lo scopo di essere letto dall'inizio alla fine), o in maniera più frequente (quando il documento può essere letto in maniera più frammentata);
-  \item \textbf{Nomi di documento:} scritti in \textit{corsivo} con le iniziali di parola maiuscole eccetto preposizioni (es.: \textit{Piano di Progetto}, non \textit{Piano Di Progetto}). Questo per mantenere la coerenza con le \glossario{abbreviazioni} (es: AdR, PdP, PdQ, NdP);
-  \item \textbf{Way of Working:} indicato con le iniziali di parola maiuscole eccetto preposizioni, per mantenere la coerenza con l'abbreviazione WoW usata anche come comando in \glossario{LaTeX};
-  \item \textbf{Nomi di ruolo:} scritti con la lettera iniziale minuscola; anche vocaboli come team, gruppo e fornitore seguono la medesima regola. L'unica eccezione è rappresentata dai seguenti termini:
+  \item \textbf{Termini nel Glossario}: indicati in \textit{corsivo} e con una lettera \ped{G} in pedice alla fine della parola. In base a ciascun documento tale formattazione può comparire alla sola prima occorrenza (quando il documento ha lo scopo di essere letto dall'inizio alla fine), o in maniera più frequente (quando il documento può essere letto in maniera più frammentata);
+  \item \textbf{Nomi di documento}: scritti in \textit{corsivo} con le iniziali di parola maiuscole eccetto preposizioni (es.: \textit{Piano di Progetto}, non \textit{Piano Di Progetto}). Questo per mantenere la coerenza con le \glossario{abbreviazioni} (es: AdR, PdP, PdQ, NdP);
+  \item \textbf{Way of Working}: indicato con le iniziali di parola maiuscole eccetto preposizioni, per mantenere la coerenza con l'abbreviazione WoW usata anche come comando in \glossario{LaTeX};
+  \item \textbf{Nomi di ruolo}: scritti con la lettera iniziale minuscola; anche vocaboli come team, gruppo e fornitore seguono la medesima regola. L'unica eccezione è rappresentata dai seguenti termini:
   \begin{itemize}
-    \item \textbf{Proponente:} declinato al femminile e indicato sempre con la lettera iniziale maiuscola, per garantire la massima formalità possibile;
-    \item \textbf{Cliente e Committente:} scritti con la lettera iniziale maiuscola quando si desidera instaurare un rapporto formale con un attore esterno, altrimenti mantengono l'iniziale minuscola. Per esempio, nella frase "il ruolo di cliente è rivestito dall'azienda Zucchetti S.p.A.", la parola "cliente" non richiede la lettera maiuscola.
+    \item \textbf{Proponente}: declinato al femminile e indicato sempre con la lettera iniziale maiuscola, per garantire la massima formalità possibile;
+    \item \textbf{Cliente e Committente}: scritti con la lettera iniziale maiuscola quando si desidera instaurare un rapporto formale con un attore esterno, altrimenti mantengono l'iniziale minuscola. Per esempio, nella frase "il ruolo di cliente è rivestito dall'azienda Zucchetti S.p.A.", la parola "cliente" non richiede la lettera maiuscola.
   \end{itemize}
-  \item \textbf{Data:} indicata in formato YYYY-MM-DD nelle tabelle riassuntive, nei titoli e nei nomi dei file. Il formato esteso (esempio: 20 aprile 2024) si utilizza quando la data rientra in un testo discorsivo.
+  \item \textbf{Data}: indicata in formato YYYY-MM-DD nelle tabelle riassuntive, nei titoli e nei nomi dei file. Il formato esteso (esempio: 20 aprile 2024) si utilizza quando la data rientra in un testo discorsivo.
 \end{itemize}
 
 \subsubsection{Strumenti}
 \IntroStrumenti
 \begin{itemize}
-  \item \textbf{Git};
-  \item \textbf{GitHub};
-  \item \textbf{LaTeX};
-  \item \textbf{Docker};
-  \item \textbf{Google Docs}.
+  \item Git;
+  \item GitHub;
+  \item LaTeX;
+  \item Docker;
+  \item Google Docs.
 \end{itemize}
