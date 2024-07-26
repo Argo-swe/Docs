@@ -46,13 +46,13 @@
       \hline
       \textbf{Ruolo} & \textbf{Ore per ruolo} & \textbf{Delta ore preventivo - consuntivo} & \textbf{Costo (in \texteuro)} & \textbf{Delta costo preventivo - consuntivo (in \texteuro)} \\
       \hline
-      Responsabile & 4 & 0 & 120,00 & 0,00 \\ \hline
-      Amministratore & 2 & 1 & 40,00 & 20,00 \\ \hline
-      Analista & 2 & 1 & 50,00 & 25,00 \\ \hline
-      Progettista & 0 & 0 & 0,00 & 0,00 \\ \hline
-      Programmatore & 23 & 0 & 300,00 & 0,00 \\ \hline
-      Verificatore & 12 & -2 & 120,00 & -30,00 \\ \hline
-      \textbf{Totale} & \textbf{43} & 1 & \textbf{735,00} & 15,00 \\ \hline
+      \Responsabile[U]{} & 4 & 0 & 120,00 & 0,00 \\ \hline
+      \Amministratore[U]{} & 2 & 1 & 40,00 & 20,00 \\ \hline
+      \Analista[U]{} & 2 & 1 & 50,00 & 25,00 \\ \hline
+      \Progettista[U]{} & 0 & 0 & 0,00 & 0,00 \\ \hline
+      \Programmatore[U]{} & 23 & 0 & 300,00 & 0,00 \\ \hline
+      \Verificatore[U]{} & 12 & -2 & 120,00 & -30,00 \\ \hline
+      \textbf{Totale} & \textbf{43} & 0 & \textbf{735,00} & 15,00 \\ \hline
     \textbf{Restante} & 403 & / & 8.010,00 & / \\ \hline
       \textbf{Sprint pregressi} & 200 & / & 4.275,00 & / \\ \hline
     \end{tabular}
@@ -166,7 +166,7 @@ In conclusione, lo sprint 5 ha visto significativi progressi in termini di effic
 
 \paragraph*{Pianificazione futura:}
 
-Con l'avvicinarsi della scadenza per la RTB, la pianificazione futura prevede un'attenzione particolare alle ore di verificatore, che saranno fondamentali per il controllo e la revisione di tutti i documenti redatti fino ad ora. In particolare, sarà effettuata una revisione completa del Glossario e del \PdP, con l'obiettivo di garantire la massima coerenza e coesione tra tutti i documenti prodotti. Questa attività di verifica è essenziale per assicurare che ogni parte della documentazione sia accurata, completa e in linea con gli standard richiesti.
+Con l'avvicinarsi della scadenza per la RTB, la pianificazione futura prevede un'attenzione particolare alle ore di \Verificatore{}, che saranno fondamentali per il controllo e la revisione di tutti i documenti redatti fino ad ora. In particolare, sarà effettuata una revisione completa del Glossario e del \PdP, con l'obiettivo di garantire la massima coerenza e coesione tra tutti i documenti prodotti. Questa attività di verifica è essenziale per assicurare che ogni parte della documentazione sia accurata, completa e in linea con gli standard richiesti.
 Per quanto riguarda lo sviluppo di ChatSQL, le attività rimanenti nel backlog saranno affrontate nel prossimo sprint. In particolare, ci concentreremo sull'implementazione delle parti mancanti del \glossario{front-end}, come la gestione dei \glossario{log}, la visualizzazione del \glossario{dizionario dati} e il completamento del chatbot. 
 In sintesi, la pianificazione futura si focalizzerà sulla rigorosa verifica dei documenti e sul completamento delle componenti chiave del front-end di ChatSQL, assicurando che tutti gli obiettivi prefissati per la RTB siano raggiunti in modo efficace e puntuale.
 
@@ -190,7 +190,6 @@ La revisione \glossario{RTB} (inizialmente prevista per la prima settimana di gi
 \vspace{0.5\baselineskip}
 \par Di seguito sono elencati i rischi gestiti con successo:
 \begin{itemize}
-  \item \textbf{RO1 - Periodi di rallentamento}: uno dei rischi riscontrati dal team è stato il rallentamento dovuto alla sessione di esami universitari, che ha comportato la necessità di coordinare sia lo studio personale che l'avanzamento del progetto. La concomitanza delle scadenze accademiche con le attività di sviluppo ha rallentato il flusso di lavoro; tuttavia, questo rischio era stato preventivato con largo anticipo. Per mitigarne l'impatto, sono state adottate le seguenti contromisure: negli sprint precedenti, il carico di lavoro è stato intensificato, in modo tale da anticipare e completare una parte significativa delle attività prima dell'inizio della sessione di esami. In fase di preventivo del quinto \glossario{sprint}, le ore produttive sono state ridotte, permettendo al team di dedicare il tempo necessario alla preparazione degli esami. Inoltre, sono state pianificate le attività con scadenze più flessibili. Infine, è stato promossa la comunicazione asincrona e l'organizzazione di riunioni brevi e mirate, per ottimizzare il tempo a disposizione di ciascun membro del team;
   \item \textbf{RT1 - Scarso know-how tecnologico}: per affrontare il cambio di tecnologie, un membro del team, con esperienza pregressa nei framework selezionati, ha introdotto il resto del gruppo al nuovo ambiente di sviluppo;
   \item \textbf{RO4 - Rotazione dei ruoli}: la rotazione dei ruoli è risultata più naturale con l'avanzare degli \glossario{sprint}, poiché i membri del gruppo hanno acquisito esperienza su ciascun ruolo di progetto. Inoltre, è stata applicata con successo la contromisura definita al termine del quarto \glossario{sprint}. Un'altra soluzione applicata è stata l'assegnazione di più ruoli per ciascun membro del team, in modo tale da mantenere aggiornato e allineato il gruppo, cercando al tempo stesso di evitare conflitti e sovrapposizioni tra i ruoli.
   \item \textbf{RT3 - Malfunzionamenti software}: il team ha applicato la cosiddetta "pair programming", lavorando in coppia tramite Visual Studio Live Share. Questa pratica ha permesso di individuare e risolvere rapidamente eventuali malfunzionamenti software.
