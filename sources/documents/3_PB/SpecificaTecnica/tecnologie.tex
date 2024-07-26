@@ -1,0 +1,98 @@
+\section{Tecnologie utilizzate}\label{sec:tecnologie}
+\par Nella sezione seguente sono documentate le scelte tecnologiche del team, la cui validità è stata dimostrata mediante lo sviluppo di un \glossario{Proof of Concept}. Per ciascuna tecnologia, il team riporta le motivazioni che ne hanno determinato la scelta.
+
+\subsection{Backend}\label{sec:tecnologie-backend}
+
+\subsubsection{FastAPI}\label{sec:fastapi}
+\par FastAPI è un \glossario{framework} web moderno per la creazione di \glossario{API} con Python.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Flessibilità}: FastAPI offre ampia libertà agli sviluppatori e può essere facilmente integrato con librerie esterne; contrariamente a Django, non impone strutture rigide, consentendo agli sviluppatori di scegliere gli strumenti più adatti al loro caso d'uso;
+  \item \textbf{Prestazioni}: FastAPI assicura prestazioni elevate grazie all'integrazione nativa con Starlette e Pydantic;
+  \item \textbf{Orientato alla produttività}: FastAPI è progettato per massimizzare la produttività degli sviluppatori, riducendo il tempo necessario per la configurazione dell'ambiente e lo sviluppo delle API;
+  \item \textbf{Documentazione API}: FastAPI genera automaticamente la documentazione interattiva delle API, a differenza di Flask e Django, che richiedono l'integrazione di librerie esterne per ottenere funzionalità simili;
+  \item \textbf{Validazione automatica dei tipi}: FastAPI utilizza Pydantic per la validazione automatica dei dati;
+  \item \textbf{Modernità}: FastAPI è un framework moderno, che sfrutta le funzionalità più recenti di Python, come le annotazioni di tipo.
+\end{itemize}
+
+\subsubsection{Python}\label{sec:Python}
+\par Python è un linguaggio di programmazione ad alto livello ampiamente utilizzato in applicazioni di machine learning ed elaborazione del linguaggio naturale (NLP).
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Leggibilità}: Python ha una sintassi intuitiva e pulita, che agevola la leggibilità, la manutenzione e la collaborazione;
+  \item \textbf{NLP}: Python è il linguaggio di riferimento per applicazioni di NLP (elaborazione del linguaggio naturale);
+  \item \textbf{Librerie}: Python dispone di un'ampia gamma di librerie e moduli di terze parti;
+  \item \textbf{Orientato agli oggetti}: Python è un linguaggio orientato agli oggetti; pertanto, consente di organizzare il codice seguendo i principi del design \glossario{SOLID};
+  \item \textbf{Comunità}: Python dispone di una vasta comunità di sviluppatori che forniscono supporto e soluzioni a problemi comuni.
+\end{itemize}
+
+\subsubsection{txtai}\label{sec:txtai}
+\par \glossario{txtai} è un database di embeddings sviluppato in Python e progettato per ottimizzare la ricerca semantica.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Comunicazione con la Proponente}: txtai è stato proposto dalla \glossario{Proponente}, sia nel capitolato che durante le riunioni esterne, per facilitare la comunicazione e le revisioni congiunte;
+  \item \textbf{Query SQL-like}: txtai supporta query SQL-like per la ricerca semantica; 
+  \item \textbf{Configurazione minima}: txtai richiede una configurazione minima e fornisce una suite completa di strumenti di intelligenza artificiale, inclusa la traduzione automatica tra lingue;
+  \item \textbf{Persistenza degli indici}: txtai semplifica il processo di memorizzazione e ripristino degli \glossario{indici};
+  \item \textbf{Debug}: txtai mette a disposizione funzioni specifiche per il debug del processo di generazione di un \glossario{prompt}.
+\end{itemize}
+
+\subsubsection{SQLAlchemy}\label{sec:SQLite}
+\par SQLAlchemy è lo strumento principale per l'interazione con database \glossario{SQL} in Python.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Portabilità}: SQLAlchemy supporta i principali \glossario{DBMS} e agevola la transizione;
+  \item \textbf{Performance e sicurezza}: SQLAlchemy massimizza l'efficienza e la sicurezza delle transazioni attraverso il pattern "Unit of Work";
+  \item \textbf{SQL injection}: SQLAlchemy include una protezione integrata contro l'SQL injection;
+  \item \textbf{Leggibilità e mantenibilità}: SQLAlchemy utilizza classi e oggetti Python per rappresentare le relazioni di un \glossario{database}, rendendo il codice intuitivo e autoesplicativo.
+  \item \textbf{Flessibilità}: SQLAlchemy consente di costruire query SQL "grezze" o di utilizzare un \glossario{ORM} per interagire con il database.
+\end{itemize}
+
+\subsection{Frontend}\label{sec:tecnologie-frontend}
+
+\subsubsection{Vue.js}\label{sec:vuejs}
+\par \glossario{Vue.js} è un framework JavaScript utilizzato per la creazione di interfacce utente reattive e dinamiche.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Component-based}: Vue.js è un framework basato su componenti, suddivisi in tre sezioni: template (HTML), stile (CSS) e logica (JavaScript);
+  \item \textbf{Reattività}: Vue.js offre un sistema reattivo che permette di aggiornare automaticamente la vista dell'utente in base ai cambiamenti dello stato dell'applicazione;
+  \item \textbf{Integrazione}: Vue.js può essere facilmente integrato con librerie esterne, come Axios e PrimeVue;
+  \item \textbf{Prestazioni}: Vue.js riduce i re-render non necessari, migliorando le prestazioni dell'applicazione.
+\end{itemize}
+
+\subsubsection{Axios}\label{sec:axios}
+\par TODO.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item TODO.
+\end{itemize}
+
+\subsubsection{TypeScript}\label{sec:typescript}
+\par TODO.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item TODO.
+\end{itemize}
+
+\subsubsection{PrimeVue}\label{sec:primevue}
+\par TODO.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item TODO.
+\end{itemize}
+
+\subsection{Altre tecnologie}\label{sec:tecnologie-generali}
+
+\subsubsection{Docker}\label{sec:docker}
+\par TODO.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item TODO.
+\end{itemize}
+
+\subsubsection{SQLite}\label{sec:SQLite}
+\par TODO
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item TODO.
+\end{itemize}
