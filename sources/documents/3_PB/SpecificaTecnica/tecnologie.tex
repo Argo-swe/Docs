@@ -48,6 +48,15 @@
   \item \textbf{Flessibilità}: SQLAlchemy consente di costruire query SQL "grezze" o di utilizzare un \glossario{ORM} per interagire con il database.
 \end{itemize}
 
+\subsubsection{JWT}\label{sec:SQLite}
+\par JSON Web Token (JWT) uno standard web per lo scambio di dati.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Stateless}: JWT consente di autenticare le richieste senza necessità di sessioni sul server, migliorando la scalabilità e riducendo il carico sul server;
+  \item \textbf{Sicurezza}: I JWT sono firmati digitalmente, il che garantisce l'integrità e l'autenticità del token;
+  \item \textbf{Formato standard}: JWT è supportato da una vasta gamma di linguaggi e framework, tra cui FastAPI.
+\end{itemize}
+
 \subsection{Frontend}\label{sec:tecnologie-frontend}
 
 \subsubsection{Vue.js}\label{sec:vuejs}
@@ -68,7 +77,7 @@
   \item \textbf{Semplicità}: Axios è un libreria semplice e intuitiva per effettuare richieste HTTP;
   \item \textbf{Gestione dati JSON}: Axios converte automaticamente i dati da e in JSON;
   \item \textbf{Compatibilità e integrazione}: Axios è compatible e facilmente integrabile con Vue 3 e la Composition API;
-  \item \textbf{Promise-based}: Axios utilizza una interfaccia Promise-based per gestire le richieste asincrone.
+  \item \textbf{Promise-based}: Axios utilizza un'interfaccia Promise-based per gestire le richieste asincrone.
 \end{itemize}
 
 \subsubsection{TypeScript}\label{sec:typescript}
@@ -86,21 +95,71 @@
 \paragraph*{Motivazioni}
 \begin{itemize}
   \item \textbf{Integrazione}: PrimeVue è stato progettato appositamente per Vue.js e, pertanto, offre un'integrazione nativa con il \glossario{framework};
-  \item \textbf{Documentazione e Supporto}: TODO.
+  \item \textbf{Completezza}: PrimeVue offre una vasta gamma di componenti, temi e stili personalizzabili;
+  \item \textbf{Funzionalità avanzate}: PrimeVue fornisce componenti per la creazione di interfacce utente complesse e interattive. Inoltre, supporta le caratteristiche e funzionalità avanzate di Vue.js;
+  \item \textbf{Documentazione e supporto}: La documentazione e i materiali di supporto sono orientati all'integrazione con Vue.js.
 \end{itemize}
 
-\subsection{Altre tecnologie}\label{sec:tecnologie-generali}
+\subsection{Altri strumenti e tecnologie}\label{sec:tecnologie-generali}
 
 \subsubsection{Docker}\label{sec:docker}
-\par TODO.
+\par \glossario{Docker} è una piattaforma open-source per la creazione, la distribuzione e l'esecuzione di applicazioni in contenitori leggeri e portabili.
 \paragraph*{Motivazioni}
 \begin{itemize}
-  \item TODO.
+  \item \textbf{Isolamento delle applicazioni}: Docker consente di isolare le applicazioni in contenitori, garantendo che ciascuna applicazione abbia un ambiente di esecuzione indipendente;
+  \item \textbf{Collaborazione}: La condivisione delle librerie e delle dipendenze semplifica la collaborazione e riduce il rischio di conflitti;
+  \item \textbf{Portabilità}: I contenitori possono essere eseguiti su qualsiasi sistema che supporti Docker, indipendentemente dall'ambiente di sviluppo o di produzione;
+  \item \textbf{Scalabilità}: Docker permette di aggiungere o rimuovere container in maniera rapida ed efficiente;
+  \item \textbf{CI/CD}: Docker può essere utilizzato per automatizzare i processi di continuous integration e continuous delivery.
 \end{itemize}
 
 \subsubsection{SQLite}\label{sec:SQLite}
-\par TODO
+\par \glossario{SQLite} è una libreria di gestione di database relazionali integrata nella maggior parte dei linguaggi di programmazione.
 \paragraph*{Motivazioni}
 \begin{itemize}
-  \item TODO.
+  \item \textbf{Leggerezza}: SQLite è estremamente leggero e richiede una quantità inferiore di risorse rispetto ai DBMS tradizionali;
+  \item \textbf{Autosufficienza}: SQLite non richiede un processo separato per funzionare ed è progettato per essere integrato direttamente nelle applicazioni;
+  \item \textbf{Compatibilità}: SQLite supporta la quasi totalità delle funzionalità dei database SQL standard;
+  \item \textbf{Portabilità}: SQLite memorizza l'intero database in un singolo file, semplificando il trasferimento dei dati tra sistemi e piattaforme differenti;
+  \item \textbf{ACID Compliance}: SQLite supporta le transazioni ACID (Atomicità, Coerenza, Isolamento e Durabilità), garantendo l'integrità dei dati anche in caso di malfunzionamenti;
+  \item \textbf{Performance}: SQLite è ottimizzato per gestire database di piccole e medie dimensioni.
+\end{itemize}
+
+\subsubsection{Hugging Face}\label{sec:huggingface}
+\par \glossario{Hugging Face} è una piattaforma open-source che fornisce strumenti e risorse per lavorare su progetti di NLP (elaborazione del linguaggio naturale).
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Modelli pre-addestrati}: Hugging Face mette a disposizione una vasta collezione di modelli pre-addestrati;
+  \item \textbf{Modelli open-source}: Hugging Face fornisce un'ampia selezione di modelli open-source;
+  \item \textbf{Modelli locali}: Hugging Face offre la possibilità di scaricare i \glossario{modelli} in locale per l’esecuzione offline;
+  \item \textbf{Comunità}: La piattaforma dispone di una comunità attiva di sviluppatori e ricercatori che contribuiscono al miglioramento continuo dei modelli;
+  \item \textbf{Supporto per diverse lingue}: Hugging Face offre una varietà di modelli multilingue e modelli per la traduzione.
+\end{itemize}
+
+\subsubsection{ChatGPT}\label{sec:chatgpt}
+\par \glossario{ChatGPT} (Chat Generative Pre-trained Transformer) è un ChatBOT basato su intelligenza artificiale e apprendimento automatico, sviluppato da OpenAI.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Popolarità}: ChatGPT è uno dei ChatBOT più diffusi nel campo informatico, e l'adeguatezza delle sue risposte è stata dimostrata in numerosi contesti;
+  \item \textbf{Integrazione}: ChatGPT offre API per l'integrazione con applicazioni esterne;
+  \item \textbf{Supporto Multilingue}: I modelli alla base di ChatGPT supportano diverse lingue, tra cui l'italiano e l'inglese.
+\end{itemize}
+
+\subsubsection{LMSYS Chatbot Arena}\label{sec:lmsys}
+\par LMSYS Chatbot Arena è uno spazio online dedicato al \glossario{benchmarking} di LLM.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Benchmark}: LMSYS Chatbot Arena permette di confrontare modelli diversi e di selezionare il miglior output in ciascuna iterazione;
+  \item \textbf{Disponibilità}: LMSYS Chatbot Arena consente di testare i modelli più diffusi, inclusi ChatGPT, Gemini, Claude e LLaMA.
+\end{itemize}
+
+\subsubsection{LM Studio}\label{sec:lmstudio}
+\par \glossario{LM Studio} è un'applicazione desktop che semplifica il processo di testing di modelli linguistici di grandi dimensioni (LLM).
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Semplicità}: LM Studio offre un'interfaccia intuitiva e user-friendly per testare i modelli LLM;
+  \item \textbf{Test offline}: LM Studio consente di scaricare le versioni quantizzate dei modelli per l'esecuzione offline;
+  \item \textbf{Debug}: LM Studio fornisce strumenti per il debug e l'analisi dei risultati;
+  \item \textbf{Server OpenAI-like}: Le interazioni con il server locale di LM Studio seguono il formato API di OpenAI;
+  \item \textbf{Prestazioni}: LM Studio fornisce un’opzione per abilitare l'accelerazione GPU e velocizzare i processi di inferenza dei modelli.
 \end{itemize}
