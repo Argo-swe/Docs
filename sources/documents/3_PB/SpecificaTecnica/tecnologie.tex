@@ -37,7 +37,7 @@
   \item \textbf{Debug}: txtai mette a disposizione funzioni specifiche per il debug del processo di generazione di un \glossario{prompt}.
 \end{itemize}
 
-\subsubsection{SQLAlchemy}\label{sec:SQLite}
+\subsubsection{SQLAlchemy}\label{sec:sqlalchemy}
 \par SQLAlchemy è lo strumento principale per l'interazione con database \glossario{SQL} in Python.
 \paragraph*{Motivazioni}
 \begin{itemize}
@@ -48,7 +48,7 @@
   \item \textbf{Flessibilità}: SQLAlchemy consente di costruire query SQL "grezze" o di utilizzare un \glossario{ORM} per interagire con il database.
 \end{itemize}
 
-\subsubsection{JWT}\label{sec:SQLite}
+\subsubsection{JWT}\label{sec:jwt}
 \par JSON Web Token (JWT) uno standard web per lo scambio di dati.
 \paragraph*{Motivazioni}
 \begin{itemize}
@@ -173,10 +173,12 @@
   \item \textbf{Strumenti}.
 \end{itemize}
 
+\subsubsection{Framework}\label{sec:framework}
+
 \bgroup
 \begin{adjustwidth}{-0.5cm}{-0.5cm}
 	% MAX 12.5cm
- 	\begin{longtable}{|P{2.2cm}|P{2.2cm}|>{\raggedright\arraybackslash}P{8.1cm}|}
+ 	\begin{longtable}{|P{2.7cm}|P{2cm}|>{\raggedright\arraybackslash}P{8cm}|}
     \caption{Framework utilizzati}
   	\label{tab:framework} \\
 	  \hline
@@ -198,18 +200,23 @@
 		\hline
 		\endlastfoot
 
-    FastAPI & 0.110.0 & Framework web moderno per la creazione di API con Python \\
-    \hline Vue.js & 3.4.21 & Framework JavaScript per la creazione di interfacce utente reattive e dinamiche \\
+    FastAPI & 0.110.0 & Framework web moderno per la creazione di API con Python. \\
+    \hline Vue.js & 3.4.21 & Framework JavaScript per la creazione di interfacce utente reattive e dinamiche. \\
+    \hline Unittest (oppure pytest) & / & Framework di testing per Python, ispirato al modello di JUnit, un framework di unit testing per Java. \\
+    \hline Jest & 29.7.0 & Framework di testing per JavaScript e TypeScript. Jest offre una suite completa di strumenti per il testing automatizzato. \\
+    \hline Cypress & 13.6.0 & Framework di testing che può essere utilizzato per testare l'intera applicazione simulando l'interazione dell'utente. \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
 
+\subsubsection{Linguaggi}\label{sec:linguaggi}
+
 \bgroup
 \begin{adjustwidth}{-0.5cm}{-0.5cm}
 	% MAX 12.5cm
- 	\begin{longtable}{|P{2.2cm}|P{2.2cm}|>{\raggedright\arraybackslash}P{8.1cm}|}
+ 	\begin{longtable}{|P{2.7cm}|P{2cm}|>{\raggedright\arraybackslash}P{8cm}|}
     \caption{Linguaggi utilizzati}
-  	\label{tab:framework} \\
+  	\label{tab:linguaggi} \\
 	  \hline
 		\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione} \\
 		\hline
@@ -229,20 +236,22 @@
 		\hline
 		\endlastfoot
 
-    HTML & 5 & Linguaggio di markup utilizzato per definire la struttura delle pagine web \\
-    \hline CSS & 3 & Linguaggio usato per definire lo stile e l’aspetto estetico delle pagine web \\
-    \hline TypeScript & 5 & Espansione del linguaggio JavaScript, progettata per migliorare lo sviluppo di pagine web dinamiche e interattive \\
-    \hline Python & 3.10.12 & Linguaggio di programmazione ad alto livello e orientato agli oggetti \\
+    HTML & 5 & Linguaggio di markup utilizzato per definire la struttura delle pagine web. \\
+    \hline CSS & 3 & Linguaggio usato per definire lo stile e l’aspetto estetico delle pagine web. \\
+    \hline TypeScript & 5 & Espansione del linguaggio JavaScript, progettata per migliorare lo sviluppo di pagine web dinamiche e interattive. \\
+    \hline Python & 3.10.12 & Linguaggio di programmazione ad alto livello e orientato agli oggetti. \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
 
+\subsubsection{Librerie}\label{sec:librerie}
+
 \bgroup
 \begin{adjustwidth}{-0.5cm}{-0.5cm}
 	% MAX 12.5cm
- 	\begin{longtable}{|P{2.2cm}|P{2.2cm}|>{\raggedright\arraybackslash}P{8.1cm}|}
+ 	\begin{longtable}{|P{2.7cm}|P{2cm}|>{\raggedright\arraybackslash}P{8cm}|}
     \caption{Librerie utilizzate}
-  	\label{tab:framework} \\
+  	\label{tab:librerie} \\
 	  \hline
 		\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione} \\
 		\hline
@@ -262,13 +271,63 @@
 		\hline
 		\endlastfoot
 
-    txtai & 7.0.0 & Database di embeddings sviluppato in Python e progettato per ottimizzare la ricerca semantica \\
-    \hline SQLAlchemy & 2.0.31 & Libreria open-source che fornisce un toolkit SQL e un ORM per le interazioni con database \\
-    \hline jsonschema & 4.23.0 & Libreria per la validazione di JSON Schema in Python \\
-    \hline Pydantic & 2.8.2 & Libreria per la validazione dei dati mediante le annotazioni di tipo di Python \\
-    \hline PrimeVue & 3.53.0 & Libreria di componenti per Vue.js \\
-    \hline Vuex (Pinia) & 3.10.12 & Libreria di gestione dello stato tra i componenti per applicazioni Vue.js \\
-    \hline Axios & 3.10.12 & Libreria JavaScript utilizzata per connettersi con le API di back-end e gestire le richieste effettuate tramite il protocollo HTTP \\
+    txtai & 7.0.0 & Database di embeddings sviluppato in Python e progettato per ottimizzare la ricerca semantica. \\
+    \hline SQLAlchemy & 2.0.31 & Libreria open-source che fornisce un toolkit SQL e un ORM per le interazioni con database. \\
+    \hline jsonschema & 4.23.0 & Libreria per la validazione di JSON Schema in Python. \\
+    \hline Pydantic & 2.8.2 & Libreria Python per la validazione dei dati mediante le annotazioni di tipo. \\
+    \hline PyJWT & 2.8.0 & Libreria Python per la gestione dei JSON Web Token. \\
+    \hline parameterized & 0.9.0 & Libreria Python utilizzata per creare test parametrizzati, ovvero test che vengono eseguiti più volte con diversi set di parametri. \\
+    \hline openai & 1.37.1 & Libreria Python per l'interazione con i servizi di OpenAI. \\
+    \hline aiofiles & 24.1.0 & Libreria Python per eseguire operazioni di I/O su file in modo asincrono. \\
+    \hline PrimeVue & 3.53.0 & Libreria di componenti per Vue.js. \\
+    \hline Vue I18n & 9.0.0 & Libreria per la creazione di interfacce utente multilingue in applicazioni Vue.js. \\
+    \hline Vuex (oppure Pinia) & 3.10.12 & Libreria di gestione dello stato in applicazioni Vue.js. \\
+    \hline Axios & 3.10.12 & Libreria JavaScript utilizzata per connettersi con le API di back-end e gestire le richieste effettuate tramite il protocollo HTTP. \\
+    \hline Vue Test Utils & 2.4.6 & Libreria per il testing di componenti in applicazioni Vue.js. Vue Test Utils supporta sia test di unità che test di integrazione. \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
+
+\subsubsection{Strumenti}\label{sec:strumenti}
+
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	% MAX 12.5cm
+ 	\begin{longtable}{|P{2.7cm}|P{2cm}|>{\raggedright\arraybackslash}P{8cm}|}
+    \caption{Strumenti utilizzati}
+  	\label{tab:strumenti} \\
+	  \hline
+		\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione} \\
+		\hline
+		\endfirsthead
+
+    \caption[]{Strumenti utilizzati (continua)} \\
+		\hline
+		\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione} \\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{3}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    Git & 2.45.2 & Sistema di controllo di versione distribuito utilizzato principalmente nello sviluppo software. \\
+    \hline pip & 24.0 & Sistema di gestione dei pacchetti per Python. \\
+    \hline npm & 10.7.0 & Sistema di gestione dei pacchetti per JavaScript e per l'ambiente di esecuzione Node.js. \\
+    \hline ESLint & 9.5.0 & Strumento di analisi statica che mira a individuare errori di programmazione, problemi stilistici e costrutti sospetti nel codice JavaScript. \\
+    \hline Prettier & 3.3.0 & Formattatore di codice per JavaScript, TypeScript, JSON, HTML, CSS, Vue e YAML. \\
+    \hline Pylint & 3.2.6 & Strumento di analisi statica per Python. \\
+    \hline Vue Test Utils & 3.0.0 & Libreria per il testing di componenti in applicazioni Vue.js. \\
+    \hline Docker & / & Piattaforma per l'esecuzione di applicazioni in contenitori isolati. Docker può essere utilizzato in combinazione con GitHub Actions per automatizzare i processi di build, test e distribuzione. \\
+    \hline SQLite & / & Sistema di gestione di database relazionali open-source, leggero e facilmente portabile. \\
+    \hline Hugging Face & / & Piattaforma di hosting di modelli e set di dati di machine learning. \\
+    \hline ChatGPT & / & ChatBOT basato su intelligenza artificiale e apprendimento automatico. \\
+    \hline LMSYS Chatbot Arena & / & Spazio online dedicato al benchmarking di LLM. \\
+    \hline LM Studio & / & Applicazione desktop per il testing di LLM in locale. \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
