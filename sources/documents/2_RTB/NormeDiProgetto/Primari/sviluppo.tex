@@ -1,16 +1,16 @@
 \subsection{Sviluppo}\label{sviluppo}
 
 \subsubsection{Descrizione}
-Il \glossario{processo} di sviluppo contiene le attività e compiti dello \glossario{sviluppatore} sotto elencate:
+Il \glossario{processo} di sviluppo contiene le seguenti attività e compiti dello \glossario{sviluppatore}:
 \begin{itemize}
-  \item Analisi dei requisiti;
+  \item Analisi dei Requisiti;
   \item \glossario{Progettazione};
   \item \glossario{Codifica} e \glossario{testing}.
 \end{itemize}
 
 \subsubsection{Analisi dei Requisiti}\label{analisi-requisiti}
 \paragraph{Descrizione}
-L'Analisi dei Requisiti è eseguita dall'Analista, che redige l'omonimo documento \AdR. Il documento considera i seguenti aspetti:
+L'Analisi dei Requisiti è eseguita dall'analista, che redige l'omonimo documento. Il documento di \AdR\ considera i seguenti aspetti:
 \begin{itemize}
   \item Descrizione del prodotto e caratteristiche ad alto livello;
   \item Elenco dei casi d'uso;
@@ -18,33 +18,33 @@ L'Analisi dei Requisiti è eseguita dall'Analista, che redige l'omonimo document
 \end{itemize}
 
 \paragraph{Casi d'uso}
-La struttura di un UC è divisa nella seguente struttura:
+La struttura di un caso d'uso è definita come segue:
 \begin{itemize}
-  \item UCN - Nome UC;
+  \item UCN - Nome caso d'uso;
   \item Descrizione;
   \item Attori principali;
   \item Precondizioni;
   \item Postcondizioni;
   \item Trigger;
   \item Scenario principale;
-  \item Eventuale Scenario alternativo;
-  \item Eventuale Inclusioni;
-  \item Eventuali Estensioni;
+  \item Eventuale scenario alternativo;
+  \item Eventuale inclusioni;
+  \item Eventuali estensioni;
   \item Eventuali sottocasi d'uso.
 \end{itemize}
-Nella scrittura e definizione di un UC va tenuto conto delle seguenti considerazioni:
+Nella scrittura e definizione di un caso d'uso vanno considerati i seguenti punti:
 \begin{itemize}
-  \item Le precondizioni dello UC devono essere condizioni necessarie per arrivare alla situazione che si presenta nello UC.
-  \item Le precondizioni vengono poste al passato per identificare la conclusione di un UC, possono includere altri UC;
-  \item Le postcondizioni rappresentano cosa succede dopo lo sviluppo dello UC e sono pertanto descrittive e poste al presente;
+  \item Le precondizioni devono essere condizioni necessarie per arrivare alla situazione che si presenta nello UC.
+  \item Le precondizioni vengono declinate al passato per identificare la conclusione di un UC, possono includere altri UC;
+  \item Le postcondizioni illustrano cosa succede dopo lo sviluppo dello UC e sono pertanto descrittive e poste al presente;
   \item Lo scenario principale riprende i passaggi che sono stati necessari per il verificarsi dello UC. Pertanto si parte a descriverle dalla prima estensione che l'attore incontra dopo l'avvio dell'applicativo fino ad arrivare allo UC;
   \item Lo scenario alternativo riprende i passaggi dello scenario principale fino all'estensione che porta allo UC alternativo;
-  \item Ogni riferimento ad un UC viene riportato in precondizioni, postcondizioni, scenario principale, scenario alternativo, inclusione ed estensione;
-  \item I sottocasi d'uso di uno UC vengono inseriti sotto lo UC principale nello stesso file;
+  \item Ogni riferimento a uno UC viene riportato in precondizioni, postcondizioni, scenario principale, scenario alternativo, inclusioni ed estensioni;
+  \item I sottocasi d'uso di uno UC vengono inseriti nello stesso file, sotto lo UC principale;
   \item I sottocasi sono sempre inclusioni del caso d'uso "padre";
-  \item I sottocasi vengono riferiti con un punto dopo il padre. Ad esempio un caso d'uso potrebbe essere UC1 e il sottocaso UC1.1;
-  \item Per gli errori si visualizza quasi sempre un messaggio. Quindi la postcondizione finale e la fine dello scenario principale sarà quasi sempre "Viene visualizzato un messaggio con i dettagli dell'errore";
-  \item Il Trigger è l'azione che l'utente vuole svolgere e che viene soddisfatta dallo UC.
+  \item I sottocasi sono indicati con il nome del caso d'uso padre seguito da un punto e dal numero del sottocaso. Ad esempio, un caso d'uso potrebbe essere UC1 e il sottocaso UC1.1;
+  \item Per gli errori si visualizza quasi sempre un messaggio. Pertanto, la postcondizione finale sarà "Viene visualizzato un messaggio con i dettagli dell'errore";
+  \item Il trigger è l'azione che l'utente vuole svolgere e che viene soddisfatta dallo UC.
 \end{itemize}
 
 \paragraph{Requisiti}
@@ -52,7 +52,7 @@ I requisiti del prodotto, delineati durante il processo di analisi, si suddivido
 \begin{itemize}
   \item \textbf{Funzionali (F)}: corrispondono alle funzionalità del sistema;
   \item \textbf{Qualitativi (Q)}: garantiscono la qualità del prodotto;
-  \item \textbf{Di vincolo (V)}: indicano le restrizioni e i vincoli normativi del progetto;
+  \item \textbf{Di vincolo (V)}: indicano le restrizioni e i vincoli normativi del progetto.
 \end{itemize}
 Ciasun requisito ha anche un valore di importanza:
 \begin{itemize}
@@ -60,26 +60,26 @@ Ciasun requisito ha anche un valore di importanza:
   \item \textbf{Desiderabile (D)}: requisiti non obbligatori, ma comunque di interesse per la \glossario{Proponente};
   \item \textbf{Opzionale (OP)}: l'implementazione di questi requisiti è lasciata alla discrezione del \glossario{fornitore}.
 \end{itemize}
-Data tale classificazione, i requisiti vengono identificati da un indice univoco con la seguente struttura:
+A partire da questa classificazione, i requisiti vengono identificati da un indice univoco con la seguente struttura:
 \[R[Tipologia].[Importanza].[Codice]\]
-Dove \emph{R} sta per Requisito, \emph{Tipologia} è la sigla associata alla categoria del requisito, \emph{Importanza} è la sigla per il valore di importanza e \emph{Codice} è un valore numerico univoco.\\
-Descrivere le fonti è una pratica necessaria per orientare sia l'Analista che gli altri membri del gruppo verso una definizione più ampia e chiara del requisito, per cui ciascuna fonte di un requisito viene indicata assieme alla sua descrizione.
+Dove \emph{R} significa Requisito, \emph{Tipologia} è la sigla associata alla categoria del requisito, \emph{Importanza} è la sigla per il valore di rilevanza e \emph{Codice} è un valore numerico univoco.\\
+Descrivere le fonti è una pratica necessaria per orientare sia l'analista che gli altri membri del gruppo verso una definizione più ampia e chiara del requisito; pertanto, ciascuna fonte viene indicata assieme alla descrizione del requisito associato.
 
 \paragraph{Grafici}
 I grafici dei casi d'uso sono così composti:
 \begin{itemize}
-  \item È sempre presente almeno un attore che interagisce con le parti del sistema. L'attore è indicato con la figura di riferimento in UML ed è dotato di un nome per identificarne il tipo;
-  \item È presente il frame che identifica in quale parte del sistema si sta svolgendo il caso d'uso. È così composto:
+  \item È presente almeno un attore che interagisce con il sistema. L'attore è indicato con la figura di riferimento in UML ed è dotato di un nome per identificarne il tipo;
+  \item È presente un frame che identifica in quale porzione del sistema si sta svolgendo il caso d'uso. È così composto:
   \begin{itemize}
-    \item All'esterno del frame sono presenti gli attori che interagiscono con le sue parti;
+    \item All'esterno del frame sono presenti gli attori che interagiscono con il sistema;
     \item All'interno vengono rappresentati i casi d'uso e l'interazione che questi hanno tra di loro e con gli attori;
-    \item Ogni frame è dotato di un'etichetta. Il termine 'ChatSQL' si riferisce al sistema nel suo complesso, mentre la notazione "UC[ID]" indica che il diagramma rappresenta i sotto-casi di un caso d'uso specifico.
+    \item Ogni frame è dotato di un'etichetta. Il termine "ChatSQL" si riferisce al sistema nel suo complesso, mentre la notazione "UC[ID]" indica che il diagramma rappresenta i sotto-casi di un caso d'uso specifico.
   \end{itemize}
-  \item Le connessioni tra attore e casi d'uso sono rappresentate da segmenti continui e un attore può interagire con molteplici casi d'uso;
+  \item Le connessioni tra attore e casi d'uso sono rappresentate da segmenti continui; un attore può interagire con molteplici casi d'uso;
   \item Le connessioni tra casi d'uso sono rappresentate da segmenti tratteggiati e direzionati;
-  \item Questi segmenti sono dotati di etichetta che ne riporta il nome e rispettano lo standard UML per i casi d'uso;
-  \item Gli ellissi che rappresentano i casi d'uso sono dotati di un'etichetta dove viene riportato il caso d'uso e il nome di questo;
-  \item Se avviene un'estensione da un caso d'uso verso un'altro, questa viene esplicitata anche attraverso un \glossario{extension point}, il quale spiega le condizioni che portano allo scenario alternativo.
+  \item Questi segmenti sono dotati di un'etichetta che ne riporta il nome e rispettano lo standard UML per i casi d'uso;
+  \item Gli ellissi che rappresentano i casi d'uso sono dotati di un'etichetta dove viene indicato il caso d'uso e il nome di quest'ultimo;
+  \item Se si realizza un'estensione tra casi d'uso, questa viene esplicitata attraverso un \glossario{extension point}, il quale spiega le condizioni che portano allo scenario alternativo.
 \end{itemize}
 
 \subsubsection{Progettazione}\label{progettazione}
@@ -138,7 +138,7 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \end{itemize}
 
 \subsubsubsection{Specifica tecnica}\label{specifica-tecnica}
-\par La fase di progettazione deve essere documentata in modo chiaro ed esaustivo, poiché costituisce la base fondamentale per le successive attività di codifica e testing del software. Le scelte progettuali sono dettagliate nel documento 'Specifica tecnica', la cui stesura inizia al termine della prima fase della revisione \glossario{RTB}.
+\par La fase di progettazione deve essere documentata in modo chiaro ed esaustivo, poiché costituisce la base fondamentale per le successive attività di codifica e testing del software. Le scelte progettuali sono dettagliate nel documento "Specifica Tecnica", la cui stesura inizia al termine della prima fase della revisione \glossario{RTB}.
 
 \subsubsection{Codifica}\label{codifica}
 
