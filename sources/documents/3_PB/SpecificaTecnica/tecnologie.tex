@@ -1,0 +1,333 @@
+\section{Tecnologie utilizzate}\label{sec:tecnologie}
+\par Nella sezione seguente sono documentate le scelte tecnologiche del team, la cui validità è stata dimostrata mediante lo sviluppo di un \glossario{Proof of Concept}. Per ciascuna tecnologia, il team riporta le motivazioni che ne hanno determinato la scelta.
+
+\subsection{Backend}\label{sec:tecnologie-backend}
+
+\subsubsection{FastAPI}\label{sec:fastapi}
+\par FastAPI è un \glossario{framework} web moderno per la creazione di \glossario{API} con Python.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Flessibilità}: FastAPI offre ampia libertà agli sviluppatori e può essere facilmente integrato con librerie esterne; contrariamente a Django, non impone strutture rigide, consentendo agli sviluppatori di scegliere gli strumenti più adatti al loro caso d'uso;
+  \item \textbf{Prestazioni}: FastAPI assicura prestazioni elevate grazie all'integrazione nativa con Starlette e Pydantic;
+  \item \textbf{Orientato alla produttività}: FastAPI è progettato per massimizzare la produttività degli sviluppatori, riducendo il tempo necessario per la configurazione dell'ambiente e lo sviluppo delle API;
+  \item \textbf{Documentazione API}: FastAPI genera automaticamente la documentazione interattiva delle API, a differenza di Flask e Django, che richiedono l'integrazione di librerie esterne per ottenere funzionalità simili;
+  \item \textbf{Validazione automatica dei tipi}: FastAPI utilizza Pydantic per la validazione automatica dei dati;
+  \item \textbf{Modernità}: FastAPI è un framework moderno, che sfrutta le funzionalità più recenti di Python, come le annotazioni di tipo.
+\end{itemize}
+
+\subsubsection{Python}\label{sec:Python}
+\par Python è un linguaggio di programmazione ad alto livello ampiamente utilizzato in applicazioni di machine learning ed elaborazione del linguaggio naturale (NLP).
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Leggibilità}: Python ha una sintassi intuitiva e pulita, che agevola la leggibilità, la manutenzione e la collaborazione;
+  \item \textbf{NLP}: Python è il linguaggio di riferimento per applicazioni di NLP (elaborazione del linguaggio naturale);
+  \item \textbf{Librerie}: Python dispone di un'ampia gamma di librerie e moduli di terze parti;
+  \item \textbf{Orientato agli oggetti}: Python è un linguaggio orientato agli oggetti; pertanto, consente di organizzare il codice seguendo i principi del design \glossario{SOLID};
+  \item \textbf{Comunità}: Python dispone di una vasta comunità di sviluppatori che forniscono supporto e soluzioni a problemi comuni.
+\end{itemize}
+
+\subsubsection{txtai}\label{sec:txtai}
+\par \glossario{txtai} è un database di embeddings sviluppato in Python e progettato per ottimizzare la ricerca semantica.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Comunicazione con la Proponente}: txtai è stato proposto dalla \glossario{Proponente}, sia nel capitolato che durante le riunioni esterne, per facilitare la comunicazione e le revisioni congiunte;
+  \item \textbf{Query SQL-like}: txtai supporta query SQL-like per la ricerca semantica; 
+  \item \textbf{Configurazione minima}: txtai richiede una configurazione minima e fornisce una suite completa di strumenti di intelligenza artificiale, inclusa la traduzione automatica tra lingue;
+  \item \textbf{Persistenza degli indici}: txtai semplifica il processo di memorizzazione e ripristino degli \glossario{indici};
+  \item \textbf{Debug}: txtai mette a disposizione funzioni specifiche per il debug del processo di generazione di un \glossario{prompt}.
+\end{itemize}
+
+\subsubsection{SQLAlchemy}\label{sec:sqlalchemy}
+\par SQLAlchemy è lo strumento principale per l'interazione con database \glossario{SQL} in Python.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Portabilità}: SQLAlchemy supporta i principali \glossario{DBMS} e agevola la transizione;
+  \item \textbf{Performance e sicurezza}: SQLAlchemy massimizza l'efficienza e la sicurezza delle transazioni attraverso il pattern "Unit of Work";
+  \item \textbf{SQL injection}: SQLAlchemy include una protezione integrata contro l'SQL injection;
+  \item \textbf{Leggibilità e mantenibilità}: SQLAlchemy utilizza classi e oggetti Python per rappresentare le relazioni di un \glossario{database}, rendendo il codice intuitivo e autoesplicativo.
+  \item \textbf{Flessibilità}: SQLAlchemy consente di costruire query SQL "grezze" o di utilizzare un \glossario{ORM} per interagire con il database.
+\end{itemize}
+
+\subsubsection{JWT}\label{sec:jwt}
+\par JSON Web Token (JWT) uno standard web per lo scambio di dati.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Stateless}: JWT consente di autenticare le richieste senza necessità di sessioni sul server, migliorando la scalabilità e riducendo il carico sul server;
+  \item \textbf{Sicurezza}: I JWT sono firmati digitalmente, il che garantisce l'integrità e l'autenticità del token;
+  \item \textbf{Formato standard}: JWT è supportato da una vasta gamma di linguaggi e framework, tra cui FastAPI.
+\end{itemize}
+
+\subsection{Frontend}\label{sec:tecnologie-frontend}
+
+\subsubsection{Vue.js}\label{sec:vuejs}
+\par \glossario{Vue.js} è un framework JavaScript utilizzato per la creazione di interfacce utente reattive e dinamiche.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Component-based}: Vue.js è un framework basato su componenti, suddivisi in tre sezioni: template (HTML), stile (CSS) e logica (JavaScript);
+  \item \textbf{Reattività}: Vue.js offre un sistema reattivo che permette di aggiornare automaticamente la vista dell'utente in base ai cambiamenti dello stato dell'applicazione;
+  \item \textbf{Integrazione}: Vue.js può essere facilmente integrato con librerie esterne, come Axios e PrimeVue;
+  \item \textbf{Prestazioni}: Vue.js implementa il concetto, introdotto da React, di DOM virtuale, riducendo i re-render non necessari e migliorando le prestazioni dell'applicazione;
+  \item \textbf{MVVM}: Vue.js implementa il pattern MVVM (Model-View-ViewModel), con un focus sul livello ViewModel.
+\end{itemize}
+
+\subsubsection{Axios}\label{sec:axios}
+\par Axios è una libreria JavaScript utilizzata per connettersi con le API di \glossario{back-end} e gestire le richieste effettuate tramite il protocollo HTTP.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Semplicità}: Axios è un libreria semplice e intuitiva per effettuare richieste HTTP;
+  \item \textbf{Gestione dati JSON}: Axios converte automaticamente i dati da e in JSON;
+  \item \textbf{Compatibilità e integrazione}: Axios è compatible e facilmente integrabile con Vue 3 e la Composition API;
+  \item \textbf{Promise-based}: Axios utilizza un'interfaccia Promise-based per gestire le richieste asincrone.
+\end{itemize}
+
+\subsubsection{TypeScript}\label{sec:typescript}
+\par TypeScript è un linguaggio di programmazione che estende JavaScript, aggiungendo caratteristiche come i tipi di dato.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Compatibilità retroattiva} (backward compatibility): Qualsiasi programma scritto in JavaScript può funzionare in TypeScript senza richiedere modifiche;
+  \item \textbf{Robustezza}: TypeScript fornisce un sistema di type-checking basato sulla tipizzazione statica, che permette di rilevare errori di tipo durante la fase di sviluppo;
+  \item \textbf{Documentazione automatica}: La tipizzazione funge da documentazione incorporata, semplificando la manutenzione e la collaborazione;
+  \item \textbf{Supporto IDE}: TypeScript è supportato dai principali editor, come Visual Studio Code, che forniscono funzionalità avanzate di debugging e formattazione.
+\end{itemize}
+
+\subsubsection{PrimeVue}\label{sec:primevue}
+\par PrimeVue è una libreria di componenti per Vue.js.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Integrazione}: PrimeVue è stato progettato appositamente per Vue.js e, pertanto, offre un'integrazione nativa con il \glossario{framework};
+  \item \textbf{Completezza}: PrimeVue offre una vasta gamma di componenti, temi e stili personalizzabili;
+  \item \textbf{Funzionalità avanzate}: PrimeVue fornisce componenti per la creazione di interfacce utente complesse e interattive. Inoltre, supporta le caratteristiche e funzionalità avanzate di Vue.js;
+  \item \textbf{Documentazione e supporto}: La documentazione e i materiali di supporto sono orientati all'integrazione con Vue.js.
+\end{itemize}
+
+\subsection{Altri strumenti e tecnologie}\label{sec:tecnologie-generali}
+
+\subsubsection{Docker}\label{sec:docker}
+\par \glossario{Docker} è una piattaforma open-source per la creazione, la distribuzione e l'esecuzione di applicazioni in contenitori leggeri e portabili.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Isolamento delle applicazioni}: Docker consente di isolare le applicazioni in contenitori, garantendo che ciascuna applicazione abbia un ambiente di esecuzione indipendente;
+  \item \textbf{Collaborazione}: La condivisione delle librerie e delle dipendenze semplifica la collaborazione e riduce il rischio di conflitti;
+  \item \textbf{Portabilità}: I contenitori possono essere eseguiti su qualsiasi sistema che supporti Docker, indipendentemente dall'ambiente di sviluppo o di produzione;
+  \item \textbf{Scalabilità}: Docker permette di aggiungere o rimuovere container in maniera rapida ed efficiente;
+  \item \textbf{CI/CD}: Docker può essere utilizzato per automatizzare i processi di continuous integration e continuous delivery.
+\end{itemize}
+
+\subsubsection{SQLite}\label{sec:SQLite}
+\par \glossario{SQLite} è una libreria di gestione di database relazionali integrata nella maggior parte dei linguaggi di programmazione.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Leggerezza}: SQLite è estremamente leggero e richiede una quantità inferiore di risorse rispetto ai DBMS tradizionali;
+  \item \textbf{Autosufficienza}: SQLite non richiede un processo separato per funzionare ed è progettato per essere integrato direttamente nelle applicazioni;
+  \item \textbf{Compatibilità}: SQLite supporta la quasi totalità delle funzionalità dei database SQL standard;
+  \item \textbf{Portabilità}: SQLite memorizza l'intero database in un singolo file, semplificando il trasferimento dei dati tra sistemi e piattaforme differenti;
+  \item \textbf{ACID Compliance}: SQLite supporta le transazioni ACID (Atomicità, Coerenza, Isolamento e Durabilità), garantendo l'integrità dei dati anche in caso di malfunzionamenti;
+  \item \textbf{Performance}: SQLite è ottimizzato per gestire database di piccole e medie dimensioni.
+\end{itemize}
+
+\subsubsection{Hugging Face}\label{sec:huggingface}
+\par \glossario{Hugging Face} è una piattaforma open-source che fornisce strumenti e risorse per lavorare su progetti di NLP (elaborazione del linguaggio naturale).
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Modelli pre-addestrati}: Hugging Face mette a disposizione una vasta collezione di modelli pre-addestrati;
+  \item \textbf{Modelli open-source}: Hugging Face fornisce un'ampia selezione di modelli open-source;
+  \item \textbf{Modelli locali}: Hugging Face offre la possibilità di scaricare i \glossario{modelli} in locale per l’esecuzione offline;
+  \item \textbf{Comunità}: La piattaforma dispone di una comunità attiva di sviluppatori e ricercatori che contribuiscono al miglioramento continuo dei modelli;
+  \item \textbf{Supporto per diverse lingue}: Hugging Face offre una varietà di modelli multilingue e modelli per la traduzione.
+\end{itemize}
+
+\subsubsection{ChatGPT}\label{sec:chatgpt}
+\par \glossario{ChatGPT} (Chat Generative Pre-trained Transformer) è un ChatBOT basato su intelligenza artificiale e apprendimento automatico, sviluppato da OpenAI.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Popolarità}: ChatGPT è uno dei ChatBOT più diffusi nel campo informatico, e l'adeguatezza delle sue risposte è stata dimostrata in numerosi contesti;
+  \item \textbf{Integrazione}: ChatGPT offre API per l'integrazione con applicazioni esterne;
+  \item \textbf{Supporto Multilingue}: I modelli alla base di ChatGPT supportano diverse lingue, tra cui l'italiano e l'inglese.
+\end{itemize}
+
+\subsubsection{LMSYS Chatbot Arena}\label{sec:lmsys}
+\par LMSYS Chatbot Arena è uno spazio online dedicato al \glossario{benchmarking} di LLM.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Benchmark}: LMSYS Chatbot Arena permette di confrontare modelli diversi e di selezionare il miglior output in ciascuna iterazione;
+  \item \textbf{Disponibilità}: LMSYS Chatbot Arena consente di testare i modelli più diffusi, inclusi ChatGPT, Gemini, Claude e LLaMA.
+\end{itemize}
+
+\subsubsection{LM Studio}\label{sec:lmstudio}
+\par \glossario{LM Studio} è un'applicazione desktop che semplifica il processo di testing di modelli linguistici di grandi dimensioni (LLM).
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Semplicità}: LM Studio offre un'interfaccia intuitiva e user-friendly per testare i modelli LLM;
+  \item \textbf{Test offline}: LM Studio consente di scaricare le versioni quantizzate dei modelli per l'esecuzione offline;
+  \item \textbf{Debug}: LM Studio fornisce strumenti per il debug e l'analisi dei risultati;
+  \item \textbf{Server OpenAI-like}: Le interazioni con il server locale di LM Studio seguono il formato API di OpenAI;
+  \item \textbf{Prestazioni}: LM Studio fornisce un’opzione per abilitare l'accelerazione GPU e velocizzare i processi di inferenza dei modelli.
+\end{itemize}
+
+\subsection{Panoramica delle tecnologie}\label{sec:panoramica-tecnologie}
+\par Di seguito è fornita una panoramica generale delle tecnologie utilizzate dal team, suddivise nelle seguenti categorie:
+\begin{itemize}
+  \item \textbf{Framework};
+  \item \textbf{Linguaggi};
+  \item \textbf{Librerie};
+  \item \textbf{Strumenti}.
+\end{itemize}
+
+\subsubsection{Framework}\label{sec:framework}
+
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	% MAX 12.5cm
+ 	\begin{longtable}{|P{2.7cm}|P{2cm}|>{\raggedright\arraybackslash}P{8cm}|}
+    \caption{Framework utilizzati}
+  	\label{tab:framework} \\
+	  \hline
+		\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione} \\
+		\hline
+		\endfirsthead
+
+    \caption[]{Framework utilizzati (continua)} \\
+		\hline
+		\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione} \\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{3}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    FastAPI & 0.110.0 & Framework web moderno per la creazione di API con Python. \\
+    \hline Vue.js & 3.4.21 & Framework JavaScript per la creazione di interfacce utente reattive e dinamiche. \\
+    \hline Unittest (oppure pytest) & / & Framework di testing per Python, ispirato al modello di JUnit, un framework di unit testing per Java. \\
+    \hline Jest & 29.7.0 & Framework di testing per JavaScript e TypeScript. Jest offre una suite completa di strumenti per il testing automatizzato. \\
+    \hline Cypress & 13.6.0 & Framework di testing che può essere utilizzato per testare l'intera applicazione simulando l'interazione dell'utente. \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
+
+\subsubsection{Linguaggi}\label{sec:linguaggi}
+
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	% MAX 12.5cm
+ 	\begin{longtable}{|P{2.7cm}|P{2cm}|>{\raggedright\arraybackslash}P{8cm}|}
+    \caption{Linguaggi utilizzati}
+  	\label{tab:linguaggi} \\
+	  \hline
+		\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione} \\
+		\hline
+		\endfirsthead
+
+    \caption[]{Linguaggi utilizzati (continua)} \\
+		\hline
+		\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione} \\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{3}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    HTML & 5 & Linguaggio di markup utilizzato per definire la struttura delle pagine web. \\
+    \hline CSS & 3 & Linguaggio usato per definire lo stile e l’aspetto estetico delle pagine web. \\
+    \hline TypeScript & 5 & Espansione del linguaggio JavaScript, progettata per migliorare lo sviluppo di pagine web dinamiche e interattive. \\
+    \hline Python & 3.10.12 & Linguaggio di programmazione ad alto livello e orientato agli oggetti. \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
+
+\subsubsection{Librerie}\label{sec:librerie}
+
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	% MAX 12.5cm
+ 	\begin{longtable}{|P{2.7cm}|P{2cm}|>{\raggedright\arraybackslash}P{8cm}|}
+    \caption{Librerie utilizzate}
+  	\label{tab:librerie} \\
+	  \hline
+		\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione} \\
+		\hline
+		\endfirsthead
+
+    \caption[]{Librerie utilizzate (continua)} \\
+		\hline
+		\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione} \\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{3}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    txtai & 7.0.0 & Database di embeddings sviluppato in Python e progettato per ottimizzare la ricerca semantica. \\
+    \hline SQLAlchemy & 2.0.31 & Libreria open-source che fornisce un toolkit SQL e un ORM per le interazioni con database. \\
+    \hline jsonschema & 4.23.0 & Libreria per la validazione di JSON Schema in Python. \\
+    \hline Pydantic & 2.8.2 & Libreria Python per la validazione dei dati mediante le annotazioni di tipo. \\
+    \hline PyJWT & 2.8.0 & Libreria Python per la gestione dei JSON Web Token. \\
+    \hline parameterized & 0.9.0 & Libreria Python utilizzata per creare test parametrizzati, ovvero test che vengono eseguiti più volte con diversi set di parametri. \\
+    \hline openai & 1.37.1 & Libreria Python per l'interazione con i servizi di OpenAI. \\
+    \hline aiofiles & 24.1.0 & Libreria Python per eseguire operazioni di I/O su file in modo asincrono. \\
+    \hline PrimeVue & 3.53.0 & Libreria di componenti per Vue.js. \\
+    \hline Vue I18n & 9.0.0 & Libreria per la creazione di interfacce utente multilingue in applicazioni Vue.js. \\
+    \hline Vuex (oppure Pinia) & 3.10.12 & Libreria di gestione dello stato in applicazioni Vue.js. \\
+    \hline Axios & 3.10.12 & Libreria JavaScript utilizzata per connettersi con le API di back-end e gestire le richieste effettuate tramite il protocollo HTTP. \\
+    \hline Vue Test Utils & 2.4.6 & Libreria per il testing di componenti in applicazioni Vue.js. Vue Test Utils supporta sia test di unità che test di integrazione. \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
+
+\subsubsection{Strumenti}\label{sec:strumenti}
+
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	% MAX 12.5cm
+ 	\begin{longtable}{|P{2.7cm}|P{2cm}|>{\raggedright\arraybackslash}P{8cm}|}
+    \caption{Strumenti utilizzati}
+  	\label{tab:strumenti} \\
+	  \hline
+		\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione} \\
+		\hline
+		\endfirsthead
+
+    \caption[]{Strumenti utilizzati (continua)} \\
+		\hline
+		\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione} \\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{3}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    Git & 2.45.2 & Sistema di controllo di versione distribuito utilizzato principalmente nello sviluppo software. \\
+    \hline pip & 24.0 & Sistema di gestione dei pacchetti per Python. \\
+    \hline npm & 10.7.0 & Sistema di gestione dei pacchetti per JavaScript e per l'ambiente di esecuzione Node.js. \\
+    \hline ESLint & 9.5.0 & Strumento di analisi statica che mira a individuare errori di programmazione, problemi stilistici e costrutti sospetti nel codice JavaScript. \\
+    \hline Prettier & 3.3.0 & Formattatore di codice per JavaScript, TypeScript, JSON, HTML, CSS, Vue e YAML. \\
+    \hline Pylint & 3.2.6 & Strumento di analisi statica per Python. \\
+    \hline Vue Test Utils & 3.0.0 & Libreria per il testing di componenti in applicazioni Vue.js. \\
+    \hline Docker & / & Piattaforma per l'esecuzione di applicazioni in contenitori isolati. Docker può essere utilizzato in combinazione con GitHub Actions per automatizzare i processi di build, test e distribuzione. \\
+    \hline SQLite & / & Sistema di gestione di database relazionali open-source, leggero e facilmente portabile. \\
+    \hline Hugging Face & / & Piattaforma di hosting di modelli e set di dati di machine learning. \\
+    \hline ChatGPT & / & ChatBOT basato su intelligenza artificiale e apprendimento automatico. \\
+    \hline LMSYS Chatbot Arena & / & Spazio online dedicato al benchmarking di LLM. \\
+    \hline LM Studio & / & Applicazione desktop per il testing di LLM in locale. \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
