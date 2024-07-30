@@ -73,7 +73,7 @@ jobs:
     - name: Compile Documents
       run: |
         cd ${{ github.workspace }}/tools
-        docker exec argo-docs-latexpdfbuilder-1 bash -c 'cd /data && chmod +x *.sh && ./compilescript.sh -d 2_RTB'
+        docker exec argo-docs-latexpdfbuilder-1 bash -c 'cd /data && chmod +x *.sh && ./compilescript.sh -d 3_PB'
 
     # Pulizia dell'output prima della generazione dell'artefatto
     - name: Clean Output
@@ -81,16 +81,16 @@ jobs:
       # I verbali esterni, poiché firmati dalla Proponente, non vanno ripubblicati
       run: |
         mkdir build-output-clean
-        if [ -d "build-output/2_RTB" ]; then
-          cp -r build-output/2_RTB build-output-clean
-          if [ -d "build-output-clean/2_RTB/Verbali/Esterni" ]; then
-            rm -rf build-output-clean/2_RTB/Verbali/Esterni
+        if [ -d "build-output/3_PB" ]; then
+          cp -r build-output/3_PB build-output-clean
+          if [ -d "build-output-clean/3_PB/Verbali/Esterni" ]; then
+            rm -rf build-output-clean/3_PB/Verbali/Esterni
           fi
         fi
-        if [ -d "build-output/2_PB" ]; then
-          cp -r build-output/2_PB build-output-clean
-          if [ -d "build-output-clean/2_PB/Verbali/Esterni" ]; then
-            rm -rf build-output-clean/2_PB/Verbali/Esterni
+        if [ -d "build-output/3_PB" ]; then
+          cp -r build-output/3_PB build-output-clean
+          if [ -d "build-output-clean/3_PB/Verbali/Esterni" ]; then
+            rm -rf build-output-clean/3_PB/Verbali/Esterni
           fi
         fi    
 
