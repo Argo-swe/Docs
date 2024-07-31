@@ -1,4 +1,4 @@
-\subsection{Front-end}
+\subsubsection{Front-end}
 
 \par Vue.js implementa il pattern architetturale MVVM (Model-View-ViewModel), una declinazione del pattern Model-View-Controller (MVC). In Vue 3, l’MVVM viene utilizzato implicitamente attraverso il modo in cui Vue gestisce i dati, la logica e l'interfaccia utente. Il ViewModel è un oggetto che sincronizza il Model e la View. Ogni istanza di Vue è un ViewModel.
 
@@ -27,4 +27,25 @@
   \item \textbf{Composition API}: permette di suddividere la logica di un componente in funzioni riutilizzabili. La Composition API migliora la riusabilità, l'organizzazione e la manutenibilità del codice. Inoltre, le Composition API risolvono alcune limitazioni delle Options API, che emergono quando la logica di un singolo componente supera una determinata soglia di complessità.
 \end{itemize}
 
-\input{Architettura/Frontend/progettazione_logica}
+\vspace{0.5\baselineskip}
+\par La struttura organizzativa del front-end segue le convenzioni definite dal framework Vue.js, con alcune modifiche e personalizzazioni per migliorare la riusabilità e la manutenibilità. Il front-end è suddiviso nelle seguenti cartelle:
+
+\begin{minipage}{\textwidth}
+  \dirtree{%
+    .1 frontend.
+    .2 public.
+    .3 themes.
+    .3 icons.
+    .2 src.
+    .3 assets.
+    .3 components.
+    .4 layout.
+    .3 composables.
+    .3 locales.
+    .3 router.
+    .3 store.
+    .3 services.
+    .3 types.
+    .3 views.
+  }
+\end{minipage}
