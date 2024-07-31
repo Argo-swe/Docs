@@ -28,7 +28,7 @@
 \end{itemize}
 
 \vspace{0.5\baselineskip}
-\par La struttura organizzativa del front-end segue le convenzioni definite dal framework Vue.js, con alcune modifiche e personalizzazioni per migliorare la riusabilità e la manutenibilità. Il front-end è suddiviso nelle seguenti cartelle:
+\par La struttura organizzativa del front-end segue le convenzioni definite dal framework Vue.js, con alcune modifiche e personalizzazioni per migliorare la riusabilità, la manutenibilità e l'usabilità. Il front-end è suddiviso nelle seguenti cartelle:
 
 \begin{minipage}{\textwidth}
   \dirtree{%
@@ -49,3 +49,24 @@
     .3 views.
   }
 \end{minipage}
+
+\vspace{0.5\baselineskip}
+\par Di seguito è riportata una breve descrizione delle cartelle principali:
+\begin{itemize}
+  \item \textbf{public}: contiene le icone e i temi utilizzati nell'applicazione;
+  \item \textbf{src}: contiene il codice sorgente e gli assets.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par La cartella "src" è suddivisa nelle seguenti sottocartelle:
+\begin{itemize}
+  \item \textbf{assets}: contiene i file statici, come immagini, font e fogli di stile;
+  \item \textbf{components}: contiene i componenti Vue riutilizzabili da più viste;
+  \item \textbf{composables}: contiene le funzioni riutilizzabili;
+  \item \textbf{locales}: contiene i file \glossario{JSON} di traduzione;
+  \item \textbf{router}: contiene le definizioni delle route dell'applicazione. La definizione di una route comprende l'URL o il percorso che l'utente deve inserire nel browser per accedere alla route. Inoltre, specifica quale componente deve essere caricato quando l'utente accede a quel percorso;
+  \item \textbf{store}: contiene i moduli per la gestione dello stato condiviso tra i componenti;
+  \item \textbf{services}: contiene funzioni di utilità e servizi per la comunicazione con il back-end;
+  \item \textbf{types}: contiene le definizioni dei tipi e delle interfacce per un'API basata su OpenAPI;
+  \item \textbf{views}: contiene le viste dell'applicazione. Una vista è un componente principale che può essere suddiviso in sottocomponenti, disponibili nella cartella "components". In genere, le view rappresentano pagine o sezioni centrali e sono gestite dal router di Vue.
+\end{itemize}
