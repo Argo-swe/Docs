@@ -1,0 +1,23 @@
+\subsubsection{UC6 - Visualizzazione avviso richiesta non idonea}\label{UC6}
+\paragraph*{Descrizione}
+Nel caso in cui l'Utente formuli una richiesta non idonea, o comunque una richiesta che non trova corrispondenze con il \glossario{dizionario dati}, il sistema restituisce un avviso opportuno.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'Utente ha richiesto la generazione di un \glossario{prompt} (\hyperref[UC5]{UC5});
+  \item Il sistema non ha trovato correlazioni tra la richiesta e il \glossario{dizionario dati}.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene visualizzato l'avviso del ChatBOT, che informa l'Utente della sua incapacità di fornire una risposta adeguata alla domanda;
+  \item Il sistema non restituisce il \glossario{prompt}.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Viene visualizzato un messaggio esplicativo che invita l'Utente a riprovare.
+\end{enumerate}

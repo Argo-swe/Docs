@@ -1,0 +1,22 @@
+\subsubsection{UC33 - File con dimensione superiore a quella consentita}\label{UC33}
+\paragraph*{Descrizione}
+Poiché la dimensione del file inserito dal Tecnico supera i limiti, il sistema restituisce un messaggio d'errore.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico ha richiesto il salvataggio di un file con dimensione superiore a quella consentita.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene visualizzato un messaggio d'errore esplicativo.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il sistema rileva un errore in quanto la dimensione del file supera i limiti;
+  \item Il sistema restituisce un messaggio di errore appropriato.
+\end{enumerate}

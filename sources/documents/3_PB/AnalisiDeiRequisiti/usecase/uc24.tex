@@ -1,0 +1,24 @@
+\subsubsection{UC24 - Visualizzazione errore download file}\label{UC24}
+\paragraph*{Descrizione}
+Il Tecnico visualizza un messaggio d'errore per il mancato download del file.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il Tecnico ha richiesto il download di un file (\hyperref[UC23]{UC23});
+  \item Il sistema ha riscontrato un errore durante il download.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene visualizzato un messaggio d'errore esplicativo;
+  \item Il file non è stato scaricato.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Viene visualizzato un messaggio con i dettagli dell'errore.
+\end{enumerate}
