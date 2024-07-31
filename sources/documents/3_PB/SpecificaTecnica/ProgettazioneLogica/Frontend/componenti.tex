@@ -1,0 +1,88 @@
+\subsection{Front-end}
+
+\subsubsection{Chat}
+
+\subsubsubsection{Descrizione}
+\par La Chat equivale alla pagina di generazione del prompt. Espone le seguenti funzionalità:
+\begin{itemize}
+  \item Selezione di un \glossario{dizionario dati};
+  \item Visualizzazione di un'anteprima del dizionario dati;
+  \item Selezione della lingua di richiesta;
+  \item Selezione di un \glossario{DBMS};
+  \item Invio di una richiesta al ChatBOT;
+  \item Visualizzazione della risposta del ChatBOT;
+  \item Eliminazione del contenuto della chat.
+\end{itemize}
+
+\subsubsubsection{Sottocomponenti}
+\par La Chat è composta dai seguenti sottocomponenti:
+\begin{itemize}
+  \item \textbf{ChatMex}: rappresenta i messaggi inviati e/o restituiti all'interno della chat;
+  \item \textbf{ChatDeleteBtn}: pulsante per eliminare il contenuto della chat;
+  \item \textbf{DictPreview}: mostra un'anteprima del dizionario dati selezionato.
+\end{itemize}
+
+\subsubsubsection{Tracciamento dei requisiti}
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	\centering
+	% MAX 12.5cm
+  \begin{longtable}{|c|c|}
+		\caption{Tracciamento dei requisiti per la componente Chat}
+  	\label{tab:tracciamento-requisiti-chat} \\
+    \hline
+		\textbf{ID} & \textbf{Componente} \\
+		\hline
+		\endfirsthead
+
+		\caption[]{Tracciamento dei requisiti per la componente Chat (continua)} \\
+		\hline
+		\textbf{ID} & \textbf{Componente} \\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{2}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    RF.O.3 & Chat\\
+		\hline RF.O.4 & Chat\\
+    \hline RF.O.5 & Chat\\
+    \hline RF.O.6 & ChatMex\\
+    \hline RF.D.7 & Chat\\
+    \hline RF.O.8 & ChatMex\\
+    \hline RF.O.9 & Chat\\
+    \hline RF.O.9.1 & Chat\\
+    \hline RF.O.10 & Chat\\
+    \hline RF.O.10.1 & Chat\\
+    \hline RF.O.11 & Chat\\
+    \hline RF.O.14 & DictPreview\\
+    \hline RF.O.14.1 & DictPreview\\
+    \hline RF.O.14.2 & DictPreview\\
+    \hline RF.O.14.3 & DictPreview\\
+    \hline RF.O.14.3.1 & DictPreview\\
+    \hline RF.O.14.3.1.1 & DictPreview\\
+    \hline RF.O.14.3.1.2 & DictPreview\\
+    \hline RF.O.25 & Chat\\
+    \hline RF.O.25.1 & ChatMex\\
+    \hline RF.O.25.1.1 & ChatMex\\
+    \hline RF.O.25.1.2 & ChatMex\\
+    \hline RF.O.26 & Chat\\
+    \hline RF.O.27 & ChatDeleteBtn\\
+    \hline RF.O.35 & ChatMex\\
+    \hline RF.O.36 & Chat\\
+    \hline RF.O.41 & ChatMex\\
+    \hline RF.O.45 & ChatMex\\
+    \hline RF.O.47 & Chat\\
+    \hline RF.O.48 & Chat\\
+    \hline RF.O.49 & Chat\\
+    \hline RF.O.50 & Chat\\
+    \hline RF.O.51 & Chat\\
+    \hline RF.D.52 & Chat\\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
