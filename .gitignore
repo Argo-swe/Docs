@@ -193,3 +193,4 @@ spellcheck
 
 # Temporary folder containing spellcheck reports
 spell-check-temp/**
+.DS_Store

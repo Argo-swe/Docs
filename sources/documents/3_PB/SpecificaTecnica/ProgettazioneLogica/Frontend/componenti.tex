@@ -1,0 +1,304 @@
+\subsection{Front-end}
+
+\subsubsection{AppLayout}
+
+\subsubsubsection{Descrizione}
+\par AppLayout è il componente che definisce la struttura generale dell'applicazione.
+
+\subsubsubsection{Sottocomponenti}
+\par AppLayout è composto dai seguenti sottocomponenti:
+\begin{itemize}
+  \item \textbf{AppTopbar}: componente condiviso da tutte le pagine dell'interfaccia. La topbar permette di accedere ai menu dell'applicazione. È situata nella zona superiore dello schermo e include il seguente componente (puramente visivo):
+  \begin{itemize}
+    \item \textbf{AppLogo}: logo dell'applicazione.
+  \end{itemize}
+  \item \textbf{LoginDialog}: finestra per l'autenticazione dell'utente;
+  \item \textbf{MenuSidebar}: barra laterale che contiene il menu di navigazione principale;
+  \item \textbf{ConfigSidebar}: barra laterale che contiene il menu per la configurazione del sistema e l'apertura del dialog di login.
+\end{itemize}
+
+\subsubsubsection{Tracciamento dei requisiti}
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	\centering
+	% MAX 12.5cm
+  \begin{longtable}{|c|c|}
+		\caption{Tracciamento dei requisiti per il componente AppLayout}
+  	\label{tab:tracciamento-requisiti-layout} \\
+    \hline
+		\textbf{ID} & \textbf{Componente} \\
+		\hline
+		\endfirsthead
+
+		\caption[]{Tracciamento dei requisiti per il componente AppLayout (continua)} \\
+		\hline
+		\textbf{ID} & \textbf{Componente} \\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{2}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    RF.O.1 & LoginDialog \\
+		\hline RF.O.1.1 & LoginDialog \\
+    \hline RF.O.1.2 & LoginDialog \\
+    \hline RF.O.2 & LoginDialog \\
+    \hline RF.O.60 & ConfigSidebar \\
+    \hline RF.D.61 & ConfigSidebar \\
+    \hline RF.OP.62 & ConfigSidebar \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
+
+\subsubsection{ChatView}
+
+\subsubsubsection{Descrizione}
+\par ChatView è la pagina di generazione del prompt. Espone le seguenti funzionalità:
+\begin{itemize}
+  \item Selezione di un \glossario{dizionario dati};
+  \item Visualizzazione di un'anteprima del dizionario dati;
+  \item Selezione della lingua di richiesta;
+  \item Selezione di un \glossario{DBMS};
+  \item Invio di una richiesta al ChatBOT;
+  \item Visualizzazione della risposta del ChatBOT;
+  \item Copia del prompt generato;
+  \item Eliminazione del contenuto della chat.
+\end{itemize}
+
+\subsubsubsection{Sottocomponenti}
+\par ChatView è composto dai seguenti sottocomponenti:
+\begin{itemize}
+  \item \textbf{ChatMex}: rappresenta i messaggi inviati e/o restituiti all'interno della chat;
+  \item \textbf{ChatDeleteBtn}: pulsante per eliminare il contenuto della chat;
+  \item \textbf{DictPreview}: mostra un'anteprima del dizionario dati selezionato.
+\end{itemize}
+
+\subsubsubsection{Tracciamento dei requisiti}
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	\centering
+	% MAX 12.5cm
+  \begin{longtable}{|c|c|}
+		\caption{Tracciamento dei requisiti per il componente ChatView}
+  	\label{tab:tracciamento-requisiti-chat} \\
+    \hline
+		\textbf{ID} & \textbf{Componente} \\
+		\hline
+		\endfirsthead
+
+		\caption[]{Tracciamento dei requisiti per il componente ChatView (continua)} \\
+		\hline
+		\textbf{ID} & \textbf{Componente} \\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{2}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    RF.O.3 & ChatView \\
+		\hline RF.O.4 & ChatView \\
+    \hline RF.O.5 & ChatView \\
+    \hline RF.O.6 & ChatMex \\
+    \hline RF.D.7 & ChatView \\
+    \hline RF.O.8 & ChatMex \\
+    \hline RF.O.9 & ChatView \\
+    \hline RF.O.9.1 & ChatView \\
+    \hline RF.O.10 & ChatView \\
+    \hline RF.O.10.1 & ChatView \\
+    \hline RF.O.11 & ChatView \\
+    \hline RF.O.14 & DictPreview \\
+    \hline RF.O.14.1 & DictPreview \\
+    \hline RF.O.14.2 & DictPreview \\
+    \hline RF.O.14.3 & DictPreview \\
+    \hline RF.O.14.3.1 & DictPreview \\
+    \hline RF.O.14.3.1.1 & DictPreview \\
+    \hline RF.O.14.3.1.2 & DictPreview \\
+    \hline RF.O.25 & ChatView \\
+    \hline RF.O.25.1 & ChatMex \\
+    \hline RF.O.25.1.1 & ChatMex \\
+    \hline RF.O.25.1.2 & ChatMex \\
+    \hline RF.O.26 & ChatView \\
+    \hline RF.O.27 & ChatDeleteBtn \\
+    \hline RF.O.35 & ChatMex \\
+    \hline RF.O.36 & ChatView \\
+    \hline RF.O.41 & ChatMex \\
+    \hline RF.O.45 & ChatMex \\
+    \hline RF.O.47 & ChatView \\
+    \hline RF.O.48 & ChatView \\
+    \hline RF.O.49 & ChatView \\
+    \hline RF.O.50 & ChatView \\
+    \hline RF.O.51 & ChatView \\
+    \hline RF.D.52 & ChatView \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
+
+\subsubsection{DictionariesListView}
+
+\subsubsubsection{Descrizione}
+\par DictionariesListView è la pagina di gestione \glossario{CRUD} dei dizionari dati. Espone le seguenti funzionalità:
+\begin{itemize}
+  \item Visualizzazione della lista dei \glossario{dizionari dati};
+  \item Creazione, modifica e cancellazione di un dizionario dati;
+  \item Download di un dizionario dati;
+  \item Persistenza degli indici associati ai dizionari dati.
+\end{itemize}
+
+\subsubsubsection{Sottocomponenti}
+\par DictionariesListView è composto dai seguenti sottocomponenti:
+\begin{itemize}
+  \item \textbf{CreateUpdateDictionaryModal}: finestra per la creazione e modifica di un dizionario dati.
+\end{itemize}
+
+\subsubsubsection{Tracciamento dei requisiti}
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	\centering
+	% MAX 12.5cm
+  \begin{longtable}{|c|c|}
+		\caption{Tracciamento dei requisiti per il componente DictionariesListView}
+  	\label{tab:tracciamento-requisiti-dict} \\
+    \hline
+		\textbf{ID} & \textbf{Componente} \\
+		\hline
+		\endfirsthead
+
+		\caption[]{Tracciamento dei requisiti per il componente DictionariesListView (continua)} \\
+		\hline
+		\textbf{ID} & \textbf{Componente} \\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{2}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    RF.O.9 & DictionariesListView \\
+		\hline RF.O.9.1 & DictionariesListView \\
+    \hline RF.O.10 & DictionariesListView \\
+    \hline RF.O.10.1 & DictionariesListView \\
+    \hline RF.O.10.3 & DictionariesListView \\
+    \hline RF.O.13 & CreateUpdateDictionaryModal \\
+    \hline RF.O.15 & CreateUpdateDictionaryModal \\
+    \hline RF.O.16 & CreateUpdateDictionaryModal \\
+    \hline RF.O.17 & CreateUpdateDictionaryModal \\
+    \hline RF.O.18 & DictionariesListView \\
+    \hline RF.O.19 & CreateUpdateDictionaryModal \\
+    \hline RF.O.20 & CreateUpdateDictionaryModal \\
+    \hline RF.O.21 & DictionariesListView \\
+    \hline RF.O.24 & DictionariesListView \\
+    \hline RF.O.28 & CreateUpdateDictionaryModal \\
+    \hline RF.O.29 & CreateUpdateDictionaryModal \\
+    \hline RF.O.30 & CreateUpdateDictionaryModal \\
+    \hline RF.O.31 & CreateUpdateDictionaryModal \\
+    \hline RF.O.31.1 & CreateUpdateDictionaryModal \\
+    \hline RF.O.31.2 & CreateUpdateDictionaryModal \\
+    \hline RF.O.32 & CreateUpdateDictionaryModal \\
+    \hline RF.O.33 & CreateUpdateDictionaryModal \\
+    \hline RF.O.34 & CreateUpdateDictionaryModal \\
+    \hline RF.O.36 & DictionariesListView \\
+    \hline RF.O.37 & DictionariesListView \\
+    \hline RF.O.39 & CreateUpdateDictionaryModal \\
+    \hline RF.D.40 & CreateUpdateDictionaryModal \\
+    \hline RF.O.55 & CreateUpdateDictionaryModal \\
+    \hline RF.O.56 & CreateUpdateDictionaryModal \\
+    \hline RF.O.57 & CreateUpdateDictionaryModal \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
+
+\subsubsection{DebugView}
+
+\subsubsubsection{Descrizione}
+\par DebugView è la pagina di \glossario{debug} del prompt. Espone le seguenti funzionalità:
+\begin{itemize}
+  \item Visualizzazione della lista di messaggi di debug, che illustrano il processo di generazione del \glossario{prompt};
+  \item Copia del messaggio di debug;
+  \item Download di un file di \glossario{log}.
+\end{itemize}
+
+\subsubsubsection{Sottocomponenti}
+\par DebugView è composto dai seguenti sottocomponenti:
+\begin{itemize}
+  \item \textbf{ChatMex}: rappresenta i messaggi di \glossario{debug} generati dal sistema.
+\end{itemize}
+
+\subsubsubsection{Tracciamento dei requisiti}
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	\centering
+	% MAX 12.5cm
+  \begin{longtable}{|c|c|}
+		\caption{Tracciamento dei requisiti per il componente DebugView}
+  	\label{tab:tracciamento-requisiti-debug} \\
+    \hline
+		\textbf{ID} & \textbf{Componente} \\
+		\hline
+		\endfirsthead
+
+		\caption[]{Tracciamento dei requisiti per il componente DebugView (continua)} \\
+		\hline
+		\textbf{ID} & \textbf{Componente} \\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{2}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    RF.O.22 & ChatMex \\
+		\hline RF.O.23 & DebugView \\
+    \hline RF.O.24 & DebugView \\
+    \hline RF.O.38 & ChatMex \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
+
+\subsubsection{MenuSidebar}
+
+\subsubsubsection{Descrizione}
+\par MenuSidebar è la barra laterale che consente di navigare tra le seguenti pagine:
+\begin{itemize}
+  \item ChatView;
+  \item DictionariesListView;
+  \item DebugView.
+\end{itemize}
+
+\subsubsubsection{Sottocomponenti}
+\par MenuSidebar è composto dai seguenti sottocomponenti:
+\begin{itemize}
+  \item \textbf{AppMenu}: rappresenta il menu di navigazione principale;
+  \item \textbf{AppFooter}: rappresenta il footer dell'applicazione. Include il seguente componente (puramente visivo):
+  \begin{itemize}
+    \item \textbf{AppLogo}: logo dell'applicazione.
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{AppMenu}
+
+\subsubsubsection{Descrizione}
+\par AppMenu è il menu di navigazione principale dell'applicazione.
+
+\subsubsubsection{Sottocomponenti}
+\par AppMenu è composto dai seguenti sottocomponenti:
+\begin{itemize}
+  \item \textbf{AppMenuItem}: rappresenta un singolo elemento del menu di navigazione.
+\end{itemize}
