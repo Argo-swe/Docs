@@ -11,12 +11,15 @@
 
 \par Per migliorare lo sviluppo collaborativo, la modularità e la manutenibilità, il sistema è stato suddiviso in due componenti principali:
 \begin{itemize}
-  \item \textbf{Front-end}: la porzione di un sistema che l'utente visualizza e con cui può interagire. Il front-end è sviluppato utilizzando il framework \glossario{Vue.js} ed è responsabile dell'interfaccia grafica, che deve essere intuitiva, funzionale e accattivante;
+  \item \textbf{Front-end}: la porzione di un sistema che l'utente visualizza e con cui può interagire. Il front-end è sviluppato utilizzando il framework \glossario{Vue.js} ed è responsabile dell'interfaccia grafica, che deve essere intuitiva, funzionale e accattivante. Trasmette le richieste dell'utente al back-end e visualizza i risultati ottenuti;
   \item \textbf{Back-end}: il segmento che gestisce la logica di business, l'elaborazione dei dati e la comunicazione con i database e altri servizi. Il back-end è sviluppato utilizzando il framework \glossario{FastAPI}.
 \end{itemize}
 
 \vspace{0.5\baselineskip}
 \par La comunicazione tra il front-end e il back-end avviene tramite chiamate \glossario{API}. Il team segue le linee guida e i principi definiti da REST (representational state transfer), uno stile architetturale che impone condizioni sul funzionamento di un'API. Le REST API (o RESTful API) sono stateless, il che significa che ogni richiesta HTTP deve includere tutte le informazioni necessarie per elaborarla. Questo riduce il carico sul server e migliora la scalabilità. Inoltre, l’approccio stateless agevola l'implementazione di sistemi di caching, migliorando le prestazioni complessive. Una REST API è simile a un sito web in esecuzione in un browser con funzionalità HTTP integrata. Le operazioni sono basate su metodi HTTP standard come GET, POST, PUT e DELETE.
+
+\vspace{0.5\baselineskip}
+\par La persistenza delle informazioni dei dizionari (nome, descrizione, ecc.) è garantita dalla presenza di un database, che memorizza anche gli operatori registrati nel sistema. Il database è implementato utilizzando SQLite. Di seguito è riportata l'architettura ad alto livello della web app.
 
 \begin{figure}[H]
   \centering
@@ -24,4 +27,17 @@
   \caption{Architettura web app}
 \end{figure}
 
-\input{Architettura/frontend}
+\subsection{Assemblaggio dei componenti}
+\par Docker Compose viene utilizzato per gestire applicazioni multi-container, permettendo di assemblare diversi servizi che compongono un'applicazione. Nel contesto di ChatSQL, il team ha creato i seguenti container Docker:
+\begin{itemize}
+  \item \textbf{backend}: espone l'interfaccia di backend sulla porta 8000. All'indirizzo \textit{localhost:8000/docs} è possibile consultare la documentazione interattiva delle API. Inoltre, sono disponibili dettagli sui Data Transfer Objects (DTO);
+  \item \textbf{frontend}: espone l'interfaccia utente sulla porta 5173.
+\end{itemize}
+
+\subsection{Struttura del sistema}
+\input{Architettura/Frontend/struttura}
+\input{Architettura/Backend/struttura}
+
+\subsection{Progettazione dei componenti}
+\input{Architettura/Frontend/progettazione_logica}
+\input{Architettura/Backend/progettazione_logica}
