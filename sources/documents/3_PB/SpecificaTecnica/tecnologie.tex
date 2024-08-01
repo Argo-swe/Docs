@@ -44,8 +44,8 @@
   \item \textbf{Portabilità}: SQLAlchemy supporta i principali \glossario{DBMS} e agevola la transizione;
   \item \textbf{Performance e sicurezza}: SQLAlchemy massimizza l'efficienza e la sicurezza delle transazioni attraverso il pattern "Unit of Work";
   \item \textbf{SQL injection}: SQLAlchemy include una protezione integrata contro l'SQL injection;
-  \item \textbf{Leggibilità e mantenibilità}: SQLAlchemy utilizza classi e oggetti Python per rappresentare le relazioni di un \glossario{database}, rendendo il codice intuitivo e autoesplicativo.
-  \item \textbf{Flessibilità}: SQLAlchvvemy consente di costruire query SQL in linguaggio nativo o di utilizzare un \glossario{ORM} per interagire con il database.
+  \item \textbf{Leggibilità e mantenibilità}: SQLAlchemy utilizza classi e oggetti Python per rappresentare le relazioni di un \glossario{database}, rendendo il codice intuitivo e autoesplicativo;
+  \item \textbf{Flessibilità}: SQLAlchemy consente di costruire query SQL in linguaggio nativo o di utilizzare un \glossario{ORM} per interagire con il database.
 \end{itemize}
 
 \subsubsection{JWT}\label{sec:jwt}
@@ -55,6 +55,13 @@
   \item \textbf{Stateless}: JWT consente di autenticare le richieste senza necessità di sessioni sul server, migliorando la scalabilità e riducendo il carico sul server;
   \item \textbf{Sicurezza}: I JWT sono firmati digitalmente, il che garantisce l'integrità e l'autenticità del token;
   \item \textbf{Formato standard}: JWT è supportato da una vasta gamma di linguaggi e framework, tra cui FastAPI.
+\end{itemize}
+
+\subsubsection{pytest}\label{sec:pytest}
+\par pytest è un \glossario{framework} di test Python che può essere utilizzato per scrivere test di unità, test di integrazione e test end-to-end.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item TODO.
 \end{itemize}
 
 \subsection{Frontend}\label{sec:tecnologie-frontend}
@@ -202,9 +209,9 @@
 
     FastAPI & 0.110.0 & Framework web moderno per la creazione di API con Python. \\
     \hline Vue.js & 3.4.21 & Framework JavaScript per la creazione di interfacce utente reattive e dinamiche. \\
-    \hline Unittest (oppure pytest) & / & Framework di testing per Python, ispirato al modello di JUnit, un framework di unit testing per Java. \\
-    \hline Jest & 29.7.0 & Framework di testing per JavaScript e TypeScript. Jest offre una suite completa di strumenti per il testing automatizzato. \\
-    \hline Cypress & 13.6.0 & Framework di testing che può essere utilizzato per testare l'intera applicazione simulando l'interazione dell'utente. \\
+    \hline Unittest (oppure pytest) & / & Framework di test per Python, ispirato al modello di JUnit, un framework di unit test per Java. \\
+    \hline Jest & 29.7.0 & Framework di test per JavaScript e TypeScript. Jest offre una suite completa di strumenti per il testing automatizzato. \\
+    \hline Cypress & 13.6.0 & Framework di test che può essere utilizzato per testare l'intera applicazione simulando l'interazione dell'utente. \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
