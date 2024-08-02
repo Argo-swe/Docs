@@ -1,0 +1,62 @@
+\section{Sezione Tecnico}
+\label{sec:sezTecnico}
+
+\subsection*{Avviso}
+Per accedere a tutte le funzionaità del Tecnico sarà necessario effettuare il login con successo.
+
+\subsection{Autenticazione}
+Nella sezione superiore destra dell'interaccia, cliccando sull'icona di login \includegraphics[height=1.2em]{assets/user_icon.png} è possibile inserire le credenziali d'accesso per la sezione Tecnico.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{assets/login_topbar.png}
+  \caption{Topbar con menu di autenticazione}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.50\textwidth]{assets/login_modal.png}
+  \caption{Modale di login}
+\end{figure}
+
+\subsection{Gestione dizionari}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{assets/dd_list.png}
+  \caption{Schermata di gestione \glossario{dizionari dati}}
+\end{figure}
+\par La schermata mostra la lista completa dei \glossario{dizionari dati} caricati nel sistema. Vengono fornite le funzionalità per operare su di essi.
+
+\subsubsection{Aggiunta \glossario{dizionario dati}}
+Cliccando sul pulsante "Crea dizionario dati" \includegraphics[height=1.2em]{assets/dd_create_button.png} si aprirà una modale dove sarà possibile inserire i parametri di un nuovo dizionario dati:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{assets/dd_modal_create.png}
+  \caption{Modale di creazione \glossario{dizionario dati}}
+\end{figure}
+\begin{itemize}
+  \item nome: deve essere univoco rispetto agli altri \glossario{dizionario dati};
+  \item descrizione: stringa testuale che descrive brevemente il \glossario{dizionario dati};
+  \item file: deve essere un file in formato JSON, di dimensione massima TODO e strutturato secondo il modello proposto.
+\end{itemize}
+Al salvataggio il dizionario verrà aggiunto alla lista.
+
+\subsubsection{Aggiorna \glossario{dizionario dati}}
+Cliccando sul pulsante di aggiornamento dei metadati \includegraphics[height=1.2em]{assets/dd_edit_metadata_button.png} si aprirà una modale dove sarà possibile modificare i parametri:
+\begin{itemize}
+  \item nome: deve essere univoco rispetto agli altri \glossario{dizionario dati};
+  \item descrizione: stringa testuale che descrive brevemente il \glossario{dizionario dati};
+\end{itemize}
+
+\subsubsection{Aggiorna file \glossario{dizionario dati}}
+Cliccando sul pulsante di modifica file del \glossario{dizionario dati} \includegraphics[height=1.2em]{assets/dd_edit_button.png} si aprirà una modale dove sarà possibile modificare il file del dizionari dati.
+
+\subsubsection{Scarica file \glossario{dizionario dati}}
+Cliccando sul pulsante di download \includegraphics[height=1.2em]{assets/dd_download_button.png} verrà scaricato il relativo file del dizionario dati in formato JSON.
+
+\subsubsection{Elimina file \glossario{dizionario dati}}
+Cliccando sul pulsante \includegraphics[height=1.2em]{assets/dd_delete_button.png} si aprirà una modale di conferma per l'eliminazione del dizionario dati.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{assets/dd_confirm_delete.png}
+  \caption{Modale di conferma eliminazione \glossario{dizionario dati}}
+\end{figure}
+In caso di conferma il dizionario verrà eliminato dalla lista.
