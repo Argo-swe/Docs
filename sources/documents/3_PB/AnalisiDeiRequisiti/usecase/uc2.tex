@@ -1,0 +1,26 @@
+\subsubsection{UC2 - Visualizzazione errore autenticazione}\label{UC2}
+
+\paragraph*{Descrizione}
+Nel caso in cui il sistema rilevi delle irregolarità durante la validazione delle credenziali, l'Utente viene informato della natura del problema tramite un apposito messaggio di errore.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'Utente ha inserito le proprie credenziali nell'area di login (\hyperref[UC1]{UC1});
+  \item Le credenziali non sono valide.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene visualizzato un messaggio d'errore esplicativo;
+  \item L'Utente non ottiene l'accesso.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il sistema riscontra un problema nella validazione delle credenziali di accesso;
+  \item Viene restituito un messaggio di errore;
+  \item Il sistema invita l'Utente a riprovare l'autenticazione.
+\end{enumerate}

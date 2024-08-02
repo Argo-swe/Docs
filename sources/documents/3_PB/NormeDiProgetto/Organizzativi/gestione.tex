@@ -1,0 +1,173 @@
+\subsection{Gestione}
+
+\subsubsection{Descrizione}
+\par Il processo di gestione include i task che vengono eseguiti dal \Responsabile{} per il coordinamento del progetto.
+\par Tra le attività principali del processo di gestione si possono distinguere:
+\begin{itemize}
+  \item Pianificazione;
+  \item Esecuzione e controllo;
+  \item Valutazione e approvazione.
+\end{itemize}
+
+\subsubsection{Pianificazione}
+\par Questa fase include l'assegnazione di ruoli e attività. Ogni attività è corredata da:
+\begin{itemize}
+  \item Uno o più membri incaricati di svolgere l'attività;
+  \item Data di inizio e fine;
+  \item Priorità;
+  \item Uno o più verificatori incaricati di valutare il risultato;
+  \item Eventuali rischi associati all'attività.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Una volta pianificata un'attività, il \Responsabile{} e l'\Amministratore{} hanno il compito di aprire uno o più ticket su \glossario{Jira}, seguendo le linee guida riportate nella \sezione{gestione-configurazione}.
+
+\paragraph*{Strumenti}
+\IntroStrumenti
+\begin{itemize}
+  \item Jira;
+  \item Google Sheets.
+\end{itemize}
+
+\subsubsection{Esecuzione e controllo}
+\par Il \Responsabile{} deve garantire l'esecuzione e il mantenimento del piano definito nella fase precedente, affrontando e risolvendo eventuali problemi emersi durante l'avanzamento del processo. La risoluzione dei problemi può richiedere modifiche alla pianificazione. Per assicurare che l'impatto di tali modifiche sia adeguatamente controllato, è fondamentale documentare i problemi riscontrati con le relative soluzioni. Inoltre, il \Responsabile{} ha il compito di monitorare l'esecuzione del processo, fornendo report sia per uso interno che esterno.
+
+\paragraph*{Strumenti}
+\IntroStrumenti
+\begin{itemize}
+  \item Jira;
+  \item GitHub;
+  \item Google Sheets.
+\end{itemize}
+
+\subsubsection{Valutazione e approvazione}
+\par La revisione di un'attività è effettuata dal \Verificatore{} incaricato di esaminare la pull request prima della sua integrazione nell'ambiente condiviso. Dopo aver accettato, o rifiutato, le modifiche al codice o alla documentazione, il \Verificatore{} deve richiedere l'approvazione finale del \Responsabile{}. In questo modo, il team garantisce la validità dei risultati delle attività completate durante il processo. In particolare, il gruppo deve assicurare che i requisiti del software siano soddisfatti e che la documentazione sia completa e corretta.
+
+\paragraph*{Strumenti}
+\IntroStrumenti
+\begin{itemize}
+  \item GitHub.
+\end{itemize}
+
+\subsubsection{Ruoli}
+\par Il progetto didattico prevede l'assegnazione di sei ruoli distinti, con una rotazione costante e bilanciata che va considerata nella pianificazione delle attività.
+
+\subsubsubsection{Responsabile}
+\par Il \Responsabile{} coordina le attività interne al gruppo e gestisce la comunicazione con la Proponente e i Committenti.
+\par I compiti assegnati al \Responsabile{} sono i seguenti:
+\begin{itemize}
+  \item Pianificazione delle attività;
+  \item Stesura del preventivo dello sprint;
+  \item Redazione e miglioramento continuo del \PdP;
+  \item Tracciamento e monitoraggio delle attività del gruppo;
+  \item Valutazione e gestione dei rischi;
+  \item Preparazione dell'ordine del giorno e moderazione delle riunioni;
+  \item Sviluppo del consuntivo dello sprint.
+\end{itemize}
+
+\subsubsubsection{Amministratore}
+\par L'\Amministratore{} è incaricato della configurazione e della manutenzione dell'ambiente di sviluppo condiviso.
+\par I compiti assegnati all'\Amministratore{} sono i seguenti:
+\begin{itemize}
+  \item Svolgimento delle attività legate al processo di "configuration management" (\sezione{gestione-configurazione});
+  \item Stesura delle \NdP\ (non come unico \Redattore{}, ma come supervisore);
+  \item Misurazione delle metriche di qualità e aggiornamento del \PdQ.
+\end{itemize}
+
+\subsubsubsection{Analista}
+\par Il ruolo dell'\Analista{} è focalizzato sull'ingegneria dei requisiti.
+\par I compiti assegnati all'\Analista{} sono i seguenti:
+\begin{itemize}
+  \item Svolgimento delle attività descritte nella \sezione{analisi-requisiti};
+  \item Redazione del documento di \AdR.
+\end{itemize}
+
+\subsubsubsection{Progettista}
+\par Il \Progettista{} definisce soluzioni e stili architetturali per lo sviluppo del prodotto.
+\par I compiti assegnati al \Progettista{} sono i seguenti:
+\begin{itemize}
+  \item Svolgimento delle attività descritte nella \sezione{progettazione};
+  \item Redazione del documento Specifica Tecnica.
+\end{itemize}
+
+\subsubsubsection{Programmatore}
+\par Il \Programmatore{} implementa l'architettura delineata dal \Progettista{}. Inoltre, si occupa di definire test di unità e di integrazione per la verifica del prodotto software.
+\par I compiti assegnati al \Programmatore{} sono i seguenti:
+\begin{itemize}
+  \item Svolgimento delle attività descritte nella \sezione{codifica} e nella \sezione{testing-codice}.
+\end{itemize}
+
+\subsubsubsection{Verificatore}
+\par Il \Verificatore{} si occupa della revisione delle modifiche apportate dal gruppo, assicurandosi che i risultati delle attività soddisfino gli standard di qualità e di funzionamento previsti.
+\par I compiti assegnati al \Verificatore{} sono i seguenti:
+\begin{itemize}
+  \item Accertamento della qualità del codice e della documentazione;
+  \item Approvazione di un avanzamento di versione (escluso il rilascio).
+\end{itemize}
+
+\subsubsection{Gestione dei rischi}
+\par La gestione dei rischi è un’attività svolta dal \Responsabile{}, con il supporto dell’\Amministratore{} per quanto riguarda i rischi legati all’infrastruttura. Questa attività è inclusa nel \PianoDiProgetto\ e viene eseguita alla fine di ogni sprint come parte del consuntivo di periodo. La pratica di gestione dei rischi alimenta e influenza l’analisi dei rischi, anch’essa riportata nel \PianoDiProgetto.
+
+\subsubsubsection{Rischi: Notazione}
+\par I rischi vengono identificati in modo univoco secondo questa notazione:
+\[R[Tipo][Numero]\]
+\par dove:
+\begin{itemize}
+  \item \textbf{R}: indica la parola "rischio";
+  \item \textbf{Tipo}: indica il tipo di rischio:
+  \begin{itemize}
+    \item \textbf{O}: rischio organizzativo;
+    \item \textbf{T}: rischio tecnologico;
+    \item \textbf{P}: rischio di natura personale.
+  \end{itemize}
+  \item \textbf{Numero}: è un numero progressivo che identifica in modo univoco il rischio per ogni tipologia.
+\end{itemize}
+
+\subsubsubsection{Rischi: Didascalia}
+\par I rischi sono definiti come segue:
+\begin{itemize}
+  \item \textbf{Probabilità}: stima di occorrenza del rischio (Alta, Media, Bassa);
+  \item \textbf{Grado di criticità}: impatto del rischio (Alto, Medio, Basso);
+  \item \textbf{Descrizione}: descrizione del rischio;
+  \item \textbf{Strategie di rilevamento}: metodi per anticipare l'insorgenza di situazioni problematiche;
+  \item \textbf{Contromisure}: misure di mitigazione da applicare qualora il rischio si manifesti.
+\end{itemize}
+
+\subsubsection{Comunicazione}\label{sec:comunicazione}
+\par Il gruppo adotta canali di comunicazione differenti per la comunicazione interna (tra i membri del gruppo) e quella esterna (con la Proponente e i Committenti). Di seguito sono illustrate le modalità di comunicazione e le applicazioni utilizzate.
+
+\subsubsubsection{Comunicazione interna}
+\par La comunicazione tra i membri del gruppo avviene attraverso le seguenti modalità di interazione:
+\begin{itemize}
+  \item \textbf{Telegram} (comunicazione asincrona): utilizzato per comunicazioni di interesse generale e di breve contenuto. È possibile creare gruppi di discussione per argomenti specifici. I messaggi più importanti vengono fissati all'interno della rispettiva chat;
+  \item \textbf{Slack} (comunicazione asincrona): utilizzato per inviare promemoria ai verificatori riguardo alla revisione delle pull request;
+  \item \textbf{Discord} (comunicazione sincrona): utilizzato per chiamate di gruppo, formali o informali, e per la comunicazione interna tra membri del team che ricoprono lo stesso ruolo. È possibile creare canali di testo e vocali per argomenti specifici. Inoltre, il gruppo utilizza Discord come piattaforma di supporto per la "pair programming", disponibile da remoto tramite condivisione schermo o per mezzo dell'estensione Live Share di \glossario{Visual Studio Code};
+  \item \textbf{Google Meet} (comunicazione sincrona): fallback per le chiamate di gruppo, in caso di problemi con Discord;
+  \item \textbf{Incontri in presenza} (comunicazione sincrona): il gruppo si riunisce in presenza con cadenza mensile (o bisettimanale a ridosso delle revisioni di avanzamento).
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Questi strumenti devono essere integrati con un \glossario{Issue Tracking System}, poiché le decisioni prese durante gli incontri, a meno che non siano documentate in un verbale, sono più difficili da tracciare e recuperare in futuro.
+
+\paragraph*{Strumenti}
+\IntroStrumenti
+\begin{itemize}
+  \item Telegram;
+  \item Slack;
+  \item Discord;
+  \item Google Meet.
+\end{itemize}
+
+\subsubsubsection{Comunicazione esterna}
+\par La comunicazione con la Proponente e i Committenti avviene attraverso le seguenti modalità di interazione:
+\begin{itemize}
+  \item \textbf{Gmail} (comunicazione asincrona): utilizzata per comunicazioni formali. La comunicazione esterna è gestita dal \Responsabile{}, attraverso il recapito di posta elettronica del gruppo \href{mailto:argo.unipd@gmail.com}{argo.unipd\-@\-gmail.com};
+  \item \textbf{Zoom} (comunicazione sincrona): utilizzato per incontri formali.
+\end{itemize}
+
+\paragraph*{Strumenti}
+\IntroStrumenti
+\begin{itemize}
+  \item Gmail;
+  \item Zoom.
+\end{itemize}

@@ -1,0 +1,63 @@
+\section{Introduzione}
+
+\subsection{Scopo del documento}
+\par Il presente documento si propone di offrire una trattazione esaustiva dei \glossario{casi d'uso} e dei requisiti del progetto ChatSQL, seguendo gli standard e le convenzioni dell'ingegneria del software. Tale analisi è stata condotta attraverso una valutazione del capitolato C9 presentato dalla \glossario{Proponente} Zucchetti S.p.A., integrata da una collaborazione durante gli incontri dedicati. L'obiettivo principale è definire le funzionalità e le caratteristiche dell’applicativo, fornendo una base per la progettazione del sistema.
+
+\subsection{Scopo del prodotto}
+\par L’utilizzo di strumenti di supporto basati sull’\glossario{Intelligenza Artificiale} si sta diffondendo su larga scala, e anche gli utenti non facenti parte dell’area IT (\glossario{Information Technology}) ne dispongono con maggior frequenza per semplificare le attività quotidiane. L’azienda Zucchetti S.p.A. ha proposto lo sviluppo di un’applicazione che consenta la generazione di \glossario{prompt} mirati all’interrogazione di LLM (\glossario{Large Language Model}). L'applicazione sarà implementata come una web application accessibile attraverso i principali browser come Chrome, Firefox, Edge e Safari. Gli operatori potranno caricare nell’applicativo, a seguito di autenticazione, i \glossario{dizionari dati} da utilizzare per la ricerca semantica. Una volta selezionato un dizionario dati, gli utenti potranno formulare richieste in linguaggio naturale e ricevere prompt da copiare su ChatGPT (o affini), al fine di ottenere in output una \glossario{query} SQL.
+
+\subsection{Glossario}
+\GlossarioIntroduzione
+
+\subsection{Riferimenti}
+\subsubsection{Riferimenti normativi}
+\begin{itemize}
+  \item \NormeDiProgetto;
+  \item Slide PD2 - Corso di Ingegneria del Software - Regolamento del Progetto Didattico:\\ \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}{https://www.math.unipd.it/\textasciitilde tullio/IS-1/2023/Dispense/PD2.pdf};
+  \item Linee guida per l'accessibilità (WCAG 2.1):\\ \href{https://www.w3.org/Translations/WCAG21-it}{https://www.w3.org/Translations/WCAG21-it}.
+\end{itemize}
+
+\subsubsection{Riferimenti informativi}
+\begin{itemize}
+  \item Capitolato C9 - ChatSQL:
+  \begin{itemize}
+    \item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C9.pdf}{https://www.math.unipd.it/\textasciitilde tullio/IS-1/2023/Progetto/C9.pdf} \\ (Ultimo accesso: 2024-07-02);
+    \item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C9.pdf}{https://www.math.unipd.it/\textasciitilde tullio/IS-1/2023/Progetto/C9p.pdf} \\ (Ultimo accesso: 2024-07-02).
+  \end{itemize}
+  \item Dispense dal corso Ingegneria del Software: T5 - Analisi dei Requisiti:\\ \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T5.pdf}{https://www.math.unipd.it/\textasciitilde tullio/IS-1/2023/Dispense/T5.pdf};
+  \item Dispense dal corso Ingegneria del Software: P2 - Diagrammi Use Case:\\ \href{https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf}{https://www.math.unipd.it/\textasciitilde rcardin/swea/2022/Diagrammi\_Use\_Case.pdf};
+  \item \Glossario;
+  \item Verbali interni:
+  \begin{itemize}
+    \item 2024-04-03;
+    \item 2024-04-10;
+    \item 2024-04-16;
+    \item 2024-04-20;
+    \item 2024-04-25;
+    \item 2024-05-02;
+    \item 2024-05-07;
+    \item 2024-05-16;
+    \item 2024-05-23;
+    \item 2024-05-28;
+    \item 2024-06-03;
+    \item 2024-06-14;
+    \item 2024-06-22;
+    \item 2024-07-06;
+    \item 2024-07-10;
+    \item 2024-07-18.
+  \end{itemize}
+  \item Verbali esterni:
+  \begin{itemize}
+    \item 2024-04-09;
+    \item 2024-05-06;
+    \item 2024-05-22;
+    \item 2024-06-07;
+    \item 2024-07-09.
+  \end{itemize}
+  \item Analisi dei requisiti e casi d'uso:\\ \href{https://www.cs.unibo.it/~cianca/wwwpages/ids/6.pdf}{https://www.cs.unibo.it/\textasciitilde cianca/wwwpages/ids/6.pdf}  \\ (Ultimo accesso: 2024-06-19);
+  \item Strutturare i casi d'uso:\\ \href{https://guides.visual-paradigm.com/structuring-use-cases-with-base-include-and-extend-a-guide-for-effective-software-development}{https://guides.visual-paradigm.com/structuring-use-cases-with-base-include-and-extend-a-guide-for-effective-software-development}  \\ (Ultimo accesso: 2024-06-19);
+  \item Casi d'uso - FAQ:\\ \href{https://analisi-disegno.com/usecases/usecases-faq}{https://analisi-disegno.com/usecases/usecases-faq/}  \\ (Ultimo accesso: 2024-06-18);
+  \item Extension points:\\ \href{https://www.cs.unibo.it/gabbri/MaterialeCorsi/2.usecasediagramUML.favini.pdf}{https://www.cs.unibo.it/gabbri/MaterialeCorsi/2.usecasediagramUML.favini.pdf}  \\ (Ultimo accesso: 2024-06-19);
+  \item Relazione di generalizzazione:\\ \href{https://www.geeksforgeeks.org/use-case-diagram}{https://www.geeksforgeeks.org/use-case-diagram}  \\ (Ultimo accesso: 2024-06-21);
+  \item Esempi di diagrammi dei casi d'uso:\\ \href{https://www.uml-diagrams.org/use-case-diagrams-examples.html}{https://www.uml-diagrams.org/use-case-diagrams-examples.html}  \\ (Ultimo accesso: 2024-06-21).
+\end{itemize}
