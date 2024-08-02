@@ -1,0 +1,292 @@
+\subsection{Gestione della configurazione}\label{gestione-configurazione}
+
+\subsubsection{Scopo}
+\par La seguente sezione viene redatta con lo scopo di formalizzare e automatizzare le procedure applicate dal team, durante tutto il ciclo di vita del software, nell'ambito del processo di "configuration management".
+
+\subsubsection{Descrizione}
+\par Il processo di gestione della configurazione si occupa di definire e gestire le componenti software utilizzate durante l'intero corso del progetto per mantenere la tracciabilità e gestire il versionamento e i rilasci di prodotti software e documenti. Si tratta di un processo di applicazione di procedure amministrative e tecniche finalizzate a:
+\begin{itemize}
+  \item Identificare le componenti software del sistema e stabilire un punto di riferimento da cui misurare i progressi nel tempo;
+  \item Controllare le modifiche e i rilasci degli item;
+  \item Mantenere la tracciabilità delle modifiche;
+  \item Garantire la completezza, coerenza e correttezza degli item.
+\end{itemize}
+
+\subsubsection{Issue tracking system (ITS)}
+\par Al fine di registrare, gestire e monitorare le attività e sottoattività lungo l'intero ciclo di vita del software, il team impiega l'\glossario{Issue Tracking System} sviluppato da Atlassian: \glossario{Jira}.
+
+\subsubsubsection{Ticket}
+\par I \glossario{ticket} possono essere di quattro tipi:
+\begin{itemize}
+  \item \textbf{Task}: un'attività o un compito specifico da portare a termine entro la fine di uno \glossario{sprint} e assegnato a un unico membro del team;
+  \item \textbf{Sottotask}: un ticket subordinato che consente di orientarsi verso una scomposizione più granulare del lavoro. Un'attività, ritenuta troppo onerosa per una singola risorsa, può quindi essere suddivisa in più sottotask, associabili a diversi componenti del gruppo;
+  \item \textbf{\glossario{Bug}}: un ticket marcato come \glossario{bug} segnala la presenza di un'anomalia da risolvere tempestivamente, relativamente al prodotto software, alla documentazione o all'infrastruttura di gestione del progetto;
+  \item \textbf{\glossario{Story}}: detta anche "User Story", rappresenta una funzionalità del sistema, un requisito espresso dal punto di vista dell'utente.
+\end{itemize}
+\par Il layout di un \glossario{ticket} è formato dai seguenti campi:
+\begin{itemize}
+  \item \textbf{Riepilogo}: un titolo che riassume brevemente l'incarico associato al ticket;
+  \item \textbf{ID}: un codice univoco autoincrementante generato automaticamente dal sistema secondo la formula ARGO-ID;
+  \item \textbf{Descrizione}: una descrizione esaustiva dei risultati attesi al completamento del ticket;
+  \item \textbf{Assegnatario}: il componente del gruppo a cui è stata assegnato il compito di risolvere il ticket;
+  \item \textbf{Epic}: esprime obiettivi generali o grandi porzioni di lavoro che devono essere frammentati. Ogni ticket può essere associato a un epic;
+  \item \textbf{\glossario{Sprint}}: ciascun ticket può essere correlato a uno sprint, a sua volta scomposto in più epic;
+  \item \textbf{Ticket collegati}: \glossario{Jira} offre una funzionalità, sia nei campi di contesto che nella timeline di pianificazione, per collegare i ticket tra loro. Di seguito sono riportate le associazioni predefinite:
+    \begin{itemize}
+      \item blocca/è bloccato da (queste sono le due dipendenze più comuni tra i task);
+      \item clona/è clonato da;
+      \item duplica/è duplicato da;
+      \item item correlato a.
+    \end{itemize}
+  \item \textbf{Sviluppo}: un campo di integrazione tra \glossario{Jira} e \glossario{GitHub} che permette di monitorare lo stato di avanzamento dello sviluppo, con annessi link ai \glossario{branch}, \glossario{commit}, \glossario{pull request}, \glossario{build} e \glossario{distribuzioni} associati al \glossario{ticket};
+  \item \textbf{Stato}: durante il suo ciclo di vita, un ticket attraversa tre stati: "To Do", "Doing" e "Done".
+  \item \textbf{Versioni di correzione}: le versioni rappresentano punti temporali e traguardi intermedi nello svolgimento del progetto. Ciascun ticket può essere associato a una determinata versione. L'associazione ticket/versione può essere realizzata direttamente dal \glossario{backlog} del progetto. Le versioni possono trovarsi in uno dei seguenti tre stati:
+    \begin{itemize}
+      \item Non rilasciate;
+      \item Rilasciate;
+      \item Archiviate.
+    \end{itemize}
+  \item \textbf{Commenti}: elenco di commenti da affiancare ai messaggi di \glossario{commit} per contestualizzare le modifiche e ottimizzare il lavoro di \glossario{verifica};
+  \item \textbf{Aggiungi allegato}: oltre ai commenti, è possibile allegare file di vario formato che non necessitano del controllo di versione;
+  \item \textbf{Aggiungi un ticket figlio}: ogni ticket può avere uno o più ticket subordinati;
+  \item \textbf{Azioni}: \glossario{Jira} offre la possibilità di creare, gestire e monitorare automazioni, come ad esempio la chiusura di un \glossario{ticket} una volta effettuato il \glossario{merge} di una \glossario{pull request};
+  \item \textbf{Rilasci}: elenco delle versioni rilasciate a cui il ticket è associato.
+\end{itemize}
+
+\subsubsection{Automazione chiusura \glossario{ticket}}
+\par Su \glossario{Jira}, nelle impostazioni del progetto, è presente una sezione denominata “Automazione”, a sua volta suddivisa in quattro sottosezioni:
+\begin{itemize}
+  \item \textbf{Regole}: elenco delle regole definite dall'\Amministratore{}; ciascuna regola richiede un trigger di innesco, ossia un evento che avvia l'esecuzione della procedura definita nel corpo della regola. Una volta stabilito il trigger di attivazione, l’\Amministratore{} può scegliere una delle seguenti opzioni:
+  \begin{itemize}
+    \item THEN: aggiungi un'azione (es: transizione di un ticket da uno stato all'altro);
+    \item IF: aggiungi una condizione (es: verifica se lo stato del ticket è diverso da “Completato”);
+    \item FOR EACH: applica le azioni e le condizioni ad ogni task (es: esamina tutti i ticket collegati al ticket che ha attivato la regola ed esegue per ciascuno di essi una determinata azione);
+  \end{itemize}
+  \item \textbf{Audit log}: cronologia delle automazioni avviate, con dettagli sullo stato di esecuzione della regola, la data di attivazione e gli elementi associati;
+  \item \textbf{Modelli}: set di regole predefinite da importare nel progetto;
+  \item \textbf{Utilizzo}: numero di automazioni attivate mensilmente.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Il team ha deciso di introdurre una regola personalizzata per effettuare automaticamente la transizione dello stato dei \glossario{ticket}. Quando viene aperta una \glossario{pull request} finalizzata alla chiusura di un ticket, il titolo della richiesta deve essere corredato dal codice identificativo del ticket (ARGO-ID). In alternativa, è possibile menzionare il ticket nel nome del \glossario{branch} o nei \glossario{commit} associati alla \glossario{pull request}. Inoltre, l’assegnatario può lasciare un commento nella forma [ARGO-ID], affinché un bot, denominato jira[bot], possa convertire il commento in un link al ticket \glossario{Jira}. Una volta effettuato il \glossario{merge} della \glossario{pull request} su \glossario{GitHub}, il ticket collegato passerà in automatico allo stato "Completato".
+\par Utilizzando i modelli predefiniti, il gruppo ha aggiunto altre due regole, rispettivamente per:
+\begin{itemize}
+  \item Chiudere automaticamente un ticket quando tutti i ticket subordinati (task, story, bug, sottotask) sono completati;
+  \item Chiudere automaticamente un ticket quando tutti i sottotask sono completati.
+\end{itemize}
+
+\subsubsection{Pull request} \label{sec:pull_request}
+Come riportato nel registro delle modifiche dei documenti, ogni avanzamento di versione deve essere accompagnato da una fase di verifica. Questo vale anche per lo sviluppo del codice sorgente dell'applicazione ChatSQL, poiché quest'ultimo è sottoposto al versionamento. Per garantire un rilascio controllato delle modifiche, il team ha definito delle Branch Protection Rules. I branch che non accettano push dall’ambiente locale sono i seguenti:
+\begin{itemize}
+  \item \textbf{main}: ramo di produzione;
+  \item \textbf{develop}: ramo di sviluppo, disponibile all'interno del repository ChatSQL.
+\end{itemize}
+\par Lo sviluppo in locale avviene nei cosiddetti feature branch. Quando una funzionalità è pronta per l'ambiente condiviso, l'assegnatario propone le modifiche tramite una pull request. La revisione è di competenza del \Verificatore{}, che può decidere se approvare la richiesta, proporre ulteriori modifiche o, in caso di conflitti irriducibili, rifiutare la pull request. Sebbene la finalità principale delle pull request sia la verifica del codice, queste possono essere utilizzate anche come spazi di discussione e risoluzione di bug. Se un membro del team incontra delle difficoltà nello sviluppo di una feature, può quindi inviare una richiesta e menzionare il resto del gruppo.
+
+\subsubsubsection{Workflow}
+\par Il team adotta due tipi di workflow:
+\begin{itemize}
+  \item \textbf{Git feature branch}: utilizzato nel repository della documentazione. Questo workflow prevede che tutte le funzionalità siano sviluppate in un ramo dedicato anziché nel main branch. L'obiettivo del team è lavorare in un ambiente di \glossario{continuous integration}; di conseguenza, applicando il "feature branch workflow", il ramo principale non dovrebbe mai contenere codice guasto. I comandi essenziali sono i seguenti:
+  \begin{itemize}
+    \item git pull origin main;
+    \item git checkout -b feature-branch: creazione e passaggio automatico al nuovo branch;
+    \item git add nome-file: aggiunta del file alla \glossario{staging area};
+    \item git commit -m "messaggio";
+    \item git push -u origin feature-branch: invio del branch al repository remoto.
+  \end{itemize}
+  \item \textbf{Gitflow}: utilizzato nel repository ChatSQL. Questo workflow prevede l'uso di due rami principali: main e develop. Il main contiene il codice sorgente pronto per il rilascio. Il develop, invece, funge da ramo di integrazione per le funzionalità sviluppate in locale. I comandi essenziali sono i seguenti:
+  \begin{itemize}
+    \item git pull origin develop;
+    \item git checkout -b feature-branch;
+    \item git add nome-file;
+    \item git commit -m "messaggio";
+    \item git push -u origin feature-branch.
+  \end{itemize}
+\end{itemize}
+\par La differenza principale rispetto al workflow precedente è che durante lo sviluppo, il ramo predefinito (ovvero il branch di destinazione delle pull request) è il develop. Quando si crea una branch di release, invece, il merge deve essere effettuato sul main. Il branch main, infatti, registra la cronologia ufficiale dei rilasci. Nel "gitflow workflow" è disponibile anche un branch di hotfix, che consente di aggiustare rapidamenti i rilasci di produzione.
+\subsubsubsection{Apertura pull request}
+Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team deve selezionare i seguenti branch:
+\begin{itemize}
+  \item \textbf{head ref:} il branch di partenza della pull request;
+  \item \textbf{base ref:} il branch di destinazione della pull request.
+\end{itemize}
+\par Una volta generata la pull request, il team deve compilare i seguenti campi:
+\begin{itemize}
+  \item \textbf{Titolo} della pull request: può contenere anche un riferimento al ticket \glossario{Jira} associato;
+  \item \textbf{Descrizione:} un resoconto delle modifiche proposte. Nella descrizione è opportuno inserire il commento [ARGO-ID], dove ID è il numero univoco del ticket;
+  \item \textbf{Reviewers:} uno o più verificatori;
+  \item \textbf{Assignees:} uno o più membri del team che propongono le modifiche e aggiornano la pull request;
+  \item \textbf{Labels:}
+  \begin{itemize}
+    \item Amministratore: attività assegnate agli amministratori;
+    \item Analista: attività assegnate agli analisti;
+    \item Progettista: attività assegnate ai progettisti;
+    \item Programmatore: attività assegnate ai programmatori;
+    \item Responsabile: attività assegnate ai responsabili;
+    \item Bug: anomalia software;
+    \item Documentazione: miglioramenti o integrazioni alla documentazione di progetto;
+    \item Help wanted: richiesta di supporto o assistenza;
+    \item Hotfix: soluzione immediata a un problema urgente;
+    \item Task: implementazione di una nuova funzionalità;
+    \item Ricerca: attività di ricerca (tecnologie, pattern, modelli, best practice);
+    \item Sviluppo: attività di sviluppo.
+  \end{itemize}
+  \item \textbf{Projects:} dopo l'adozione di \glossario{Jira} come \glossario{Issue Tracking System}, il team ha deciso di modificare la funzione della board di GitHub. Invece di registrare gli issue, la board elenca le pull request, suddivise in:
+  \begin{itemize}
+    \item No Status;
+    \item Todo;
+    \item In Progress;
+    \item Done.
+  \end{itemize}
+  \par Nel campo "Projects", il team deve selezionare la board del progetto Argo e la priorità della pull request, che può essere alta, media o bassa.
+\end{itemize}
+\par Se una pull request è stata creata ma non è ancora pronta per essere unita al ramo base, GitHub mette a disposizione un pulsante per convertirla in una bozza. Una volta ultimata la bozza, è possibile marcare la pull request come "pronta per la revisione".
+
+\subsubsubsection{Verifica pull request}
+\par La lista delle pull request in attesa di revisione è visibile nella project board di GitHub. Per semplificare il lavoro dei verificatori, le pull request sono ordinate per priorità in ordine decrescente. Il contenuto delle pull request è suddiviso in tre sezioni principali:
+\begin{itemize}
+  \item L'area di conversazione: uno spazio di discussione funzionale alla risoluzione collaborativa di problemi;
+  \item La cronologia delle modifiche;
+  \item L'elenco dei file modificati: per ciascuna porzione di codice modificata, GitHub visualizza un confronto con il contenuto precedente alla modifica.
+\end{itemize}
+\par Il \Verificatore{} può applicare i seguenti filtri:
+\begin{itemize}
+  \item Visualizzazione di uno o più commit specifici;
+  \item Filtraggio dei file per estensione (es.: .tex);
+  \item Selezione della modalità di visualizzazione dei diff (differenze tra i file);
+  \item Filtraggio per il nome del file.
+\end{itemize}
+\par Per ogni file modificato, la procedura di revisione è la seguente:
+\begin{itemize}
+  \item Selezione di una riga o di una porzione di codice;
+  \item Cliccando sull'icona blu del commento, viene visualizzata una finestra di dialogo;
+  \item Inserimento di un commento descrittivo, positivo o negativo;
+  \item In alternativa, o in aggiunta, inserimento di una "suggestion". Un suggerimento è una modifica che gli sviluppatori possono integrare direttamente nel codice;
+  \item Pubblicazione del singolo commento o aggiunta del commento alla review.
+\end{itemize}
+\par Il \Verificatore{} può lasciare anche un commento generale del file. Una volta completata la review, il \Verificatore{} deve selezionare una delle seguenti opzioni, lasciando al contempo un commento riassuntivo opzionale:
+\begin{itemize}
+  \item \textbf{Comment:} fornisce un feedback generale senza approvare esplicitamente la pull request;
+  \item \textbf{Approve:} accetta le modifiche proposte;
+  \item \textbf{Request changes:} suggerisce aggiustamenti e azioni correttive.
+\end{itemize}
+\par Quando uno sviluppatore apporta delle modifiche sostanziali a una pull request già verificata, deve richiedere nuovamente la revisione.
+
+\subsubsubsection{Chiusura pull request}
+\par La chiusura delle pull request che riguardano verbali interni ed esterni, o comunque documenti che richiedono un’approvazione pre-rilascio, spetta al \Responsabile{}. Questo perché, dopo la revisione del \Verificatore{}, è necessaria un’approvazione generale del documento e una firma. GitHub mette a disposizione del team tre modalità di merging e chiusura delle pull request:
+\begin{itemize}
+  \item \textbf{Create a merge commit:} i commit della pull request vengono aggiunti al ramo base tramite un merge commit;
+  \item \textbf{Squash and merge:} i commit della pull request vengono compressi in un unico commit e aggiunti al ramo base;
+  \item \textbf{Rebase and merge:} simile a un fast-forward merge che mantiene la cronologia del progetto lineare.
+\end{itemize}
+\par L'opzione scelta dal team è "Squash and merge", in quanto si tratta di una delle soluzioni più diffuse per mantenere la cronologia del progetto pulita nei \glossario{repository} pubblici.
+
+\subsubsection{Versionamento}
+Il gruppo mantiene un versionamento per il codice e la documentazione nel seguente formato:
+\[ X.Y.Z \]
+\begin{itemize}
+  \item[X] Avanza alla approvazione del \Responsabile{}, corrisponde per cui ad ogni rilascio;
+  \item[Y] Avanza ad ogni verifica completa del documento;
+  \item[Z] Avanza ad ogni modifica verificata di un documento.
+\end{itemize}
+
+\subsubsection{Repository}
+Il gruppo utilizza due repository, disponibili su \glossario{GitHub}:
+\begin{itemize}
+  \item Repository della documentazione: \href{https://github.com/argo-swe/docs}{https://github.com/argo-swe/docs};
+  \item Repository del codice sorgente: \href{https://github.com/argo-swe/chatsql}{https://github.com/argo-swe/chatsql}.
+\end{itemize}
+Il gruppo impiega inoltre, per l'hosting del sito \href{https://argo-swe.github.io}{argo-swe.github.io}, un repository aggiuntivo, da non considerare parte del workflow principale in quanto aggiornato e mantenuto solo come "vetrina" del gruppo.
+\begin{itemize}
+  \item Repository del sito github.io: \href{https://github.com/argo-swe/argo-swe.github.io}{https://github.com/argo-swe/argo-swe.github.io}.
+\end{itemize}
+
+\paragraph{Repository \emph{Docs}}
+Il repository contiene il codice sorgente in LaTeX di tutta la documentazione ufficiale generata durante il progetto, oltre all'ambiente utile alla generazione dei file PDF corrispondenti.\\
+\par Di seguito è riportata la struttura del repository:
+\begin{itemize}
+  \item Il file \emph{README.md} illustra brevemente lo scopo del repository ed elenca i componenti del gruppo;
+  \item Il file \emph{.gitignore} evita il tracciamento di file ausiliari e artefatti di compilazione;
+  \item La directory \emph{Logo} contiene le versioni ufficiali del logo del gruppo, in formato SVG e PNG;
+  \item La directory \emph{sources} include il codice sorgente per la documentazione, suddiviso in due sotto-directory:
+  \begin{itemize}
+    \item \emph{model} contiene i file di utilizzo globale all'interno della documentazione;
+    \item \emph{documents} contiene, in maniera ordinata per fasi di progetto, la documentazione ufficiale.
+  \end{itemize}
+  \item La directory \emph{tools} contiene:
+  \begin{itemize}
+    \item Strumenti \glossario{Docker} per adottare un ambiente unico ed evitare problemi di compatibilità tra sistemi operativi;
+    \item Uno script per compilare automaticamente uno o più documenti.
+  \end{itemize}
+  \item La directory \emph{.github/workflows} contiene un file YAML che definisce un flusso di lavoro automatizzato. Il \glossario{workflow} viene attivato ad ogni merge di una pull request sul ramo base ed esegue i seguenti step:
+  \begin{itemize}
+    \item Clonazione del repository sorgente (tutta la cronologia, inclusi branch e tag) all'interno dell'ambiente di esecuzione del job (Ubuntu);
+    \item Salvataggio e ripristino della cache per evitare di scaricare nuovamente le dipendenze;
+    \item Nella cache viene memorizzata una chiave che include l'hash dei file \emph{docker-compose.yml} e \emph{Dockerfile}. Se il contenuto di uno di questi file cambia, anche la chiave cambia e la cache viene invalidata;
+    \item Autenticazione nel registro dei contenitori di GitHub attraverso un token di accesso in scrittura;
+    \item Avvio del contenitore Docker e caricamento dell'immagine su \glossario{GHCR} (se avviene un "cache miss");
+    \item Recupero dell'immagine da \glossario{GHCR} e avvio del contenitore Docker (se avviene un "cache hit");
+    \item Questa distinzione tra push e pull di un'immagine, in base alla presenza o meno di una chiave in cache, permette di ridurre significativamente i tempi di esecuzione del \glossario{workflow};
+    \item Compilazione dei documenti tramite shell interattiva all'interno del contenitore Docker;
+    \item Rimozione dei verbali esterni, poiché firmati dalla \glossario{Proponente}, dal build output;
+    \item Pubblicazione dell'artefatto generato durante il processo di build;
+    \item Clonazione del repository di destinazione (argo-swe.github.io) in una directory temporanea accessibile mediante token;
+    \item Caricamento dei file estratti dall'artefatto nella directory temporanea;
+    \item Commit e push dei documenti in formato PDF nel ramo base del repository di destinazione;
+    \item Arresto dell'esecuzione del contenitore Docker.
+  \end{itemize}
+\end{itemize}
+Il repository contiene un ramo base (main), in cui vengono inserite le versioni verificate e approvate dei documenti. I documenti vengono redatti all'interno di \glossario{feature branch}, i quali richiedono una fase di verifica prima di essere uniti al ramo base.
+
+\paragraph{Repository \emph{ChatSQL}}
+Il repository contiene il codice sorgente dell'applicativo ChatSQL, oltre a un \glossario{workflow} GitHub Actions per l'analisi statica del codice, l'esecuzione dei test e la generazione automatica dell'artefatto. Il workflow è definito da un file YAML archiviato nella directory \emph{.github/workflows}.
+
+\begin{itemize}
+  \item Il file \emph{README.md} illustra brevemente lo scopo del repository ed elenca i componenti del gruppo;
+  \item Il file \emph{.gitignore} evita il tracciamento di file ausiliari e artefatti di compilazione;
+  \item Il file \emph{docker-compose.yml} definisce la struttura dei container docker;
+  \item La directory \emph{frontend} include il codice sorgente per la parte applicativa di frontend sviluppato in VueJS;
+  \item La directory \emph{backend} include il codice sorgente per la parte di backend sviluppato in Python.
+\end{itemize}
+
+\subsubsection{Release}
+\par Come riportato nella sezione dedicata al versionamento, il team adotta una politica di rilascio basata su versioni numeriche, in cui ogni rilascio è identificato da un numero di versione univoco. Attraverso il processo di release management, il gruppo garantisce che il prodotto software e la documentazione siano rilasciati in modo controllato e conforme alle specifiche. Un rilascio può effettuato quando:
+\begin{itemize}
+  \item Il branch develop (o il branch di default) ha acquisito funzionalità sufficienti per una release;
+  \item La data di rilascio predeterminata si avvicina.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Il processo di rilascio si compone dei seguenti passaggi:
+\begin{itemize}
+  \item Creazione di un branch di release, denominato "release-X.Y.Z";
+  \item Caricamento di eventuali modifiche (correzione di bug o altre attività orientate al rilascio);
+  \item Una volta pronto, il release branch viene unito a quello principale e reintegrato nel ramo di develop (se presente);
+  \item Creazione di un tag per il rilascio, con il numero di versione associato (la formula da seguire è "vX.Y.Z");
+  \item Il passaggio precedente può essere effettuato tramite l'interfaccia web di GitHub o da riga di comando;
+  \item Una volta creato il tag, il team può procedere con la pubblicazione della release;
+  \item Nell'interfaccia web di GitHub, è visibile la sezione "Tags";
+  \item Al suo interno, oltre a visualizzare la lista dei tag, è possibile creare una nuova release (cliccando su "Draft a new release");
+  \item Ciascuna release include le seguenti informazioni:
+  \begin{itemize}
+    \item Tag (selezionato dalla lista dei tag esistenti o creato appositamente);
+    \item Target (branch o commit di riferimento per la release);
+    \item Note di rilascio (release notes): elencano gli sviluppatori e il registro delle modifiche;
+    \item Titolo della release;
+    \item Descrizione della release;
+    \item Allegati (file binari, documentazione, ecc.);
+    \item Flag di pre-release (opzionale): la versione viene etichettata come "non pronta per l'ambiente di produzione";
+    \item Flag di latest-release (opzionale): la versione viene etichettata come "release più recente".
+  \end{itemize}
+  \item Pubblicazione della release o salvataggio come bozza.
+\end{itemize}
+
+\subsubsection{Strumenti}
+\IntroStrumenti
+\begin{itemize}
+  \item Git;
+  \item GitHub;
+  \item Jira;
+  \item Slack.
+\end{itemize}
+

@@ -1,0 +1,23 @@
+\subsubsection{UC11 - Visualizzazione errore generazione del prompt}\label{UC11}
+\paragraph*{Descrizione}
+Il sistema ritorna un messaggio a causa di errori rilevati durante il processo di generazione del \glossario{prompt}.
+
+\paragraph*{Attori principali}
+Utente
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item L'Utente ha richiesto la generazione di un \glossario{prompt} (\hyperref[UC5]{UC5});
+  \item Il sistema ha rilevato degli errori interni. 
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Viene visualizzato un messaggio d'errore esplicativo;
+  \item Il sistema non restituisce il \glossario{prompt}.
+\end{itemize}
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item L'Utente visualizza un messaggio d'errore che lo invita a riprovare l'operazione, attendere o contattare il supporto tecnico.
+\end{enumerate}
