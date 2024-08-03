@@ -1,2 +1,44 @@
 \subsection{Front-end}
-\par TODO.
+
+\subsubsection{DictPreview}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item TODO.
+\end{itemize}
+
+\subsubsection{ChatDeleteBtn}
+
+\paragraph*{Props}
+\begin{itemize}
+  \item Messages: contenuto della chat da eliminare;
+  \item Loading: flag per indicare se il ChatBOT sta elaborando un nuovo messaggio.
+\end{itemize}
+
+\paragraph*{Emits}
+\begin{itemize}
+  \item ClearMessages: evento per notificare il componente genitore che i messaggi devono essere cancellati.
+\end{itemize}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Toggle: il pulsante di cancellazione deve essere nascosto se:
+  \begin{itemize}
+    \item Non ci sono messaggi da cancellare;
+    \item Il ChatBOT sta elaborando un nuovo messaggio.
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{AppLogo}
+
+\paragraph*{Props}
+\begin{itemize}
+  \item Width: variabile per impostare la larghezza del logo;
+  \item Height: variabile per impostare l'altezza del logo;
+  \item Path: variabile per impostare il percorso dell'immagine.
+\end{itemize}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Filter: funzionalità per invertire il colore del logo da bianco a nero (in base al tema attivo).
+\end{itemize}
