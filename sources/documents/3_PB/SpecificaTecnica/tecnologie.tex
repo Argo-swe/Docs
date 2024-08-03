@@ -61,7 +61,12 @@
 \par pytest è un \glossario{framework} di test Python che può essere utilizzato per scrivere test di unità, test di integrazione e test end-to-end.
 \paragraph*{Motivazioni}
 \begin{itemize}
-  \item TODO.
+  \item \textbf{Semplicità}: pytest consente la definizione dei test come normali funzioni in Python, senza la necessità di definire classi apposite a meno che non siano volute. Inoltre, non vi è presenza di codice boilerplate;
+  \item \textbf{Concisione}: pytest dispone di fixtures per i test, ovvero un modo conciso ed esplicito per aggiungere codice di configurazione alle funzioni di test che richiedono passaggi di preparazione;
+  \item \textbf{Parametrizzazione nativa}: pytest permette nativamente la parametrizzazione dei test, così da poter eseguire lo stesso test con input e risultati attesi diversi in base alle esigenze;
+  \item \textbf{Estensibilità}: pytest presenta un ricco ecosistema di plugin per favorire lo sviluppo dei test in circostanze specifiche senza dover alterare il codice;
+  \item \textbf{Accuratezza degli output}: pytest fornisce di default un elevato grado di dettaglio nell'analisi degli output dei test, come i tracebacks e le assertion introspection, semplificando l'analisi degli errori;
+  \item \textbf{Facilità d'integrazione}: pytest si integra facilmente con le pipeline CI/CD, strumenti di coverage e diverse interfacce di testing.
 \end{itemize}
 
 \subsection{Frontend}\label{sec:tecnologie-frontend}
