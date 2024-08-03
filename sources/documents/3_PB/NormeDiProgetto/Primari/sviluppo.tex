@@ -1,0 +1,411 @@
+\subsection{Sviluppo}\label{sviluppo}
+
+\subsubsection{Descrizione}
+Il \glossario{processo} di sviluppo contiene le seguenti attività e compiti dello \glossario{sviluppatore}:
+\begin{itemize}
+  \item Analisi dei Requisiti;
+  \item \glossario{Progettazione};
+  \item \glossario{Codifica} e \glossario{testing}.
+\end{itemize}
+
+\subsubsection{Analisi dei Requisiti}\label{analisi-requisiti}
+\paragraph{Descrizione}
+L'Analisi dei Requisiti è eseguita dall'analista, che redige l'omonimo documento. Il documento di \AdR\ considera i seguenti aspetti:
+\begin{itemize}
+  \item Descrizione del prodotto e caratteristiche ad alto livello;
+  \item Elenco dei casi d'uso;
+  \item Elenco dei requisiti.
+\end{itemize}
+
+\paragraph{Casi d'uso}
+La struttura di un caso d'uso è definita come segue:
+\begin{itemize}
+  \item UCN - Nome caso d'uso;
+  \item Descrizione;
+  \item Attori principali;
+  \item Precondizioni;
+  \item Postcondizioni;
+  \item Trigger;
+  \item Scenario principale;
+  \item Eventuale scenario alternativo;
+  \item Eventuale inclusioni;
+  \item Eventuali estensioni;
+  \item Eventuali sottocasi d'uso.
+\end{itemize}
+Nella scrittura e definizione di un caso d'uso vanno considerati i seguenti punti:
+\begin{itemize}
+  \item Le precondizioni devono essere condizioni necessarie per arrivare alla situazione che si presenta nello UC.
+  \item Le precondizioni vengono declinate al passato per identificare la conclusione di un UC, possono includere altri UC;
+  \item Le postcondizioni illustrano cosa succede dopo lo sviluppo dello UC e sono pertanto descrittive e poste al presente;
+  \item Lo scenario principale riprende i passaggi che sono stati necessari per il verificarsi dello UC. Pertanto si parte a descriverle dalla prima estensione che l'attore incontra dopo l'avvio dell'applicativo fino ad arrivare allo UC;
+  \item Lo scenario alternativo riprende i passaggi dello scenario principale fino all'estensione che porta allo UC alternativo;
+  \item Ogni riferimento a uno UC viene riportato in precondizioni, postcondizioni, scenario principale, scenario alternativo, inclusioni ed estensioni;
+  \item I sottocasi d'uso di uno UC vengono inseriti nello stesso file, sotto lo UC principale;
+  \item I sottocasi sono sempre inclusioni del caso d'uso "padre";
+  \item I sottocasi sono indicati con il nome del caso d'uso padre seguito da un punto e dal numero del sottocaso. Ad esempio, un caso d'uso potrebbe essere UC1 e il sottocaso UC1.1;
+  \item Per gli errori si visualizza quasi sempre un messaggio. Pertanto, la postcondizione finale sarà "Viene visualizzato un messaggio con i dettagli dell'errore";
+  \item Il trigger è l'azione che l'utente vuole svolgere e che viene soddisfatta dallo UC.
+\end{itemize}
+
+\paragraph{Requisiti}
+I requisiti del prodotto, delineati durante il processo di analisi, si suddividono nelle seguenti categorie:
+\begin{itemize}
+  \item \textbf{Funzionali (F)}: corrispondono alle funzionalità del sistema;
+  \item \textbf{Qualitativi (Q)}: garantiscono la qualità del prodotto;
+  \item \textbf{Di vincolo (V)}: indicano le restrizioni e i vincoli normativi del progetto.
+\end{itemize}
+Ciasun requisito ha anche un valore di importanza:
+\begin{itemize}
+  \item \textbf{Obbligatorio (O)}: requisiti inderogabili;
+  \item \textbf{Desiderabile (D)}: requisiti non obbligatori, ma comunque di interesse per la \glossario{Proponente};
+  \item \textbf{Opzionale (OP)}: l'implementazione di questi requisiti è lasciata alla discrezione del \glossario{fornitore}.
+\end{itemize}
+A partire da questa classificazione, i requisiti vengono identificati da un indice univoco con la seguente struttura:
+\[R[Tipologia].[Importanza].[Codice]\]
+Dove \emph{R} significa Requisito, \emph{Tipologia} è la sigla associata alla categoria del requisito, \emph{Importanza} è la sigla per il valore di rilevanza e \emph{Codice} è un valore numerico univoco.\\
+Descrivere le fonti è una pratica necessaria per orientare sia l'analista che gli altri membri del gruppo verso una definizione più ampia e chiara del requisito; pertanto, ciascuna fonte viene indicata assieme alla descrizione del requisito associato.
+
+\paragraph{Grafici}
+I grafici dei casi d'uso sono così composti:
+\begin{itemize}
+  \item È presente almeno un attore che interagisce con il sistema. L'attore è indicato con la figura di riferimento in UML ed è dotato di un nome per identificarne il tipo;
+  \item È presente un frame che identifica in quale porzione del sistema si sta svolgendo il caso d'uso. È così composto:
+  \begin{itemize}
+    \item All'esterno del frame sono presenti gli attori che interagiscono con il sistema;
+    \item All'interno vengono rappresentati i casi d'uso e l'interazione che questi hanno tra di loro e con gli attori;
+    \item Ogni frame è dotato di un'etichetta. Il termine "ChatSQL" si riferisce al sistema nel suo complesso, mentre la notazione "UC[ID]" indica che il diagramma rappresenta i sotto-casi di un caso d'uso specifico.
+  \end{itemize}
+  \item Le connessioni tra attore e casi d'uso sono rappresentate da segmenti continui; un attore può interagire con molteplici casi d'uso;
+  \item Le connessioni tra casi d'uso sono rappresentate da segmenti tratteggiati e direzionati;
+  \item Questi segmenti sono dotati di un'etichetta che ne riporta il nome e rispettano lo standard UML per i casi d'uso;
+  \item Gli ellissi che rappresentano i casi d'uso sono dotati di un'etichetta dove viene indicato il caso d'uso e il nome di quest'ultimo;
+  \item Se si realizza un'estensione tra casi d'uso, questa viene esplicitata attraverso un \glossario{extension point}, il quale spiega le condizioni che portano allo scenario alternativo.
+\end{itemize}
+
+\subsubsection{Progettazione}\label{progettazione}
+\subsubsubsection{Scopo}
+\par L'attività di progettazione segue quella di analisi e ha lo scopo di definire un'architettura per il prodotto capace di soddisfare i requisiti specificati nell’\AnalisiDeiRequisiti. Questa attività viene svolta dai progettisti e prevede l'utilizzo di stili e pattern architetturali. La progettazione ha dunque il compito di assicurare il soddisfacimento delle caratteristiche individuate durante l'analisi. In genere, l'architettura è un sistema formato da componenti, che raggruppano delle unità software composte da uno o più moduli.
+
+\par Una buona architettura dovrebbe possedere i seguenti attributi di qualità misurabili:
+\begin{itemize}
+  \item \textbf{Sufficienza}: adeguato livello di soddisfacimento dei requisiti;
+  \item \textbf{Modularità}: scomposizione in elementi distinti tra loro e con compiti non sovrapposti;
+  \item \textbf{Robustezza}: tolleranza a diverse classi di input;
+  \item \textbf{Flessibilità}: capacità di adattarsi a cambiamenti sia adattivi che evolutivi;
+  \item \textbf{Riusabilità}: agevola il riuso dei componenti in altri contesti;
+  \item \textbf{Efficienza}: utilizzo ottimale delle risorse;
+  \item \textbf{Affidabilità}: capacità di mantenere il livello di prestazioni in condizioni specifiche;
+  \item \textbf{Semplicità}: minimizza i componenti ed evita l'introduzione di soluzioni o dettagli troppo complessi;
+  \item \textbf{Incapsulamento}: nasconde i dettagli implementativi (black-box), con l'obiettivo di ridurre le dipendenze e aumentare la riusabilità e la manutenibilità;
+  \item \textbf{Coesione}: gli elementi che concorrono agli stessi obiettivi devono essere raggruppati nello stesso componente;
+  \item \textbf{Basso accoppiamento}: limita le dipendenze tra elementi distinti.
+\end{itemize}
+
+\subsubsubsection{Proof of Concept}\label{poc}
+Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione \glossario{RTB} è la dimostrazione della validità delle tecnologie scelte dal team. Sulla base delle richieste e delle necessità espresse dalla \glossario{Proponente}, il team valuta i pro e contro delle tecnologie disponibili, considerando fattori come la curva di apprendimento, le prestazioni e la modernità. Una volta ultimata la scelta tecnologica, i progettisti e i programmatori devono realizzare un \glossario{Proof of Concept}. Qualora il team ritenesse le tecnologie selezionate inadeguate, i progettisti e i programmatori saranno responsabili della realizzazione di un ulteriore Proof of Concept (\glossario{PoC}), avvalendosi, ove possibile, delle soluzioni già sviluppate. Lo scopo del PoC è:
+\begin{itemize}
+  \item Verificare la fattibilità del progetto;
+  \item Dimostrare che il team è in grado di soddisfare i requisiti mediante l'uso delle tecnologie scelte;
+  \item Acquisire un controllo quanto più completo delle tecnologie;
+  \item Ricevere un feedback dalla \glossario{Proponente} in merito al grado di conformità delle soluzioni sviluppate rispetto al capitolato.
+\end{itemize}
+
+\subsubsubsection{Fasi di progettazione}\label{fasi-progettazione}
+\par L'attività di progettazione è suddivisa in due fasi:
+\begin{itemize}
+  \item \textbf{Progettazione logica};
+  \item \textbf{Progettazione di dettaglio}.
+\end{itemize}
+
+\subsubsubsection{Progettazione logica}\label{progettazione-logica}
+\par La progettazione logica (o progettazione architetturale) è la prima fase di progettazione e ha lo scopo di delineare l'architettura software. I progettisti definiscono la struttura complessiva del sistema, identificando i componenti principali, le loro responsabilità e le relazioni tra di essi. Per assicurare la coerenza e la consistenza dell'architettura, il team prevede l'uso di stili architetturali, che forniscono una soluzione progettuale di "alto livello". Questa fase è essenziale per garantire che il sistema risponda ai requisiti funzionali e non funzionali. La progettazione logica include le seguenti attività:
+\begin{itemize}
+  \item Individuazione dei principali componenti del sistema;
+  \item Definizione delle interfacce e delle modalità di comunicazione tra i componenti;
+  \item Definizione delle strutture dati necessarie per soddisfare i requisiti;
+  \item Stesura iniziale del manuale utente;
+  \item Progettazione dei test di integrazione;
+  \item Revisione delle soluzioni e degli stili architetturali.
+\end{itemize}
+
+\subsubsubsection{Progettazione di dettaglio}\label{progettazione-dettaglio}
+\par La progettazione di dettaglio precede l’attività di codifica e la vincola in modo sostanziale. In questa fase vengono definiti gli attributi e i metodi delle classi, inclusi i relativi tipi di dato. Il team agisce sulle unità architetturali, che devono essere progettate con una complessità tale da consentire la codifica da parte di un singolo \Programmatore{}. Le unità dell’architettura vengono suddivise in moduli; più unità formano un componente (definito durante la progettazione logica). Lo scopo della progettazione di dettaglio è organizzare e disciplinare la fase di programmazione, documentando le scelte progettuali, assegnando i requisiti a ciascuna unità e definendo gli strumenti necessari per eseguire i test di unità. Il team deve trovare il giusto equilibrio tra scomposizione del sistema e complessità di coordinamento tra i moduli. La progettazione di dettaglio include le seguenti attività:
+\begin{itemize}
+  \item Descrizione dettagliata dei componenti, con enfasi sulla definizione specifica di ciascuna unità e modulo;
+  \item Aggiornamento ed espansione del manuale utente;
+  \item Definizione delle specifiche dei test di integrazione;
+  \item Definizione delle specifiche dei test di unità.
+\end{itemize}
+
+\subsubsubsection{Specifica tecnica}\label{specifica-tecnica}
+\par La fase di progettazione deve essere documentata in modo chiaro ed esaustivo, poiché costituisce la base fondamentale per le successive attività di codifica e testing del software. Le scelte progettuali sono dettagliate nel documento "Specifica Tecnica", la cui stesura inizia al termine della prima fase della revisione \glossario{RTB}.
+
+\subsubsection{Codifica}\label{codifica}
+
+\subsubsubsection{Scopo}
+\par La codifica, effettuata dai programmatori, ha l'obiettivo di sviluppare il software in conformità con le specifiche architetturali definite dai progettisti. I programmatori traducono la struttura del sistema in codice sorgente utilizzando uno o più linguaggi di programmazione. Questa fase influisce sia sul testing che sulla manutenzione del software. Durante lo sviluppo, è essenziale che i programmatori aderiscano agli standard di programmazione stabiliti.
+
+\subsubsubsection{Elementi comuni di stile}\label{sec:elementi-comuni-stile}
+\par Di seguito sono riportati gli elementi comuni di stile:
+\begin{itemize}
+  \item \textbf{Nomi autoesplicativi} (self-explanatory): i nomi di classi, metodi e variabili devono essere sufficientemente descrittivi da rendere chiaro il loro significato, scopo o contenuto senza necessità di ulteriori commenti esplicativi, salvo nei casi in cui la complessità del codice lo richieda. È fondamentale trovare un equilibrio tra lunghezza e chiarezza descrittiva;
+  \item \textbf{Lingua}: utilizzare la lingua inglese per la nomenclatura all'interno del codice sorgente, inclusi i commenti;
+  \item \textbf{Abbreviazioni}: utilizzare abbreviazioni e acronimi consolidati o riconosciuti dalla comunità informatica;
+  \item \textbf{Sezioni incomplete}: vanno indicate con un commento preceduto dalla dicitura "TODO";
+  \item \textbf{Sezioni in attesa di revisione o miglioramento}: vanno indicate con un commento preceduto dalla dicitura "FIXME";
+  \item \textbf{Indentazione}: utilizzare quattro spazi o un carattere di tabulazione;
+  \item \textbf{Spaziatura}: aggiungere uno spazio attorno agli operatori binari e ternari per migliorare la leggibilità del codice.
+\end{itemize}
+
+\subsubsubsection{Stile di codifica: Python}
+\paragraph*{Struttura dei file}
+\begin{itemize}
+  \item \textbf{Import}: insieme di istruzioni per includere moduli, librerie o pacchetti nello script:
+  \begin{itemize}
+    \item Librerie standard o di terze parti;
+    \item Librerie interne o moduli personalizzati.
+  \end{itemize}
+  \item \textbf{Variabili globali}: variabili accessibili in tutto il programma;
+  \item \textbf{Classi}: definiscono un tipo di oggetto o raggruppano funzioni di utilità.
+\end{itemize}
+
+\paragraph*{Struttura delle classi}
+\begin{itemize}
+  \item \textbf{Riferimenti}: lista di classi base (ereditarietà) o interfaccia implementata;
+  \item \textbf{Costruttore}: metodo speciale chiamato \verb|__init__| (inizializzatore);
+  \item \textbf{Metodi}: funzioni definite all'interno di una classe;
+  \item \textbf{Attributi}: variabili definite all'interno di una classe.
+\end{itemize}
+
+\paragraph*{Documentazione del codice}
+\par La documentazione del codice sorgente deve essere conforme alle linee guida di Google relative alla scrittura di \glossario{docstring} in Python (\href{https://google.github.io/styleguide/pyguide.html}{https://google.github.io/styleguide/pyguide.html} (Ultimo accesso: 2024-07-24)). In particolare:
+\begin{itemize}
+  \item Ogni classe deve essere corredata da:
+  \begin{itemize}
+    \item Panoramica del ruolo o dello scopo della classe;
+    \item Descrizione dettagliata (opzionale);
+    \item Lista degli argomenti del costruttore;
+    \item Lista degli attributi, accompagnati da una breve descrizione;
+    \item Lista dei metodi.
+  \end{itemize}
+  \item Ogni metodo deve essere corredato da:
+  \begin{itemize}
+    \item Panoramica del comportamento o della funzionalità del metodo;
+    \item Descrizione dettagliata (opzionale);
+    \item Lista degli argomenti, accompagnati da una breve descrizione;
+    \item Lista degli eventuali valori di ritorno, accompagnati da una breve descrizione;
+    \item Lista delle eventuali eccezioni sollevate, accompagnate da una breve descrizione.
+  \end{itemize}
+\end{itemize}
+
+\paragraph*{Best practices}
+\begin{itemize}
+  \item \textbf{Import}: importare moduli, librerie o pacchetti all'inizio del file, evitando l'uso dell'asterisco;
+  \item \textbf{Self}: utilizzare la parola chiave "self" per riferirsi all'istanza dell'oggetto su cui viene chiamato un metodo;
+  \item \textbf{Metodi setter e getter}: utilizzare metodi dedicati per interagire con gli attributi, evitando l'accesso diretto alle proprietà di una classe;
+  \item \textbf{Concordanza nomi attributi-argomenti}: gli argomenti di un metodo devono avere lo stesso nome degli attributi corrispondenti nella classe;
+  \item \textbf{Lunghezza massima riga (codice)}: 79 caratteri;
+  \item \textbf{Lunghezza massima riga (commenti)}: 72 caratteri;
+  \item \textbf{Lunghezza massima riga (docstring)}: 72 caratteri.
+\end{itemize}
+
+\paragraph*{Convenzioni sintattiche}
+\begin{itemize}
+  \item \textbf{Nomenclatura}: seguire le convenzioni stabilite da PEP 8;
+  \item \textbf{Nomi dei file}: \glossario{snake\_case};
+  \item \textbf{Nomi della classi}: \glossario{PascalCase};
+  \item \textbf{Nomi dei metodi}: snake\_case;
+  \item \textbf{Nomi delle variabili}: snake\_case;
+  \item \textbf{Nomi delle costanti}: \glossario{UPPER\_SNAKE\_CASE};
+  \item \textbf{Commenti}: utilizzare il simbolo \verb|#| per i commenti;
+  \item \textbf{Docstring}: utilizzare il simbolo \verb|"""| per le docstring;
+  \item \textbf{Stringhe}: utilizzare il simbolo \verb|'| oppure \verb|'''| per le stringhe.
+\end{itemize}
+
+\paragraph*{Formattazione del codice}
+\par Il team aderisce alle convenzioni di formattazione stabilite da PEP 8 (\href{https://peps.python.org/pep-0008/}{https://peps.python.org/pep-0008/} (Ultimo accesso: 2024-07-24)), la guida ufficiale per lo stile di codifica Python pubblicata dalla Python Software Foundation (PSF). Il rispetto delle linee guida è assicurato e automatizzato tramite uno strumento integrato nell'estensione Python di Visual Studio Code.
+
+\subsubsubsection{Struttura front-end}
+\par Il front-end contiene le seguenti cartelle principali:
+\begin{itemize}
+  \item \textbf{public}: risorse statiche come immagini, temi e favicon;
+  \item \textbf{src/components}: componenti riutilizzabili;
+  \item \textbf{src/components/layout}: componenti che definiscono la struttura generale dell'applicazione (es.: header, footer, sidebar);
+  \item \textbf{src/views}: pagine dell'applicazione;
+  \item \textbf{src/services}: moduli per la gestione delle interazioni con servizi interni o esterni (chiamate API, autenticazione, messaggi, servizi di utilità);
+  \item \textbf{src/assets}: risorse come font e fogli di stile del layout;
+  \item \textbf{src/locales}: file JSON per la gestione dell'interfaccia multilingua;
+  \item \textbf{src/router}: definizione delle \glossario{route}.
+\end{itemize}
+
+\subsubsubsection{Componenti (Vue.js)}
+\par Un SFC (Single File Component) è suddiviso in 3 sezioni:
+\begin{itemize}
+  \item \textbf{Script}: definisce la logica e il comportamento del componente. Il tag da utilizzare è \verb|<script setup>|, che gestisce automaticamente l'esportazione del componente e migliora la leggibilità e la concisione;
+  \item \textbf{Template}: definisce la struttura del componente;
+  \item \textbf{Style}: definisce lo stile e l'aspetto del componente.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Queste sezioni appaiono nell'ordine: \textbf{script}, \textbf{template}, \textbf{style}.
+
+\paragraph*{Best practices}
+\begin{itemize}
+  \item \textbf{Riusabilità}: creare componenti riutilizzabili, evitando la duplicazione del codice;
+  \item \textbf{Numero di componenti per file}: definire un solo componente per ogni file;
+  \item \textbf{Funzioni di utilità}: raggruppare le funzioni di utilità in classi dedicate, evitando di includere le "utility" all'interno dei componenti che ne usufruiscono.
+\end{itemize}
+
+\paragraph*{Convenzioni sintattiche}
+\begin{itemize}
+  \item \textbf{Nome dei file}: \glossario{kebab-case}.
+\end{itemize}
+
+\subsubsubsection{Stile di codifica: JavaScript/TypeScript}
+\paragraph*{Struttura dei file}
+\begin{itemize}
+  \item \textbf{Import}: insieme di istruzioni per includere componenti, servizi o altre dipendenze nello script:
+  \begin{itemize}
+    \item Dipendenze esterne;
+    \item Dipendenze interne.
+  \end{itemize}
+  \item \textbf{Variabili};
+  \item \textbf{Funzioni}.
+\end{itemize}
+
+\paragraph*{Documentazione del codice}
+\vspace{0.5\baselineskip}
+\par La documentazione del codice sorgente deve essere conforme al formato \glossario{JSDoc} (\href{https://jsdoc.app}{https://jsdoc.app} (Ultimo accesso: 2024-07-24)), compatibile sia con JavaScript che con TypeScript.
+
+\paragraph*{Convenzioni sintattiche}
+\begin{itemize}
+  \item \textbf{Nomi dei file}: \glossario{kebab-case};
+  \item \textbf{Nomi della classi}: \glossario{PascalCase};
+  \item \textbf{Nomi delle funzioni}: \glossario{camelCase};
+  \item \textbf{Nomi delle variabili}: camelCase;
+  \item \textbf{Nomi delle costanti}: \glossario{UPPER\_SNAKE\_CASE};
+  \item \textbf{Commenti}: utilizzare il simbolo \verb|//| per i commenti;
+  \item \textbf{Blocchi JSDoc}: utilizzare il simbolo \verb|/** ... */| per i blocchi JSDoc.
+\end{itemize}
+
+\paragraph*{Formattazione del codice}
+\par Il team aderisce alle convenzioni di formattazione stabilite da \glossario{Prettier}. Prettier può essere integrato in Visual Studio Code ed è compatibile con \glossario{ESLint}.
+
+\subsubsubsection{Stile di codifica: CSS}
+\par Il team aderisce alle regole di formattazione e stile per CSS definite al seguente indirizzo: \href{https://google.github.io/styleguide/htmlcssguide.html}{https://google.github.io/styleguide/htmlcssguide.html} (ultimo accesso: 2024-07-23), con alcune eccezioni (vedi \ref{sec:elementi-comuni-stile}). Il codice CSS è organizzato in tre sezioni:
+\begin{itemize}
+  \item \textbf{Layout}: disposizione generale degli elementi all'interno dell'applicazione; include classi per la gestione di griglie, allineamenti e margini;
+  \item \textbf{Componente}: stile di un singolo componente; definisce le sue proprietà distintive e le sue caratteristiche visive;
+  \item \textbf{Tema}: personalizzazione dell'aspetto estetico (tema chiaro/scuro).
+\end{itemize}
+
+\paragraph*{Convenzioni sintattiche}
+\begin{itemize}
+  \item \textbf{Nomi dei file}: \glossario{kebab-case};
+  \item \textbf{Nome delle proprietà}: kebab-case;
+  \item \textbf{Commenti}: utilizzare il simbolo \verb|/* ... */| per i commenti.
+\end{itemize}
+
+\subsubsubsection{Stile di codifica: HTML}
+\par Il team aderisce alle regole di formattazione e stile per HTML definite al seguente indirizzo: \href{https://google.github.io/styleguide/htmlcssguide.html}{https://google.github.io/styleguide/htmlcssguide.html} (ultimo accesso: 2024-07-23), con alcune eccezioni (vedi \sezione{sec:elementi-comuni-stile}).
+
+\paragraph*{Best practices}
+\begin{itemize}
+  \item \textbf{Attributi ARIA}: utilizzare attributi ARIA per migliorare l'accessibilità.
+\end{itemize}
+
+\paragraph*{Convenzioni sintattiche}
+\begin{itemize}
+  \item \textbf{Nomi dei file}: \glossario{kebab-case};
+  \item \textbf{Nome delle classi}: kebab-case;
+  \item \textbf{Nome degli id}: kebab-case;
+  \item \textbf{Commenti}: utilizzare il simbolo \verb|<!-- ... -->| per i commenti.
+\end{itemize}
+
+\subsubsubsection{Strumenti}
+\IntroStrumenti
+\begin{itemize}
+  \item Git;
+  \item Visual Studio Code.
+\end{itemize}
+
+\subsubsection{Testing del codice}\label{testing-codice}
+\par Il testing ha lo scopo di verificare il comportamento di ciascuna unità software; viene condotto in parallelo all'attività di codifica. Di seguito sono riportate le tipologie di test che il team si impegna a eseguire come parte integrante del processo di verifica.
+
+\subsubsubsection{Tipologie di test}
+\par I test eseguiti nella fase antecedente la convalida sono suddivisi in tre categorie principali:
+\begin{itemize}
+  \item \textbf{Test di unità};
+  \item \textbf{Test di integrazione};
+  \item \textbf{Test di sistema}.
+\end{itemize}
+
+\subsubsubsection{Test di unità}
+\par I test di unità sono una categoria di test del software che si focalizza sulla verifica del corretto funzionamento dei singoli moduli del codice. In genere, una “unità” è la più piccola porzione o segmento (una funzione, un metodo o una classe) testabile in modo autonomo e isolato all’interno del sistema. I test di unità vengono definiti durante la progettazione di dettaglio con l’obiettivo di individuare difetti o malfunzionamenti. La maggior parte dei difetti rilevati tramite analisi dinamica (circa 2/3 del totale) deriva dall’esecuzione dei test di unità. A ogni unità software può essere associata una suite o batteria di test. Nelle fasi iniziali dello sviluppo, il team potrebbe riscontrare delle difficoltà nel testare singole unità, poiché alcuni moduli potrebbero essere incompleti o non disponibili. Pertanto, sono stati introdotti degli strumenti a supporto dell'analisi dinamica:
+\begin{itemize}
+  \item \textbf{Stub} (o metodo stub): simula una funzionalità del sistema (non ancora codificata e non oggetto di test) come parte del processo di testing di un’unità software;
+  \item \textbf{Driver}: componente di supporto che controlla l'esecuzione dei test e aiuta a configurare l'ambiente. Sostituisce il modulo chiamante di una funzionalità sotto test;
+  \item \textbf{Mock object}: simula il comportamento di oggetti reali in condizioni controllate; può fornire una risposta preimpostata.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par I test di unità si dividono in due categorie:
+\begin{itemize}
+  \item \textbf{Test funzionali} (black-box): utilizzano dati di ingresso capaci di provocare l’esito atteso. L'obiettivo è accertare che, fornito un determinato input e definita un'aspettativa di output, l'esecuzione di una funzionalità generi il comportamento previsto. I test black-box contribuiscono a misurare quante specifiche e requisiti funzionali sono soddisfatti dal prodotto software. Non possono valutare la correttezza e la completezza della logica interna dell’unità, pertanto devono essere integrati con test strutturali;
+  \item \textbf{Test strutturali} (white-box): verificano la struttura interna dell’unità software, esaminando i cammini di esecuzione all’interno dell’unità stessa. L'obiettivo è valutare il funzionamento interno del software, analizzando la logica, i flussi di controllo e la copertura del codice.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Per l'esecuzione dei test funzionali e strutturali, il team utilizza strumenti di automazione appropriati e coerenti con le tecnologie e i linguaggi di programmazione selezionati. Ciascuna unità software deve rispettare le specifiche stabilite durante la progettazione di dettaglio.
+
+\subsubsubsection{Test di integrazione}
+\par I test di integrazione vengono definiti durante la progettazione architetturale e si basano sui componenti in essa specificati. L’integrazione può essere di tipo incrementale, aumentando il valore funzionale a ogni passo. Questo approccio prevede che i componenti vengano integrati in insiemi già verificati, agevolando la rimozione di eventuali difetti o malfunzionamenti in seguito a cambiamenti. Lo scopo dei test di integrazione è rilevare difetti di design o una scarsa qualità dei test di unità, garantendo che i dati scambiati attraverso ciascuna interfaccia siano conformi alle specifiche. Vi sono due modalità di integrazione incrementale:
+\begin{itemize}
+  \item \textbf{Bottom-up}: l’integrazione avviene partendo dai moduli più interni al sistema, che sono meno visibili a livello utente e possiedono un minor numero di dipendenze funzionali. Questa strategia richiede l’uso di pochi stub, ma può rallentare la fornitura di servizi di "alto livello". Nell’approccio bottom-up, i driver vengono utilizzati per testare i moduli nei layer inferiori, qualora i moduli nei layer superiori siano ancora incompleti;
+  \item \textbf{Top-down}: l’integrazione avviene partendo dai moduli più esterni, che possiedono un maggior numero di dipendenze funzionali e sono quindi di maggior interesse per l’utente. Questa strategia richiede l'uso di molti stub per simulare i moduli mancanti, consentendo di integrare fin da subito le funzionalità di "alto livello".
+\end{itemize}
+
+\subsubsubsection{Test di sistema}
+\par I test di sistema verificano il comportamento dinamico dell'intero sistema rispetto ai requisiti specificati nel documento di \AnalisiDeiRequisiti. Questa fase della verifica ha inizio al completamento dei test di unità e di integrazione, ed è il precursore del collaudo. I test di sistema sono inerentemente funzionali (black-box) e, pertanto, non dovrebbero richiedere conoscenza della logica interna del software. L’ambiente di esecuzione dovrebbe essere simile a quello di produzione, al fine di replicare le condizioni reali di utilizzo del sistema. I test di sistema coprono il software nel suo complesso, verificando tutte le funzionalità integrate e interconnesse.
+
+\subsubsubsection{Test: Notazione}
+\par I test vengono identificati in modo univoco secondo questa notazione:
+\[T.[Tipo].[Codice]\]
+\par dove:
+\begin{itemize}
+    \item \textbf{T}: indica la parola "test";
+    \item \textbf{Tipo}: indica la tipologia di test:
+        \begin{itemize}
+            \item \textbf{U} (Unità);
+            \item \textbf{I} (Integrazione);
+            \item \textbf{S} (Sistema);
+            \item \textbf{A} (Accettazione).
+        \end{itemize}
+    \item \textbf{Codice}: è un numero progressivo che identifica in modo univoco i test per ogni tipologia.
+\end{itemize}
+
+\subsubsubsection{Test: Stato}
+\par Ogni test è corredato da un flag che segnala il suo stato, aggiornato in base alla versione corrente del prodotto software. Il flag può assumere i seguenti valori:
+\begin{itemize}
+    \item \textbf{N-D}: test non definito (o non disponibile);
+    \item \textbf{S}: test eseguito con successo;
+    \item \textbf{F}: test fallito.
+\end{itemize}
+
+\subsubsubsection{Strumenti}
+\IntroStrumenti
+\begin{itemize}
+  \item GitHub;
+  \item Visual Studio Code.
+\end{itemize}
+
+\subsubsection{Integrazione software}
+\par Il team adotta la pratica di \glossario{continuous integration} (CI), che consiste nell’allineamento frequente delle modifiche con l’ambiente condiviso. La cronologia dello sviluppo viene mantenuta in un ramo chiamato develop, mentre nel branch principale è registrata la cronologia dei rilasci. A partire dal branch develop, ciascun membro del team può creare un ramo di feature, orientato allo sviluppo di nuove funzionalità, alla definizione di test o alla correzione di bug. Una volta completate le modifiche, viene aperta una pull request per richiedere la verifica del codice. Come definito nella \sezione{sec:pull_request}, ciascuna pull request deve essere opportunamente etichettata.
+
+\par Il processo di integrazione continua implica l’automazione delle fasi di build e test. Pertanto, quando viene aperta una pull request, GitHub Actions avvia un workflow che esegue i test di unità, di integrazione e di sistema definiti nel \PianoDiQualifica. L’obiettivo del team è garantire che il ramo di sviluppo rimanga stabile e il più possibile privo di difetti.
+
+\subsubsubsection{Strumenti}
+\IntroStrumenti
+\begin{itemize}
+  \item GitHub.
+\end{itemize}

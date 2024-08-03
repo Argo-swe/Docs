@@ -1,0 +1,97 @@
+\par Le metriche di prodotto sono indicatori quantitativi e qualitativi utilizzati per valutare in modo obiettivo le caratteristiche del software. L'applicazione di queste metriche mira ad assicurare la conformità del software agli standard di qualità e ad aumentare il grado di soddisfazione del cliente.
+
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	% MAX 12.5cm
+	\begin{longtable}{|P{1.5cm}|P{4cm}|P{3.5cm}|>{\arraybackslash}P{3.5cm}|}
+		\caption{Metriche di qualità di prodotto}
+  	\label{tab:metriche-qualita-prodotto} \\
+	  \hline
+		\textbf{ID} & \textbf{Nome metrica} & \textbf{Valore tollerabile} & \textbf{Valore ambito} \\
+		\hline
+		\endfirsthead
+
+		\hline
+		\textbf{ID} & \textbf{Nome metrica} & \textbf{Valore tollerabile} & \textbf{Valore ambito} \\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{4}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+		M.PD.1 & Requisiti obbligatori soddisfatti & 100\% & 100\% \\
+		\hline M.PD.2 & Requisiti desiderabili soddisfatti & - & - \\
+		\hline M.PD.3 & Requisiti opzionali soddisfatti & - & - \\
+		\hline M.PD.4 & Indice Gulpease & $\geq$ 50 & $\geq$ 80 \\
+		\hline M.PD.5 & Completezza descrittiva & $\geq$ 90\% & 100\% \\
+		\hline M.PD.6 & Browser supportati & $\geq$ 80\% & 100\% \\
+		\hline M.PD.7 & Profondità (click necessari per reperire un'informazione) & 5 click & 3 click \\
+		\hline M.PD.8 & Ampiezza (opzioni nel menu di navigazione principale) & 8 opzioni & 4 opzioni \\
+		\hline M.PD.9 & Tempo di apprendimento & - & - \\
+		\hline M.PD.10 & Tempo di risposta & - & - \\
+		\hline M.PD.11 & Code coverage & $\geq$ 80\% & $\geq$ 90\% \\
+		\hline M.PD.12 & Adeguatezza delle funzioni sviluppate & $\geq$ 70\% & $\geq$ 80\% \\
+		\hline M.PD.13 & Accuratezza della risposta & $\geq$ 70\% & $\geq$ 90\% \\
+		\hline M.PD.14 & Linee medie di codice per metodo & $\leq$ 40 & $\leq$ 20 \\
+		\hline M.PD.15 & Complessità ciclomatica & $\leq$ 10 & $\leq$ 5 \\
+		\hline M.PD.16 & Accoppiamento delle classi & $\leq$ 4 & $\leq$ 2 \\
+		\hline M.PD.17 & Indice di manutenibilità & - & - \\
+		\hline M.PD.18 & Percentuale di test superati & $\geq$ 80\% & 100\% \\
+		\hline M.PD.19 & Rimozione dei difetti & $\geq$ 70\% & $\geq$ 80\% \\
+    \hline M.PD.20 & Tolleranza agli errori & $\geq$ 70\% & 100\% \\
+		\hline M.PD.21 & Impatto delle modifiche & $\leq$ 15\% & $\leq$ 5\% \\
+    \end{longtable}
+\end{adjustwidth}
+\egroup
+
+
+\subsubsection{Tracciamento delle metriche di prodotto}
+
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	\centering
+	% MAX 12.5cm
+  \begin{longtable}{|P{3cm}|>{\raggedright}P{5.5cm}|>{\arraybackslash}P{4cm}|}
+		\caption{Tracciamento metriche di prodotto}
+  	\label{tab:tracciamento-metriche-prodotto} \\
+    \hline
+		\textbf{Caratteristica} & \textbf{Descrizione} & \textbf{Metriche}\\
+		\hline
+		\endfirsthead
+
+		\caption[]{Tracciamento metriche di prodotto (continua)} \\
+		\hline
+		\textbf{Caratteristica} & \textbf{Caratteristica} & \textbf{Metriche}\\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{3}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    Funzionalità & Il software deve implementare i requisiti riportati nel documento \AdR. & M.PD.1, M.PD.2, M.PD.3, M.PD.12, M.PD.13 \\
+		\hline Compatibilità & L'applicazione web deve essere compatibile con i seguenti browser:
+		\begin{itemize}
+			\item Mozilla Firefox;
+			\item Google Chrome;
+			\item Safari;
+			\item Microsoft Edge;
+			\item Opera.
+		\end{itemize}
+		& M.PD.6 \\
+		\hline Usabilità & Il software deve facilitare l'interazione e il reperimento delle informazioni da parte dell'utente, senza provocare sovraccarico cognitivo. & M.PD.4, M.PD.5, M.PD.7, M.PD.8, M.PD.9  \\
+		\hline Efficienza & Il software deve fornire prestazioni adeguate in relazione alla quantità di risorse usate. & M.PD.10 \\
+		\hline Affidabilità & Il software deve rispettare le specifiche tecniche di funzionamento nel tempo. & M.PD.18, M.PD.19, M.PD.20 \\
+		\hline Manutenibilità & Il software deve poter essere modificato senza richiedere uno sforzo eccessivo in termini di tempo e costi. & M.PD.11, M.PD.14, M.PD.15, M.PD.16, M.PD.17, M.PD.21 \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup

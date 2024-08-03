@@ -1,0 +1,33 @@
+\input{layout}
+\input{global}
+\input{local}
+\usepackage{pgfplotstable}
+\usepackage{booktabs}
+
+\begin{document}
+
+\makeFrontPage
+
+\input{registro_modifiche}
+\clearpage
+
+\tableofcontents
+\clearpage
+\renewcommand{\listtablename}{Elenco delle tabelle}
+\listoftables
+\clearpage
+\renewcommand{\listfigurename}{Elenco delle figure}
+\listoffigures
+\clearpage  
+
+\input{introduzione}
+\clearpage
+\input{Analisi_rischi/analisi_rischi}
+\input{modello_sviluppo}
+\input{stima_temporale}
+\input{stima_costi}
+\input{Pianificazione/pianificazione}
+\input{Preventivo/preventivo}
+\input{Consuntivo/consuntivo}
+
+\end{document}

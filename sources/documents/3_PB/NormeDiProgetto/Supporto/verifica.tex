@@ -1,0 +1,70 @@
+\subsection{Verifica}\label{verifica}
+
+\subsubsection{Scopo}
+\par Il processo di verifica ha lo scopo di determinare se i risultati di un'attività soddisfano i requisiti, le condizioni e i vincoli stabiliti nel \PianoDiQualifica. Questo processo può includere:
+\begin{itemize}
+  \item \textbf{Analisi};
+  \item \textbf{Revisione};
+  \item \textbf{Testing}.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par I task coinvolti nel processo di verifica sono finalizzati a garantire l'adeguatezza, completezza e coerenza del prodotto. Questi task comprendono:
+\begin{itemize}
+  \item Verifica dei processi;
+  \item Verifica dei requisiti software;
+  \item Verifica del design;
+  \item Verifica del codice sorgente;
+  \item Verifica dell'integrazione;
+  \item Verifica della documentazione.
+\end{itemize}
+
+\subsubsection{Descrizione}
+\par Per assicurare la conformità dei risultati prodotti, a ogni azione di modifica è associato un passo di verifica. L’avanzamento di versione avviene soltanto a valle di verifica e conseguente approvazione. Il processo di revisione viene svolto dai membri impiegati nel ruolo di \Verificatore{}. Come indicato nella \sezione{sec:pull_request}, il gruppo ha definito delle Branch Protection Rules, al fine di garantire un'integrazione controllata delle modifiche all'interno del \glossario{repository}. In linea con le specifiche di GitHub, la verifica non può essere effettuata dallo stesso componente a cui è stato assegnato il task.
+
+\subsubsection{Analisi statica}
+\par L’analisi statica è un approccio alla verifica che prevede una disamina del software e dei documenti alla ricerca di difetti, senza richiedere l’esecuzione del codice. Può essere vista come un’attività complementare all’analisi dinamica. Il team utilizza due tecniche di analisi statica:
+\begin{itemize}
+  \item \textbf{Walkthrough};
+  \item \textbf{Inspection}.
+\end{itemize}
+
+\subsubsubsection{Walkthrough}
+\par Il walkthrough è una tecnica informale di analisi statica che prevede una lettura critica e approfondita del documento o del codice sorgente. Questo processo coinvolge il \Verificatore{} e l’autore (un \Programmatore{} o un \Redattore{}). Il walkthrough è un'attività collaborativa, che può coinvolgere anche un team di tre o cinque persone. In caso di verifica del codice sorgente, i verificatori lo percorrono simulando possibili esecuzioni. Il walkthrough si articola nelle seguenti fasi:
+\begin{itemize}
+  \item \textbf{Pianificazione}: il \Verificatore{} e l'autore si accordano su come procedere con il walkthrough;
+  \item \textbf{Lettura}: il codice o il documento viene letto dall'autore, mentre il \Verificatore{} annota i difetti riscontrati;
+  \item \textbf{Discussione}: al termine della lettura, il \Verificatore{} comunica i problemi rilevati e propone eventuali suggerimenti, con l'obiettivo di correggere i difetti.
+\end{itemize}
+
+\subsubsubsection{Inspection}
+\par L'inspection (o ispezione) è una tecnica formale di analisi statica che prevede una revisione sistematica e mirata del prodotto. A differenza del walkthrough, l’ispezione utilizza liste di controllo (checklist) per rilevare i difetti. In questo modo è possibile ricercare errori frequenti di programmazione o di altra natura, senza dover analizzare l’oggetto in esame nella sua interezza; pertanto, l’ispezione si concentra sulla verifica dei punti ritenuti critici. Le checklist possono derivare da conoscenze pregresse ottenute tramite walkthrough. L'ispezione si articola nelle seguenti fasi:
+\begin{itemize}
+  \item \textbf{Pianificazione}: il \Verificatore{} e l'autore si accordano su come procedere con l'ispezione;
+  \item \textbf{Definizione delle checklist}: vengono definiti i punti critici del codice o della documentazione; le liste di controllo vengono aggiornate sulla base dell’esperienza acquisita e degli errori più ricorrenti;
+  \item \textbf{Lettura}: il prodotto viene esaminato seguendo le liste di controllo;
+  \item \textbf{Correzione dei difetti}: A seguito dell'ispezione, l'autore implementa le modifiche necessarie e intraprende le azioni correttive identificate;
+  \item \textbf{Follow-up}: le modifiche apportate dall'autore vengono controllate per accertare la loro corretta implementazione.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Data l’inesperienza del team nell'attività di verifica, inizialmente è stata utilizzata la tecnica “walkthrough”. Ciò ha permesso al gruppo di rilevare gli errori più comuni e acquisire le conoscenze necessarie per definire le liste di controllo ed eseguire verifiche più mirate. Le checklist sono raccolte nel \PianoDiQualifica.
+
+\subsubsection{Analisi dinamica}
+\par L’analisi dinamica è un processo di verifica basato sull’osservazione del comportamento di un sistema software o di un suo componente in esecuzione. Spesso il termine "testing" viene utilizzato come sinonimo di analisi dinamica, poiché quest’ultima prevede la definizione di un insieme di prove (test), preferibilmente automatizzate e riproducibili. Le precondizioni necessarie per poter effettuare un test sono la configurazione dell'ambiente di esecuzione e la conoscenza del comportamento atteso (determinato dall'oracolo). Un oracolo è un metodo usato nella verifica del software per determinare se un test ha avuto successo o è fallito. L’obiettivo dei test è produrre una misura quanto più oggettiva della qualità del prodotto e, di conseguenza, devono essere eseguiti in parallelo all'attività di codifica. Come parte del processo di analisi dinamica, il team ha individuato le seguenti tipologie di test da eseguire:
+\begin{itemize}
+  \item \textbf{Test di unità};
+  \item \textbf{Test di integrazione};
+  \item \textbf{Test di sistema}.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par La classificazione dettagliata dei test è disponibile nella \sezione{testing-codice}.
+
+\subsubsection{Strumenti}
+\IntroStrumenti
+\begin{itemize}
+  \item Discord;
+  \item Google Meet;
+  \item GitHub.
+\end{itemize}
