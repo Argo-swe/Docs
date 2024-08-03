@@ -1,0 +1,45 @@
+\subsubsection{UC22 - Visualizzazione messaggio di debug}\label{UC22}
+\paragraph*{Descrizione}
+Il Tecnico visualizza un messaggio di \glossario{debug} che illustra il processo di generazione del \glossario{prompt}. Il debug può aiutare il Tecnico a capire come migliorare il \glossario{dizionario dati}, in particolare le descrizioni in linguaggio naturale delle tabelle e delle colonne del database. Nel messaggio, infatti, è documentato il modo in cui le descrizioni interagiscono con il modello di \glossario{AI}.
+
+\paragraph*{Attori principali}
+Tecnico
+
+\paragraph*{Precondizioni}
+\begin{itemize}
+  \item Il sistema è attivo e funzionante;
+  \item Il Tecnico ha effettuato l'autenticazione (\hyperref[UC1]{UC1});
+  \item Il sistema ha generato almeno un \glossario{prompt} e il rispettivo \glossario{log}.
+\end{itemize}
+
+\paragraph*{Postcondizioni}
+\begin{itemize}
+  \item Il messaggio di \glossario{debug} viene visualizzato correttamente.
+\end{itemize}
+
+\paragraph*{Trigger}
+Il Tecnico vuole visualizzare un messaggio di \glossario{debug}.
+
+\paragraph*{Scenario principale}
+\begin{enumerate}
+  \item Il Tecnico accede alla sezione dedicata al debug del \glossario{prompt};
+  \item Il Tecnico visualizza un messaggio di \glossario{debug};
+  \item Il sistema mostra tutte le informazioni contenute nel messaggio:
+    \begin{itemize}
+      \item Data e ora di generazione del \glossario{log};
+      \item Richiesta in linguaggio naturale;
+      \item Prima fase della generazione del \glossario{prompt} (lista delle tabelle considerate rilevanti dal modello):
+      \begin{itemize}
+        \item Nome della tabella;
+        \item Punteggio assegnato alla tabella;
+        \item Descrizione della tabella;
+        \item Classifica di importanza dei termini presenti nella descrizione della tabella;
+        \item Descrizione della colonna più rilevante;
+        \item Classifica di importanza dei termini presenti nella descrizione della colonna.
+      \end{itemize}
+      \item Seconda fase della generazione del \glossario{prompt} (lista delle tabelle pertinenti):
+      \begin{itemize}
+        \item Spiegazione del motivo per cui una tabella viene inserita o meno nel prompt.
+      \end{itemize}
+    \end{itemize}
+\end{enumerate}

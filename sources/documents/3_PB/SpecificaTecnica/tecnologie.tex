@@ -57,6 +57,18 @@
   \item \textbf{Formato standard}: JWT è supportato da una vasta gamma di linguaggi e framework, tra cui FastAPI.
 \end{itemize}
 
+\subsubsection{pytest}\label{sec:pytest}
+\par pytest è un \glossario{framework} di test Python che può essere utilizzato per scrivere test di unità, test di integrazione e test end-to-end.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Semplicità}: pytest consente la definizione dei test come normali funzioni in Python, senza la necessità di definire classi apposite a meno che non siano volute. Inoltre, non vi è presenza di codice boilerplate;
+  \item \textbf{Concisione}: pytest dispone di fixtures per i test, ovvero un modo conciso ed esplicito per aggiungere codice di configurazione alle funzioni di test che richiedono passaggi di preparazione;
+  \item \textbf{Parametrizzazione nativa}: pytest permette nativamente la parametrizzazione dei test, così da poter eseguire lo stesso test con input e risultati attesi diversi in base alle esigenze;
+  \item \textbf{Estensibilità}: pytest presenta un ricco ecosistema di plugin per favorire lo sviluppo dei test in circostanze specifiche senza dover alterare il codice;
+  \item \textbf{Accuratezza degli output}: pytest fornisce di default un elevato grado di dettaglio nell'analisi degli output dei test, come i tracebacks e le assertion introspection, semplificando l'analisi degli errori;
+  \item \textbf{Facilità d'integrazione}: pytest si integra facilmente con le pipeline CI/CD, strumenti di coverage e diverse interfacce di testing.
+\end{itemize}
+
 \subsection{Frontend}\label{sec:tecnologie-frontend}
 
 \subsubsection{Vue.js}\label{sec:vuejs}
@@ -98,6 +110,19 @@
   \item \textbf{Completezza}: PrimeVue offre una vasta gamma di componenti, temi e stili personalizzabili;
   \item \textbf{Funzionalità avanzate}: PrimeVue fornisce componenti per la creazione di interfacce utente complesse e interattive. Inoltre, supporta le caratteristiche e funzionalità avanzate di Vue.js;
   \item \textbf{Documentazione e supporto}: La documentazione e i materiali di supporto sono orientati all'integrazione con Vue.js.
+\end{itemize}
+
+\subsubsection{Jest}\label{sec:jest}
+\par Jest è un framework di test per JavaScript e TypeScript. Offre una suite completa di strumenti per il testing automatizzato.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Semplicità}: Jest richiede una configurazione iniziale minima, specialmente con TypeScript. L'integrazione con ts-jest consente un supporto TypeScript senza processi di configurazione complicati;
+  \item \textbf{Completezza}: Jest è una soluzione completa che include un test runner, una libreria di asserzioni e il mocking integrato. Ciò riduce la necessità di installare e configurare librerie aggiuntive;
+  \item \textbf{Prestazioni}: Jest esegue i test in parallelo per impostazione predefinita, migliorando significativamente le prestazioni e riducendo i tempi di esecuzione dei test;
+  \item \textbf{Mocking}: Jest consente agli sviluppatori di mockare funzioni, moduli e timer senza richiedere librerie aggiuntive;
+  \item \textbf{Accuratezza degli output}: Jest fornisce messaggi di errore chiari e informativi, facilitando l'identificazione e la risoluzione dei problemi. La modalità watch integrata supporta il debug dei test durante lo sviluppo;
+  \item \textbf{Estensibilità}: Jest è accompagnato da una ricca suite di plugin che consente di estenderne le funzionalità. In questo modo è possibile soddisfare specifiche esigenze di testing senza alterazioni al codice;
+  \item \textbf{Facilità d'integrazione}: Jest è ben supportato dalle piattaforme di integrazione e distribuzione continua come Travis CI, CircleCI e GitHub Actions, facilitando l'automazione fluida del processo di testing.
 \end{itemize}
 
 \subsection{Altri strumenti e tecnologie}\label{sec:tecnologie-generali}
@@ -202,9 +227,9 @@
 
     FastAPI & 0.110.0 & Framework web moderno per la creazione di API con Python. \\
     \hline Vue.js & 3.4.21 & Framework JavaScript per la creazione di interfacce utente reattive e dinamiche. \\
-    \hline Unittest (oppure pytest) & / & Framework di testing per Python, ispirato al modello di JUnit, un framework di unit testing per Java. \\
-    \hline Jest & 29.7.0 & Framework di testing per JavaScript e TypeScript. Jest offre una suite completa di strumenti per il testing automatizzato. \\
-    \hline Cypress & 13.6.0 & Framework di testing che può essere utilizzato per testare l'intera applicazione simulando l'interazione dell'utente. \\
+    \hline pytest & 8.3.2 & Framework di test per Python. Pytest consente di scrivere test di unità, di integrazione e di sistema. \\
+    \hline Jest & 29.7.0 & Framework di test per JavaScript e TypeScript. Jest offre una suite completa di strumenti per il testing automatizzato. \\
+    \hline Cypress & 13.6.0 & Framework di test che può essere utilizzato per testare l'intera applicazione simulando l'interazione dell'utente. \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
