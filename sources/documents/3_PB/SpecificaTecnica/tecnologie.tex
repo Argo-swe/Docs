@@ -44,8 +44,8 @@
   \item \textbf{Portabilità}: SQLAlchemy supporta i principali \glossario{DBMS} e agevola la transizione;
   \item \textbf{Performance e sicurezza}: SQLAlchemy massimizza l'efficienza e la sicurezza delle transazioni attraverso il pattern "Unit of Work";
   \item \textbf{SQL injection}: SQLAlchemy include una protezione integrata contro l'SQL injection;
-  \item \textbf{Leggibilità e mantenibilità}: SQLAlchemy utilizza classi e oggetti Python per rappresentare le relazioni di un \glossario{database}, rendendo il codice intuitivo e autoesplicativo.
-  \item \textbf{Flessibilità}: SQLAlchvvemy consente di costruire query SQL in linguaggio nativo o di utilizzare un \glossario{ORM} per interagire con il database.
+  \item \textbf{Leggibilità e mantenibilità}: SQLAlchemy utilizza classi e oggetti Python per rappresentare le relazioni di un \glossario{database}, rendendo il codice intuitivo e autoesplicativo;
+  \item \textbf{Flessibilità}: SQLAlchemy consente di costruire query SQL in linguaggio nativo o di utilizzare un \glossario{ORM} per interagire con il database.
 \end{itemize}
 
 \subsubsection{JWT}\label{sec:jwt}
@@ -55,6 +55,18 @@
   \item \textbf{Stateless}: JWT consente di autenticare le richieste senza necessità di sessioni sul server, migliorando la scalabilità e riducendo il carico sul server;
   \item \textbf{Sicurezza}: I JWT sono firmati digitalmente, il che garantisce l'integrità e l'autenticità del token;
   \item \textbf{Formato standard}: JWT è supportato da una vasta gamma di linguaggi e framework, tra cui FastAPI.
+\end{itemize}
+
+\subsubsection{pytest}\label{sec:pytest}
+\par pytest è un \glossario{framework} di test Python che può essere utilizzato per scrivere test di unità, test di integrazione e test end-to-end.
+\paragraph*{Motivazioni}
+\begin{itemize}
+  \item \textbf{Semplicità}: pytest consente la definizione dei test come normali funzioni in Python, senza la necessità di definire classi apposite a meno che non siano volute. Inoltre, non vi è presenza di codice boilerplate;
+  \item \textbf{Concisione}: pytest dispone di fixtures per i test, ovvero un modo conciso ed esplicito per aggiungere codice di configurazione alle funzioni di test che richiedono passaggi di preparazione;
+  \item \textbf{Parametrizzazione nativa}: pytest permette nativamente la parametrizzazione dei test, così da poter eseguire lo stesso test con input e risultati attesi diversi in base alle esigenze;
+  \item \textbf{Estensibilità}: pytest presenta un ricco ecosistema di plugin per favorire lo sviluppo dei test in circostanze specifiche senza dover alterare il codice;
+  \item \textbf{Accuratezza degli output}: pytest fornisce di default un elevato grado di dettaglio nell'analisi degli output dei test, come i tracebacks e le assertion introspection, semplificando l'analisi degli errori;
+  \item \textbf{Facilità d'integrazione}: pytest si integra facilmente con le pipeline CI/CD, strumenti di coverage e diverse interfacce di testing.
 \end{itemize}
 
 \subsection{Frontend}\label{sec:tecnologie-frontend}
@@ -202,9 +214,9 @@
 
     FastAPI & 0.110.0 & Framework web moderno per la creazione di API con Python. \\
     \hline Vue.js & 3.4.21 & Framework JavaScript per la creazione di interfacce utente reattive e dinamiche. \\
-    \hline Unittest (oppure pytest) & / & Framework di testing per Python, ispirato al modello di JUnit, un framework di unit testing per Java. \\
-    \hline Jest & 29.7.0 & Framework di testing per JavaScript e TypeScript. Jest offre una suite completa di strumenti per il testing automatizzato. \\
-    \hline Cypress & 13.6.0 & Framework di testing che può essere utilizzato per testare l'intera applicazione simulando l'interazione dell'utente. \\
+    \hline pytest & 8.3.2 & Framework di test per Python. Pytest consente di scrivere test di unità, di integrazione e di sistema. \\
+    \hline Jest & 29.7.0 & Framework di test per JavaScript e TypeScript. Jest offre una suite completa di strumenti per il testing automatizzato. \\
+    \hline Cypress & 13.6.0 & Framework di test che può essere utilizzato per testare l'intera applicazione simulando l'interazione dell'utente. \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
