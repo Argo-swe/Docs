@@ -86,9 +86,28 @@
 \begin{itemize}
   \item Layout Menu: contenitore per il menu di navigazione principale;
   \item Menu Items: voci di menu per accedere alle diverse sezioni dell'applicazione;
+  \item Menu Icon: stringa contenente la classe da applicare all'icona della voce di menu;
+  \item Menu Label: stringa contenente l'etichetta della voce di menu;
+  \item Menu Link: stringa contenente il percorso della voce di menu.
+\end{itemize}
+
+\subsubsection{AppMenuItem}
+
+\paragraph*{Props}
+\begin{itemize}
+  \item Item: oggetto che rappresenta una voce di menu;
+  \item Index: indice della voce di menu;
+  \item Root: flag per indicare se la voce di menu è la radice del menu di navigazione;
+  \item Parent Item Key: chiave per identificare la voce di menu genitore.
+\end{itemize}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Menu Item: contenitore per una voce di menu;
   \item Menu Icon: icona per identificare la voce di menu;
-  \item Menu Text: testo per identificare la voce di menu;
-  \item Menu Link: collegamento per accedere alla sezione corrispondente.
+  \item Menu Label: etichetta per identificare la voce di menu;
+  \item Menu Link: collegamento esterno (non gestito da Vue Router) o interno (gestito da Vue Router). Un link può essere anche un elemento cliccabile per aprire un sotto-menu;
+  \item Sub Menu: contenitore per le voci di menu figlie.
 \end{itemize}
 
 \subsubsection{AppLogo}
