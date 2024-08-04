@@ -1,0 +1,41 @@
+\par Le metriche di processo sono indicatori utilizzati per monitorare e valutare la qualità dei processi coinvolti nello sviluppo del software. Gli indici di misurazione individuati dal team contribuiscono al miglioramento della produttività e all'ottimizzazione delle procedure di gestione del progetto.
+
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	% MAX 12.5cm
+ 	\begin{longtable}{|P{1.5cm}|P{4cm}|P{3.5cm}|>{\arraybackslash}P{3.5cm}|}
+		\caption{Metriche di qualità di processo}
+  	\label{tab:metriche-qualita-processo} \\
+	  \hline
+		\textbf{ID} & \textbf{Nome metrica} & \textbf{Valore tollerabile} & \textbf{Valore ambito} \\
+		\hline
+		\endfirsthead
+
+		\hline
+		\textbf{ID} & \textbf{Nome metrica} & \textbf{Valore tollerabile} & \textbf{Valore ambito} \\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{4}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    M.PC.1 & Percentuale di metriche soddisfatte &  $\geq$ \text{75\%} & 100\% \\
+    \hline M.PC.2 & AC (Actual cost) & $\geq$ 0 & $\leq$ EAC \\
+    \hline M.PC.3 & EV (Earned Value) & $\geq$ 0 & $\leq$ EAC \\
+    \hline M.PC.4 & PV (Planned Value) & $\geq$ 0 & $\leq$ BAC \\
+    \hline M.PC.5 & EAC (Estimated at Completion) & $\pm$ 5\% rispetto al BAC & BAC \\
+    \hline M.PC.6 & Variazione del budget tra preventivo e consuntivo & $\pm$ 10\% & $\pm$ 5\% \\
+    \hline M.PC.7 & Variazione del piano tra preventivo e consuntivo & $\leq$ 15\% & $\leq$ 5\% \\
+    \hline M.PC.8 & Efficienza temporale & $\leq$ 180\% & 100\% \\
+    \hline M.PC.9 & Frequenza di merge delle pull request & 1 al giorno & 2 al giorno \\
+	  \hline M.PC.10 & Indice di stabilità dei requisiti & $\geq$ 70\% & 100\% \\
+    \hline M.PC.11 & Rischi inattesi & $\leq$ 2 & 0 \\
+    \hline M.PC.12 & Efficacia delle contromisure nei rischi & $\geq$ 60\% & 100\% \\
+    \end{longtable}
+\end{adjustwidth}
+\egroup

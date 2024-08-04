@@ -1,0 +1,33 @@
+\input{layout}
+\input{global}
+\input{local}
+
+\makeatletter
+\newcommand\subsubsubsection{\@startsection{paragraph}{4}{\z@}{-2.5ex\@plus -1ex \@minus -.25ex}{1.25ex \@plus .25ex}{\normalfont\normalsize\bfseries}}
+\makeatother
+
+\begin{document}
+
+\makeFrontPage
+
+\input{registro_modifiche}
+\clearpage
+
+\tableofcontents
+\clearpage
+\renewcommand{\listtablename}{Elenco delle tabelle}
+\listoftables
+\clearpage
+\renewcommand{\listfigurename}{Elenco delle figure}
+\listoffigures
+\clearpage  
+
+\input{introduzione}
+\clearpage
+\input{obiettivi_qualita}
+\clearpage
+\input{testing}
+\clearpage
+\input{cruscotto_valutazione}
+
+\end{document}
