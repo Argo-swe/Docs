@@ -131,14 +131,13 @@ Nell'arco del decimo \glossario{sprint}, il team ha svolto le seguenti attività
   \item Valutazione di possibili architetture per il back-end;
   \item Stesura di una relazione sulle architetture individuate;
   \item Progettazione di dettaglio front-end;
-  \item Progettazione di dettaglio back-end;
   \item Progettazione del database;
   \item Definizione di nuovi \glossario{dizionari dati};
   \item Selezione degli strumenti di test;
   \item Sperimentazione dei test di unità con pytest e Jest;
   \item Codifica e test di unità front-end;
   \item Configurazione di strumenti di formattazione e \glossario{linting} del codice;
-  \item Stesura del documento di \ST;
+  \item Stesura del documento \ST;
   \item Stesura del \MU\ (sezioni riguardanti la chat, la gestione dei dizionari e la configurazione delle impostazioni);
   \item Aggiornamento del file \textit{README} e dei requisiti di sistema;
   \item Utilizzo di \glossario{SonarLint} per il calcolo della complessità dei metodi.
@@ -158,9 +157,17 @@ Nell'arco del decimo \glossario{sprint}, il team ha svolto le seguenti attività
 \end{itemize}
 
 \vspace{0.5\baselineskip}
-\par A seguire le \textbf{analisi a posteriori} del nono \glossario{sprint}:
+\par A seguire le \textbf{analisi a posteriori} del decimo \glossario{sprint}:
 \begin{itemize}
-  \item TODO.
+  \item Il gruppo ha superato con successo la revisione \glossario{RTB}, dimostrando una solida comprensione degli obiettivi del capitolato e delle tecnologie necessarie per conseguirli;
+  \item Durante la fase centrale dello sprint, il monitoraggio delle attività è stato meno costante rispetto al resto del periodo. Poiché il team ha deciso di tornare alla formula di sprint di due settimane, è necessario un controllo continuo da parte del responsabile;
+  \item La progettazione del \glossario{back-end} ha comportato una fase iniziale di valutazione delle architetture potenziali. Questo ha causato un rallentamento nelle attività di progettazione e codifica;
+  \item Il team di progettisti ha lavorato alla ristrutturazione del \glossario{front-end}, conseguendo una significativa riduzione della complessità dei metodi e delle funzioni;
+  \item Il gruppo ha configurato strumenti per formattare automaticamente il codice prima di ogni commit. Questa configurazione riduce le problematiche legate al caricamento e all'estrazione del codice dal \glossario{repository} remoto;
+  \item Inoltre, sono stati configurati strumenti di linting per eseguire un'analisi statica del codice prima di ogni commit;
+  \item L'amministratore ha incontrato difficoltà nel reperire strumenti per il calcolo automatico delle metriche di qualità del codice. A partire dal prossimo sprint, verranno allocate più risorse per affrontare questa attività;
+  \item Il team ha incrementato l'efficienza di merge delle pull request, stabilendo un ritmo soddisfacente per la verifica, approvazione e integrazione delle modifiche;
+  \item Il gruppo ha configurato l'ambiente di test per il back-end e il front-end. In vista del prossimo sprint, l'obiettivo è definire un workflow su \glossario{GitHub} che garantisca la conformità del codice caricato nel repository agli standard previsti.
 \end{itemize}
 
 \subsubsection{Aggiornamento pianificazione e preventivo}
@@ -173,10 +180,12 @@ Nell'arco del decimo \glossario{sprint}, il team ha svolto le seguenti attività
 \end{itemize}
 
 \paragraph*{Pianificazione futura:}
-\par TODO.
+\par Nel corso dello \glossario{sprint}, il team si è concentrato sulla progettazione del \glossario{front-end}, che ha raggiunto un buon livello di dettaglio. Inoltre, il gruppo ha compiuto significativi progressi nella codifica del front-end. Per quanto riguarda il \glossario{back-end}, il team ha progettato il \glossario{database} e scelto il modello architetturale da seguire. Di conseguenza, il prossimo sprint sarà dedicato alla progettazione di dettaglio e alla codifica del back-end.
+
+\par Durante lo sprint appena concluso, il gruppo ha definito ulteriori convenzioni per lo stile di codifica, che saranno formalizzate nelle \NdP\ nel prossimo sprint. Inoltre, verranno progettati i test di unità e saranno eseguiti test manuali utilizzando database locali e \glossario{dizionari dati} complessi.
 
 \paragraph*{Preventivo "a finire" (\sezione{sec:stima_temporale}):}
-\par TODO.
+\par Come illustrato nella \sezione{sec:preventivo-a-finire}, le ore riportate nel preventivo "a finire" sono equamente distribuite tra i membri del team. La maggior parte delle ore è assegnata ai ruoli di progettista, programmatore e verificatore; pertanto, il gruppo non ha ritenuto necessaria una ridistribuzione delle ore. Il team prevede di rispettare il budget preventivato e di completare il progetto entro la data di consegna prevista per metà settembre.
 
 \paragraph*{Gestione dei rischi (\sezione{sec:analisi_rischi}):}
 \par Durante il decimo \glossario{sprint}, i seguenti rischi sono stati gestiti con successo:
