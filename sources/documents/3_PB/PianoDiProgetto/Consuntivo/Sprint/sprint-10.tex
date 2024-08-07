@@ -43,7 +43,7 @@
   \end{figure}
 
   \begin{minipage}{\textwidth}
-  Di seguito è riportato il consuntivo economico del nono \glossario{sprint}:
+  Di seguito è riportato il consuntivo economico del decimo \glossario{sprint}:
   \begin{table}[H]
   \begin{adjustwidth}{-0.5cm}{-0.5cm}
     \centering
@@ -114,9 +114,16 @@
 
 Nell'arco del decimo \glossario{sprint}, il team ha svolto le seguenti attività:
 \begin{itemize}
+ \item Verifica e rilascio dei seguenti documenti:
+  \begin{itemize}
+    \item \NdP;
+    \item \PdP;
+    \item \AdR{} (post colloquio \RTB);
+    \item \PdQ.
+  \end{itemize}
   \item Correzioni alla documentazione post revisione \glossario{RTB};
   \item Stesura verbali interni;
-  \item Aggiornamento dei grafici nel \PdQ\;
+  \item Aggiornamento dei grafici nel \PdQ;
   \item Miglioramento e formalizzazione delle convenzioni per lo stile di codifica;
   \item Progettazione architetturale \glossario{front-end};
   \item Progettazione logica \glossario{back-end};
@@ -130,7 +137,7 @@ Nell'arco del decimo \glossario{sprint}, il team ha svolto le seguenti attività
   \item Selezione degli strumenti di test;
   \item Sperimentazione dei test di unità con pytest e Jest;
   \item Codifica e test di unità front-end;
-  \item Configurazione di strumenti di formattazione e linting del codice;
+  \item Configurazione di strumenti di formattazione e \glossario{linting} del codice;
   \item Stesura del documento di \ST;
   \item Stesura del \MU\ (sezioni riguardanti la chat, la gestione dei dizionari e la configurazione delle impostazioni);
   \item Aggiornamento del file \textit{README} e dei requisiti di sistema;
@@ -172,7 +179,14 @@ Nell'arco del decimo \glossario{sprint}, il team ha svolto le seguenti attività
 \par TODO.
 
 \paragraph*{Gestione dei rischi (\sezione{sec:analisi_rischi}):}
-\par Durante il nono \glossario{sprint}, i seguenti rischi sono stati gestiti con successo:
+\par Durante il decimo \glossario{sprint}, i seguenti rischi sono stati gestiti con successo:
 \begin{itemize}
-  \item \textbf{RT3 - Malfunzionamenti software}: TODO.
+  \item \textbf{RT3 - Malfunzionamenti software}: Il gruppo ha riscontrato degli errori durante la costruzione delle immagini \glossario{Docker}. Inoltre, sono state eseguite attività di configurazione e refactoring che hanno generato malfunzionamenti software. Queste attività includono:
+  \begin{itemize}
+    \item Configurazione di strumenti per la formattazione e il \glossario{linting} del codice;
+    \item Impostazione di software per la generazione automatica della documentazione;
+    \item Creazione di funzioni componibili con \glossario{Vue.js};
+    \item Configurazione degli strumenti di test.
+  \end{itemize}
+  Nonostante la complessità di alcuni errori, il team ha prontamente risolto i problemi attraverso l'apertura di ticket e discussioni nelle apposite sezioni di \glossario{GitHub}. Quando necessario, sono stati organizzati incontri specifici per la risoluzione tempestiva di bug e malfunzionamenti.
 \end{itemize}
