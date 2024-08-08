@@ -1,2 +1,139 @@
 \subsection{Front-end}
-\par TODO.
+
+\subsubsection{LoginDialog}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Dialog: finestra per l'autenticazione dell'utente. La finestra interattiva appare sopra il contenuto principale dell'interfaccia (in overlay);
+  \item Login Form: modulo per l'inserimento delle credenziali di accesso;
+  \item Username Input: campo di testo per l'inserimento dello username;
+  \item Password Input: campo di testo per l'inserimento della password;
+  \item V-Model: crea un binding bidirezionale tra i campi di input e le rispettive variabili;
+  \item Login Button: pulsante per richiedere l'accesso all'area di amministrazione;
+  \item Error Message: messaggio di errore per notificare all'utente che:
+  \begin{itemize}
+    \item L'utente non è autorizzato ad accedere all'area di amministrazione;
+    \item Le credenziali inserite non sono corrette;
+    \item Il server non è raggiungibile.
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{ChatMessage}
+
+\paragraph*{Props}
+\begin{itemize}
+  \item Message: testo del messaggio;
+  \item IsSent: flag per indicare se il messaggio è stato inviato o ricevuto dall'utente.
+\end{itemize}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Message Card: contenitore per il messaggio. La disposizione e il colore del contenitore variano in base al mittente del messaggio;
+  \item Avatar: icona del mittente. L'avatar è posizionato a sinistra o a destra del messaggio in base al mittente;
+  \item Message Text: testo del messaggio;
+  \item Copy Button: pulsante per copiare il testo del messaggio negli Appunti di sistema.
+\end{itemize}
+
+\subsubsection{DictPreview}
+
+\paragraph*{Props}
+\begin{itemize}
+  \item DetailsVisible: flag per visualizzare o nascondere l'anteprima del \glossario{dizionario dati};
+  \item DictionaryPreview: anteprima del dizionario dati, contenente le seguenti informazioni:
+  \begin{itemize}
+    \item Database Name: nome del dizionario dati;
+    \item Database Description: descrizione del dizionario dati;
+    \item Lista delle tabelle: 
+    \begin{itemize}
+      \item Table Name: nome della tabella;
+      \item Table Description: descrizione della tabella.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Preview Card: contenitore per l'anteprima del dizionario dati;
+  \item Expand Button: pulsante per aumentare la dimensione della Preview Card. Il pulsante di espansione migliora l'accessibilità e l'usabilità;
+  \item Collapse Button: pulsante per ridurre la dimensione della Preview Card.
+\end{itemize}
+
+\subsubsection{ChatDeleteBtn}
+
+\paragraph*{Props}
+\begin{itemize}
+  \item Messages: contenuto della chat da eliminare;
+  \item Loading: flag per indicare se il ChatBOT sta elaborando un nuovo messaggio.
+\end{itemize}
+
+\paragraph*{Emits}
+\begin{itemize}
+  \item ClearMessages: evento per notificare il componente genitore che i messaggi devono essere cancellati.
+\end{itemize}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Toggle: il pulsante di cancellazione deve essere nascosto se:
+  \begin{itemize}
+    \item Non ci sono messaggi da cancellare;
+    \item Il ChatBOT sta elaborando un nuovo messaggio.
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{AppMenu}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Layout Menu: contenitore per il menu di navigazione principale;
+  \item Menu Items: voci di menu per accedere alle diverse sezioni dell'applicazione;
+  \item Menu Icon: stringa contenente la classe da applicare all'icona della voce di menu;
+  \item Menu Label: stringa contenente l'etichetta della voce di menu;
+  \item Menu Link: stringa contenente il percorso della voce di menu.
+\end{itemize}
+
+\subsubsection{AppMenuItem}
+
+\paragraph*{Props}
+\begin{itemize}
+  \item Item: oggetto che rappresenta una voce di menu;
+  \item Index: indice della voce di menu;
+  \item Root: flag per indicare se la voce di menu è la radice del menu di navigazione;
+  \item Parent Item Key: chiave per identificare la voce di menu genitore.
+\end{itemize}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Menu Item: contenitore per una voce di menu;
+  \item Menu Icon: icona per identificare la voce di menu;
+  \item Menu Label: etichetta per identificare la voce di menu;
+  \item Menu Link: collegamento esterno (non gestito da Vue Router) o interno (gestito da Vue Router). Un link può essere anche un elemento cliccabile per aprire un sotto-menu;
+  \item Sub Menu: contenitore per le voci di menu figlie.
+\end{itemize}
+
+\subsubsection{AppLogo}
+
+\paragraph*{Props}
+\begin{itemize}
+  \item Width: variabile per impostare la larghezza del logo;
+  \item Height: variabile per impostare l'altezza del logo;
+  \item Path: variabile per impostare il percorso dell'immagine.
+\end{itemize}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Filter: funzionalità per invertire il colore del logo da bianco a nero (in base al tema attivo).
+\end{itemize}
+
+\subsubsection{AppFooter}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Logo: logo dell'applicazione;
+  \item Version: numero di versione dell'applicazione;
+  \item Copyright section: sezione contenente le seguenti informazioni:
+  \begin{itemize}
+    \item Year: anno corrente;
+    \item Group Name: nome del team di sviluppo;
+    \item Copyright: prova di diritto d'autore.
+  \end{itemize}
+\end{itemize}
