@@ -315,7 +315,7 @@
 \item Se l'utente non viene trovato, restituisce un oggetto \texttt{AuthResponseDto} con \texttt{data\-=\-None} e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
 \item Se la password non è corretta, restituisce un oggetto \texttt{AuthResponseDto} con \texttt{data\-=\-None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_CREDENTIAL};
 \item Genera un token JWT utilizzando \texttt{JwtHandler.sign(query.id)};
-\item Restituisce un oggetto \texttt{AuthResponseDto} con il token generato e lo stato \texttt{ResponseStatusEnum.OK}.
+\item Restituisce un oggetto \texttt{AuthResponseDto} con il token generato e lo stato \texttt{Response\-Status\-Enum.OK}.
 \end{itemize}
 
 \subsubsubsection{Tracciamento dei requisiti}
