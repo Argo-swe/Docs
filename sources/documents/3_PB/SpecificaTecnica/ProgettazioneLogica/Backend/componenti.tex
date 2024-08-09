@@ -9,21 +9,21 @@
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
- \item \textbf{HTTP Method}: \texttt{GET};
- \item \textbf{Endpoint}: \texttt{/};
- \item \textbf{Tags}: \texttt{[tag]};
- \item \textbf{Response Model}: \texttt{DictionariesResponseDto};
- \item \textbf{Nome}: \texttt{getAllDictionaries};
- \item \textbf{Dependency Injection}:
-  \begin{itemize}
-    \item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
-  \end{itemize}
+\item \textbf{HTTP Method}: \texttt{GET};
+\item \textbf{Endpoint}: \texttt{/};
+\item \textbf{Tags}: \texttt{[tag]};
+\item \textbf{Response Model}: \texttt{DictionariesResponseDto};
+\item \textbf{Nome}: \texttt{getAllDictionaries};
+\item \textbf{Dependency Injection}:
+\begin{itemize}
+\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
- \item Recupera tutti i dizionari dal database utilizzando \texttt{crud.get\_all\_dictionaries(db)};
- \item Restituisce un oggetto \texttt{DictionariesResponseDto} con i dati dei dizionari e lo stato \texttt{ResponseStatusEnum.OK}.
+\item Recupera tutti i dizionari dal database utilizzando \texttt{crud.get\_all\_dictionaries(db)};
+\item Restituisce un oggetto \texttt{DictionariesResponseDto} con i dati dei dizionari e lo stato \texttt{ResponseStatusEnum.OK}.
 \end{itemize}
 
 \subsubsubsection{Tracciamento dei requisiti}
@@ -36,26 +36,26 @@
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
- \item \textbf{HTTP Method}: \texttt{GET};
- \item \textbf{Endpoint}: \texttt{/\{id\}};
- \item \textbf{Tags}: \texttt{[tag]};
- \item \textbf{Response Model}: \texttt{DictionaryResponseDto};
- \item \textbf{Nome}: \texttt{getDictionary};
- \item \textbf{Dependency Injection}:
-  \begin{itemize}
-    \item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
-  \end{itemize}
- \item \textbf{Parametri}:
-  \begin{itemize}
-    \item \textbf{id (int)}: ID del dizionario da recuperare.
-  \end{itemize}
+\item \textbf{HTTP Method}: \texttt{GET};
+\item \textbf{Endpoint}: \texttt{/\{id\}};
+\item \textbf{Tags}: \texttt{[tag]};
+\item \textbf{Response Model}: \texttt{DictionaryResponseDto};
+\item \textbf{Nome}: \texttt{getDictionary};
+\item \textbf{Dependency Injection}:
+\begin{itemize}
+\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\end{itemize}
+\item \textbf{Parametri}:
+\begin{itemize}
+\item \textbf{id (int)}: ID del dizionario da recuperare.
+\end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
- \item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
- \item Se il dizionario viene trovato, restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del dizionario e lo stato \texttt{ResponseStatusEnum.OK};
- \item Se il dizionario non viene trovato, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
+\item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
+\item Se il dizionario viene trovato, restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del dizionario e lo stato \texttt{ResponseStatusEnum.OK};
+\item Se il dizionario non viene trovato, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
 \end{itemize}
 
 \subsubsubsection{Tracciamento dei requisiti}
@@ -68,25 +68,25 @@
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
- \item \textbf{HTTP Method}: \texttt{GET};
- \item \textbf{Endpoint}: \texttt{/\{id\}/file};
- \item \textbf{Tags}: \texttt{[tag]};
- \item \textbf{Nome}: \texttt{getDictionaryFile};
- \item \textbf{Dependency Injection}:
-  \begin{itemize}
-    \item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
-  \end{itemize}
- \item \textbf{Parametri}:
-  \begin{itemize}
-    \item \textbf{id (int)}: ID del dizionario di cui recuperare il file.
-  \end{itemize}
+\item \textbf{HTTP Method}: \texttt{GET};
+\item \textbf{Endpoint}: \texttt{/\{id\}/file};
+\item \textbf{Tags}: \texttt{[tag]};
+\item \textbf{Nome}: \texttt{getDictionaryFile};
+\item \textbf{Dependency Injection}:
+\begin{itemize}
+\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\end{itemize}
+\item \textbf{Parametri}:
+\begin{itemize}
+\item \textbf{id (int)}: ID del dizionario di cui recuperare il file.
+\end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
- \item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
- \item Se il dizionario viene trovato, restituisce un \texttt{FileResponse} con il nome del file generato tramite \texttt{\_\_generate\_schema\_file\_name(id)};
- \item Se il dizionario non viene trovato, restituisce un oggetto \texttt{ResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
+\item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
+\item Se il dizionario viene trovato, restituisce un \texttt{FileResponse} con il nome del file generato tramite \texttt{\_\_generate\_schema\_file\_name(id)};
+\item Se il dizionario non viene trovato, restituisce un oggetto \texttt{ResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
 \end{itemize}
 
 \subsubsubsection{Tracciamento dei requisiti}
@@ -99,31 +99,31 @@
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
- \item \textbf{HTTP Method}: \texttt{GET};
- \item \textbf{Endpoint}: \texttt{/\{id\}/dictionary-preview};
- \item \textbf{Tags}: \texttt{[tag]};
- \item \textbf{Response Model}: \texttt{DictionaryResponseDto};
- \item \textbf{Nome}: \texttt{getDictionaryPreview};
- \item \textbf{Dependency Injection}:
-  \begin{itemize}
-    \item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
-  \end{itemize}
- \item \textbf{Parametri}:
-  \begin{itemize}
-    \item \textbf{id (int)}: ID del dizionario di cui recuperare l'anteprima.
-  \end{itemize}
+\item \textbf{HTTP Method}: \texttt{GET};
+\item \textbf{Endpoint}: \texttt{/\{id\}/dictionary-preview};
+\item \textbf{Tags}: \texttt{[tag]};
+\item \textbf{Response Model}: \texttt{DictionaryResponseDto};
+\item \textbf{Nome}: \texttt{getDictionaryPreview};
+\item \textbf{Dependency Injection}:
+\begin{itemize}
+\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\end{itemize}
+\item \textbf{Parametri}:
+\begin{itemize}
+\item \textbf{id (int)}: ID del dizionario di cui recuperare l'anteprima.
+\end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
- \item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)}.
- \item Se il dizionario viene trovato:
-  \begin{itemize}
-    \item Estrae un sotto-schema del dizionario utilizzando \texttt{SchemaMultiExtractor.extract\_preview(id)};
-    \item Crea un oggetto \texttt{DictionaryPreviewDto} con i dettagli del sotto-schema;
-    \item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati dell'anteprima del dizionario e lo stato \texttt{ResponseStatusEnum.OK};
-  \end{itemize}
- \item Se il dizionario non viene trovato, restituisce un oggetto \texttt{ResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
+\item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)}.
+\item Se il dizionario viene trovato:
+\begin{itemize}
+\item Estrae un sotto-schema del dizionario utilizzando \texttt{SchemaMultiExtractor\-.\-extract\_preview(id)};
+\item Crea un oggetto \texttt{DictionaryPreviewDto} con i dettagli del sotto-schema;
+\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati dell'anteprima del dizionario e lo stato \texttt{ResponseStatusEnum.OK};
+\end{itemize}
+\item Se il dizionario non viene trovato, restituisce un oggetto \texttt{ResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
 \end{itemize}
 
 \subsubsubsection{Tracciamento dei requisiti}
@@ -136,36 +136,36 @@
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
- \item \textbf{HTTP Method}: \texttt{POST};
- \item \textbf{Endpoint}: \texttt{/};
- \item \textbf{Tags}: \texttt{[tag]};
- \item \textbf{Response Model}: \texttt{DictionaryResponseDto};
- \item \textbf{Dependencies}:
-  \begin{itemize}
-    \item \texttt{Depends(JwtBearer())}: Assicura che l'endpoint sia protetto da un meccanismo di autenticazione JWT.
-  \end{itemize}
- \item \textbf{Nome}: \texttt{createDictionary};
- \item \textbf{Dependency Injection}:
-  \begin{itemize}
-    \item \textbf{file (Annotated[UploadFile, File()])}: Il file di schema del dizionario da caricare;
-    \item \textbf{dictionary (DictionaryDto)}: I dati del dizionario, ottenuti tramite \texttt{Depends()};
-    \item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
-  \end{itemize}
+\item \textbf{HTTP Method}: \texttt{POST};
+\item \textbf{Endpoint}: \texttt{/};
+\item \textbf{Tags}: \texttt{[tag]};
+\item \textbf{Response Model}: \texttt{DictionaryResponseDto};
+\item \textbf{Dependencies}:
+\begin{itemize}
+\item \texttt{Depends(JwtBearer())}: Assicura che l'endpoint sia protetto da un meccanismo di autenticazione JWT.
+\end{itemize}
+\item \textbf{Nome}: \texttt{createDictionary};
+\item \textbf{Dependency Injection}:
+\begin{itemize}
+\item \textbf{file (Annotated[UploadFile, File()])}: Il file di schema del dizionario da caricare;
+\item \textbf{dictionary (DictionaryDto)}: I dati del dizionario, ottenuti tramite \texttt{Depends()};
+\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
- \item Verifica che il nome e la descrizione del dizionario, oltre al file, siano presenti;
- \item Recupera un dizionario esistente con lo stesso nome utilizzando \texttt{crud.get\_dictionary\_by\_name(db, name=dictionary.name)};
- \item Se il dizionario esiste già, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.CONFLICT};
- \item Crea un nuovo dizionario utilizzando \texttt{crud.create\_dictionary(db=db, dictionary=dictionary)};
- \item Legge il contenuto del file e valida il formato dello schema del dizionario utilizzando \texttt{DictionaryValidator.validate(Utils.string\_to\_json(content))};
- \item Se lo schema non è valido, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST};
- \item Scrive il contenuto del file in un nuovo file utilizzando \texttt{aiofiles.open(\_\_generate\_schema\_file\_name(new\_dic.id), "wb")};
- \item Crea un indice \texttt{txtai} utilizzando \texttt{manager.create\_index(new\_dic.id)};
- \item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del nuovo dizionario e lo stato \texttt{ResponseStatusEnum.OK};
- \item Se il file non è presente, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST};
- \item Se il nome e la descrizione del dizionario non sono presenti, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST}.
+\item Verifica che il nome e la descrizione del dizionario, oltre al file, siano presenti;
+\item Recupera un dizionario esistente con lo stesso nome utilizzando \texttt{crud.get\_\-dictionary\-\_by\_name(db, name=dictionary.name)};
+\item Se il dizionario esiste già, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data\-=\-None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.CONFLICT};
+\item Crea un nuovo dizionario utilizzando \texttt{crud.create\_dictionary(db=db, dictionary\-=\-dictionary)};
+\item Legge il contenuto del file e valida il formato dello schema del dizionario utilizzando \texttt{DictionaryValidator.validate(Utils.string\_to\_json(content))};
+\item Se lo schema non è valido, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST};
+\item Scrive il contenuto del file in un nuovo file utilizzando \texttt{aiofiles.open(\_\_generate\-\_\-schema\-\_file\-\_name(new\_dic.id), "wb")};
+\item Crea un indice \texttt{txtai} utilizzando \texttt{manager.create\_index(new\_dic.id)};
+\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del nuovo dizionario e lo stato \texttt{ResponseStatusEnum.OK};
+\item Se il file non è presente, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST};
+\item Se il nome e la descrizione del dizionario non sono presenti, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST}.
 \end{itemize}
 
 \subsubsubsection{Tracciamento dei requisiti}
@@ -178,35 +178,35 @@
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
- \item \textbf{HTTP Method}: \texttt{PUT};
- \item \textbf{Endpoint}: \texttt{/\{id\}/file};
- \item \textbf{Tags}: \texttt{[tag]};
- \item \textbf{Response Model}: \texttt{DictionaryResponseDto};
- \item \textbf{Dependencies}:
-  \begin{itemize}
-    \item \texttt{Depends(JwtBearer())}: Assicura che l'endpoint sia protetto da un meccanismo di autenticazione JWT.
-  \end{itemize}
- \item \textbf{Nome}: \texttt{updateDictionaryFile};
- \item \textbf{Dependency Injection}:
-  \begin{itemize}
-    \item \textbf{file (Annotated[UploadFile, File()])}: Il nuovo file di schema del dizionario da caricare;
-    \item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
-  \end{itemize}
- \item \textbf{Parametri}:
-  \begin{itemize}
-    \item \textbf{id (int)}: ID del dizionario di cui aggiornare il file.
-  \end{itemize}
+\item \textbf{HTTP Method}: \texttt{PUT};
+\item \textbf{Endpoint}: \texttt{/\{id\}/file};
+\item \textbf{Tags}: \texttt{[tag]};
+\item \textbf{Response Model}: \texttt{DictionaryResponseDto};
+\item \textbf{Dependencies}:
+\begin{itemize}
+\item \texttt{Depends(JwtBearer())}: Assicura che l'endpoint sia protetto da un meccanismo di autenticazione JWT.
+\end{itemize}
+\item \textbf{Nome}: \texttt{updateDictionaryFile};
+\item \textbf{Dependency Injection}:
+\begin{itemize}
+\item \textbf{file (Annotated[UploadFile, File()])}: Il nuovo file di schema del dizionario da caricare;
+\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\end{itemize}
+\item \textbf{Parametri}:
+\begin{itemize}
+\item \textbf{id (int)}: ID del dizionario di cui aggiornare il file.
+\end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
- \item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
- \item Se il dizionario non viene trovato, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
- \item Legge il contenuto del file e valida il formato dello schema del dizionario utilizzando \texttt{DictionaryValidator.validate(Utils.string\_to\_json(content))};
- \item Se lo schema non è valido, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST};
- \item Scrive il contenuto del file in un nuovo file utilizzando \texttt{aiofiles.open(\_\_generate\_schema\_file\_name(id), "wb")};
- \item Aggiorna l'indice \texttt{txtai} utilizzando \texttt{manager.create\_index(found\_dic.id)};
- \item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del dizionario aggiornato e lo stato \texttt{ResponseStatusEnum.OK}.
+\item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
+\item Se il dizionario non viene trovato, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
+\item Legge il contenuto del file e valida il formato dello schema del dizionario utilizzando \texttt{DictionaryValidator.validate(Utils.string\_to\_json(content))};
+\item Se lo schema non è valido, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST};
+\item Scrive il contenuto del file in un nuovo file utilizzando \texttt{aiofiles.open(\_\_generate\_s\-chema\_file\_name(id), "wb")};
+\item Aggiorna l'indice \texttt{txtai} utilizzando \texttt{manager.create\_index(found\_dic.id)};
+\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del dizionario aggiornato e lo stato \texttt{ResponseStatusEnum.OK}.
 \end{itemize}
 
 \subsubsubsection{Tracciamento dei requisiti}
@@ -219,35 +219,35 @@
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
- \item \textbf{HTTP Method}: \texttt{PUT};
- \item \textbf{Endpoint}: \texttt{/\{id\}};
- \item \textbf{Tags}: \texttt{[tag]};
- \item \textbf{Response Model}: \texttt{DictionaryResponseDto};
- \item \textbf{Dependencies}:
-  \begin{itemize}
-    \item \texttt{Depends(JwtBearer())}: Assicura che l'endpoint sia protetto da un meccanismo di autenticazione JWT.
-  \end{itemize}
- \item \textbf{Nome}: \texttt{updateDictionaryMetadata};
- \item \textbf{Dependency Injection}:
-  \begin{itemize}
-    \item \textbf{dictionary (DictionaryDto)}: I nuovi metadati del dizionario;
-    \item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
-  \end{itemize}
- \item \textbf{Parametri}:
-  \begin{itemize}
-    \item \textbf{id (int)}: ID del dizionario di cui aggiornare i metadati.
-  \end{itemize}
+\item \textbf{HTTP Method}: \texttt{PUT};
+\item \textbf{Endpoint}: \texttt{/\{id\}};
+\item \textbf{Tags}: \texttt{[tag]};
+\item \textbf{Response Model}: \texttt{DictionaryResponseDto};
+\item \textbf{Dependencies}:
+\begin{itemize}
+\item \texttt{Depends(JwtBearer())}: Assicura che l'endpoint sia protetto da un meccanismo di autenticazione JWT.
+\end{itemize}
+\item \textbf{Nome}: \texttt{updateDictionaryMetadata};
+\item \textbf{Dependency Injection}:
+\begin{itemize}
+\item \textbf{dictionary (DictionaryDto)}: I nuovi metadati del dizionario;
+\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\end{itemize}
+\item \textbf{Parametri}:
+\begin{itemize}
+\item \textbf{id (int)}: ID del dizionario di cui aggiornare i metadati.
+\end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
- \item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
- \item Se il dizionario non viene trovato, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
- \item Se il nome o la descrizione del dizionario sono assenti, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST};
- \item Verifica se esiste un altro dizionario con lo stesso nome utilizzando \texttt{crud.get\_dictionary\_by\_name(db, dictionary.name)};
- \item Se esiste un altro dizionario con lo stesso nome e l'ID è diverso, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.CONFLICT};
- \item Aggiorna il dizionario utilizzando \texttt{crud.update\_dictionary(db, dictionary)};
- \item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del dizionario aggiornato e lo stato \texttt{ResponseStatusEnum.OK}.
+\item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
+\item Se il dizionario non viene trovato, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
+\item Se il nome o la descrizione del dizionario sono assenti, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{Response\-StatusEnum.BAD\_REQUEST};
+\item Verifica se esiste un altro dizionario con lo stesso nome utilizzando \texttt{crud.get\-\_\-dictionary\-\_by\_name(db, dictionary.name)};
+\item Se esiste un altro dizionario con lo stesso nome e l'ID è diverso, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.CONFLICT};
+\item Aggiorna il dizionario utilizzando \texttt{crud.update\_dictionary(db, dictionary)};
+\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del dizionario aggiornato e lo stato \texttt{ResponseStatusEnum.OK}.
 \end{itemize}
 
 \subsubsubsection{Tracciamento dei requisiti}
@@ -260,29 +260,29 @@
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
- \item \textbf{HTTP Method}: \texttt{DELETE};
- \item \textbf{Endpoint}: \texttt{/\{id\}};
- \item \textbf{Tags}: \texttt{[tag]};
- \item \textbf{Response Model}: \texttt{ResponseDto};
- \item \textbf{Nome}: \texttt{deleteDictionary};
- \item \textbf{Dependency Injection}:
-  \begin{itemize}
-    \item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
-  \end{itemize}
- \item \textbf{Parametri}:
-  \begin{itemize}
-    \item \textbf{id (int)}: ID del dizionario da eliminare.
-  \end{itemize}
+\item \textbf{HTTP Method}: \texttt{DELETE};
+\item \textbf{Endpoint}: \texttt{/\{id\}};
+\item \textbf{Tags}: \texttt{[tag]};
+\item \textbf{Response Model}: \texttt{ResponseDto};
+\item \textbf{Nome}: \texttt{deleteDictionary};
+\item \textbf{Dependency Injection}:
+\begin{itemize}
+\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\end{itemize}
+\item \textbf{Parametri}:
+\begin{itemize}
+\item \textbf{id (int)}: ID del dizionario da eliminare.
+\end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
- \item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
- \item Se il dizionario non viene trovato, restituisce un oggetto \texttt{ResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
- \item Elimina il dizionario dal database utilizzando \texttt{crud.delete\_dictionary(db, id)};
- \item Se il file di schema esiste, lo elimina utilizzando \texttt{os.remove(\_\_generate\_schema\_file\_name(id))};
- \item Elimina l'indice \texttt{txtai} utilizzando \texttt{manager.delete\_index(found\_dic.id)};
- \item Restituisce un oggetto \texttt{ResponseDto} con lo stato \texttt{ResponseStatusEnum.OK}.
+\item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
+\item Se il dizionario non viene trovato, restituisce un oggetto \texttt{ResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
+\item Elimina il dizionario dal database utilizzando \texttt{crud.delete\_dictionary(db, id)};
+\item Se il file di schema esiste, lo elimina utilizzando \texttt{os.remove(\_\_generate\_schema\-\_\-file\_name(id))};
+\item Elimina l'indice \texttt{txtai} utilizzando \texttt{manager.delete\_index(found\_dic.id)};
+\item Restituisce un oggetto \texttt{ResponseDto} con lo stato \texttt{ResponseStatusEnum.OK}.
 \end{itemize}
 
 \subsubsubsection{Tracciamento dei requisiti}
@@ -297,25 +297,25 @@
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
- \item \textbf{HTTP Method}: \texttt{POST};
- \item \textbf{Endpoint}: \texttt{/};
- \item \textbf{Tags}: \texttt{[tag]};
- \item \textbf{Response Model}: \texttt{AuthResponseDto};
- \item \textbf{Nome}: \texttt{login};
- \item \textbf{Dependency Injection}:
-  \begin{itemize}
-    \item \textbf{data (LoginDto)}: I dati di login dell'utente;
-    \item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
-  \end{itemize}
+\item \textbf{HTTP Method}: \texttt{POST};
+\item \textbf{Endpoint}: \texttt{/};
+\item \textbf{Tags}: \texttt{[tag]};
+\item \textbf{Response Model}: \texttt{AuthResponseDto};
+\item \textbf{Nome}: \texttt{login};
+\item \textbf{Dependency Injection}:
+\begin{itemize}
+\item \textbf{data (LoginDto)}: I dati di login dell'utente;
+\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
- \item Recupera l'utente dal database utilizzando \texttt{crud.get\_user\_by\_username(db, data.username)};
- \item Se l'utente non viene trovato, restituisce un oggetto \texttt{AuthResponseDto} con \texttt{data=None} e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
- \item Se la password non è corretta, restituisce un oggetto \texttt{AuthResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_CREDENTIAL};
- \item Genera un token JWT utilizzando \texttt{JwtHandler.sign(query.id)};
- \item Restituisce un oggetto \texttt{AuthResponseDto} con il token generato e lo stato \texttt{ResponseStatusEnum.OK}.
+\item Recupera l'utente dal database utilizzando \texttt{crud.get\_user\_by\_username(db,\- data\-.username)};
+\item Se l'utente non viene trovato, restituisce un oggetto \texttt{AuthResponseDto} con \texttt{data\-=\-None} e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
+\item Se la password non è corretta, restituisce un oggetto \texttt{AuthResponseDto} con \texttt{data\-=\-None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_CREDENTIAL};
+\item Genera un token JWT utilizzando \texttt{JwtHandler.sign(query.id)};
+\item Restituisce un oggetto \texttt{AuthResponseDto} con il token generato e lo stato \texttt{ResponseStatusEnum.OK}.
 \end{itemize}
 
 \subsubsubsection{Tracciamento dei requisiti}
@@ -330,29 +330,29 @@
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
- \item \textbf{HTTP Method}: \texttt{GET};
- \item \textbf{Endpoint}: \texttt{/};
- \item \textbf{Tags}: \texttt{[tag]};
- \item \textbf{Response Model}: \texttt{StringDataResponseDto};
- \item \textbf{Nome}: \texttt{generatePrompt};
- \item \textbf{Dependency Injection}:
-  \begin{itemize}
-    \item \textbf{dictionary\_id (Annotated[int, Query(alias="dictionaryId")])}: L'ID del dizionario da utilizzare;
-    \item \textbf{query (str)}: La query fornita dall'utente;
-    \item \textbf{dbms (str)}: Il sistema di gestione del database (DBMS);
-    \item \textbf{lang (str)}: La lingua da utilizzare;
-    \item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
-  \end{itemize}
+\item \textbf{HTTP Method}: \texttt{GET};
+\item \textbf{Endpoint}: \texttt{/};
+\item \textbf{Tags}: \texttt{[tag]};
+\item \textbf{Response Model}: \texttt{StringDataResponseDto};
+\item \textbf{Nome}: \texttt{generatePrompt};
+\item \textbf{Dependency Injection}:
+\begin{itemize}
+\item \textbf{dictionary\_id (Annotated[int, Query(alias="dictionaryId")])}: L'ID del dizionario da utilizzare;
+\item \textbf{query (str)}: La query fornita dall'utente;
+\item \textbf{dbms (str)}: Il sistema di gestione del database (DBMS);
+\item \textbf{lang (str)}: La lingua da utilizzare;
+\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
- \item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, dictionary\_id)};
- \item Se il dizionario non viene trovato, restituisce un oggetto \texttt{StringDataResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
- \item Se la query è vuota o nulla, restituisce un oggetto \texttt{StringDataResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST};
- \item Carica l'indice del dizionario utilizzando \texttt{manager.load\_index(found\_dic.id)};
- \item Genera il prompt utilizzando \texttt{manager.prompt\_generator(found\_dic.id, query, lang, dbms, activate\_log=True)};
- \item Restituisce un oggetto \texttt{StringDataResponseDto} con il prompt generato e lo stato \texttt{ResponseStatusEnum.OK}.
+\item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, dictionary\_id)};
+\item Se il dizionario non viene trovato, restituisce un oggetto \texttt{StringDataResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
+\item Se la query è vuota o nulla, restituisce un oggetto \texttt{StringDataResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST};
+\item Carica l'indice del dizionario utilizzando \texttt{manager.load\_index(found\_dic.id)};
+\item Genera il prompt utilizzando \texttt{manager.prompt\_generator(found\_dic.id, query, lang, dbms, activate\_log=True)};
+\item Restituisce un oggetto \texttt{StringDataResponseDto} con il prompt generato e lo stato \texttt{ResponseStatusEnum.OK}.
 \end{itemize}
 
 \subsubsubsection{Tracciamento dei requisiti}
@@ -365,18 +365,18 @@
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
- \item \textbf{HTTP Method}: \texttt{GET};
- \item \textbf{Endpoint}: \texttt{/debug};
- \item \textbf{Tags}: \texttt{[tag]};
- \item \textbf{Response Model}: \texttt{StringDataResponseDto};
- \item \textbf{Nome}: \texttt{generatePromptDebug}.
+\item \textbf{HTTP Method}: \texttt{GET};
+\item \textbf{Endpoint}: \texttt{/debug};
+\item \textbf{Tags}: \texttt{[tag]};
+\item \textbf{Response Model}: \texttt{StringDataResponseDto};
+\item \textbf{Nome}: \texttt{generatePromptDebug}.
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
- \item Tenta di aprire il file di log situato in \texttt{/opt/chatsql/logs/chatsql\_log.txt};
- \item Se il file viene trovato, legge il contenuto e restituisce un oggetto \texttt{StringDataResponseDto} con i dati del file e lo stato \texttt{ResponseStatusEnum.OK};
- \item Se il file non viene trovato, restituisce un oggetto \texttt{StringDataResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
+\item Tenta di aprire il file di log situato in \texttt{/opt/chatsql/logs/chatsql\_log.txt};
+\item Se il file viene trovato, legge il contenuto e restituisce un oggetto \texttt{StringDataResponseDto} con i dati del file e lo stato \texttt{ResponseStatusEnum.OK};
+\item Se il file non viene trovato, restituisce un oggetto \texttt{StringDataResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
 \end{itemize}
 
 \subsubsubsection{Tracciamento dei requisiti}
