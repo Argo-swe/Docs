@@ -6,9 +6,43 @@
 \paragraph*{Elementi chiave}
 \begin{itemize}
   \item Layout Wrapper: aggiorna lo stile dell'applicazione in base alle configurazioni del sistema;
-  \item Outside Click Listener: i menu vengono chiusi quando viene effettuato un clic al di fuori di questi elementi.
+  \item Outside Click Listener: i menu vengono chiusi quando viene effettuato un clic al di fuori di questi elementi;
   \item Scroll To Top: pulsante per tornare rapidamente all'inizio della pagina;
   \item Toast Message: messaggio di notifica per fornire feedback all'utente.
+\end{itemize}
+
+% Chat View
+\subsubsection{ChatView}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Selected Dictionary Name: nome ed estensione del \glossario{dizionario dati} selezionato dall'utente;
+  \item Toggle Select View: pulsante per visualizzare o nascondere il form di selezione del dizionario dati, della lingua e del \glossario{DBMS};
+  \item Select Dictionary Dropdown: menu a discesa per selezionare un dizionario dati;
+  \item Toggle Details: pulsante per visualizzare o nascondere l'anteprima di un dizionario dati;
+  \item Select DBMS Dropdown: menu a discesa per selezionare un DBMS;
+  \item Select Language Dropdown: menu a discesa per selezionare una lingua;
+  \item Chat Container: contenitore per i messaggi della chat;
+  \item Chat Textarea: campo di testo per inserire una richiesta da inviare al ChatBOT;
+  \item Request Button: pulsante per inviare la richiesta;
+  \item Loading Spinner: indica che la generazione del \glossario{prompt} è ancora in corso.
+\end{itemize}
+
+% Dictionaries List View
+\subsubsection{DictionariesListView}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Create Dictionary Button: pulsante per aprire la finestra di inserimento di un \glossario{dizionario dati};
+  \item Dictionary Data Table: tabella contenente i seguenti campi:
+  \begin{itemize}
+    \item Dictionary Name: nome del dizionario dati;
+    \item Dictionary Description: descrizione del dizionario dati;
+    \item Update Metadata Button: pulsante per aprire la finestra di modifica dei metadati (nome e descrizione);
+    \item Update File Button: pulsante per aprire la finestra di modifica del file;
+    \item Download File Button: pulsante per scaricare il file relativo a un dizionario dati;
+    \item Delete Dictionary Button: pulsante per eliminare un dizionario dati.
+  \end{itemize}
 \end{itemize}
 
 % Login Dialog
