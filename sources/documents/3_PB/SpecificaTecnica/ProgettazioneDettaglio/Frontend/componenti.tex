@@ -1,5 +1,6 @@
 \subsection{Front-end}
 
+% Login Dialog
 \subsubsection{LoginDialog}
 
 \paragraph*{Elementi chiave}
@@ -8,7 +9,7 @@
   \item Login Form: modulo per l'inserimento delle credenziali di accesso;
   \item Username Input: campo di testo per l'inserimento dello username;
   \item Password Input: campo di testo per l'inserimento della password;
-  \item V-Model: crea un binding bidirezionale tra i campi di input e le rispettive variabili;
+  \item View-Model: crea un binding bidirezionale tra i campi di input e le rispettive variabili;
   \item Login Button: pulsante per richiedere l'accesso all'area di amministrazione;
   \item Error Message: messaggio di errore per notificare all'utente che:
   \begin{itemize}
@@ -18,12 +19,14 @@
   \end{itemize}
 \end{itemize}
 
+% Chat Message
 \subsubsection{ChatMessage}
 
 \paragraph*{Props}
 \begin{itemize}
   \item Message: testo del messaggio;
-  \item IsSent: flag per indicare se il messaggio è stato inviato o ricevuto dall'utente.
+  \item IsSent: flag per indicare se il messaggio è stato inviato o ricevuto dall'utente;
+  \item Debug (opzionale): contenuto del messaggio di \glossario{debug}.
 \end{itemize}
 
 \paragraph*{Elementi chiave}
@@ -31,9 +34,34 @@
   \item Message Card: contenitore per il messaggio. La disposizione e il colore del contenitore variano in base al mittente del messaggio;
   \item Avatar: icona del mittente. L'avatar è posizionato a sinistra o a destra del messaggio in base al mittente;
   \item Message Text: testo del messaggio;
-  \item Copy Button: pulsante per copiare il testo del messaggio negli Appunti di sistema.
+  \item Copy Button: pulsante per copiare il testo del messaggio negli Appunti di sistema;
+  \item Debug Button: pulsante per aprire la finestra modale contenente il messaggio di debug. Il pulsante è disponibile solo per il profilo Tecnico.
 \end{itemize}
 
+% String Data Modal
+\subsubsection{StringDataModal}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Modal: finestra modale responsive;
+  \item String Data: stringa di testo da visualizzare nel dialog.
+\end{itemize}
+
+% Debug Message
+\subsubsection{DebugMessage}
+
+\paragraph*{Props}
+\begin{itemize}
+  \item Message: testo del messaggio.
+\end{itemize}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Message Text: testo del messaggio;
+  \item Download Button: pulsante per scaricare un file di \glossario{log}.
+\end{itemize}
+
+% Dict Preview
 \subsubsection{DictPreview}
 
 \paragraph*{Props}
@@ -58,6 +86,7 @@
   \item Collapse Button: pulsante per ridurre la dimensione della Preview Card.
 \end{itemize}
 
+% Chat Delete Btn
 \subsubsection{ChatDeleteBtn}
 
 \paragraph*{Props}
@@ -80,6 +109,22 @@
   \end{itemize}
 \end{itemize}
 
+% App Topbar
+\subsubsection{AppTopbar}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Logo: logo dell'applicazione, affiancato dal nome del progetto (per migliorare l'accessibilità);
+  \item Open Main Nav Button: pulsante per aprire il menu di navigazione principale;
+  \item Open Config Menu Button: pulsante per aprire il menu di configurazione del sistema;
+  \item Open Settings Button: pulsante per aprire la barra laterale di impostazioni;
+  \item Open Login Dialog Button: pulsante per aprire la finestra di autenticazione;
+  \item Logout Button: pulsante per effettuare il logout;
+  \item Confirmation Dialog: finestra per confermare o rifiutare il logout;
+  \item Outside Click Listener: i menu e le sidebar vengono chiusi quando viene effettuato un clic al di fuori di questi elementi.
+\end{itemize}
+
+% App Menu
 \subsubsection{AppMenu}
 
 \paragraph*{Elementi chiave}
@@ -91,6 +136,7 @@
   \item Menu Link: stringa contenente il percorso della voce di menu.
 \end{itemize}
 
+% App Menu Item
 \subsubsection{AppMenuItem}
 
 \paragraph*{Props}
@@ -110,6 +156,7 @@
   \item Sub Menu: contenitore per le voci di menu figlie.
 \end{itemize}
 
+% App Logo
 \subsubsection{AppLogo}
 
 \paragraph*{Props}
@@ -124,6 +171,7 @@
   \item Filter: funzionalità per invertire il colore del logo da bianco a nero (in base al tema attivo).
 \end{itemize}
 
+% App Footer
 \subsubsection{AppFooter}
 
 \paragraph*{Elementi chiave}
