@@ -1,5 +1,16 @@
 \subsection{Front-end}
 
+% App Layout
+\subsubsection{AppLayout}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Layout Wrapper: aggiorna lo stile dell'applicazione in base alle configurazioni del sistema;
+  \item Outside Click Listener: i menu vengono chiusi quando viene effettuato un clic al di fuori di questi elementi.
+  \item Scroll To Top: pulsante per tornare rapidamente all'inizio della pagina;
+  \item Toast Message: messaggio di notifica per fornire feedback all'utente.
+\end{itemize}
+
 % Login Dialog
 \subsubsection{LoginDialog}
 
@@ -11,8 +22,9 @@
   \item Password Input: campo di testo per l'inserimento della password;
   \item View-Model: crea un binding bidirezionale tra i campi di input e le rispettive variabili;
   \item Login Button: pulsante per richiedere l'accesso all'area di amministrazione;
-  \item Error Message: messaggio di errore per notificare all'utente che:
+  \item Status Message: messaggio per notificare all'utente che:
   \begin{itemize}
+    \item Il login è avvenuto con successo;
     \item L'utente non è autorizzato ad accedere all'area di amministrazione;
     \item Le credenziali inserite non sono corrette;
     \item Il server non è raggiungibile.
@@ -44,6 +56,7 @@
 \paragraph*{Elementi chiave}
 \begin{itemize}
   \item Modal: finestra modale responsive;
+  \item Close Dialog: pulsante per chiudere la finestra modale;
   \item String Data: stringa di testo da visualizzare nel dialog.
 \end{itemize}
 
@@ -109,6 +122,20 @@
   \end{itemize}
 \end{itemize}
 
+% Create Update Dictionary Modal 
+\subsubsection{CreateUpdateDictionaryModal}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Close Dialog: pulsante per chiudere la finestra modale;
+  \item Dictionary Name Input: campo di testo per inserire o modificare il nome di un \glossario{dizionario dati};
+  \item Dictionary Description Input: campo di testo per inserire o modificare la descrizione di un dizionario dati;
+  \item File Uploader: componente per caricare il file relativo a un dizionario dati;
+  \item Clear File Button: pulsante per annullare il caricamento del file;
+  \item Submit Button: pulsante per richiedere il salvataggio dei dati;
+  \item Loading Spinner: indica che il salvataggio del dizionario dati e del rispettivo \glossario{indice} è ancora in corso.
+\end{itemize}
+
 % App Topbar
 \subsubsection{AppTopbar}
 
@@ -121,7 +148,28 @@
   \item Open Login Dialog Button: pulsante per aprire la finestra di autenticazione;
   \item Logout Button: pulsante per effettuare il logout;
   \item Confirmation Dialog: finestra per confermare o rifiutare il logout;
-  \item Outside Click Listener: i menu e le sidebar vengono chiusi quando viene effettuato un clic al di fuori di questi elementi.
+  \item Outside Click Listener: i menu vengono chiusi quando viene effettuato un clic al di fuori di questi elementi.
+\end{itemize}
+
+% Menu Sidebar
+\subsubsection{MenuSidebar}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Close Main Nav Button: pulsante per chiudere il menu di navigazione principale;
+  \item App Menu: menu di navigazione principale;
+  \item App Footer: footer dell'applicazione.
+\end{itemize}
+
+% Config Sidebar
+\subsubsection{ConfigSidebar}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Decrement Scale Button: pulsante per diminuire la dimensione degli elementi nell'interfaccia;
+  \item Increment Scale Button: pulsante per ingrandire la dimensione degli elementi nell'interfaccia;
+  \item Change Theme Switch: interruttore per alternare il tema dell'interfaccia tra la modalità chiara e quella scura;
+  \item Change Language Dropdown: menu a discesa per selezionare la lingua dell'interfaccia.
 \end{itemize}
 
 % App Menu
