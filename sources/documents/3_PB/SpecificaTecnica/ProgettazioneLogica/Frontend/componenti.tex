@@ -110,9 +110,9 @@
     RF.O.3 & ChatView \\
 		\hline RF.O.4 & ChatView \\
     \hline RF.O.5 & ChatView \\
-    \hline RF.O.6 & ChatMex \\
+    \hline RF.O.6 & ChatMessage \\
     \hline RF.D.7 & ChatView \\
-    \hline RF.O.8 & ChatMex \\
+    \hline RF.O.8 & ChatMessage \\
     \hline RF.O.9 & ChatView \\
     \hline RF.O.9.1 & ChatView \\
     \hline RF.O.10 & ChatView \\
@@ -125,19 +125,16 @@
     \hline RF.O.14.3.1 & DictPreview \\
     \hline RF.O.14.3.1.1 & DictPreview \\
     \hline RF.O.14.3.1.2 & DictPreview \\
-    \hline RF.O.22 & ChatMex \\
-    \hline RF.O.23 & DebugView \\
-    \hline RF.O.24 & DebugView \\
     \hline RF.O.25 & ChatView \\
-    \hline RF.O.25.1 & ChatMex \\
-    \hline RF.O.25.1.1 & ChatMex \\
-    \hline RF.O.25.1.2 & ChatMex \\
+    \hline RF.O.25.1 & ChatMessage \\
+    \hline RF.O.25.1.1 & ChatMessage \\
+    \hline RF.O.25.1.2 & ChatMessage \\
     \hline RF.O.26 & ChatView \\
     \hline RF.O.27 & ChatDeleteBtn \\
-    \hline RF.O.35 & ChatMex \\
+    \hline RF.O.35 & ChatMessage \\
     \hline RF.O.36 & ChatView \\
-    \hline RF.O.41 & ChatMex \\
-    \hline RF.O.45 & ChatMex \\
+    \hline RF.O.41 & ChatMessage \\
+    \hline RF.O.45 & ChatMessage \\
     \hline RF.O.47 & ChatView \\
     \hline RF.O.48 & ChatView \\
     \hline RF.O.49 & ChatView \\
@@ -255,3 +252,59 @@
 \begin{itemize}
   \item \textbf{AppMenuItem}: rappresenta un singolo elemento del menu di navigazione.
 \end{itemize}
+
+\subsubsection{ChatMessage}
+
+\subsubsubsection{Descrizione}
+\par ChatMessage è il componente che rappresenta i messaggi inviati e/o restituiti all'interno della chat.
+
+\subsubsubsection{Sottocomponenti}
+\par AppMenu è composto dai seguenti sottocomponenti:
+\begin{itemize}
+  \item \textbf{StringDataModal}: componente per visualizzare stringhe di testo all'interno di una finestra modale.
+\end{itemize}
+
+\subsubsection{StringDataModal}
+
+\subsubsubsection{Descrizione}
+\par StringDataModal consente di visualizzare stringhe di testo all'interno di una finestra modale.
+
+\subsubsubsection{Sottocomponenti}
+\par StringDataModal è composto dai seguenti sottocomponenti:
+\begin{itemize}
+  \item \textbf{DebugMessage}: rappresenta un messaggio di \glossario{debug}.
+\end{itemize}
+
+\subsubsubsection{Tracciamento dei requisiti}
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	\centering
+	% MAX 12.5cm
+  \begin{longtable}{|c|c|}
+		\caption{Tracciamento dei requisiti per il componente DebugMessage}
+  	\label{tab:tracciamento-requisiti-debug} \\
+    \hline
+		\textbf{ID} & \textbf{Componente} \\
+		\hline
+		\endfirsthead
+
+		\caption[]{Tracciamento dei requisiti per il componente DebugMessage (continua)} \\
+		\hline
+		\textbf{ID} & \textbf{Componente} \\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{2}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    RF.O.22 & DebugMessage \\
+    \hline RF.O.23 & DebugMessage \\
+    \hline RF.O.24 & DebugMessage \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
