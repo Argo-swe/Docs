@@ -1,3 +1,38 @@
 \subsection{Test di unità}
 
-\par La sezione relativa ai test di unità verrà aggiornata in seguito alla revisione \glossario{RTB}.
+\par Lo scopo dei test di unità è verificare il corretto funzionamento delle "unità software", ossia delle porzioni o segmenti (come una funzione, una classe o un componente) testabili in modo autonomo e isolato all'interno del sistema. Di seguito è riportato l'elenco dei test di unità:
+
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	% MAX 12.5cm
+ 	\begin{longtable}{|P{1.5cm}|>{\raggedright}P{9.5cm}|>{\arraybackslash}P{1.5cm}|}
+		\caption{Test di unità}
+  	\label{tab:test-unita} \\
+	  \hline
+		\textbf{ID} & \textbf{Descrizione} & \textbf{Stato} \\ 
+		\hline
+		\endfirsthead
+
+		\caption[]{Test di unità (continua)} \\
+		\hline
+		\textbf{ID} & \textbf{Descrizione} & \textbf{Stato} \\ 
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{3}{|r|}{{Continua nella prossima pagina}} \\ 
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+		TU.1 & Verificare che il componente "ChatDeleteBtn" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il pulsante deve essere disabilitato se non è presente alcun messaggio nella chat;
+      \item Il pulsante deve essere disabilitato se il ChatBOT sta elaborando un nuovo messaggio;
+      \item Quando viene cliccato, il pulsante deve inviare un segnale.
+    \end{itemize} & S \\
+	\end{longtable}
+\end{adjustwidth}
+\egroup
