@@ -1,8 +1,37 @@
 \section{Riunione}
 \subsection{Ordine del giorno}
 \begin{itemize}
-	\item TODO.
+	\item Discussione sull'implementazione del modello architetturale scelto;
+	\item Analisi del diagramma delle classi;
+	\item Suddivisione delle attività di testing;
+	\item Definizione dello stile grafico delle immagini destinate al \MU;
+	\item Risoluzione degli errori emersi durante il test dei componenti \glossario{front-end}.
 \end{itemize}
 
 \subsection{Discussione e decisioni}
-\par TODO.
+\subsubsection{Discussione sull'implementazione del modello architetturale}
+\par Il gruppo ha esaminato la struttura del \glossario{back-end} definita dai programmatori. L'implementazione del modello architetturale è stata ritenuta adeguata e conforme agli standard. Per risolvere un problema di istanziazione degli oggetti all'interno dei moduli di \glossario{txtai}, il team ha valutato l'integrazione del pattern Abstract factory.
+
+\subsubsection{Analisi del diagramma delle classi}
+\par Il team di progettisti ha sollevato alcuni dubbi riguardo al diagramma delle classi, soprattutto per quanto concerne le modalità di collegamento tra le classi. Inoltre, è stata discussa l'opportunità di includere i \glossario{DTO} nel diagramma. Tuttavia, per garantire maggiore leggibilità e comprensibilità, il gruppo ha deciso di riportare i DTO in una sezione separata del documento di \ST.
+
+\subsubsection{Suddivisione delle attività di testing}
+\par Durante l'incontro, il gruppo ha fissato le seguenti attività, a ciascuna delle quali è stato associato un ticket \glossario{Jira} (\sezione{sec:todo}):
+\begin{itemize}
+	\item Implementazione test \glossario{back-end} generazione \glossario{debug};
+	\item Implementazione test back-end index manager (persistenza \glossario{indici});
+	\item Implementazione test back-end interazione \glossario{database};
+	\item Implementazione test back-end autenticazione;
+	\item Aggiornamento \ST\ (caricamento diagramma delle classi e progettazione di dettaglio);
+	\item Fix bug \glossario{front-end} + test pulsante elimina chat;
+	\item Test front-end sezione debug.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Inoltre, il team ha incaricato ciascun membro di individuare strumenti per automatizzare il calcolo delle metriche di qualità del codice. Parallelamente, il gruppo si occuperà di configurare SonarCloud per personalizzare l'analisi statica.
+
+\subsubsection{Definizione dello stile grafico delle immagini destinate al \MU}
+\par Per quanto riguarda il \MU, il team ha stabilito di utilizzare le frecce, anziché i cerchi, per indicare i componenti dell'interfaccia all'interno delle immagini.
+
+\subsubsection{Risoluzione degli errori front-end}
+\par Il gruppo ha risolto alcuni problemi emersi durante la scrittura dei test \glossario{front-end}. Gli errori relativi alla libreria "Vue I18n" sono stati mitigati con un mock della funzione di traduzione. Per risolvere gli errori di "PrimeVue", invece, è stato necessario registrare i sotto-componenti durante il montaggio dei componenti sottoposti a test.
