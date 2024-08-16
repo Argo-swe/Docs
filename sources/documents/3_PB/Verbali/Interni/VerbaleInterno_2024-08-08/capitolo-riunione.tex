@@ -1,0 +1,73 @@
+\section{Riunione}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\item Scelta dell'acrchitettura;
+	\item Configurazione di sonarcloud;
+	\item Inizio progettazione;
+	\item Divisione delle attività tra progettisti.
+\end{itemize}
+
+\subsection{Discussione e decisioni}
+\subsubsection{Scelta dell'architettura}
+\par All'inizio della riunione, la priorità è stata la scelta definitiva dell'architettura da implementare, basata sullo studio della fattibilità di diverse opzioni architetturali durante lo sprint precedente. Il gruppo ha scelto un'architettura client-server con un modello esagonale per implementare ChatSQL. Questa decisione è stata presa per garantire un'elevata modularità, manutenibilità e scalabilità. L'architettura esagonale consente di mantenere la logica di business (core) isolata dal resto del sistema, facilitando l'integrazione con servizi esterni tramite porte e adattatori. La flessibilità di questa architettura permette di adattarsi facilmente ai diversi contesti applicativi, mentre la robustezza del core minimizza i rischi di manutenzione nel tempo, rendendola ideale per lo sviluppo di applicazioni scalabili e modulari.
+
+\par Il team ha analizzato i punti che devono essere trattati all' interno del documento di specifica tecnica e quindi è stato stabilito come analizzare l'architettura divisa per front-end e back-end.
+
+\subsubsection{Configurazione di sonarcloud}
+
+\par Durante questa fase del progetto, è stata effettuata la configurazione di SonarCloud, uno strumento essenziale per l'analisi continua della qualità del codice. SonarCloud è stato integrato nel repository GitHub del progetto, permettendo di monitorare costantemente metriche critiche come la complessità ciclomatica, la duplicazione del codice e la copertura dei test. SonarLint aiuta a mantenere e migliorare la copertura dei test e ad assicurare che il codice rimanga comprensibile e mantenibile a lungo termine. L'obiettivo principale di questa configurazione è garantire un elevato standard qualitativo del codice, prevenendo l'introduzione di errori e migliorando la manutenibilità e la leggibilità del codice nel tempo. La configurazione è stata completata con successo, e SonarCloud è ora in grado di eseguire analisi automatiche ad ogni push o pull request, fornendo un feedback immediato agli sviluppatori.
+
+
+\subsubsection{Inizio progettazione}
+\par Durante l'incontro, il gruppo ha sfruttato l'opportunità di essere riunito in presenza per definire l'ordine e la struttura delle cartelle all'interno della repository del progetto. Questa attività ha permesso di stabilire una base organizzativa solida, garantendo che ogni membro avesse chiara la disposizione dei file e il flusso di lavoro previsto. Inoltre, è stata avviata la progettazione iniziale del sistema, discutendo e condividendo idee per la suddivisione dei compiti e l'implementazione delle funzionalità principali, assicurando un approccio coerente e collaborativo per le fasi successive dello sviluppo.
+
+
+\subsubsection{Divisione delle attività tra progettisti}
+\par Il gruppo di progettisti è stato suddiviso in due sottogruppi per ottimizzare il lavoro e avanzare parallelamente su più fronti. Tre membri del team si occuperanno della scrittura del codice, concentrandosi sull'implementazione del front-end e del back-end, mentre gli altri tre si dedicheranno alla realizzazione del diagramma delle classi, con l'obiettivo di definire chiaramente la struttura e le relazioni tra i componenti del sistema. Questa divisione permetterà di sfruttare al meglio le competenze di ciascun progettista e di procedere in modo coordinato.
+
+
+\subsubsection{Discussione dei punti per il diario di bordo}
+\par Il gruppo ha discusso i punti salienti da trattare nel diario di bordo del 9 Agosto.
+\paragraph{Done}
+\begin{itemize}
+	\item Scelto il modello architetturale per il back-end;
+	\item Stesura sezione architettura in Specifica Tecnica;
+	\item Completata progettazione logica del back-end;
+	\item Completata progettazione di dettaglio del front-end;
+	\item Avanzamento codifica front-end e back-end;
+	\item Gestione centralizzata degli errori a front-end;
+	\item Definizione di interfacce e tipi con TypeScript;
+	\item Consuntivo sprint 10;
+	\item Pianificazione e preventivo sprint 11;
+	\item Aggiornamento delle Norme di Progetto;
+	\item Aggiornamento dei grafici nel Piano di Qualifica;
+	\item Configurazione dell’ambiente di test front-end e back-end;
+	\item Progettazione test di unità;
+	\item Configurazione di strumenti per automatizzare la formattazione e il linting del codice;
+	\item Definizione di un workflow su GitHub per automatizzare formattazione, linting e test;
+	\item Organizzazione di un incontro in presenza a Padova;
+	\item Stesura Manuale Utente nelle seguenti sezioni:
+	\begin{itemize}
+		\item Chat;
+		\item Gestione dizionari;
+		\item Configurazione delle impostazioni;
+		\item Visualizzazione mobile.
+	\end{itemize}
+	\item Configurazione di SonarLint e SonarCloud per calcolare alcune metriche di qualità del codice (complessità ciclomatica, duplicazione).
+\end{itemize}
+
+\paragraph{To Do}
+\begin{itemize}
+	\item Avanzamento progettazione di dettaglio back-end;
+	\item Avanzamento codifica e testing front-end e back-end;
+	\item Completare sezione debug (front-end);
+	\item Modifica tipi di ritorno del metodo di generazione del prompt;
+	\item Stesura tracciamento dei requisiti in Specifica Tecnica;
+	\item Aggiornamento documenti (Piano di Qualifica, Specifica Tecnica, Manuale Utente);
+	\item Individuazione di strumenti per calcolare automaticamente le metriche di qualità del codice.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Gli argomenti sopracitati sono stati riportati nella presentazione per il diario di bordo del 9 Agosto.
+
+
