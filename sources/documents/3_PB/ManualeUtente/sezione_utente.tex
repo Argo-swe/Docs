@@ -31,3 +31,16 @@ Nella sezione superiore destra dell'interfaccia, cliccando sull'icona impostazio
   \item Lingua: selezione della lingua dell'interfaccia tra inglese e italiano (non cambia la lingua del \glossario{prompt} prodotto da ChatSQL, che rimane sempre in inglese).
 \end{itemize}
 \par Le modifiche apportate verranno memorizzate automaticamente, e applicate alla successiva apertura dell'applicazione.
+
+\subsection{Workflow}
+\par Nell'utilizzo di ChatSQL, il flusso più comune da seguire per ottenere una query SQL è:
+\begin{enumerate}
+  \item Entrare nella pagina Chat selezionandola dal menu principale;
+  \item Selezionare il dizionario dati desiderato;
+  \item Selezionare il DBMS desiderato;
+  \item Inserire la richiesta in linguaggio naturale e attendere la generazione del prompt;
+  \item Copiare il prompt generato cliccando sul bottone in alto a destra sul messaggio prodotto da ChatSQL;
+  \item Incollare il prompt in un modello LLM a scelta (come ChatGPT) e attendere la generazione della query SQL.
+\end{enumerate}
+TODO: aggiungere immagini per ogni punto
+\par L'output atteso dal modello LLM è una query SQL che soddisfa la richiesta inserita, che potrà essere eseguita su un DBMS per ottenere i risultati desiderati.
