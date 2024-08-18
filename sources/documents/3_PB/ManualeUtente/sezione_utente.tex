@@ -42,5 +42,15 @@ Nella sezione superiore destra dell'interfaccia, cliccando sull'icona impostazio
   \item Copiare il prompt generato cliccando sul bottone in alto a destra sul messaggio prodotto da ChatSQL;
   \item Incollare il prompt in un modello LLM a scelta (come ChatGPT) e attendere la generazione della query SQL.
 \end{enumerate}
-TODO: aggiungere immagini per ogni punto
+\begin{figure}[H]
+  \begin{tabular}{cc}
+    \includegraphics[width=65mm]{assets/workflow_1.png} &   \includegraphics[width=65mm]{assets/workflow_2.png} \\
+    1 & 2 \\[6pt]
+     \includegraphics[width=65mm]{assets/workflow_3.png} &   \includegraphics[width=65mm]{assets/workflow_4.png} \\
+    3 & 4 \\[6pt]
+     \includegraphics[width=65mm]{assets/workflow_5.png} &   \includegraphics[width=65mm]{assets/workflow_6.png} \\
+    5 & 6 \\[6pt]
+  \end{tabular}
+  \caption{Workflow per ottenere una query SQL}
+\end{figure}
 \par L'output atteso dal modello LLM è una query SQL che soddisfa la richiesta inserita, che potrà essere eseguita su un DBMS per ottenere i risultati desiderati.
