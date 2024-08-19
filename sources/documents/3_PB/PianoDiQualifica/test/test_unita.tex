@@ -27,11 +27,41 @@
 		\hline
 		\endlastfoot
 
-		TU.1 & Verificare che il componente "ChatDeleteBtn" soddisfi le seguenti condizioni:
+		TU.1 & Verificare che il componente "DictPreview" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item L'anteprima del dizionario dati non deve essere visibile se la variabile DetailsVisible è uguale a false;
+			\item Se è visibile, l'anteprima deve mostrare i dati correttamente;
+			\item Lo stato di espansione dell'anteprima deve essere attivato/disattivato al clic dell'apposito pulsante;
+			\item Quando viene cliccato il pulsante di chiusura, il componente deve inviare un segnale.
+    \end{itemize} & S \\
+		\hline TU.2 & Verificare che il componente "ChatMessage" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il messaggio inviato dall'Utente deve essere visualizzato correttamente;
+			\item Il messaggio inviato dal ChatBOT deve essere visualizzato correttamente;
+			\item I pulsanti di azione devono essere nascosti se il messaggio è stato inviato dall'Utente;
+			\item La funzione "Copia negli appunti" deve essere chiamata con i parametri corretti al clic dell'apposito pulsante;
+			\item Il pulsante di debug deve essere nascosto se l'Utente non ha effettuato il login;
+			\item La funzione "Apri debug modal" deve essere chiamata con i parametri corretti al clic dell'apposito pulsante.
+    \end{itemize} & S \\
+		\hline TU.3 & Verificare che il componente "StringDataModal" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il messaggio di debug deve essere visualizzato correttamente quando la variabile StringData è impostata;
+      \item Il messaggio di debug non deve essere renderizzato quando la variabile StringData è vuota.
+    \end{itemize} & S \\
+		\hline TU.4 & Verificare che il componente "DebugMessage" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il componente deve visualizzare il messaggio di debug correttamente;
+			\item Quando viene cliccato il pulsante "Scarica file", la funzione di download deve essere chiamata con i parametri corretti.
+    \end{itemize} & S \\
+		\hline TU.5 & Verificare che il componente "ChatDeleteBtn" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il pulsante deve essere disabilitato se non è presente alcun messaggio nella chat;
       \item Il pulsante deve essere disabilitato se il ChatBOT sta elaborando un nuovo messaggio;
       \item Quando viene cliccato, il pulsante deve inviare un segnale.
+    \end{itemize} & S \\
+		\hline TU.6 & Verificare che il componente "AppLogo" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il logo deve essere renderizzato con il percorso dell'immagine corretto.
     \end{itemize} & S \\
 	\end{longtable}
 \end{adjustwidth}
