@@ -104,19 +104,20 @@ Come riportato nel registro delle modifiche dei documenti, ogni avanzamento di v
   \end{itemize}
 \end{itemize}
 \par La differenza principale rispetto al workflow precedente è che durante lo sviluppo, il ramo predefinito (ovvero il branch di destinazione delle pull request) è il develop. Quando si crea una branch di release, invece, il merge deve essere effettuato sul main. Il branch main, infatti, registra la cronologia ufficiale dei rilasci. Nel "gitflow workflow" è disponibile anche un branch di hotfix, che consente di aggiustare rapidamenti i rilasci di produzione.
+
 \subsubsubsection{Apertura pull request}
-Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team deve selezionare i seguenti branch:
+\par Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team deve selezionare i seguenti branch:
 \begin{itemize}
-  \item \textbf{head ref:} il branch di partenza della pull request;
-  \item \textbf{base ref:} il branch di destinazione della pull request.
+  \item \textbf{head ref}: il branch di partenza della pull request;
+  \item \textbf{base ref}: il branch di destinazione della pull request.
 \end{itemize}
-\par Una volta generata la pull request, il team deve compilare i seguenti campi:
+\par In seguito, il team deve compilare i seguenti campi:
 \begin{itemize}
   \item \textbf{Titolo} della pull request: può contenere anche un riferimento al ticket \glossario{Jira} associato;
-  \item \textbf{Descrizione:} un resoconto delle modifiche proposte. Nella descrizione è opportuno inserire il commento [ARGO-ID], dove ID è il numero univoco del ticket;
-  \item \textbf{Reviewers:} uno o più verificatori;
-  \item \textbf{Assignees:} uno o più membri del team che propongono le modifiche e aggiornano la pull request;
-  \item \textbf{Labels:}
+  \item \textbf{Descrizione}: un resoconto delle modifiche proposte. Nella descrizione è opportuno inserire il commento [ARGO-ID], dove ID è il numero univoco del ticket;
+  \item \textbf{Reviewers}: uno o più verificatori;
+  \item \textbf{Assignees}: uno o più membri del team che propongono le modifiche e aggiornano la pull request;
+  \item \textbf{Labels}:
   \begin{itemize}
     \item Amministratore: attività assegnate agli amministratori;
     \item Analista: attività assegnate agli analisti;
@@ -127,9 +128,13 @@ Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team 
     \item Documentazione: miglioramenti o integrazioni alla documentazione di progetto;
     \item Help wanted: richiesta di supporto o assistenza;
     \item Hotfix: soluzione immediata a un problema urgente;
-    \item Task: implementazione di una nuova funzionalità;
-    \item Ricerca: attività di ricerca (tecnologie, pattern, modelli, best practice);
-    \item Sviluppo: attività di sviluppo.
+    \item Task: implementazione di una nuova richiesta o funzionalità;
+    \item Ricerca: attività di ricerca (tecnologie, pattern, modelli, best practices);
+    \item Sviluppo: attività di sviluppo;
+    \item Allineamento: allineamento delle modifiche tra diversi branch in preparazione a un merge nel branch principale;
+    \item Codifica: attività di codifica (traduzione della progettazione in codice);
+    \item Test: progettazione e sviluppo di suite di test.
+    \item Release: modifiche pre-release.
   \end{itemize}
   \item \textbf{Projects:} dopo l'adozione di \glossario{Jira} come \glossario{Issue Tracking System}, il team ha deciso di modificare la funzione della board di GitHub. Invece di registrare gli issue, la board elenca le pull request, suddivise in:
   \begin{itemize}
@@ -140,7 +145,14 @@ Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team 
   \end{itemize}
   \par Nel campo "Projects", il team deve selezionare la board del progetto Argo e la priorità della pull request, che può essere alta, media o bassa.
 \end{itemize}
-\par Se una pull request è stata creata ma non è ancora pronta per essere unita al ramo base, GitHub mette a disposizione un pulsante per convertirla in una bozza. Una volta ultimata la bozza, è possibile marcare la pull request come "pronta per la revisione".
+\vspace{0.5\baselineskip}
+\par Il pulsante di apertura di una pull request prevede due opzioni: 
+\begin{itemize}
+  \item "Create pull request": apre una pull request pronta per la revisione;
+  \item "Create draft pull request": apre una pull request in draft.
+\end{itemize} 
+\vspace{0.5\baselineskip}
+\par Se una pull request è stata creata ma non è ancora pronta per essere unita al ramo base, GitHub mette a disposizione un pulsante per convertirla in una bozza. Fatta eccezione per i merge commit, tutte le modifiche relative a una pull request dovrebbero essere apportate mentre la pull request è in stato di bozza. In questo modo si previene l'esecuzione eccessiva del workflow GitHub Actions. Una volta ultimata la bozza, è possibile marcare la pull request come "pronta per la revisione".
 
 \subsubsubsection{Verifica pull request}
 \par La lista delle pull request in attesa di revisione è visibile nella project board di GitHub. Per semplificare il lavoro dei verificatori, le pull request sono ordinate per priorità in ordine decrescente. Il contenuto delle pull request è suddiviso in tre sezioni principali:
@@ -173,7 +185,7 @@ Per aprire una pull request dall'interfaccia web di \glossario{GitHub}, il team 
 \par Quando uno sviluppatore apporta delle modifiche sostanziali a una pull request già verificata, deve richiedere nuovamente la revisione.
 
 \subsubsubsection{Chiusura pull request}
-\par La chiusura delle pull request che riguardano verbali interni ed esterni, o comunque documenti che richiedono un’approvazione pre-rilascio, spetta al \Responsabile{}. Questo perché, dopo la revisione del \Verificatore{}, è necessaria un’approvazione generale del documento e una firma. GitHub mette a disposizione del team tre modalità di merging e chiusura delle pull request:
+\par La chiusura delle pull request che riguardano verbali interni ed esterni, o comunque documenti che richiedono un'approvazione pre-rilascio, spetta al \Responsabile{}. Questo perché, dopo la revisione del \Verificatore{}, è necessaria un'approvazione generale del documento e una firma. Per quanto riguarda il repository del codice sorgente, la revisione manuale del verificatore è accompagnata da una verifica automatica mediante GitHub Actions. Entrambe le revisioni sono considerate bloccanti per il merge della pull request. GitHub mette a disposizione del team tre modalità di merging e chiusura delle pull request:
 \begin{itemize}
   \item \textbf{Create a merge commit:} i commit della pull request vengono aggiunti al ramo base tramite un merge commit;
   \item \textbf{Squash and merge:} i commit della pull request vengono compressi in un unico commit e aggiunti al ramo base;
@@ -196,7 +208,9 @@ Il gruppo utilizza due repository, disponibili su \glossario{GitHub}:
   \item Repository della documentazione: \href{https://github.com/argo-swe/docs}{https://github.com/argo-swe/docs};
   \item Repository del codice sorgente: \href{https://github.com/argo-swe/chatsql}{https://github.com/argo-swe/chatsql}.
 \end{itemize}
-Il gruppo impiega inoltre, per l'hosting del sito \href{https://argo-swe.github.io}{argo-swe.github.io}, un repository aggiuntivo, da non considerare parte del workflow principale in quanto aggiornato e mantenuto solo come "vetrina" del gruppo.
+
+\vspace{0.5\baselineskip}
+\par Il gruppo impiega inoltre, per l'hosting del sito \href{https://argo-swe.github.io}{argo-swe.github.io}, un repository aggiuntivo, da non considerare parte del workflow principale in quanto aggiornato e mantenuto solo come "vetrina" del gruppo.
 \begin{itemize}
   \item Repository del sito github.io: \href{https://github.com/argo-swe/argo-swe.github.io}{https://github.com/argo-swe/argo-swe.github.io}.
 \end{itemize}
@@ -236,18 +250,60 @@ Il repository contiene il codice sorgente in LaTeX di tutta la documentazione uf
     \item Arresto dell'esecuzione del contenitore Docker.
   \end{itemize}
 \end{itemize}
-Il repository contiene un ramo base (main), in cui vengono inserite le versioni verificate e approvate dei documenti. I documenti vengono redatti all'interno di \glossario{feature branch}, i quali richiedono una fase di verifica prima di essere uniti al ramo base.
+
+\vspace{0.5\baselineskip}
+\par Il repository contiene un ramo principale (main), in cui vengono inserite le versioni verificate e approvate dei documenti. I documenti vengono redatti all'interno di \glossario{feature branch}, i quali richiedono una fase di verifica prima di essere uniti al ramo principale.
 
 \paragraph{Repository \emph{ChatSQL}}
 Il repository contiene il codice sorgente dell'applicativo ChatSQL, oltre a un \glossario{workflow} GitHub Actions per l'analisi statica del codice, l'esecuzione dei test e la generazione automatica dell'artefatto. Il workflow è definito da un file YAML archiviato nella directory \emph{.github/workflows}.
-
+\par Di seguito è riportata la struttura del repository:
 \begin{itemize}
-  \item Il file \emph{README.md} illustra brevemente lo scopo del repository ed elenca i componenti del gruppo;
+  \item Il file \emph{README.md} illustra i seguenti aspetti:
+  \begin{itemize}
+    \item Tecnologie utilizzate;
+    \item Modalità di avvio del progetto;
+    \item Formattazione del codice;
+    \item Variabili d'ambiente;
+    \item Localizzazione.
+  \end{itemize}
   \item Il file \emph{.gitignore} evita il tracciamento di file ausiliari e artefatti di compilazione;
-  \item Il file \emph{docker-compose.yml} definisce la struttura dei container docker;
-  \item La directory \emph{frontend} include il codice sorgente per la parte applicativa di frontend sviluppato in VueJS;
-  \item La directory \emph{backend} include il codice sorgente per la parte di backend sviluppato in Python.
+  \item Il file \emph{docker-compose.yml} definisce la struttura dei contenitori Docker;
+  \item La directory \emph{frontend} include il codice sorgente per il frontend sviluppato in Vue.js;
+  \item La directory \emph{backend} include il codice sorgente per il backend sviluppato in Python;
+  \item Il workflow GitHub Actions viene attivato nei seguenti casi:
+  \begin{itemize}
+    \item Apertura di una pull request (non in draft);
+    \item Contrassegno di una pull request come pronta per la revisione;
+    \item Modifiche al ramo associato alla pull request;
+    \item Chiusura della pull request.
+  \end{itemize}
+  \item Se la pull request non è in draft, il workflow esegue i seguenti step:
+  \begin{itemize}
+    \item Clonazione del repository sorgente all'interno dell'ambiente di esecuzione del job (Ubuntu);
+    \item Salvataggio e ripristino della cache per evitare di scaricare nuovamente le dipendenze;
+    \item Nella cache viene memorizzata una chiave che include l'hash dei file \emph{docker-compose.yml} e \emph{Dockerfile}. Se il contenuto di uno di questi file cambia, anche la chiave cambia e la cache viene invalidata;
+    \item Autenticazione nel registro dei contenitori di GitHub attraverso un token di accesso in scrittura;
+    \item Creazione dei file .env.local, necessari per avviare il contenitore Docker;
+    \item Build e caricamento dell'immagine su \glossario{GHCR} (se avviene un "cache miss");
+    \item Recupero dell'immagine da \glossario{GHCR} (se avviene un "cache hit");
+    \item Avvio del contenitore Docker;
+    \item Questa distinzione tra push e pull di un'immagine, in base alla presenza o meno di una chiave in cache, permette di ridurre significativamente i tempi di esecuzione del \glossario{workflow};
+    \item Configurazione dell'ambiente Node.js (versione 20);
+    \item Verifica della versione di Node.js installata;
+    \item Installazione delle dipendenze del \glossario{frontend};
+    \item Linting e formattazione del codice nel \glossario{backend};
+    \item Type check del codice nel frontend;
+    \item Linting del codice nel frontend;
+    \item Esecuzione dei test di unità nel frontend;
+    \item Esecuzione dei test di unità nel backend;
+    \item Arresto dell'esecuzione del contenitore Docker;
+    \item Creazione della directory "ChatSQL/MVP" (se la pull request è stata unita al ramo base);
+    \item Pubblicazione dell'artefatto generato durante il processo di build.
+  \end{itemize}
 \end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Il repository contiene un ramo principale (main), in cui vengono registrati i rilasci del codice sorgente. Le modifiche vengono apportate all'interno di \glossario{feature branch}, i quali richiedono una fase di verifica prima di essere uniti al ramo di sviluppo (develop).
 
 \subsubsection{Release}
 \par Come riportato nella sezione dedicata al versionamento, il team adotta una politica di rilascio basata su versioni numeriche, in cui ogni rilascio è identificato da un numero di versione univoco. Attraverso il processo di release management, il gruppo garantisce che il prodotto software e la documentazione siano rilasciati in modo controllato e conforme alle specifiche. Un rilascio può effettuato quando:
