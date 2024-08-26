@@ -1,7 +1,6 @@
 \subsubsection{Servizi}
 
-\paragraph{AuthenicationService}
-
+\paragraph{AuthenicationService} \label{AuthenticationService}
 \begin{itemize}
     \item \textbf{Descrizione:} Questa classe si occupa di gestire l'autenticazione degli utenti.
     \item \textbf{Implementazione:} Questa classe implementa la porta \texttt{AuthenticationUseCase}.
@@ -15,15 +14,15 @@
     \end{itemize}
     \item \textbf{Dipendenze:}
     \begin{itemize}
+        \item \texttt{AuthenticationUseCase}
         \item \texttt{AuthenticationRepository}
     \end{itemize}
 \end{itemize}  
 
-\paragraph{DictionaryService}
-
+\paragraph{DictionaryService} \label{DictionaryService}
 \begin{itemize}
-    \item \textbf{Descrizione:} Questa classe si occupa di gestire le operazioni sul \glossario{dizionario dati}. 
-    \item \textbf{Implementazione:} Questa classe implementa la porta \texttt{DictionaryUseCase}. 
+    \item \textbf{Descrizione:} questa classe si occupa di gestire le operazioni sul \glossario{dizionario dati}. 
+    \item \textbf{Implementazione:} questa classe implementa la porta \texttt{DictionaryUseCase}. 
     \item \textbf{Attributi:}
     \begin{itemize}
         \item \texttt{dictionary\_repository: DictionaryRepository}: la repository usata per il recupero dei dati;
@@ -44,6 +43,7 @@
     \end{itemize}
     \item \textbf{Dipendenze:}
     \begin{itemize}
+        \item \texttt{DictionaryUseCase}
         \item \texttt{DictionaryRepository}
         \item \texttt{IndexManagerPort}
         \item \texttt{FileRepository}
@@ -51,11 +51,10 @@
     \end{itemize}
 \end{itemize}
 
-\paragraph{PromptManagementService}
-
+\paragraph{PromptManagementService} \label{PromptManagementService}
 \begin{itemize}
-    \item \textbf{Descrizione:} Questa classe si occupa di gestire le operazioni per la generazione dei \glossario{prompt}.
-    \item \textbf{Implementazione:} Questa classe implementa la porta \texttt{PromptUseCase}. 
+    \item \textbf{Descrizione:} questa classe si occupa di gestire le operazioni per la generazione dei \glossario{prompt}.
+    \item \textbf{Implementazione:} questa classe implementa la porta \texttt{PromptUseCase}. 
     \item \textbf{Attributi:}
     \begin{itemize}
         \item \texttt{dictionary\_service: DictionaryService}: il servizio per la gestione dei dizionari dati;
@@ -69,6 +68,7 @@
     \end{itemize}
     \item \textbf{Dipendenze:}
     \begin{itemize}
+        \item \texttt{PromptUseCase}
         \item \texttt{DictionaryService}
         \item \texttt{PromptManagerPort}
     \end{itemize}

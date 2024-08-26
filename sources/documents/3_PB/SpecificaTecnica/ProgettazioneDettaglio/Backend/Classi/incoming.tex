@@ -1,20 +1,69 @@
-\subsubsection{Incoming}
+\subsubsection{Incoming - Ports}
 
-\paragraph{-}
-
+\paragraph{AuthenticationUseCase} \label{AuthenticationUseCase}
 \begin{itemize}
-    \item \textbf{Descrizione:} 
-    \item \textbf{Implementazione:} 
+    \item \textbf{Descrizione:} questa interfaccia permette di gestire l'autenticazione degli utenti. 
+    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[AuthenticationService]{(\texttt{AuthenticationService})}. 
+    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[AuthenticationService]{(\texttt{AuthenticationService})}.
+\end{itemize}  
+
+\paragraph{DictionaryUseCase} \label{DictionaryUseCase}
+\begin{itemize}
+    \item \textbf{Descrizione:} questa interfaccia permette di gestire le operazioni sul \glossario{dizionario dati}.
+    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[DictionaryService]{\texttt{DictionaryService}}.
+    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[DictionaryService]{(\texttt{DictionaryService})}.
+\end{itemize}  
+
+\paragraph{PromptUseCase} \label{PromptUseCase}
+\begin{itemize}
+    \item \textbf{Descrizione:} questa interfaccia si occupa di gestire le operazioni per la generazione dei \glossario{prompt}.
+    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[PromptManagementService]{(\texttt{PromptManagementService})}.
+    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[PromptManagementService]{(\texttt{PromptManagementService})}.
+\end{itemize}  
+
+\paragraph{SchemaValidatorUseCase} \label{SchemaValidatorUseCase}
+\begin{itemize}
+    \item \textbf{Descrizione:} questa interfaccia si occupa della validazione dei \glossario{dizionari dati}.
+    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[JsonSchemaValidatorAdapter]{(\texttt{JsonSchemaValidatorAdapter})}.
+    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[JsonSchemaValidatorAdapter]{(\texttt{JsonSchemaValidatorAdapter})}.
+    \item \textbf{Dipendenze:}
+    \begin{itemize}
+        \item \texttt{Dictionary}
+    \end{itemize}
+\end{itemize}  
+
+\subsubsection{Incoming - Adapters}
+
+\paragraph{JsonSchemaValidatorAdapter} \label{JsonSchemaValidatorAdapter}
+\begin{itemize}
+    \item \textbf{Descrizione:} questa classe si occupa della validazione dei \glossario{dizionari dati}.
+    \item \textbf{Implementazione:} questa classe implementa l'interfaccia \hyperref[SchemaValidatorUseCase]{\texttt{SchemaValidatorUseCase}}.
     \item \textbf{Attributi:}
     \begin{itemize}
-        \item -
+        \item \texttt{dictionary\_schema\_file\_path: string} il percorso del file contenente lo schema dei dizionari dati.
     \end{itemize}
     \item \textbf{Metodi:}
     \begin{itemize}
-        \item -
+        \item \texttt{JsonSchemaValidatorAdapter(dictionary\_schema\_file\_path: string)}: costruttore della classe;
+        \item \texttt{+ validate(dictionary: Dictionary): bool}: valida lo schema del dizionario passato.
     \end{itemize}
     \item \textbf{Dipendenze:}
     \begin{itemize}
-        \item -
+        \item \texttt{Utils}
+    \end{itemize}
+\end{itemize} 
+
+\paragraph{SchemaValidatorFactory} \label{SchemaValidatorFactory}
+\begin{itemize}
+    \item \textbf{Descrizione:} questa classe si occupa della creazione di istanze della classe \texttt{JsonSchemaValidatorAdapter}.
+    \item \textbf{Implementazione:} questa classe non implementa alcuna interfaccia.
+    \item \textbf{Attributi:} questa classe non presenta attributi.
+    \item \textbf{Metodi:}
+    \begin{itemize}
+        \item \texttt{+ \underline{create(config: dict)}: SchemaValidatorUseCase}: crea un'istanza della classe \texttt{JsonSchemaValidatorAdapter}.
+    \end{itemize}
+    \item \textbf{Dipendenze:}
+    \begin{itemize}
+        \item \texttt{JsonSchemaValidatorAdapter}
     \end{itemize}
 \end{itemize}  
