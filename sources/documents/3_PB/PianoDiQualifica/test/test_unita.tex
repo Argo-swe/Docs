@@ -27,14 +27,73 @@
 		\hline
 		\endlastfoot
 
-		TU.1 & Verificare che il componente "DictPreview" soddisfi le seguenti condizioni:
+		TU & Verificare che il componente "AppLogo" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il logo deve essere renderizzato con il percorso dell'immagine corretto;
+			\item L'altezza e la larghezza dell'immagine devono essere impostate con valori predefiniti se non vengono passate come props;
+			\item Il colore dell'immagine deve cambiare in base al tema selezionato.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il componente "AppFooter" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il footer deve essere renderizzato correttamente;
+			\item All'interno del footer deve essere visualizzata la versione corretta dell'applicazione.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il componente "AppMenu" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il menu dell'Utente deve avere avere una o più opzioni;
+			\item Il menu del Tecnico deve avere due o più opzioni.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il componente "AppMenuItem" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item La voce di menu deve contenere l'etichetta corretta;
+			\item La voce di menu non deve essere attiva se non è stata selezionata;
+			\item Una volta selezionata, la voce di menu deve essere attiva;
+			\item La voce di menu può essere la radice di un menu;
+			\item La voce di menu può contenere un sotto-menu;
+			\item La voce di menu può aprire e chiudere un sotto-menu. 
+    \end{itemize} & S \\
+		\hline TU & Verificare che il componente "AppTopbar" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il pulsante di login deve essere visibile se l'Utente non ha effettuato l'accesso;
+			\item Il pulsante di logout deve essere visibile se l'Utente ha effettuato l'accesso;
+			\item Quando viene cliccato il pulsante di logout, la funzione di logout deve essere chiamata;
+			\item Il menu delle opzioni deve essere aperto al clic dell'apposito pulsante;
+			\item Il menu delle opzioni deve essere chiuso quando l'Utente clicca al di fuori di esso.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il componente "ConfigSidebar" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item La sezione per modificare la scala deve essere visibile;
+			\item La sezione per modificare il tema deve essere visibile;
+			\item La sezione per modificare la lingua dell'interfaccia deve essere visibile;
+			\item La scala deve essere diminuita al clic del'apposito pulsante;
+			\item La scala deve essere aumentata al clic dell'apposito pulsante;
+			\item Il pulsante per diminuire la scala deve essere disabilitato se la scala è al minimo;
+			\item Il pulsante per aumentare la scala deve essere disabilitato se la scala è al massimo;
+			\item Il contenuto del localStorage deve essere aggiornato al cambio del tema;
+			\item Il contenuto del localStorage deve essere aggiornato al cambio della lingua.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il componente "MenuSidebar" soddisfi le seguenti condizioni:
+    \begin{itemize}
+			\item Il pulsante per chiudere la sidebar non deve essere visibile su schermi di grandi dimensioni.
+      \item Il pulsante per chiudere la sidebar deve essere visibile su schermi di piccole dimensioni.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il componente "LoginDialog" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il dialog deve essere chiuso al clic dell'apposito pulsante;
+			\item La funzione "messageSuccess" deve essere chiamata se il login viene effettuato con successo;
+			\item Una volta completato il login, il dialog deve essere chiuso;
+			\item Il contenuto del localStorage deve essere aggiornato se il login viene effettuato con successo;
+			\item Una volta completato il login, il form deve essere resettato;
+			\item La funzione "messageError" deve essere chiamata se il login fallisce.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il componente "DictPreview" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item L'anteprima del dizionario dati non deve essere visibile se la variabile DetailsVisible è uguale a false;
-			\item Se è visibile, l'anteprima deve mostrare i dati correttamente;
+			\item Se è visibile, l'anteprima deve mostrare i dati corretti;
 			\item Lo stato di espansione dell'anteprima deve essere attivato/disattivato al clic dell'apposito pulsante;
 			\item Quando viene cliccato il pulsante di chiusura, il componente deve inviare un segnale.
     \end{itemize} & S \\
-		\hline TU.2 & Verificare che il componente "ChatMessage" soddisfi le seguenti condizioni:
+		\hline TU & Verificare che il componente "ChatMessage" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il messaggio inviato dall'Utente deve essere visualizzato correttamente;
 			\item Il messaggio inviato dal ChatBOT deve essere visualizzato correttamente;
@@ -43,25 +102,59 @@
 			\item Il pulsante di debug deve essere nascosto se l'Utente non ha effettuato il login;
 			\item La funzione "Apri debug modal" deve essere chiamata con i parametri corretti al clic dell'apposito pulsante.
     \end{itemize} & S \\
-		\hline TU.3 & Verificare che il componente "StringDataModal" soddisfi le seguenti condizioni:
-    \begin{itemize}
-      \item Il messaggio di debug deve essere visualizzato correttamente quando la variabile StringData è impostata;
-      \item Il messaggio di debug non deve essere renderizzato quando la variabile StringData è vuota.
-    \end{itemize} & S \\
-		\hline TU.4 & Verificare che il componente "DebugMessage" soddisfi le seguenti condizioni:
+		\hline TU & Verificare che il componente "DebugMessage" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il componente deve visualizzare il messaggio di debug correttamente;
 			\item Quando viene cliccato il pulsante "Scarica file", la funzione di download deve essere chiamata con i parametri corretti.
     \end{itemize} & S \\
-		\hline TU.5 & Verificare che il componente "ChatDeleteBtn" soddisfi le seguenti condizioni:
+		\hline TU & Verificare che il componente "ChatDeleteBtn" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il pulsante deve essere disabilitato se non è presente alcun messaggio nella chat;
       \item Il pulsante deve essere disabilitato se il ChatBOT sta elaborando un nuovo messaggio;
       \item Quando viene cliccato, il pulsante deve inviare un segnale.
     \end{itemize} & S \\
-		\hline TU.6 & Verificare che il componente "AppLogo" soddisfi le seguenti condizioni:
+		\hline TU & Verificare che il componente "CreateUpdateDictionaryModal" soddisfi le seguenti condizioni:
     \begin{itemize}
-      \item Il logo deve essere renderizzato con il percorso dell'immagine corretto.
+      \item Il form di creazione e modifica deve essere visualizzato correttamente;
+			\item Il pulsante di submit deve essere disabilitato se il form è incompleto;
+			\item La funzione "messageSuccess" deve essere chiamata se l'inserimento viene effettuato con successo;
+			\item La funzione "messageError" deve essere chiamata se l'inserimento fallisce;
+			\item Il pulsante di submit deve essere disabilitato se il formato del file non è valido;
+			\item La funzione "messageSuccess" deve essere chiamata se l'aggiornamento dei metadati viene effettuato con successo;
+			\item La funzione "messageError" deve essere chiamata se l'aggiornamento dei metadati fallisce;
+			\item La funzione "messageSuccess" deve essere chiamata se l'aggiornamento del file viene effettuato con successo;
+			\item La funzione "messageError" deve essere chiamata se l'aggiornamento del file fallisce;
+			\item L'upload del file deve essere disabilitato se un file è già stato caricato;
+			\item Il file selezionato deve essere rimosso al clic dell'apposito pulsante.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il metodo "logout" della classe "auth.service" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Il metodo deve rimuovere il token di autenticazione dal localStorage;
+			\item Il metodo deve inviare un segnale di notifica.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il metodo "isLogged" della classe "auth.service" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Il metodo deve restituire false se il token di autenticazione non è presente;
+			\item Il metodo deve restituire false se il token è scaduto;
+			\item Il metodo deve restituire true se il token è valido;
+			\item Il metodo deve restituire false se la data di scadenza non è definita.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il metodo "downloadFile" della classe "utils.service" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Il metodo deve creare un collegamento per il download del file;
+			\item Il metodo deve attivare il download cliccando sul collegamento.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il metodo "stringToSnakeCase" della classe "utils.service" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Il metodo deve convertire una stringa in snake_case.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il metodo "addCapitalizeValues" della classe "utils.service" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Il metodo deve aggiungere chiavi in maiuscolo a un determinato oggetto.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il metodo "capitalizeString" della classe "utils.service" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Il metodo deve convertire in maiuscolo la prima lettera di una stringa.
     \end{itemize} & S \\
 	\end{longtable}
 \end{adjustwidth}

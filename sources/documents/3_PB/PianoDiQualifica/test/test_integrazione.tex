@@ -1,3 +1,62 @@
 \subsection{Test di integrazione}
 
 \par La sezione relativa ai test di integrazione verrà aggiornata in seguito alla revisione \glossario{RTB}.
+
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	% MAX 12.5cm
+ 	\begin{longtable}{|P{1.5cm}|>{\raggedright}P{9.5cm}|>{\arraybackslash}P{1.5cm}|}
+		\caption{Test di integrazione}
+  	\label{tab:test-integrazione} \\
+	  \hline
+		\textbf{ID} & \textbf{Descrizione} & \textbf{Stato} \\ 
+		\hline
+		\endfirsthead
+
+		\caption[]{Test di integrazione (continua)} \\
+		\hline
+		\textbf{ID} & \textbf{Descrizione} & \textbf{Stato} \\ 
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{3}{|r|}{{Continua nella prossima pagina}} \\ 
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+		TU & Verificare che il componente "AppFooter" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il logo deve essere renderizzato correttamente.
+    \end{itemize} & S \\
+    \hline TU & Verificare che il componente "AppMenu" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item L'Utente deve poter accedere alle seguenti pagine:
+      \begin{itemize}
+        \item Chat.
+      \end{itemize}
+      \item Il Tecnico deve poter accedere alle seguenti pagine:
+      \begin{itemize}
+        \item Chat;
+        \item Gestione dizionari dati.
+      \end{itemize}
+    \end{itemize} & S \\
+    \hline TU & Verificare che il componente "AppTopbar" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il logo deve essere renderizzato correttamente.
+    \end{itemize} & S \\
+    \hline TU & Verificare che il componente "MenuSidebar" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il menu di navigazione principale deve essere visibile;
+      \item Il footer deve essere visibile.
+    \end{itemize} & S \\
+    \hline TU & Verificare che il componente "StringDataModal" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il messaggio di debug deve essere visualizzato correttamente quando la variabile StringData è impostata;
+      \item Il messaggio di debug non deve essere renderizzato quando la variabile StringData è vuota.
+    \end{itemize} & S \\
+	\end{longtable}
+\end{adjustwidth}
+\egroup
