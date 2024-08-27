@@ -65,3 +65,66 @@ Cliccando sul pulsante di cancellazione \includegraphics[height=1.2em]{assets/dd
   \caption{Modale di conferma eliminazione dizionario dati}
 \end{figure}
 In caso di conferma il dizionario verrà eliminato dalla lista.
+
+
+
+\subsection{Strumento di degugger}
+
+\subsubsection{Generazione del messaggio di debug}
+Per il tecnico è disponibile uno strumento di controllo per i meccanismi di generazione del \glossario{prompt} che può aiutare a comprendere ed analizzare i passaggi algoritmici che hanno prodotto il prompt restituito sulla base di una interrogazione. Il \glossario{debug} può aiutare il Tecnico a capire come migliorare il \glossario{dizionario dati}, in particolare le descrizioni in linguaggio naturale delle tabelle e delle colonne del \glossario{database}. Questa funzionalità risulta utile solo previa conoscenza di come funzioni la generazione del prompt e la selezione delle tabelle e dei campi dati nel database.
+Per utilizzare questa funzionalità il tecnico deve scrivere una richiesta nella chat apposita (sezione utente 6.1) e una volta ottenuto il prompt è necessario cliccare l'icona del punto interrogativo in alto a destra del prompt generato da cui si aprirà un'altra finestra sovrapposta a quella attuale.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{assets/tasto_info_debug.png}
+  \caption{Selezione funzionalità di debug}
+\end{figure}
+
+Nel messaggio prodotto è documentato il modo in cui le descrizioni interagiscono con il modello di \glossario{AI}. In ordine verranno visualizzate le seguenti informazioni: 
+\begin{itemize}
+  \item Data e ora di generazione del \glossario{log}; 
+  \item La richiesta inserita in linguaggio naturale;
+  \item Analisi della prima fase della generazione del prompt con una lista delle tabelle considerate rilevanti dal modello di cui si riportano le seguenti informazioni:
+  \begin{itemize}
+    \item Nome della tabella;
+    \item Punteggio assegnato alla tabella;
+    \item Descrizione della tabella;
+    \item Classifica di importanza dei termini presenti nella descrizione della tabella;
+    \item Descrizione della colonna più rilevante;
+    \item Classifica di importanza dei termini presenti nella descrizione della colonna.
+  \end{itemize}
+  \item Analisi della seconda fase di generazione dei prompt con la lista delle tabelle pertinenti di cui viene riporto il motivo per cui una tabella viene inserita o meno nel prompt.
+\end{itemize}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{assets/analisi_debug1.jpg}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{assets/analisi_debug2.jpg}
+  \caption{Esempio di messaggio prodotto}
+\end{figure}
+
+Per chiudere il messaggio generato è necessario cliccare la x in alto a destra e sarà possibile tronare alla chat con il prompt generato.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{assets/tasto_close_debug.png}
+  \caption{Icona chiusura messaggio di debug}
+\end{figure}
+
+\subsubsection{Download del messaggio di debug}
+
+E' possibile scaricare il messaggio generato cliccando il simbolo di download rosso in alto a destra in modo da conservarlo in locale e utilizzarlo per migliorare il \glossario{dizionario dati} o per produrre analisi a posteriori.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{assets/tasto_dawnload_debug.png}
+  \caption{Tasto download del messaggio di debug}
+\end{figure}
+
+
+
+
+
