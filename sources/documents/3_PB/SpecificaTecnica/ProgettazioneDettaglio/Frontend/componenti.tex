@@ -1,5 +1,51 @@
 \subsection{Front-end}
 
+% App Layout
+\subsubsection{AppLayout}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Layout Wrapper: aggiorna lo stile dell'applicazione in base alle configurazioni del sistema;
+  \item Outside Click Listener: i menu vengono chiusi quando viene effettuato un clic al di fuori di questi elementi;
+  \item Scroll To Top: pulsante per tornare rapidamente all'inizio della pagina;
+  \item Toast Message: messaggio di notifica per fornire feedback all'utente.
+\end{itemize}
+
+% Chat View
+\subsubsection{ChatView}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Selected Dictionary Name: nome ed estensione del \glossario{dizionario dati} selezionato dall'utente;
+  \item Toggle Select View: pulsante per visualizzare o nascondere il form di selezione del dizionario dati, della lingua e del \glossario{DBMS};
+  \item Select Dictionary Dropdown: menu a discesa per selezionare un dizionario dati;
+  \item Toggle Details: pulsante per visualizzare o nascondere l'anteprima di un dizionario dati;
+  \item Select DBMS Dropdown: menu a discesa per selezionare un DBMS;
+  \item Select Language Dropdown: menu a discesa per selezionare una lingua;
+  \item Chat Container: contenitore per i messaggi della chat;
+  \item Chat Textarea: campo di testo per inserire una richiesta da inviare al ChatBOT;
+  \item Request Button: pulsante per inviare la richiesta;
+  \item Loading Spinner: indica che la generazione del \glossario{prompt} è ancora in corso.
+\end{itemize}
+
+% Dictionaries List View
+\subsubsection{DictionariesListView}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Create Dictionary Button: pulsante per aprire la finestra di inserimento di un \glossario{dizionario dati};
+  \item Dictionary Data Table: tabella contenente i seguenti campi:
+  \begin{itemize}
+    \item Dictionary Name: nome del dizionario dati;
+    \item Dictionary Description: descrizione del dizionario dati;
+    \item Update Metadata Button: pulsante per aprire la finestra di modifica dei metadati (nome e descrizione);
+    \item Update File Button: pulsante per aprire la finestra di modifica del file;
+    \item Download File Button: pulsante per scaricare il file relativo a un dizionario dati;
+    \item Delete Dictionary Button: pulsante per eliminare un dizionario dati.
+  \end{itemize}
+\end{itemize}
+
+% Login Dialog
 \subsubsection{LoginDialog}
 
 \paragraph*{Elementi chiave}
@@ -10,20 +56,23 @@
   \item Password Input: campo di testo per l'inserimento della password;
   \item V-Model: crea un binding bidirezionale tra i campi di input e le rispettive variabili;
   \item Login Button: pulsante per richiedere l'accesso all'area di amministrazione;
-  \item Error Message: messaggio di errore per notificare all'utente che:
+  \item Status Message: messaggio per notificare all'utente che:
   \begin{itemize}
+    \item Il login è avvenuto con successo;
     \item L'utente non è autorizzato ad accedere all'area di amministrazione;
     \item Le credenziali inserite non sono corrette;
     \item Il server non è raggiungibile.
   \end{itemize}
 \end{itemize}
 
+% Chat Message
 \subsubsection{ChatMessage}
 
 \paragraph*{Props}
 \begin{itemize}
   \item Message: testo del messaggio;
-  \item IsSent: flag per indicare se il messaggio è stato inviato o ricevuto dall'utente.
+  \item IsSent: flag per indicare se il messaggio è stato inviato o ricevuto dall'utente;
+  \item Debug (opzionale): contenuto del messaggio di \glossario{debug}.
 \end{itemize}
 
 \paragraph*{Elementi chiave}
@@ -31,9 +80,35 @@
   \item Message Card: contenitore per il messaggio. La disposizione e il colore del contenitore variano in base al mittente del messaggio;
   \item Avatar: icona del mittente. L'avatar è posizionato a sinistra o a destra del messaggio in base al mittente;
   \item Message Text: testo del messaggio;
-  \item Copy Button: pulsante per copiare il testo del messaggio negli Appunti di sistema.
+  \item Copy Button: pulsante per copiare il testo del messaggio negli Appunti di sistema;
+  \item Debug Button: pulsante per aprire la finestra modale contenente il messaggio di debug. Il pulsante è disponibile solo per il profilo Tecnico.
 \end{itemize}
 
+% String Data Modal
+\subsubsection{StringDataModal}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Modal: finestra modale responsive;
+  \item Close Dialog: pulsante per chiudere la finestra modale;
+  \item String Data: stringa di testo da visualizzare nel dialog.
+\end{itemize}
+
+% Debug Message
+\subsubsection{DebugMessage}
+
+\paragraph*{Props}
+\begin{itemize}
+  \item Message: testo del messaggio.
+\end{itemize}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Message Text: testo del messaggio;
+  \item Download Button: pulsante per scaricare un file di \glossario{log}.
+\end{itemize}
+
+% Dict Preview
 \subsubsection{DictPreview}
 
 \paragraph*{Props}
@@ -58,6 +133,7 @@
   \item Collapse Button: pulsante per ridurre la dimensione della Preview Card.
 \end{itemize}
 
+% Chat Delete Btn
 \subsubsection{ChatDeleteBtn}
 
 \paragraph*{Props}
@@ -80,6 +156,57 @@
   \end{itemize}
 \end{itemize}
 
+% Create Update Dictionary Modal 
+\subsubsection{CreateUpdateDictionaryModal}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Close Dialog: pulsante per chiudere la finestra modale;
+  \item Dictionary Name Input: campo di testo per inserire o modificare il nome di un \glossario{dizionario dati};
+  \item Dictionary Description Input: campo di testo per inserire o modificare la descrizione di un dizionario dati;
+  \item File Uploader: componente per caricare il file relativo a un dizionario dati;
+  \item Clear File Button: pulsante per annullare il caricamento del file;
+  \item Submit Button: pulsante per richiedere il salvataggio dei dati;
+  \item Loading Spinner: indica che il salvataggio del dizionario dati e del rispettivo \glossario{indice} è ancora in corso.
+\end{itemize}
+
+% App Topbar
+\subsubsection{AppTopbar}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Logo: logo dell'applicazione, affiancato dal nome del progetto (per migliorare l'accessibilità);
+  \item Open Main Nav Button: pulsante per aprire il menu di navigazione principale;
+  \item Open Config Menu Button: pulsante per aprire il menu di configurazione del sistema;
+  \item Open Settings Button: pulsante per aprire la barra laterale di impostazioni;
+  \item Open Login Dialog Button: pulsante per aprire la finestra di autenticazione;
+  \item Logout Button: pulsante per effettuare il logout;
+  \item Confirmation Dialog: finestra per confermare o rifiutare il logout;
+  \item Outside Click Listener: i menu vengono chiusi quando viene effettuato un clic al di fuori di questi elementi.
+\end{itemize}
+
+% Menu Sidebar
+\subsubsection{MenuSidebar}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Close Main Nav Button: pulsante per chiudere il menu di navigazione principale;
+  \item App Menu: menu di navigazione principale;
+  \item App Footer: footer dell'applicazione.
+\end{itemize}
+
+% Config Sidebar
+\subsubsection{ConfigSidebar}
+
+\paragraph*{Elementi chiave}
+\begin{itemize}
+  \item Decrement Scale Button: pulsante per diminuire la dimensione degli elementi nell'interfaccia;
+  \item Increment Scale Button: pulsante per ingrandire la dimensione degli elementi nell'interfaccia;
+  \item Change Theme Switch: interruttore per alternare il tema dell'interfaccia tra la modalità chiara e quella scura;
+  \item Change Language Dropdown: menu a discesa per selezionare la lingua dell'interfaccia.
+\end{itemize}
+
+% App Menu
 \subsubsection{AppMenu}
 
 \paragraph*{Elementi chiave}
@@ -91,6 +218,7 @@
   \item Menu Link: stringa contenente il percorso della voce di menu.
 \end{itemize}
 
+% App Menu Item
 \subsubsection{AppMenuItem}
 
 \paragraph*{Props}
@@ -110,6 +238,7 @@
   \item Sub Menu: contenitore per le voci di menu figlie.
 \end{itemize}
 
+% App Logo
 \subsubsection{AppLogo}
 
 \paragraph*{Props}
@@ -124,6 +253,7 @@
   \item Filter: funzionalità per invertire il colore del logo da bianco a nero (in base al tema attivo).
 \end{itemize}
 
+% App Footer
 \subsubsection{AppFooter}
 
 \paragraph*{Elementi chiave}

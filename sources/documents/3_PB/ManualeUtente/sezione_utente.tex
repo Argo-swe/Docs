@@ -1,8 +1,19 @@
 \section{Sezione Utente}
 \label{sec:sezUtente}
 
+\subsection{Visualizzazione mobile}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.50\textwidth]{assets/mobile.png}
+  \caption{Versione mobile dell'applicazione}
+\end{figure}
+\par L'applicazione è stata progettata per essere fruibile anche da dispositivi mobili per garantire una buona esperienza d'uso con schermi touch screen di piccole dimensioni.  
+\par Per migliorare la navigazione da dispositivi mobili, il menù principale, di default è nascosto e può essere aperto cliccando l'icona a tre linee \includegraphics[height=1.2em]{assets/dd_burger_menu.png} in alto a sinistra.
+\par Le viste dell'applicazione occupano tutta la grandezza dello schermo, per dare più spazio possibile al contenuto principale.
+\par Per ridurre l'ingombro dello schermo, i bottoni di login e delle impostazioni di sistema, sono accessibili mostrando un menù a tendina, cliccando sull'icona a tre puntini \includegraphics[height=1.2em]{assets/dd_kebab_menu.png} in alto a destra.
+
 \subsection{Impostazioni di sistema}
-Nella sezione superiore destra dell'interfaccia, cliccando sull'icona impostazioni \includegraphics[height=1.2em]{assets/settings_icon.png} apparirà il menu laterale delle impostazioni di sistema.
+Nella sezione superiore destra dell'interfaccia, cliccando sull'icona impostazioni \includegraphics[height=1.2em]{assets/settings_icon.png}, apparirà il menu laterale delle impostazioni di sistema.
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{assets/settings_topbar.png}
@@ -20,3 +31,34 @@ Nella sezione superiore destra dell'interfaccia, cliccando sull'icona impostazio
   \item Lingua: selezione della lingua dell'interfaccia tra inglese e italiano (non cambia la lingua del \glossario{prompt} prodotto da ChatSQL, che rimane sempre in inglese).
 \end{itemize}
 \par Le modifiche apportate verranno memorizzate automaticamente, e applicate alla successiva apertura dell'applicazione.
+
+\subsection{Workflow}
+\par Nell'utilizzo di ChatSQL, il flusso più comune da seguire per ottenere una query SQL è:
+\begin{enumerate}
+  \item Accedere alla pagina Chat selezionandola dal menu di navigazione principale;
+  \item Selezionare il \glossario{dizionario dati} desiderato;
+  \item Selezionare il \glossario{DBMS desiderato};
+  \item Selezionare la lingua desiderata;
+  \item Inserire una richiesta in linguaggio naturale e attendere la generazione del \glossario{prompt};
+  \item Copiare il prompt generato cliccando sull'apposito pulsante in alto a destra all'interno del messaggio fornito dal ChatBOT;
+  \item Incollare il prompt in un modello \glossario{LLM} a scelta (come ChatGPT) e attendere la generazione della query SQL.
+\end{enumerate}
+
+\vspace{\baselineskip}
+\par Di seguito è riportata una figura che illustra nel dettaglio il flusso da seguire per ottenere una query SQL da utilizzare per interrogare database reali.
+
+\begin{figure}[H]
+  \fbox{
+  \begin{tabular}{cc}
+    \includegraphics[width=65mm]{assets/workflow_1.png} &   \includegraphics[width=65mm]{assets/workflow_2.png} \\
+    1 & 2 \\[6pt]
+     \includegraphics[width=65mm]{assets/workflow_3.png} &   \includegraphics[width=65mm]{assets/workflow_4.png} \\
+    3 & 4 \\[6pt]
+   \includegraphics[width=65mm]{assets/workflow_5.png} &   \includegraphics[width=65mm]{assets/workflow_6.png} \\
+    5 & 6 \\[6pt]
+    \multicolumn{2}{c}{\includegraphics[width=65mm]{assets/workflow_7.png}}\\
+    \multicolumn{2}{c}{7}
+  \end{tabular}}
+  \caption{Workflow per ottenere una query SQL}
+\end{figure}
+\par L'output atteso dal modello LLM è una query SQL che soddisfa la richiesta inserita, che potrà essere eseguita su un DBMS per ottenere i risultati desiderati.

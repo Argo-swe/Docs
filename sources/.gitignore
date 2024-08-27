@@ -1,5 +1,7 @@
 #Latex
 build-output/*
+documents/1_Candidatura/*
+documents/2_RTB/*
 *.aux
 *.toc
 *.log

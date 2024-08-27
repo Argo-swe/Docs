@@ -1,0 +1,67 @@
+\section{Riunione}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\item Scelta definitiva del modello architetturale;
+	\item Configurazione di SonarCloud;
+	\item Inizio progettazione di dettaglio;
+	\item Divisione delle attività tra progettisti.
+\end{itemize}
+
+\subsection{Discussione e decisioni}
+\subsubsection{Scelta del modello architetturale}
+\par All'inizio della riunione, la priorità è stata la scelta definitiva dell'architettura da implementare, basata sullo studio della fattibilità di diverse opzioni durante lo \glossario{sprint} precedente. Il gruppo ha optato per un'architettura client-server con un modello esagonale per sviluppare il sistema ChatSQL. Questa decisione è stata presa per garantire un'elevata modularità, manutenibilità e scalabilità. L'architettura esagonale consente di mantenere la logica di business (core) isolata dal resto del sistema, facilitando l'integrazione con servizi esterni tramite porte e adattatori. La flessibilità di questa architettura permette di adattarsi facilmente ai diversi contesti applicativi, mentre la robustezza del core minimizza i rischi di manutenzione nel tempo.
+
+\par Il team ha analizzato i punti che devono essere trattati all'interno del documento di \ST\ e ha organizzato le due sezioni principali: \glossario{front-end} e \glossario{back-end}.
+
+\subsubsection{Configurazione di SonarCloud}
+
+\par Il gruppo ha configurato SonarCloud, uno strumento essenziale per l'analisi della qualità del codice. SonarCloud è stato integrato nel repository \glossario{GitHub} del progetto, permettendo di monitorare costantemente metriche non banali come la complessità ciclomatica, la duplicazione del codice e la copertura dei test. L'obiettivo primario di questa configurazione è garantire un elevato standard qualitativo del codice, identificando e rimuovendo potenziali difetti. La configurazione è stata completata con successo, e SonarCloud è ora in grado di eseguire analisi automatiche ad ogni push o \glossario{pull request}, fornendo un feedback immediato agli sviluppatori.
+
+\subsubsection{Inizio progettazione di dettaglio}
+\par Durante l'incontro, il team ha sfruttato l'opportunità di essere riunito in presenza per definire l'ordine e la struttura delle cartelle all'interno del \glossario{repository} remoto. Questa attività ha permesso di stabilire una base organizzativa solida, garantendo che ogni membro avesse chiara la disposizione dei file e il flusso di lavoro previsto. Inoltre, è stata avviata la progettazione iniziale del sistema, discutendo e condividendo idee per l'implementazione delle funzionalità principali, assicurando un approccio coerente e collaborativo.
+
+\subsubsection{Divisione delle attività tra progettisti}
+\par Il team di progettisti è stato suddiviso in due sottogruppi per ottimizzare il lavoro e avanzare parallelamente su più fronti. Tre membri del gruppo si occuperanno della scrittura del codice, concentrandosi sull'implementazione del \glossario{front-end} e del \glossario{back-end}. Il resto del team, invece, si dedicherà alla realizzazione del diagramma delle classi, con l'obiettivo di definire chiaramente la struttura e le relazioni tra i componenti del sistema. Questa suddivisione permetterà di sfruttare al meglio le competenze di ciascun progettista e di procedere in modo coordinato.
+
+\subsubsection{Stato di avanzamento del progetto}
+\par Il gruppo ha discusso i punti da trattare nella mail di aggiornamento sullo stato di avanzamento del progetto, che verrà inviata al Committente.
+\paragraph{Done}
+\begin{itemize}
+	\item Scelto il modello architetturale per il \glossario{back-end};
+	\item Stesura sezione architettura in \ST;
+	\item Completata progettazione logica del back-end;
+	\item Completata progettazione di dettaglio del \glossario{front-end};
+	\item Avanzamento codifica front-end e back-end;
+	\item Gestione centralizzata degli errori a front-end;
+	\item Definizione di interfacce e tipi con \glossario{TypeScript};
+	\item Consuntivo \glossario{sprint} 10;
+	\item Pianificazione e preventivo sprint 11;
+	\item Aggiornamento delle \NdP;
+	\item Aggiornamento dei grafici nel \PdQ;
+	\item Configurazione dell'ambiente di test front-end e back-end;
+	\item Progettazione test di unità;
+	\item Configurazione di strumenti per automatizzare la formattazione e il linting del codice;
+	\item Definizione di un workflow su \glossario{GitHub} per automatizzare formattazione, linting e test;
+	\item Organizzazione di un incontro in presenza a Padova;
+	\item Stesura \MU\ nelle seguenti sezioni:
+	\begin{itemize}
+		\item Chat;
+		\item Gestione dizionari dati;
+		\item Configurazione delle impostazioni;
+		\item Visualizzazione mobile.
+	\end{itemize}
+	\item Configurazione di SonarLint e SonarCloud per calcolare alcune metriche di qualità del codice (complessità ciclomatica, duplicazione, sicurezza).
+\end{itemize}
+
+\paragraph{To Do} (vedi \sezione{sec:todo})
+\begin{itemize}
+	\item Avanzamento progettazione di dettaglio back-end;
+	\item Avanzamento codifica e testing front-end e back-end;
+	\item Completare sezione debug (front-end);
+	\item Modifica tipi di ritorno del metodo di generazione del prompt;
+	\item Stesura tracciamento dei requisiti in \ST;
+	\item Aggiornamento documenti (\PdQ, \ST, \MU);
+	\item Individuazione di strumenti per calcolare automaticamente le metriche di qualità del codice.
+\end{itemize}
+
+
