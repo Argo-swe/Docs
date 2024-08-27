@@ -6,7 +6,7 @@
     \item \textbf{Implementazione:} Questa classe implementa la porta \texttt{AuthenticationUseCase}.
     \item \textbf{Attributi:}
     \begin{itemize}
-        \item \texttt{authentication\_repository: AuthenticationRepository}: la repository usata per il recupero dei dati.
+        \item \texttt{authentication\_repository: AuthenticationRepository}: la \glossario{repository} usata per il recupero dei dati.
     \end{itemize}
     \item \textbf{Metodi:}
     \begin{itemize}
@@ -57,13 +57,13 @@
     \item \textbf{Implementazione:} questa classe implementa la porta \texttt{PromptUseCase}. 
     \item \textbf{Attributi:}
     \begin{itemize}
-        \item \texttt{dictionary\_service: DictionaryService}: il servizio per la gestione dei dizionari dati;
+        \item \texttt{dictionary\_service: DictionaryService}: il servizio per la gestione dei \glossario{dizionario dati};
         \item \texttt{prompt\_manager: PromptManagerPort}: il gestore della generazione dei prompt;
     \end{itemize}
     \item \textbf{Metodi:}
     \begin{itemize}
         \item \texttt{+ generate\_prompt(dictionary\_id: integer, query: string, dbms: string, language: string): StringDataResponseDto}: genera un prompt per un dizionario dato il suo id, la richiesta inserita, il dbms e la lingua selezionati;
-        \item \texttt{+ generate\_prompt\_with\_debug(dictionary\_id: integer, query: string, dbms: string, language: string): PromptResponseDto}: genera un prompt con le informazioni di debug;
+        \item \texttt{+ generate\_prompt\_with\_debug(dictionary\_id: integer, query: string, dbms: string, language: string): PromptResponseDto}: genera un prompt con le informazioni di \glossario{debug};
         \item \texttt{- generate\_prompt(dictionary\_id: integer, query: string, dbms: string, language: string, log: bool): tuple}: metodo interno per la generazione del prompt usando il prompt manager.
     \end{itemize}
     \item \textbf{Dipendenze:}
