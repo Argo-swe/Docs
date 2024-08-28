@@ -27,6 +27,80 @@
 		\hline
 		\endlastfoot
 
+
+	%sql_alchemy_authentication_repository_adapter
+		\hline TU & Verificare che il metodo "get_user_by_username" della classe "SqlAlchemyAuthenticationRepositoryAdapter" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve recuperare correttamente un utente esistente nel database in base al nome utente, assicurando che la query venga eseguita sul modello "Admins" con il filtro appropriato;
+		\item Deve restituire "None" se l'utente con il nome utente specificato non esiste nel database, verificando che la query venga eseguita correttamente sul modello "Admins" con il filtro appropriato.
+	\end{itemize} & S \\
+
+	%sql_alchemy_db_manager_factory
+		\hline TU & Verificare che il metodo "create_authentication_repository" della classe "SqlAlchemyDbManagerFactory" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve creare e restituire correttamente un'istanza di "SqlAlchemyAuthenticationRepositoryAdapter";
+		\item Deve sollevare un'eccezione se si verifica un errore durante la creazione del repository di autenticazione;
+		\item Deve garantire che il tipo di repository restituito sia corretto, ossia un'istanza di "SqlAlchemyAuthenticationRepositoryAdapter".
+	\end{itemize} & S \\
+
+		\hline TU & Verificare che il metodo "create_dictionary_repository" della classe "SqlAlchemyDbManagerFactory" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve creare e restituire correttamente un'istanza di "SqlAlchemyDictionaryRepositoryAdapter";
+		\item Deve sollevare un'eccezione se si verifica un errore durante la creazione del repository di dizionari;
+		\item Deve creare una nuova istanza del repository di dizionari ad ogni chiamata, verificando che più chiamate al metodo restituiscano istanze distinte;
+		\item Deve garantire che il tipo di repository restituito sia corretto, ossia un'istanza di "SqlAlchemyDictionaryRepositoryAdapter".
+	\end{itemize} & S \\
+
+		\hline TU & Verificare che l'inizializzazione della classe "SqlAlchemyDbManagerFactory" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve chiamare il metodo "create_all" durante l'inizializzazione per assicurare che tutte le tabelle del database siano create, utilizzando l'engine corretto.
+	\end{itemize} & S \\
+		
+	%sql_alchemy_dictionary_respository_adapter
+		\hline TU & Verificare che il metodo "create_dictionary" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve creare correttamente un nuovo dizionario e salvarlo nel database, verificando che le proprietà del dizionario siano impostate correttamente e che le operazioni di add, commit e refresh siano chiamate;
+		\item Deve sollevare un'eccezione se si verifica un errore durante il commit del dizionario nel database.
+	\end{itemize} & S \\
+
+	\hline TU & Verificare che il metodo "update_dictionary" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve aggiornare correttamente le proprietà di un dizionario esistente e salvare le modifiche nel database, verificando che le operazioni di commit e refresh siano chiamate;
+		\item Deve sollevare un'eccezione se si verifica un errore durante il commit delle modifiche al dizionario nel database;
+		\item Deve sollevare un'eccezione "AttributeError" se si tenta di aggiornare un dizionario inesistente.
+	\end{itemize} & S \\
+
+	\hline TU & Verificare che il metodo "delete_dictionary" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve eliminare correttamente un dizionario esistente dal database, verificando che le operazioni di delete e commit siano chiamate;
+		\item Non deve tentare di eliminare un dizionario inesistente, verificando che le operazioni di delete e commit non siano chiamate;
+		\item Deve sollevare un'eccezione se si verifica un errore durante l'eliminazione di un dizionario nel database e assicurarsi che commit non sia chiamato;
+		\item Deve garantire che l'operazione di commit venga sempre eseguita dopo l'eliminazione di un dizionario.
+	\end{itemize} & S \\
+
+	\hline TU & Verificare che il metodo "get_all_dictionaries" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve restituire correttamente tutti i dizionari presenti nel database, verificando che la query sia eseguita sul modello "Dictionaries" e che il metodo all() venga chiamato.
+	\end{itemipo} & S \\
+
+	\hline TU & Verificare che il metodo "get_dictionary_by_id" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve restituire correttamente un dizionario in base all'ID fornito, verificando che la query sia eseguita sul modello "Dictionaries" e che il filtro venga applicato correttamente.
+	\end{itemize} & S \\
+
+	\hline TU & Verificare che il metodo "get_dictionary_by_name" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve restituire correttamente un dizionario in base al nome fornito, verificando che la query sia eseguita sul modello "Dictionaries" e che il filtro venga applicato correttamente.
+	\end{itemize} & S \\
+
+	%db_manager_factory
+		\hline TU & Verificare che il metodo "create" della classe "SqlAlchemyDbManagerFactory" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve creare e restituire un'istanza di "SqlAlchemyDbManagerFactory" quando la configurazione specifica l'uso di SQLAlchemy come DB manager;
+		\item Deve sollevare un'eccezione "ValueError" se la configurazione contiene un tipo di DB manager sconosciuto, con un messaggio di errore che indichi il tipo sconosciuto;
+		\item Deve sollevare un'eccezione "ValueError" se la configurazione manca della chiave "db_manager", con un messaggio di errore che indichi l'assenza di tale chiave.
+	\end{itemize} & S \\
+		
 	%txtai_prompt_manager_adapter
 		\hline TU & Verificare che il metodo "prompt_generator" della classe "TxtaiPromptManagerAdapter" soddisfi le seguenti condizioni:
 	\begin{itemize}
@@ -126,7 +200,6 @@
 		\item Deve restituire un log corretto quando viene passata una lista con più tuple, riportando i dettagli e i termini rilevanti per ogni descrizione.
 	\end{itemize} & S \\
 
-		
 	%componenti
 		\hline TU & Verificare che il componente "AppLogo" soddisfi le seguenti condizioni:
     \begin{itemize}
