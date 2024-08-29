@@ -27,6 +27,13 @@
 		\hline
 		\endlastfoot
 
+	%json_schema_validator_adapter
+		\hline TU & Verificare che il metodo "validate" della classe "JsonSchemaValidatorAdapter" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve restituire True se lo schema è validato secondo il modello di confronto per la validazione;
+		\item Deve restituire False se lo schema non è validato secondo il modello di confronto per la validazione;
+		\item Deve sollevare un'eccezione se non viene trovato il file con il modello di confronto per la validazione.
+	\end{itemize} & S \\
 
 	%sql_alchemy_authentication_repository_adapter
 		\hline TU & Verificare che il metodo "get\_user\_by\_username" della classe "SqlAlchemyAuthenticationRepositoryAdapter" soddisfi le seguenti condizioni:
@@ -198,6 +205,40 @@
 		\item Deve restituire un log appropriato quando viene passata una lista vuota di tuple, includendo l'indicazione che non sono state trovate tabelle rilevanti;
 		\item Deve restituire un log dettagliato della ricerca semantica quando viene passata una singola tupla, includendo i termini più rilevanti;
 		\item Deve restituire un log corretto quando viene passata una lista con più tuple, riportando i dettagli e i termini rilevanti per ogni descrizione.
+	\end{itemize} & S \\
+
+	%json_file_adapter
+		\hline TU & Verificare che il metodo "save" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve apritre un file con permessi di scrittura;
+		\item Deve eseguire almeno un'operazione di scrittura sul file aperto.
+	\end{itemize} & S \\
+
+		\hline TU & Verificare che il metodo "load" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve restituire il path del file di schema.
+	\end{itemize} & S \\
+
+		\hline TU & Verificare che il metodo "delete" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve eseguire l'operazione di verifica di presenza del file;
+		\item Deve eseguire l'operazione di eliminazione del file.
+	\end{itemize} & S \\
+
+		\hline TU & Verificare che il metodo "get\_preview" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve restituire None se non è presente lo schema;
+		\item Deve restituire un oggetto che rappresenti lo schema se presente.
+	\end{itemize} & S \\
+
+		\hline TU & Verificare che il metodo "extract\_index\_metadata" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve restituire l'indicizzzazione di tutte le colonne per ogni tabella.
+	\end{itemize} & S \\
+
+		\hline TU & Verificare che il metodo "extract\_schema\_metadata" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
+	\begin{itemize}
+		\item Deve restituire la rappresentazione delle tabelle facenti parte dello schema e delle chiavi esterne.
 	\end{itemize} & S \\
 
 	%componenti
