@@ -27,231 +27,226 @@
 		\hline
 		\endlastfoot
 
-	%json_schema_validator_adapter
+		%json_schema_validator_adapter
 		\hline TU & Verificare che il metodo "validate" della classe "JsonSchemaValidatorAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve restituire True se lo schema è validato secondo il modello di confronto per la validazione;
-		\item Deve restituire False se lo schema non è validato secondo il modello di confronto per la validazione;
-		\item Deve sollevare un'eccezione se non viene trovato il file con il modello di confronto per la validazione.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve restituire True se lo schema è validato secondo il modello di confronto per la validazione;
+			\item Deve restituire False se lo schema non è validato secondo il modello di confronto per la validazione;
+			\item Deve sollevare un'eccezione se non viene trovato il file con il modello di confronto per la validazione.
+		\end{itemize} & S \\
 
-	%sql_alchemy_authentication_repository_adapter
+		%sql_alchemy_authentication_repository_adapter
 		\hline TU & Verificare che il metodo "get\_user\_by\_username" della classe "SqlAlchemyAuthenticationRepositoryAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve recuperare correttamente un utente esistente nel database in base al nome utente, assicurando che la query venga eseguita sul modello "Admins" con il filtro appropriato;
-		\item Deve restituire "None" se l'utente con il nome utente specificato non esiste nel database, verificando che la query venga eseguita correttamente sul modello "Admins" con il filtro appropriato.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve recuperare correttamente un utente esistente nel database in base al nome utente, assicurando che la query venga eseguita sul modello "Admins" con il filtro appropriato;
+			\item Deve restituire "None" se l'utente con il nome utente specificato non esiste nel database, verificando che la query venga eseguita correttamente sul modello "Admins" con il filtro appropriato.
+		\end{itemize} & S \\
 
-	%sql_alchemy_db_manager_factory
+		%sql_alchemy_db_manager_factory
 		\hline TU & Verificare che il metodo "create\_authentication\_repository" della classe "SqlAlchemyDbManagerFactory" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve creare e restituire correttamente un'istanza di "SqlAlchemyAuthenticationRepositoryAdapter";
-		\item Deve sollevare un'eccezione se si verifica un errore durante la creazione del repository di autenticazione;
-		\item Deve garantire che il tipo di repository restituito sia corretto, ossia un'istanza di "SqlAlchemyAuthenticationRepositoryAdapter".
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve creare e restituire correttamente un'istanza di "SqlAlchemyAuthenticationRepositoryAdapter";
+			\item Deve sollevare un'eccezione se si verifica un errore durante la creazione del repository di autenticazione;
+			\item Deve garantire che il tipo di repository restituito sia corretto, ossia un'istanza di "SqlAlchemyAuthenticationRepositoryAdapter".
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "create\_dictionary\_repository" della classe "SqlAlchemyDbManagerFactory" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve creare e restituire correttamente un'istanza di "SqlAlchemyDictionaryRepositoryAdapter";
-		\item Deve sollevare un'eccezione se si verifica un errore durante la creazione del repository di dizionari;
-		\item Deve creare una nuova istanza del repository di dizionari ad ogni chiamata, verificando che più chiamate al metodo restituiscano istanze distinte;
-		\item Deve garantire che il tipo di repository restituito sia corretto, ossia un'istanza di "SqlAlchemyDictionaryRepositoryAdapter".
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve creare e restituire correttamente un'istanza di "SqlAlchemyDictionaryRepositoryAdapter";
+			\item Deve sollevare un'eccezione se si verifica un errore durante la creazione del repository di dizionari;
+			\item Deve creare una nuova istanza del repository di dizionari ad ogni chiamata, verificando che più chiamate al metodo restituiscano istanze distinte;
+			\item Deve garantire che il tipo di repository restituito sia corretto, ossia un'istanza di "SqlAlchemyDictionaryRepositoryAdapter".
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che l'inizializzazione della classe "SqlAlchemyDbManagerFactory" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve chiamare il metodo "create\_all" durante l'inizializzazione per assicurare che tutte le tabelle del database siano create, utilizzando l'engine corretto.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve chiamare il metodo "create\_all" durante l'inizializzazione per assicurare che tutte le tabelle del database siano create, utilizzando l'engine corretto.
+		\end{itemize} & S \\
 
-	%sql_alchemy_dictionary_respository_adapter
+		%sql_alchemy_dictionary_respository_adapter
 		\hline TU & Verificare che il metodo "create\_dictionary" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve creare correttamente un nuovo dizionario e salvarlo nel database, verificando che le proprietà del dizionario siano impostate correttamente e che le operazioni di add, commit e refresh siano chiamate;
-		\item Deve sollevare un'eccezione se si verifica un errore durante il commit del dizionario nel database.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve creare correttamente un nuovo dizionario e salvarlo nel database, verificando che le proprietà del dizionario siano impostate correttamente e che le operazioni di add, commit e refresh siano chiamate;
+			\item Deve sollevare un'eccezione se si verifica un errore durante il commit del dizionario nel database.
+		\end{itemize} & S \\
 
-	\hline TU & Verificare che il metodo "update\_dictionary" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve aggiornare correttamente le proprietà di un dizionario esistente e salvare le modifiche nel database, verificando che le operazioni di commit e refresh siano chiamate;
-		\item Deve sollevare un'eccezione se si verifica un errore durante il commit delle modifiche al dizionario nel database;
-		\item Deve sollevare un'eccezione "AttributeError" se si tenta di aggiornare un dizionario inesistente.
-	\end{itemize} & S \\
+		\hline TU & Verificare che il metodo "update\_dictionary" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve aggiornare correttamente le proprietà di un dizionario esistente e salvare le modifiche nel database, verificando che le operazioni di commit e refresh siano chiamate;
+			\item Deve sollevare un'eccezione se si verifica un errore durante il commit delle modifiche al dizionario nel database;
+			\item Deve sollevare un'eccezione "AttributeError" se si tenta di aggiornare un dizionario inesistente.
+		\end{itemize} & S \\
 
-	\hline TU & Verificare che il metodo "delete\_dictionary" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve eliminare correttamente un dizionario esistente dal database, verificando che le operazioni di delete e commit siano chiamate;
-		\item Non deve tentare di eliminare un dizionario inesistente, verificando che le operazioni di delete e commit non siano chiamate;
-		\item Deve sollevare un'eccezione se si verifica un errore durante l'eliminazione di un dizionario nel database e assicurarsi che commit non sia chiamato;
-		\item Deve garantire che l'operazione di commit venga sempre eseguita dopo l'eliminazione di un dizionario.
-	\end{itemize} & S \\
+		\hline TU & Verificare che il metodo "delete\_dictionary" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve eliminare correttamente un dizionario esistente dal database, verificando che le operazioni di delete e commit siano chiamate;
+			\item Non deve tentare di eliminare un dizionario inesistente, verificando che le operazioni di delete e commit non siano chiamate;
+			\item Deve sollevare un'eccezione se si verifica un errore durante l'eliminazione di un dizionario nel database e assicurarsi che commit non sia chiamato;
+			\item Deve garantire che l'operazione di commit venga sempre eseguita dopo l'eliminazione di un dizionario.
+		\end{itemize} & S \\
 
-	\hline TU & Verificare che il metodo "get\_all\_dictionaries" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve restituire correttamente tutti i dizionari presenti nel database, verificando che la query sia eseguita sul modello "Dictionaries" e che il metodo all() venga chiamato.
-	\end{itemize} & S \\
+		\hline TU & Verificare che il metodo "get\_all\_dictionaries" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve restituire correttamente tutti i dizionari presenti nel database, verificando che la query sia eseguita sul modello "Dictionaries" e che il metodo all() venga chiamato.
+		\end{itemize} & S \\
 
-	\hline TU & Verificare che il metodo "get\_dictionary\_by\_id" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve restituire correttamente un dizionario in base all'ID fornito, verificando che la query sia eseguita sul modello "Dictionaries" e che il filtro venga applicato correttamente.
-	\end{itemize} & S \\
+		\hline TU & Verificare che il metodo "get\_dictionary\_by\_id" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve restituire correttamente un dizionario in base all'ID fornito, verificando che la query sia eseguita sul modello "Dictionaries" e che il filtro venga applicato correttamente.
+		\end{itemize} & S \\
 
-	\hline TU & Verificare che il metodo "get\_dictionary\_by\_name" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve restituire correttamente un dizionario in base al nome fornito, verificando che la query sia eseguita sul modello "Dictionaries" e che il filtro venga applicato correttamente.
-	\end{itemize} & S \\
+		\hline TU & Verificare che il metodo "get\_dictionary\_by\_name" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve restituire correttamente un dizionario in base al nome fornito, verificando che la query sia eseguita sul modello "Dictionaries" e che il filtro venga applicato correttamente.
+		\end{itemize} & S \\
 
-	%db_manager_factory
+		%db_manager_factory
 		\hline TU & Verificare che il metodo "create" della classe "SqlAlchemyDbManagerFactory" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve creare e restituire un'istanza di "SqlAlchemyDbManagerFactory" quando la configurazione specifica l'uso di SQLAlchemy come DB manager;
-		\item Deve sollevare un'eccezione "ValueError" se la configurazione contiene un tipo di DB manager sconosciuto, con un messaggio di errore che indichi il tipo sconosciuto;
-		\item Deve sollevare un'eccezione "ValueError" se la configurazione manca della chiave "db\_manager", con un messaggio di errore che indichi l'assenza di tale chiave.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve creare e restituire un'istanza di "SqlAlchemyDbManagerFactory" quando la configurazione specifica l'uso di SQLAlchemy come DB manager;
+			\item Deve sollevare un'eccezione "ValueError" se la configurazione contiene un tipo di DB manager sconosciuto, con un messaggio di errore che indichi il tipo sconosciuto;
+			\item Deve sollevare un'eccezione "ValueError" se la configurazione manca della chiave "db\_manager", con un messaggio di errore che indichi l'assenza di tale chiave.
+		\end{itemize} & S \\
 
-	%txtai_prompt_manager_adapter
+		%txtai_prompt_manager_adapter
 		\hline TU & Verificare che il metodo "prompt\_generator" della classe "TxtaiPromptManagerAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve generare correttamente il prompt includendo la richiesta dell'utente e i metadati dello schema, quando vengono trovati risultati rilevanti;
-		\item Deve restituire un messaggio di errore specifico quando non vengono trovati risultati rilevanti;
-		\item Deve generare e restituire correttamente il log delle fasi 1 e 2 se la registrazione dei log è attivata;
-		\item Deve gestire correttamente il caso in cui la richiesta dell'utente è vuota, restituendo un messaggio appropriato;
-		\item Deve generare il prompt nella lingua specificata, riflettendo la configurazione della lingua;
-		\item Deve generare il prompt adattato al DBMS specificato, riflettendo la configurazione del DBMS;
-		\item Deve gestire correttamente i fallimenti durante l'estrazione dei metadati dallo schema, restituendo un messaggio di errore appropriato o sollevando un'eccezione.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve generare correttamente il prompt includendo la richiesta dell'utente e i metadati dello schema, quando vengono trovati risultati rilevanti;
+			\item Deve restituire un messaggio di errore specifico quando non vengono trovati risultati rilevanti;
+			\item Deve generare e restituire correttamente il log delle fasi 1 e 2 se la registrazione dei log è attivata;
+			\item Deve gestire correttamente il caso in cui la richiesta dell'utente è vuota, restituendo un messaggio appropriato;
+			\item Deve generare il prompt nella lingua specificata, riflettendo la configurazione della lingua;
+			\item Deve generare il prompt adattato al DBMS specificato, riflettendo la configurazione del DBMS;
+			\item Deve gestire correttamente i fallimenti durante l'estrazione dei metadati dallo schema, restituendo un messaggio di errore appropriato o sollevando un'eccezione.
+		\end{itemize} & S \\
 
-		\hline TU & Verificare che il metodo "\_\_get\_tuples" della classe "TxtaiPromptManagerAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve formare correttamente la query SQL e eseguire la ricerca restituendo le tuple corrispondenti;
-		\item Deve attivare la registrazione del log quando richiesto e restituire il contenuto del log generato;
-		\item Deve gestire correttamente i risultati di ricerca vuoti, restituendo una lista vuota senza contenuto di log.
-	\end{itemize} & S \\
+		\hline TU & Verificare che il metodo "get\_tuples" della classe "TxtaiPromptManagerAdapter" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve formare correttamente la query SQL e eseguire la ricerca restituendo le tuple corrispondenti;
+			\item Deve attivare la registrazione del log quando richiesto e restituire il contenuto del log generato;
+			\item Deve gestire correttamente i risultati di ricerca vuoti, restituendo una lista vuota senza contenuto di log.
+		\end{itemize} & S \\
 
-		\hline TU & Verificare che il metodo "\_\_get\_relevant\_tuples" della classe "TxtaiPromptManagerAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve mantenere le tuple con punteggi elevati, indipendentemente dalla distanza di punteggio;
-		\item Deve mantenere o scartare le tuple in base alla distanza di punteggio rispetto alla tupla precedente;
-		\item Deve generare correttamente il contenuto del log quando la registrazione è attivata;
-		\item Deve gestire correttamente una lista vuota di tuple, restituendo nessuna tupla rilevante e nessun contenuto di log;
-		\item Deve restituire correttamente una singola tupla come rilevante.
-	\end{itemize} & S \\
+		\hline TU & Verificare che il metodo "get\_relevant\_tuples" della classe "TxtaiPromptManagerAdapter" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve mantenere le tuple con punteggi elevati, indipendentemente dalla distanza di punteggio;
+			\item Deve mantenere o scartare le tuple in base alla distanza di punteggio rispetto alla tupla precedente;
+			\item Deve generare correttamente il contenuto del log quando la registrazione è attivata;
+			\item Deve gestire correttamente una lista vuota di tuple, restituendo nessuna tupla rilevante e nessun contenuto di log;
+			\item Deve restituire correttamente una singola tupla come rilevante.
+		\end{itemize} & S \\
 
-	%txtai_index_manager_adapter
+		%txtai_index_manager_adapter
 		\hline TU & Verificare che il metodo "get\_embeddings" della classe "TxtaiIndexManagerAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve restituire un'istanza della classe "Embeddings".
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve restituire un'istanza della classe "Embeddings".
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "create\_or\_load\_index" della classe "TxtaiIndexManagerAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve caricare un indice esistente e restituire "False" se l'indice esiste già;
-		\item Deve creare un nuovo indice e restituire "True" se l'indice non esiste.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve caricare un indice esistente e restituire "False" se l'indice esiste già;
+			\item Deve creare un nuovo indice e restituire "True" se l'indice non esiste.
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "create\_index" della classe "TxtaiIndexManagerAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve creare un indice utilizzando i documenti estratti e salvarlo correttamente se "save\_index" è impostato a "True";
-		\item Deve creare un indice senza salvarlo se "save\_index" è impostato a "False";
-		\item Deve creare un indice anche se la lista dei documenti è vuota e comunque salvare l'indice se "save\_index" è impostato a "True";
-		\item Deve sollevare un'eccezione se si verifica un errore durante l'indicizzazione e non deve salvare l'indice.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve creare un indice utilizzando i documenti estratti e salvarlo correttamente se "save\_index" è impostato a "True";
+			\item Deve creare un indice senza salvarlo se "save\_index" è impostato a "False";
+			\item Deve creare un indice anche se la lista dei documenti è vuota e comunque salvare l'indice se "save\_index" è impostato a "True";
+			\item Deve sollevare un'eccezione se si verifica un errore durante l'indicizzazione e non deve salvare l'indice.
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "save\_index" della classe "TxtaiIndexManagerAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve salvare correttamente l'indice utilizzando il percorso del file corretto;
-		\item Deve sollevare un'eccezione se si verifica un errore durante il salvataggio dell'indice.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve salvare correttamente l'indice utilizzando il percorso del file corretto;
+			\item Deve sollevare un'eccezione se si verifica un errore durante il salvataggio dell'indice.
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "load\_index" della classe "TxtaiIndexManagerAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve caricare correttamente l'indice utilizzando il percorso del file corretto.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve caricare correttamente l'indice utilizzando il percorso del file corretto.
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "delete\_index" della classe "TxtaiIndexManagerAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve eliminare correttamente la directory dell'indice se esiste;
-		\item Non deve tentare di eliminare la directory dell'indice se questa non esiste.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve eliminare correttamente la directory dell'indice se esiste;
+			\item Non deve tentare di eliminare la directory dell'indice se questa non esiste.
+		\end{itemize} & S \\
 
-	%txtai_embeddings_manager_factory
+		%txtai_embeddings_manager_factory
 		\hline TU & Verificare che il metodo "create\_index\_manager" della classe "TxtaiEmbeddingsManagerFactory" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve creare e restituire un'istanza di "TxtaiIndexManagerAdapter" quando viene fornita una configurazione valida;
-		\item Deve generare un'eccezione "KeyError" se la configurazione fornita manca di chiavi obbligatorie, e il messaggio dell'errore deve indicare le chiavi mancanti;
-		\item Deve generare un'eccezione "KeyError" durante l'inizializzazione della factory se manca la chiave "txtai" nella configurazione, e il messaggio dell'errore deve menzionare la chiave mancante.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve creare e restituire un'istanza di "TxtaiIndexManagerAdapter" quando viene fornita una configurazione valida;
+			\item Deve generare un'eccezione "KeyError" se la configurazione fornita manca di chiavi obbligatorie, e il messaggio dell'errore deve indicare le chiavi mancanti;
+			\item Deve generare un'eccezione "KeyError" durante l'inizializzazione della factory se manca la chiave "txtai" nella configurazione, e il messaggio dell'errore deve menzionare la chiave mancante.
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "create\_prompt\_manager\_with\_dependencies" della classe "TxtaiEmbeddingsManagerFactory" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve creare e restituire un'istanza di "TxtaiPromptManagerAdapter" quando viene fornita una configurazione valida e un'istanza di "TxtaiIndexManagerAdapter" come dipendenza.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve creare e restituire un'istanza di "TxtaiPromptManagerAdapter" quando viene fornita una configurazione valida e un'istanza di "TxtaiIndexManagerAdapter" come dipendenza.
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "create\_prompt\_manager" della classe "TxtaiEmbeddingsManagerFactory" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve creare e restituire un'istanza di "TxtaiPromptManagerAdapter" quando viene fornita una configurazione valida e gestisce internamente la creazione del "TxtaiIndexManagerAdapter".
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve creare e restituire un'istanza di "TxtaiPromptManagerAdapter" quando viene fornita una configurazione valida e gestisce internamente la creazione del "TxtaiIndexManagerAdapter".
+		\end{itemize} & S \\
 
-	%txtai_debug_manager
+		%txtai_debug_manager
 		\hline TU & Verificare che il metodo "semantic\_search\_log\_custom\_algorithm" della classe "TxtaiDebugManagerAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve restituire un log con il messaggio "No tables found." quando vengono passate liste vuote di tuple;
-		\item Deve restituire un log che confermi che tutte le tabelle sono mantenute se il loro punteggio è superiore o uguale a 0.45;
-		\item Deve restituire un log che indichi quali tabelle sono mantenute e quali sono scartate quando alcune tabelle hanno un punteggio inferiore a 0.45;
-		\item Deve mantenere tabelle con un punteggio inferiore a 0.45 se la differenza di punteggio con la tabella precedente è inferiore a 0.25.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve restituire un log con il messaggio "No tables found." quando vengono passate liste vuote di tuple;
+			\item Deve restituire un log che confermi che tutte le tabelle sono mantenute se il loro punteggio è superiore o uguale a 0.45;
+			\item Deve restituire un log che indichi quali tabelle sono mantenute e quali sono scartate quando alcune tabelle hanno un punteggio inferiore a 0.45;
+			\item Deve mantenere tabelle con un punteggio inferiore a 0.45 se la differenza di punteggio con la tabella precedente è inferiore a 0.25.
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "semantic\_search\_log" della classe "TxtaiDebugManagerAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve restituire un log appropriato quando viene passata una lista vuota di tuple, includendo l'indicazione che non sono state trovate tabelle rilevanti;
-		\item Deve restituire un log dettagliato della ricerca semantica quando viene passata una singola tupla, includendo i termini più rilevanti;
-		\item Deve restituire un log corretto quando viene passata una lista con più tuple, riportando i dettagli e i termini rilevanti per ogni descrizione.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve restituire un log appropriato quando viene passata una lista vuota di tuple, includendo l'indicazione che non sono state trovate tabelle rilevanti;
+			\item Deve restituire un log dettagliato della ricerca semantica quando viene passata una singola tupla, includendo i termini più rilevanti;
+			\item Deve restituire un log corretto quando viene passata una lista con più tuple, riportando i dettagli e i termini rilevanti per ogni descrizione.
+		\end{itemize} & S \\
 
-	%json_file_adapter
+		%json_file_adapter
 		\hline TU & Verificare che il metodo "save" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve apritre un file con permessi di scrittura;
-		\item Deve eseguire almeno un'operazione di scrittura sul file aperto.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve apritre un file con permessi di scrittura;
+			\item Deve eseguire almeno un'operazione di scrittura sul file aperto.
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "load" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve restituire il path del file di schema.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve restituire il path del file di schema.
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "delete" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve eseguire l'operazione di verifica di presenza del file;
-		\item Deve eseguire l'operazione di eliminazione del file.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve eseguire l'operazione di verifica di presenza del file;
+			\item Deve eseguire l'operazione di eliminazione del file.
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "get\_preview" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve restituire None se non è presente lo schema;
-		\item Deve restituire un oggetto che rappresenti lo schema se presente.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve restituire None se non è presente lo schema;
+			\item Deve restituire un oggetto che rappresenti lo schema se presente.
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "extract\_index\_metadata" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve restituire l'indicizzzazione di tutte le colonne per ogni tabella.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve restituire l'indicizzzazione di tutte le colonne per ogni tabella.
+		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "extract\_schema\_metadata" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
-	\begin{itemize}
-		\item Deve restituire la rappresentazione delle tabelle facenti parte dello schema e delle chiavi esterne.
-	\end{itemize} & S \\
+		\begin{itemize}
+			\item Deve restituire la rappresentazione delle tabelle facenti parte dello schema e delle chiavi esterne.
+		\end{itemize} & S \\
 
-	%componenti
+		%componenti front-end
 		\hline TU & Verificare che il componente "AppLogo" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il logo deve essere renderizzato con il percorso dell'immagine corretto;
 			\item L'altezza e la larghezza dell'immagine devono essere impostate con valori predefiniti se non vengono passate come props;
 			\item Il colore dell'immagine deve cambiare in base al tema selezionato.
-    \end{itemize} & S \\
-		\hline TU & Verificare che il componente "AppFooter" soddisfi le seguenti condizioni:
-    \begin{itemize}
-      \item Il footer deve essere renderizzato correttamente;
-			\item All'interno del footer deve essere visualizzata la versione corretta dell'applicazione.
     \end{itemize} & S \\
 		\hline TU & Verificare che il componente "AppMenu" soddisfi le seguenti condizioni:
     \begin{itemize}
@@ -265,7 +260,7 @@
 			\item Una volta selezionata, la voce di menu deve essere attiva;
 			\item La voce di menu può essere la radice di un menu;
 			\item La voce di menu può contenere un sotto-menu;
-			\item La voce di menu può aprire e chiudere un sotto-menu.
+			\item La voce di menu può aprire o chiudere un sotto-menu.
     \end{itemize} & S \\
 		\hline TU & Verificare che il componente "AppTopbar" soddisfi le seguenti condizioni:
     \begin{itemize}
@@ -274,6 +269,11 @@
 			\item Quando viene cliccato il pulsante di logout, la funzione di logout deve essere chiamata;
 			\item Il menu delle opzioni deve essere aperto al clic dell'apposito pulsante;
 			\item Il menu delle opzioni deve essere chiuso quando l'Utente clicca al di fuori di esso.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il componente "AppFooter" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il footer deve essere renderizzato correttamente;
+			\item All'interno del footer deve essere visualizzata la versione corretta dell'applicazione.
     \end{itemize} & S \\
 		\hline TU & Verificare che il componente "ConfigSidebar" soddisfi le seguenti condizioni:
     \begin{itemize}
@@ -289,7 +289,7 @@
     \end{itemize} & S \\
 		\hline TU & Verificare che il componente "MenuSidebar" soddisfi le seguenti condizioni:
     \begin{itemize}
-			\item Il pulsante per chiudere la sidebar non deve essere visibile su schermi di grandi dimensioni.
+			\item Il pulsante per chiudere la sidebar deve essere nascosto su schermi di grandi dimensioni;
       \item Il pulsante per chiudere la sidebar deve essere visibile su schermi di piccole dimensioni.
     \end{itemize} & S \\
 		\hline TU & Verificare che il componente "LoginDialog" soddisfi le seguenti condizioni:
@@ -303,7 +303,7 @@
     \end{itemize} & S \\
 		\hline TU & Verificare che il componente "DictPreview" soddisfi le seguenti condizioni:
     \begin{itemize}
-      \item L'anteprima del dizionario dati non deve essere visibile se la variabile DetailsVisible è uguale a false;
+      \item L'anteprima del dizionario dati deve essere nascosta se la variabile DetailsVisible è uguale a false;
 			\item Se è visibile, l'anteprima deve mostrare i dati corretti;
 			\item Lo stato di espansione dell'anteprima deve essere attivato/disattivato al clic dell'apposito pulsante;
 			\item Quando viene cliccato il pulsante di chiusura, il componente deve inviare un segnale.
@@ -331,16 +331,41 @@
 		\hline TU & Verificare che il componente "CreateUpdateDictionaryModal" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il form di creazione e modifica deve essere visualizzato correttamente;
-			\item Il pulsante di submit deve essere disabilitato se il form è incompleto;
+			\item Il pulsante di invio deve essere disabilitato se il form è incompleto;
 			\item La funzione "messageSuccess" deve essere chiamata se l'inserimento viene effettuato con successo;
 			\item La funzione "messageError" deve essere chiamata se l'inserimento fallisce;
-			\item Il pulsante di submit deve essere disabilitato se il formato del file non è valido;
+			\item Il pulsante di invio deve essere disabilitato se il nome del dizionario dati contiene caratteri non supportati;
+			\item Il pulsante di invio deve essere disabilitato se il formato del file non è valido;
 			\item La funzione "messageSuccess" deve essere chiamata se l'aggiornamento dei metadati viene effettuato con successo;
 			\item La funzione "messageError" deve essere chiamata se l'aggiornamento dei metadati fallisce;
 			\item La funzione "messageSuccess" deve essere chiamata se l'aggiornamento del file viene effettuato con successo;
 			\item La funzione "messageError" deve essere chiamata se l'aggiornamento del file fallisce;
 			\item L'upload del file deve essere disabilitato se un file è già stato caricato;
 			\item Il file selezionato deve essere rimosso al clic dell'apposito pulsante.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il componente "DictionariesListView" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item La lista dei dizionari dati deve essere visualizzata correttamente;
+			\item La funzione "Apri dictionary modal" deve essere chiamata con i parametri corretti al clic del pulsante di inserimento;
+			\item La funzione "Apri dictionary modal" deve essere chiamata con i parametri corretti al clic del pulsante di modifica dei metadati;
+			\item La funzione "Apri dictionary modal" deve essere chiamata con i parametri corretti al clic del pulsante di modifica del file;
+			\item Quando viene cliccato il pulsante "Scarica file", la funzione di download deve essere chiamata con i parametri corretti;
+			\item La funzione "messageSuccess" deve essere chiamata se l'eliminazione viene effettuata con successo;
+			\item La funzione "messageError" deve essere chiamata se l'eliminazione fallisce.
+    \end{itemize} & S \\
+		\hline TU & Verificare che il componente "ChatView" soddisfi le seguenti condizioni:
+    \begin{itemize}
+      \item Il contenuto della chat deve essere renderizzato correttamente;
+			\item Il form di selezione pre-richiesta deve essere attivato/disattivato al click dell'apposito pulsante;
+			\item Nella chat deve essere visualizzato il dizionario dati attivo con la relativa estensione;
+			\item Quando un dizionario dati viene selezionato, il contenuto del localStorage deve essere aggiornato;
+			\item Il pulsante di invio deve essere disattivato se non è stato selezionato alcun dizionario dati;
+			\item Il pulsante di invio deve essere disattivato se non è stata inserita alcuna richiesta;
+			\item La richiesta deve poter essere inviata premendo il tasto "Invio";
+			\item La funzione di generazione del prompt deve essere chiamata con i parametri corretti al clic del pulsante di invio;
+			\item Quando il ChatBOT ritorna una risposta, il contenuto del sessionStorage deve essere aggiornato;
+			\item Quando viene inviata una richiesta, il campo di testo deve essere resettato;
+			\item La funzione "messageError" deve essere chiamata se la generazione del prompt fallisce.
     \end{itemize} & S \\
 		\hline TU & Verificare che il metodo "logout" della classe "auth.service" soddisfi le seguenti condizioni:
 		\begin{itemize}
