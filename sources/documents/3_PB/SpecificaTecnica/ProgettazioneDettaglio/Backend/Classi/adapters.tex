@@ -1,81 +1,57 @@
-\subsubsection{Outcoming - Ports}
+\subsubsection{Adapters - Incoming}
 
-\paragraph{DebugManagerPort} \label{DebugManagerPort}
+\paragraph{JsonSchemaValidatorAdapter} \label{JsonSchemaValidatorAdapter}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{assets/Backend/json_schema_validator_adapter.png}
+    \caption{Rappresentazione della classe JsonSchemaValidatorAdapter}
+  \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa della costruzione delle sezioni del documento di \glossario{log} per il \glossario{debug}.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[TxtaiDebugManagerAdapter]{\texttt{TxtaiDebugManagerAdapter}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[TxtaiDebugManagerAdapter]{\texttt{TxtaiDebugManagerAdapter}}.
-\end{itemize}  
-
-\paragraph{EmbeddingsAbstractFactory} \label{EmbeddingsAbstractFactory}
-\begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa della creazione dell'index manager e delle classi per la gestione dei \glossario{prompt}.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[TxtaiEmbeddingsManagerFactory]{\texttt{TxtaiEmbeddingsManagerFactory}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[TxtaiEmbeddingsManagerFactory]{\texttt{TxtaiEmbeddingsManagerFactory}}.
-    \item \textbf{Dipendenze:}
+    \item \textbf{Descrizione:} questa classe si occupa della validazione dei \glossario{dizionari dati}.
+    \item \textbf{Implementazione:} questa classe implementa l'interfaccia \hyperref[SchemaValidatorUseCase]{\texttt{SchemaValidatorUseCase}}.
+    \item \textbf{Attributi:}
     \begin{itemize}
-        \item \texttt{DebugManagerPort};
-        \item \texttt{IndexManagerPort};
-        \item \texttt{PromptManagerPort};
+        \item \texttt{dictionary\_schema\_file\_path: string} il percorso del file contenente lo schema dei \glossario{dizionario dati}.
     \end{itemize}
-\end{itemize}  
-
-\paragraph{IndexManagerPort} \label{IndexManagerPort}
-\begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa delle operazioni CRUD per gli indici degli embeddings.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[TxtaiIndexManagerAdapter]{\texttt{TxtaiIndexManagerAdapter}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[TxtaiIndexManagerAdapter]{\texttt{TxtaiIndexManagerAdapter}}.
-\end{itemize} 
-
-\paragraph{PromptManagerPort} \label{PromptManagerPort}
-\begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa del recupero delle informazioni e la generazione del prompt.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[TxtaiPromptManagerAdapter]{\texttt{TxtaiPromptManagerAdapter}}. 
-    \item \textbf{Attributi:} FIXME (ci sono degli attributi, ma è un'interfaccia)
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[TxtaiPromptManagerAdapter]{\texttt{TxtaiPromptManagerAdapter}}.
+    \item \textbf{Metodi:}
+    \begin{itemize}
+        \item \texttt{JsonSchemaValidatorAdapter(dictionary\_schema\_file\_path: string)}: costruttore della classe;
+        \item \texttt{+ validate(dictionary: Dictionary): bool}: valida lo schema del dizionario passato.
+    \end{itemize}
     \item \textbf{Dipendenze:}
     \begin{itemize}
-        \item \texttt{IndexManagerPort};
-        \item \texttt{DebugManagerPort}.
+        \item \texttt{Utils}
     \end{itemize}
 \end{itemize} 
 
-\paragraph{AuthenticationRepository} \label{AuthenticationRepository}
+\paragraph{SchemaValidatorFactory} \label{SchemaValidatorFactory}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{assets/Backend/schema_validator_factory.png}
+    \caption{Rappresentazione della classe SchemaValidatorFactory}
+  \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa del recupero degli utenti.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[SqlAlchemyAuthenticationRepositoryAdapter]{\texttt{SqlAlchemyAuthenticationRepositoryAdapter}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[SqlAlchemyAuthenticationRepositoryAdapter]{\texttt{SqlAlchemyAuthenticationRepositoryAdapter}}.
-\end{itemize} 
-
-\paragraph{DbManagerAbstractFactory} \label{DbManagerAbstractFactory}
-\begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa della creazione di istanze delle classi \texttt{AuthenticationRepository} e \texttt{DictionaryRepository}.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[SqlAlchemyDbManagerFactory]{\texttt{SqlAlchemyDbManagerFactory}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[SqlAlchemyDbManagerFactory]{\texttt{SqlAlchemyDbManagerFactory}}.
+    \item \textbf{Descrizione:} questa classe si occupa della creazione di istanze della classe \texttt{JsonSchemaValidatorAdapter}.
+    \item \textbf{Implementazione:} questa classe non implementa alcuna interfaccia.
+    \item \textbf{Attributi:} questa classe non presenta attributi.
+    \item \textbf{Metodi:}
+    \begin{itemize}
+        \item \texttt{+ \underline{create(config: dict)}: SchemaValidatorUseCase}: crea un'istanza della classe \texttt{JsonSchemaValidatorAdapter}.
+    \end{itemize}
     \item \textbf{Dipendenze:}
     \begin{itemize}
-        \item \texttt{AuthenticationRepository};
-        \item \texttt{DictionaryRepository}.
+        \item \texttt{JsonSchemaValidatorAdapter}
     \end{itemize}
-\end{itemize} 
-
-\paragraph{DictionaryRepository} \label{DictionaryRepository}
-\begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa del recupero dei dizionari dati e delle operazioni CRUD su questi.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[SqlAlchemyDictionaryRepositoryAdapter]{\texttt{SqlAlchemyDictionaryRepositoryAdapter}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[SqlAlchemyDictionaryRepositoryAdapter]{\texttt{SqlAlchemyDictionaryRepositoryAdapter}}.
-\end{itemize} 
-
-\paragraph{FileRepository} \label{FileRepository}
-\begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa delle operazioni CRUD sui file dei dizionari dati.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[JsonFileAdapter]{\texttt{JsonFileAdapter}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[JsonFileAdapter]{\texttt{JsonFileAdapter}}.
 \end{itemize}  
 
 \subsection{Outcoming - Adapters}
 
 \paragraph{SqlAlchemyAuthenticationRepositoryAdapter} \label{SqlAlchemyAuthenticationRepositoryAdapter}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{assets/Backend/sql_alchemy_authentication_repository_adapter.png}
+    \caption{Rappresentazione della classe SqlAlchemyAuthenticationRepositoryAdapter}
+  \end{figure}
 \begin{itemize}
     \item \textbf{Descrizione:} questa classe si occupa del recupero delle informazioni sugli utenti dal database.
     \item \textbf{Implementazione:} questa classe implementa l'interfaccia \hyperref[AuthenticationRepository]{\texttt{AuthenticationRepository}}.
@@ -92,23 +68,33 @@
 \end{itemize} 
 
 \paragraph{SqlAlchemyDbManagerFactory} \label{SqlAlchemyDbManagerFactory}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{assets/Backend/sql_alchemy_db_manager_factory.png}
+    \caption{Rappresentazione della classe SqlAlchemyDbManagerFactory}
+  \end{figure}
 \begin{itemize}
     \item \textbf{Descrizione:} questa classe si occupa della costruzione delle istanze delle classi \texttt{SqlAlchemyAuthenticationRepositoryAdapter} e \texttt{SqlAlchemyDictionaryRepositoryAdapter}.
     \item \textbf{Implementazione:} questa classe implementa l'interfaccia \hyperref[DbManagerAbstractFactory]{\texttt{DbManagerAbstractFactory}}.
     \item \textbf{Attributi:} questa classe non presenta attributi.
     \item \textbf{Metodi:}
     \begin{itemize}
-        \item \texttt{+ create\_authentication\_repository(): SqlAlchemyAuthenticationRepositoryAdapter} crea un'istanza della classe \texttt{SqlAlchemyAuthenticationRepositoryAdapter};
-        \item \texttt{+ create\_dictionary\_repository(): SqlAlchemyDictionaryRepositoryAdapter} crea un'istanza della classe \texttt{SqlAlchemyDictionaryRepositoryAdapter}.
+        \item \texttt{+ create\_authentication\_repository(): AuthenticationRepository} crea un'istanza della classe \texttt{SqlAlchemyAuthenticationRepositoryAdapter};
+        \item \texttt{+ create\_dictionary\_repository(): DictionaryRepository} crea un'istanza della classe \texttt{SqlAlchemyDictionaryRepositoryAdapter}.
     \end{itemize}
     \item \textbf{Dipendenze:}
     \begin{itemize}
-        \item \texttt{SqlAlchemyAuthenticationRepositoryAdapter};
-        \item \texttt{SqlAlchemyDictionaryRepositoryAdapter}.
+        \item \texttt{AuthenticationRepository};
+        \item \texttt{DictionaryRepository}.
     \end{itemize}
 \end{itemize}
 
 \paragraph{SqlAlchemyDictionaryRepositoryAdapter} \label{SqlAlchemyDictionaryRepositoryAdapter}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{assets/Backend/sql_alchemy_dictionary_repository_adapter.png}
+    \caption{Rappresentazione della classe SqlAlchemyDictionaryRepositoryAdapter}
+  \end{figure}
 \begin{itemize}
     \item \textbf{Descrizione:} questa classe si occupa del recupero dei dizionari dati e delle operazioni CRUD su questi.
     \item \textbf{Implementazione:} questa classe implementa l'interfaccia \hyperref[DictionaryRepository]{\texttt{DictionaryRepository}}.
@@ -129,22 +115,32 @@
     \item \textbf{Dipendenze:} questa classe non presenta dipendenze.
 \end{itemize} 
 
-\paragraph{DbManagerAbstractFactory} \label{DbManagerAbstractFactory}
+\paragraph{DbManagerFactory} \label{DbManagerFactory}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{assets/Backend/db_manager_factory.png}
+    \caption{Rappresentazione della classe DbManagerFactory}
+  \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione:} questa classe si occupa della creazione di istanze della classe \texttt{DbManagerAbstractFactory}. 
-    \item \textbf{Implementazione:} questa classe non implementa alcuna interfaccia. 
+    \item \textbf{Descrizione:} questa classe si occupa della creazione delle istanze della classe \texttt{DbManagerAbstractFactory} 
+    \item Questa classe non implementa alcuna interfaccia.
     \item \textbf{Attributi:} questa classe non presenta attributi.
     \item \textbf{Metodi:}
     \begin{itemize}
-        \item \texttt{+ \underline{create(config: dict)}: DbManagerAbstractFactory}: crea un'istanza della classe \texttt{DbManagerAbstractFactory}.
+        \item \texttt{+ create(config: dict): DbManagerAbstractFactory}: crea un'istanza della classe \texttt{DbManagerAbstractFactory}.
     \end{itemize}
     \item \textbf{Dipendenze:}
     \begin{itemize}
         \item \texttt{DbManagerAbstractFactory}
     \end{itemize}
-\end{itemize} 
+\end{itemize}
 
 \paragraph{TxtaiDebugManagerAdapter} \label{TxtaiDebugManagerAdapter}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{assets/Backend/txtai_debug_manager_adapter.png}
+    \caption{Rappresentazione della classe TxtaiDebugManagerAdapter}
+  \end{figure}
 \begin{itemize}
     \item \textbf{Descrizione:} questa classe si occupa della costruzione delle sezioni del documento di \glossario{log} per il \glossario{debug}.
     \item \textbf{Implementazione:} questa classe implementa l'interfaccia \hyperref[DebugManagerPort]{\texttt{DebugManagerPort}}.
@@ -166,6 +162,11 @@
 \end{itemize} 
 
 \paragraph{TxtaiEmbeddingsManagerFactory} \label{TxtaiEmbeddingsManagerFactory}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{assets/Backend/txtai_embeddings_manager_factory.png}
+    \caption{Rappresentazione della classe TxtaiEmbeddingsManagerFactory}
+  \end{figure}
 \begin{itemize}
     \item \textbf{Descrizione:} questa classe si occupa della creazione dell'index manager e delle classi per la gestione dei \glossario{prompt}.
     \item \textbf{Implementazione:} questa classe implementa l'interfaccia \hyperref[EmbeddingsAbstractFactory]{\texttt{EmbeddingsAbstractFactory}}. 
@@ -175,19 +176,26 @@
     \end{itemize}
     \item \textbf{Metodi:}
     \begin{itemize}
+        % Nella spiegazione lascio che l'istanza che viene creata è di tipo TxtaiEmbeddingsManagerFactory, ma in realtà il tipo di ritorno è l'interfaccia
         \item \texttt{TxtaiEmbeddingsManagerFactory(config: dict)}: costruttore della classe;
-        \item \texttt{create\_index\_manager(file\_repository: FileRepository): TxtaiIndexManagerAdapter}: crea un'istanza della classe \texttt{TxtaiIndexManagerAdapter};
-        \item \texttt{create\_prompt\_manager\_with\_dependencies(index\_manager: TxtaiIndexManagerAdapter, file\_repository: FileRepository): TxtaiPromptManagerAdapter}: crea un'istanza della classe \texttt{TxtaiPromptManagerAdapter} dato un indice esistente.
-        \item \texttt{create\_prompt\_manager(file\_repository: FileRepository): TxtaiPromptManagerAdapter}: crea un'istanza della classe \texttt{TxtaiPromptManagerAdapter}, creando un nuovo indice.
+        \item \texttt{create\_index\_manager(file\_repository: FileRepository): IndexManagerPort}: crea un'istanza della classe \texttt{TxtaiIndexManagerAdapter};
+        \item \texttt{create\_prompt\_manager\_with\_dependencies(index\_manager: IndexManagerPort, file\_repository: FileRepository): TxtaiPromptManagerAdapter}: crea un'istanza della classe \texttt{TxtaiPromptManagerAdapter} dato un indice esistente.
+        \item \texttt{create\_prompt\_manager(file\_repository: FileRepository): IndexManagerPort}: crea un'istanza della classe \texttt{TxtaiPromptManagerAdapter}, creando un nuovo indice.
     \end{itemize}
     \item \textbf{Dipendenze:}
     \begin{itemize}
+        % Come dipendenza la lasio verso l'interfaccia come da diagramma
         \item \texttt{FileRepository};
-        \item \texttt{TxtaiIndexManagerAdapter};
+        \item \texttt{IndexManagerPort};
     \end{itemize}
 \end{itemize} 
 
 \paragraph{TxtaiIndexManagerAdapter} \label{TxtaiIndexManagerAdapter}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{assets/Backend/txtai_index_manager_adapter.png}
+    \caption{Rappresentazione della classe TxtaiIndexManagerAdapter}
+  \end{figure}
 \begin{itemize}
     \item \textbf{Descrizione:} questa classe si occupa delle operazioni CRUD per gli indici degli embeddings.
     \item \textbf{Implementazione:} questa classe implementa l'interfaccia \hyperref[IndexManagerPort]{\texttt{IndexManagerPort}}.
@@ -208,31 +216,41 @@
 \end{itemize} 
 
 \paragraph{TxtaiPromptManagerAdapter} \label{TxtaiPromptManagerAdapter}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{assets/Backend/txtai_prompt_manager_adapter.png}
+    \caption{Rappresentazione della classe TxtaiPromptManagerAdapter}
+  \end{figure}
 \begin{itemize}
     \item \textbf{Descrizione:} questa classe si occupa del recupero delle informazioni e la generazione del prompt.
     \item \textbf{Implementazione:} questa classe implementa l'interfaccia \hyperref[PromptManagerPort]{\texttt{PromptManagerPort}}.
     \item \textbf{Attributi:}
     \begin{itemize}
-        \item \texttt{index\_manager: TxtaiIndexManagerAdapter}: la classe di gestione degli indici;
+        \item \texttt{index\_manager: IndexManagerPort}: la classe di gestione degli indici;
         \item \texttt{file\_repository: FileRepository}: la repository per le operazioni sui file.
     \end{itemize}
     \item \textbf{Metodi:}
     \begin{itemize}
         \item \texttt{+ prompt\_generator(dictionary\_id: integer, user\_request: string, lang: string, dbms: string, activate\_log: bool): tuple}: crea il prompt dato l'id del dizionario dati, una richiesta in linguaggio naturale, la lingua (inglese di default) e il dbms (MariaDB di default) scelti;
-        \item \texttt{+ get\_index\_manager(): TxtaiIndexManagerAdapter}: restituisce l'istanza dell'index manager;
+        \item \texttt{+ get\_index\_manager(): IndexManagerPort}: restituisce l'istanza dell'index manager;
         \item \texttt{- create\_debug\_manager(): DebugManagerPort}: crea un'istanza del debug manager.
         \item \texttt{- get\_tuples(user\_request: string, activate\_log: bool): list}: recupera tutte le tabelle considerate nella ricerca semantica;
         \item \texttt{- get\_relevant\_tuples(tuples: list, activate\_log: bool): list}: recupera le tabelle rilevanti, cioè che superano una certa soglia di precisione, dalla ricerca semantica.
     \end{itemize}
     \item \textbf{Dipendenze:}
     \begin{itemize}
-        \item \texttt{TxtaiIndexManagerAdapter};
+        \item \texttt{IndexManagerPort};
         \item \texttt{FileRepository};
         \item \texttt{DebugManagerPort}.
     \end{itemize}
 \end{itemize} 
 
 \paragraph{EmbeddingsManagerFactory} \label{EmbeddingsManagerFactory}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{assets/Backend/embeddings_manager_factory.png}
+    \caption{Rappresentazione della classe EmbeddingsManagerFactory}
+  \end{figure}
 \begin{itemize}
     \item \textbf{Descrizione:} questa classe si occupa della costruzione di istanze della classe \texttt{EmbeddingsAbstractFactory}.
     \item \textbf{Implementazione:} questa classe non implementa alcuna interfaccia.
@@ -248,6 +266,11 @@
 \end{itemize} 
 
 \paragraph{FileFactory} \label{FileFactory}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{assets/Backend/file_factory.png}
+    \caption{Rappresentazione della classe FileFactory}
+  \end{figure}
 \begin{itemize}
     \item \textbf{Descrizione:} questa classe si occupa della creazione di istanze della classe \texttt{FileRepository}.
     \item \textbf{Implementazione:} questa classe non implementa alcuna interfaccia.
@@ -263,6 +286,11 @@
 \end{itemize} 
 
 \paragraph{JsonFileAdapter} \label{JsonFileAdapter}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{assets/Backend/json_file_adapter.png}
+    \caption{Rappresentazione della classe JsonFileAdapter}
+  \end{figure}
 \begin{itemize}
     \item \textbf{Descrizione:} questa classe si occupa delle operazioni CRUD sui file dei dizionari dati.
     \item \textbf{Implementazione:} questa classe implementa l'interfaccia \hyperref[FileRepository]{\texttt{FileRepository}}.
