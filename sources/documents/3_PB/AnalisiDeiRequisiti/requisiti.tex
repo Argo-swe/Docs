@@ -59,7 +59,7 @@
     \hline
     \textbf{RF.O.6} & L'Utente deve visualizzare un avviso in caso venga formulata una richiesta non idonea. & \hyperref[UC6]{UC6}\\
     \hline
-    \textbf{RF.D.7} & L'Utente deve poter scegliere la lingua con cui effettuare una richiesta al ChatBOT. & \hyperref[UC7]{UC7}, Verbale esterno 2024-04-09\\
+    \textbf{RF.OP.7} & L'Utente deve poter scegliere la lingua con cui effettuare una richiesta al ChatBOT. & \hyperref[UC7]{UC7}, Verbale esterno 2024-04-09\\
     \hline
     \textbf{RF.O.8} & L'Utente deve poter copiare il contenuto del \glossario{prompt} generato. Il prompt può essere fornito in input a un \glossario{LLM} per convertire la frase dell'Utente in una query \glossario{SQL}. & \hyperref[UC8]{UC8}, Capitolato\\
     \hline
@@ -75,9 +75,9 @@
     \hline
     \textbf{RF.O.10.3} & L'Utente deve poter visualizzare la descrizione di un dizionario dati. & \hyperref[UC10point3]{UC10.3}\\
     \hline
-    \textbf{RF.O.10.4} & L'Utente deve poter visualizzare la dimensione del file scelto come dizionario dati. & \hyperref[UC10point4]{UC10.4}\\
+    \textbf{RF.D.10.4} & L'Utente deve poter visualizzare la dimensione del file scelto come dizionario dati. & \hyperref[UC10point4]{UC10.4}\\
     \hline
-    \textbf{RF.O.10.5} & L'Utente deve poter visualizzare la data di ultimo aggiornamento di un dizionario dati. & \hyperref[UC10point5]{UC10.5}\\
+    \textbf{RF.OP.10.5} & L'Utente deve poter visualizzare la data di ultimo aggiornamento di un dizionario dati. & \hyperref[UC10point5]{UC10.5}\\
     \hline
     \textbf{RF.O.11} & L'Utente deve visualizzare un messaggio esplicativo nel caso in cui si verifichi un errore durante la generazione del \glossario{prompt}. & \hyperref[UC11]{UC11}\\
     \hline
@@ -113,11 +113,11 @@
     \hline
     \textbf{RF.O.21} & Il Tecnico deve visualizzare un errore se l'eliminazione di un dizionario dati fallisce. & \hyperref[21]{UC21}\\
     \hline
-    \textbf{RF.O.22} & Il Tecnico deve poter visualizzare un messaggio di \glossario{debug}. Il debug illustra il processo di generazione del prompt. & \hyperref[22]{UC22}, Verbale esterno 2024-04-09 \\
+    \textbf{RF.D.22} & Il Tecnico deve poter visualizzare un messaggio di \glossario{debug}. Il debug illustra il processo di generazione del prompt. & \hyperref[22]{UC22}, Verbale esterno 2024-04-09 \\
     \hline
-    \textbf{RF.O.23} & Il Tecnico deve poter scaricare un file di \glossario{log}. & \hyperref[23]{UC23}, Verbale interno\\
+    \textbf{RF.D.23} & Il Tecnico deve poter scaricare un file di \glossario{log}. & \hyperref[23]{UC23}, Verbale interno\\
     \hline
-    \textbf{RF.O.24} & Il Tecnico deve visualizzare un errore nel caso in cui il download del file non vada a buon fine. &  \hyperref[UC24]{UC24}\\
+    \textbf{RF.D.24} & Il Tecnico deve visualizzare un errore nel caso in cui il download del file non vada a buon fine. &  \hyperref[UC24]{UC24}\\
     \hline
     \textbf{RF.O.25} & L'Utente deve poter visualizzare il contenuto della chat. &  \hyperref[UC25]{UC25}\\
     \hline
@@ -151,11 +151,11 @@
     \hline
     \textbf{RF.O.35} & L'Utente deve poter visualizzare il contenuto del \glossario{prompt} generato. & \hyperref[UC35]{UC35}, Capitolato \\
     \hline
-    \textbf{RF.O.36} & L'Utente deve poter effettuare una ricerca tra i \glossario{dizionari dati} caricati nel sistema. & \hyperref[UC36]{UC36}, Verbale interno \\
+    \textbf{RF.OP.36} & L'Utente deve poter effettuare una ricerca per nome tra i \glossario{dizionari dati} caricati nel sistema. & \hyperref[UC36]{UC36}, Verbale interno \\
     \hline
-    \textbf{RF.O.37} & Il Tecnico deve poter scaricare il file relativo a un dizionario dati. & \hyperref[UC37]{UC37} \\
+    \textbf{RF.OP.37} & L'Utente deve poter effettuare una ricerca per descrizione tra i dizionari dati caricati nel sistema. & \hyperref[UC37]{UC37}, Verbale interno \\
     \hline
-    \textbf{RF.O.38} & Il Tecnico deve poter copiare il contenuto del messaggio di \glossario{debug}.  & \hyperref[UC38]{UC38} \\
+    \textbf{RF.O.38} & Il Tecnico deve poter scaricare il file relativo a un dizionario dati. & \hyperref[UC38]{UC38} \\
     \hline
     \textbf{RF.O.39} & Il sistema deve memorizzare i dizionari caricati dal Tecnico. & Capitolato \\
     \hline
@@ -171,7 +171,7 @@
     \hline
     \textbf{RF.O.45} & Il prompt deve contenere almeno le descrizioni in linguaggio naturale delle tabelle e delle colonne. & Verbale esterno 2024-06-07\\
     \hline
-    \textbf{RF.O.46} & Quando il Tecnico richiede un prompt, il sistema elabora in automatico un \glossario{log} che ne illustra il processo di generazione. & Verbale esterno 2024-04-09 \\
+    \textbf{RF.D.46} & Quando il Tecnico richiede un prompt, il sistema elabora in automatico un \glossario{log} che ne illustra il processo di generazione. & Verbale esterno 2024-04-09 \\
     \hline
     \textbf{RF.O.47} & Il sistema di generazione del prompt deve supportare richieste in lingua inglese. & Verbale interno \\
     \hline
@@ -183,7 +183,7 @@
     \hline
     \textbf{RF.O.51} & La scelta del DBMS deve essere disponibile nella pagina di generazione del prompt. & Verbale interno \\
     \hline
-    \textbf{RF.D.52} & Il sistema di generazione del prompt deve supportare richieste in lingue diverse dall'inglese. & Verbale esterno 2024-04-09 \\
+    \textbf{RF.OP.52} & Il sistema di generazione del prompt deve supportare richieste in lingue diverse dall'inglese. & Verbale esterno 2024-04-09 \\
     \hline
     \textbf{RF.OP.53} & Quando l'Utente ripete più volte lo stesso messaggio, il ChatBOT restituisce la risposta formulata alla prima occorrenza del messaggio. & Verbale interno \\
     \hline
@@ -311,7 +311,7 @@
     \hline
     \textbf{RV.D.15} & L'applicazione deve essere sviluppata, testata e distribuita mediante \glossario{Docker}. & Verbale interno \\
     \hline
-    \textbf{RV.OP.16} & I colori di primo piano e di sfondo devono avere un rapporto di contrasto di almeno 4.5:1 per testo di dimensioni "normali", e almeno 3:1 per testo grande (linee guida WCAG 2.1, livello di conformità AA). & Verbale interno \\
+    \textbf{RV.D.16} & I colori di primo piano e di sfondo devono avere un rapporto di contrasto di almeno 4.5:1 per testo di dimensioni "normali", e almeno 3:1 per testo grande (linee guida WCAG 2.1, livello di conformità AA). & Verbale interno \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
@@ -557,13 +557,13 @@ Di seguito sono illustrate le corrispondenze fonte - requisito, raggruppate per 
     \hline
 		\textbf{Requisito} & \textbf{Obbligatorio} & \textbf{Desiderabile} & \textbf{Opzionale} & \textbf{Totale} \\ 
     \hline
-    Funzionale & 70 & 4 & 7 & 81 \\
+    Funzionale & 62 & 7 & 12 & 81 \\
     \hline
     Di qualità & 5 & 2 & 0 & 7 \\
     \hline 
-    Di vincolo & 13 & 2 & 1 & 16 \\
+    Di vincolo & 13 & 3 & 0 & 16 \\
     \hline
-    \textbf{Totale} & 88 & 8 & 8 & \textbf{104} \\ 
+    \textbf{Totale} & 80 & 12 & 12 & \textbf{104} \\ 
     \hline
   \end{tabular}
   \caption{Tabella di riepilogo dei requisiti}
