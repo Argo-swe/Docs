@@ -2,21 +2,15 @@
 \paragraph{Introduzione}
 \par La seguente sezione serve a elencare i design patterns utilizzati durante lo sviluppo dell'architettura. Si occupa inoltre di dare una loro descrizione e spiegare i motivi che hanno spinto il gruppo a sceglierli per lo sviluppo.
 
-\paragraph{Singleton}
-\begin{itemize}
-    \item{\textbf{Descrizione:}} il pattern Singleton è un design pattern creazionale che garantisce che una classe abbia una sola istanza e fornisce un punto di accesso globale a tale istanza.
-    \item{\textbf{Utilizzo:}}
-    \begin{itemize}
-        \item Classi che utilizzano il pattern
-    \end{itemize}
-\end{itemize}
-
 \paragraph{Abstract Factory}
 \begin{itemize}
     \item{\textbf{Descrizione:}} il pattern Abstract Factory è un design pattern creazionale che fornisce un'interfaccia per creare famiglie di oggetti correlati o dipendenti senza specificarne le classi concrete.
     \item{\textbf{Utilizzo:}}
     \begin{itemize}
-        \item Classi che utilizzano il pattern
+        \item \texttt{DbManagerFactory}
+        \item \texttt{FileFactory}
+        \item \texttt{SchemaValidatorFactory}
+        \item \texttt{EmbeddingsManagerFactory}
     \end{itemize}
 \end{itemize}
 
@@ -32,9 +26,15 @@
 \paragraph{Facade}
 \begin{itemize}
     \item{\textbf{Descrizione:}} il pattern Facade è un design pattern strutturale che fornisce un'interfaccia unificata per un insieme di interfacce in un sottosistema. Il pattern definisce un'interfaccia di alto livello che semplifica l'uso del sottosistema.
-    \item{\textbf{Utilizzo:}}
+    \item{\textbf{Utilizzo:}} Le classi che utilizzano questo pattern sono tutte le interfacce che sono implementate da una classe concreta. Questo è stato fatto per permettere di dirigere le dipendenze verso interfacce uniche che consentano una manutenibilità più semplice (bozza).
     \begin{itemize}
-        \item Classi che utilizzano il pattern
+        \item \texttt{AuthenticationUseCase}
+        \item \texttt{DictionaryUseCase}
+        \item \texttt{IndexManagerPort}
+        \item \texttt{SchemaValidatorUseCase}
+        \item \texttt{PromptManagerPort}
+        \item \texttt{DebugManagerPort}
+        \item \texttt{EmbeddingsAbstractFactory}
     \end{itemize}
 \end{itemize}
 
@@ -44,5 +44,56 @@
     \item{\textbf{Utilizzo:}}
     \begin{itemize}
         \item Classi che utilizzano il pattern
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Adapters}
+\begin{itemize}
+    \item{\textbf{Descrizione:}} il pattern Adapters è un design pattern strutturale che consente a oggetti con tipi dati incompatibili di collaborare.
+    \item{\textbf{Utilizzo:}}
+    \begin{itemize}
+        \item Classi che utilizzano il pattern
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Ports}
+\begin{itemize}
+    \item{\textbf{Descrizione:}} il pattern Ports è un design pattern architetturale che permette di separare le interfacce di input e output dal core dell'applicazione.
+    \item{\textbf{Utilizzo:}}
+    \begin{itemize}
+        \item \texttt{AuthenticationUseCase}
+        \item \texttt{DictionaryUseCase}
+        \item \texttt{PromptUseCase}
+        \item \texttt{SchemaValidatorUseCase}
+        \item \texttt{PromptManagerPort}
+        \item \texttt{EmbeddingsAbstractFactory}
+        \item \texttt{DebugManagerPort}
+        \item \texttt{IndexManagerPort}
+        \item \texttt{AuthenticationRepository}
+        \item \texttt{DictionaryRepository}
+        \item \texttt{FileRepository}
+        \item \texttt{DbManagerAbstractFactory}
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Services}
+\begin{itemize}
+    \item{\textbf{Descrizione:}} il pattern Services è un design pattern architetturale che permette di separare la logica di business dal resto dell'applicazione.
+    \item{\textbf{Utilizzo:}}
+    \begin{itemize}
+        \item \texttt{DictionaryService}
+        \item \texttt{PromptManagerService}
+        \item \texttt{AuthenticationService}
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Repository}
+\begin{itemize}
+    \item{\textbf{Descrizione:}} il pattern Repository è un design pattern architetturale che permette di separare la logica di accesso ai dati dal resto dell'applicazione.
+    \item{\textbf{Utilizzo:}}
+    \begin{itemize}
+        \item \texttt{DictionaryRepository}
+        \item \texttt{AuthenticationRepository}
+        \item \texttt{FileRepository}
     \end{itemize}
 \end{itemize}
