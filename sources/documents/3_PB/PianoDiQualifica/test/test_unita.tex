@@ -268,7 +268,8 @@
 			\item Una volta selezionata, la voce di menu deve essere attiva;
 			\item La voce di menu può essere la radice di un menu;
 			\item La voce di menu può contenere un sotto-menu;
-			\item La voce di menu può aprire o chiudere un sotto-menu.
+			\item La voce di menu può aprire o chiudere un sotto-menu;
+			\item L'icona "submenu-toggler" deve essere visibile se la voce di menu contiene un sotto-menu.
     \end{itemize} & S \\
 		\hline TU & Verificare che il componente "AppTopbar" soddisfi le seguenti condizioni:
     \begin{itemize}
@@ -320,6 +321,7 @@
     \begin{itemize}
       \item Il messaggio inviato dall'Utente deve essere visualizzato correttamente;
 			\item Il messaggio inviato dal ChatBOT deve essere visualizzato correttamente;
+			\item Se il messaggio inviato dal ChatBOT è null, il sistema deve mostrare un avviso all'Utente;
 			\item I pulsanti di azione devono essere nascosti se il messaggio è stato inviato dall'Utente;
 			\item La funzione "Copia negli appunti" deve essere chiamata con i parametri corretti al clic dell'apposito pulsante;
 			\item Il pulsante di debug deve essere nascosto se l'Utente non ha effettuato il login;
@@ -354,6 +356,11 @@
 		\hline TU & Verificare che il componente "DictionariesListView" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item La lista dei dizionari dati deve essere visualizzata correttamente;
+			\item Se la lista dei dizionari è vuota, il sistema deve mostrare un messaggio esplicativo;
+			\item I risultati della ricerca dei dizionari per nome devono essere visualizzati correttamente;
+			\item Se la ricerca dei dizionari per nome non produce risultati, il sistema deve mostrare un messaggio esplicativo;
+			\item I risultati della ricerca dei dizionari per descrizione devono essere visualizzati correttamente;
+			\item Se la ricerca dei dizionari per descrizione non produce risultati, il sistema deve mostrare un messaggio esplicativo;
 			\item La funzione "Apri dictionary modal" deve essere chiamata con i parametri corretti al clic del pulsante di inserimento;
 			\item La funzione "Apri dictionary modal" deve essere chiamata con i parametri corretti al clic del pulsante di modifica dei metadati;
 			\item La funzione "Apri dictionary modal" deve essere chiamata con i parametri corretti al clic del pulsante di modifica del file;
@@ -373,7 +380,9 @@
 			\item La funzione di generazione del prompt deve essere chiamata con i parametri corretti al clic del pulsante di invio;
 			\item Quando il ChatBOT ritorna una risposta, il contenuto del sessionStorage deve essere aggiornato;
 			\item Quando viene inviata una richiesta, il campo di testo deve essere resettato;
-			\item La funzione "messageError" deve essere chiamata se la generazione del prompt fallisce.
+			\item La funzione "messageError" deve essere chiamata se la generazione del prompt fallisce;
+			\item Il pulsante "Scroll to bottom" deve essere visualizzato quando l'Utente scorre i messaggi;
+			\item L'ultimo messaggio della chat deve essere visualizzato se viene cliccato il pulsante "Scroll to bottom".
     \end{itemize} & S \\
 		\hline TU & Verificare che il metodo "logout" della classe "auth.service" soddisfi le seguenti condizioni:
 		\begin{itemize}
