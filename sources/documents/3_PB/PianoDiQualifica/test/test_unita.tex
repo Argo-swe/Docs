@@ -200,12 +200,12 @@
 		\end{itemize} & S \\
 
 		%txtai_debug_manager
-		\hline TU & Verificare che il metodo "semantic\_search\_log\_custom\_algorithm" della classe "TxtaiDebugManagerAdapter" soddisfi le seguenti condizioni:
+		\hline TU & Verificare che il metodo "semantic_search_log_custom_algorithm" della classe "TxtaiDebugManagerAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Deve restituire un log con il messaggio "No tables found." quando vengono passate liste vuote di tuple;
-			\item Deve restituire un log che confermi che tutte le tabelle sono mantenute se il loro punteggio è superiore o uguale a 0.45;
-			\item Deve restituire un log che indichi quali tabelle sono mantenute e quali sono scartate quando alcune tabelle hanno un punteggio inferiore a 0.45;
-			\item Deve mantenere tabelle con un punteggio inferiore a 0.45 se la differenza di punteggio con la tabella precedente è inferiore a 0.25.
+			\item Deve mantenere e registrare tutte le tabelle con un punteggio superiore o uguale a 0.45, indicando che sono rilevanti;
+			\item Deve scartare le tabelle con punteggi bassi e segnalarlo nel log, quando la differenza di punteggio con le tabelle precedenti supera una soglia (ad esempio 0.2);
+			\item Deve mantenere le tabelle con punteggi inferiori a 0.45 se la differenza di punteggio con la tabella precedente è inferiore a 0.2 o il punteggio globale è compreso tra 0.35 e 0.45.
 		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "semantic\_search\_log" della classe "TxtaiDebugManagerAdapter" soddisfi le seguenti condizioni:
