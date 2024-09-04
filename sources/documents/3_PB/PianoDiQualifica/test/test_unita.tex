@@ -27,6 +27,13 @@
 		\hline
 		\endlastfoot
 
+		%json_file_adapter
+		\hline TU & Verificare che il metodo "create" della classe "FileFactory" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve creare correttamente un'istanza di "JsonFileAdapter" quando il tipo di file specificato nella configurazione è "json", verificando che l'istanza sia anche un'implementazione di "FileRepository";
+			\item Deve sollevare un'eccezione "ValueError" se il tipo di file specificato nella configurazione è sconosciuto, con un messaggio di errore che indichi il tipo di file non riconosciuto.
+		\end{itemize} & S \\
+
 		%json_schema_validator_adapter
 		\hline TU & Verificare che il metodo "validate" della classe "JsonSchemaValidatorAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
@@ -178,7 +185,8 @@
 		\begin{itemize}
 			\item Deve creare e restituire un'istanza di "TxtaiIndexManagerAdapter" quando viene fornita una configurazione valida;
 			\item Deve generare un'eccezione "KeyError" se la configurazione fornita manca di chiavi obbligatorie, e il messaggio dell'errore deve indicare le chiavi mancanti;
-			\item Deve generare un'eccezione "KeyError" durante l'inizializzazione della factory se manca la chiave "txtai" nella configurazione, e il messaggio dell'errore deve menzionare la chiave mancante.
+			\item Deve generare un'eccezione "KeyError" durante l'inizializzazione della factory se manca la chiave "txtai" nella configurazione, e il messaggio dell'errore deve menzionare la chiave mancante;
+			\item Deve restituire correttamente un'istanza di "TxtaiIndexManagerAdapter" anche se la configurazione manca della chiave "txtai".
 		\end{itemize} & S \\
 
 		\hline TU & Verificare che il metodo "create\_prompt\_manager\_with\_dependencies" della classe "TxtaiEmbeddingsManagerFactory" soddisfi le seguenti condizioni:
