@@ -181,6 +181,8 @@ TSWLatexianTemp*
 
 # Default build directory
 build-output
+sources/documents/1_Candidatura
+sources/documents/2_RTB
 
 # Default release directory
 ArgoRelease

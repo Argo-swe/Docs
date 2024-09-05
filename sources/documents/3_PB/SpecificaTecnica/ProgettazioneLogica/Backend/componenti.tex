@@ -26,9 +26,6 @@
 \item Restituisce un oggetto \texttt{DictionariesResponseDto} con i dati dei dizionari e lo stato \texttt{ResponseStatusEnum.OK}.
 \end{itemize}
 
-\subsubsubsection{Tracciamento dei requisiti}
-\par TODO;
-
 \subsubsection{get\_dictionary}
 
 \subsubsubsection{Descrizione}
@@ -58,9 +55,6 @@
 \item Se il dizionario non viene trovato, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
 \end{itemize}
 
-\subsubsubsection{Tracciamento dei requisiti}
-\par TODO;
-
 \subsubsection{get\_dictionary\_file}
 
 \subsubsubsection{Descrizione}
@@ -88,9 +82,6 @@
 \item Se il dizionario viene trovato, restituisce un \texttt{FileResponse} con il nome del file generato tramite \texttt{\_\_generate\_schema\_file\_name(id)};
 \item Se il dizionario non viene trovato, restituisce un oggetto \texttt{ResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
 \end{itemize}
-
-\subsubsubsection{Tracciamento dei requisiti}
-\par TODO;
 
 \subsubsection{get\_dictionary\_preview}
 
@@ -125,9 +116,6 @@
 \end{itemize}
 \item Se il dizionario non viene trovato, restituisce un oggetto \texttt{ResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
 \end{itemize}
-
-\subsubsubsection{Tracciamento dei requisiti}
-\par TODO;
 
 \subsubsection{create\_dictionary}
 
@@ -168,9 +156,6 @@
 \item Se il nome e la descrizione del dizionario non sono presenti, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST}.
 \end{itemize}
 
-\subsubsubsection{Tracciamento dei requisiti}
-\par TODO;
-
 \subsubsection{update\_dictionary\_file}
 
 \subsubsubsection{Descrizione}
@@ -208,9 +193,6 @@
 \item Aggiorna l'indice \texttt{txtai} utilizzando \texttt{manager.create\_index(found\_dic.id)};
 \item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del dizionario aggiornato e lo stato \texttt{ResponseStatusEnum.OK}.
 \end{itemize}
-
-\subsubsubsection{Tracciamento dei requisiti}
-\par TODO;
 
 \subsubsection{update\_dictionary\_metadata}
 
@@ -250,9 +232,6 @@
 \item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del dizionario aggiornato e lo stato \texttt{ResponseStatusEnum.OK}.
 \end{itemize}
 
-\subsubsubsection{Tracciamento dei requisiti}
-\par TODO;
-
 \subsubsection{delete\_dictionary}
 
 \subsubsubsection{Descrizione}
@@ -285,9 +264,6 @@
 \item Restituisce un oggetto \texttt{ResponseDto} con lo stato \texttt{ResponseStatusEnum.OK}.
 \end{itemize}
 
-\subsubsubsection{Tracciamento dei requisiti}
-\par TODO;
-
 %SEZIONE ROUTES DI login_api
 
 \subsubsection{login}
@@ -317,9 +293,6 @@
 \item Genera un token JWT utilizzando \texttt{JwtHandler.sign(query.id)};
 \item Restituisce un oggetto \texttt{AuthResponseDto} con il token generato e lo stato \texttt{Response\-Status\-Enum.OK}.
 \end{itemize}
-
-\subsubsubsection{Tracciamento dei requisiti}
-\par TODO;
 
 %SEZIONE ROUTES DI prompt_api
 
@@ -355,9 +328,6 @@
 \item Restituisce un oggetto \texttt{StringDataResponseDto} con il prompt generato e lo stato \texttt{ResponseStatusEnum.OK}.
 \end{itemize}
 
-\subsubsubsection{Tracciamento dei requisiti}
-\par TODO;
-
 \subsubsection{generate\_prompt\_debug}
 
 \subsubsubsection{Descrizione}
@@ -379,5 +349,84 @@
 \item Se il file non viene trovato, restituisce un oggetto \texttt{StringDataResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
 \end{itemize}
 
-\subsubsubsection{Tracciamento dei requisiti}
-\par TODO;
+% TABELLA TRACCIAMENTO REQUISITI
+
+\subsubsection{Tracciamento dei requisiti}
+\bgroup
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+	\centering
+	% MAX 12.5cm
+  \begin{longtable}{|c|c|}
+		\caption{Tracciamento dei requisiti back-end}
+  	\label{tab:tracciamento-requisiti-back-end} \\
+    \hline
+		\textbf{ID} & \textbf{Route} \\
+		\hline
+		\endfirsthead
+
+		\caption[]{Tracciamento dei requisiti back-end (continua)} \\
+		\hline
+		\textbf{ID} & \textbf{Route} \\
+		\hline
+		\endhead
+
+		\hline
+		\multicolumn{2}{|r|}{{Continua nella prossima pagina}} \\
+		\hline
+		\endfoot
+
+		\hline
+		\endlastfoot
+
+    RF.O.1 & \texttt{login} \\
+	  \hline RF.O.2 & \texttt{login} \\
+    \hline RF.O.3 & \texttt{generate\_prompt}\\
+    \hline RF.O.6 & \texttt{generate\_prompt}, \texttt{generate\_prompt\_with\_debug} \\
+    \hline RF.O.9 & \texttt{get\_all\_dictionaries} \\
+    \hline RF.O.9.1 & \texttt{get\_all\_dictionaries} \\
+    \hline RF.O.10 & \texttt{get\_all\_dictionaries}, \texttt{get\_dictionary} \\
+    \hline RF.O.10.1 & \texttt{get\_all\_dictionaries}, \texttt{get\_dictionary} \\
+    \hline RF.O.10.2 & \texttt{get\_all\_dictionaries}, \texttt{get\_dictionary} \\
+    \hline RF.O.10.3 & \texttt{get\_all\_dictionaries}, \texttt{get\_dictionary} \\
+    \hline RF.O.11 & \texttt{generate\_prompt}, \texttt{generate\_prompt\_with\_debug} \\
+    \hline RF.O.13 & \texttt{create\_dictionary} \\
+    \hline RF.O.14 & \texttt{get\_dictionary\_preview} \\
+    \hline RF.O.14.1 & \texttt{get\_dictionary\_preview} \\
+    \hline RF.O.14.2 & \texttt{get\_dictionary\_preview} \\
+    \hline RF.O.14.3 & \texttt{get\_dictionary\_preview} \\
+    \hline RF.O.14.3.1 & \texttt{get\_dictionary\_preview} \\
+    \hline RF.O.14.3.1.1 & \texttt{get\_dictionary\_preview} \\
+    \hline RF.O.14.3.1.2 & \texttt{get\_dictionary\_preview} \\
+    \hline RF.O.15 & \texttt{create\_dictionary} \\
+    \hline RF.O.16 & \texttt{create\_dictionary} \\
+    \hline RF.O.17 & \texttt{create\_dictionary} \\
+    \hline RF.O.18 & \texttt{delete\_dictionary} \\
+    \hline RF.O.19 & \texttt{create\_dictionary}, \texttt{update\_dictionary\_file} \\
+    \hline RF.O.20 & \texttt{update\_dictionary\_file} \\
+    \hline RF.O.21 & \texttt{delete\_dictionary} \\
+    \hline RF.O.22 & \texttt{generate\_prompt\_with\_debug} \\
+    \hline RF.O.28 & \texttt{create\_dictionary}, \texttt{update\_dictionary\_file} \\
+    \hline RF.O.29 & \texttt{update\_dictionary\_metadata} \\
+    \hline RF.O.30 & \texttt{update\_dictionary\_metadata} \\
+    \hline RF.O.31 & \texttt{create\_dictionary}, \texttt{update\_dictionary\_metadata} \\
+    \hline RF.O.31.1 & \texttt{create\_dictionary}, \texttt{update\_dictionary\_metadata} \\
+    \hline RF.O.31.2 & \texttt{create\_dictionary}, \texttt{update\_dictionary\_metadata} \\
+    \hline RF.O.32 & \texttt{create\_dictionary}, \texttt{update\_dictionary\_metadata} \\
+    \hline RF.O.33 & \texttt{create\_dictionary}, \texttt{update\_dictionary\_file} \\
+    \hline RF.O.34 & \texttt{create\_dictionary}, \texttt{update\_dictionary\_file} \\
+    \hline RF.O.35 & \texttt{generate\_prompt}, \texttt{generate\_prompt\_with\_debug} \\
+    \hline RF.O.37 & \texttt{get\_dictionary\_file} \\
+    \hline RF.O.39 & \texttt{create\_dictionary}, \texttt{update\_dictionary\_file} \\
+    \hline RF.D.40 & \texttt{create\_dictionary}, \texttt{update\_dictionary\_file} \\
+    \hline RF.O.41 & \texttt{generate\_prompt}, \texttt{generate\_prompt\_with\_debug} \\
+    \hline RF.OP.42 & \texttt{generate\_prompt}, \texttt{generate\_prompt\_with\_debug} \\
+    \hline RF.O.45 & \texttt{generate\_prompt}, \texttt{generate\_prompt\_with\_debug} \\
+    \hline RF.O.46 & \texttt{generate\_prompt\_with\_debug} \\
+    \hline RF.O.47 & \texttt{generate\_prompt}, \texttt{generate\_prompt\_with\_debug} \\
+    \hline RF.D.52 & \texttt{generate\_prompt}, \texttt{generate\_prompt\_with\_debug} \\
+    \hline RF.O.55 & \texttt{create\_dictionary}, \texttt{update\_dictionary\_file} \\
+    \hline RF.O.56 & \texttt{create\_dictionary}, \texttt{update\_dictionary\_file} \\
+    \hline RF.O.57 & \texttt{create\_dictionary}, \texttt{update\_dictionary\_file} \\
+  \end{longtable}
+\end{adjustwidth}
+\egroup
