@@ -1,92 +1,108 @@
 \subsubsection{DTO (Data Transfer Objects)}
 
-\paragraph{Introduzione}
-\par Questa sezione descrive le classi che si occupano dei DTO (Data Transfer Objects), ossia design pattern utilizzati per il tasferimento dei dati nell'applicazione.
+\subsubsubsection{Introduzione}
+\par Questa sezione descrive le classi che rappresentano \glossario{DTO} (Data Transfer Objects), ossia design pattern utilizzati per il tasferimento dei dati tra gli strati dell'applicazione. I DTO sono dei contenitori semplici e privi di logica di business, progettati per aggregare dati e facilitare la comunicazione tra i componenti del sistema.
 
-\paragraph{ResponseStatusEnum} \label{ResponseStatusEnum} 
-\begin{figure}[h!]
+\subsubsubsection{ResponseStatusEnum} \label{ResponseStatusEnum} 
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.30\textwidth]{assets/Backend/response_status_enum.png}
-    \caption{Rappresentazione della classe ResponseStatusEnum}
+    \includegraphics[width=0.4\textwidth]{assets/Backend/response_status_enum.png}
+    \caption{Diagramma della classe ResponseStatusEnum}
 \end{figure}
-\par Enumerazione contenente i possibili stati di risposta del sistema.
+\par ResponseStatusEnum è un'enumerazione che rappresenta i possibili stati di risposta del sistema. Le coppie chiave-valore sono basate sui codici di stato HTTP.
 
-\paragraph{DictionaryDto} \label{DictionaryDto}
-\begin{figure}[h!]
+\subsubsubsection{ResponseDto} \label{ResponseDto}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.40\textwidth]{assets/Backend/dictionary_dto.png}
-    \caption{Rappresentazione della classe DictionaryDto}
+    \includegraphics[width=0.4\textwidth]{assets/Backend/response_dto.png}
+    \caption{Diagramma della classe ResponseDto}
+  \end{figure}
+\par ResponseDto è un DTO utilizzato per rappresentare una risposta standardizzata del sistema. La classe contiene un messaggio esplicativo e un'istanza di ResponseStatusEnum.
+
+\subsubsubsection{StringDataResponseDto} \label{StringDataResponseDto}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{assets/Backend/string_data_response_dto.png}
+    \caption{Diagramma della classe StringDataResponseDto}
+  \end{figure}
+\par StringDataResponseDto è un DTO utilizzato per rappresentare una risposta del sistema che include dati testuali. La classe estende ResponseDto.
+
+\subsubsubsection{AuthResponseDto} \label{AuthResponseDto}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{assets/Backend/auth_response_dto.png}
+    \caption{Diagramma della classe AuthResponseDto}
+  \end{figure}
+\par AuthResponseDto è un DTO utilizzato per rappresentare la risposta del sistema a una richiesta di autenticazione. La classe estende ResponseDto.
+
+\subsubsubsection{DictionaryResponseDto} \label{DictionaryResponseDto}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{assets/Backend/dictionary_response_dto.png}
+    \caption{Diagramma della classe DictionaryResponseDto}
+  \end{figure}
+\par DictionaryResponseDto è un DTO utilizzato per rappresentare una risposta del sistema che include dati relativi a uno specifico dizionario. Le informazioni possono includere le caratteristiche di un dizionario o un'anteprima del suo contenuto. La classe estende ResponseDto.
+
+\subsubsubsection{DictionariesResponseDto} \label{DictionariesResponseDto}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{assets/Backend/dictionaries_response_dto.png}
+    \caption{Diagramma della classe DictionariesResponseDto}
+  \end{figure}
+\par DictionariesResponseDto è un DTO utilizzato per rappresentare una risposta del sistema contenente una lista di dizionari con le loro caratteristiche specifiche. La classe estende ResponseDto.
+
+\subsubsubsection{PromptResponseDto} \label{PromptResponseDto}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{assets/Backend/prompt_response_dto.png}
+    \caption{Diagramma della classe PromptResponseDto}
+  \end{figure}
+\par PromptResponseDto è un DTO utilizzato per rappresentare una risposta del sistema che include dati relativi a un \glossario{prompt}. La classe estende ResponseDto.
+
+\subsubsubsection{LoginDto} \label{LoginDto}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{assets/Backend/login_dto.png}
+    \caption{Diagramma della classe LoginDto}
+  \end{figure}
+\par LoginDto è un DTO utilizzato per gestire i dati di autenticazione durante il processo di login. Le credenziali di accesso includono lo username e la password.
+
+\subsubsubsection{AdminDto} \label{AdminDto}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{assets/Backend/admin_dto.png}
+    \caption{Diagramma della classe AdminDto}
+  \end{figure}
+\par AdminDto è un DTO utilizzato per modellare i dati degli utenti con privilegi di amministratore nel sistema. Oltre a username e password, il DTO contiene un identificatore numerico univoco.
+
+\subsubsubsection{DictionaryDto} \label{DictionaryDto}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{assets/Backend/dictionary_dto.png}
+    \caption{Diagramma della classe DictionaryDto}
 \end{figure}
-\par DTO relativo ai \glossario{dizionari dati}, contenente le informazioni relative a: id, nome, descrizione, configurazione e validazione del pattern
+\par DictionaryDto è un DTO utilizzato per modellare le informazioni relative a un dizionario, inclusi il nome e la descrizione. La classe contiene un metodo di validazione per il campo "name".
 
-\paragraph{PromptDto} \label{PromptDto}
-\begin{figure}[h!]
+\subsubsubsection{DictionaryPreviewDto} \label{DictionaryPreviewDto}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.30\textwidth]{assets/Backend/prompt_dto.png}
-    \caption{Rappresentazione della classe PromptDto}
+    \includegraphics[width=0.4\textwidth]{assets/Backend/dictionary_preview_dto.png}
+    \caption{Diagramma della classe DictionaryPreviewDto}
+  \end{figure}
+\par DictionaryPreviewDto è un DTO utilizzato per fornire una panoramica di un \glossario{dizionario dati}. L'anteprima include il nome e la descrizione del \glossario{database}, insieme a una lista di tabelle con le loro informazioni.
+
+\subsubsubsection{TableDto} \label{TableDto}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{assets/Backend/table_dto.png}
+    \caption{Diagramma della classe TableDto}
+  \end{figure}
+\par TableDto è un DTO utilizzato per rappresentare i dati relativi a una tabella contenuta all'interno di un \glossario{dizionario dati}. Ogni tabella è corredata da un nome e da una descrizione.
+
+\subsubsubsection{PromptDto} \label{PromptDto}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{assets/Backend/prompt_dto.png}
+    \caption{Diagramma della classe PromptDto}
 \end{figure}
-\par DTO relativo ai \glossario{prompt} generati. Contiene le informazioni relative al prompt generato e al rispettivo log di debug.
-
-\paragraph{DictionaryPreviewDto} \label{DictionaryPreviewDto}
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.30\textwidth]{assets/Backend/dictionary_preview_dto.png}
-    \caption{Rappresentazione della classe DictionaryPreviewDto}
-  \end{figure}
-\par DTO relativo alle anteprime dei dizionari dati, le quali ne mostrano il nome, la descrizione e la lista delle tabelle
-
-\paragraph{LoginDto} \label{LoginDto}
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.30\textwidth]{assets/Backend/login_dto.png}
-    \caption{Rappresentazione della classe LoginDto}
-  \end{figure}
-\par DTO relativo ai login dei tecnici. Includono le informazioni riguardanti lo username e la password per l'accesso.
-
-\paragraph{AdminDto} \label{AdminDto}
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.30\textwidth]{assets/Backend/admin_dto.png}
-    \caption{Rappresentazione della classe AdminDto}
-  \end{figure}
-\par DTO relativo alle informazioni riguardanti gli amministratori dell'applicativo. Contiene le informazioni relative all'id dell'admin, il suo username e la sua password.
-
-\paragraph{ResponseDto} \label{ResponseDto}
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.30\textwidth]{assets/Backend/response_dto.png}
-    \caption{Rappresentazione della classe ResponseDto}
-  \end{figure}
-\par DTO relativo ai tipi di risposta del sistema, i quali permettono la visualizzazione del problema con un avviso a schermo.
-
-\paragraph{StringDataResponseDto} \label{StringDataResponseDto}
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.30\textwidth]{assets/Backend/string_data_response_dto.png}
-    \caption{Rappresentazione della classe StringDataResponseDto}
-  \end{figure}
-\par FIXME
-
-\paragraph{PromptResponseDto} \label{PromptResponseDto}
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.30\textwidth]{assets/Backend/prompt_response_dto.png}
-    \caption{Rappresentazione della classe PromptResponseDto}
-  \end{figure}
-\par FIXME
-
-\paragraph{AuthResponseDto} \label{AuthResponseDto}
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.30\textwidth]{assets/Backend/auth_response_dto.png}
-    \caption{Rappresentazione della classe AuthResponseDto}
-  \end{figure}
-\par FIXME
-
-\paragraph{DictionaryResponseDto} \label{DictionaryResponseDto}
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.30\textwidth]{assets/Backend/dictionary_response_dto.png}
-    \caption{Rappresentazione della classe DictionaryResponseDto}
-  \end{figure}
-\par FIXME
+\par PromptDto è un DTO utilizzato per modellare il \glossario{prompt} generato dal sistema. La classe contiene due campi di tipo stringa: il testo del prompt e le informazioni di \glossario{debug} relative ad esso.
