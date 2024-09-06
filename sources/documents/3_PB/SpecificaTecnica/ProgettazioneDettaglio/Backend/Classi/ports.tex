@@ -1,168 +1,226 @@
-\subsubsubsection{Ports - Incoming}
+\subsubsection{Ports - Incoming}
 
-\paragraph{AuthenticationUseCase} \label{AuthenticationUseCase}
+\subsubsubsection{AuthenticationUseCase} \label{AuthenticationUseCase}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/authentication_use_case.png}
-    \caption{Rappresentazione dell'interfaccia AuthenticationUseCase}
+    \includegraphics[width=0.6\textwidth]{assets/Backend/authentication_use_case.png}
+    \caption{Diagramma dell'interfaccia AuthenticationUseCase}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia permette di gestire l'autenticazione degli utenti. 
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[AuthenticationService]{(\texttt{AuthenticationService})}. 
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[AuthenticationService]{(\texttt{AuthenticationService})}.
-\end{itemize}  
-
-\paragraph{DictionaryUseCase} \label{DictionaryUseCase}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/dictionary_use_case.png}
-    \caption{Rappresentazione dell'interfaccia DictionaryUseCase}
-  \end{figure}
-\begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia permette di gestire le operazioni sul \glossario{dizionario dati}.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[DictionaryService]{\texttt{DictionaryService}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[DictionaryService]{(\texttt{DictionaryService})}.
-\end{itemize}  
-
-\paragraph{PromptUseCase} \label{PromptUseCase}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/prompt_use_case.png}
-    \caption{Rappresentazione dell'interfaccia PromptUseCase}
-  \end{figure}
-\begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa di gestire le operazioni per la generazione dei \glossario{prompt}.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[PromptManagementService]{(\texttt{PromptManagementService})}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[PromptManagementService]{(\texttt{PromptManagementService})}.
-\end{itemize}  
-
-\paragraph{SchemaValidatorUseCase} \label{SchemaValidatorUseCase}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/schema_validator_use_case.png}
-    \caption{Rappresentazione dell'interfaccia SchemaValidatorUseCase}
-  \end{figure}
-\begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa della validazione dei \glossario{dizionari dati}.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[JsonSchemaValidatorAdapter]{(\texttt{JsonSchemaValidatorAdapter})}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[JsonSchemaValidatorAdapter]{(\texttt{JsonSchemaValidatorAdapter})}.
-    \item \textbf{Dipendenze:}
+    \item \textbf{Descrizione}: AuthenticationUseCase definisce il contratto per i casi d'uso relativi all'autenticazione degli utenti;
+    \item \textbf{Operazioni}:
     \begin{itemize}
-        \item \texttt{Dictionary}
+        \item Autenticazione con username e password.
     \end{itemize}
+    \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete.
+\end{itemize}  
+
+\subsubsubsection{DictionaryUseCase} \label{DictionaryUseCase}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{assets/Backend/dictionary_use_case.png}
+    \caption{Diagramma dell'interfaccia DictionaryUseCase}
+  \end{figure}
+\begin{itemize}
+    \item \textbf{Descrizione}: DictionaryUseCase definisce il contratto per i casi d'uso relativi alle operazioni sui \glossario{dizionari dati};
+    \item \textbf{Operazioni}:
+    \begin{itemize}
+      \item Recupero delle informazioni di tutti i dizionari;
+      \item Recupero delle informazioni di un dizionario;
+      \item Recupero del file di un dizionario;
+      \item Anteprima di un dizionario;
+      \item Creazione di un dizionario;
+      \item Aggiornamento dei metadati di un dizionario;
+      \item Aggiornamento del file di un dizionario;
+      \item Eliminazione di un dizionario.
+    \end{itemize}
+    \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete.
+\end{itemize}  
+
+\subsubsubsection{PromptUseCase} \label{PromptUseCase}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/Backend/prompt_use_case.png}
+    \caption{Diagramma dell'interfaccia PromptUseCase}
+  \end{figure}
+\begin{itemize}
+    \item \textbf{Descrizione}: PromptUseCase definisce il contratto per i casi d'uso relativi alla generazione del \glossario{prompt};
+    \item \textbf{Operazioni}:
+    \begin{itemize}
+      \item Generazione del prompt a partire da una richiesta, un dizionario, una lingua e un \glossario{DBMS};
+      \item Generazione del prompt con informazioni di debug associate ad esso.
+    \end{itemize}
+    \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete.
+\end{itemize}  
+
+\subsubsubsection{SchemaValidatorUseCase} \label{SchemaValidatorUseCase}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{assets/Backend/schema_validator_use_case.png}
+    \caption{Diagramma dell'interfaccia SchemaValidatorUseCase}
+  \end{figure}
+\begin{itemize}
+    \item \textbf{Descrizione}: SchemaValidatorUseCase definisce il contratto per i casi d'uso relativi alla validazione dello schema dei \glossario{dizionari dati};
+    \item \textbf{Operazioni}:
+    \begin{itemize}
+      \item Validazione dello schema di un dizionario dati.
+    \end{itemize}
+    \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete.
 \end{itemize}  
 
 \subsubsubsection{Ports - Outcoming}
 
-\paragraph{DebugManagerPort} \label{DebugManagerPort}
+\subsubsubsection{EmbeddingsAbstractFactory} \label{EmbeddingsAbstractFactory}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/debug_manager_port.png}
-    \caption{Rappresentazione dell'interfaccia DebugManagerPort}
+    \includegraphics[width=0.5\textwidth]{assets/Backend/embeddings_abstract_factory.png}
+    \caption{Diagramma dell'interfaccia EmbeddingsAbstractFactory}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa della costruzione delle sezioni del documento di \glossario{log} per il \glossario{debug}.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[TxtaiDebugManagerAdapter]{\texttt{TxtaiDebugManagerAdapter}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[TxtaiDebugManagerAdapter]{\texttt{TxtaiDebugManagerAdapter}}.
-\end{itemize}  
-
-\paragraph{EmbeddingsAbstractFactory} \label{EmbeddingsAbstractFactory}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/embeddings_abstract_factory.png}
-    \caption{Rappresentazione dell'interfaccia EmbeddingsAbstractFactory}
-  \end{figure}
-\begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa della creazione dell'index manager e delle classi per la gestione dei \glossario{prompt}.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[TxtaiEmbeddingsManagerFactory]{\texttt{TxtaiEmbeddingsManagerFactory}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[TxtaiEmbeddingsManagerFactory]{\texttt{TxtaiEmbeddingsManagerFactory}}.
-    \item \textbf{Dipendenze:}
+    \item \textbf{Descrizione}: EmbeddingsAbstractFactory fornisce una struttura per la creazione dei componenti relativi agli \glossario{embeddings} e alla generazione dei \glossario{prompt};
+    \item \textbf{Operazioni}:
     \begin{itemize}
-        \item \texttt{DebugManagerPort};
-        \item \texttt{IndexManagerPort};
-        \item \texttt{PromptManagerPort};
+      \item Creazione di un'istanza di IndexManagerPort;
+      \item Creazione di un'istanza di PromptManagerPort con le sue dipendenze;
+      \item Creazione di un'istanza di PromptManagerPort delegando prima la creazione delle sue dipendenze.
+    \end{itemize}
+    \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete;
+    \item \textbf{Dipendenze}:
+    \begin{itemize}
+        \item FileRepository;
+        \item IndexManagerPort;
+        \item PromptManagerPort.
     \end{itemize}
 \end{itemize}  
 
-\paragraph{IndexManagerPort} \label{IndexManagerPort}
+\subsubsubsection{IndexManagerPort} \label{IndexManagerPort}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/index_manager_port.png}
-    \caption{Rappresentazione dell'interfaccia IndexManagerPort}
+    \includegraphics[width=0.6\textwidth]{assets/Backend/index_manager_port.png}
+    \caption{Diagramma dell'interfaccia IndexManagerPort}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa delle operazioni CRUD per gli indici degli embeddings.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[TxtaiIndexManagerAdapter]{\texttt{TxtaiIndexManagerAdapter}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[TxtaiIndexManagerAdapter]{\texttt{TxtaiIndexManagerAdapter}}.
+    \item \textbf{Descrizione}: IndexManagerPort fornisce un'interfaccia per gestire le operazioni CRUD relative agli \glossario{embeddings};
+    \item \textbf{Operazioni}:
+    \begin{itemize}
+      \item Recupero degli embeddings;
+      \item Creazione di un indice;
+      \item Salvataggio di un indice;
+      \item Ripristino di un indice;
+      \item Eliminazione di un indice.
+    \end{itemize}
+    \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete.
 \end{itemize} 
 
-\paragraph{PromptManagerPort} \label{PromptManagerPort}
+\subsubsubsection{PromptManagerPort} \label{PromptManagerPort}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/prompt_manager_port.png}
-    \caption{Rappresentazione dell'interfaccia PromptManagerPort}
+    \includegraphics[width=0.6\textwidth]{assets/Backend/prompt_manager_port.png}
+    \caption{Diagramma dell'interfaccia PromptManagerPort}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa del recupero delle informazioni e la generazione del prompt.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[TxtaiPromptManagerAdapter]{\texttt{TxtaiPromptManagerAdapter}}. 
-    \item \textbf{Attributi:} FIXME (ci sono degli attributi, ma è un'interfaccia)
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[TxtaiPromptManagerAdapter]{\texttt{TxtaiPromptManagerAdapter}}.
-    \item \textbf{Dipendenze:}
+    \item \textbf{Descrizione}: questa interfaccia si occupa del recupero delle informazioni e la generazione del prompt.
+    \item \textbf{Operazioni}:
+    \begin{itemize}
+      \item Generazione del prompt;
+      \item Recupero dell'istanza di IndexManagerPort;
+      \item Creazione dell'istanza di DebugManagerPort.
+    \end{itemize}
+    \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete;
+    \item \textbf{Dipendenze}:
     \begin{itemize}
         \item \texttt{IndexManagerPort};
         \item \texttt{DebugManagerPort}.
     \end{itemize}
 \end{itemize} 
 
-\paragraph{AuthenticationRepository} \label{AuthenticationRepository}
+\subsubsubsection{DebugManagerPort} \label{DebugManagerPort}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/authentication_repository.png}
-    \caption{Rappresentazione dell'interfaccia AuthenticationRepository}
+    \includegraphics[width=0.6\textwidth]{assets/Backend/debug_manager_port.png}
+    \caption{Diagramma dell'interfaccia DebugManagerPort}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa del recupero degli utenti.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[SqlAlchemyAuthenticationRepositoryAdapter]{\texttt{SqlAlchemyAuthenticationRepositoryAdapter}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[SqlAlchemyAuthenticationRepositoryAdapter]{\texttt{SqlAlchemyAuthenticationRepositoryAdapter}}.
-\end{itemize} 
-
-\paragraph{DbManagerAbstractFactory} \label{DbManagerAbstractFactory}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/db_manager_abstract_factory.png}
-    \caption{Rappresentazione dell'interfaccia DbManagerAbstractFactory}
-  \end{figure}
-\begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa della creazione di istanze delle classi \texttt{AuthenticationRepository} e \texttt{DictionaryRepository}.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[SqlAlchemyDbManagerFactory]{\texttt{SqlAlchemyDbManagerFactory}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[SqlAlchemyDbManagerFactory]{\texttt{SqlAlchemyDbManagerFactory}}.
-    \item \textbf{Dipendenze:}
+    \item \textbf{Descrizione}: DebugManagerPort definisce il contratto per la gestione dei log relativi alle operazioni di ricerca semantica;
+    \item \textbf{Operazioni}:
     \begin{itemize}
-        \item \texttt{AuthenticationRepository};
-        \item \texttt{DictionaryRepository}.
+      \item Effettua il debug di un'operazione di ricerca semantica.
+    \end{itemize}
+    \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete.
+\end{itemize}  
+
+\subsubsubsection{DbManagerAbstractFactory} \label{DbManagerAbstractFactory}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{assets/Backend/db_manager_abstract_factory.png}
+    \caption{Diagramma dell'interfaccia DbManagerAbstractFactory}
+  \end{figure}
+\begin{itemize}
+    \item \textbf{Descrizione}: DbManagerAbstractFactory fornisce una struttura per la creazione dei componenti relativi alla gestione dei dati dei dizionari e degli utenti;
+    \item \textbf{Operazioni}:
+    \begin{itemize}
+      \item Creazione di un'istanza di AuthenticationRepository;
+      \item Creazione di un'istanza di DictionaryRepository.
+    \end{itemize}
+    \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete;
+    \item \textbf{Dipendenze}:
+    \begin{itemize}
+      \item AuthenticationRepository;
+      \item DictionaryRepository.
     \end{itemize}
 \end{itemize} 
 
-\paragraph{DictionaryRepository} \label{DictionaryRepository}
+\subsubsubsection{AuthenticationRepository} \label{AuthenticationRepository}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/dictionary_repository.png}
-    \caption{Rappresentazione dell'interfaccia DictionaryRepository}
+    \includegraphics[width=0.6\textwidth]{assets/Backend/authentication_repository.png}
+    \caption{Diagramma dell'interfaccia AuthenticationRepository}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa del recupero dei dizionari dati e delle operazioni CRUD su questi.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[SqlAlchemyDictionaryRepositoryAdapter]{\texttt{SqlAlchemyDictionaryRepositoryAdapter}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[SqlAlchemyDictionaryRepositoryAdapter]{\texttt{SqlAlchemyDictionaryRepositoryAdapter}}.
+    \item \textbf{Descrizione}: AuthenticationRepository definisce un contratto per l'accesso e la gestione dei dati di autenticazione degli utenti;
+    \item \textbf{Operazioni}: 
+    \begin{itemize}
+      \item Recupera i dettagli di un utente tramite lo username.
+    \end{itemize}
+    \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete.
+\end{itemize}
+
+\subsubsubsection{DictionaryRepository} \label{DictionaryRepository}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{assets/Backend/dictionary_repository.png}
+    \caption{Diagramma dell'interfaccia DictionaryRepository}
+  \end{figure}
+\begin{itemize}
+  \item \textbf{Descrizione}: DictionaryRepository definisce un contratto per la gestione dei dizionari all'interno del sistema; 
+  \item \textbf{Operazioni}: 
+    \begin{itemize}
+      \item Recupero delle informazioni di tutti i dizionari;
+      \item Recupero delle informazioni di un dizionario tramite il suo ID;
+      \item Recupero delle informazioni di un dizionario tramite il suo nome;
+      \item Creazione di un dizionario;
+      \item Aggiornamento dei metadati di un dizionario;
+      \item Eliminazione di un dizionario.
+    \end{itemize}
+  \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete.
 \end{itemize} 
 
-\paragraph{FileRepository} \label{FileRepository}
+\subsubsubsection{FileRepository} \label{FileRepository}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/file_repository.png}
-    \caption{Rappresentazione dell'interfaccia FileRepository}
+    \includegraphics[width=0.6\textwidth]{assets/Backend/file_repository.png}
+    \caption{Diagramma dell'interfaccia FileRepository}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione:} questa interfaccia si occupa delle operazioni CRUD sui file dei dizionari dati.
-    \item \textbf{Implementazione:} questa interfaccia viene implementata dalla classe \hyperref[JsonFileAdapter]{\texttt{JsonFileAdapter}}.
-    \item \textbf{Metodi:} i metodi dell'interfaccia sono visibili alla classe \hyperref[JsonFileAdapter]{\texttt{JsonFileAdapter}}.
+  \item \textbf{Descrizione}: questa interfaccia si occupa delle operazioni CRUD sui file dei dizionari dati.
+  \item \textbf{Operazioni}: 
+    \begin{itemize}
+      \item Salvataggio di un file;
+      \item Estrazione del contenuto di un file;
+      \item Eliminazione di un file;
+      \item Estrazione di un'anteprima del contenuto di un file;
+      \item Estrazione dei metadati di un file per l'\glossario{indicizzazione};
+      \item Estrazione dei metadati di un file in forma di \glossario{prompt}.
+    \end{itemize}
+  \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete.
 \end{itemize} 

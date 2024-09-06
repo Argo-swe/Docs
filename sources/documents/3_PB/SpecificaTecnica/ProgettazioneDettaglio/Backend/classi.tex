@@ -1,8 +1,15 @@
-\subsubsection{Descrizione delle classi}
+\subsection{Descrizione delle classi}
 
-\subsubsubsection{Introduzione}
-\par La sezione seguente serve a descrivere in dettaglio le classi che compongono il \glossario{back-end} dell'applicazione. La descrizione segue classe per classe la composizione dell'architettura, dando una descrizione degli attributi e dei metodi che le caratterizzano, nonché le interfacce che implementano e le dipendenze verso altre classi del sistema.
-\par La sezione viene divisa in sottosezioni che separano i servizi dalle classi che indirizzano i dati verso il core (incoming) e quelle che indirizzano i dati verso i servizi (outcoming). Inoltre le sezioni incoming e outcoming sono ulteriormente divise per distinguere le porte dagli adapters: le porte si distinguono per contenere solo le interfacce che vengono poi implementate dagli adapters. Queste non hanno né la sezione sugli attributi della classe né la sezione sulle dipendenze (a meno che queste non siano presenti). 
-\input{ProgettazioneDettaglio/Backend/Classi/services}
+\subsubsection{Introduzione}
+\par La sezione seguente descrive le classi che compongono il \glossario{back-end} dell'applicazione. L'elenco segue la composizione dell'architettura, fornendo una descrizione degli attributi e dei metodi che caratterizzano ciascuna classe, insieme alle interfacce implementate e alle dipendenze verso altre classi del sistema.
+\par La sezione principale è suddivisa in due sottosezioni:
+\begin{itemize}
+  \item \textbf{Incoming}: classi che preparano i dati per il core dell'applicazione;
+  \item \textbf{Outcoming}: classi che interagiscono con servizi esterni. 
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Le sezioni incoming e outcoming sono ulteriormente suddivise per distinguere tra porte, adapter e servizi. Le porte contengono le interfacce che vengono poi implementate dagli adapter o dai servizi.
 \input{ProgettazioneDettaglio/Backend/Classi/ports}
+\input{ProgettazioneDettaglio/Backend/Classi/services}
 \input{ProgettazioneDettaglio/Backend/Classi/adapters}
