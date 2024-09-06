@@ -1,0 +1,25 @@
+\subsubsection{Interfacce e tipi} \label{InterfacceTipi}
+
+\subsubsubsection{OpenAPI} \label{OpenAPI}
+
+\par Il team ha creato un file \textit{openapi.d.ts} che definisce i tipi \glossario{TypeScript} per un client generato da \glossario{OpenAPI}. La Specifica OpenAPI è una specifica per file di interfaccia leggibile dalle macchine per descrivere, produrre, consumare e visualizzare servizi web RESTful. Il file viene generato automaticamente e facilita la comunicazione type-safe con un'API. All'interno del file sono definite una serie di interfacce e tipi che descrivono le strutture dati e le operazioni supportate dall'API.
+
+\par Attraverso la descrizione degli endpoint, il file \textit{openapi.d.ts} consente agli sviluppatori \glossario{front-end} di lavorare con tipi rigorosamente definiti quando effettuano richieste API con \glossario{Axios}. Questo garantisce che i dati delle richieste e delle risposte aderiscano al formato previsto, riducendo il tasso di errori e migliorando la leggibilità e la manutenibilità del codice. Il file prevede due namespace principali:
+\begin{itemize}
+  \item \texttt{Components.Schemas}: contiene le definizioni delle strutture dati (DTO) che rappresentano le richieste e le risposte dell'API;
+  \item \texttt{Paths}: contiene le definizioni degli endpoint dell'API, inclusi i parametri di richiesta e le risposte attese.
+\end{itemize}
+
+\subsubsubsection{Wrapper} \label{OpenAPI}
+
+\par Il file \textit{wrapper.ts} definisce interfacce e tipi personalizzati per gestire in modo tipizzato diversi aspetti dell'applicazione web, tra cui:
+\begin{itemize}
+  \item Configurazione dei messaggi di stato in base al tipo di operazione eseguita;
+  \item Gestione dei messaggi inviati e ricevuti all'interno della chat;
+  \item Modellazione della struttura del menu di navigazione;
+  \item Assegnazione dinamica delle classi \glossario{CSS};
+  \item Visualizzazione dei \glossario{DBMS} e delle lingue disponibili.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Nel file \textit{wrapper.ts}, il team ha aggiunto dei contenitori per le interfacce e i tipi definiti in \textit{openapi.d.ts}. Questa organizzazione semplifica l'importazione dei tipi nei file dell'applicazione.
