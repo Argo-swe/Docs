@@ -27,13 +27,88 @@
 		\hline
 		\endlastfoot
 
-    % Esempio struttura test unità back-end
-		%\hline TU & Verificare che il metodo "get_user" della classe "authentication_repository_adapter" soddisfi le seguenti condizioni:
-		%\begin{itemize}
-			%\item Il metodo deve restituire false se ...;
-			%\item Il metodo deve restituire true se ...;
-			%\item Il metodo deve sollevare un
-    %\end{itemize} & S \\
+		%authentication_service
+		\hline TU & Verificare che il metodo "login" della classe "AuthenticationService" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve restituire lo status "NOT_FOUND" se l'utente con il nome utente fornito non esiste;
+			\item Deve restituire lo status "BAD_CREDENTIAL" se la password fornita è errata, indicando il messaggio di errore appropriato;
+			\item Deve restituire lo status "OK" e un token JWT quando il login è corretto, utilizzando il nome utente e la password corretti.
+		\end{itemize} & S \\
+
+		%dictionary_service
+		% get_dictionary_list
+		\hline TU & Verificare che il metodo "get_dictionary_list" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve restituire una lista di dizionari esistenti con lo status "OK".
+		\end{itemize} & S \\
+
+		% get_dictionary_by_id
+		\hline TU & Verificare che il metodo "get_dictionary_by_id" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve restituire un dizionario esistente in base all'ID con lo status "OK";
+			\item Deve restituire lo status "NOT_FOUND" se il dizionario con l'ID specificato non esiste.
+		\end{itemize} & S \\
+
+		% get_dictionary_file
+		\hline TU & Verificare che il metodo "get_dictionary_file" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve restituire il contenuto del file di un dizionario esistente;
+			\item Deve restituire "None" se il dizionario con l'ID specificato non esiste.
+		\end{itemize} & S \\
+
+		% get_dictionary_preview
+		\hline TU & Verificare che il metodo "get_dictionary_preview" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve restituire un'anteprima del dizionario esistente con lo status "OK";
+			\item Deve restituire lo status "NOT_FOUND" se il dizionario con l'ID specificato non esiste.
+		\end{itemize} & S \\
+
+		% create_dictionary
+		\hline TU & Verificare che il metodo "create_dictionary" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve creare un nuovo dizionario quando non esiste già un dizionario con lo stesso nome;
+			\item Deve restituire lo status "CONFLICT" se un dizionario con lo stesso nome esiste già;
+			\item Deve restituire lo status "BAD_REQUEST" se il contenuto fornito è mancante o non valido.
+		\end{itemize} & S \\
+
+		% update_dictionary_metadata
+		\hline TU & Verificare che il metodo "update_dictionary_metadata" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve aggiornare correttamente i metadati di un dizionario esistente con lo status "OK";
+			\item Deve restituire lo status "CONFLICT" se esiste già un dizionario con lo stesso nome;
+			\item Deve restituire lo status "NOT_FOUND" se il dizionario con l'ID specificato non esiste.
+		\end{itemize} & S \\
+
+		% update_dictionary_file
+		\hline TU & Verificare che il metodo "update_dictionary_file" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve aggiornare correttamente il file di un dizionario esistente con lo status "OK";
+			\item Deve restituire lo status "BAD_REQUEST" se il contenuto del file è non valido;
+			\item Deve restituire lo status "NOT_FOUND" se il dizionario con l'ID specificato non esiste.
+		\end{itemize} & S \\
+
+		% delete_dictionary
+		\hline TU & Verificare che il metodo "delete_dictionary" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve eliminare correttamente un dizionario esistente con lo status "OK";
+			\item Deve restituire lo status "NOT_FOUND" se il dizionario con l'ID specificato non esiste.
+		\end{itemize} & S \\
+
+
+    	%prompt_manager_service
+		\hline TU & Verificare che il metodo "generate_prompt" della classe "PromptManagerService" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve restituire lo status "NOT_FOUND" e il messaggio di errore appropriato se il dizionario non viene trovato;
+			\item Deve restituire lo status "BAD_REQUEST" se la query fornita è mancante;
+			\item Deve generare correttamente il prompt quando viene fornita una query valida, restituendo lo status "OK" e il prompt generato.
+		\end{itemize} & S \\
+
+		\hline TU & Verificare che il metodo "generate_prompt_with_debug" della classe "PromptManagerService" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve restituire lo status "NOT_FOUND" e il messaggio di errore appropriato se il dizionario non viene trovato;
+			\item Deve restituire lo status "BAD_REQUEST" se la query fornita è mancante;
+			\item Deve generare correttamente il prompt e includere informazioni di debug quando viene fornita una query valida, restituendo lo status "OK" e il prompt generato con le informazioni di debug.
+		\end{itemize} & S \\
 
     TU & Verificare che il componente "AppMenu" soddisfi le seguenti condizioni:
     \begin{itemize}
