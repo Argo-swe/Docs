@@ -1,90 +1,91 @@
-\subsubsubsection{Servizi}
+\subsubsection{Servizi}
 
-\paragraph{AuthenicationService} \label{AuthenticationService}
+\subsubsubsection{AuthenicationService} \label{AuthenticationService}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/authentication_service.png}
-    \caption{Rappresentazione della classe AuthenticationService}
+    \includegraphics[width=0.6\textwidth]{assets/Backend/authentication_service.png}
+    \caption{Diagramma della classe AuthenticationService}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione:} Questa classe si occupa di gestire l'autenticazione degli utenti.
-    \item \textbf{Implementazione:} Questa classe implementa la porta \texttt{AuthenticationUseCase}.
-    \item \textbf{Attributi:}
+    \item \textbf{Descrizione}: AuthenticationService implementa il caso d'uso di autenticazione;
+    \item \textbf{Interfaccia implementata}: \hyperref[AuthenticationUseCase]{AuthenticationUseCase};
+    \item \textbf{Attributi}:
     \begin{itemize}
-        \item \texttt{authentication\_repository: AuthenticationRepository}: la \glossario{repository} usata per il recupero dei dati.
+        \item \texttt{authentication\_repository}: istanza di AuthenticationRepository utilizzata per recuperare i dati dell'utente.
     \end{itemize}
-    \item \textbf{Metodi:}
+    \item \textbf{Metodi}: 
     \begin{itemize}
-        \item \texttt{login(username: string, password: string) -> AuthResponseDto}: conferma un utente con username e password. Ritorna un oggetto di risposta, contenente il risultato dell'autenticazione.
+        \item \texttt{+ login(username: string, password: string) -> AuthResponseDto}: autentica un utente basandosi sullo usernaname e sulla password forniti. Restituisce un oggetto di risposta che include un messaggio di stato e, in caso di successo, il token di autenticazione;
     \end{itemize}
-    \item \textbf{Dipendenze:}
+    \item \textbf{Dipendenze}:
     \begin{itemize}
-        \item \texttt{AuthenticationUseCase}
-        \item \texttt{AuthenticationRepository}
+        \item AuthenticationUseCase;
+        \item AuthenticationRepository.
     \end{itemize}
 \end{itemize}  
 
-\paragraph{DictionaryService} \label{DictionaryService}
+\subsubsubsection{DictionaryService} \label{DictionaryService}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{assets/Backend/dictionary_service.png}
     \caption{Rappresentazione della classe DictionaryService}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione:} questa classe si occupa di gestire le operazioni sul \glossario{dizionario dati}. 
-    \item \textbf{Implementazione:} questa classe implementa la porta \texttt{DictionaryUseCase}. 
-    \item \textbf{Attributi:}
+    \item \textbf{Descrizione}: DictionaryService gestisce le operazioni sui dizionari dati;
+    \item \textbf{Interfaccia implementata}: \hyperref[DictionaryUseCase]{DictionaryUseCase};
+    \item \textbf{Attributi}:
     \begin{itemize}
-        \item \texttt{dictionary\_repository: DictionaryRepository}: la repository usata per il recupero dei dati;
-        \item \texttt{index\_manager: IndexManagerPort}: gestore dell'indicizzazione e del recupero dei dati;
-        \item \texttt{file\_repository}: la repository usata per le operazioni sul file;
-        \item \texttt{schema\_validator: SchemaValidatorUseCase}: il validatore degli schemi per il dizionario dati.
+        \item \texttt{dictionary\_repository}: istanza di DictionaryRepository utilizzata per gestire i dati dei dizionari;
+        \item \texttt{index\_manager}: istanza di IndexManagerPort utilizzata per gestire gli \glossario{indici};
+        \item \texttt{file\_repository}: istanza di FileRepository utilizzata per gestire le operazioni sui file;
+        \item \texttt{schema\_validator}: istanza di SchemaValidatorUseCase utilizzata per validare lo schema dei dizionari.
     \end{itemize}
-    \item \textbf{Metodi:}
+    \item \textbf{Metodi}:
     \begin{itemize}
-        \item \texttt{+ get\_dictionary\_list(): DicionariesResponseDto}: recupera la lista di tutti i dizionari;
-        \item \texttt{+ get\_dictionary\_by\_id(id: integer): Union[DictionaryResponseDto, ResponseDto]}: recupera un dizionario tramite il suo id;
-        \item \texttt{+ get\_dictionary\_file(id: integer): Optional[string]}: recupera il contenuto del file del dizionario dato il suo id;
-        \item \texttt{+ get\_dictionary\_preview(id: integer): DictionaryResponseDto}: recupera l'anteprima del dizionario, dato il suo id;
-        \item \texttt{+ create\_dictionary(dictionary: DictionaryDto, content: string): DictionaryResponseDto}: crea un nuovo dizionario e salva il suo file;
-        \item \texttt{+ update\_dictionary\_metadata(id: integer, dictionary: DictionaryDto): DictionaryResponseDto}: aggiorna i metadati di un dizionario esistente;
-        \item \texttt{+ update\_dictionary\_file(id: integer, content: string): DictionaryResponseDto}: aggiorna il contenuto del file di un dizionario esistente;
-        \item \texttt{+ delete\_dictionary(id: integer): ResponseDto}: elimina un dizionario esistente, i suoi file associati e il suo indice.
+        \item \texttt{+ get\_dictionary\_list() -> DictionariesResponseDto}: recupera la lista di tutti i dizionari;
+        \item \texttt{+ get\_dictionary\_by\_id(id: integer) -> Union[DictionaryResponseDto, ResponseDto]}: recupera un dizionario tramite il suo id;
+        \item \texttt{+ get\_dictionary\_file(id: integer) -> string}: recupera il contenuto del file del dizionario tramite il suo id;
+        \item \texttt{+ get\_dictionary\_preview(id: integer) -> DictionaryResponseDto}: recupera l'anteprima del dizionario tramite il suo id;
+        \item \texttt{+ create\_dictionary(dictionary: DictionaryDto, content: string) -> DictionaryResponseDto}: crea un nuovo dizionario e salva il file associato;
+        \item \texttt{+ update\_dictionary\_metadata(id: integer, dictionary: DictionaryDto) -> DictionaryResponseDto}: aggiorna i metadati di un dizionario esistente;
+        \item \texttt{+ update\_dictionary\_file(id: integer, content: string) -> DictionaryResponseDto}: aggiorna il file di un dizionario esistente;
+        \item \texttt{+ delete\_dictionary(id: integer) -> ResponseDto}: elimina un dizionario esistente, inclusi il file e l'indice associati;
+        \item \texttt{- file\_size\_checker(content: string) -> bool}: controlla se la dimensione del file rientra nei limiti consentiti.
     \end{itemize}
-    \item \textbf{Dipendenze:}
+    \item \textbf{Dipendenze}:
     \begin{itemize}
-        \item \texttt{DictionaryUseCase}
-        \item \texttt{DictionaryRepository}
-        \item \texttt{IndexManagerPort}
-        \item \texttt{FileRepository}
-        \item \texttt{SchemaValidatorUseCase}
+        \item DictionaryUseCase;
+        \item DictionaryRepository;
+        \item IndexManagerPort;
+        \item FileRepository;
+        \item SchemaValidatorUseCase.
     \end{itemize}
 \end{itemize}
 
-\paragraph{PromptManagerService} \label{PromptManagementService}
+\subsubsubsection{PromptManagerService} \label{PromptManagementService}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{assets/Backend/prompt_manager_service.png}
     \caption{Rappresentazione della classe PromptManagerService}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione:} questa classe si occupa di gestire le operazioni per la generazione dei \glossario{prompt}.
-    \item \textbf{Implementazione:} questa classe implementa la porta \texttt{PromptUseCase}. 
-    \item \textbf{Attributi:}
+    \item \textbf{Descrizione}: PromptManagerService si occupa di gestire le operazioni relative alla generazione di \glossario{prompt};
+    \item \textbf{Interfaccia implementata}: \hyperref[PromptUseCase]{PromptUseCase};
+    \item \textbf{Attributi}:
     \begin{itemize}
-        \item \texttt{dictionary\_service: DictionaryService}: il servizio per la gestione dei \glossario{dizionario dati};
-        \item \texttt{prompt\_manager: PromptManagerPort}: il gestore della generazione dei prompt;
+        \item \texttt{dictionary\_service}: istanza di DictionaryService utilizzata per interagire con il servizio di gestione dei dizionari;
+        \item \texttt{prompt\_manager}: istanza di PromptManagerPort utilizzata per la generazione di prompt.
     \end{itemize}
-    \item \textbf{Metodi:}
+    \item \textbf{Metodi}:
     \begin{itemize}
-        \item \texttt{+ generate\_prompt(dictionary\_id: integer, query: string, dbms: string, language: string): StringDataResponseDto}: genera un prompt per un dizionario dato il suo id, la richiesta inserita, il dbms e la lingua selezionati;
-        \item \texttt{+ generate\_prompt\_with\_debug(dictionary\_id: integer, query: string, dbms: string, language: string): PromptResponseDto}: genera un prompt con le informazioni di \glossario{debug};
-        \item \texttt{- generate\_prompt(dictionary\_id: integer, query: string, dbms: string, language: string, log: bool): tuple}: metodo interno per la generazione del prompt usando il prompt manager.
+        \item \texttt{+ generate\_prompt(dictionary\_id: integer, query: string, dbms: string, language: string) -> StringDataResponseDto}: genera un prompt a partire da una richiesta, un dizionario, una lingua e un \glossario{DBMS};
+        \item \texttt{+ generate\_prompt\_with\_debug(dictionary\_id: integer, query: string, dbms: string, language: string) -> PromptResponseDto}: genera un prompt con informazioni di \glossario{debug} relative ad esso;
+        \item \texttt{- generate\_prompt(dictionary\_id: integer, query: string, dbms: string, language: string, log: bool) -> Tuple[str, str]}: metodo interno per attivare la generazione del prompt utilizzando il prompt manager.
     \end{itemize}
-    \item \textbf{Dipendenze:}
+    \item \textbf{Dipendenze}:
     \begin{itemize}
-        \item \texttt{PromptUseCase}
-        \item \texttt{DictionaryService}
-        \item \texttt{PromptManagerPort}
+        \item PromptUseCase;
+        \item DictionaryService;
+        \item PromptManagerPort.
     \end{itemize}
 \end{itemize}  
