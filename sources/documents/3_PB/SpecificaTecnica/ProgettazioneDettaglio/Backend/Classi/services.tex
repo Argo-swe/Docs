@@ -11,7 +11,7 @@
     \item \textbf{Interfaccia implementata}: \hyperref[AuthenticationUseCase]{AuthenticationUseCase};
     \item \textbf{Attributi}:
     \begin{itemize}
-        \item \texttt{authentication\_repository}: istanza di AuthenticationRepository utilizzata per recuperare i dati dell'utente.
+        \item \texttt{authentication\_repository}: istanza della classe utilizzata per recuperare i dati dell'utente.
     \end{itemize}
     \item \textbf{Metodi}: 
     \begin{itemize}
@@ -27,7 +27,7 @@
 \subsubsubsection{DictionaryService} \label{DictionaryService}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/dictionary_service.png}
+    \includegraphics[width=0.6\textwidth]{assets/Backend/dictionary_service.png}
     \caption{Rappresentazione della classe DictionaryService}
   \end{figure}
 \begin{itemize}
@@ -35,10 +35,10 @@
     \item \textbf{Interfaccia implementata}: \hyperref[DictionaryUseCase]{DictionaryUseCase};
     \item \textbf{Attributi}:
     \begin{itemize}
-        \item \texttt{dictionary\_repository}: istanza di DictionaryRepository utilizzata per gestire i dati dei dizionari;
-        \item \texttt{index\_manager}: istanza di IndexManagerPort utilizzata per gestire gli \glossario{indici};
-        \item \texttt{file\_repository}: istanza di FileRepository utilizzata per gestire le operazioni sui file;
-        \item \texttt{schema\_validator}: istanza di SchemaValidatorUseCase utilizzata per validare lo schema dei dizionari.
+        \item \texttt{dictionary\_repository}: istanza della classe utilizzata per gestire i dati dei dizionari;
+        \item \texttt{index\_manager}: istanza del gestore degli \glossario{indici};
+        \item \texttt{file\_repository}: istanza del gestore dei file;
+        \item \texttt{schema\_validator}: istanza della classe utilizzata per validare lo schema dei dizionari.
     \end{itemize}
     \item \textbf{Metodi}:
     \begin{itemize}
@@ -65,7 +65,7 @@
 \subsubsubsection{PromptManagerService} \label{PromptManagementService}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{assets/Backend/prompt_manager_service.png}
+    \includegraphics[width=0.6\textwidth]{assets/Backend/prompt_manager_service.png}
     \caption{Rappresentazione della classe PromptManagerService}
   \end{figure}
 \begin{itemize}
@@ -73,8 +73,8 @@
     \item \textbf{Interfaccia implementata}: \hyperref[PromptUseCase]{PromptUseCase};
     \item \textbf{Attributi}:
     \begin{itemize}
-        \item \texttt{dictionary\_service}: istanza di DictionaryService utilizzata per interagire con il servizio di gestione dei dizionari;
-        \item \texttt{prompt\_manager}: istanza di PromptManagerPort utilizzata per la generazione di prompt.
+        \item \texttt{dictionary\_service}: istanza della classe utilizzata per interagire con il servizio di gestione dei dizionari;
+        \item \texttt{prompt\_manager}: istanza del gestore dei prompt.
     \end{itemize}
     \item \textbf{Metodi}:
     \begin{itemize}

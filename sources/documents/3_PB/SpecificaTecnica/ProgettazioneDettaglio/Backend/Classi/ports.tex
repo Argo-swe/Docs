@@ -80,9 +80,9 @@
     \item \textbf{Descrizione}: EmbeddingsAbstractFactory fornisce una struttura per la creazione dei componenti relativi agli \glossario{embeddings} e alla generazione dei \glossario{prompt};
     \item \textbf{Operazioni}:
     \begin{itemize}
-      \item Creazione di un'istanza di IndexManagerPort;
-      \item Creazione di un'istanza di PromptManagerPort con le sue dipendenze;
-      \item Creazione di un'istanza di PromptManagerPort delegando prima la creazione delle sue dipendenze.
+      \item Creazione di un'istanza del gestore degli \glossario{indici};
+      \item Creazione di un'istanza del gestore dei \glossario{prompt} con le sue dipendenze;
+      \item Creazione di un'istanza del gestore dei prompt delegando prima la creazione delle sue dipendenze.
     \end{itemize}
     \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete;
     \item \textbf{Dipendenze}:
@@ -123,8 +123,8 @@
     \item \textbf{Operazioni}:
     \begin{itemize}
       \item Generazione del prompt;
-      \item Recupero dell'istanza di IndexManagerPort;
-      \item Creazione dell'istanza di DebugManagerPort.
+      \item Recupero dell'istanza del gestore degli indici;
+      \item Creazione dell'istanza del gestore di debug.
     \end{itemize}
     \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete;
     \item \textbf{Dipendenze}:
@@ -156,11 +156,11 @@
     \caption{Diagramma dell'interfaccia DbManagerAbstractFactory}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione}: DbManagerAbstractFactory fornisce una struttura per la creazione dei componenti relativi alla gestione dei dati dei dizionari e degli utenti;
+    \item \textbf{Descrizione}: DbManagerAbstractFactory fornisce una struttura per la creazione dei componenti relativi alla gestione dei dizionari e degli utenti;
     \item \textbf{Operazioni}:
     \begin{itemize}
-      \item Creazione di un'istanza di AuthenticationRepository;
-      \item Creazione di un'istanza di DictionaryRepository.
+      \item Creazione di un'istanza del repository per la gestione degli utenti;
+      \item Creazione di un'istanza del repository per la gestione dei dizionari.
     \end{itemize}
     \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete;
     \item \textbf{Dipendenze}:
@@ -216,7 +216,7 @@
   \item \textbf{Operazioni}: 
     \begin{itemize}
       \item Salvataggio di un file;
-      \item Estrazione del contenuto di un file;
+      \item Recupero del percorso di un file;
       \item Eliminazione di un file;
       \item Estrazione di un'anteprima del contenuto di un file;
       \item Estrazione dei metadati di un file per l'\glossario{indicizzazione};
