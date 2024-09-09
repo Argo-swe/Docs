@@ -16,7 +16,7 @@
   \item \textbf{Nome}: \texttt{getAllDictionaries};
   \item \textbf{Dependency Injection}:
   \begin{itemize}
-    \item \textbf{dictionary\_service (DictionaryService)}: dipendenza risolta tramite Depends(get\_dictionary\_service).
+    \item \textbf{dictionary\_service (DictionaryService)}: dipendenza risolta tramite Depends (get\_dictionary\_service).
   \end{itemize}
 \end{itemize}
 
@@ -40,7 +40,7 @@
   \item \textbf{Nome}: \texttt{getDictionary};
   \item \textbf{Dependency Injection}:
   \begin{itemize}
-    \item \textbf{dictionary\_service (DictionaryService)}: dipendenza risolta tramite Depends(get\_dictionary\_service).
+    \item \textbf{dictionary\_service (DictionaryService)}: dipendenza risolta tramite Depends (get\_dictionary\_service).
   \end{itemize}
   \item \textbf{Parametri}:
   \begin{itemize}
@@ -50,190 +50,193 @@
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-  \item Effettua una chiamata al servizio di gestione dei dizionari per recuperare i dettagli di un dizionario specifico;
+  \item Effettua una chiamata al servizio di gestione dei dizionari per recuperare i dettagli del dizionario specificato;
   \item Restituisce un oggetto \texttt{DictionaryResponseDto} con lo stato della risposta e, in caso di successo, i dati richiesti.
 \end{itemize}
 
 \subsubsection{get\_dictionary\_file}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{get\_dictionary\_file} consente di scaricare il file associato a un dizionario specifico utilizzando l'ID fornito.
+\par La funzione \texttt{get\_dictionary\_file} recupera il file associato a un dizionario specifico utilizzando l'ID fornito.
 
-\subsubsubsection{Dettagli dell'Endpoint}
+\subsubsubsection{Dettagli dell'endpoint}
 \begin{itemize}
-\item \textbf{HTTP Method}: \texttt{GET};
-\item \textbf{Endpoint}: \texttt{/\{id\}/file};
-\item \textbf{Tags}: \texttt{[tag]};
-\item \textbf{Nome}: \texttt{getDictionaryFile};
-\item \textbf{Dependency Injection}:
-\begin{itemize}
-\item \textbf{dictionary\_service (DictionaryService)}: Dipendenza risolta tramite \texttt{Depends(get\_dictionary\_service)}.
-\end{itemize}
-\item \textbf{Parametri}:
-\begin{itemize}
-\item \textbf{id (int)}: ID del dizionario di cui recuperare il file.
-\end{itemize}
+  \item \textbf{HTTP Method}: \texttt{GET};
+  \item \textbf{Endpoint}: \texttt{/\{id\}/file};
+  \item \textbf{Tags}: \texttt{[tag]};
+  \item \textbf{Nome}: \texttt{getDictionaryFile};
+  \item \textbf{Dependency Injection}:
+  \begin{itemize}
+    \item \textbf{dictionary\_service (DictionaryService)}: dipendenza risolta tramite Depends (get\_dictionary\_service).
+  \end{itemize}
+    \item \textbf{Parametri}:
+  \begin{itemize}
+    \item \textbf{id (int)}: ID del dizionario di cui recuperare il file.
+  \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Recupera il file associato al dizionario specificato tramite l'ID fornito;
-\item Se il file è disponibile, restituisce un \texttt{FileResponse} con il contenuto del file;
-\item Se il dizionario non viene trovato, restituisce un oggetto \texttt{ResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
+  \item Effettua una chiamata al servizio di gestione dei dizionari per recuperare il file associato al dizionario specificato;
+  \item Se il dizionario viene trovato, restituisce il file come parte di una risposta HTTP (\texttt{FileResponse});
+  \item Se il dizionario non viene trovato, restituisce un oggetto \texttt{ResponseDto} con lo stato della risposta.
 \end{itemize}
-
 
 \subsubsection{get\_dictionary\_preview}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{get\_dictionary\_preview} recupera un'anteprima di un dizionario specifico utilizzando l'ID fornito e restituisce una risposta strutturata contenente i dati dell'anteprima.
+\par La funzione \texttt{get\_dictionary\_preview} recupera l'anteprima di un dizionario utilizzando l'ID fornito e restituisce una risposta strutturata.
 
-\subsubsubsection{Dettagli dell'Endpoint}
+\subsubsubsection{Dettagli dell'endpoint}
 \begin{itemize}
-\item \textbf{HTTP Method}: \texttt{GET};
-\item \textbf{Endpoint}: \texttt{/\{id\}/dictionary-preview};
-\item \textbf{Tags}: \texttt{[tag]};
-\item \textbf{Response Model}: \texttt{DictionaryResponseDto};
-\item \textbf{Nome}: \texttt{getDictionaryPreview};
-\item \textbf{Dependency Injection}:
-\begin{itemize}
-\item \textbf{dictionary\_service (DictionaryService)}: Dipendenza risolta tramite \texttt{Depends(get\_dictionary\_service)}.
-\end{itemize}
-\item \textbf{Parametri}:
-\begin{itemize}
-\item \textbf{id (int)}: ID del dizionario di cui recuperare l'anteprima.
-\end{itemize}
+  \item \textbf{HTTP Method}: \texttt{GET};
+  \item \textbf{Endpoint}: \texttt{/\{id\}/dictionary-preview};
+  \item \textbf{Tags}: \texttt{[tag]};
+  \item \textbf{Response Model}: \texttt{DictionaryResponseDto};
+  \item \textbf{Nome}: \texttt{getDictionaryPreview};
+  \item \textbf{Dependency Injection}:
+  \begin{itemize}
+    \item \textbf{dictionary\_service (DictionaryService)}: dipendenza risolta tramite Depends (get\_dictionary\_service).
+  \end{itemize}
+  \item \textbf{Parametri}:
+  \begin{itemize}
+    \item \textbf{id (int)}: ID del dizionario di cui recuperare l'anteprima.
+  \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Recupera l'anteprima del dizionario specificato tramite l'ID fornito;
-\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati dell'anteprima del dizionario.
+  \item Effettua una chiamata al servizio di gestione dei dizionari per recuperare l'anteprima del dizionario specificato;
+  \item Restituisce un oggetto \texttt{DictionaryResponseDto} con lo stato della risposta e, in caso di successo, i dati richiesti.
 \end{itemize}
 
 \subsubsection{create\_dictionary}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{create\_dictionary} permette di creare un nuovo dizionario utilizzando i dati forniti e un file opzionale caricato dall'utente.
+\par La funzione \texttt{create\_dictionary} inserisce un nuovo dizionario nel sistema utilizzando i dati forniti e un file di configurazione.
 
-\subsubsubsection{Dettagli dell'Endpoint}
+\subsubsubsection{Dettagli dell'endpoint}
 \begin{itemize}
-\item \textbf{HTTP Method}: \texttt{POST};
-\item \textbf{Endpoint}: \texttt{/};
-\item \textbf{Tags}: \texttt{[tag]};
-\item \textbf{Response Model}: \texttt{DictionaryResponseDto};
-\item \textbf{Dependencies}:
-\begin{itemize}
-\item \texttt{Depends(JwtBearer())}: Autenticazione JWT necessaria per l'accesso all'endpoint.
-\end{itemize}
-\item \textbf{Nome}: \texttt{createDictionary};
-\item \textbf{Dependency Injection}:
-\begin{itemize}
-\item \textbf{file (Annotated[UploadFile, File()])}: Il file opzionale da caricare per il dizionario;
-\item \textbf{dictionary (DictionaryDto)}: I dati del dizionario, ottenuti tramite \texttt{Depends()};
-\item \textbf{dictionary\_service (DictionaryService)}: Dipendenza risolta tramite \texttt{Depends(get\_dictionary\_service)}.
-\end{itemize}
+  \item \textbf{HTTP Method}: \texttt{POST};
+  \item \textbf{Endpoint}: \texttt{/};
+  \item \textbf{Tags}: \texttt{[tag]};
+  \item \textbf{Response Model}: \texttt{DictionaryResponseDto};
+  \item \textbf{Dependencies}:
+  \begin{itemize}
+    \item \texttt{Depends(JwtBearer())}: autenticazione JWT necessaria per l'accesso all'endpoint.
+  \end{itemize}
+  \item \textbf{Nome}: \texttt{createDictionary};
+  \item \textbf{Dependency Injection}:
+  \begin{itemize}
+    \item \textbf{dictionary\_service (DictionaryService)}: dipendenza risolta tramite Depends (get\_dictionary\_service).
+  \end{itemize}
+  \item \textbf{Parametri}:
+  \begin{itemize}
+    \item \textbf{file (Annotated[UploadFile, File()])}: il file associato al dizionario;
+    \item \textbf{dictionary (DictionaryDto)}: i metadati del dizionario.
+  \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Verifica la presenza del file caricato e legge il contenuto, se disponibile;
-\item Crea un nuovo dizionario con i metadati forniti;
-\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del nuovo dizionario.
+  \item Verifica la presenza del file e legge il contenuto, se disponibile;
+  \item Effettua una chiamata al servizio di gestione dei dizionari per salvare un nuovo izionario nel sistema;
+  \item Restituisce un oggetto \texttt{DictionaryResponseDto} con lo stato della risposta e, in caso di successo, i dati del dizionario;
 \end{itemize}
 
 \subsubsection{update\_dictionary\_file}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{update\_dictionary\_file} permette di aggiornare il file associato a un dizionario esistente utilizzando l'ID fornito e un nuovo file caricato.
+\par La funzione \texttt{update\_dictionary\_file} aggiorna il file associato a un dizionario esistente utilizzando l'ID fornito e un nuovo file di configurazione.
 
-\subsubsubsection{Dettagli dell'Endpoint}
+\subsubsubsection{Dettagli dell'endpoint}
 \begin{itemize}
-\item \textbf{HTTP Method}: \texttt{PUT};
-\item \textbf{Endpoint}: \texttt{/\{id\}/file};
-\item \textbf{Tags}: \texttt{[tag]};
-\item \textbf{Response Model}: \texttt{DictionaryResponseDto};
-\item \textbf{Dependencies}:
-\begin{itemize}
-\item \texttt{Depends(JwtBearer())}: Autenticazione JWT necessaria per l'accesso all'endpoint.
-\end{itemize}
-\item \textbf{Nome}: \texttt{updateDictionaryFile};
-\item \textbf{Dependency Injection}:
-\begin{itemize}
-\item \textbf{file (Annotated[UploadFile, File()])}: Il nuovo file da caricare per il dizionario;
-\item \textbf{dictionary\_service (DictionaryService)}: Dipendenza risolta tramite \texttt{Depends(get\_dictionary\_service)}.
-\end{itemize}
-\item \textbf{Parametri}:
-\begin{itemize}
-\item \textbf{id (int)}: ID del dizionario di cui aggiornare il file.
-\end{itemize}
+  \item \textbf{HTTP Method}: \texttt{PUT};
+  \item \textbf{Endpoint}: \texttt{/\{id\}/file};
+  \item \textbf{Tags}: \texttt{[tag]};
+  \item \textbf{Response Model}: \texttt{DictionaryResponseDto};
+  \item \textbf{Dependencies}:
+  \begin{itemize}
+    \item \texttt{Depends(JwtBearer())}: autenticazione JWT necessaria per l'accesso all'endpoint.
+  \end{itemize}
+  \item \textbf{Nome}: \texttt{updateDictionaryFile};
+  \item \textbf{Dependency Injection}:
+  \begin{itemize}
+    \item \textbf{dictionary\_service (DictionaryService)}: dipendenza risolta tramite Depends (get\_dictionary\_service).
+  \end{itemize}
+  \item \textbf{Parametri}:
+  \begin{itemize}
+    \item \textbf{id (int)}: ID del dizionario da aggiornare;
+    \item \textbf{file (Annotated[UploadFile, File()])}: il file associato al dizionario.
+  \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Legge il contenuto del file caricato e aggiorna il file del dizionario con i nuovi dati;
-\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati aggiornati del dizionario.
+  \item Verifica la presenza del file e legge il contenuto, se disponibile;
+  \item Effettua una chiamata al servizio di gestione dei dizionari per modificare il file associato al dizionario specificato;
+  \item Restituisce un oggetto \texttt{DictionaryResponseDto} con lo stato della risposta e, in caso di successo, i dati del dizionario.
 \end{itemize}
 
 \subsubsection{update\_dictionary\_metadata}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{update\_dictionary\_metadata} permette di aggiornare i metadati di un dizionario esistente utilizzando l'ID fornito e un oggetto \texttt{DictionaryDto}.
+\par La funzione \texttt{update\_dictionary\_metadata} aggiorna i metadati di un dizionario esistente utilizzando l'ID fornito e un oggetto \texttt{DictionaryDto}.
 
-\subsubsubsection{Dettagli dell'Endpoint}
+\subsubsubsection{Dettagli dell'endpoint}
 \begin{itemize}
-\item \textbf{HTTP Method}: \texttt{PUT};
-\item \textbf{Endpoint}: \texttt{/\{id\}};
-\item \textbf{Tags}: \texttt{[tag]};
-\item \textbf{Response Model}: \texttt{DictionaryResponseDto};
-\item \textbf{Dependencies}:
-\begin{itemize}
-\item \texttt{Depends(JwtBearer())}: Autenticazione JWT necessaria per l'accesso all'endpoint.
-\end{itemize}
-\item \textbf{Nome}: \texttt{updateDictionaryMetadata};
-\item \textbf{Dependency Injection}:
-\begin{itemize}
-\item \textbf{dictionary (DictionaryDto)}: I nuovi metadati del dizionario;
-\item \textbf{dictionary\_service (DictionaryService)}: Dipendenza risolta tramite \texttt{Depends(get\_dictionary\_service)}.
-\end{itemize}
-\item \textbf{Parametri}:
-\begin{itemize}
-\item \textbf{id (int)}: ID del dizionario da aggiornare.
-\end{itemize}
+  \item \textbf{HTTP Method}: \texttt{PUT};
+  \item \textbf{Endpoint}: \texttt{/\{id\}};
+  \item \textbf{Tags}: \texttt{[tag]};
+  \item \textbf{Response Model}: \texttt{DictionaryResponseDto};
+  \item \textbf{Dependencies}:
+  \begin{itemize}
+    \item \texttt{Depends(JwtBearer())}: autenticazione JWT necessaria per l'accesso all'endpoint.
+  \end{itemize}
+  \item \textbf{Nome}: \texttt{updateDictionaryMetadata};
+  \item \textbf{Dependency Injection}:
+  \begin{itemize}
+    \item \textbf{dictionary\_service (DictionaryService)}: dipendenza risolta tramite Depends (get\_dictionary\_service).
+  \end{itemize}
+  \item \textbf{Parametri}:
+  \begin{itemize}
+    \item \textbf{id (int)}: ID del dizionario da aggiornare;
+    \item \textbf{dictionary (DictionaryDto)}: i nuovi metadati del dizionario.
+  \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Aggiorna i metadati del dizionario specificato nel sistema tramite l'ID fornito;
-\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del dizionario aggiornato.
+  \item Effettua una chiamata al servizio di gestione dei dizionari per modificare i metadati del dizionario specificato;
+  \item Restituisce un oggetto \texttt{DictionaryResponseDto} con lo stato della risposta e, in caso di successo, i dati del dizionario.
 \end{itemize}
 
 \subsubsection{delete\_dictionary}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{delete\_dictionary} permette di eliminare un dizionario esistente dal sistema utilizzando l'ID fornito.
+\par La funzione \texttt{delete\_dictionary} elimina un dizionario dal sistema utilizzando l'ID fornito.
 
-\subsubsubsection{Dettagli dell'Endpoint}
-\begin{itemize}
-\item \textbf{HTTP Method}: \texttt{DELETE};
-\item \textbf{Endpoint}: \texttt{/\{id\}};
-\item \textbf{Tags}: \texttt{[tag]};
-\item \textbf{Response Model}: \texttt{ResponseDto};
-\item \textbf{Nome}: \texttt{deleteDictionary};
-\item \textbf{Dependency Injection}:
-\begin{itemize}
-\item \textbf{dictionary\_service (DictionaryService)}: Dipendenza risolta tramite \texttt{Depends(get\_dictionary\_service)}.
-\end{itemize}
-\item \textbf{Parametri}:
-\begin{itemize}
-\item \textbf{id (int)}: ID del dizionario da eliminare.
-\end{itemize}
+\subsubsubsection{Dettagli dell'endpoint}
+  \begin{itemize}
+  \item \textbf{HTTP Method}: \texttt{DELETE};
+  \item \textbf{Endpoint}: \texttt{/\{id\}};
+  \item \textbf{Tags}: \texttt{[tag]};
+  \item \textbf{Response Model}: \texttt{ResponseDto};
+  \item \textbf{Nome}: \texttt{deleteDictionary};
+  \item \textbf{Dependency Injection}:
+  \begin{itemize}
+    \item \textbf{dictionary\_service (DictionaryService)}: dipendenza risolta tramite Depends (get\_dictionary\_service).
+  \end{itemize}
+    \item \textbf{Parametri}:
+  \begin{itemize}
+    \item \textbf{id (int)}: ID del dizionario da eliminare.
+  \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Elimina il dizionario specificato dal sistema tramite l'ID fornito;
-\item Restituisce un oggetto \texttt{ResponseDto} con lo stato dell'operazione.
+  \item Effettua una chiamata al servizio di gestione dei dizionari per eliminare il dizionario specificato;
+  \item Restituisce un oggetto \texttt{ResponseDto} con lo stato della risposta.
 \end{itemize}
 
 %SEZIONE ROUTES DI login_api
