@@ -5,54 +5,53 @@
 \subsubsection{get\_all\_dictionaries}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{get\_all\_dictionaries} recupera tutti i dizionari dal database e restituisce una risposta strutturata.
+\par La funzione \texttt{get\_all\_dictionaries} recupera tutti i dizionari presenti nel sistema e restituisce una risposta strutturata.
 
-\subsubsubsection{Dettagli dell'Endpoint}
+\subsubsubsection{Dettagli dell'endpoint}
 \begin{itemize}
-\item \textbf{HTTP Method}: \texttt{GET};
-\item \textbf{Endpoint}: \texttt{/};
-\item \textbf{Tags}: \texttt{[tag]};
-\item \textbf{Response Model}: \texttt{DictionariesResponseDto};
-\item \textbf{Nome}: \texttt{getAllDictionaries};
-\item \textbf{Dependency Injection}:
-\begin{itemize}
-\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
-\end{itemize}
+  \item \textbf{HTTP Method}: \texttt{GET};
+  \item \textbf{Endpoint}: \texttt{/};
+  \item \textbf{Tags}: \texttt{[tag]};
+  \item \textbf{Response Model}: \texttt{DictionariesResponseDto};
+  \item \textbf{Nome}: \texttt{getAllDictionaries};
+  \item \textbf{Dependency Injection}:
+  \begin{itemize}
+    \item \textbf{dictionary\_service (DictionaryService)}: dipendenza risolta tramite Depends(get\_dictionary\_service).
+  \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Recupera tutti i dizionari dal database utilizzando \texttt{crud.get\_all\_dictionaries(db)};
-\item Restituisce un oggetto \texttt{DictionariesResponseDto} con i dati dei dizionari e lo stato \texttt{ResponseStatusEnum.OK}.
+  \item Effettua una chiamata al servizio di gestione dei dizionari per recuperare l'elenco completo dei dizionari;
+  \item Restituisce un oggetto \texttt{DictionariesResponseDto} con lo stato della risposta e, in caso di successo, i dati richiesti.
 \end{itemize}
 
 \subsubsection{get\_dictionary}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{get\_dictionary} recupera un dizionario specifico dal database utilizzando l'ID fornito e restituisce una risposta strutturata.
+\par La funzione \texttt{get\_dictionary} recupera un dizionario specifico utilizzando l'ID fornito e restituisce una risposta strutturata.
 
-\subsubsubsection{Dettagli dell'Endpoint}
+\subsubsubsection{Dettagli dell'endpoint}
 \begin{itemize}
-\item \textbf{HTTP Method}: \texttt{GET};
-\item \textbf{Endpoint}: \texttt{/\{id\}};
-\item \textbf{Tags}: \texttt{[tag]};
-\item \textbf{Response Model}: \texttt{DictionaryResponseDto};
-\item \textbf{Nome}: \texttt{getDictionary};
-\item \textbf{Dependency Injection}:
-\begin{itemize}
-\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
-\end{itemize}
-\item \textbf{Parametri}:
-\begin{itemize}
-\item \textbf{id (int)}: ID del dizionario da recuperare.
-\end{itemize}
+  \item \textbf{HTTP Method}: \texttt{GET};
+  \item \textbf{Endpoint}: \texttt{/\{id\}/file};
+  \item \textbf{Tags}: \texttt{[tag]};
+  \item \textbf{Response Model}: \texttt{DictionaryResponseDto};
+  \item \textbf{Nome}: \texttt{getDictionary};
+  \item \textbf{Dependency Injection}:
+  \begin{itemize}
+    \item \textbf{dictionary\_service (DictionaryService)}: dipendenza risolta tramite Depends(get\_dictionary\_service).
+  \end{itemize}
+  \item \textbf{Parametri}:
+  \begin{itemize}
+    \item \textbf{id (int)}: ID del dizionario da recuperare.
+  \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
-\item Se il dizionario viene trovato, restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del dizionario e lo stato \texttt{ResponseStatusEnum.OK};
-\item Se il dizionario non viene trovato, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
+  \item Effettua una chiamata al servizio di gestione dei dizionari per recuperare i dettagli di un dizionario specifico;
+  \item Restituisce un oggetto \texttt{DictionaryResponseDto} con lo stato della risposta e, in caso di successo, i dati richiesti.
 \end{itemize}
 
 \subsubsection{get\_dictionary\_file}
