@@ -196,7 +196,7 @@
 \subsubsection{update\_dictionary\_metadata}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{update\_dictionary\_metadata} permette di aggiornare i metadati di un dizionario esistente nel database utilizzando l'ID fornito e un oggetto \texttt{DictionaryDto}. La funzione include controlli di validità e verifica l'unicità del nome del dizionario.
+\par La funzione \texttt{update\_dictionary\_metadata} permette di aggiornare i metadati di un dizionario esistente utilizzando l'ID fornito e un oggetto \texttt{DictionaryDto}.
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
@@ -206,29 +206,24 @@
 \item \textbf{Response Model}: \texttt{DictionaryResponseDto};
 \item \textbf{Dependencies}:
 \begin{itemize}
-\item \texttt{Depends(JwtBearer())}: Assicura che l'endpoint sia protetto da un meccanismo di autenticazione JWT.
+\item \texttt{Depends(JwtBearer())}: Autenticazione JWT necessaria per l'accesso all'endpoint.
 \end{itemize}
 \item \textbf{Nome}: \texttt{updateDictionaryMetadata};
 \item \textbf{Dependency Injection}:
 \begin{itemize}
 \item \textbf{dictionary (DictionaryDto)}: I nuovi metadati del dizionario;
-\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\item \textbf{dictionary\_service (DictionaryService)}: Dipendenza risolta tramite \texttt{Depends(get\_dictionary\_service)}.
 \end{itemize}
 \item \textbf{Parametri}:
 \begin{itemize}
-\item \textbf{id (int)}: ID del dizionario di cui aggiornare i metadati.
+\item \textbf{id (int)}: ID del dizionario da aggiornare.
 \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
-\item Se il dizionario non viene trovato, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
-\item Se il nome o la descrizione del dizionario sono assenti, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{Response\-StatusEnum.BAD\_REQUEST};
-\item Verifica se esiste un altro dizionario con lo stesso nome utilizzando \texttt{crud.get\-\_\-dictionary\-\_by\_name(db, dictionary.name)};
-\item Se esiste un altro dizionario con lo stesso nome e l'ID è diverso, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.CONFLICT};
-\item Aggiorna il dizionario utilizzando \texttt{crud.update\_dictionary(db, dictionary)};
-\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del dizionario aggiornato e lo stato \texttt{ResponseStatusEnum.OK}.
+\item Aggiorna i metadati del dizionario specificato nel sistema tramite l'ID fornito;
+\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del dizionario aggiornato.
 \end{itemize}
 
 \subsubsection{delete\_dictionary}
