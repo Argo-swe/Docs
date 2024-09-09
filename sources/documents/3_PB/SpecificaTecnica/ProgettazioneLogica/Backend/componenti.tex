@@ -268,7 +268,7 @@
 \subsubsection{login}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{login} permette di autenticare un utente utilizzando le credenziali fornite. Se le credenziali sono corrette, viene restituito un token JWT.
+\par La funzione \texttt{login} autentica un utente utilizzando le credenziali fornite (username e password). Se le credenziali sono corrette, restituisce un token di autenticazione JWT.
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
@@ -279,19 +279,17 @@
 \item \textbf{Nome}: \texttt{login};
 \item \textbf{Dependency Injection}:
 \begin{itemize}
-\item \textbf{data (LoginDto)}: I dati di login dell'utente;
-\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\item \textbf{data (LoginDto)}: I dati di autenticazione dell'utente (username e password);
+\item \textbf{authentication\_service (AuthenticationService)}: Dipendenza risolta tramite \texttt{Depends(get\_authentication\_service)}.
 \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Recupera l'utente dal database utilizzando \texttt{crud.get\_user\_by\_username(db,\- data\-.username)};
-\item Se l'utente non viene trovato, restituisce un oggetto \texttt{AuthResponseDto} con \texttt{data\-=\-None} e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
-\item Se la password non è corretta, restituisce un oggetto \texttt{AuthResponseDto} con \texttt{data\-=\-None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_CREDENTIAL};
-\item Genera un token JWT utilizzando \texttt{JwtHandler.sign(query.id)};
-\item Restituisce un oggetto \texttt{AuthResponseDto} con il token generato e lo stato \texttt{Response\-Status\-Enum.OK}.
+\item Autentica l'utente utilizzando le credenziali fornite;
+\item Se l'autenticazione ha successo, restituisce un token di autenticazione JWT.
 \end{itemize}
+
 
 %SEZIONE ROUTES DI prompt_api
 
