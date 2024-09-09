@@ -85,7 +85,7 @@
 \subsubsection{get\_dictionary\_preview}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{get\_dictionary\_preview} recupera un'anteprima di un dizionario specifico dal database utilizzando l'ID fornito e restituisce una risposta strutturata.
+\par La funzione \texttt{get\_dictionary\_preview} recupera un'anteprima di un dizionario specifico utilizzando l'ID fornito e restituisce una risposta strutturata contenente i dati dell'anteprima.
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
@@ -96,7 +96,7 @@
 \item \textbf{Nome}: \texttt{getDictionaryPreview};
 \item \textbf{Dependency Injection}:
 \begin{itemize}
-\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\item \textbf{dictionary\_service (DictionaryService)}: Dipendenza risolta tramite \texttt{Depends(get\_dictionary\_service)}.
 \end{itemize}
 \item \textbf{Parametri}:
 \begin{itemize}
@@ -106,14 +106,8 @@
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)}.
-\item Se il dizionario viene trovato:
-\begin{itemize}
-\item Estrae un sotto-schema del dizionario utilizzando \texttt{SchemaMultiExtractor\-.\-extract\_preview(id)};
-\item Crea un oggetto \texttt{DictionaryPreviewDto} con i dettagli del sotto-schema;
-\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati dell'anteprima del dizionario e lo stato \texttt{ResponseStatusEnum.OK};
-\end{itemize}
-\item Se il dizionario non viene trovato, restituisce un oggetto \texttt{ResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
+\item Recupera l'anteprima del dizionario specificato tramite l'ID fornito;
+\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati dell'anteprima del dizionario.
 \end{itemize}
 
 \subsubsection{create\_dictionary}
