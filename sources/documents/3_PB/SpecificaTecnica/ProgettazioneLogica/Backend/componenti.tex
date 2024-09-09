@@ -57,7 +57,7 @@
 \subsubsection{get\_dictionary\_file}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{get\_dictionary\_file} recupera un file di dizionario specifico dal database utilizzando l'ID fornito e restituisce una risposta strutturata.
+\par La funzione \texttt{get\_dictionary\_file} consente di scaricare il file associato a un dizionario specifico utilizzando l'ID fornito.
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
@@ -67,7 +67,7 @@
 \item \textbf{Nome}: \texttt{getDictionaryFile};
 \item \textbf{Dependency Injection}:
 \begin{itemize}
-\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\item \textbf{dictionary\_service (DictionaryService)}: Dipendenza risolta tramite \texttt{Depends(get\_dictionary\_service)}.
 \end{itemize}
 \item \textbf{Parametri}:
 \begin{itemize}
@@ -77,10 +77,11 @@
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
-\item Se il dizionario viene trovato, restituisce un \texttt{FileResponse} con il nome del file generato tramite \texttt{\_\_generate\_schema\_file\_name(id)};
+\item Recupera il file associato al dizionario specificato tramite l'ID fornito;
+\item Se il file è disponibile, restituisce un \texttt{FileResponse} con il contenuto del file;
 \item Se il dizionario non viene trovato, restituisce un oggetto \texttt{ResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
 \end{itemize}
+
 
 \subsubsection{get\_dictionary\_preview}
 
