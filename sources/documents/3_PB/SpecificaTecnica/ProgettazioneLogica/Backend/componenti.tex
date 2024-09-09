@@ -227,7 +227,7 @@
   \begin{itemize}
     \item \textbf{dictionary\_service (DictionaryService)}: dipendenza risolta tramite Depends (get\_dictionary\_service).
   \end{itemize}
-    \item \textbf{Parametri}:
+  \item \textbf{Parametri}:
   \begin{itemize}
     \item \textbf{id (int)}: ID del dizionario da eliminare.
   \end{itemize}
@@ -244,26 +244,29 @@
 \subsubsection{login}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{login} autentica un utente utilizzando le credenziali fornite (username e password). Se le credenziali sono corrette, restituisce un token di autenticazione JWT.
+\par La funzione \texttt{login} autentica un utente utilizzando le credenziali fornite (username e password). Se le credenziali sono corrette, restituisce una risposta strutturata contenente un token di autenticazione JWT.
 
-\subsubsubsection{Dettagli dell'Endpoint}
+\subsubsubsection{Dettagli dell'endpoint}
 \begin{itemize}
-\item \textbf{HTTP Method}: \texttt{POST};
-\item \textbf{Endpoint}: \texttt{/};
-\item \textbf{Tags}: \texttt{[tag]};
-\item \textbf{Response Model}: \texttt{AuthResponseDto};
-\item \textbf{Nome}: \texttt{login};
-\item \textbf{Dependency Injection}:
-\begin{itemize}
-\item \textbf{data (LoginDto)}: I dati di autenticazione dell'utente (username e password);
-\item \textbf{authentication\_service (AuthenticationService)}: Dipendenza risolta tramite \texttt{Depends(get\_authentication\_service)}.
-\end{itemize}
+  \item \textbf{HTTP Method}: \texttt{POST};
+  \item \textbf{Endpoint}: \texttt{/};
+  \item \textbf{Tags}: \texttt{[tag]};
+  \item \textbf{Response Model}: \texttt{AuthResponseDto};
+  \item \textbf{Nome}: \texttt{login};
+  \item \textbf{Dependency Injection}:
+  \begin{itemize}
+  \item \textbf{authentication\_service (AuthenticationService)}: dipendenza risolta tramite Depends (get\_authentication\_service).
+  \end{itemize}
+  \item \textbf{Parametri}:
+  \begin{itemize}
+    \item \textbf{data (LoginDto)}: i dati di autenticazione dell'utente.
+  \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Autentica l'utente utilizzando le credenziali fornite;
-\item Se l'autenticazione ha successo, restituisce un token di autenticazione JWT.
+  \item Effettua una chiamata al servizio di autenticazione per autorizzare l'utente attraverso le credenziali fornite;
+  \item Restituisce un oggetto \texttt{AuthResponseDto} con lo stato della risposta e, in caso di successo, il token di autenticazione JWT.
 \end{itemize}
 
 
@@ -272,58 +275,67 @@
 \subsubsection{generate\_prompt}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{generate\_prompt} genera un prompt utilizzando i parametri forniti dall'utente, tra cui un dizionario specifico, una query, il DBMS e la lingua.
+\par La funzione \texttt{generate\_prompt} genera un \glossario{prompt} utilizzando i parametri forniti dall'utente, tra cui un dizionario, una richiesta, una lingua e un \glossario{DBMS}.
 
-\subsubsubsection{Dettagli dell'Endpoint}
+\subsubsubsection{Dettagli dell'endpoint}
 \begin{itemize}
-\item \textbf{HTTP Method}: \texttt{GET};
-\item \textbf{Endpoint}: \texttt{/};
-\item \textbf{Tags}: \texttt{[tag]};
-\item \textbf{Response Model}: \texttt{StringDataResponseDto};
-\item \textbf{Nome}: \texttt{generatePrompt};
-\item \textbf{Dependency Injection}:
-\begin{itemize}
-\item \textbf{dictionary\_id (Annotated[int, Query(alias="dictionaryId")])}: L'ID del dizionario da utilizzare;
-\item \textbf{query (str)}: La query fornita dall'utente;
-\item \textbf{dbms (str)}: Il sistema di gestione del database (DBMS);
-\item \textbf{lang (str)}: La lingua da utilizzare;
-\item \textbf{prompt\_manager\_service (PromptManagerService)}: Dipendenza risolta tramite \texttt{Depends(get\_prompt\_manager\_service)}.
-\end{itemize}
+  \item \textbf{HTTP Method}: \texttt{GET};
+  \item \textbf{Endpoint}: \texttt{/};
+  \item \textbf{Tags}: \texttt{[tag]};
+  \item \textbf{Response Model}: \texttt{StringDataResponseDto};
+  \item \textbf{Nome}: \texttt{generatePrompt};
+  \item \textbf{Dependency Injection}:
+  \begin{itemize}
+    \item \textbf{prompt\_manager\_service (PromptManagerService)}: dipendenza risolta tramite Depends (get\_prompt\_manager\_service).
+  \end{itemize}
+  \item \textbf{Parametri}:
+  \begin{itemize}
+    \item \textbf{dictionary\_id (Annotated[int, Query(alias="dictionaryId")])}: l'ID del dizionario;
+    \item \textbf{query (str)}: la richiesta dell'utente in linguaggio naturale;
+    \item \textbf{dbms (str)}: il sistema di gestione del database (DBMS);
+    \item \textbf{lang (str)}: la lingua di richiesta.
+  \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Genera il prompt basato sui parametri forniti (dizionario, query, lingua, DBMS);
-\item Restituisce un oggetto \texttt{StringDataResponseDto} con il prompt generato.
+  \item Effettua una chiamata al servizio di gestione dei prompt per generare un prompt in base ai parametri forniti;
+  \item Restituisce un oggetto \texttt{StringDataResponseDto} con lo stato della risposta e, in caso di successo, il prompt generato.
 \end{itemize}
 
 \subsubsection{generate\_prompt\_with\_debug}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{generate\_prompt\_with\_debug} genera un prompt e include informazioni dettagliate di debug, fornendo dati aggiuntivi per la risoluzione di problemi.
+\par La funzione \texttt{generate\_prompt\_with\_debug} genera un \glossario{prompt} e include informazioni dettagliate di \glossario{debug}, fornendo dati aggiuntivi per la risoluzione di problemi.
 
-\subsubsubsection{Dettagli dell'Endpoint}
+\subsubsubsection{Dettagli dell'endpoint}
 \begin{itemize}
-\item \textbf{HTTP Method}: \texttt{GET};
-\item \textbf{Endpoint}: \texttt{/debug};
-\item \textbf{Tags}: \texttt{[tag]};
-\item \textbf{Response Model}: \texttt{PromptResponseDto};
-\item \textbf{Nome}: \texttt{generatePromptWithDebug};
-\item \textbf{Dependency Injection}:
-\begin{itemize}
-\item \textbf{dictionary\_id (Annotated[int, Query(alias="dictionaryId")])}: L'ID del dizionario da utilizzare;
-\item \textbf{query (str)}: La query fornita dall'utente;
-\item \textbf{dbms (str)}: Il sistema di gestione del database (DBMS);
-\item \textbf{lang (str)}: La lingua da utilizzare;
-\item \textbf{prompt\_manager\_service (PromptManagerService)}: Dipendenza risolta tramite \texttt{Depends(get\_prompt\_manager\_service)};
-\item \textbf{JWT Authentication}: Autenticazione richiesta tramite \texttt{Depends(JwtBearer())}.
-\end{itemize}
+  \item \textbf{HTTP Method}: \texttt{GET};
+  \item \textbf{Endpoint}: \texttt{/debug};
+  \item \textbf{Tags}: \texttt{[tag]};
+  \item \textbf{Response Model}: \texttt{PromptResponseDto};
+  \item \textbf{Dependencies}:
+    \begin{itemize}
+      \item \texttt{Depends(JwtBearer())}: autenticazione JWT necessaria per l'accesso all'endpoint.
+    \end{itemize}
+  \item \textbf{Nome}: \texttt{generatePromptWithDebug};
+  \item \textbf{Dependency Injection}:
+  \begin{itemize}
+    \item \textbf{prompt\_manager\_service (PromptManagerService)}: dipendenza risolta tramite \texttt{Depends(get\_prompt\_manager\_service)};
+  \end{itemize}
+  \item \textbf{Parametri}:
+  \begin{itemize}
+    \item \textbf{dictionary\_id (Annotated[int, Query(alias="dictionaryId")])}: l'ID del dizionario;
+    \item \textbf{query (str)}: la richiesta dell'utente in linguaggio naturale;
+    \item \textbf{dbms (str)}: il sistema di gestione del database (DBMS);
+    \item \textbf{lang (str)}: la lingua di richiesta.
+  \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Genera un prompt basato sui parametri forniti e include informazioni di debug;
-\item Restituisce un oggetto \texttt{PromptResponseDto} con il prompt generato e i dati di debug.
+  \item Effettua una chiamata al servizio di gestione dei prompt per generare un prompt con informazioni di debug relative ad esso;
+  \item Restituisce un oggetto \texttt{PromptResponseDto} con lo stato della risposta e, in caso di successo, i dati richiesti.
 \end{itemize}
 
 
