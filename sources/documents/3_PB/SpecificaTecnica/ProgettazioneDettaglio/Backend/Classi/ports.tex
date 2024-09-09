@@ -3,7 +3,7 @@
 \subsubsubsection{AuthenticationUseCase} \label{AuthenticationUseCase}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{assets/Backend/authentication_use_case.png}
+    \includegraphics[width=0.65\textwidth]{assets/Backend/authentication_use_case.png}
     \caption{Diagramma dell'interfaccia AuthenticationUseCase}
   \end{figure}
 \begin{itemize}
@@ -18,16 +18,16 @@
 \subsubsubsection{DictionaryUseCase} \label{DictionaryUseCase}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{assets/Backend/dictionary_use_case.png}
+    \includegraphics[width=0.75\textwidth]{assets/Backend/dictionary_use_case.png}
     \caption{Diagramma dell'interfaccia DictionaryUseCase}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione}: DictionaryUseCase definisce il contratto per i casi d'uso relativi alle operazioni sui \glossario{dizionari dati};
+    \item \textbf{Descrizione}: DictionaryUseCase definisce il contratto per i casi d'uso relativi alla gestione dei \glossario{dizionari dati};
     \item \textbf{Operazioni}:
     \begin{itemize}
       \item Recupero delle informazioni di tutti i dizionari;
       \item Recupero delle informazioni di un dizionario;
-      \item Recupero del file di un dizionario;
+      \item Recupero del percorso del file di un dizionario;
       \item Anteprima di un dizionario;
       \item Creazione di un dizionario;
       \item Aggiornamento dei metadati di un dizionario;
@@ -40,7 +40,7 @@
 \subsubsubsection{PromptUseCase} \label{PromptUseCase}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{assets/Backend/prompt_use_case.png}
+    \includegraphics[width=0.9\textwidth]{assets/Backend/prompt_use_case.png}
     \caption{Diagramma dell'interfaccia PromptUseCase}
   \end{figure}
 \begin{itemize}
@@ -73,16 +73,15 @@
 \subsubsubsection{EmbeddingsAbstractFactory} \label{EmbeddingsAbstractFactory}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{assets/Backend/embeddings_abstract_factory.png}
+    \includegraphics[width=0.8\textwidth]{assets/Backend/embeddings_abstract_factory.png}
     \caption{Diagramma dell'interfaccia EmbeddingsAbstractFactory}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione}: EmbeddingsAbstractFactory fornisce una struttura per la creazione dei componenti relativi agli \glossario{embeddings} e alla generazione dei \glossario{prompt};
+    \item \textbf{Descrizione}: EmbeddingsAbstractFactory fornisce una struttura per la creazione dei componenti relativi agli \glossario{embeddings} e alla generazione di \glossario{prompt};
     \item \textbf{Operazioni}:
     \begin{itemize}
       \item Creazione di un'istanza del gestore degli \glossario{indici};
-      \item Creazione di un'istanza del gestore dei \glossario{prompt} con le sue dipendenze;
-      \item Creazione di un'istanza del gestore dei prompt delegando prima la creazione delle sue dipendenze.
+      \item Creazione di un'istanza del gestore dei prompt.
     \end{itemize}
     \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete;
     \item \textbf{Dipendenze}:
@@ -96,15 +95,15 @@
 \subsubsubsection{IndexManagerPort} \label{IndexManagerPort}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{assets/Backend/index_manager_port.png}
+    \includegraphics[width=0.7\textwidth]{assets/Backend/index_manager_port.png}
     \caption{Diagramma dell'interfaccia IndexManagerPort}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione}: IndexManagerPort fornisce un'interfaccia per gestire le operazioni CRUD relative agli \glossario{embeddings};
+    \item \textbf{Descrizione}: IndexManagerPort fornisce un'interfaccia per gestire le operazioni \glossario{CRUD} relative agli \glossario{embeddings};
     \item \textbf{Operazioni}:
     \begin{itemize}
       \item Recupero degli embeddings;
-      \item Creazione di un indice;
+      \item Creazione di un \glossario{indice};
       \item Salvataggio di un indice;
       \item Ripristino di un indice;
       \item Eliminazione di un indice.
@@ -115,36 +114,36 @@
 \subsubsubsection{PromptManagerPort} \label{PromptManagerPort}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{assets/Backend/prompt_manager_port.png}
+    \includegraphics[width=0.7\textwidth]{assets/Backend/prompt_manager_port.png}
     \caption{Diagramma dell'interfaccia PromptManagerPort}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione}: questa interfaccia si occupa del recupero delle informazioni e la generazione del prompt.
+    \item \textbf{Descrizione}: PromptManagerPort definisce il contratto per la generazione di \glossario{prompt};
     \item \textbf{Operazioni}:
     \begin{itemize}
       \item Generazione del prompt;
-      \item Recupero dell'istanza del gestore degli indici;
-      \item Creazione dell'istanza del gestore di debug.
+      \item Recupero dell'istanza del gestore degli \glossario{indici};
+      \item Creazione dell'istanza del gestore di \glossario{debug}.
     \end{itemize}
     \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete;
     \item \textbf{Dipendenze}:
     \begin{itemize}
-        \item \texttt{IndexManagerPort};
-        \item \texttt{DebugManagerPort}.
+        \item IndexManagerPort;
+        \item DebugManagerPort.
     \end{itemize}
 \end{itemize} 
 
 \subsubsubsection{DebugManagerPort} \label{DebugManagerPort}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{assets/Backend/debug_manager_port.png}
+    \includegraphics[width=0.7\textwidth]{assets/Backend/debug_manager_port.png}
     \caption{Diagramma dell'interfaccia DebugManagerPort}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione}: DebugManagerPort definisce il contratto per la gestione dei log relativi alle operazioni di ricerca semantica;
+    \item \textbf{Descrizione}: DebugManagerPort definisce il contratto per la gestione dei \glossario{log} relativi alle operazioni di ricerca semantica;
     \item \textbf{Operazioni}:
     \begin{itemize}
-      \item Effettua il debug di un'operazione di ricerca semantica.
+      \item \glossario{Debug} di un'operazione di ricerca semantica.
     \end{itemize}
     \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete.
 \end{itemize}  
@@ -152,15 +151,15 @@
 \subsubsubsection{DbManagerAbstractFactory} \label{DbManagerAbstractFactory}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{assets/Backend/db_manager_abstract_factory.png}
+    \includegraphics[width=0.7\textwidth]{assets/Backend/db_manager_abstract_factory.png}
     \caption{Diagramma dell'interfaccia DbManagerAbstractFactory}
   \end{figure}
 \begin{itemize}
     \item \textbf{Descrizione}: DbManagerAbstractFactory fornisce una struttura per la creazione dei componenti relativi alla gestione dei dizionari e degli utenti;
     \item \textbf{Operazioni}:
     \begin{itemize}
-      \item Creazione di un'istanza del repository per la gestione degli utenti;
-      \item Creazione di un'istanza del repository per la gestione dei dizionari.
+      \item Creazione di un'istanza della classe per la gestione degli utenti;
+      \item Creazione di un'istanza della classe per la gestione dei dizionari.
     \end{itemize}
     \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete;
     \item \textbf{Dipendenze}:
@@ -173,7 +172,7 @@
 \subsubsubsection{AuthenticationRepository} \label{AuthenticationRepository}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{assets/Backend/authentication_repository.png}
+    \includegraphics[width=0.65\textwidth]{assets/Backend/authentication_repository.png}
     \caption{Diagramma dell'interfaccia AuthenticationRepository}
   \end{figure}
 \begin{itemize}
@@ -188,7 +187,7 @@
 \subsubsubsection{DictionaryRepository} \label{DictionaryRepository}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{assets/Backend/dictionary_repository.png}
+    \includegraphics[width=0.7\textwidth]{assets/Backend/dictionary_repository.png}
     \caption{Diagramma dell'interfaccia DictionaryRepository}
   \end{figure}
 \begin{itemize}
@@ -208,11 +207,11 @@
 \subsubsubsection{FileRepository} \label{FileRepository}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{assets/Backend/file_repository.png}
+    \includegraphics[width=0.65\textwidth]{assets/Backend/file_repository.png}
     \caption{Diagramma dell'interfaccia FileRepository}
   \end{figure}
 \begin{itemize}
-  \item \textbf{Descrizione}: questa interfaccia si occupa delle operazioni CRUD sui file dei dizionari dati.
+  \item \textbf{Descrizione}: FileRepository definisce un contratto per la gestione delle operazioni \glossario{CRUD} sui file associati ai dizionari;
   \item \textbf{Operazioni}: 
     \begin{itemize}
       \item Salvataggio di un file;

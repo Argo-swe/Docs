@@ -3,7 +3,7 @@
 \subsubsubsection{AuthenicationService} \label{AuthenticationService}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{assets/Backend/authentication_service.png}
+    \includegraphics[width=0.7\textwidth]{assets/Backend/authentication_service.png}
     \caption{Diagramma della classe AuthenticationService}
   \end{figure}
 \begin{itemize}
@@ -11,15 +11,14 @@
     \item \textbf{Interfaccia implementata}: \hyperref[AuthenticationUseCase]{AuthenticationUseCase};
     \item \textbf{Attributi}:
     \begin{itemize}
-        \item \texttt{authentication\_repository}: istanza della classe utilizzata per recuperare i dati dell'utente.
+        \item \texttt{authentication\_repository}: istanza della classe utilizzata per gestire gli utenti nel sistema.
     \end{itemize}
     \item \textbf{Metodi}: 
     \begin{itemize}
-        \item \texttt{+ login(username: string, password: string) -> AuthResponseDto}: autentica un utente basandosi sullo usernaname e sulla password forniti. Restituisce un oggetto di risposta che include un messaggio di stato e, in caso di successo, il token di autenticazione;
+        \item \texttt{+ login(username: string, password: string)}: autentica un utente basandosi sullo username e sulla password forniti. Restituisce un oggetto di risposta che include un messaggio di stato e, in caso di successo, il token di autenticazione.
     \end{itemize}
     \item \textbf{Dipendenze}:
     \begin{itemize}
-        \item AuthenticationUseCase;
         \item AuthenticationRepository.
     \end{itemize}
 \end{itemize}  
@@ -27,11 +26,11 @@
 \subsubsubsection{DictionaryService} \label{DictionaryService}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{assets/Backend/dictionary_service.png}
+    \includegraphics[width=0.8\textwidth]{assets/Backend/dictionary_service.png}
     \caption{Rappresentazione della classe DictionaryService}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione}: DictionaryService gestisce le operazioni sui dizionari dati;
+    \item \textbf{Descrizione}: DictionaryService è responsabile della gestione dei \glossario{dizionari dati};
     \item \textbf{Interfaccia implementata}: \hyperref[DictionaryUseCase]{DictionaryUseCase};
     \item \textbf{Attributi}:
     \begin{itemize}
@@ -42,19 +41,18 @@
     \end{itemize}
     \item \textbf{Metodi}:
     \begin{itemize}
-        \item \texttt{+ get\_dictionary\_list() -> DictionariesResponseDto}: recupera la lista di tutti i dizionari;
-        \item \texttt{+ get\_dictionary\_by\_id(id: integer) -> Union[DictionaryResponseDto, ResponseDto]}: recupera un dizionario tramite il suo id;
-        \item \texttt{+ get\_dictionary\_file(id: integer) -> string}: recupera il contenuto del file del dizionario tramite il suo id;
-        \item \texttt{+ get\_dictionary\_preview(id: integer) -> DictionaryResponseDto}: recupera l'anteprima del dizionario tramite il suo id;
-        \item \texttt{+ create\_dictionary(dictionary: DictionaryDto, content: string) -> DictionaryResponseDto}: crea un nuovo dizionario e salva il file associato;
-        \item \texttt{+ update\_dictionary\_metadata(id: integer, dictionary: DictionaryDto) -> DictionaryResponseDto}: aggiorna i metadati di un dizionario esistente;
-        \item \texttt{+ update\_dictionary\_file(id: integer, content: string) -> DictionaryResponseDto}: aggiorna il file di un dizionario esistente;
-        \item \texttt{+ delete\_dictionary(id: integer) -> ResponseDto}: elimina un dizionario esistente, inclusi il file e l'indice associati;
-        \item \texttt{- file\_size\_checker(content: string) -> bool}: controlla se la dimensione del file rientra nei limiti consentiti.
+        \item \texttt{+ get\_dictionary\_list()}: recupera la lista di tutti i dizionari;
+        \item \texttt{+ get\_dictionary\_by\_id(id: integer)}: recupera un dizionario tramite il suo id;
+        \item \texttt{+ get\_dictionary\_file(id: integer)}: recupera il percorso del file tramite il suo id;
+        \item \texttt{+ get\_dictionary\_preview(id: integer)}: recupera l'anteprima del dizionario tramite il suo id;
+        \item \texttt{+ create\_dictionary(dictionary: DictionaryDto, content: string)}: crea un nuovo dizionario e salva il file associato;
+        \item \texttt{+ update\_dictionary\_metadata(id: integer, dictionary: DictionaryDto)}: aggiorna i metadati di un dizionario esistente;
+        \item \texttt{+ update\_dictionary\_file(id: integer, content: string)}: aggiorna il file di un dizionario esistente;
+        \item \texttt{+ delete\_dictionary(id: integer)}: elimina un dizionario esistente, inclusi il file e l'indice associati;
+        \item \texttt{- file\_size\_checker(content: string)}: controlla se la dimensione del file rientra nei limiti consentiti.
     \end{itemize}
     \item \textbf{Dipendenze}:
     \begin{itemize}
-        \item DictionaryUseCase;
         \item DictionaryRepository;
         \item IndexManagerPort;
         \item FileRepository;
@@ -65,7 +63,7 @@
 \subsubsubsection{PromptManagerService} \label{PromptManagementService}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{assets/Backend/prompt_manager_service.png}
+    \includegraphics[width=0.8\textwidth]{assets/Backend/prompt_manager_service.png}
     \caption{Rappresentazione della classe PromptManagerService}
   \end{figure}
 \begin{itemize}
@@ -73,18 +71,17 @@
     \item \textbf{Interfaccia implementata}: \hyperref[PromptUseCase]{PromptUseCase};
     \item \textbf{Attributi}:
     \begin{itemize}
-        \item \texttt{dictionary\_service}: istanza della classe utilizzata per interagire con il servizio di gestione dei dizionari;
+        \item \texttt{dictionary\_service}: istanza del servizio di gestione dei dizionari;
         \item \texttt{prompt\_manager}: istanza del gestore dei prompt.
     \end{itemize}
     \item \textbf{Metodi}:
     \begin{itemize}
-        \item \texttt{+ generate\_prompt(dictionary\_id: integer, query: string, dbms: string, language: string) -> StringDataResponseDto}: genera un prompt a partire da una richiesta, un dizionario, una lingua e un \glossario{DBMS};
-        \item \texttt{+ generate\_prompt\_with\_debug(dictionary\_id: integer, query: string, dbms: string, language: string) -> PromptResponseDto}: genera un prompt con informazioni di \glossario{debug} relative ad esso;
-        \item \texttt{- generate\_prompt(dictionary\_id: integer, query: string, dbms: string, language: string, log: bool) -> Tuple[str, str]}: metodo interno per attivare la generazione del prompt utilizzando il prompt manager.
+        \item \texttt{+ generate\_prompt(dictionary\_id: integer, query: string, dbms: string,\\ language: string)}: genera un prompt a partire da una richiesta, un dizionario, una lingua e un \glossario{DBMS};
+        \item \texttt{+ generate\_prompt\_with\_debug(dictionary\_id: integer, query: string, \\ dbms: string, language: string)}: genera un prompt con informazioni di \glossario{debug} relative ad esso;
+        \item \texttt{- generate\_prompt(dictionary\_id: integer, query: string, dbms: string,\\ language: string, log: bool)}: metodo interno per attivare la generazione del prompt utilizzando il prompt manager.
     \end{itemize}
     \item \textbf{Dipendenze}:
     \begin{itemize}
-        \item PromptUseCase;
         \item DictionaryService;
         \item PromptManagerPort.
     \end{itemize}

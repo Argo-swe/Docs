@@ -1,6 +1,6 @@
 \subsubsection{Database}
 
-\par Il diagramma E-R (entità-relazione) riportato a seguito illustra la struttura e le relazioni all'interno del database.
+\par Il diagramma E-R (entità-relazione) riportato di seguito illustra la struttura e le relazioni all'interno del \glossario{database}.
 
 \begin{figure}[H]
     \centering
@@ -12,25 +12,28 @@
 \par Il diagramma utilizza la notazione standard per le descrizioni dei database relazionali; le entità sono rappresentate da rettangoli, mentre le relazioni sono le linee che collegano le entità. All'interno del diagramma sono presenti le seguenti sigle:
 \begin{itemize}
     \item \textbf{PK}: chiave primaria;
-    \item \textbf{U}: attributi, o campi, della tabella.
+    \item \textbf{U}: campo univoco.
 \end{itemize}
 
-\par Le linee terminano con dei simboli che ne indicano la cardinalità. Le tabelle sono inoltre collegate a un rombo che rappresenta la relazione tra di esse: questa relazione non è una tabella, ma serve solo a scopo illustrativo.
+\vspace{0.5\baselineskip}
+\par Le tabelle sono collegate a un rombo che rappresenta la relazione tra di esse: questa relazione non è una tabella, ma serve solo a scopo illustrativo. Le linee terminano con dei simboli che indicano la cardinalità delle relazioni.
 
 \subsubsubsection{Tabella Admins}
 \par La tabella \textbf{Admins} contiene i seguenti campi:
 \begin{itemize}
-    \item \textbf{PK ID}: un identificatore unico per ogni amministratore, di tipo integer;
-    \item \textbf{U Username}: il nome utente dell'amministratore, di tipo string;
+    \item \textbf{ID (chiave primaria)}: un identificatore univoco per ogni amministratore, di tipo integer;
+    \item \textbf{Username}: lo username univoco dell'amministratore, di tipo string;
     \item \textbf{Password}: la password dell'amministratore, di tipo string.
 \end{itemize}
+
+\vspace{0.5\baselineskip}
 \par Ogni entry della tabella descrive un Admin, cioè un Tecnico che può eseguire operazioni \glossario{CRUD} sui dizionari dati.
 
 \subsubsubsection{Tabella Dictionaries}
 \par La tabella \textbf{Dictionaries} include i seguenti campi:
 \begin{itemize}
-    \item \textbf{PK ID}: un identificatore unico per ogni dizionario, di tipo integer;
-    \item \textbf{U Name}: il nome del dizionario, di tipo string;
+    \item \textbf{ID (chiave primaria)}: un identificatore univoco per ogni dizionario, di tipo integer;
+    \item \textbf{Name}: il nome univoco del dizionario, di tipo string;
     \item \textbf{Description}: la descrizione del dizionario, di tipo string.
 \end{itemize}
 
