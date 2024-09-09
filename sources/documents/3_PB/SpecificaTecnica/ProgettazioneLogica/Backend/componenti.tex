@@ -119,7 +119,7 @@
 \subsubsection{create\_dictionary}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{create\_dictionary} permette di creare un nuovo dizionario nel database utilizzando i dati forniti e un file di schema. La funzione include controlli di validità e verifica l'unicità del nome del dizionario.
+\par La funzione \texttt{create\_dictionary} permette di creare un nuovo dizionario utilizzando i dati forniti e un file opzionale caricato dall'utente.
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
@@ -129,30 +129,22 @@
 \item \textbf{Response Model}: \texttt{DictionaryResponseDto};
 \item \textbf{Dependencies}:
 \begin{itemize}
-\item \texttt{Depends(JwtBearer())}: Assicura che l'endpoint sia protetto da un meccanismo di autenticazione JWT.
+\item \texttt{Depends(JwtBearer())}: Autenticazione JWT necessaria per l'accesso all'endpoint.
 \end{itemize}
 \item \textbf{Nome}: \texttt{createDictionary};
 \item \textbf{Dependency Injection}:
 \begin{itemize}
-\item \textbf{file (Annotated[UploadFile, File()])}: Il file di schema del dizionario da caricare;
+\item \textbf{file (Annotated[UploadFile, File()])}: Il file opzionale da caricare per il dizionario;
 \item \textbf{dictionary (DictionaryDto)}: I dati del dizionario, ottenuti tramite \texttt{Depends()};
-\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\item \textbf{dictionary\_service (DictionaryService)}: Dipendenza risolta tramite \texttt{Depends(get\_dictionary\_service)}.
 \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Verifica che il nome e la descrizione del dizionario, oltre al file, siano presenti;
-\item Recupera un dizionario esistente con lo stesso nome utilizzando \texttt{crud.get\_\-dictionary\-\_by\_name(db, name=dictionary.name)};
-\item Se il dizionario esiste già, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data\-=\-None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.CONFLICT};
-\item Crea un nuovo dizionario utilizzando \texttt{crud.create\_dictionary(db=db, dictionary\-=\-dictionary)};
-\item Legge il contenuto del file e valida il formato dello schema del dizionario utilizzando \texttt{DictionaryValidator.validate(Utils.string\_to\_json(content))};
-\item Se lo schema non è valido, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST};
-\item Scrive il contenuto del file in un nuovo file utilizzando \texttt{aiofiles.open(\_\_generate\-\_\-schema\-\_file\-\_name(new\_dic.id), "wb")};
-\item Crea un indice \texttt{txtai} utilizzando \texttt{manager.create\_index(new\_dic.id)};
-\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del nuovo dizionario e lo stato \texttt{ResponseStatusEnum.OK};
-\item Se il file non è presente, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST};
-\item Se il nome e la descrizione del dizionario non sono presenti, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST}.
+\item Verifica la presenza del file caricato e legge il contenuto, se disponibile;
+\item Crea un nuovo dizionario con i metadati forniti;
+\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del nuovo dizionario.
 \end{itemize}
 
 \subsubsection{update\_dictionary\_file}
