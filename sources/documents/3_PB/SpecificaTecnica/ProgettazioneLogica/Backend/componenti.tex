@@ -234,7 +234,7 @@
 \subsubsection{delete\_dictionary}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{delete\_dictionary} permette di eliminare un dizionario esistente dal database utilizzando l'ID fornito. La funzione elimina anche il file di schema associato e l'indice \texttt{txtai}.
+\par La funzione \texttt{delete\_dictionary} permette di eliminare un dizionario esistente dal sistema utilizzando l'ID fornito.
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
@@ -245,7 +245,7 @@
 \item \textbf{Nome}: \texttt{deleteDictionary};
 \item \textbf{Dependency Injection}:
 \begin{itemize}
-\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\item \textbf{dictionary\_service (DictionaryService)}: Dipendenza risolta tramite \texttt{Depends(get\_dictionary\_service)}.
 \end{itemize}
 \item \textbf{Parametri}:
 \begin{itemize}
@@ -255,12 +255,8 @@
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
-\item Se il dizionario non viene trovato, restituisce un oggetto \texttt{ResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
-\item Elimina il dizionario dal database utilizzando \texttt{crud.delete\_dictionary(db, id)};
-\item Se il file di schema esiste, lo elimina utilizzando \texttt{os.remove(\_\_generate\_schema\-\_\-file\_name(id))};
-\item Elimina l'indice \texttt{txtai} utilizzando \texttt{manager.delete\_index(found\_dic.id)};
-\item Restituisce un oggetto \texttt{ResponseDto} con lo stato \texttt{ResponseStatusEnum.OK}.
+\item Elimina il dizionario specificato dal sistema tramite l'ID fornito;
+\item Restituisce un oggetto \texttt{ResponseDto} con lo stato dell'operazione.
 \end{itemize}
 
 %SEZIONE ROUTES DI login_api
