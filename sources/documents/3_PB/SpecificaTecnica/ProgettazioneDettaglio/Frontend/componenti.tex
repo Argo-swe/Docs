@@ -5,8 +5,8 @@
 
 \paragraph*{Elementi chiave}
 \begin{itemize}
-  \item Layout Wrapper: aggiorna lo stile dell'applicazione in base alle configurazioni del sistema;
-  \item Outside Click Listener: i menu vengono chiusi quando viene effettuato un clic al di fuori di questi elementi;
+  \item Layout Wrapper: aggiorna lo stile dell'applicazione in base alla configurazione del sistema;
+  \item Outside Click Listener: i menu vengono chiusi quando viene effettuato un clic al di fuori di essi;
   \item Scroll To Top: pulsante per tornare rapidamente all'inizio della pagina;
   \item Toast Message: messaggio di notifica per fornire feedback all'utente.
 \end{itemize}
@@ -19,10 +19,11 @@
   \item Selected Dictionary Name: nome ed estensione del \glossario{dizionario dati} selezionato dall'utente;
   \item Toggle Select View: pulsante per visualizzare o nascondere il form di selezione del dizionario dati, della lingua e del \glossario{DBMS};
   \item Select Dictionary Dropdown: menu a discesa per selezionare un dizionario dati;
-  \item Toggle Details: pulsante per visualizzare o nascondere l'anteprima di un dizionario dati;
+  \item View Details: pulsante per visualizzare l'anteprima di un dizionario dati;
   \item Select DBMS Dropdown: menu a discesa per selezionare un DBMS;
   \item Select Language Dropdown: menu a discesa per selezionare una lingua;
   \item Chat Container: contenitore per i messaggi della chat;
+  \item Scroll To Bottom: pulsante per scorrere fino all'ultimo messaggio della chat;
   \item Chat Textarea: campo di testo per inserire una richiesta da inviare al ChatBOT;
   \item Request Button: pulsante per inviare la richiesta;
   \item Loading Spinner: indica che la generazione del \glossario{prompt} è ancora in corso.
@@ -34,6 +35,8 @@
 \paragraph*{Elementi chiave}
 \begin{itemize}
   \item Create Dictionary Button: pulsante per aprire la finestra di inserimento di un \glossario{dizionario dati};
+  \item Search By Name Input: campo di testo per filtrare i dizionari dati in base al nome;
+  \item Search By Description Input: campo di testo per filtrare i dizionari dati in base alla descrizione;
   \item Dictionary Data Table: tabella contenente i seguenti campi:
   \begin{itemize}
     \item Dictionary Name: nome del dizionario dati;
@@ -42,6 +45,11 @@
     \item Update File Button: pulsante per aprire la finestra di modifica del file;
     \item Download File Button: pulsante per scaricare il file relativo a un dizionario dati;
     \item Delete Dictionary Button: pulsante per eliminare un dizionario dati.
+  \end{itemize}
+  \item Status Message: messaggio per notificare all'utente che:
+  \begin{itemize}
+    \item L'eliminazione del dizionario dati è avvenuta con successo;
+    \item L'eliminazione del dizionario dati è fallita.
   \end{itemize}
 \end{itemize}
 
@@ -126,11 +134,17 @@
   \end{itemize}
 \end{itemize}
 
+\paragraph*{Emits}
+\begin{itemize}
+  \item HideDetails: evento per notificare al componente genitore che l'anteprima del dizionario dati deve essere chiusa.
+\end{itemize}
+
 \paragraph*{Elementi chiave}
 \begin{itemize}
   \item Preview Card: contenitore per l'anteprima del dizionario dati;
   \item Expand Button: pulsante per aumentare la dimensione della Preview Card. Il pulsante di espansione migliora l'accessibilità e l'usabilità;
-  \item Collapse Button: pulsante per ridurre la dimensione della Preview Card.
+  \item Collapse Button: pulsante per ridurre la dimensione della Preview Card;
+  \item Close Button: pulsante per chiudere l'anteprima del dizionario dati.
 \end{itemize}
 
 % Chat Delete Btn
@@ -144,7 +158,7 @@
 
 \paragraph*{Emits}
 \begin{itemize}
-  \item ClearMessages: evento per notificare il componente genitore che i messaggi devono essere cancellati.
+  \item ClearMessages: evento per notificare al componente genitore che i messaggi devono essere cancellati.
 \end{itemize}
 
 \paragraph*{Elementi chiave}
@@ -167,7 +181,16 @@
   \item File Uploader: componente per caricare il file relativo a un dizionario dati;
   \item Clear File Button: pulsante per annullare il caricamento del file;
   \item Submit Button: pulsante per richiedere il salvataggio dei dati;
-  \item Loading Spinner: indica che il salvataggio del dizionario dati e del rispettivo \glossario{indice} è ancora in corso.
+  \item Loading Spinner: indica che il salvataggio del dizionario dati e del rispettivo \glossario{indice} è ancora in corso;
+  \item Status Message: messaggio per notificare all'utente che:
+  \begin{itemize}
+    \item L'inserimento del dizionario è avvenuto con successo;
+    \item L'inserimento del dizionario è fallito;
+    \item La modifica dei metadati del dizionario è avvenuta con successo;
+    \item La modifica dei metadati del dizionario è fallita;
+    \item La modifica del file associato al dizionario è avvenuta con successo;
+    \item La modifica del file associato al dizionario è fallita.
+  \end{itemize}
 \end{itemize}
 
 % App Topbar
@@ -182,7 +205,7 @@
   \item Open Login Dialog Button: pulsante per aprire la finestra di autenticazione;
   \item Logout Button: pulsante per effettuare il logout;
   \item Confirmation Dialog: finestra per confermare o rifiutare il logout;
-  \item Outside Click Listener: i menu vengono chiusi quando viene effettuato un clic al di fuori di questi elementi.
+  \item Outside Click Listener: i menu vengono chiusi quando viene effettuato un clic al di fuori di essi.
 \end{itemize}
 
 % Menu Sidebar
@@ -243,8 +266,8 @@
 
 \paragraph*{Props}
 \begin{itemize}
-  \item Width: variabile per impostare la larghezza del logo;
-  \item Height: variabile per impostare l'altezza del logo;
+  \item Width (opzionale): variabile per impostare la larghezza del logo;
+  \item Height (opzionale): variabile per impostare l'altezza del logo;
   \item Path: variabile per impostare il percorso dell'immagine.
 \end{itemize}
 
