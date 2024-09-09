@@ -15,6 +15,7 @@
     \end{itemize}
     \item \textbf{Metodi}: 
     \begin{itemize}
+        \item \texttt{AuthenicationService(authentication\_repository: AuthenticationRepository)}: costruttore della classe;
         \item \texttt{+ login(username: string, password: string)}: autentica un utente basandosi sullo username e sulla password forniti. Restituisce un oggetto di risposta che include un messaggio di stato e, in caso di successo, il token di autenticazione.
     \end{itemize}
     \item \textbf{Dipendenze}:
@@ -41,6 +42,7 @@
     \end{itemize}
     \item \textbf{Metodi}:
     \begin{itemize}
+        \item \texttt{DictionaryService(dictionary\_repository: DictionaryRepository, index\_manager: IndexManagerPort, file\_repository: FileRepository, schema\_validator: SchemaValidatorUseCase)}: costruttore della classe;
         \item \texttt{+ get\_dictionary\_list()}: recupera la lista di tutti i dizionari;
         \item \texttt{+ get\_dictionary\_by\_id(id: integer)}: recupera un dizionario tramite il suo id;
         \item \texttt{+ get\_dictionary\_file(id: integer)}: recupera il percorso del file tramite il suo id;
@@ -76,6 +78,7 @@
     \end{itemize}
     \item \textbf{Metodi}:
     \begin{itemize}
+        \item \texttt{PromptManagerService(dictionary\_service: DictionaryService, prompt\_manager: PromptManagerPort)}: costruttore della classe;
         \item \texttt{+ generate\_prompt(dictionary\_id: integer, query: string, dbms: string,\\ language: string)}: genera un prompt a partire da una richiesta, un dizionario, una lingua e un \glossario{DBMS};
         \item \texttt{+ generate\_prompt\_with\_debug(dictionary\_id: integer, query: string, \\ dbms: string, language: string)}: genera un prompt con informazioni di \glossario{debug} relative ad esso;
         \item \texttt{- generate\_prompt(dictionary\_id: integer, query: string, dbms: string,\\ language: string, log: bool)}: metodo interno per attivare la generazione del prompt utilizzando il prompt manager.
