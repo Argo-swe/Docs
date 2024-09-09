@@ -244,7 +244,7 @@
 \subsubsection{login}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{login} permette di autenticare un utente utilizzando le credenziali fornite. Se le credenziali sono corrette, viene restituito un token JWT.
+\par La funzione \texttt{login} autentica un utente utilizzando le credenziali fornite (username e password). Se le credenziali sono corrette, restituisce un token di autenticazione JWT.
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
@@ -255,26 +255,24 @@
 \item \textbf{Nome}: \texttt{login};
 \item \textbf{Dependency Injection}:
 \begin{itemize}
-\item \textbf{data (LoginDto)}: I dati di login dell'utente;
-\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\item \textbf{data (LoginDto)}: I dati di autenticazione dell'utente (username e password);
+\item \textbf{authentication\_service (AuthenticationService)}: Dipendenza risolta tramite \texttt{Depends(get\_authentication\_service)}.
 \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Recupera l'utente dal database utilizzando \texttt{crud.get\_user\_by\_username(db,\- data\-.username)};
-\item Se l'utente non viene trovato, restituisce un oggetto \texttt{AuthResponseDto} con \texttt{data\-=\-None} e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
-\item Se la password non è corretta, restituisce un oggetto \texttt{AuthResponseDto} con \texttt{data\-=\-None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_CREDENTIAL};
-\item Genera un token JWT utilizzando \texttt{JwtHandler.sign(query.id)};
-\item Restituisce un oggetto \texttt{AuthResponseDto} con il token generato e lo stato \texttt{Response\-Status\-Enum.OK}.
+\item Autentica l'utente utilizzando le credenziali fornite;
+\item Se l'autenticazione ha successo, restituisce un token di autenticazione JWT.
 \end{itemize}
+
 
 %SEZIONE ROUTES DI prompt_api
 
 \subsubsection{generate\_prompt}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{generate\_prompt} genera un prompt utilizzando un dizionario specifico e una query forniti dall'utente. La funzione verifica la validità dei dati di input e restituisce il prompt generato.
+\par La funzione \texttt{generate\_prompt} genera un prompt utilizzando i parametri forniti dall'utente, tra cui un dizionario specifico, una query, il DBMS e la lingua.
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
@@ -289,40 +287,45 @@
 \item \textbf{query (str)}: La query fornita dall'utente;
 \item \textbf{dbms (str)}: Il sistema di gestione del database (DBMS);
 \item \textbf{lang (str)}: La lingua da utilizzare;
-\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\item \textbf{prompt\_manager\_service (PromptManagerService)}: Dipendenza risolta tramite \texttt{Depends(get\_prompt\_manager\_service)}.
 \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, dictionary\_id)};
-\item Se il dizionario non viene trovato, restituisce un oggetto \texttt{StringDataResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
-\item Se la query è vuota o nulla, restituisce un oggetto \texttt{StringDataResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST};
-\item Carica l'indice del dizionario utilizzando \texttt{manager.load\_index(found\_dic.id)};
-\item Genera il prompt utilizzando \texttt{manager.prompt\_generator(found\_dic.id, query, lang, dbms, activate\_log=True)};
-\item Restituisce un oggetto \texttt{StringDataResponseDto} con il prompt generato e lo stato \texttt{ResponseStatusEnum.OK}.
+\item Genera il prompt basato sui parametri forniti (dizionario, query, lingua, DBMS);
+\item Restituisce un oggetto \texttt{StringDataResponseDto} con il prompt generato.
 \end{itemize}
 
-\subsubsection{generate\_prompt\_debug}
+\subsubsection{generate\_prompt\_with\_debug}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{generate\_prompt\_debug} restituisce il contenuto del file di log per scopi di debug. Se il file di log non viene trovato, restituisce un messaggio di errore.
+\par La funzione \texttt{generate\_prompt\_with\_debug} genera un prompt e include informazioni dettagliate di debug, fornendo dati aggiuntivi per la risoluzione di problemi.
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
 \item \textbf{HTTP Method}: \texttt{GET};
 \item \textbf{Endpoint}: \texttt{/debug};
 \item \textbf{Tags}: \texttt{[tag]};
-\item \textbf{Response Model}: \texttt{StringDataResponseDto};
-\item \textbf{Nome}: \texttt{generatePromptDebug}.
+\item \textbf{Response Model}: \texttt{PromptResponseDto};
+\item \textbf{Nome}: \texttt{generatePromptWithDebug};
+\item \textbf{Dependency Injection}:
+\begin{itemize}
+\item \textbf{dictionary\_id (Annotated[int, Query(alias="dictionaryId")])}: L'ID del dizionario da utilizzare;
+\item \textbf{query (str)}: La query fornita dall'utente;
+\item \textbf{dbms (str)}: Il sistema di gestione del database (DBMS);
+\item \textbf{lang (str)}: La lingua da utilizzare;
+\item \textbf{prompt\_manager\_service (PromptManagerService)}: Dipendenza risolta tramite \texttt{Depends(get\_prompt\_manager\_service)};
+\item \textbf{JWT Authentication}: Autenticazione richiesta tramite \texttt{Depends(JwtBearer())}.
+\end{itemize}
 \end{itemize}
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Tenta di aprire il file di log situato in \texttt{/opt/chatsql/logs/chatsql\_log.txt};
-\item Se il file viene trovato, legge il contenuto e restituisce un oggetto \texttt{StringDataResponseDto} con i dati del file e lo stato \texttt{ResponseStatusEnum.OK};
-\item Se il file non viene trovato, restituisce un oggetto \texttt{StringDataResponseDto} con un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND}.
+\item Genera un prompt basato sui parametri forniti e include informazioni di debug;
+\item Restituisce un oggetto \texttt{PromptResponseDto} con il prompt generato e i dati di debug.
 \end{itemize}
+
 
 % TABELLA TRACCIAMENTO REQUISITI
 
