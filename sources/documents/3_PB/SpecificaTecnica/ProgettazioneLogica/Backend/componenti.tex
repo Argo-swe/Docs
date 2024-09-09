@@ -158,7 +158,7 @@
 \subsubsection{update\_dictionary\_file}
 
 \subsubsubsection{Descrizione}
-\par La funzione \texttt{update\_dictionary\_file} permette di aggiornare il file di schema di un dizionario esistente nel database utilizzando l'ID fornito e un nuovo file di schema. La funzione include controlli di validità dello schema.
+\par La funzione \texttt{update\_dictionary\_file} permette di aggiornare il file associato a un dizionario esistente utilizzando l'ID fornito e un nuovo file caricato.
 
 \subsubsubsection{Dettagli dell'Endpoint}
 \begin{itemize}
@@ -168,13 +168,13 @@
 \item \textbf{Response Model}: \texttt{DictionaryResponseDto};
 \item \textbf{Dependencies}:
 \begin{itemize}
-\item \texttt{Depends(JwtBearer())}: Assicura che l'endpoint sia protetto da un meccanismo di autenticazione JWT.
+\item \texttt{Depends(JwtBearer())}: Autenticazione JWT necessaria per l'accesso all'endpoint.
 \end{itemize}
 \item \textbf{Nome}: \texttt{updateDictionaryFile};
 \item \textbf{Dependency Injection}:
 \begin{itemize}
-\item \textbf{file (Annotated[UploadFile, File()])}: Il nuovo file di schema del dizionario da caricare;
-\item \textbf{db (Session)}: Dipendenza risolta tramite \texttt{Depends(get\_db)}.
+\item \textbf{file (Annotated[UploadFile, File()])}: Il nuovo file da caricare per il dizionario;
+\item \textbf{dictionary\_service (DictionaryService)}: Dipendenza risolta tramite \texttt{Depends(get\_dictionary\_service)}.
 \end{itemize}
 \item \textbf{Parametri}:
 \begin{itemize}
@@ -184,13 +184,8 @@
 
 \subsubsubsection{Implementazione}
 \begin{itemize}
-\item Recupera il dizionario dal database utilizzando \texttt{crud.get\_dictionary\_by\_id(db, id)};
-\item Se il dizionario non viene trovato, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.NOT\_FOUND};
-\item Legge il contenuto del file e valida il formato dello schema del dizionario utilizzando \texttt{DictionaryValidator.validate(Utils.string\_to\_json(content))};
-\item Se lo schema non è valido, restituisce un oggetto \texttt{DictionaryResponseDto} con \texttt{data=None}, un messaggio di errore e lo stato \texttt{ResponseStatusEnum.BAD\_REQUEST};
-\item Scrive il contenuto del file in un nuovo file utilizzando \texttt{aiofiles.open(\_\_generate\_s\-chema\_file\_name(id), "wb")};
-\item Aggiorna l'indice \texttt{txtai} utilizzando \texttt{manager.create\_index(found\_dic.id)};
-\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati del dizionario aggiornato e lo stato \texttt{ResponseStatusEnum.OK}.
+\item Legge il contenuto del file caricato e aggiorna il file del dizionario con i nuovi dati;
+\item Restituisce un oggetto \texttt{DictionaryResponseDto} con i dati aggiornati del dizionario.
 \end{itemize}
 
 \subsubsection{update\_dictionary\_metadata}
