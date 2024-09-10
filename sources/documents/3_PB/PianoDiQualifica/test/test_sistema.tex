@@ -42,7 +42,7 @@
 		\hline TS.13 & Verificare che il Tecnico possa scaricare un dizionario dati. & S \\
 		\hline TS.14 & Verificare che l'Utente possa accedere alla chat e inserire un messaggio nella maschera di richiesta. & S \\   
 		\hline TS.15 & Verificare che l'Utente possa selezionare un dizionario dati e renderlo operativo nel sistema. & S \\ 
-		\hline TS.16 & Verificare che l'Utente possa visualizzare il contenuto del dizionario dati selezionato. Il sistema deve mostrare le seguenti informazioni:
+		\hline TS.16 & Verificare che l'Utente possa visualizzare un'anteprima del dizionario dati selezionato. Il sistema deve mostrare le seguenti informazioni:
 		\begin{itemize}
 			\item Nome del database;
 			\item Descrizione del database;
@@ -54,7 +54,7 @@
 		\end{itemize} & S \\  
 		\hline TS.17 & Verificare che l'Utente possa inviare una richiesta al ChatBOT. & S \\ 
 		\hline TS.18 & Verificare che il sistema restituisca un avviso qualora l'Utente inserisca una richiesta ritenuta non idonea dal modello di \glossario{AI}. & S \\
-		\hline TS.19 & Verificare che il sistema restituisca un messaggio di errore nel caso in cui la generazione del prompt venga interrotta senza preavviso. & S \\ 
+		\hline TS.19 & Verificare che il sistema restituisca un messaggio di errore nel caso in cui la generazione del \glossario{prompt} venga interrotta senza preavviso. & S \\ 
 		\hline TS.20 & Verificare che l'Utente possa visualizzare correttamente il prompt generato. Il prompt deve contenere le seguenti informazioni:
 		\begin{itemize}
 			\item Lista delle tabelle pertinenti. Ogni tabella deve essere corredata da:
@@ -65,17 +65,17 @@
 				\item Descrizione delle colonne della tabella;
 				\item Chiavi esterne.
 			\end{itemize}
-			\item DBMS di riferimento;
+			\item \glossario{DBMS} di riferimento;
 			\item Lingua di riferimento;
 			\item Richiesta in linguaggio naturale.
 		\end{itemize} & S \\
 		\hline TS.21 & Verificare che il Tecnico possa effettuare il logout per terminare la sessione corrente. & S \\ 
 		\hline TS.22 & Verificare che l'Utente possa copiare il contenuto del prompt generato. & S \\ 
 		\hline TS.23 & Verificare che il sistema generi un \glossario{log} se la richiesta viene inviata dal Tecnico. & S \\ 
-		\hline TS.24 & Verificare che il Tecnico possa scaricare un file di log contenente il debug del prompt. & S \\
+		\hline TS.24 & Verificare che il Tecnico possa scaricare un file di log contenente il \glossario{debug} del prompt. & S \\
 		\hline TS.25 & Verificare che l'Utente possa eliminare la cronologia della chat. & S \\  
 		\hline TS.26 & Verificare che il Tecnico possa visualizzare la lista dei dizionari dati con le relative informazioni. & S \\  
-		\hline TS.27 & Verificare che il sistema di generazione del \glossario{prompt} supporti richieste in lingue diverse dall'inglese. & S \\  
+		\hline TS.27 & Verificare che il sistema di generazione del prompt supporti richieste in lingue diverse dall'inglese. & S \\  
 		\hline TS.28 & Verificare che l'Utente possa cambiare il tema dell'interfaccia da chiaro a scuro. & S \\
 		\hline TS.29 & Verificare che l'Utente possa aumentare la scala dell'interfaccia. & S \\  
 		\hline TS.30 & Verificare che l'Utente possa diminuire la scala dell'interfaccia. & S \\   
@@ -121,29 +121,29 @@
 		\hline TS.6 & RF.O.15, RF.O.20\\
 		\hline TS.7 & RF.O.31, RF.O.31.1\\
 		\hline TS.8 & RF.O.31, RF.O.31.2\\
-		\hline TS.9 & RF.O.32\\
-		\hline TS.10 & RF.O.33\\
-		\hline TS.11 & RF.O.28\\
-		\hline TS.12 & RF.O.34\\
-		\hline TS.13 & RF.O.18\\
-		\hline TS.14 & RF.O.21\\
-		\hline TS.15 & RF.O.37\\
-		\hline TS.16 & RF.O.5\\
-		\hline TS.17 & RF.O.4\\
-		\hline TS.18 & RF.O.14, RF.O.14.1, RF.O.14.2, RF.O.14.3, RF.O.14.3.1, RF.O.14.3.1.1, RF.O.14.3.1.2\\
-		\hline TS.19 & RF.O.3\\
-		\hline TS.20 & RF.O.6\\
-		\hline TS.21 & RF.O.11\\
-		\hline TS.22 & RF.O.35\\
-		\hline TS.23 & RF.O.12\\
-		\hline TS.24 & RF.O.8\\
-		\hline TS.25 & RF.O.46\\
-		\hline TS.26 & RF.O.38\\
-		\hline TS.27 & RF.O.23\\
-		\hline TS.28 & RF.O.24\\
-		\hline TS.29 & RF.O.25, RF.O.25.1, RF.O.25.1.1, RF.O.25.1.2\\
-		\hline TS.30 & RF.O.9, RF.O.9.1, RF.O.10, RF.O.10.1, RF.O.10.2, RF.O.10.3, RF.O.10.4, RF.O.10.5\\
-		\hline TS.31 & RF.D.52, RF.D.7\\
+		\hline TS.9 & RF.O.33\\
+		\hline TS.10 & RF.O.28\\
+		\hline TS.11 & RF.O.34\\
+		\hline TS.12 & RF.O.18\\
+		\hline TS.13 & RF.O.38\\
+		\hline TS.14 & RF.O.5\\
+		\hline TS.15 & RF.O.4\\
+		\hline TS.16 & RF.O.14, RF.O.14.1, RF.O.14.2, RF.O.14.3, RF.O.14.3.1, RF.O.14.3.1.1, RF.O.14.3.1.2\\
+		\hline TS.17 & RF.O.3\\
+		\hline TS.18 & RF.O.6\\
+		\hline TS.19 & RF.O.11\\
+		\hline TS.20 & RF.O.35\\
+		\hline TS.21 & RF.O.12\\
+		\hline TS.22 & RF.O.8\\
+		\hline TS.23 & RF.D.46\\
+		\hline TS.24 & RF.O.23\\
+		\hline TS.25 & RF.O.27\\
+		\hline TS.26 & RF.O.9, RF.O.9.1, RF.O.10, RF.O.10.1, RF.O.10.2, RF.O.10.3\\
+		\hline TS.27 & RF.OP.52\\
+		\hline TS.28 & RF.O.60\\
+		\hline TS.29 & RF.O.61\\
+		\hline TS.30 & RF.O.61\\
+		\hline TS.31 & RF.D.62\\
   \end{longtable}
 \end{adjustwidth}
 \egroup
