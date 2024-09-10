@@ -1,6 +1,6 @@
 \subsection{Test di integrazione}
 
-\par La sezione relativa ai test di integrazione verrà aggiornata in seguito alla revisione \glossario{RTB}.
+\par Lo scopo dei test di integrazione è rilevare difetti di design o carenze nei test di unità, verificando che i moduli o componenti del sistema funzionino correttamente quando combinati tra loro.
 
 \bgroup
 \begin{adjustwidth}{-0.5cm}{-0.5cm}
@@ -28,89 +28,88 @@
 		\endlastfoot
 
 		%authentication_service
-		\hline TU & Verificare che il metodo "login" della classe "AuthenticationService" soddisfi le seguenti condizioni:
+		\hline TI.1 & Verificare che il metodo "login" della classe "AuthenticationService" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve restituire lo status "NOT_FOUND" se l'utente con il nome utente fornito non esiste;
-			\item Deve restituire lo status "BAD_CREDENTIAL" se la password fornita è errata, indicando il messaggio di errore appropriato;
-			\item Deve restituire lo status "OK" e un token JWT quando il login è corretto, utilizzando il nome utente e la password corretti.
+			\item Deve restituire lo status "NOT_FOUND" se l'Utente non è registrato nel sistema;
+			\item Deve restituire lo status "BAD_CREDENTIAL" se la password fornita è errata;
+			\item Deve restituire lo status "OK" e un token di autenticazione quando il login viene effettuato con successo.
 		\end{itemize} & S \\
 
 		%dictionary_service
 		% get_dictionary_list
-		\hline TU & Verificare che il metodo "get_dictionary_list" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\hline TI.2 & Verificare che il metodo "get\_dictionary\_list" della classe "DictionaryService" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve restituire una lista di dizionari esistenti con lo status "OK".
+			\item Deve restituire l'elenco completo dei dizionari.
 		\end{itemize} & S \\
 
 		% get_dictionary_by_id
-		\hline TU & Verificare che il metodo "get_dictionary_by_id" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\hline TI.3 & Verificare che il metodo "get\_dictionary\_by\_id" della classe "DictionaryService" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve restituire un dizionario esistente in base all'ID con lo status "OK";
-			\item Deve restituire lo status "NOT_FOUND" se il dizionario con l'ID specificato non esiste.
+			\item Deve restituire il dizionario associato all'ID fornito;
+			\item Deve restituire lo status "NOT_FOUND" se non esiste alcun dizionario associato all'ID fornito.
 		\end{itemize} & S \\
 
 		% get_dictionary_file
-		\hline TU & Verificare che il metodo "get_dictionary_file" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\hline TI.4 & Verificare che il metodo "get\_dictionary\_file" della classe "DictionaryService" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve restituire il contenuto del file di un dizionario esistente;
-			\item Deve restituire "None" se il dizionario con l'ID specificato non esiste.
+			\item Deve restituire il percorso del file relativo al dizionario specificato;
+			\item Deve restituire "None" se non esiste alcun dizionario associato all'ID fornito.
 		\end{itemize} & S \\
 
 		% get_dictionary_preview
-		\hline TU & Verificare che il metodo "get_dictionary_preview" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\hline TI.5 & Verificare che il metodo "get\_dictionary\_preview" della classe "DictionaryService" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve restituire un'anteprima del dizionario esistente con lo status "OK";
-			\item Deve restituire lo status "NOT_FOUND" se il dizionario con l'ID specificato non esiste.
+			\item Deve restituire un'anteprima del dizionario associato all'ID fornito;
+			\item Deve restituire lo status "NOT_FOUND" se non esiste alcun dizionario associato all'ID fornito.
 		\end{itemize} & S \\
 
 		% create_dictionary
-		\hline TU & Verificare che il metodo "create_dictionary" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\hline TI.6 & Verificare che il metodo "create\_dictionary" della classe "DictionaryService" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve creare un nuovo dizionario quando non esiste già un dizionario con lo stesso nome;
-			\item Deve restituire lo status "CONFLICT" se un dizionario con lo stesso nome esiste già;
-			\item Deve restituire lo status "BAD_REQUEST" se il contenuto fornito è mancante o non valido.
+			\item Deve inserire un nuovo dizionario nel sistema;
+			\item Deve restituire lo status "CONFLICT" se il nome del dizionario non è univoco;
+			\item Deve restituire lo status "BAD_REQUEST" se i dati forniti sono incompleti o non validi.
 		\end{itemize} & S \\
 
 		% update_dictionary_metadata
-		\hline TU & Verificare che il metodo "update_dictionary_metadata" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\hline TI.7 & Verificare che il metodo "update\_dictionary_metadata" della classe "DictionaryService" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve aggiornare correttamente i metadati di un dizionario esistente con lo status "OK";
-			\item Deve restituire lo status "CONFLICT" se esiste già un dizionario con lo stesso nome;
-			\item Deve restituire lo status "NOT_FOUND" se il dizionario con l'ID specificato non esiste.
+			\item Deve aggiornare correttamente i metadati del dizionario specificato;
+			\item Deve restituire lo status "CONFLICT" se il nome del dizionario non è univoco;
+			\item Deve restituire lo status "NOT_FOUND" se non esiste alcun dizionario associato all'ID fornito.
 		\end{itemize} & S \\
 
 		% update_dictionary_file
-		\hline TU & Verificare che il metodo "update_dictionary_file" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\hline TI.8 & Verificare che il metodo "update\_dictionary\_file" della classe "DictionaryService" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve aggiornare correttamente il file di un dizionario esistente con lo status "OK";
-			\item Deve restituire lo status "BAD_REQUEST" se il contenuto del file è non valido;
-			\item Deve restituire lo status "NOT_FOUND" se il dizionario con l'ID specificato non esiste.
+			\item Deve aggiornare correttamente il file relativo al dizionario specificato;
+			\item Deve restituire lo status "BAD_REQUEST" se il contenuto del file è invalido;
+			\item Deve restituire lo status "NOT_FOUND" se non esiste alcun dizionario associato all'ID fornito.
 		\end{itemize} & S \\
 
 		% delete_dictionary
-		\hline TU & Verificare che il metodo "delete_dictionary" della classe "DictionaryService" soddisfi le seguenti condizioni:
+		\hline TI.9 & Verificare che il metodo "delete\_dictionary" della classe "DictionaryService" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve eliminare correttamente un dizionario esistente con lo status "OK";
-			\item Deve restituire lo status "NOT_FOUND" se il dizionario con l'ID specificato non esiste.
+			\item Deve eliminare correttamente il dizionario specificato;
+			\item Deve restituire lo status "NOT_FOUND" se non esiste alcun dizionario associato all'ID fornito.
 		\end{itemize} & S \\
 
-
-    	%prompt_manager_service
-		\hline TU & Verificare che il metodo "generate_prompt" della classe "PromptManagerService" soddisfi le seguenti condizioni:
+    %prompt_manager_service
+		\hline TI.10 & Verificare che il metodo "generate\_prompt" della classe "PromptManagerService" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve restituire lo status "NOT_FOUND" e il messaggio di errore appropriato se il dizionario non viene trovato;
-			\item Deve restituire lo status "BAD_REQUEST" se la query fornita è mancante;
-			\item Deve generare correttamente il prompt quando viene fornita una query valida, restituendo lo status "OK" e il prompt generato.
+			\item Deve restituire lo status "NOT_FOUND" se non esiste alcun dizionario associato all'ID fornito;
+			\item Deve restituire lo status "BAD_REQUEST" se la richiesta è incompleta;
+			\item Deve generare correttamente il \glossario{prompt} quando viene fornita una richiesta idonea.
 		\end{itemize} & S \\
 
-		\hline TU & Verificare che il metodo "generate_prompt_with_debug" della classe "PromptManagerService" soddisfi le seguenti condizioni:
+		\hline TI.11 & Verificare che il metodo "generate\_prompt\_with\_debug" della classe "PromptManagerService" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve restituire lo status "NOT_FOUND" e il messaggio di errore appropriato se il dizionario non viene trovato;
-			\item Deve restituire lo status "BAD_REQUEST" se la query fornita è mancante;
-			\item Deve generare correttamente il prompt e includere informazioni di debug quando viene fornita una query valida, restituendo lo status "OK" e il prompt generato con le informazioni di debug.
+			\item Deve restituire lo status "NOT_FOUND" se non esiste alcun dizionario associato all'ID fornito;
+			\item Deve restituire lo status "BAD_REQUEST" se la richiesta è incompleta;
+			\item Deve generare correttamente il prompt e includere informazioni di \glossario{debug} relative ad esso quando viene fornita una richiesta idonea.
 		\end{itemize} & S \\
 
-    TU & Verificare che il componente "AppMenu" soddisfi le seguenti condizioni:
+    \hline TI.12 & Verificare che il componente "AppMenu" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item L'Utente deve poter accedere alle seguenti pagine:
       \begin{itemize}
@@ -119,38 +118,42 @@
       \item Il Tecnico deve poter accedere alle seguenti pagine:
       \begin{itemize}
         \item Chat;
-        \item Gestione dizionari dati.
+        \item Gestione \glossario{dizionari dati}.
       \end{itemize}
     \end{itemize} & S \\
-    \hline TU & Verificare che il componente "AppTopbar" soddisfi le seguenti condizioni:
+
+    \hline TI.13 & Verificare che il componente "AppTopbar" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il logo deve essere renderizzato correttamente.
     \end{itemize} & S \\
-    \hline TU & Verificare che il componente "AppFooter" soddisfi le seguenti condizioni:
+
+    \hline TI.14 & Verificare che il componente "AppFooter" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il logo deve essere renderizzato correttamente.
     \end{itemize} & S \\
-    \hline TU & Verificare che il componente "MenuSidebar" soddisfi le seguenti condizioni:
+
+    \hline TI.15 & Verificare che il componente "MenuSidebar" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il menu di navigazione principale deve essere visibile;
       \item Il footer deve essere visibile.
     \end{itemize} & S \\
-    \hline TU & Verificare che il componente "StringDataModal" soddisfi le seguenti condizioni:
+
+    \hline TI.16 & Verificare che il componente "StringDataModal" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il messaggio di debug deve essere visualizzato correttamente quando la variabile StringData è impostata;
-      \item Il messaggio di debug non deve essere renderizzato quando la variabile StringData è vuota.
+      \item Il messaggio di debug non deve essere renderizzato se la variabile StringData è vuota.
     \end{itemize} & S \\
-    \hline TU & Verificare che il componente "AppLayout" soddisfi le seguenti condizioni:
+
+    \hline TI.17 & Verificare che il componente "AppLayout" soddisfi le seguenti condizioni:
     \begin{itemize}
-      \item Il layout dell'applicazione deve essere renderizzato correttamente;
-      \item Il wrapper globale deve contenere le classi corrette sulla base delle impostazioni e dello stato del layout;
       \item Il dialog di login deve essere aperto/chiuso al clic dell'apposito pulsante;
       \item La barra laterale delle impostazioni deve essere aperta/chiusa al clic dell'apposito pulsante;
       \item La barra laterale delle impostazioni deve essere chiusa se l'Utente clicca al di fuori di essa;
       \item La barra laterale del menu di navigazione deve essere aperta/chiusa al clic dell'apposito pulsante;
       \item La barra laterale del menu di navigazione deve essere chiusa se l'Utente clicca al di fuori di essa.
     \end{itemize} & S \\
-    \hline TU & Verificare che il componente "ChatView" soddisfi le seguenti condizioni:
+
+    \hline TI.18 & Verificare che il componente "ChatView" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item L'anteprima del dizionario dati selezionato deve essere visualizzata al clic dell'apposito pulsante;
       \item L'anteprima del dizionario deve essere nascosta quando viene inviato un messaggio;
