@@ -2,12 +2,12 @@
 \par L'architettura è composta da 3 parti principali:
 \begin{itemize}
     \item \textbf{Core}: il core è la sezione centrale dell'architettura, in cui risiede la business logic dell'applicazione. È indipendente da qualsiasi interfaccia utente o servizio esterno. Ciò viene fatto per mantenerla isolata e disaccoppiata dal resto dell'architettura, in modo che possa agire indipendentemente;
-    \item \textbf{Ports}: costituiscono dei punti di comunicazione tra il core e altri parti del sistema o servizi esterni. Esistono due tipi principali di porte:
+    \item \textbf{Port}: costituiscono dei punti di comunicazione tra il core e altri parti del sistema o servizi esterni. Esistono due tipi principali di porte:
     \begin{itemize}
         \item Inbound port: consentono al nucleo di essere invocato da componenti esterne;
         \item Outbound port: consentono al nucleo di reperire informazioni dall'esterno.
     \end{itemize}
-    \item \textbf{Adapters}: sono pattern architetturali che permettono di adattare i dati in modo che possano essere ricevuti dall'esterno e passare per le porte o vice versa. Costituiscono la sezione più esterna dell'architettura e consentono pertanto il passaggio e il monitoraggio dei dati.
+    \item \textbf{Adapter}: sono pattern architetturali che permettono di adattare i dati in modo che possano essere ricevuti dall'esterno e passare per le porte o vice versa. Costituiscono la sezione più esterna dell'architettura e consentono pertanto il passaggio e il monitoraggio dei dati.
 \end{itemize}
 
 \vspace{0.5\baselineskip}
