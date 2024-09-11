@@ -222,6 +222,10 @@
   \item \textbf{Endpoint}: \texttt{/\{id\}};
   \item \textbf{Tags}: \texttt{[tag]};
   \item \textbf{Response Model}: \texttt{ResponseDto};
+  \item \textbf{Dependencies}:
+  \begin{itemize}
+    \item \texttt{Depends(JwtBearer())}: autenticazione JWT necessaria per l'accesso all'endpoint.
+  \end{itemize}
   \item \textbf{Nome}: \texttt{deleteDictionary};
   \item \textbf{Dependency Injection}:
   \begin{itemize}

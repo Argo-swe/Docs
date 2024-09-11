@@ -99,7 +99,7 @@
     \item \textbf{Metodi}:
     \begin{itemize}
         \item \texttt{SqlAlchemyAuthenticationRepositoryAdapter(session: SessionLocal)}: costruttore della classe;
-        \item \texttt{+ get\_user\_by\_username(username: string)}: recupera un admin dal database tramite il suo username.
+        \item \texttt{+ get\_admin\_by\_username(username: string)}: recupera un admin dal database tramite il suo username.
     \end{itemize}
 \end{itemize} 
 
@@ -223,9 +223,9 @@
     \end{itemize}
     \item \textbf{Metodi}:
     \begin{itemize}
+        \item \texttt{TxtaiPromptManagerAdapter(index\_manager: IndexManagerPort, file\_repository:\\ FileRepository)}: costruttore della classe;
         \item \texttt{+ prompt\_generator(dictionary\_id: integer, user\_request: string, lang:\\ string, dbms: string, activate\_log: bool)}: carica l'indice associato a un dizionario e genera un prompt basato sulla richiesta dell'utente;
         \item \texttt{+ get\_index\_manager()}: restituisce l'istanza del gestore degli indici;
-        \item \texttt{- create\_debug\_manager()}: crea un'istanza del gestore di debug;
         \item \texttt{- get\_tuples(user\_request: string, activate\_log: bool)}: restituisce i risultati della ricerca semantica effettuata con txtai;
         \item \texttt{- get\_relevant\_tuples(tuples: list, activate\_log: bool)}: restituisce le tabelle considerate rilevanti dall'algoritmo di ricerca implementato dal team.
     \end{itemize}
@@ -298,13 +298,12 @@
     \begin{itemize}
         \item \texttt{JsonFileAdapter(file\_path: string)}: costruttore della classe;
         \item \texttt{+ save(id: integer, file: string)}: salva il file;
-        \item \texttt{+ load(id: integer)}: restituisce il percorso del file;
+        \item \texttt{+ get\_file\_path(id: integer)}: restituisce il percorso del file;
         \item \texttt{+ delete(id: integer)}: elimina il file;
         \item \texttt{+ get\_preview(id: integer)}: recupera un'anteprima del file;
         \item \texttt{+ extract\_index\_metadata(id: integer)}: estrae i metadati per l'\glossario{indicizzazione};
         \item \texttt{+ extract\_schema\_metadata(id: integer, tuples: list)}: estrae i metadati in forma di \glossario{prompt};
-        \item \texttt{- get\_json\_schema(id: integer)}: restituisce lo schema del file \glossario{JSON};
-        \item \texttt{- generate\_schema\_file\_name(id: integer)}: genera il percorso completo del file.
+        \item \texttt{- get\_json\_schema(id: integer)}: restituisce lo schema del file \glossario{JSON}.
     \end{itemize}
     \item \textbf{Dipendenze}:
     \begin{itemize}
