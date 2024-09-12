@@ -12,7 +12,7 @@
     \item \textbf{Descrizione}: il pattern \textit{Abstract Factory} è un design pattern creazionale che fornisce un'interfaccia per creare famiglie di oggetti correlati o interdipendenti senza dover specificare le loro classi concrete. Il suo obiettivo principale è raggruppare la creazione di oggetti appartenenti alla stessa famiglia, garantendo la coerenza tra gli oggetti prodotti. Il processo di creazione viene incapsulato in una classe dedicata, nascondendo i dettagli dell'implementazione al codice client. Questo consente di cambiare facilmente l'implementazione di una famiglia di prodotti senza modificare il codice client;
     \item \textbf{Utilizzo}: questo pattern è stato adottato per astrarre la creazione dei componenti chiave del sistema, offrendo maggiore flessibilità e semplificando l'integrazione di nuove implementazioni. In particolare, sono state utilizzate due factory per gestire la creazione di \glossario{database} ed \glossario{embeddings} manager.
     \begin{itemize}
-        \item \texttt{SqlAlchemyDbManagerFactory}: utilizzata per astrarre la creazione dei diversi tipi di database manager;
+        \item \texttt{DbManagerFactory}: utilizzata per astrarre la creazione dei diversi tipi di database manager;
         \item \texttt{EmbeddingsManagerFactory}: gestisce la creazione degli embeddings manager, con supporto per diversi algoritmi di embeddings.
     \end{itemize}
 \end{itemize}
