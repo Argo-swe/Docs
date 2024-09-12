@@ -13,7 +13,7 @@
     \item \textbf{Utilizzo}: questo pattern è stato adottato per astrarre la creazione dei componenti chiave del sistema, offrendo maggiore flessibilità e semplificando l'integrazione di nuove implementazioni. In particolare, sono state utilizzate due factory per gestire la creazione di \glossario{database} ed \glossario{embeddings} manager.
     \begin{itemize}
         \item \texttt{SqlAlchemyDbManagerFactory}: utilizzata per astrarre la creazione dei diversi tipi di database manager;
-        \item \texttt{TxtaiEmbeddingsManagerFactory}: gestisce la creazione degli embeddings manager, con supporto per diversi algoritmi di embeddings.
+        \item \texttt{EmbeddingsManagerFactory}: gestisce la creazione degli embeddings manager, con supporto per diversi algoritmi di embeddings.
     \end{itemize}
 \end{itemize}
 
