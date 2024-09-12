@@ -1,0 +1,53 @@
+\section{Riunione}
+\subsection{Ordine del giorno}
+\begin{itemize}
+    \item Presentazione dell'architettura esagonale e analisi dei requisiti.
+    \item Discussione sull'uso delle metriche SonarCloud.
+    \item Dimostrazione delle funzionalità del prodotto.
+\end{itemize}
+
+\subsection{Argomenti e temi dell'incontro}
+
+\subsubsection{Presentazione del Proof of Concept}
+
+\par Il gruppo ha presentato l'architettura esagonale adottata per il progetto, motivando la scelta con la necessità di garantire scalabilità orizzontale, sia a livello tecnico che a livello di sviluppo delle funzionalità. L'architettura esagonale, conosciuta anche come "Hexagonal Architecture" o "Ports and Adapters", è stata descritta come una soluzione che favorisce la separazione dei componenti del sistema in layer distinti, agevolando l'integrazione di componenti esterne tramite adapter. Questo approccio consente di isolare la logica di business dai dettagli tecnici, migliorando la manutenibilità e l'espandibilità del software.
+
+\par Tuttavia, è stato osservato che, a causa delle dimensioni ridotte del programma, la suddivisione in componenti distinti può risultare complessa e rendere difficile l'individuazione dei metodi all'interno della struttura. Questa criticità è stata evidenziata dalla proponente che aveva riscontrato questo aspetto con i gruppi che hanno lavorato al capitolato precedentemente.E' stato quindi fondmanetale nel progetto una documentazione chiara per facilitare la comprensione della struttura del codice.
+
+\par Successivamente, sono stati elencati i requisiti soddisfatti del progetto utili per comprendere la dimostazione successiva delle funzionalità sviluppate in base a ciò che era stato richiesto. Sono stati soddisfatti tutti i requisiti obbligatori (82 in totale), e  11 su 14 di quelli desiderabili. Per i requisiti opzionali, ne sono stati soddisfatti 4 su 8, quelli non implementati riguardano API a pagamento e input vocale, ritenuti non prioritari e che avrebbero richiesto più tempo e un budget più alto.
+
+\par Si è discusso inoltre dell'uso delle metriche SonarCloud, utilizzate per valutare la soddisfazione dei requisiti. Le metriche hanno evidenziato punteggi positivi, con una complessità ciclomatica inferiore al 3\% e una complessità del codice inferiore al 7\%, rispettando così gli standard previsti.
+
+\subsubsection{Discussione sulle Metriche e Feedback}
+
+\par \textbf{Domanda:} La proponente ha chiesto se l'uso delle metriche abbia prodotto i risultati sperati.
+
+\par \textbf{Risposta:} È stato confermato che l'uso delle metriche statiche ha dato buoni risultati, specialmente nella riduzione delle duplicazioni di codice e nell'integrazione con ChatGPT. Tuttavia, è stato notato che, in un progetto di piccole dimensioni, il tempo investito nell'analisi e nella correzione del codice per aderire a queste metriche è stato significativo, spesso pari al tempo impiegato per la scrittura stessa del codice.
+
+\subsubsection{Dimostrazione delle Funzionalità del Prodotto}
+
+\par La dimostrazione ha incluso diverse funzionalità principali:
+\begin{itemize}
+    \item Funzionalità specifiche del utente Tecnico: caricamento, modifica ed eliminazione dei dizionari dati;
+    \item Funzionalità amministrative, inclusa la modalità notturna e il campio lingua del sistema;
+    \item Richieste di generazione di 3 prompt distinti; 
+    \item Funzione di debug per verificare la stabilità e l'affidabilità del sistema.
+\end{itemize}
+
+\par La dimostrazione ha permesso alla Proponente di verificare che i requisiti richiesti fossero stati implementati tutti correttamente e di poter valutare il lavoro nel suo complesso. La proponente si è dimostarat soddisfatta del porgetto svolto e degli obiettivi raggiunti. 
+\par \textbf{Domanda:} La proponente si è interessata alla funzionalità di Debug per comprendere se essa sia stata utilizzata e abbia avuto un impatto significativo nel miglioramento del codice.
+
+\par \textbf{Risposta:} Il gruppo ha evidenziato come il debug sia stato fondamentale per garantire che la struttura del backend e le funzionalità sviluppate funzionassero correttamente. In particolare, il debug ha facilitato la comprensione e l'ottimizzazione degli algoritmi di la scrematura delle tabelle restituite dal dizionario dati per la generazione del prompt questa funzionalità di analisi ha permesso quindi l’implementazione di miglioramenti nel codice.
+
+\subsubsection{Uso di Copilot e ChatGPT}
+
+\par \textbf{Domanda:} La proponente ha chiesto se i memebri del gruppo avessere mai utilizzato Copilot nelle esperienze da programmatori.
+
+\par \textbf{Risposta:} Alcuni membri del team hanno utilizzato diversi Copilot in progetti precedenti, con esperienze che variavano a seconda della complessità del codice da produrre. Copilot è risultato utile nelle fasi iniziali dello sviluppo, fornendo suggerimenti e spunti di codice. Tuttavia, per ottenere una soluzione finale completa, è ancora necessario secondo iil gruppo un notevole investimento di tempo, rendendo spesso più rapido scrivere il codice manualmente.
+
+\par È stato riscontrato che, sebbene Copilot mostri una buona capacità di ragionamento e memorizzazione la sua efficacia è limitata nei contesti dove i requisiti sono chiaramente definiti. Il sistema dimostra capacità utili ma necessita di interventi significativi da parte degli sviluppatori per gestire correttamente progetti complessi.
+Il team ha evidenziato come per esempio in questo progetto la scrittura dei test è stata provata con Copilot ma che è rislutata spesso debole e scorretta, specialmente nella ricerca di coerenza negli input e nella copertura dei casi d'uso. Il sistema ha mostrato limitazioni nella gestione di tutti i file necessari, richiedendo la scrittura in modo manuale e scartando i suggerimenti dati. Inoltre, era stata tentata l'integrazione di Copilot nella generazione di query SQL ma anche quest'ultima ha presentato difficoltà, come errori nella gestione delle parentesi e complessità nella sintassi.
+
+\subsubsection{Conclusioni}
+
+\par In conclusione, è stata data un'approvazione generale per la struttura delle funzionalità presentate.Il team Zucchetti ha apprezzato il lavoro svolto e ha fornito feedback costruttivi per la presentazione della fine del progetto durante la PB.
