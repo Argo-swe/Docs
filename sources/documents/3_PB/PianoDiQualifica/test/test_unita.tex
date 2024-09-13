@@ -195,70 +195,88 @@
 			\item Deve creare un'istanza di "TxtaiPromptManagerAdapter", gestendo internamente la creazione di un'istanza di "TxtaiIndexManagerAdapter".
 		\end{itemize} & S \\
 
-		%txtai_debug_manager
-		\hline TU.26 & Verificare che il metodo "semantic\_search\_log" della classe "TxtaiDebugManagerAdapter" soddisfi le seguenti condizioni:
+		%txtai_search_algorithm_adapter
+		\hline TU.26 & Verificare che il metodo "semantic\_search" della classe "TxtaiSearchAlgorithmAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve restituire un log corretto quando viene fornita una lista con più tuple, riportando i dettagli e i termini rilevanti per ogni descrizione;
-			\item Deve restituire un log appropriato quando viene fornita una lista vuota di tuple.
+			\item Deve eseguire correttamente una ricerca semantica tramite l'index manager e restituire i risultati pertinenti;
+			\item Deve generare il log corretto quando il logging è attivato, includendo i dettagli sull'importanza dei termini;
+			\item Deve restituire i risultati della ricerca e il contenuto del log in modo appropriato.
 		\end{itemize} & S \\
 
-		\hline TU.27 & Verificare che il metodo "semantic\_search\_log\_custom\_algorithm" della classe "TxtaiDebugManagerAdapter" soddisfi le seguenti condizioni:
+		\hline TU.27 & Verificare che il metodo "search\_filtering" della classe "TxtaiSearchAlgorithmAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve registrare le tabelle con un punteggio superiore o uguale a 0.45;
-			\item Deve registrare le tabelle con un punteggio inferiore a 0.45 se la differenza di punteggio rispetto alle tabelle precedenti è inferiore a 0.2 o il punteggio globale è compreso tra 0.35 e 0.45;
-			\item Deve scartare le tabelle che non rispettano le condizioni precedenti;
-			\item Deve gestire correttamente una lista vuota di tuple.
+			\item Deve filtrare correttamente i risultati della ricerca basandosi sui punteggi ("max\_score");
+			\item Non deve generare log quando il logging è disattivato;
+			\item Deve restituire solo le tuple rilevanti senza contenuto di log quando il logging è disattivato.
+		\end{itemize} & S \\
+
+		\hline TU.28 & Verificare che il metodo "semantic\_search\_log" della classe "TxtaiSearchAlgorithmAdapter" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve generare correttamente il log per una ricerca semantica, includendo i punteggi e le spiegazioni dei termini rilevanti;
+			\item Deve gestire correttamente la generazione del log quando non vengono trovati risultati.
+		\end{itemize} & S \\
+
+		\hline TU.29 & Verificare che il metodo "search\_filtering\_log" della classe "TxtaiSearchAlgorithmAdapter" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve generare un log che indichi quali tabelle vengono mantenute in base ai punteggi e quali vengono scartate;
+			\item Deve indicare correttamente il motivo per cui alcune tabelle vengono scartate (es. differenza di punteggio > 0.2).
+		\end{itemize} & S \\
+
+		\hline TU.30 & Verificare che il metodo "get\_debug\_header" della classe "TxtaiSearchAlgorithmAdapter" soddisfi le seguenti condizioni:
+		\begin{itemize}
+			\item Deve generare correttamente un'intestazione di debug con il livello di log e il sistema specificato;
+			\item Deve formattare l'intestazione secondo lo schema "[SystemName] [LogLevel]".
 		\end{itemize} & S \\
 
 		%json_file_adapter
-		\hline TU.28 & Verificare che il metodo "save" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
+		\hline TU.31 & Verificare che il metodo "save" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Deve aprire un file con permessi di scrittura;
 			\item Deve eseguire almeno un'operazione di scrittura sul file aperto.
 		\end{itemize} & S \\
 
-		\hline TU.29 & Verificare che il metodo "load" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
+		\hline TU.32 & Verificare che il metodo "load" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Deve restituire il percorso del file.
 		\end{itemize} & S \\
 
-		\hline TU.30 & Verificare che il metodo "delete" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
+		\hline TU.33 & Verificare che il metodo "delete" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Deve controllare l'esistenza del file;
 			\item Deve eseguire l'operazione di eliminazione del file.
 		\end{itemize} & S \\
 
-		\hline TU.31 & Verificare che il metodo "get\_preview" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
+		\hline TU.34 & Verificare che il metodo "get\_preview" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Deve restituire un oggetto che rappresenti lo schema del file;
 			\item Deve restituire "None" se lo schema del file non è presente.
 		\end{itemize} & S \\
 
-		\hline TU.32 & Verificare che il metodo "extract\_index\_metadata" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
+		\hline TU.35 & Verificare che il metodo "extract\_index\_metadata" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Deve restituire i metadati del dizionario per l'indicizzazione.
 		\end{itemize} & S \\
 
-		\hline TU.33 & Verificare che il metodo "extract\_schema\_metadata" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
+		\hline TU.36 & Verificare che il metodo "extract\_schema\_metadata" della classe "JsonFileAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Deve restituire i metadati del dizionario in forma di prompt.
 		\end{itemize} & S \\
 
 		%componenti front-end
-		\hline TU.34 & Verificare che il componente "AppLogo" soddisfi le seguenti condizioni:
+		\hline TU.37 & Verificare che il componente "AppLogo" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il logo deve essere renderizzato con il percorso dell'immagine corretto;
 			\item L'altezza e la larghezza dell'immagine devono essere impostate con valori predefiniti se non vengono passate come props;
 			\item Il colore dell'immagine deve cambiare in base al tema selezionato.
     \end{itemize} & S \\
 
-		\hline TU.35 & Verificare che il componente "AppMenu" soddisfi le seguenti condizioni:
+		\hline TU.38 & Verificare che il componente "AppMenu" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il menu dell'Utente deve avere avere una o più opzioni;
 			\item Il menu del Tecnico deve avere due o più opzioni.
     \end{itemize} & S \\
 
-		\hline TU.36 & Verificare che il componente "AppMenuItem" soddisfi le seguenti condizioni:
+		\hline TU.39 & Verificare che il componente "AppMenuItem" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item La voce di menu deve contenere l'etichetta corretta;
 			\item La voce di menu non deve essere attiva se non è stata selezionata;
@@ -269,7 +287,7 @@
 			\item L'icona "submenu-toggler" deve essere visibile se la voce di menu contiene un sotto-menu.
     \end{itemize} & S \\
 
-		\hline TU.37 & Verificare che il componente "AppTopbar" soddisfi le seguenti condizioni:
+		\hline TU.40 & Verificare che il componente "AppTopbar" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il pulsante di login deve essere visibile se l'Utente non ha effettuato l'accesso;
 			\item Il pulsante di logout deve essere visibile se l'Utente ha effettuato l'accesso;
@@ -278,13 +296,13 @@
 			\item L'option menu deve essere chiuso quando l'Utente clicca al di fuori di esso.
     \end{itemize} & S \\
 
-		\hline TU.38 & Verificare che il componente "AppFooter" soddisfi le seguenti condizioni:
+		\hline TU.41 & Verificare che il componente "AppFooter" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il footer deve essere renderizzato correttamente;
 			\item All'interno del footer deve essere visualizzata la versione corretta dell'applicazione.
     \end{itemize} & S \\
 
-		\hline TU.39 & Verificare che il componente "ConfigSidebar" soddisfi le seguenti condizioni:
+		\hline TU.42 & Verificare che il componente "ConfigSidebar" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item La sezione per modificare la scala deve essere visibile;
 			\item La sezione per modificare il tema deve essere visibile;
@@ -297,13 +315,13 @@
 			\item Il contenuto del localStorage deve essere aggiornato al cambio della lingua.
     \end{itemize} & S \\
 
-		\hline TU.40 & Verificare che il componente "MenuSidebar" soddisfi le seguenti condizioni:
+		\hline TU.43 & Verificare che il componente "MenuSidebar" soddisfi le seguenti condizioni:
     \begin{itemize}
 			\item Il pulsante per chiudere la sidebar deve essere nascosto su schermi di grandi dimensioni;
       \item Il pulsante per chiudere la sidebar deve essere visibile su schermi di piccole dimensioni.
     \end{itemize} & S \\
 
-		\hline TU.41 & Verificare che il componente "LoginDialog" soddisfi le seguenti condizioni:
+		\hline TU.44 & Verificare che il componente "LoginDialog" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il dialog deve essere chiuso al clic dell'apposito pulsante;
 			\item La funzione "messageSuccess" deve essere chiamata se il login viene effettuato con successo;
@@ -313,7 +331,7 @@
 			\item La funzione "messageError" deve essere chiamata se il login fallisce.
     \end{itemize} & S \\
 
-		\hline TU.42 & Verificare che il componente "DictPreview" soddisfi le seguenti condizioni:
+		\hline TU.45 & Verificare che il componente "DictPreview" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item L'anteprima del dizionario dati deve essere nascosta se la variabile detailsVisible è uguale a "false";
 			\item Se è visibile, l'anteprima deve mostrare i dati corretti;
@@ -321,7 +339,7 @@
 			\item Quando viene cliccato il pulsante di chiusura, il componente deve inviare un segnale.
     \end{itemize} & S \\
 
-		\hline TU.43 & Verificare che il componente "ChatMessage" soddisfi le seguenti condizioni:
+		\hline TU.46 & Verificare che il componente "ChatMessage" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il messaggio inviato dall'Utente deve essere visualizzato correttamente;
 			\item Il messaggio inviato dal ChatBOT deve essere visualizzato correttamente;
@@ -332,20 +350,20 @@
 			\item La funzione "Apri debug modal" deve essere chiamata con i parametri corretti al clic dell'apposito pulsante.
     \end{itemize} & S \\
 
-		\hline TU.44 & Verificare che il componente "DebugMessage" soddisfi le seguenti condizioni:
+		\hline TU.47 & Verificare che il componente "DebugMessage" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il componente deve visualizzare il messaggio di debug correttamente;
 			\item Quando viene cliccato il pulsante "Scarica file", la funzione di download deve essere chiamata con i parametri corretti.
     \end{itemize} & S \\
 
-		\hline TU.45 & Verificare che il componente "ChatDeleteBtn" soddisfi le seguenti condizioni:
+		\hline TU.48 & Verificare che il componente "ChatDeleteBtn" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il pulsante deve essere disabilitato se non è presente alcun messaggio nella chat;
       \item Il pulsante deve essere disabilitato se il ChatBOT sta elaborando un nuovo messaggio;
       \item Quando viene cliccato, il pulsante deve inviare un segnale.
     \end{itemize} & S \\
 
-		\hline TU.46 & Verificare che il componente "CreateUpdateDictionaryModal" soddisfi le seguenti condizioni:
+		\hline TU.49 & Verificare che il componente "CreateUpdateDictionaryModal" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il form di creazione e modifica deve essere visualizzato correttamente;
 			\item Il pulsante di invio deve essere disabilitato se il form è incompleto;
@@ -361,13 +379,13 @@
 			\item Il file selezionato deve essere rimosso al clic dell'apposito pulsante.
     \end{itemize} & S \\
 
-		\hline TU.47 & Verificare che il componente "AppLayout" soddisfi le seguenti condizioni:
+		\hline TU.50 & Verificare che il componente "AppLayout" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il layout dell'applicazione deve essere renderizzato correttamente;
       \item Il wrapper globale deve contenere le classi corrette sulla base delle impostazioni e dello stato del layout.
     \end{itemize} & S \\
 
-		\hline TU.48 & Verificare che il componente "DictionariesListView" soddisfi le seguenti condizioni:
+		\hline TU.51 & Verificare che il componente "DictionariesListView" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item La lista dei dizionari dati deve essere visualizzata correttamente;
 			\item Se la lista dei dizionari è vuota, il sistema deve mostrare un messaggio esplicativo;
@@ -383,7 +401,7 @@
 			\item La funzione "messageError" deve essere chiamata se l'eliminazione fallisce.
     \end{itemize} & S \\
 
-		\hline TU.49 & Verificare che il componente "ChatView" soddisfi le seguenti condizioni:
+		\hline TU.52 & Verificare che il componente "ChatView" soddisfi le seguenti condizioni:
     \begin{itemize}
       \item Il contenuto della chat deve essere renderizzato correttamente;
 			\item Il form di selezione pre-richiesta deve essere attivato/disattivato al click dell'apposito pulsante;
@@ -400,13 +418,13 @@
 			\item L'ultimo messaggio della chat deve essere visualizzato se viene cliccato il pulsante "Scroll to bottom".
     \end{itemize} & S \\
 
-		\hline TU.50 & Verificare che il metodo "logout" della classe "auth.service" soddisfi le seguenti condizioni:
+		\hline TU.53 & Verificare che il metodo "logout" della classe "auth.service" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Il metodo deve rimuovere il token di autenticazione dal localStorage;
 			\item Il metodo deve inviare un segnale di notifica.
     \end{itemize} & S \\
 
-		\hline TU.51 & Verificare che il metodo "isLogged" della classe "auth.service" soddisfi le seguenti condizioni:
+		\hline TU.54 & Verificare che il metodo "isLogged" della classe "auth.service" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Il metodo deve restituire "false" se il token di autenticazione non è presente;
 			\item Il metodo deve restituire "false" se il token è scaduto;
@@ -414,23 +432,23 @@
 			\item Il metodo deve restituire "false" se la data di scadenza non è definita.
     \end{itemize} & S \\
 
-		\hline TU.52 & Verificare che il metodo "downloadFile" della classe "utils.service" soddisfi le seguenti condizioni:
+		\hline TU.55 & Verificare che il metodo "downloadFile" della classe "utils.service" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Il metodo deve creare un collegamento per il download del file;
 			\item Il metodo deve attivare il download cliccando sul collegamento.
     \end{itemize} & S \\
 
-		\hline TU.53 & Verificare che il metodo "stringToSnakeCase" della classe "utils.service" soddisfi le seguenti condizioni:
+		\hline TU.56 & Verificare che il metodo "stringToSnakeCase" della classe "utils.service" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Il metodo deve convertire una stringa in snake\_case.
     \end{itemize} & S \\
 
-		\hline TU.54 & Verificare che il metodo "addCapitalizeValues" della classe "utils.service" soddisfi le seguenti condizioni:
+		\hline TU.57 & Verificare che il metodo "addCapitalizeValues" della classe "utils.service" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Il metodo deve aggiungere chiavi in maiuscolo a un determinato oggetto.
     \end{itemize} & S \\
 
-		\hline TU.55 & Verificare che il metodo "capitalizeString" della classe "utils.service" soddisfi le seguenti condizioni:
+		\hline TU.58 & Verificare che il metodo "capitalizeString" della classe "utils.service" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Il metodo deve convertire in maiuscolo la prima lettera di una stringa.
     \end{itemize} & S \\
