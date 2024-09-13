@@ -3,7 +3,7 @@
 \subsubsubsection{AuthenticationUseCase} \label{AuthenticationUseCase}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.65\textwidth]{assets/Backend/authentication_use_case.png}
+    \includegraphics[width=0.7\textwidth]{assets/Backend/authentication_use_case.png}
     \caption{Diagramma dell'interfaccia AuthenticationUseCase}
   \end{figure}
 \begin{itemize}
@@ -18,7 +18,7 @@
 \subsubsubsection{DictionaryUseCase} \label{DictionaryUseCase}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{assets/Backend/dictionary_use_case.png}
+    \includegraphics[width=0.8\textwidth]{assets/Backend/dictionary_use_case.png}
     \caption{Diagramma dell'interfaccia DictionaryUseCase}
   \end{figure}
 \begin{itemize}
@@ -40,7 +40,7 @@
 \subsubsubsection{PromptUseCase} \label{PromptUseCase}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{assets/Backend/prompt_use_case.png}
+    \includegraphics[width=0.95\textwidth]{assets/Backend/prompt_use_case.png}
     \caption{Diagramma dell'interfaccia PromptUseCase}
   \end{figure}
 \begin{itemize}
@@ -73,7 +73,7 @@
 \subsubsubsection{EmbeddingsAbstractFactory} \label{EmbeddingsAbstractFactory}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{assets/Backend/embeddings_abstract_factory.png}
+    \includegraphics[width=0.9\textwidth]{assets/Backend/embeddings_abstract_factory.png}
     \caption{Diagramma dell'interfaccia EmbeddingsAbstractFactory}
   \end{figure}
 \begin{itemize}
@@ -114,7 +114,7 @@
 \subsubsubsection{PromptManagerPort} \label{PromptManagerPort}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{assets/Backend/prompt_manager_port.png}
+    \includegraphics[width=0.75\textwidth]{assets/Backend/prompt_manager_port.png}
     \caption{Diagramma dell'interfaccia PromptManagerPort}
   \end{figure}
 \begin{itemize}
@@ -127,22 +127,22 @@
     \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete;
     \item \textbf{Dipendenze}:
     \begin{itemize}
-        \item IndexManagerPort;
-        \item DebugManagerPort.
+        \item IndexManagerPort.
     \end{itemize}
 \end{itemize} 
 
-\subsubsubsection{DebugManagerPort} \label{DebugManagerPort}
+\subsubsubsection{SearchAlgorithmPort} \label{SearchAlgorithmPort}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{assets/Backend/debug_manager_port.png}
-    \caption{Diagramma dell'interfaccia DebugManagerPort}
+    \includegraphics[width=0.7\textwidth]{assets/Backend/search_algorithm_port.png}
+    \caption{Diagramma dell'interfaccia SearchAlgorithmPort}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione}: DebugManagerPort definisce il contratto per la gestione dei \glossario{log} relativi alle operazioni di ricerca semantica;
+    \item \textbf{Descrizione}: SearchAlgorithmPort definisce il contratto per le operazioni di ricerca semantica;
     \item \textbf{Operazioni}:
     \begin{itemize}
-      \item \glossario{Debug} di un'operazione di ricerca semantica.
+      \item Ricerca semantica;
+      \item \glossario{Debug} del processo di ricerca semantica.
     \end{itemize}
     \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete.
 \end{itemize}  
@@ -150,7 +150,7 @@
 \subsubsubsection{DbManagerAbstractFactory} \label{DbManagerAbstractFactory}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{assets/Backend/db_manager_abstract_factory.png}
+    \includegraphics[width=0.8\textwidth]{assets/Backend/db_manager_abstract_factory.png}
     \caption{Diagramma dell'interfaccia DbManagerAbstractFactory}
   \end{figure}
 \begin{itemize}
@@ -178,7 +178,7 @@
     \item \textbf{Descrizione}: AuthenticationRepository definisce un contratto per l'accesso e la gestione dei dati di autenticazione degli utenti;
     \item \textbf{Operazioni}: 
     \begin{itemize}
-      \item Recupera i dettagli di un utente tramite lo username.
+      \item Recupera i dettagli di un admin tramite lo username.
     \end{itemize}
     \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nelle classi concrete.
 \end{itemize}
@@ -186,7 +186,7 @@
 \subsubsubsection{DictionaryRepository} \label{DictionaryRepository}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{assets/Backend/dictionary_repository.png}
+    \includegraphics[width=0.75\textwidth]{assets/Backend/dictionary_repository.png}
     \caption{Diagramma dell'interfaccia DictionaryRepository}
   \end{figure}
 \begin{itemize}

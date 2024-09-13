@@ -3,7 +3,7 @@
 \subsubsubsection{AuthenicationService} \label{AuthenticationService}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{assets/Backend/authentication_service.png}
+    \includegraphics[width=0.8\textwidth]{assets/Backend/authentication_service.png}
     \caption{Diagramma della classe AuthenticationService}
   \end{figure}
 \begin{itemize}
@@ -27,7 +27,7 @@
 \subsubsubsection{DictionaryService} \label{DictionaryService}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{assets/Backend/dictionary_service.png}
+    \includegraphics[width=0.85\textwidth]{assets/Backend/dictionary_service.png}
     \caption{Rappresentazione della classe DictionaryService}
   \end{figure}
 \begin{itemize}
@@ -45,7 +45,7 @@
         \item \texttt{DictionaryService(dictionary\_repository: DictionaryRepository,\\ index\_manager: IndexManagerPort, file\_repository: FileRepository,\\ schema\_validator: SchemaValidatorUseCase)}: costruttore della classe;
         \item \texttt{+ get\_dictionary\_list()}: recupera la lista di tutti i dizionari;
         \item \texttt{+ get\_dictionary\_by\_id(id: integer)}: recupera un dizionario tramite il suo id;
-        \item \texttt{+ get\_dictionary\_file(id: integer)}: recupera il percorso del file tramite il suo id;
+        \item \texttt{+ get\_dictionary\_file\_path(id: integer)}: recupera il percorso del file tramite il suo id;
         \item \texttt{+ get\_dictionary\_preview(id: integer)}: recupera l'anteprima del dizionario tramite il suo id;
         \item \texttt{+ create\_dictionary(dictionary: DictionaryDto, content: string)}: crea un nuovo dizionario e salva il file associato;
         \item \texttt{+ update\_dictionary\_metadata(id: integer, dictionary: DictionaryDto)}: aggiorna i metadati di un dizionario esistente;
@@ -65,7 +65,7 @@
 \subsubsubsection{PromptManagerService} \label{PromptManagementService}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{assets/Backend/prompt_manager_service.png}
+    \includegraphics[width=0.85\textwidth]{assets/Backend/prompt_manager_service.png}
     \caption{Rappresentazione della classe PromptManagerService}
   \end{figure}
 \begin{itemize}

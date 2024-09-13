@@ -41,7 +41,7 @@
     \item \textbf{Utilizzo}: le porte e gli adapter incoming vengono utilizzati per validare i dati in ingresso e prepararli per il core dell'applicazione. Al contrario, le porte e gli adapter outcoming gestiscono le interazioni tra il core applicativo e le dipendenze esterne.
     \begin{itemize}
         \item \texttt{SchemaValidatorUseCase}: interfaccia per la validazione dei dati in ingresso;
-        \item \texttt{PromptManagerPort}, \texttt{DebugManagerPort}, \texttt{IndexManagerPort}: interfacce per l'interazione con i servizi esterni relativi agli \glossario{embeddings};
+        \item \texttt{PromptManagerPort}, \texttt{SearchAlgorithmPort}, \texttt{IndexManagerPort}: interfacce per l'interazione con i servizi esterni relativi agli \glossario{embeddings};
         \item \texttt{AuthenticationRepository}, \texttt{DictionaryRepository}, \texttt{FileRepository}: interfacce per l'interazione con i sistemi di persistenza dei dati.
     \end{itemize}
 \end{itemize}

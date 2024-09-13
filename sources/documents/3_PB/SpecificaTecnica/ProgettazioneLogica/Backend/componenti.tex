@@ -34,7 +34,7 @@
 \subsubsubsection{Dettagli dell'endpoint}
 \begin{itemize}
   \item \textbf{HTTP Method}: \texttt{GET};
-  \item \textbf{Endpoint}: \texttt{/\{id\}/file};
+  \item \textbf{Endpoint}: \texttt{/\{id\}};
   \item \textbf{Tags}: \texttt{[tag]};
   \item \textbf{Response Model}: \texttt{DictionaryResponseDto};
   \item \textbf{Nome}: \texttt{getDictionary};
@@ -140,7 +140,7 @@
 \subsubsubsection{Implementazione}
 \begin{itemize}
   \item Verifica la presenza del file e legge il contenuto, se disponibile;
-  \item Effettua una chiamata al servizio di gestione dei dizionari per salvare un nuovo izionario nel sistema;
+  \item Effettua una chiamata al servizio di gestione dei dizionari per salvare un nuovo dizionario nel sistema;
   \item Restituisce un oggetto \texttt{DictionaryResponseDto} con lo stato della risposta e, in caso di successo, i dati del dizionario;
 \end{itemize}
 
@@ -325,7 +325,7 @@
   \item \textbf{Nome}: \texttt{generatePromptWithDebug};
   \item \textbf{Dependency Injection}:
   \begin{itemize}
-    \item \textbf{prompt\_manager\_service (PromptManagerService)}: dipendenza risolta tramite \texttt{Depends(get\_prompt\_manager\_service)};
+    \item \textbf{prompt\_manager\_service (PromptManagerService)}: dipendenza risolta tramite Depends (get\_prompt\_manager\_service);
   \end{itemize}
   \item \textbf{Parametri}:
   \begin{itemize}

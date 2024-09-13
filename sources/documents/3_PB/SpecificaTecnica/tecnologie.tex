@@ -1,7 +1,7 @@
 \section{Tecnologie utilizzate}\label{sec:tecnologie}
 \par Nella sezione seguente sono documentate le scelte tecnologiche del team, la cui validità è stata dimostrata mediante lo sviluppo di un \glossario{Proof of Concept}. Per ciascuna tecnologia, il team riporta le motivazioni che ne hanno determinato la scelta.
 
-\subsection{Backend}\label{sec:tecnologie-backend}
+\subsection{Back-end}\label{sec:tecnologie-backend}
 
 \subsubsection{FastAPI}\label{sec:fastapi}
 \par FastAPI è un \glossario{framework} web moderno per la creazione di \glossario{API} con Python.
@@ -34,7 +34,7 @@
   \item \textbf{Query SQL-like}: txtai supporta query SQL-like per la ricerca semantica;
   \item \textbf{Configurazione minima}: txtai richiede una configurazione minima e fornisce una suite completa di strumenti di intelligenza artificiale, inclusa la traduzione automatica tra lingue;
   \item \textbf{Persistenza degli indici}: txtai semplifica il processo di memorizzazione e ripristino degli \glossario{indici};
-  \item \textbf{Debug}: txtai mette a disposizione funzioni specifiche per il debug del processo di generazione di un \glossario{prompt}.
+  \item \textbf{Debug}: txtai mette a disposizione funzioni specifiche per il \glossario{debug} della ricerca semantica.
 \end{itemize}
 
 \subsubsection{SQLAlchemy}\label{sec:sqlalchemy}
@@ -44,21 +44,21 @@
   \item \textbf{Portabilità}: SQLAlchemy supporta i principali \glossario{DBMS} e agevola la transizione;
   \item \textbf{Performance e sicurezza}: SQLAlchemy massimizza l'efficienza e la sicurezza delle transazioni attraverso il pattern "Unit of Work";
   \item \textbf{SQL injection}: SQLAlchemy include una protezione integrata contro l'SQL injection;
-  \item \textbf{Leggibilità e mantenibilità}: SQLAlchemy utilizza classi e oggetti Python per rappresentare le relazioni di un \glossario{database}, rendendo il codice intuitivo e autoesplicativo;
+  \item \textbf{Leggibilità e manutenibilità}: SQLAlchemy utilizza classi e oggetti Python per rappresentare le relazioni di un \glossario{database}, rendendo il codice intuitivo e autoesplicativo;
   \item \textbf{Flessibilità}: SQLAlchemy consente di costruire query SQL in linguaggio nativo o di utilizzare un \glossario{ORM} per interagire con il database.
 \end{itemize}
 
 \subsubsection{JWT}\label{sec:jwt}
-\par JSON Web Token (JWT) uno standard web per lo scambio di dati.
+\par JSON Web Token (JWT) è uno standard web per lo scambio di dati.
 \paragraph*{Motivazioni}
 \begin{itemize}
   \item \textbf{Stateless}: JWT consente di autenticare le richieste senza necessità di sessioni sul server, migliorando la scalabilità e riducendo il carico sul server;
-  \item \textbf{Sicurezza}: I JWT sono firmati digitalmente, il che garantisce l'integrità e l'autenticità del token;
+  \item \textbf{Sicurezza}: i JWT sono firmati digitalmente, il che garantisce l'integrità e l'autenticità del token;
   \item \textbf{Formato standard}: JWT è supportato da una vasta gamma di linguaggi e framework, tra cui FastAPI.
 \end{itemize}
 
 \subsubsection{pytest}\label{sec:pytest}
-\par pytest è un \glossario{framework} di test Python che può essere utilizzato per scrivere test di unità, test di integrazione e test end-to-end.
+\par pytest è un \glossario{framework} di test Python che può essere utilizzato per scrivere test di unità e test di integrazione.
 \paragraph*{Motivazioni}
 \begin{itemize}
   \item \textbf{Semplicità}: pytest consente la definizione dei test come normali funzioni in Python, senza la necessità di definire classi apposite a meno che non siano volute. Inoltre, non vi è presenza di codice boilerplate;
@@ -69,7 +69,7 @@
   \item \textbf{Facilità d'integrazione}: pytest si integra facilmente con le pipeline CI/CD, strumenti di coverage e diverse interfacce di testing.
 \end{itemize}
 
-\subsection{Frontend}\label{sec:tecnologie-frontend}
+\subsection{Front-end}\label{sec:tecnologie-frontend}
 
 \subsubsection{Vue.js}\label{sec:vuejs}
 \par \glossario{Vue.js} è un framework JavaScript utilizzato per la creazione di interfacce utente reattive e dinamiche.
@@ -96,9 +96,9 @@
 \par TypeScript è un linguaggio di programmazione che estende JavaScript, aggiungendo caratteristiche come i tipi di dato.
 \paragraph*{Motivazioni}
 \begin{itemize}
-  \item \textbf{Compatibilità retroattiva} (backward compatibility): Qualsiasi programma scritto in JavaScript può funzionare in TypeScript senza richiedere modifiche;
+  \item \textbf{Compatibilità retroattiva} (backward compatibility): qualsiasi programma scritto in JavaScript può funzionare in TypeScript senza richiedere modifiche;
   \item \textbf{Robustezza}: TypeScript fornisce un sistema di type-checking basato sulla tipizzazione statica, che permette di rilevare errori di tipo durante la fase di sviluppo;
-  \item \textbf{Documentazione automatica}: La tipizzazione funge da documentazione incorporata, semplificando la manutenzione e la collaborazione;
+  \item \textbf{Documentazione automatica}: la tipizzazione funge da documentazione incorporata, semplificando la manutenzione e la collaborazione;
   \item \textbf{Supporto IDE}: TypeScript è supportato dai principali editor, come Visual Studio Code, che forniscono funzionalità avanzate di debugging e formattazione.
 \end{itemize}
 
@@ -109,14 +109,14 @@
   \item \textbf{Integrazione}: PrimeVue è stato progettato appositamente per Vue.js e, pertanto, offre un'integrazione nativa con il \glossario{framework};
   \item \textbf{Completezza}: PrimeVue offre una vasta gamma di componenti, temi e stili personalizzabili;
   \item \textbf{Funzionalità avanzate}: PrimeVue fornisce componenti per la creazione di interfacce utente complesse e interattive. Inoltre, supporta le caratteristiche e funzionalità avanzate di Vue.js;
-  \item \textbf{Documentazione e supporto}: La documentazione e i materiali di supporto sono orientati all'integrazione con Vue.js.
+  \item \textbf{Documentazione e supporto}: la documentazione e i materiali di supporto sono orientati all'integrazione con Vue.js.
 \end{itemize}
 
 \subsubsection{Jest}\label{sec:jest}
 \par Jest è un framework di test per JavaScript e TypeScript. Offre una suite completa di strumenti per il testing automatizzato.
 \paragraph*{Motivazioni}
 \begin{itemize}
-  \item \textbf{Semplicità}: Jest richiede una configurazione iniziale minima, specialmente con TypeScript. L'integrazione con ts-jest consente un supporto TypeScript senza processi di configurazione complicati;
+  \item \textbf{Semplicità}: Jest richiede una configurazione iniziale minima, specialmente con TypeScript. L'integrazione con ts-jest consente un supporto TypeScript senza processi di configurazione complessi;
   \item \textbf{Completezza}: Jest è una soluzione completa che include un test runner, una libreria di asserzioni e il mocking integrato. Ciò riduce la necessità di installare e configurare librerie aggiuntive;
   \item \textbf{Prestazioni}: Jest esegue i test in parallelo per impostazione predefinita, migliorando significativamente le prestazioni e riducendo i tempi di esecuzione dei test;
   \item \textbf{Mocking}: Jest consente agli sviluppatori di mockare funzioni, moduli e timer senza richiedere librerie aggiuntive;
@@ -132,8 +132,8 @@
 \paragraph*{Motivazioni}
 \begin{itemize}
   \item \textbf{Isolamento delle applicazioni}: Docker consente di isolare le applicazioni in contenitori, garantendo che ciascuna applicazione abbia un ambiente di esecuzione indipendente;
-  \item \textbf{Collaborazione}: La condivisione delle librerie e delle dipendenze semplifica la collaborazione e riduce il rischio di conflitti;
-  \item \textbf{Portabilità}: I contenitori possono essere eseguiti su qualsiasi sistema che supporti Docker, indipendentemente dall'ambiente di sviluppo o di produzione;
+  \item \textbf{Collaborazione}: la condivisione delle librerie e delle dipendenze semplifica la collaborazione e riduce il rischio di conflitti;
+  \item \textbf{Portabilità}: i contenitori possono essere eseguiti su qualsiasi sistema che supporti Docker, indipendentemente dall'ambiente di sviluppo o di produzione;
   \item \textbf{Scalabilità}: Docker permette di aggiungere o rimuovere container in maniera rapida ed efficiente;
   \item \textbf{CI/CD}: Docker può essere utilizzato per automatizzare i processi di continuous integration e continuous delivery.
 \end{itemize}
@@ -157,7 +157,7 @@
   \item \textbf{Modelli pre-addestrati}: Hugging Face mette a disposizione una vasta collezione di modelli pre-addestrati;
   \item \textbf{Modelli open-source}: Hugging Face fornisce un'ampia selezione di modelli open-source;
   \item \textbf{Modelli locali}: Hugging Face offre la possibilità di scaricare i \glossario{modelli} in locale per l’esecuzione offline;
-  \item \textbf{Comunità}: La piattaforma dispone di una comunità attiva di sviluppatori e ricercatori che contribuiscono al miglioramento continuo dei modelli;
+  \item \textbf{Comunità}: la piattaforma dispone di una comunità attiva di sviluppatori e ricercatori che contribuiscono al miglioramento continuo dei modelli;
   \item \textbf{Supporto per diverse lingue}: Hugging Face offre una varietà di modelli multilingue e modelli per la traduzione.
 \end{itemize}
 
@@ -167,7 +167,7 @@
 \begin{itemize}
   \item \textbf{Popolarità}: ChatGPT è uno dei ChatBOT più diffusi nel campo informatico, e l'adeguatezza delle sue risposte è stata dimostrata in numerosi contesti;
   \item \textbf{Integrazione}: ChatGPT offre API per l'integrazione con applicazioni esterne;
-  \item \textbf{Supporto Multilingue}: I modelli alla base di ChatGPT supportano diverse lingue, tra cui l'italiano e l'inglese.
+  \item \textbf{Supporto multilingue}: i modelli alla base di ChatGPT supportano diverse lingue, tra cui l'italiano e l'inglese.
 \end{itemize}
 
 \subsubsection{LMSYS Chatbot Arena}\label{sec:lmsys}
@@ -185,8 +185,8 @@
   \item \textbf{Semplicità}: LM Studio offre un'interfaccia intuitiva e user-friendly per testare i modelli LLM;
   \item \textbf{Test offline}: LM Studio consente di scaricare le versioni quantizzate dei modelli per l'esecuzione offline;
   \item \textbf{Debug}: LM Studio fornisce strumenti per il debug e l'analisi dei risultati;
-  \item \textbf{Server OpenAI-like}: Le interazioni con il server locale di LM Studio seguono il formato API di OpenAI;
-  \item \textbf{Prestazioni}: LM Studio fornisce un’opzione per abilitare l'accelerazione GPU e velocizzare i processi di inferenza dei modelli.
+  \item \textbf{Server OpenAI-like}: le interazioni con il server locale di LM Studio seguono il formato API di OpenAI;
+  \item \textbf{Prestazioni}: LM Studio fornisce un'opzione per abilitare l'accelerazione GPU e velocizzare i processi di inferenza dei modelli.
 \end{itemize}
 
 \subsection{Panoramica delle tecnologie}\label{sec:panoramica-tecnologie}

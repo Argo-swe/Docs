@@ -34,7 +34,7 @@
     \item \textbf{Metodi}:
     \begin{itemize}
         \item \texttt{JsonSchemaValidatorAdapter()}: costruttore della classe;
-        \item \texttt{+ validate(dictionary: dict)}: valida il dizionario dati rispetto a uno schema predefinito.
+        \item \texttt{+ validate(dictionary\_content: string)}: valida il dizionario dati rispetto a uno schema predefinito.
     \end{itemize}
     \item \textbf{Dipendenze}:
     \begin{itemize}
@@ -86,7 +86,7 @@
 \subsubsubsection{SqlAlchemyAuthenticationRepositoryAdapter} \label{SqlAlchemyAuthenticationRepositoryAdapter}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.65\textwidth]{assets/Backend/sql_alchemy_authentication_repository_adapter.png}
+    \includegraphics[width=0.75\textwidth]{assets/Backend/sql_alchemy_authentication_repository_adapter.png}
     \caption{Diagramma della classe SqlAlchemyAuthenticationRepositoryAdapter}
   \end{figure}
 \begin{itemize}
@@ -209,7 +209,7 @@
 \subsubsubsection{TxtaiPromptManagerAdapter} \label{TxtaiPromptManagerAdapter}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{assets/Backend/txtai_prompt_manager_adapter.png}
+    \includegraphics[width=0.75\textwidth]{assets/Backend/txtai_prompt_manager_adapter.png}
     \caption{Diagramma della classe TxtaiPromptManagerAdapter}
   \end{figure}
 \begin{itemize}
@@ -219,42 +219,42 @@
     \begin{itemize}
         \item \texttt{index\_manager}: istanza del gestore degli \glossario{indici};
         \item \texttt{file\_repository}: istanza del gestore dei file;
-        \item \texttt{debug\_manager}: istanza della classe utilizzata per gestire le operazioni di \glossario{debug}.
+        \item \texttt{search\_algorithm}: istanza della classe utilizzata per gestire le operazioni di ricerca semantica.
     \end{itemize}
     \item \textbf{Metodi}:
     \begin{itemize}
         \item \texttt{TxtaiPromptManagerAdapter(index\_manager: IndexManagerPort, file\_repository:\\ FileRepository)}: costruttore della classe;
         \item \texttt{+ prompt\_generator(dictionary\_id: integer, user\_request: string, lang:\\ string, dbms: string, activate\_log: bool)}: carica l'indice associato a un dizionario e genera un prompt basato sulla richiesta dell'utente;
-        \item \texttt{+ get\_index\_manager()}: restituisce l'istanza del gestore degli indici;
-        \item \texttt{- get\_tuples(user\_request: string, activate\_log: bool)}: restituisce i risultati della ricerca semantica effettuata con txtai;
-        \item \texttt{- get\_relevant\_tuples(tuples: list, activate\_log: bool)}: restituisce le tabelle considerate rilevanti dall'algoritmo di ricerca implementato dal team.
+        \item \texttt{+ get\_index\_manager()}: restituisce l'istanza del gestore degli indici.
     \end{itemize}
     \item \textbf{Dipendenze}:
     \begin{itemize}
         \item IndexManagerPort;
         \item FileRepository;
-        \item DebugManagerPort.
+        \item SearchAlgorithmPort.
     \end{itemize}
 \end{itemize} 
 
-\subsubsubsection{TxtaiDebugManagerAdapter} \label{TxtaiDebugManagerAdapter}
+\subsubsubsection{TxtaiSearchAlgorithmAdapter} \label{TxtaiSearchAlgorithmAdapter}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{assets/Backend/txtai_debug_manager_adapter.png}
-    \caption{Diagramma della classe TxtaiDebugManagerAdapter}
+    \includegraphics[width=0.75\textwidth]{assets/Backend/txtai_search_algorithm_adapter.png}
+    \caption{Diagramma della classe TxtaiSearchAlgorithmAdapter}
   \end{figure}
 \begin{itemize}
-    \item \textbf{Descrizione}: TxtaiDebugManagerAdapter fornisce funzionalità di \glossario{logging} per il processo di ricerca semantica;
-    \item \textbf{Interfaccia implementata}: \hyperref[DebugManagerPort]{DebugManagerPort};
+    \item \textbf{Descrizione}: TxtaiSearchAlgorithmAdapter fornisce funzionalità di ricerca semantica e di \glossariio{logging} del processo di ricerca;
+    \item \textbf{Interfaccia implementata}: \hyperref[SearchAlgorithmPort]{SearchAlgorithmPort};
     \item \textbf{Attributi}:
     \begin{itemize}
         \item \texttt{index\_manager}: istanza del gestore degli \glossario{indici}.
     \end{itemize}
     \item \textbf{Metodi}:
     \begin{itemize}
-        \item \texttt{TxtaiDebugManagerAdapter(index\_manager: IndexManagerPort)}: costruttore della classe;
-        \item \texttt{+ semantic\_search\_log(user\_request: string, tuples: list)}: restituisce il \glossario{log} della ricerca semantica effettuata con \glossario{txtai};
-        \item \texttt{+ semantic\_search\_log\_custom\_algorithm(relevant\_tuples: list, tuples: list)}: restituisce il log dell'algoritmo di ricerca implementato dal team.
+        \item \texttt{TxtaiSearchAlgorithmAdapter(index\_manager: IndexManagerPort)}: costruttore della classe;
+        \item \texttt{+ semantic\_search(user\_request: string, activate\_log: bool)}: restituisce i risultati della ricerca semantica effettuata con txtai;
+        \item \texttt{+ search\_filtering(tuples: list, activate\_log: bool)}: restituisce le tabelle considerate rilevanti dall'algoritmo di filtraggio implementato dal team;
+        \item \texttt{- semantic\_search\_log(user\_request: string, tuples: list)}: restituisce il \glossario{log} della ricerca semantica effettuata con \glossario{txtai};
+        \item \texttt{- search\_filtering\_log(relevant\_tuples: list, tuples: list)}: restituisce il log dell'algoritmo di filtraggio implementato dal team;
         \item \texttt{- get\_debug\_header(level: string, system: string)}: costruisce l'intestazione del log.
     \end{itemize}
     \item \textbf{Dipendenze}:
