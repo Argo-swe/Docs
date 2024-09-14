@@ -1,6 +1,7 @@
 \subsection{Descrizione delle classi}
 
 \subsubsection{Introduzione}
+\par Il team ha creato un file di configurazione che utilizza il pattern \glossario{Singleton} per gestire le impostazioni dell'applicazione. La classe \textit{Configuration} è responsabile del caricamento e della gestione delle configurazioni, che vengono lette da un file \glossario{JSON} esterno. All'interno di questo file, è possibile definire le dipendenze esterne, tra cui \glossario{txtai} e \glossario{SQLAlchemy}, che saranno gestite dagli adapter. Inoltre, è previsto il supporto per parametri aggiuntivi, come i percorsi dei modelli di ricerca semantica per txtai. La classe Configuration offre un punto centrale di accesso alle configurazioni e ai servizi dell'applicazione, semplificando la gestione e l'organizzazione del codice.
 \par La sezione seguente descrive le classi che compongono il \glossario{back-end} dell'applicazione. L'elenco segue la composizione dell'architettura, fornendo una descrizione degli attributi e dei metodi che caratterizzano ciascuna classe, insieme alle interfacce implementate e alle dipendenze verso altre classi del sistema.
 \par La sezione principale è suddivisa in due sottosezioni:
 \begin{itemize}
