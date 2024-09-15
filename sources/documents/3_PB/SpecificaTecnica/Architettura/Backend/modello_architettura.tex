@@ -1,32 +1,32 @@
-\par Il modello architetturale scelto dal gruppo è il modello ad \textbf{architettura esagonale}. Questo modello trova le sue basi nell'architettura a livelli, dalla quale cerca di prenderne le basi e di far fronte ai problemi di dipendenza stretta che si creavano tra i livelli.
-\par L'architettura è composta da 3 parti principali:
+\par Il gruppo ha adottato l'\textbf{architettura esagonale} come modello architetturale. Questo modello trova le sue basi nell'architettura a livelli, ma mira a superarne i limiti, in particolare la stretta dipendenza tra i livelli. L'architettura è rappresentata in forma esagonale per diversi motivi. Da un lato, richiama la struttura delle celle di un alveare, dove ogni cella può collegarsi ad altre strutture simili, contribuendo alla definizione di un sistema più ampio e modulare. Dall'altro, la simmetria dell'esagono consente di visualizzare l'architettura divisa a metà, facilitando la \textbf{suddivisione delle responsabilità}.
+\par L'architettura è composta da 3 segmenti principali:
 \begin{itemize}
-    \item \textbf{Core}: il core è la sezione centrale dell'architettura, in cui risiede la business logic dell'applicazione. È indipendente da qualsiasi interfaccia utente o servizio esterno. Ciò viene fatto per mantenerla isolata e disaccoppiata dal resto dell'architettura, in modo che possa agire indipendentemente;
-    \item \textbf{Ports}: costituiscono dei punti di comunicazione tra il core e altri parti del sistema o servizi esterni. Esistono due tipi principali di porte:
+    \item \textbf{Core}: il core è la sezione centrale dell'architettura, in cui risiede la logica di business dell'applicazione. È indipendente da qualsiasi interfaccia utente o servizio esterno;
+    \item \textbf{Port}: le porte costituiscono punti di comunicazione tra il core e le infrastrutture esterne. Esistono due tipi principali di porte:
     \begin{itemize}
-        \item Inbound port: consentono al nucleo di essere invocato da componenti esterne;
-        \item Outbound port: consentono al nucleo di reperire informazioni dall'esterno.
+        \item Inbound port: definiscono le interfacce attraverso le quali il core riceve input dai componenti esterni. Queste porte fungono da contratti che specificano come i dati devono essere formattati;
+        \item Outbound port: definiscono i contratti per l'interazione del core con le infrastrutture esterne, come database e servizi. Queste porte consentono al core di richiedere dati o servizi senza preoccuparsi di come questi vengono forniti. 
     \end{itemize}
-    \item \textbf{Adapters}: sono pattern architetturali che permettono di adattare i dati in modo che possano essere ricevuti dall'esterno e passare per le porte o vice versa. Costituiscono la sezione più esterna dell'architettura e consentono pertanto il passaggio e il monitoraggio dei dati.
+    \item \textbf{Adapter}: gli adapter agiscono come intermediari tra il core dell'applicazione e le infrastrutture esterne, trasformando i dati in un formato comprensibile per ciascun destinatario.
 \end{itemize}
 
 \vspace{0.5\baselineskip}
-\par Questa architettura è rappresentata a forma esagonale per diversi motivi; da una parte l'architettura vuole ricordare la cella di un alveare. Avendo tale forma, la cella si può incastrare con altre celle allo scopo di definire un alveare. Allo stesso modo un'architettura esagonale può interfacciarsi con altre strutture con le stesse caratteristiche per definire un sistema più grande. Un altro motivo della scelta è la visualizzazione della simmetria della struttura, la quale viene visualmente divisa a metà, dove una metà si interfaccia con l'esterno per ricevere gli input, mentre l'altra si interfaccia con l'esterno per inviare informazioni in output.
-\par L'architettura esagonale offre numerosi vantaggi, tra i quali:
+\par L'architettura esagonale consente di mantenere il core isolato dal resto del sistema, facilitando l'integrazione con servizi esterni tramite porte e adattatori. L'obiettivo è mantenere il core dell'applicazione indipendente dai dettagli implementativi.
+\par Di seguito sono elencati alcuni dei vantaggi offerti da questo modello architetturale:
 \begin{itemize}
-    \item \textbf{Flessibilità}: i componenti dell'architettura agiscono indipendentemente tra di loro e di conseguenze si possono adattare con facilità;
-    \item \textbf{Scalabilità}: una cella ad architettura esagonale può essere vista come un microservizio e per tanto risulta più facilmente replicabile;
-    \item \textbf{Testabilità}: il core è isolato e disaccoppiato dal resto dell'architettura;
-    \item \textbf{Manutenibilità}: in quanto il core è isolato e disaccoppiato dal resto dell'architettura.
+    \item \textbf{Separazione delle responsabilità}: la logica di business risiede nel core dell'applicazione, mentre le porte definiscono i contratti per la gestione delle interazioni con le dipendenze esterne. Questi contratti vengono poi implementati dagli adapter. Tale approccio promuove una chiara separazione delle responsabilità e migliora sia la modularità che la manutenibilità del sistema;
+    \item \textbf{Flessibilità}: la separazione delle responsabilità e l'isolamento del nucleo rendono l'applicazione più flessibile e adattabile. In altre parole, l'aggiunta, la modifica o l'eliminazione di funzionalità non richiede una revisione dell'intera applicazione;
+    \item \textbf{Scalabilità}: l'architettura esagonale favorisce l'aggiunta di nuove funzionalità o servizi esterni senza richiedere modifiche al core. È possibile integrare nuovi adapter per supportare tecnologie differenti, mantenendo la scalabilità del sistema. Il modello esagonale offre una base solida per scalare un'applicazione sia orizzontalmente che verticalmente;
+    \item \textbf{Testabilità}: il core è isolato e disaccoppiato dal resto del sistema, favorendo l'utilizzo di \glossario{mock} o \glossario{stub} per gli adapter e le porte;
+    \item \textbf{Manutenibilità}: le modifiche a un componente, come un cambiamento nella logica di business o nella modalità di interazione con le infrastrutture, non influiscono sugli altri componenti.
 \end{itemize}
 
 \vspace{0.5\baselineskip}
 \par Questo tipo di architettura non è immune a difetti, tra i quali si possono trovare:
 \begin{itemize}
     \item \textbf{Complessità}: l'architettura richiede una progettazione puntuale e una buona conoscenza dei pattern architetturali;
-    \item \textbf{Dipendenza} che permane tra il core e le porte: cambiamenti sostanziali del core possono richiedere una manutenzione delle porte;
     \item \textbf{Difficoltà di debugging}: il core è separato dal resto dell'architettura, di conseguenza è possibile introdurre \glossario{bug} nell'integrazione con servizi esterni.
 \end{itemize}
 
 \vspace{0.5\baselineskip}
-\par Il gruppo ha concordato di adottare questo modello architetturale, poiché ritiene che il core dell'applicazione sia sufficientemente robusto da non dover creare problemi di manutenzione nel tempo. Inoltre, la scalabilità e la flessibilità di questo modello architetturale sono state considerate un vantaggio significativo per gestire la varietà dei contesti di applicazione del sistema. Infine, l'architettura si sposa bene con le esigenze dell'applicazione di interfacciarsi con servizi esterni quali \glossario{database} o \glossario{LLM} e \glossario{API}.
+\par Il gruppo ha concordato di adottare questo modello architetturale, poiché ritiene che il core dell'applicazione sia sufficientemente robusto da non dover creare problemi di manutenzione nel tempo. Inoltre, la scalabilità e la flessibilità di questo modello sono state considerate un vantaggio significativo per gestire la varietà dei contesti di applicazione del sistema. Infine, l'architettura si sposa bene con le esigenze dell'applicazione di interfacciarsi con servizi esterni quali \glossario{database} o \glossario{LLM} e \glossario{API}.

@@ -1,0 +1,51 @@
+\section{Riunione}
+\subsection{Ordine del giorno}
+\begin{itemize}
+    \item Presentazione dell'architettura esagonale e analisi dei requisiti;
+    \item Discussione sull'uso delle metriche SonarCloud;
+    \item Dimostrazione delle funzionalità del prodotto.
+\end{itemize}
+
+\subsection{Argomenti e temi dell'incontro}
+
+\subsubsection{Presentazione finale del prodotto}
+
+\par Il gruppo ha presentato l'architettura esagonale adottata per il progetto, motivando la scelta con la necessità di garantire scalabilità orizzontale, sia a livello tecnico che a livello di sviluppo delle funzionalità. L'architettura esagonale, conosciuta anche come "Hexagonal Architecture" o "Ports and Adapters", è stata descritta come una soluzione che favorisce la separazione delle responsabilità, agevolando l'integrazione di componenti esterni tramite adapter. Questo approccio consente di isolare la logica di business dai dettagli tecnici, migliorando la manutenibilità e l'espandibilità del software.
+
+\par Tuttavia, è stato osservato che, a causa delle dimensioni ridotte del programma, la suddivisione in componenti distinti può risultare complessa. Questo aspetto era stato riscontrato dalla Proponente durante le riunioni con i gruppi del primo lotto. È quindi fondamentale redarre una documentazione chiara per facilitare la comprensione della struttura del codice.
+
+\par Successivamente, il team ha elencato i requisiti soddisfatti, utili per comprendere la dimostazione successiva delle funzionalità. Sono stati soddisfatti tutti i requisiti obbligatori, e 11 su 14 di quelli desiderabili. Per quanto riguarda i requisiti opzionali, ne sono stati soddisfatti 4 su 8; quelli non implementati riguardano l'interazione con API a pagamento e l'inserimento della richiesta tramite input vocale.
+
+\par Si è discusso inoltre delle metriche SonarCloud, utilizzate per valutare il soddisfacimento dei requisiti. Le metriche hanno evidenziato punteggi positivi, con una duplicazione del codice inferiore al 3\% e una complessità ciclomatica inferiore a 7, rispettando gli standard previsti.
+
+\subsubsection{Discussione sulle metriche e feedback}
+
+\par \textbf{Domanda:} La Proponente ha chiesto se l'uso delle metriche abbia prodotto i risultati sperati.
+
+\par \textbf{Risposta:} Il gruppo ha confermato che l'impiego delle metriche ha dato buoni risultati, specialmente nella riduzione delle ridondanze.
+
+\subsubsection{Dimostrazione delle funzionalità del prodotto}
+
+\par La dimostrazione ha incluso diverse funzionalità principali:
+\begin{itemize}
+    \item Funzionalità del profilo Tecnico: caricamento, modifica ed eliminazione dei \glossario{dizionari dati};
+    \item Funzionalità accessorie come la modalità notturna e il cambio della lingua del sistema;
+    \item Richieste di generazione di \glossario{prompt} e visualizzazione dei risultati; 
+    \item Funzione di \glossario{debug} per verificare il processo di \glossario{ricerca semantica}.
+\end{itemize}
+
+\par La dimostrazione ha permesso alla Proponente di verificare che i requisiti richiesti fossero stati implementati correttamente e di valutare il lavoro nel suo complesso. La Proponente ha confermato il raggiungimento degli obiettivi stabiliti nel capitolato. 
+
+\par \textbf{Domanda:} La Proponente ha esaminato la funzionalità di debug per valutare se questa avesse contribuito al miglioramento dei dizionari dati.
+
+\par \textbf{Risposta:} Il gruppo ha trovato utile la funzionalità di debug per affinare le descrizioni delle tabelle e delle colonne dei dizionari, rimuovendo termini superflui e riscrivendo frasi ambigue.
+
+\subsubsection{Discussione su Copilot e ChatGPT}
+
+\par \textbf{Domanda:} La Proponente ha chiesto al team un'opinione sulla capacità di Copilot e ChatGPT di gestire la scrittura di codice complesso, in confronto alla generazione di query \glossario{SQL}.
+
+\par \textbf{Risposta:} Secondo l'esperienza del gruppo, sia Copilot che ChatGPT offrono ottimi suggerimenti e spunti iniziali, ma richiedono un considerevole dispendio di tempo per arrivare a una soluzione finale soddisfacente. Sebbene i modelli di \glossario{intelligenza artificiale} dimostrino una buona capacità di ragionamento e memorizzazione, è necessario un intervento significativo da parte degli sviluppatori per gestire richieste complesse. Inoltre, nonostante i tentativi di utilizzare Copilot per la generazione di query SQL, il team ha riscontrato problemi, come errori nella gestione delle parentesi e complessità nella sintassi.
+
+\subsubsection{Conclusioni}
+
+\par In conclusione, la Proponente ha fornito feedback costruttivi per la revisione \glossario{PB}.
