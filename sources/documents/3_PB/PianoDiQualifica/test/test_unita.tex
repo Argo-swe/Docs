@@ -205,26 +205,29 @@
 		\begin{itemize}
 			\item Deve eseguire correttamente una ricerca semantica tramite l'index manager e restituire i risultati pertinenti;
 			\item Deve generare il log corretto quando il logging è attivato, includendo i dettagli sull'importanza dei termini;
-			\item Deve restituire i risultati della ricerca e il contenuto del log in modo appropriato.
+			\item Deve restituire i risultati della ricerca e il contenuto del log in modo appropriato;
+   			\item Deve restituire una lista vuota se la ricerca semantica non produce risultati.
 		\end{itemize} & S \\
 
 		\hline TU.28 & Verificare che il metodo "search\_filtering" della classe "TxtaiSearchAlgorithmAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Deve filtrare correttamente i risultati della ricerca basandosi sui punteggi ("max\_score");
 			\item Non deve generare log quando il logging è disattivato;
-			\item Deve restituire solo le tuple rilevanti senza contenuto di log quando il logging è disattivato.
+   			\item Deve gestire correttamente una lista vuota di tuple.
 		\end{itemize} & S \\
 
 		\hline TU.29 & Verificare che il metodo "semantic\_search\_log" della classe "TxtaiSearchAlgorithmAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve generare correttamente il log per una ricerca semantica, includendo i punteggi e le spiegazioni dei termini rilevanti;
-			\item Deve gestire correttamente la generazione del log quando non vengono trovati risultati.
+			\item Deve generare correttamente il log per una ricerca semantica, riportando i dettagli e i termini rilevanti per ogni descrizione;
+			\item Deve gestire correttamente la generazione del log quando non vengono trovati risultati;
+			\item Deve restituire un log appropriato quando viene fornita una lista vuota di tuple.
 		\end{itemize} & S \\
 
 		\hline TU.30 & Verificare che il metodo "search\_filtering\_log" della classe "TxtaiSearchAlgorithmAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
-			\item Deve generare un log che indichi quali tabelle vengono mantenute in base ai punteggi e quali vengono scartate;
-			\item Deve indicare correttamente il motivo per cui alcune tabelle vengono scartate (es. differenza di punteggio > 0.2).
+			\item Deve generare un log che indichi quali tabelle vengono mantenute e quali vengono scartate;
+			\item Deve specificare il motivo per cui alcune tabelle vengono scartate (es.: differenza di punteggio > 0.2);
+   			\item Deve gestire correttamente una lista vuota di tuple.
 		\end{itemize} & S \\
 
 		\hline TU.31 & Verificare che il metodo "get\_debug\_header" della classe "TxtaiSearchAlgorithmAdapter" soddisfi le seguenti condizioni:
