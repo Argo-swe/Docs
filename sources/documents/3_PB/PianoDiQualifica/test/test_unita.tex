@@ -121,7 +121,7 @@
 		\begin{itemize}
 			\item Deve generare correttamente il \glossario{prompt} includendo la richiesta dell'Utente, i metadati dello schema, la lingua e il \glossario{DBMS};
 			\item Deve restituire un prompt vuoto se non vengono trovati risultati rilevanti;
-			\item Deve generare correttamente il \glossario{log} se la modalità di \glossario{debug} è attiva;
+			\item Deve restituire il \glossario{log} se la modalità di \glossario{debug} è attiva;
 			\item Deve gestire correttamente il caso in cui la richiesta dell'Utente è vuota;
 			\item Deve gestire correttamente gli errori durante l'estrazione dei metadati dallo schema.
 		\end{itemize} & S \\
@@ -189,7 +189,7 @@
 		\hline TU.25 & Verificare che il metodo "semantic\_search" della classe "TxtaiSearchAlgorithmAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Deve eseguire correttamente una ricerca semantica tramite l'index manager e restituire i risultati pertinenti;
-			\item Deve generare il \glossario{log} corretto quando la modalità di \glossario{debug} è attiva, includendo i dettagli sull'importanza dei termini;
+			\item Deve generare il log corretto quando la modalità di debug è attiva, includendo i dettagli sull'importanza dei termini;
 			\item Deve restituire i risultati della ricerca e il contenuto del log in modo appropriato;
    			\item Deve restituire una lista vuota se la ricerca semantica non produce risultati.
 		\end{itemize} & S \\
@@ -197,7 +197,7 @@
 		\hline TU.26 & Verificare che il metodo "search\_filtering" della classe "TxtaiSearchAlgorithmAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Deve filtrare correttamente i risultati della ricerca basandosi sui punteggi ("max\_score");
-			\item Non deve generare log quando il logging è disattivato;
+			\item Non deve generare il log quando il logging è disattivato;
    			\item Deve gestire correttamente una lista vuota di tuple.
 		\end{itemize} & S \\
 
