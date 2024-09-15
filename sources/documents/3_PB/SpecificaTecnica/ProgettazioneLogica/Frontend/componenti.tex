@@ -14,7 +14,7 @@
   \end{itemize}
   \item \textbf{LoginDialog}: finestra per l'autenticazione dell'utente;
   \item \textbf{MenuSidebar}: barra laterale che contiene il menu di navigazione principale;
-  \item \textbf{ConfigSidebar}: barra laterale che contiene il menu per la configurazione del sistema e l'apertura del dialog di login.
+  \item \textbf{ConfigSidebar}: barra laterale di impostazioni.
 \end{itemize}
 
 \subsubsubsection{Tracciamento dei requisiti}
@@ -48,9 +48,11 @@
 		\hline RF.O.1.1 & LoginDialog \\
     \hline RF.O.1.2 & LoginDialog \\
     \hline RF.O.2 & LoginDialog \\
+    \hline RF.O.12 & AppTopbar \\
+    \hline RF.O.59 & AppLayout \\
     \hline RF.O.60 & ConfigSidebar \\
-    \hline RF.D.61 & ConfigSidebar \\
-    \hline RF.OP.62 & ConfigSidebar \\
+    \hline RF.O.61 & ConfigSidebar \\
+    \hline RF.D.62 & ConfigSidebar \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
@@ -69,13 +71,15 @@
   \item Copia del prompt generato;
   \item Visualizzazione del messaggio di \glossario{debug} associato a ciascun prompt;
   \item Download di un file di \glossario{log};
+  \item Visualizzazione della lista di messaggi;
+  \item Scorrimento della lista di messaggi;
   \item Eliminazione del contenuto della chat.
 \end{itemize}
 
 \subsubsubsection{Sottocomponenti}
 \par ChatView è composto dai seguenti sottocomponenti:
 \begin{itemize}
-  \item \textbf{ChatMessage}: rappresenta i messaggi inviati e/o restituiti all'interno della chat;
+  \item \textbf{ChatMessage}: rappresenta i messaggi inviati dall'utente o dal ChatBOT all'interno della chat;
   \item \textbf{ChatDeleteBtn}: pulsante per eliminare il contenuto della chat;
   \item \textbf{DictPreview}: mostra un'anteprima del dizionario dati selezionato.
 \end{itemize}
@@ -117,6 +121,7 @@
     \hline RF.O.9.1 & ChatView \\
     \hline RF.O.10 & ChatView \\
     \hline RF.O.10.1 & ChatView \\
+    \hline RF.O.10.2 & ChatView \\
     \hline RF.O.11 & ChatView \\
     \hline RF.O.14 & DictPreview \\
     \hline RF.O.14.1 & DictPreview \\
@@ -134,13 +139,10 @@
     \hline RF.O.35 & ChatMessage \\
     \hline RF.O.36 & ChatView \\
     \hline RF.O.41 & ChatMessage \\
-    \hline RF.O.45 & ChatMessage \\
-    \hline RF.O.47 & ChatView \\
     \hline RF.O.48 & ChatView \\
     \hline RF.O.49 & ChatView \\
     \hline RF.O.50 & ChatView \\
     \hline RF.O.51 & ChatView \\
-    \hline RF.D.52 & ChatView \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
@@ -148,12 +150,14 @@
 \subsubsection{DictionariesListView}
 
 \subsubsubsection{Descrizione}
-\par DictionariesListView è la pagina di gestione \glossario{CRUD} dei dizionari dati. Espone le seguenti funzionalità:
+\par DictionariesListView è la pagina di gestione \glossario{CRUD} dei \glossario{dizionari dati}. Espone le seguenti funzionalità:
 \begin{itemize}
-  \item Visualizzazione della lista dei \glossario{dizionari dati};
-  \item Creazione, modifica e cancellazione di un dizionario dati;
-  \item Download di un dizionario dati;
-  \item Persistenza degli indici associati ai dizionari dati.
+  \item Visualizzazione della lista dei dizionari;
+  \item Ricerca dei dizionari per nome;
+  \item Ricerca dei dizionari per descrizione;
+  \item Creazione, modifica e cancellazione di un dizionario;
+  \item Download di un dizionario;
+  \item Persistenza degli indici associati ai dizionari.
 \end{itemize}
 
 \subsubsubsection{Sottocomponenti}
@@ -212,10 +216,9 @@
     \hline RF.O.32 & CreateUpdateDictionaryModal \\
     \hline RF.O.33 & CreateUpdateDictionaryModal \\
     \hline RF.O.34 & CreateUpdateDictionaryModal \\
-    \hline RF.O.36 & DictionariesListView \\
-    \hline RF.O.37 & DictionariesListView \\
-    \hline RF.O.39 & CreateUpdateDictionaryModal \\
-    \hline RF.D.40 & CreateUpdateDictionaryModal \\
+    \hline RF.D.36 & DictionariesListView \\
+    \hline RF.D.37 & DictionariesListView \\
+    \hline RF.O.38 & DictionariesListView \\
     \hline RF.O.55 & CreateUpdateDictionaryModal \\
     \hline RF.O.56 & CreateUpdateDictionaryModal \\
     \hline RF.O.57 & CreateUpdateDictionaryModal \\
@@ -250,16 +253,16 @@
 \subsubsubsection{Sottocomponenti}
 \par AppMenu è composto dai seguenti sottocomponenti:
 \begin{itemize}
-  \item \textbf{AppMenuItem}: rappresenta un singolo elemento del menu di navigazione.
+  \item \textbf{AppMenuItem}: rappresenta una singola voce del menu di navigazione.
 \end{itemize}
 
 \subsubsection{ChatMessage}
 
 \subsubsubsection{Descrizione}
-\par ChatMessage è il componente che rappresenta i messaggi inviati e/o restituiti all'interno della chat.
+\par ChatMessage è il componente che rappresenta i messaggi inviati all'interno della chat.
 
 \subsubsubsection{Sottocomponenti}
-\par AppMenu è composto dai seguenti sottocomponenti:
+\par ChatMessage è composto dai seguenti sottocomponenti:
 \begin{itemize}
   \item \textbf{StringDataModal}: componente per visualizzare stringhe di testo all'interno di una finestra modale.
 \end{itemize}
@@ -302,8 +305,8 @@
 		\hline
 		\endlastfoot
 
-    RF.O.22 & DebugMessage \\
-    \hline RF.O.23 & DebugMessage \\
+    RF.D.22 & DebugMessage \\
+    \hline RF.D.23 & DebugMessage \\
     \hline RF.O.24 & DebugMessage \\
   \end{longtable}
 \end{adjustwidth}

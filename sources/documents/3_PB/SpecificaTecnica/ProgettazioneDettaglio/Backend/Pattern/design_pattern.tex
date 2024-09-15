@@ -1,0 +1,78 @@
+\subsubsection{Design pattern}
+\paragraph{Introduzione}
+\par La seguente sezione illustra i design pattern utilizzati durante lo sviluppo dell'architettura. Ciascun pattern è corredato da:
+\begin{itemize}
+    \item Una breve descrizione;
+    \item Le motivazioni che hanno spinto il gruppo ad adottarlo;
+    \item I segmenti di codice in cui il pattern è stato utilizzato.
+\end{itemize}
+
+\paragraph{Abstract Factory}
+\begin{itemize}
+    \item \textbf{Descrizione}: il pattern \textit{Abstract Factory} è un design pattern creazionale che fornisce un'interfaccia per creare famiglie di oggetti correlati o interdipendenti senza dover specificare le loro classi concrete. Il suo obiettivo principale è raggruppare la creazione di oggetti appartenenti alla stessa famiglia, garantendo la coerenza tra gli oggetti prodotti. Il processo di creazione viene incapsulato in una classe dedicata, nascondendo i dettagli dell'implementazione al codice client. Questo consente di cambiare facilmente l'implementazione di una famiglia di prodotti senza modificare il codice client;
+    \item \textbf{Utilizzo}: questo pattern è stato adottato per astrarre la creazione dei componenti chiave del sistema, offrendo maggiore flessibilità e semplificando l'integrazione di nuove implementazioni. In particolare, sono state utilizzate due factory per gestire la creazione di \glossario{database} ed \glossario{embeddings} manager.
+    \begin{itemize}
+        \item \texttt{DbManagerFactory}: utilizzata per astrarre la creazione dei diversi tipi di database manager;
+        \item \texttt{EmbeddingsManagerFactory}: gestisce la creazione degli embeddings manager, con supporto per diversi algoritmi di embeddings.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Dependency Injection}
+\begin{itemize}
+    \item \textbf{Descrizione}: il pattern \textit{Dependency Injection} è un design pattern architetturale che consente di iniettare le dipendenze di un oggetto dall'esterno, anziché crearle internamente. Questo approccio facilita il testing, migliora la manutenibilità e promuove il riuso del codice, poiché separa la logica di un componente dalla risoluzione delle sue dipendenze. L'iniezione delle dipendenze può avvenire attraverso vari meccanismi, tra cui costruttori o metodi setter, permettendo così una gestione più flessibile e modulare delle dipendenze all'interno del sistema;
+    \item \textbf{Utilizzo}:
+    \begin{itemize}
+        \item Route di \glossario{FastAPI} con JwtBearer: FastAPI utilizza Dependency Injection per gestire la validazione del token di autenticazione tramite JwtBearer. Le route di FastAPI iniettano automaticamente il token JWT, che viene poi utilizzato per autenticare e autorizzare le richieste degli utenti. Questo approccio consente di mantenere la logica di autenticazione separata dalla logica di business, semplificando la gestione della sicurezza e rendendo più agevole l'aggiornamento delle politiche di autenticazione;
+        \item Iniezione del servizio in FastAPI: un altro esempio di Dependency Injection in FastAPI è l'iniezione di servizi nelle route;
+        \item Classi SqlAlchemyAuthenticationRepositoryAdapter e SqlAlchemyDictionaryRepositoryAdapter:
+        \begin{itemize}
+            \item La classe SqlAlchemyAuthenticationRepositoryAdapter, che implementa l'interfaccia AuthenticationRepository, utilizza Dependency Injection per ottenere una sessione di database (SessionLocal) da \glossario{SQLAlchemy}. Questo permette di accedere ai dati relativi agli utenti autenticati senza dover gestire direttamente la configurazione del database;
+            \item La classe SqlAlchemyDictionaryRepositoryAdapter, che implementa l'interfaccia DictionaryRepository, segue lo stesso principio, iniettando la sessione di database nel costruttore. Questo approccio consente di isolare la logica di accesso ai dati e semplifica il testing, poiché le sessioni possono essere facilmente sostituite con \glossario{mock} o altre implementazioni;
+            \item L'iniezione della sessione di database attraverso il costruttore mantiene il codice pulito ed evita la creazione di dipendenze rigide, migliorando così la manutenibilità e testabilità del sistema.
+        \end{itemize}
+        \item Embeddings manager: le dipendenze sono dichiarate come parametri del costruttore;
+        \item Services: le dipendenze sono dichiarate come parametri del costruttore.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Port e Adapter (architettura esagonale)}
+\begin{itemize}
+    \item \textbf{Descrizione}: il pattern \textit{Ports and Adapters}, noto anche come \textit{Hexagonal Architecture}, è un design pattern architetturale che separa le interfacce di input e output dal core dell'applicazione. Questo pattern promuove la separazione delle responsabilità e mantiene il core isolato e robusto, agevolando la manutenibilità e il testing;
+    \item \textbf{Utilizzo}: le porte e gli adapter incoming vengono utilizzati per validare i dati in ingresso e prepararli per il core dell'applicazione. Al contrario, le porte e gli adapter outcoming gestiscono le interazioni tra il core applicativo e le dipendenze esterne.
+    \begin{itemize}
+        \item \texttt{SchemaValidatorUseCase}: interfaccia per la validazione dei dati in ingresso;
+        \item \texttt{PromptManagerPort}, \texttt{SearchAlgorithmPort}, \texttt{IndexManagerPort}: interfacce per l'interazione con i servizi esterni relativi agli \glossario{embeddings};
+        \item \texttt{AuthenticationRepository}, \texttt{DictionaryRepository}, \texttt{FileRepository}: interfacce per l'interazione con i sistemi di persistenza dei dati.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Service Layer}
+\begin{itemize}
+    \item \textbf{Descrizione}: il pattern \textit{Service Layer} è un design pattern architetturale che incapsula la logica di business all'interno di uno strato dedicato ai servizi. Questi servizi implementano i \glossario{casi d'uso} dell'applicazione e fungono da intermediari tra i controller e gli adapter, assicurando modularità, testabilità e manutenibilità del codice;
+    \item \textbf{Utilizzo}:
+    \begin{itemize}
+        \item \texttt{DictionaryService}: implementa i casi d'uso di gestione dei dizionari;
+        \item \texttt{PromptManagerService}: implementa i casi d'uso di generazione del \glossario{prompt};
+        \item \texttt{AuthenticationService}: implementa i casi d'uso di autenticazione.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Repository}
+\begin{itemize}
+    \item \textbf{Descrizione}: il pattern \textit{Repository} è un design pattern che funge da intermediario tra la logica di business e l'archiviazione dei dati. Questo pattern fornisce un'interfaccia simile a una collezione per accedere ai dati provenienti da \glossario{database} o altre fonti esterne, mantenendo il core dell'applicazione indipendente dai dettagli implementativi;
+    \item \textbf{Utilizzo}:
+    \begin{itemize}
+        \item \texttt{DictionaryRepository}: gestisce le informazioni relative ai dizionari;
+        \item \texttt{AuthenticationRepository}: gestisce la persistenza e il recupero dei dati di autenticazione;
+        \item \texttt{FileRepository}: gestisce le operazioni sui file associati ai dizionari.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Strategy}
+\begin{itemize}
+    \item \textbf{Descrizione}: il pattern \textit{Strategy} è un design pattern comportamentale che definisce una famiglia di algoritmi, li incapsula singolarmente e li rende intercambiabili. Questo pattern permette di selezionare dinamicamente l'algoritmo da utilizzare al momento dell'esecuzione. Nel contesto di ChatSQL, il design pattern Strategy consente di cambiare l'algoritmo di ricerca semantica senza dover modificare il codice che lo utilizza;
+    \item \textbf{Utilizzo}:
+    \begin{itemize}
+        \item SearchAlgorithmPort.
+    \end{itemize}
+\end{itemize}
