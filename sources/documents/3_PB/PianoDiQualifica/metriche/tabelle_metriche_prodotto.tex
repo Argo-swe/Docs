@@ -24,27 +24,26 @@
 		\hline
 		\endlastfoot
 
-		M.PD.1 & Requisiti obbligatori soddisfatti & 100\% & 100\% \\
-		\hline M.PD.2 & Requisiti desiderabili soddisfatti & - & - \\
-		\hline M.PD.3 & Requisiti opzionali soddisfatti & - & - \\
+		M.PD.1 & Requisiti obbligatori soddisfatti & $\geq$ 95\% & 100\% \\
+		\hline M.PD.2 & Requisiti desiderabili soddisfatti & $\geq$ 30\% & $\geq$ 60\% \\
+		\hline M.PD.3 & Requisiti opzionali soddisfatti & $\geq$ 10\% & $\geq$ 40\% \\
 		\hline M.PD.4 & Indice Gulpease & $\geq$ 50 & $\geq$ 80 \\
 		\hline M.PD.5 & Completezza descrittiva & $\geq$ 90\% & 100\% \\
 		\hline M.PD.6 & Browser supportati & $\geq$ 80\% & 100\% \\
 		\hline M.PD.7 & Profondità (click necessari per reperire un'informazione) & 4 click & 2 click \\
 		\hline M.PD.8 & Ampiezza (opzioni nel menu di navigazione principale) & 5 opzioni & 3 opzioni \\
-		\hline M.PD.9 & Tempo di apprendimento & 5 minuti & 3 minuti \\
-		\hline M.PD.10 & Tempo di risposta & 15 secondi & 10 secondi \\
+		\hline M.PD.9 & Tempo di apprendimento & $\leq$ 5 minuti & $\leq$ 3 minuti \\
+		\hline M.PD.10 & Tempo di risposta & $\leq$ 15 secondi & $\leq$ 10 secondi \\
 		\hline M.PD.11 & Code coverage & $\geq$ 80\% & $\geq$ 90\% \\
-		\hline M.PD.12 & Adeguatezza delle funzioni sviluppate & $\geq$ 70\% & $\geq$ 80\% \\
-		\hline M.PD.13 & Accuratezza della risposta & $\geq$ 70\% & $\geq$ 90\% \\
-		\hline M.PD.14 & Linee medie di codice per metodo & $\leq$ 40 & $\leq$ 20 \\
-		\hline M.PD.15 & Complessità ciclomatica & $\leq$ 10 & $\leq$ 5 \\
-		\hline M.PD.16 & Accoppiamento delle classi & $\leq$ 4 & $\leq$ 2 \\
-		\hline M.PD.17 & Indice di manutenibilità & - & - \\
-		\hline M.PD.18 & Percentuale di test superati & $\geq$ 80\% & 100\% \\
-		\hline M.PD.19 & Rimozione dei difetti & $\geq$ 70\% & $\geq$ 80\% \\
-    \hline M.PD.20 & Tolleranza agli errori & $\geq$ 70\% & 100\% \\
-		\hline M.PD.21 & Impatto delle modifiche & $\leq$ 15\% & $\leq$ 5\% \\
+		\hline M.PD.12 & Adeguatezza delle funzioni sviluppate & $\geq$ 70\% & $\geq$ 90\% \\
+		\hline M.PD.13 & Linee medie di codice per metodo & $\leq$ 30 & $\leq$ 15 \\
+		\hline M.PD.14 & Complessità ciclomatica & $\leq$ 10 & $\leq$ 5 \\
+		\hline M.PD.15 & Duplicazione del codice & 5\% - 10\% & 3\% - 5\% \\
+		\hline M.PD.16 & Indice di manutenibilità & B & A \\
+		\hline M.PD.17 & Percentuale di test superati & $\geq$ 80\% & 100\% \\
+		\hline M.PD.18 & Rimozione dei difetti & $\geq$ 70\% & $\geq$ 90\% \\
+    \hline M.PD.19 & Tolleranza agli errori & $\geq$ 70\% & 100\% \\
+		\hline M.PD.20 & Impatto delle modifiche & $\leq$ 10\% & $\leq$ 5\% \\
     \end{longtable}
 \end{adjustwidth}
 \egroup
@@ -78,7 +77,7 @@
 		\hline
 		\endlastfoot
 
-    Funzionalità & Il software deve implementare i requisiti riportati nel documento \AdR. & M.PD.1, M.PD.2, M.PD.3, M.PD.12, M.PD.13 \\
+    Funzionalità & Il software deve implementare i requisiti riportati nel documento di \AdR. & M.PD.1, M.PD.2, M.PD.3, M.PD.12 \\
 		\hline Compatibilità & L'applicazione web deve essere compatibile con i seguenti browser:
 		\begin{itemize}
 			\item Mozilla Firefox;
@@ -90,8 +89,8 @@
 		& M.PD.6 \\
 		\hline Usabilità & Il software deve facilitare l'interazione e il reperimento delle informazioni da parte dell'utente, senza provocare sovraccarico cognitivo. & M.PD.4, M.PD.5, M.PD.7, M.PD.8, M.PD.9  \\
 		\hline Efficienza & Il software deve fornire prestazioni adeguate in relazione alla quantità di risorse usate. & M.PD.10 \\
-		\hline Affidabilità & Il software deve rispettare le specifiche tecniche di funzionamento nel tempo. & M.PD.18, M.PD.19, M.PD.20 \\
-		\hline Manutenibilità & Il software deve poter essere modificato senza richiedere uno sforzo eccessivo in termini di tempo e costi. & M.PD.11, M.PD.14, M.PD.15, M.PD.16, M.PD.17, M.PD.21 \\
+		\hline Affidabilità & Il software deve rispettare le specifiche tecniche di funzionamento nel tempo. & M.PD.17, M.PD.18, M.PD.19 \\
+		\hline Manutenibilità & Il software deve poter essere modificato senza richiedere uno sforzo eccessivo in termini di tempo e costi. & M.PD.11, M.PD.13, M.PD.14, M.PD.15, M.PD.16, M.PD.20 \\
   \end{longtable}
 \end{adjustwidth}
 \egroup
