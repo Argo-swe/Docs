@@ -1,64 +1,136 @@
-\section{Sezione Utente}
+\subsection{Sezione Utente}
 \label{sec:sezUtente}
 
-\subsection{Visualizzazione mobile}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.50\textwidth]{assets/mobile.png}
-  \caption{Versione mobile dell'applicazione}
-\end{figure}
-\par L'applicazione è stata progettata per essere fruibile anche da dispositivi mobili per garantire una buona esperienza d'uso con schermi touch screen di piccole dimensioni.  
-\par Per migliorare la navigazione da dispositivi mobili, il menù principale, di default è nascosto e può essere aperto cliccando l'icona a tre linee \includegraphics[height=1.2em]{assets/dd_burger_menu.png} in alto a sinistra.
-\par Le viste dell'applicazione occupano tutta la grandezza dello schermo, per dare più spazio possibile al contenuto principale.
-\par Per ridurre l'ingombro dello schermo, i bottoni di login e delle impostazioni di sistema, sono accessibili mostrando un menù a tendina, cliccando sull'icona a tre puntini \includegraphics[height=1.2em]{assets/dd_kebab_menu.png} in alto a destra.
+\par Una volta effettuato l'accesso al sistema, l'utente visualizza una schermata con il nome e il simbolo di ChatSQL posizionati in alto a sinistra, mentre a destra si trovano il pulsante per le impostazioni e quello per il login. Sul lato sinistro, un menu consente di accedere alla finestra della chat per inserire richieste in linguaggio naturale. A destra del menu, si trova la scheda principale, che rappresenta la chat del sistema e presenta un menu superiore. Al centro dello schermo, vengono visualizzate le richieste e le risposte in formato di chat, mentre nella parte inferiore è possibile digitare nuovi messaggi.
 
-\subsection{Impostazioni di sistema}
-Nella sezione superiore destra dell'interfaccia, cliccando sull'icona impostazioni \includegraphics[height=1.2em]{assets/settings_icon.png}, apparirà il menu laterale delle impostazioni di sistema.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=1\textwidth]{assets/settings_topbar.png}
-  \caption{Topbar con icona delle impostazioni}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.50\textwidth]{assets/menu_config.png}
-  \caption{Menu laterale delle impostazioni di sistema}
-\end{figure}
-\par Le impostazioni di sistema permettono di configurare le seguenti opzioni:
-\begin{itemize}
-  \item Scala: dimensioni del testo e della schermata; utile per adattare la dimensione dell'interfaccia alle proprie esigenze;
-  \item Tema scuro: abilita o disabilita il tema scuro dell'interfaccia, per personalizzazione, accessibilità e comfort visivo;
-  \item Lingua: selezione della lingua dell'interfaccia tra inglese e italiano (non cambia la lingua del \glossario{prompt} prodotto da ChatSQL, che rimane sempre in inglese).
-\end{itemize}
-\par Le modifiche apportate verranno memorizzate automaticamente, e applicate alla successiva apertura dell'applicazione.
+\subsubsection{Interazione con la chat}
 
-\subsection{Workflow}
-\par Nell'utilizzo di ChatSQL, il flusso più comune da seguire per ottenere una query SQL è:
+\par Per interagire con la chat, è necessario inserire una richiesta nel box di testo situato in basso. È importante formulare interrogazioni che siano compatibili con il \glossario{dizionario dati} selezionato, in modo da ottenere un \glossario{prompt} corretto. I messaggi inviati dell'utente vengono visualizzati a destra con uno sfondo azzurrino, mentre le risposte generate dal sistema vengono mostrate a sinistra con uno sfondo grigio scuro.
+
+\begin{figure}[H]
+  \centering
+  %\includegraphics[width=\textwidth]{assets/chat_example.png}
+  \caption{Esempio di interazione con la chat}
+\end{figure}
+
+\par Le richieste digitate dall'utente possono essere inviate premendo il tasto Invio sulla tastiera o cliccando sul pulsante apposito accanto al box di testo. Questa azione rimuove il contenuto del campo di testo, permettendo all'utente di inserire nuove richieste. Tuttavia, il messaggio inviato non viene rimosso e rimane visibile all'interno della chat.
+
+\begin{figure}[H]
+  \centering
+  %\includegraphics[width=\textwidth]{assets/text_box_arrow.png}
+  \caption{Box di testo e pulsante di invio}
+\end{figure}
+
+\par C'è la possibilità che si verifichino errori durante l'elaborazione della richiesta e che il sistema non sia in grado di formulare il \glossario{prompt}. In tal caso, è consigliabile inserire una nuova richiesta, assicurandosi che sia coerente con il contenuto del \glossario{dizionario dati} scelto (\sezione{sec:info-dizionario}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{assets/es_chat_errore.png}
+  \caption{Esempio di errore nel sistema}
+\end{figure}
+
+\subsubsection{Opzioni configurabili prima e durante l'interazione con la chat}
+
 \begin{enumerate}
-  \item Accedere alla pagina Chat selezionandola dal menu di navigazione principale;
-  \item Selezionare il \glossario{dizionario dati} desiderato;
-  \item Selezionare il \glossario{DBMS} desiderato;
-  \item Selezionare la lingua desiderata;
-  \item Inserire una richiesta in linguaggio naturale e attendere la generazione del \glossario{prompt};
-  \item Copiare il prompt generato cliccando sull'apposito pulsante in alto a destra all'interno del messaggio fornito dal ChatBOT;
-  \item Incollare il prompt in un modello \glossario{LLM} a scelta (come ChatGPT) e attendere la generazione della query SQL.
+  \item Selezione/cambio dizionario dati;
+  \item Accesso a informazioni aggiuntive sul dizionario dati scelto;
+  \item Selezione/cambio DBMS;
+  \item Selezione/cambio lingua.
 \end{enumerate}
 
-\vspace{\baselineskip}
-\par Di seguito è riportata una figura che illustra nel dettaglio il flusso da seguire per ottenere una query SQL da utilizzare per interrogare database reali.
+\subsubsubsection{Selezione/cambio dizionario dati}
+
+\par Durante l'interazione con il sistema, è possibile cambiare il \glossario{dizionario dati} su cui si basano le richieste. Per selezionare un dizionario differente, l'utente deve cliccare sul pulsante "Mostra" in alto a destra nella chat. Una volta aperto il menu, il dizionario dati attualmente in uso sarà elencato come la prima voce tra le quattro disponibili. Il dizionario dati può essere cambiato tramite un menu a tendina che mostra l'elenco dei dizionari.
+
+\par Inoltre, è possibile cercare un dizionario scrivendo nella barra di ricerca che si apre cliccando sul menu a discesa. Una volta selezionato un dizionario, le richieste successive dovranno essere coerenti con il suo contenuto. Il pulsante "Nascondi" consente di chiudere il menu dopo aver completato la configurazione delle opzioni.
 
 \begin{figure}[H]
-  \fbox{
-  \begin{tabular}{cc}
-    \includegraphics[width=65mm]{assets/workflow_1.png} &   \includegraphics[width=65mm]{assets/workflow_2.png} \\
-    1 & 2 \\[6pt]
-     \includegraphics[width=65mm]{assets/workflow_3.png} &   \includegraphics[width=65mm]{assets/workflow_4.png} \\
-    3 & 4 \\[6pt]
-   \includegraphics[width=65mm]{assets/workflow_5.png} &   \includegraphics[width=65mm]{assets/workflow_6.png} \\
-    5 & 6 \\[6pt]
-    \multicolumn{2}{c}{\includegraphics[width=65mm]{assets/workflow_7.png}}\\
-    \multicolumn{2}{c}{7}
-  \end{tabular}}
-  \caption{Workflow per ottenere una query SQL}
+  \centering
+  \includegraphics[width=1\textwidth]{assets/cambio_dizionariodati.png}
+  \caption{Menu di selezione del dizionario dati}
 \end{figure}
-\par L'output atteso dal modello LLM è una query SQL che soddisfa la richiesta inserita, che potrà essere eseguita su un DBMS per ottenere i risultati desiderati.
+
+\subsubsubsection{Accesso a informazioni aggiuntive sul dizionario scelto} \label{sec:info-dizionario}
+
+\par Accanto al menu a discesa, un pulsante con l'icona "i" consente di visualizzare un'anteprima del contenuto del dizionario selezionato. L'anteprima si sovrappone al contenuto della chat e mostra le seguenti informazioni:
+\begin{itemize}
+  \item Nome del dizionario;
+  \item Descrizione del dizionario;
+  \item Lista delle tabelle del \glossario{database} con le relative descrizioni.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par La dimensione della scheda di anteprima può essere ingrandita o ridotta cliccando sul pulsante apposito all'interno della scheda stessa. In alternativa, l'anteprima può essere chiusa cliccando sulla "x" in alto a destra. Le informazioni contenute nella scheda di anteprima possono essere utilizzate come spunto per formulare una richiesta idonea. Una volta inviato un messaggio, l'anteprima verrà automaticamente chiusa.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{assets/info_dizionario.png}
+  \caption{Informazioni aggiuntive sul dizionario scelto}
+\end{figure}
+
+\subsubsubsection{Selezione/cambio DBMS}
+
+\par Il sistema consente all'utente di selezionare un \glossario{DBMS} tramite un menu a discesa analogo a quello sopra indicato. La selezione del DBMS segue le stesse modalità della scelta del \glossario{dizionario dati}. I DBMS supportati dal sistema sono i seguenti:
+\begin{itemize}
+  \item PostgreSQL;
+  \item MariaDB;
+  \item Microsoft SQL Server;
+  \item Oracle DB;
+  \item SQLite.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par La scelta del DBMS è cruciale per la generazione del \glossario{prompt}. Anche se \glossario{SQL} è un linguaggio standard, ci sono variazioni specifiche per ciascun DBMS. Per assicurarsi che gli \glossario{LLM} generino query corrette, è fondamentale che il prompt specifichi anche il DBMS di destinazione.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{assets/cambio_dbms.png}
+  \caption{Menu di selezione del DBMS}
+\end{figure}
+
+\subsubsubsection{Selezione/cambio lingua} \label{sec:lingua-chat}
+
+\par La selezione della lingua avviene anch'essa tramite un menu a discesa, in modo simile alla scelta di dizionari e DBMS. Le lingue supportate dal sistema sono le seguenti:
+\begin{itemize}
+  \item Inglese (lingua predefinita);
+  \item Italiano;
+  \item Francese;
+  \item Spagnolo;
+  \item Tedesco.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par La lingua selezionata viene inclusa nel \glossario{prompt} finale, in modo che la risposta dell'\glossario{LLM} utilizzato per generare la query \glossario{SQL} sia conforme alla lingua desiderata.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{assets/cambio_lingua.png}
+  \caption{Menu di selezione della lingua}
+\end{figure}
+
+\subsubsection{Funzionalità disponibili dopo l'interazione con la chat}
+
+\begin{enumerate}
+  \item Eliminazione della chat;
+  \item Copia del prompt.
+\end{enumerate}
+
+\subsubsubsection{Eliminazione della chat}
+
+\par Dopo una conversazione prolungata con il ChatBOT, l'utente potrebbe desiderare di eliminare le richieste e i prompt generati fino a quel momento, cancellando la cronologia della chat. Questa operazione può essere effettuata cliccando sul pulsante "Elimina cronologia della chat", che si trova all'interno del menu di selezione dei dizionari. Una volta cancellati, i messaggi verranno rimossi permanentemente dal sistema.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{assets/elimina_chat.png}
+  \caption{Eliminazione della cronologia della chat}
+\end{figure}
+
+\subsubsubsection{Copia del prompt}
+
+\par L'utente può copiare il \glossario{prompt} generato dal sistema cliccando sull'icona di clipboard in alto a destra. Il testo copiato negli Appunti può essere incollato successivamente in altri applicativi e/o in un sistema di intelligenza artificiale come ChatGPT.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{assets/copia.png}
+  \caption{Copia del prompt}
+\end{figure}

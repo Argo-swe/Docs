@@ -1,0 +1,24 @@
+\section{Installazione}
+
+\par Per utilizzare l'applicazione, il primo passo è copiare il codice sorgente in una cartella dedicata. Il \glossario{repository} è disponibile al seguente indirizzo:
+
+\quad \href{https://github.com/Argo-swe/ChatSQL/tree/v2.0.0}{ChatSQL - v2.0.0} \newline
+
+\par Per scaricare il codice sorgente vi sono due modalità principali:
+\begin{enumerate}
+  \item Scaricare il repository in formato zip e decomprimerlo in una cartella dedicata;
+  \item Clonare il repository tramite il seguente comando:
+  \begin{itemize} 
+    \item \texttt{git clone https://github.com/Argo-swe/ChatSQL.git}.
+  \end{itemize}
+\end{enumerate}
+
+\vspace{0.5\baselineskip}
+\par Una volta scaricato il codice dell'applicazione, il passo successivo è recuperare le immagini Docker del \glossario{front-end} e del \glossario{back-end} dal registro dei contenitori di GitHub (\glossario{GHCR}). Il comando per effettuare il recupero è il seguente:
+\begin{itemize}
+  \item \texttt{docker pull ghcr.io/argo-swe/chatsql-backend:latest};
+  \item \texttt{docker pull ghcr.io/argo-swe/chatsql-frontend:latest}.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\par Successivamente, è necessario navigare nelle cartelle \textit{backend} e \textit{frontend}, e aggiungere il file \textit{.env.local} in entrambe le cartelle. Questo file consente all'utente di impostare le variabili d'ambiente.

@@ -1,14 +1,14 @@
-\section{Sezione Tecnico}
+\subsection{Sezione Tecnico}
 \label{sec:sezTecnico}
 
-\subsection*{Avviso}
+\subsubsection*{Avviso}
 Per accedere alle funzionalità del Tecnico è necessario effettuare il login con successo. Le credenziali di accesso sono:
 \begin{itemize}
     \item \textbf{Nome utente} (username): admin;
     \item \textbf{Password}: admin. 
 \end{itemize}
 
-\subsection{Autenticazione}
+\subsubsection{Autenticazione} \label{sec:autenticazione}
 Nella sezione superiore destra dell'interfaccia, cliccando sull'icona di login \includegraphics[height=1.2em]{assets/user_icon.png}, l'Utente può inserire le credenziali per sbloccare le funzionalità del Tecnico.
 \begin{figure}[H]
   \centering
@@ -21,7 +21,7 @@ Nella sezione superiore destra dell'interfaccia, cliccando sull'icona di login \
   \caption{Modale di login}
 \end{figure}
 
-\subsection{Gestione dizionari}
+\subsubsection{Gestione dizionari}
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{assets/dd_list.png}
@@ -29,7 +29,7 @@ Nella sezione superiore destra dell'interfaccia, cliccando sull'icona di login \
 \end{figure}
 \par La schermata soprastante mostra la lista completa dei \glossario{dizionari dati} caricati nel sistema. Vengono fornite le funzionalità per operare su di essi.
 
-\subsubsection{Inserimento dizionario dati}
+\subsubsubsection{Inserimento dizionario dati}
 Cliccando sul pulsante "Crea dizionario dati" \includegraphics[height=1.2em]{assets/dd_create_button.png} si aprirà una modale dove sarà possibile inserire i parametri di un nuovo \glossario{dizionario dati}:
 \begin{figure}[H]
   \centering
@@ -44,20 +44,20 @@ Cliccando sul pulsante "Crea dizionario dati" \includegraphics[height=1.2em]{ass
 \vspace{0.5\baselineskip}
 \par Al salvataggio il dizionario verrà aggiunto alla lista.
 
-\subsubsection{Aggiornamento dizionario dati}
+\subsubsubsection{Aggiornamento dizionario dati}
 Cliccando sul pulsante di aggiornamento dei metadati \includegraphics[height=1.2em]{assets/dd_edit_metadata_button.png} si aprirà una modale dove sarà possibile modificare i parametri:
 \begin{itemize}
   \item \textbf{Nome}: deve essere univoco rispetto agli altri \glossario{dizionari dati};
   \item \textbf{Descrizione}: stringa testuale che descrive brevemente il dizionario dati.
 \end{itemize}
 
-\subsubsection{Modifica file di configurazione dizionario dati}
+\subsubsubsection{Modifica file di configurazione dizionario dati}
 Cliccando sul pulsante di modifica del file di configurazione di un \glossario{dizionario dati} \includegraphics[height=1.2em]{assets/dd_edit_button.png} si aprirà una modale dove sarà possibile caricare un nuovo file.
 
-\subsubsection{Scarica file dizionario dati}
+\subsubsubsection{Scarica file dizionario dati}
 Cliccando sul pulsante di download \includegraphics[height=1.2em]{assets/dd_download_button.png} verrà scaricato il file del \glossario{dizionario dati} corrispondente in formato JSON.
 
-\subsubsection{Elimina file dizionario dati}
+\subsubsubsection{Elimina file dizionario dati}
 Cliccando sul pulsante di cancellazione \includegraphics[height=1.2em]{assets/dd_delete_button.png} si aprirà una modale di conferma per l'eliminazione del \glossario{dizionario dati}.
 \begin{figure}[H]
   \centering
@@ -66,11 +66,9 @@ Cliccando sul pulsante di cancellazione \includegraphics[height=1.2em]{assets/dd
 \end{figure}
 In caso di conferma il dizionario verrà eliminato dalla lista.
 
+\subsubsection{Strumento di debug}
 
-
-\subsection{Strumento di degugger}
-
-\subsubsection{Generazione del messaggio di debug}
+\subsubsubsection{Generazione del messaggio di debug}
 \par Per il Tecnico è disponibile uno strumento di controllo per i meccanismi di generazione del \glossario{prompt} che aiuta a comprendere e analizzare i passaggi algoritmici che hanno prodotto il prompt restituito sulla base di una interrogazione. Il \glossario{debug} assiste il Tecnico nella fase di miglioramento del \glossario{dizionario dati}, poiché fornisce una panoramica dell'interazione tra i modelli di intelligenza artificiale e il dizionario stesso. L'obiettivo di questa funzionalità è individuare le aree del dizionario dati che necessitano di aggiornamenti, con particolare attenzione alle descrizioni in linguaggio naturale di tabelle e colonne.
 
 \par Per utilizzare questa funzionalità, il Tecnico deve inserire un messaggio nell'apposita maschera di richiesta all'interno della chat (sezione utente 6.1). Una volta ottenuto il prompt, è necessario cliccare l'icona del punto interrogativo in alto a destra, da cui si aprirà un'altra finestra sovrapposta a quella attuale.
@@ -114,7 +112,7 @@ In caso di conferma il dizionario verrà eliminato dalla lista.
   \caption{Icona chiusura messaggio di debug}
 \end{figure}
 
-\subsubsection{Download del messaggio di debug}
+\subsubsubsection{Download del messaggio di debug}
 
 Il messaggio di debug può essere scaricato in formato \textit{txt}, in modo da conservarlo in locale e utilizzarlo per migliorare il \glossario{dizionario dati} o per produrre analisi a posteriori.
 \begin{figure}[H]
