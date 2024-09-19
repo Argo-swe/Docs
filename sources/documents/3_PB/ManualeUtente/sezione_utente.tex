@@ -1,11 +1,11 @@
 \subsection{Sezione Utente}
 \label{sec:sezUtente}
 
-\par Una volta effettuato l'accesso al sistema, l'utente visualizza una schermata con il nome e il simbolo di ChatSQL posizionati in alto a sinistra, mentre a destra si trovano il pulsante per le impostazioni e quello per il login. Sul lato sinistro, un menu consente di accedere alla finestra della chat per inserire richieste in linguaggio naturale. A destra del menu, si trova la scheda principale, che rappresenta la chat del sistema e presenta un menu superiore. Al centro dello schermo, vengono visualizzate le richieste e le risposte in formato di chat, mentre nella parte inferiore è possibile digitare nuovi messaggi.
+\par Una volta effettuato l'accesso al sistema, l'Utente visualizza una schermata con il nome e il simbolo di ChatSQL posizionati in alto a sinistra, mentre a destra si trovano il pulsante per le impostazioni e quello per il login. Sul lato sinistro, un menu consente di navigare tra le pagine dell'applicazione. A destra del menu, si trova la pagina principale, che rappresenta la chat del sistema e presenta un menu superiore. Al centro dello schermo, vengono visualizzati i messaggi inviati e/o ricevuti dall'Utente, mentre nella parte inferiore è possibile digitare nuovi messaggi.
 
-\subsubsection{Interazione con la chat}
+\subsubsection{Interazione con la chat} \label{sec:interazione-chat}
 
-\par Per interagire con la chat, è necessario inserire una richiesta nel box di testo situato in basso. È importante formulare interrogazioni che siano compatibili con il \glossario{dizionario dati} selezionato, in modo da ottenere un \glossario{prompt} corretto. I messaggi inviati dell'utente vengono visualizzati a destra con uno sfondo azzurrino, mentre le risposte generate dal sistema vengono mostrate a sinistra con uno sfondo grigio scuro.
+\par Per interagire con la chat, è necessario inserire una richiesta nel box di testo situato in basso. È importante formulare interrogazioni che siano compatibili con il \glossario{dizionario dati} selezionato, in modo da ottenere un \glossario{prompt} corretto. I messaggi inviati dall'Utente vengono visualizzati a destra con uno sfondo azzurrino, mentre le risposte generate dal sistema vengono mostrate a sinistra con uno sfondo grigio scuro.
 
 \begin{figure}[H]
   \centering
@@ -13,7 +13,7 @@
   \caption{Esempio di interazione con la chat}
 \end{figure}
 
-\par Le richieste digitate dall'utente possono essere inviate premendo il tasto Invio sulla tastiera o cliccando sul pulsante apposito accanto al box di testo. Questa azione rimuove il contenuto del campo di testo, permettendo all'utente di inserire nuove richieste. Tuttavia, il messaggio inviato non viene rimosso e rimane visibile all'interno della chat.
+\par Le richieste digitate dall'Utente possono essere inviate premendo il tasto Invio sulla tastiera o cliccando sul pulsante apposito accanto al box di testo. Questa azione rimuove il contenuto del campo di testo, permettendo all'Utente di inserire nuove richieste. Tuttavia, il messaggio inviato non viene rimosso e rimane visibile all'interno della chat.
 
 \begin{figure}[H]
   \centering
@@ -26,11 +26,10 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{assets/es_chat_errore.png}
-  \caption{Esempio di errore nel sistema}
+  \caption{Esempio di richiesta non idonea}
 \end{figure}
 
-\subsubsection{Opzioni configurabili prima e durante l'interazione con la chat}
-
+\par Prima di inviare una richiesta al ChatBOT, l'Utente ha a disposizione le seguenti opzioni:
 \begin{enumerate}
   \item Selezione/cambio dizionario dati;
   \item Accesso a informazioni aggiuntive sul dizionario dati scelto;
@@ -40,7 +39,7 @@
 
 \subsubsubsection{Selezione/cambio dizionario dati}
 
-\par Durante l'interazione con il sistema, è possibile cambiare il \glossario{dizionario dati} su cui si basano le richieste. Per selezionare un dizionario differente, l'utente deve cliccare sul pulsante "Mostra" in alto a destra nella chat. Una volta aperto il menu, il dizionario dati attualmente in uso sarà elencato come la prima voce tra le quattro disponibili. Il dizionario dati può essere cambiato tramite un menu a tendina che mostra l'elenco dei dizionari.
+\par Durante l'interazione con il sistema, è possibile cambiare il \glossario{dizionario dati} su cui si basano le richieste. Per selezionare un dizionario differente, l'Utente deve cliccare sul pulsante "Mostra" in alto a destra nella chat. Una volta aperto il menu, il dizionario dati attualmente in uso sarà elencato come la prima voce tra le quattro disponibili. Il dizionario dati può essere cambiato tramite un menu a tendina che mostra l'elenco dei dizionari.
 
 \par Inoltre, è possibile cercare un dizionario scrivendo nella barra di ricerca che si apre cliccando sul menu a discesa. Una volta selezionato un dizionario, le richieste successive dovranno essere coerenti con il suo contenuto. Il pulsante "Nascondi" consente di chiudere il menu dopo aver completato la configurazione delle opzioni.
 
@@ -70,10 +69,10 @@
 
 \subsubsubsection{Selezione/cambio DBMS}
 
-\par Il sistema consente all'utente di selezionare un \glossario{DBMS} tramite un menu a discesa analogo a quello sopra indicato. La selezione del DBMS segue le stesse modalità della scelta del \glossario{dizionario dati}. I DBMS supportati dal sistema sono i seguenti:
+\par Il sistema consente all'Utente di selezionare un \glossario{DBMS} tramite un menu a discesa analogo a quello sopra indicato. La selezione del DBMS segue le stesse modalità della scelta del \glossario{dizionario dati}. I DBMS supportati dal sistema sono i seguenti:
 \begin{itemize}
   \item PostgreSQL;
-  \item MariaDB;
+  \item MariaDB (DBMS predefinito);
   \item Microsoft SQL Server;
   \item Oracle DB;
   \item SQLite.
@@ -90,7 +89,7 @@
 
 \subsubsubsection{Selezione/cambio lingua} \label{sec:lingua-chat}
 
-\par La selezione della lingua avviene anch'essa tramite un menu a discesa, in modo simile alla scelta di dizionari e DBMS. Le lingue supportate dal sistema sono le seguenti:
+\par La selezione della lingua avviene anch'essa tramite un menu a discesa, in modo analogo alla scelta di dizionari e DBMS. Le lingue supportate dal sistema sono le seguenti:
 \begin{itemize}
   \item Inglese (lingua predefinita);
   \item Italiano;
@@ -108,16 +107,16 @@
   \caption{Menu di selezione della lingua}
 \end{figure}
 
-\subsubsection{Funzionalità disponibili dopo l'interazione con la chat}
-
+\par Una volta inviato il messaggio, l'Utente ha a disposizione le seguenti opzioni:
 \begin{enumerate}
   \item Eliminazione della chat;
-  \item Copia del prompt.
+  \item Copia del prompt;
+  \item Scorrimento automatico della chat.
 \end{enumerate}
 
 \subsubsubsection{Eliminazione della chat}
 
-\par Dopo una conversazione prolungata con il ChatBOT, l'utente potrebbe desiderare di eliminare le richieste e i prompt generati fino a quel momento, cancellando la cronologia della chat. Questa operazione può essere effettuata cliccando sul pulsante "Elimina cronologia della chat", che si trova all'interno del menu di selezione dei dizionari. Una volta cancellati, i messaggi verranno rimossi permanentemente dal sistema.
+\par Dopo una conversazione prolungata con il ChatBOT, l'Utente potrebbe desiderare di eliminare le richieste e i prompt generati fino a quel momento, cancellando la cronologia della chat. Questa operazione può essere effettuata cliccando sul pulsante "Elimina cronologia della chat", che si trova all'interno del menu di selezione dei dizionari. Una volta cancellati, i messaggi verranno rimossi permanentemente dal sistema.
 
 \begin{figure}[H]
   \centering
@@ -127,10 +126,14 @@
 
 \subsubsubsection{Copia del prompt}
 
-\par L'utente può copiare il \glossario{prompt} generato dal sistema cliccando sull'icona di clipboard in alto a destra. Il testo copiato negli Appunti può essere incollato successivamente in altri applicativi e/o in un sistema di intelligenza artificiale come ChatGPT.
+\par L'Utente può copiare il \glossario{prompt} generato dal sistema cliccando sull'icona di clipboard in alto a destra. Il testo copiato negli Appunti può essere incollato successivamente in altri applicativi e/o in un sistema di intelligenza artificiale come ChatGPT.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{assets/copia.png}
   \caption{Copia del prompt}
 \end{figure}
+
+\subsubsubsection{Scorrimento automatico della chat} \label{sec:scorrimento-chat}
+
+\par Quando l'Utente scorre i messaggi, il sistema mostra un pulsante per tornare in fondo alla chat. Cliccando su di esso, l'Utente può visualizzare l'ultimo messaggio inviato o ricevuto. Al caricamento della pagina, se sono presenti messaggi salvati, il sistema scorre automaticamente fino alla fine della chat.
