@@ -275,7 +275,7 @@ Il repository contiene il codice sorgente dell'applicativo ChatSQL, oltre a un \
     \item Apertura di una pull request (non in draft);
     \item Contrassegno di una pull request come pronta per la revisione;
     \item Modifiche al ramo associato alla pull request;
-    \item Chiusura della pull request.
+    \item Merge della pull request (push sul main o sul develop).
   \end{itemize}
   \item Se la pull request non è in draft, il workflow esegue i seguenti step:
   \begin{itemize}
@@ -283,19 +283,25 @@ Il repository contiene il codice sorgente dell'applicativo ChatSQL, oltre a un \
     \item Salvataggio e ripristino della cache per evitare di scaricare nuovamente le dipendenze;
     \item Nella cache viene memorizzata una chiave che include l'hash dei file \emph{docker-compose.yml} e \emph{Dockerfile}. Se il contenuto di uno di questi file cambia, anche la chiave cambia e la cache viene invalidata;
     \item Autenticazione nel registro dei contenitori di GitHub attraverso un token di accesso in scrittura;
-    \item Creazione dei file .env.local, necessari per avviare il contenitore Docker;
-    \item Build e caricamento dell'immagine su \glossario{GHCR} (se avviene un "cache miss");
-    \item Recupero dell'immagine da \glossario{GHCR} (se avviene un "cache hit");
-    \item Avvio del contenitore Docker;
-    \item Questa distinzione tra push e pull di un'immagine, in base alla presenza o meno di una chiave in cache, permette di ridurre significativamente i tempi di esecuzione del \glossario{workflow};
     \item Configurazione dell'ambiente Node.js (versione 20);
     \item Verifica della versione di Node.js installata;
     \item Installazione delle dipendenze del \glossario{frontend};
     \item Linting e formattazione del codice nel \glossario{backend};
     \item Type check del codice nel frontend;
     \item Linting del codice nel frontend;
-    \item Esecuzione dei test di unità nel frontend;
-    \item Esecuzione dei test di unità nel backend;
+    \item Esecuzione dei test di unità nel frontend con Jest;
+    \item Rinominazione della cartella coverage generata da Jest;
+    \item Esecuzione dei test di unità e integrazione nel frontend con Cypress;
+    \item Rinominazione della cartella coverage generata da Cypress;
+    \item Creazione dei file .env.local, necessari per avviare il contenitore Docker;
+    \item Build e caricamento dell'immagine su \glossario{GHCR} (se avviene un "cache miss");
+    \item Recupero dell'immagine da \glossario{GHCR} (se avviene un "cache hit");
+    \item Avvio del contenitore Docker (backend);
+    \item Esecuzione dei test di unità e integrazione nel backend;
+    \item Copia del report di copertura dal container Docker al workspace del job;
+    \item Avvio del contenitore Docker (frontend);
+    \item Esecuzione dei test di sistema;
+    \item Caricamento dei report di copertura su CodeCov;
     \item Arresto dell'esecuzione del contenitore Docker;
     \item Creazione della directory "ChatSQL/MVP" (se la pull request è stata unita al ramo base);
     \item Pubblicazione dell'artefatto generato durante il processo di build.

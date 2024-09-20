@@ -1,17 +1,17 @@
-\paragraph*{Rimozione dei difetti}
+\paragraph*{Tolleranza agli errori}
 \begin{itemize}
     \item \textbf{Notazione specifica}: M.PD.19;
-    \item \textbf{Nome}: Rimozione dei difetti;
-    \item \textbf{Descrizione}: Questa metrica misura la percentuale di difetti identificati e risolti durante lo sviluppo del prodotto;
-    \item \textbf{Caratteristiche}: Affidabilità, maturità;
-    \item \textbf{Motivo}: Valutare l'efficacia del processo di rilevamento e rimozione dei difetti;
+    \item \textbf{Nome}: Tolleranza agli errori;
+    \item \textbf{Descrizione}: Questa metrica misura la percentuale di errori che il prodotto è in grado di gestire;
+    \item \textbf{Caratteristiche}: Affidabilità, operabilità;
+    \item \textbf{Motivo}: Verificare che il software sia in grado di rilevare condizioni di errore e segnalarle con un opportuno messaggio;
     \item \textbf{Misurazione}:
     \[
-        \text{Rimozione dei difetti} = \frac{D_{c}}{D_{t}} \times 100
+        \text{Tolleranza agli errori} = \frac{Err_{s}}{Err_{p}} \times 100
     \]
     dove:
     \begin{itemize}
-        \item $D_{c}$: Numero di difetti corretti;
-        \item $D_{t}$: Numero totale di difetti rilevati.
+        \item $Err_{s}$: Numero di errori gestiti con successo;
+        \item $Err_{p}$: Numero totale di errori previsti.
     \end{itemize}
 \end{itemize}
