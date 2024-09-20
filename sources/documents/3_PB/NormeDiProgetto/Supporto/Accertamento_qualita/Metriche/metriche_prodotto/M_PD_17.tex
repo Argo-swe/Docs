@@ -1,9 +1,17 @@
-\paragraph*{Indice di manutenibilità}
+\paragraph*{Percentuale di test superati}
 \begin{itemize}
     \item \textbf{Notazione specifica}: M.PD.17;
-    \item \textbf{Nome}: Indice di manutenibilità;
-    \item \textbf{Descrizione}: Questa metrica misura la capacità del software di essere modificato, corretto o adattato;
-    \item \textbf{Caratteristiche}: Manutenibilità;
-    \item \textbf{Motivo}: Fornire una misura quantitativa della manutenibilità del software;
-    \item \textbf{Misurazione}: Il calcolo viene effettuato con strumenti di analisi statica.
+    \item \textbf{Nome}: Percentuale di test superati;
+    \item \textbf{Descrizione}: Questa metrica misura la percentuale di test eseguiti con successo;
+    \item \textbf{Caratteristiche}: Funzionalità, affidabilità, maturità;
+    \item \textbf{Motivo}: Garantire la piena copertura dei requisiti funzionali e di qualità;
+    \item \textbf{Misurazione}:
+    \[
+    \text{Test superati (\%)} = \frac{N_{ts}}{N_{tot}} \times 100
+    \]
+    dove:
+    \begin{itemize}
+        \item $N_{ts}$: Numero di test eseguiti con successo;
+        \item $N_{tot}$: Numero totale di test eseguiti.
+    \end{itemize}
 \end{itemize}
