@@ -43,7 +43,7 @@
 		\end{itemize} & S \\
 
 		%sql_alchemy_authentication_repository_adapter
-		\hline TU.3 & Verificare che il metodo "get\_user\_by\_username" della classe "SqlAlchemyAuthenticationRepositoryAdapter" soddisfi le seguenti condizioni:
+		\hline TU.3 & Verificare che il metodo "get\_admin\_by\_username" della classe "SqlAlchemyAuthenticationRepositoryAdapter" soddisfi le seguenti condizioni:
 		\begin{itemize}
 			\item Deve recuperare correttamente un utente dal database in base allo username specificato, verificando che la query venga eseguita sul modello "Admins" applicando il filtro appropriato;
 			\item Deve restituire "None" se non esiste alcun utente associato allo username fornito.
@@ -81,7 +81,7 @@
 			\item Deve aggiornare correttamente le proprietà di un dizionario esistente e salvare le modifiche nel database;
 			\item Deve chiamare le operazioni di commit e refresh durante l'aggiornamento;
 			\item Deve sollevare un'eccezione se si verifica un errore durante il commit delle modifiche;
-			\item Deve sollevare un'eccezione "AttributeError" se si tenta di aggiornare un dizionario inesistente.
+			\item Deve restituire "None" se si tenta di aggiornare un dizionario inesistente.
 		\end{itemize} & S \\
 
 		\hline TU.9 & Verificare che il metodo "delete\_dictionary" della classe "SqlAlchemyDictionaryRepositoryAdapter" soddisfi le seguenti condizioni:
