@@ -82,6 +82,12 @@ I grafici dei casi d'uso sono così composti:
   \item Se si realizza un'estensione tra casi d'uso, questa viene esplicitata attraverso un \glossario{extension point}, il quale spiega le condizioni che portano allo scenario alternativo.
 \end{itemize}
 
+\subsubsubsection{Strumenti}
+\IntroStrumenti
+\begin{itemize}
+  \item Diagrams.net.
+\end{itemize}
+
 \subsubsection{Progettazione}\label{progettazione}
 \subsubsubsection{Scopo}
 \par L'attività di progettazione segue quella di analisi e ha lo scopo di definire un'architettura per il prodotto capace di soddisfare i requisiti specificati nell’\AnalisiDeiRequisiti. Questa attività viene svolta dai progettisti e prevede l'utilizzo di stili e pattern architetturali. La progettazione ha dunque il compito di assicurare il soddisfacimento delle caratteristiche individuate durante l'analisi. In genere, l'architettura è un sistema formato da componenti, che raggruppano delle unità software composte da uno o più moduli.
@@ -123,22 +129,76 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
   \item Individuazione dei principali componenti del sistema;
   \item Definizione delle interfacce e delle modalità di comunicazione tra i componenti;
   \item Definizione delle strutture dati necessarie per soddisfare i requisiti;
-  \item Stesura iniziale del manuale utente;
+  \item Stesura iniziale del \MU;
   \item Progettazione dei test di integrazione;
   \item Revisione delle soluzioni e degli stili architetturali.
 \end{itemize}
 
 \subsubsubsection{Progettazione di dettaglio}\label{progettazione-dettaglio}
-\par La progettazione di dettaglio precede l’attività di codifica e la vincola in modo sostanziale. In questa fase vengono definiti gli attributi e i metodi delle classi, inclusi i relativi tipi di dato. Il team agisce sulle unità architetturali, che devono essere progettate con una complessità tale da consentire la codifica da parte di un singolo \Programmatore{}. Le unità dell’architettura vengono suddivise in moduli; più unità formano un componente (definito durante la progettazione logica). Lo scopo della progettazione di dettaglio è organizzare e disciplinare la fase di programmazione, documentando le scelte progettuali, assegnando i requisiti a ciascuna unità e definendo gli strumenti necessari per eseguire i test di unità. Il team deve trovare il giusto equilibrio tra scomposizione del sistema e complessità di coordinamento tra i moduli. La progettazione di dettaglio include le seguenti attività:
+\par La progettazione di dettaglio precede l'attività di codifica e la vincola in modo sostanziale. In questa fase vengono definiti gli attributi e i metodi delle classi, inclusi i relativi tipi di dato. Il team agisce sulle unità architetturali, che devono essere progettate con una complessità tale da consentire la codifica da parte di un singolo \Programmatore{}. Le unità dell’architettura vengono suddivise in moduli; più unità formano un componente (definito durante la progettazione logica). Lo scopo della progettazione di dettaglio è organizzare e disciplinare la fase di programmazione, documentando le scelte progettuali, assegnando i requisiti a ciascuna unità e definendo gli strumenti necessari per eseguire i test di unità. Il team deve trovare il giusto equilibrio tra scomposizione del sistema e complessità di coordinamento tra i moduli. La progettazione di dettaglio include le seguenti attività:
 \begin{itemize}
   \item Descrizione dettagliata dei componenti, con enfasi sulla definizione specifica di ciascuna unità e modulo;
-  \item Aggiornamento ed espansione del manuale utente;
+  \item Aggiornamento ed espansione del \MU;
   \item Definizione delle specifiche dei test di integrazione;
   \item Definizione delle specifiche dei test di unità.
 \end{itemize}
 
-\subsubsubsection{Specifica tecnica}\label{specifica-tecnica}
-\par La fase di progettazione deve essere documentata in modo chiaro ed esaustivo, poiché costituisce la base fondamentale per le successive attività di codifica e testing del software. Le scelte progettuali sono dettagliate nel documento "Specifica Tecnica", la cui stesura inizia al termine della prima fase della revisione \glossario{RTB}.
+\subsubsubsection{Specifica Tecnica}\label{specifica-tecnica}
+\par La fase di progettazione deve essere documentata in modo chiaro ed esaustivo, poiché costituisce la base fondamentale per le successive attività di codifica e testing del software. Le scelte progettuali sono dettagliate nel documento di \ST, che approfondisce i seguenti temi:
+\begin{itemize}
+  \item \textbf{Tecnologie utilizzate}: descrizione delle tecnologie, dei framework e delle librerie adottate, con indicazione delle motivazioni che hanno portato alla loro scelta;
+  \item \textbf{Architettura generale}: descrizione dell'architettura del sistema e della struttura del \glossario{repository};
+  \item \textbf{Progettazione logica}: fornisce una visione d'insieme delle funzionalità del sistema, definendo i componenti principali senza scendere nei dettagli implementativi;
+  \item \textbf{Progettazione di dettaglio}: definizione dei dettagli tecnici e implementativi di ciascun modulo.
+\end{itemize}
+
+\paragraph*{Linee guida progettazione dei componenti front-end}
+\begin{itemize}
+  \item \textbf{Descrizione}: breve descrizione delle funzionalità del componente;
+  \item \textbf{Sottocomponenti}: elenco dei sottocomponenti e del loro scopo;
+  \item \textbf{Tracciamento dei requisiti}: requisiti soddisfatti dal componente.
+\end{itemize}
+
+\paragraph*{Linee guida progettazione dei componenti back-end}
+\begin{itemize}
+  \item \textbf{Descrizione}: breve descrizione delle funzionalità del componente;
+  \item \textbf{Dettagli della route}:
+  \begin{itemize}
+    \item Metodo HTTP (GET, POST, PUT, DELETE);
+    \item Endpoint;
+    \item Tags;
+    \item Modello di risposta;
+    \item Nome del metodo;
+    \item Dependency Injection.
+  \end{itemize}
+  \item \textbf{Esecuzione}: spiegazione ad alto livello del funzionamento del componente e dei possibili esiti della sua esecuzione; 
+  \item \textbf{Tracciamento dei requisiti}: requisiti soddisfatti dal componente.
+\end{itemize}
+
+\paragraph*{Linee guida progettazione di dettaglio front-end}
+\begin{itemize}
+  \item \textbf{Props}: elenco delle proprietà passate al componente;
+  \item \textbf{Emits}: elenco degli eventi emessi dal componente;
+  \item \textbf{Elementi chiave}: descrizione degli elementi chiave del componente. 
+\end{itemize}
+
+\paragraph*{Linee guida progettazione di dettaglio back-end}
+\begin{itemize}
+  \item \textbf{Diagramma della classe}: diagramma UML della classe;
+  \item \textbf{Descrizione}: breve descrizione della classe;
+  \item \textbf{Operazioni} (opzionale): elenco delle operazioni della classe;
+  \item \textbf{Attributi} (opzionale): elenco degli attributi della classe; 
+  \item \textbf{Interfaccia implementata} (opzionale): specifica se la classe implementa un'interfaccia;
+  \item \textbf{Estensione} (opzionale): specifica se la classe estende un'altra classe;
+  \item \textbf{Metodi} (opzionale): elenco dei metodi della classe; 
+  \item \textbf{Dipendenze} (opzionale): elenco delle dipendenze della classe.
+\end{itemize}
+
+\subsubsubsection{Strumenti}
+\IntroStrumenti
+\begin{itemize}
+  \item Diagrams.net.
+\end{itemize}
 
 \subsubsection{Codifica}\label{codifica}
 
@@ -153,7 +213,6 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
   \item \textbf{Abbreviazioni}: utilizzare abbreviazioni e acronimi consolidati o riconosciuti dalla comunità informatica;
   \item \textbf{Sezioni incomplete}: vanno indicate con un commento preceduto dalla dicitura "TODO";
   \item \textbf{Sezioni in attesa di revisione o miglioramento}: vanno indicate con un commento preceduto dalla dicitura "FIXME";
-  \item \textbf{Indentazione}: utilizzare quattro spazi o un carattere di tabulazione;
   \item \textbf{Spaziatura}: aggiungere uno spazio attorno agli operatori binari e ternari per migliorare la leggibilità del codice.
 \end{itemize}
 
@@ -178,7 +237,7 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \end{itemize}
 
 \paragraph*{Documentazione del codice}
-\par La documentazione del codice sorgente deve essere conforme alle linee guida di Google relative alla scrittura di \glossario{docstring} in Python (\href{https://google.github.io/styleguide/pyguide.html}{https://google.github.io/styleguide/pyguide.html} (Ultimo accesso: 2024-07-24)). In particolare:
+\par La documentazione del codice sorgente deve essere conforme alle linee guida di Google relative alla scrittura di \glossario{docstring} in Python (\href{https://google.github.io/styleguide/pyguide.html}{https://google.github.io/styleguide/pyguide.html} (Ultimo accesso: 2024-09-05)). In particolare:
 \begin{itemize}
   \item Ogni classe deve essere corredata da:
   \begin{itemize}
@@ -204,7 +263,7 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
   \item \textbf{Self}: utilizzare la parola chiave "self" per riferirsi all'istanza dell'oggetto su cui viene chiamato un metodo;
   \item \textbf{Metodi setter e getter}: utilizzare metodi dedicati per interagire con gli attributi, evitando l'accesso diretto alle proprietà di una classe;
   \item \textbf{Concordanza nomi attributi-argomenti}: gli argomenti di un metodo devono avere lo stesso nome degli attributi corrispondenti nella classe;
-  \item \textbf{Lunghezza massima riga (codice)}: 79 caratteri;
+  \item \textbf{Lunghezza massima riga (codice)}: 88 caratteri;
   \item \textbf{Lunghezza massima riga (commenti)}: 72 caratteri;
   \item \textbf{Lunghezza massima riga (docstring)}: 72 caratteri.
 \end{itemize}
@@ -213,13 +272,13 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \begin{itemize}
   \item \textbf{Nomenclatura}: seguire le convenzioni stabilite da PEP 8;
   \item \textbf{Nomi dei file}: \glossario{snake\_case};
-  \item \textbf{Nomi della classi}: \glossario{PascalCase};
+  \item \textbf{Nomi delle classi}: \glossario{PascalCase};
   \item \textbf{Nomi dei metodi}: snake\_case;
   \item \textbf{Nomi delle variabili}: snake\_case;
   \item \textbf{Nomi delle costanti}: \glossario{UPPER\_SNAKE\_CASE};
+  \item \textbf{Indentazione}: utilizzare quattro spazi o un carattere di tabulazione;
   \item \textbf{Commenti}: utilizzare il simbolo \verb|#| per i commenti;
-  \item \textbf{Docstring}: utilizzare il simbolo \verb|"""| per le docstring;
-  \item \textbf{Stringhe}: utilizzare il simbolo \verb|'| oppure \verb|'''| per le stringhe.
+  \item \textbf{Docstring}: utilizzare il simbolo \verb|"""| per le docstring.
 \end{itemize}
 
 \paragraph*{Formattazione del codice}
@@ -233,8 +292,10 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
   \item \textbf{src/components/layout}: componenti che definiscono la struttura generale dell'applicazione (es.: header, footer, sidebar);
   \item \textbf{src/views}: pagine dell'applicazione;
   \item \textbf{src/services}: moduli per la gestione delle interazioni con servizi interni o esterni (chiamate API, autenticazione, messaggi, servizi di utilità);
+  \item \textbf{src/composables}: funzioni riutilizzabili;
   \item \textbf{src/assets}: risorse come font e fogli di stile del layout;
   \item \textbf{src/locales}: file JSON per la gestione dell'interfaccia multilingua;
+  \item \textbf{src/types}: definizioni dei tipi e delle interfacce;
   \item \textbf{src/router}: definizione delle \glossario{route}.
 \end{itemize}
 
@@ -258,7 +319,8 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 
 \paragraph*{Convenzioni sintattiche}
 \begin{itemize}
-  \item \textbf{Nome dei file}: \glossario{kebab-case}.
+  \item \textbf{Nomi dei file}: \glossario{PascalCase};
+  \item \textbf{Indentazione}: utilizzare due spazi.
 \end{itemize}
 
 \subsubsubsection{Stile di codifica: JavaScript/TypeScript}
@@ -275,15 +337,16 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 
 \paragraph*{Documentazione del codice}
 \vspace{0.5\baselineskip}
-\par La documentazione del codice sorgente deve essere conforme al formato \glossario{JSDoc} (\href{https://jsdoc.app}{https://jsdoc.app} (Ultimo accesso: 2024-07-24)), compatibile sia con JavaScript che con TypeScript.
+\par La documentazione del codice sorgente deve essere conforme al formato \glossario{JSDoc} (\href{https://jsdoc.app}{https://jsdoc.app} (Ultimo accesso: 2024-09-05)), compatibile sia con JavaScript che con TypeScript.
 
 \paragraph*{Convenzioni sintattiche}
 \begin{itemize}
   \item \textbf{Nomi dei file}: \glossario{kebab-case};
-  \item \textbf{Nomi della classi}: \glossario{PascalCase};
+  \item \textbf{Nomi delle classi}: \glossario{PascalCase};
   \item \textbf{Nomi delle funzioni}: \glossario{camelCase};
   \item \textbf{Nomi delle variabili}: camelCase;
   \item \textbf{Nomi delle costanti}: \glossario{UPPER\_SNAKE\_CASE};
+  \item \textbf{Indentazione}: utilizzare due spazi;
   \item \textbf{Commenti}: utilizzare il simbolo \verb|//| per i commenti;
   \item \textbf{Blocchi JSDoc}: utilizzare il simbolo \verb|/** ... */| per i blocchi JSDoc.
 \end{itemize}
@@ -292,7 +355,7 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \par Il team aderisce alle convenzioni di formattazione stabilite da \glossario{Prettier}. Prettier può essere integrato in Visual Studio Code ed è compatibile con \glossario{ESLint}.
 
 \subsubsubsection{Stile di codifica: CSS}
-\par Il team aderisce alle regole di formattazione e stile per CSS definite al seguente indirizzo: \href{https://google.github.io/styleguide/htmlcssguide.html}{https://google.github.io/styleguide/htmlcssguide.html} (ultimo accesso: 2024-07-23), con alcune eccezioni (vedi \ref{sec:elementi-comuni-stile}). Il codice CSS è organizzato in tre sezioni:
+\par Il team aderisce alle regole di formattazione e stile per CSS definite al seguente indirizzo: \href{https://google.github.io/styleguide/htmlcssguide.html}{https://google.github.io/styleguide/htmlcssguide.html} (ultimo accesso: 2024-08-02). Il codice CSS è organizzato in tre sezioni:
 \begin{itemize}
   \item \textbf{Layout}: disposizione generale degli elementi all'interno dell'applicazione; include classi per la gestione di griglie, allineamenti e margini;
   \item \textbf{Componente}: stile di un singolo componente; definisce le sue proprietà distintive e le sue caratteristiche visive;
@@ -302,12 +365,12 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \paragraph*{Convenzioni sintattiche}
 \begin{itemize}
   \item \textbf{Nomi dei file}: \glossario{kebab-case};
-  \item \textbf{Nome delle proprietà}: kebab-case;
+  \item \textbf{Nomi delle proprietà}: kebab-case;
   \item \textbf{Commenti}: utilizzare il simbolo \verb|/* ... */| per i commenti.
 \end{itemize}
 
 \subsubsubsection{Stile di codifica: HTML}
-\par Il team aderisce alle regole di formattazione e stile per HTML definite al seguente indirizzo: \href{https://google.github.io/styleguide/htmlcssguide.html}{https://google.github.io/styleguide/htmlcssguide.html} (ultimo accesso: 2024-07-23), con alcune eccezioni (vedi \sezione{sec:elementi-comuni-stile}).
+\par Il team aderisce alle regole di formattazione e stile per HTML definite al seguente indirizzo: \href{https://google.github.io/styleguide/htmlcssguide.html}{https://google.github.io/styleguide/htmlcssguide.html} (ultimo accesso: 2024-08-02).
 
 \paragraph*{Best practices}
 \begin{itemize}
@@ -317,8 +380,8 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \paragraph*{Convenzioni sintattiche}
 \begin{itemize}
   \item \textbf{Nomi dei file}: \glossario{kebab-case};
-  \item \textbf{Nome delle classi}: kebab-case;
-  \item \textbf{Nome degli id}: kebab-case;
+  \item \textbf{Nomi delle classi}: kebab-case;
+  \item \textbf{Nomi degli id}: kebab-case;
   \item \textbf{Commenti}: utilizzare il simbolo \verb|<!-- ... -->| per i commenti.
 \end{itemize}
 
@@ -361,8 +424,8 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \subsubsubsection{Test di integrazione}
 \par I test di integrazione vengono definiti durante la progettazione architetturale e si basano sui componenti in essa specificati. L’integrazione può essere di tipo incrementale, aumentando il valore funzionale a ogni passo. Questo approccio prevede che i componenti vengano integrati in insiemi già verificati, agevolando la rimozione di eventuali difetti o malfunzionamenti in seguito a cambiamenti. Lo scopo dei test di integrazione è rilevare difetti di design o una scarsa qualità dei test di unità, garantendo che i dati scambiati attraverso ciascuna interfaccia siano conformi alle specifiche. Vi sono due modalità di integrazione incrementale:
 \begin{itemize}
-  \item \textbf{Bottom-up}: l’integrazione avviene partendo dai moduli più interni al sistema, che sono meno visibili a livello utente e possiedono un minor numero di dipendenze funzionali. Questa strategia richiede l’uso di pochi stub, ma può rallentare la fornitura di servizi di "alto livello". Nell’approccio bottom-up, i driver vengono utilizzati per testare i moduli nei layer inferiori, qualora i moduli nei layer superiori siano ancora incompleti;
-  \item \textbf{Top-down}: l’integrazione avviene partendo dai moduli più esterni, che possiedono un maggior numero di dipendenze funzionali e sono quindi di maggior interesse per l’utente. Questa strategia richiede l'uso di molti stub per simulare i moduli mancanti, consentendo di integrare fin da subito le funzionalità di "alto livello".
+  \item \textbf{Bottom-up}: l'integrazione avviene partendo dai moduli più interni al sistema, che sono meno visibili a livello utente e possiedono un minor numero di dipendenze funzionali. Questa strategia richiede l’uso di pochi stub, ma può rallentare la fornitura di servizi di "alto livello". Nell’approccio bottom-up, i driver vengono utilizzati per testare i moduli nei layer inferiori, qualora i moduli nei layer superiori siano ancora incompleti;
+  \item \textbf{Top-down}: l'integrazione avviene partendo dai moduli più esterni, che possiedono un maggior numero di dipendenze funzionali e sono quindi di maggior interesse per l’utente. Questa strategia richiede l'uso di molti stub per simulare i moduli mancanti, consentendo di integrare fin da subito le funzionalità di "alto livello".
 \end{itemize}
 
 \subsubsubsection{Test di sistema}
@@ -392,6 +455,15 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
     \item \textbf{F}: test fallito.
 \end{itemize}
 
+\subsubsubsection{Linee guida test}
+\begin{itemize}
+    \item Suite di test: i test devono essere raggruppati in base a determinati criteri (es.: componente, modulo, funzionalità);
+    \item Ciascun test all'interno di una suite deve avere responsabilità limitata;
+    \item Setup: ciascun test deve essere indipendente dagli altri e non deve dipendere dall'ordine di esecuzione. Nella fase di preparazione, è necessario inizializzare i dati e le risorse necessarie per l'esecuzione del test, utilizzando dipendenze reali, mock, stub o spy;
+    \item Teardown: ciascun test deve ripristinare lo stato iniziale del sistema; 
+    \item Copertura: i test devono coprire tutte le funzionalità del sistema, inclusi i casi limite e le situazioni di errore.
+\end{itemize}
+
 \subsubsubsection{Strumenti}
 \IntroStrumenti
 \begin{itemize}
@@ -400,9 +472,9 @@ Oltre all’analisi dei requisiti, una precondizione necessaria per la revisione
 \end{itemize}
 
 \subsubsection{Integrazione software}
-\par Il team adotta la pratica di \glossario{continuous integration} (CI), che consiste nell’allineamento frequente delle modifiche con l’ambiente condiviso. La cronologia dello sviluppo viene mantenuta in un ramo chiamato develop, mentre nel branch principale è registrata la cronologia dei rilasci. A partire dal branch develop, ciascun membro del team può creare un ramo di feature, orientato allo sviluppo di nuove funzionalità, alla definizione di test o alla correzione di bug. Una volta completate le modifiche, viene aperta una pull request per richiedere la verifica del codice. Come definito nella \sezione{sec:pull_request}, ciascuna pull request deve essere opportunamente etichettata.
+\par Il team adotta la pratica di \glossario{continuous integration} (CI), che consiste nell'allineamento frequente delle modifiche con l’ambiente condiviso. La cronologia dello sviluppo viene mantenuta in un ramo chiamato develop, mentre nel branch principale è registrata la cronologia dei rilasci. A partire dal branch develop, ciascun membro del team può creare un ramo di feature, orientato allo sviluppo di nuove funzionalità, alla definizione di test o alla correzione di bug. Una volta completate le modifiche, viene aperta una pull request per richiedere la verifica del codice. Come definito nella \sezione{sec:pull_request}, ciascuna pull request deve essere opportunamente etichettata.
 
-\par Il processo di integrazione continua implica l’automazione delle fasi di build e test. Pertanto, quando viene aperta una pull request, GitHub Actions avvia un workflow che esegue i test di unità, di integrazione e di sistema definiti nel \PianoDiQualifica. L’obiettivo del team è garantire che il ramo di sviluppo rimanga stabile e il più possibile privo di difetti.
+\par Il processo di integrazione continua implica l'automazione delle fasi di build e test. Pertanto, quando viene aperta una pull request, GitHub Actions avvia un workflow che esegue i test di unità, di integrazione e di sistema definiti nel \PianoDiQualifica. L’obiettivo del team è garantire che il ramo di sviluppo rimanga stabile e il più possibile privo di difetti.
 
 \subsubsubsection{Strumenti}
 \IntroStrumenti

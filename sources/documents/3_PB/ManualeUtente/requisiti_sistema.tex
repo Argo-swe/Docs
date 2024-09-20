@@ -1,10 +1,57 @@
 \section{Requisiti di sistema}
 
 \subsection{Requisiti software}
-\par TODO.
+\par Per eseguire correttamente l'applicazione, è necessario avere \glossario{Docker} installato. I requisiti specifici dipendono dal sistema operativo in uso:
+\begin{itemize}
+  \item \textbf{Windows}
+  \begin{enumerate}
+    \item \textbf{Docker Desktop}
+    \begin{itemize}
+      \item Docker Desktop per Windows include Docker Engine, Docker Compose e tutte le componenti necessarie per eseguire i container;
+      \item Maggiori informazioni sono disponibili qui: \href{https://docs.docker.com/desktop/install/windows-install}{https://docs.docker.com/des \- ktop/install/windows-install}.
+    \end{itemize}
+    \item \textbf{WSL 2 (consigliato)}
+    \begin{itemize}
+      \item Docker Desktop si integra con Windows Subsystem for Linux 2 (WSL 2) per eseguire container Linux in modo più efficiente;
+      \item Maggiori informazioni sono disponibili qui: \href{https://docs.microsoft.com/en-us/windows/wsl/install}{https://docs.microsoft.com/en-us/windows/wsl/install}.
+    \end{itemize}
+  \end{enumerate}
+  \item \textbf{macOS}
+  \begin{enumerate}
+    \item \textbf{Docker Desktop}
+    \begin{itemize}
+      \item Docker Desktop per macOS include Docker Engine, Docker Compose e tutte le componenti necessarie per eseguire i container;
+      \item Maggiori informazioni sono disponibili qui: \href{https://docs.docker.com/desktop/install/mac-install}{https://docs.docker.com/des \- ktop/install/mac-install}.
+    \end{itemize}
+  \end{enumerate}
+  \item \textbf{Linux}
+  \begin{enumerate}
+    \item \textbf{Docker Desktop}
+    \begin{itemize}
+      \item Docker Desktop per Linux include Docker Engine, Docker Compose e tutte le componenti necessarie per eseguire i container;
+      \item Maggiori informazioni sono disponibili qui: \href{https://docs.docker.com/desktop/install/linux}{https://docs.docker.com/desktop/install/linux}.
+    \end{itemize}
+    \item \textbf{Docker Engine} (alternativa a Docker Desktop)
+    \begin{itemize}
+      \item Su Linux, è generalmente preferibile installare direttamente Docker Engine piuttosto che Docker Desktop, poiché offre un'integrazione più semplice, leggera e nativa con il sistema operativo;
+      \item Maggiori informazioni sono disponibili qui: \href{https://docs.docker.com/engine/install}{https://docs.docker.com/engine/install}.
+    \end{itemize}
+    \item \textbf{Docker Compose} (alternativa a Docker Desktop)
+    \begin{itemize}
+      \item Se Docker Engine viene installato separatamente su Linux, è necessario installare anche Docker Compose per orchestrare più container;
+      \item Maggiori informazioni sono disponibili qui: \href{https://docs.docker.com/compose/install}{https://docs.docker.com/compose/install}.
+    \end{itemize}
+  \end{enumerate}
+\end{itemize}
 
 \subsection{Requisiti hardware}
-\par TODO.
+\begin{itemize}
+  \item \textbf{RAM}
+  \begin{itemize}
+    \item \textbf{Minimo}: 4 GB;
+    \item \textbf{Consigliato}: 8 GB o più (per un'esperienza ottimale).
+  \end{itemize}
+\end{itemize}
 
 \subsection{Browser supportati}
 \par Di seguito sono elencati i browser in cui l'applicazione è accessibile e fruibile.

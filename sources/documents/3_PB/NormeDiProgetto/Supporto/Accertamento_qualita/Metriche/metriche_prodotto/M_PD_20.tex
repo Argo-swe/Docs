@@ -1,17 +1,17 @@
-\paragraph*{Tolleranza agli errori}
+\paragraph*{Impatto delle modifiche}
 \begin{itemize}
     \item \textbf{Notazione specifica}: M.PD.20;
-    \item \textbf{Nome}: Tolleranza agli errori;
-    \item \textbf{Descrizione}: Questa metrica misura la percentuale di errori che il prodotto è in grado di gestire;
-    \item \textbf{Caratteristiche}: Affidabilità, operabilità;
-    \item \textbf{Motivo}: Verificare che il software sia in grado di rilevare condizioni di errore e segnalarle con un opportuno messaggio.
-    \item \textbf{Misurazione}:
+    \item \textbf{Nome}: Impatto delle modifiche;
+    \item \textbf{Descrizione}: Questa metrica misura l'impatto sulla corretta esecuzione del software procurato dalle modifiche al codice;
+    \item \textbf{Caratteristiche}: Manutenibilità, stabilità;
+    \item \textbf{Motivo}: Valutare la stabilità del prodotto a seguito di cambiamenti. Un alto impatto negativo può indicare un sistema vulnerabile, in cui le modifiche causano effetti a catena significativi;
+    \item \textbf{Misurazione}: 
     \[
-        \text{Tolleranza agli errori} = \frac{Err_{s}}{Err_{p}} \times 100
+    \text{Impatto delle modifiche} = \frac{I_{m}}{M_{t}} \times 100
     \]
     dove:
     \begin{itemize}
-        \item $Err_{s}$: Numero di errori gestiti con successo;
-        \item $Err_{p}$: Numero totale di errori previsti.
+        \item $I_{m}$: Numero di modifiche che hanno influito negativamente sul corretto funzionamento del software o sulle sue prestazioni;
+        \item $M_{t}$: Numero totale di modifiche eseguite.
     \end{itemize}
 \end{itemize}
